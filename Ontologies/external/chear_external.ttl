@@ -1,0 +1,775 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix hasco: <http://hadatac.org/ont/hasco/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://hadatac.org/kb/chear#IPT-Questionnaire> a owl:Class ;
+    rdfs:subClassOf hasco:InstrumentPerspective .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear_external.ttl> a owl:Ontology ;
+    rdfs:comment """Children's health and wellbeing are influenced by interactions between environmental and genetic factors. NIEHS is establishing an infrastructure, the Children's Health Exposure Analysis Resource (CHEAR), to provide the extramural research community access to laboratory and data analyses that add or expand the inclusion of environmental exposures in children's health research. Th e goal of CHEAR is to provide tools so researchers can assess the full range of environmental exposures which may affect children's health. We anticipate that CHEAR will be used by children's health researchers conducting epidemiological or clinical studies that currently have limited consideration of environmental exposures, or those who have collected exposure data but seek more extensive analyses.
+
+Read more at: https://www.niehs.nih.gov/research/supported/exposure/chear/""" ;
+    owl:imports <http://hadatac.org/ont/hasco/>,
+            <http://semanticscience.org/ontology/sio-subset-labels.owl> .
+
+<http://semanticscience.org/resource/Circumference> a hasco:QuantityVariable,
+        owl:Class ;
+    rdfs:label "Circumference" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry> .
+
+
+<http://purl.obolibrary.org/obo/CMO_0000012> a hasco:QuantityVariable,
+        owl:Class ;
+    rdfs:label "Weight" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry>,
+        <http://semanticscience.org/resource/Mass> ;
+    skos:definition "The resulting Force from the interaction between a person's Mass and Gravity." .
+
+<http://semanticscience.org/resource/Height> a hasco:QuantityVariable,
+        owl:Class ;
+    rdfs:label "Height" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry> ;
+    skos:definition "Height" .
+
+
+<http://hadatac.org/ont/chear#Anthropometry> a owl:Class ;
+    rdfs:label "Anthropometry" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf hasco:StudyIndicator ;
+    skos:definition "Attributes pertaining to the scientific study of the measurements and proportions of the human body." .
+
+<http://hadatac.org/ont/chear#BodyWeightQuality> a owl:Class ;
+    rdfs:label "Body Weight Quality" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry>,
+        <http://semanticscience.org/resource/Quality> ;
+    skos:definition "A categorization of body mass relative to the height, as defined using Body Mass Index." .
+
+<http://hadatac.org/ont/chear#UnderweightOrNormal> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Underweight/Normal" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://semanticscience.org/resource/isAttributeOf> ;
+            owl:someValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom [ a owl:Class ;
+                            owl:intersectionOf ( <http://purl.org/twc/ontologies/cmo.owl#0000105> [ a owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/STATO_0000129> ;
+                                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                                owl:onDatatype xsd:float ;
+                                                owl:withRestrictions ( [ xsd:maxExclusive "25.0"^^xsd:float ] ) ] ] ) ] ] ],
+        <http://hadatac.org/ont/chear#BodyWeightQuality> ;
+    skos:notation "100" .
+
+<http://purl.obolibrary.org/obo/HP_0001513> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Obese" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://semanticscience.org/resource/isAttributeOf> ;
+            owl:someValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom [ a owl:Class ;
+                            owl:intersectionOf ( <http://purl.org/twc/ontologies/cmo.owl#0000105> [ a owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/STATO_0000129> ;
+                                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                                owl:onDatatype xsd:float ;
+                                                owl:withRestrictions ( [ xsd:minExclusive "29.9"^^xsd:float ] ) ] ] ) ] ] ],
+        <http://hadatac.org/ont/chear#BodyWeightQuality> ;
+    skos:notation "63" .
+
+<http://purl.obolibrary.org/obo/HP_0004324> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Increased Body Weight" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://semanticscience.org/resource/isAttributeOf> ;
+            owl:someValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom [ a owl:Class ;
+                            owl:intersectionOf ( <http://purl.org/twc/ontologies/cmo.owl#0000105> [ a owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/STATO_0000129> ;
+                                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                                owl:onDatatype xsd:float ;
+                                                owl:withRestrictions ( [ xsd:minExclusive "25.0"^^xsd:float ] ) ] ] ) ] ] ],
+        <http://hadatac.org/ont/chear#BodyWeightQuality> ;
+    skos:definition "BMI > 25" ;
+    skos:notation "72" .
+
+<http://purl.obolibrary.org/obo/HP_0025502> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Overweight" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://semanticscience.org/resource/isAttributeOf> ;
+            owl:someValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom [ a owl:Class ;
+                            owl:intersectionOf ( <http://purl.org/twc/ontologies/cmo.owl#0000105> [ a owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/STATO_0000129> ;
+                                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                                owl:intersectionOf ( [ a rdfs:Datatype ;
+                                                            owl:onDatatype xsd:float ;
+                                                            owl:withRestrictions ( [ xsd:minExclusive "25.0"^^xsd:float ] ) ] [ a rdfs:Datatype ;
+                                                            owl:onDatatype xsd:float ;
+                                                            owl:withRestrictions ( [ xsd:maxExclusive "29.9"^^xsd:float ] ) ] ) ] ] ) ] ] ],
+        <http://hadatac.org/ont/chear#BodyWeightQuality> ;
+    skos:notation "71" .
+
+<http://purl.obolibrary.org/obo/HP_0045082> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Underweight" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://semanticscience.org/resource/isAttributeOf> ;
+            owl:someValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom [ a owl:Class ;
+                            owl:intersectionOf ( <http://purl.org/twc/ontologies/cmo.owl#0000105> [ a owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/STATO_0000129> ;
+                                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                                owl:onDatatype xsd:float ;
+                                                owl:withRestrictions ( [ xsd:maxExclusive "18.5"^^xsd:float ] ) ] ] ) ] ] ],
+        <http://hadatac.org/ont/chear#BodyWeightQuality>,
+        <http://hadatac.org/ont/chear#UnderweightOrNormal> ;
+    skos:definition "BMI < 18.5" ;
+    skos:notation "99" .
+
+
+<http://hadatac.org/ont/chear#UnderweightOrNormal> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Underweight/Normal" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://semanticscience.org/resource/isAttributeOf> ;
+            owl:someValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom [ a owl:Class ;
+                            owl:intersectionOf ( <http://purl.org/twc/ontologies/cmo.owl#0000105> [ a owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/STATO_0000129> ;
+                                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                                owl:onDatatype xsd:float ;
+                                                owl:withRestrictions ( [ xsd:maxExclusive "25.0"^^xsd:float ] ) ] ] ) ] ] ],
+        <http://hadatac.org/ont/chear#BodyWeightQuality> ;
+    skos:notation "100" .
+
+<http://purl.org/twc/ontologies/cmo.owl#0000105> a hasco:QuantityVariable,
+        owl:Class ;
+    rdfs:label "Body Mass Index" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry>,
+        <http://semanticscience.org/resource/Quantity> ;
+    skos:definition "A measurement relating body weight to height in an organism; typically calculated as the weight of an individual divided by the height of that individual squared. For quadrupeds, the square of body height is often replaced by the square of body length" ;
+    skos:editorialNote "Should we note that this is derived from height and weight? JS: I think so" .
+
+<http://hadatac.org/ont/chear#NormalWeight> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Normal Weight" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty <http://semanticscience.org/resource/isAttributeOf> ;
+            owl:someValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom [ a owl:Class ;
+                            owl:intersectionOf ( <http://purl.org/twc/ontologies/cmo.owl#0000105> [ a owl:Restriction ;
+                                        owl:onProperty <http://purl.obolibrary.org/obo/STATO_0000129> ;
+                                        owl:someValuesFrom [ a rdfs:Datatype ;
+                                                owl:intersectionOf ( [ a rdfs:Datatype ;
+                                                            owl:onDatatype xsd:float ;
+                                                            owl:withRestrictions ( [ xsd:minExclusive "18.5"^^xsd:float ] ) ] [ a rdfs:Datatype ;
+                                                            owl:onDatatype xsd:float ;
+                                                            owl:withRestrictions ( [ xsd:maxExclusive "25.0"^^xsd:float ] ) ] ) ] ] ) ] ] ],
+        <http://hadatac.org/ont/chear#BodyWeightQuality>,
+        <http://hadatac.org/ont/chear#UnderweightOrNormal> ;
+    skos:definition "18.5<=BMI<=25" ;
+    skos:notation "61" .
+
+<http://hadatac.org/ont/chear#Adopted> a owl:Class ;
+    rdfs:label "Adopted" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#NonBiologicalRelative> ;
+    skos:definition "Adoption is a process whereby a person assumes the parenting of another, usually a child, from that person's biological or legal parent or parents, and, in so doing, permanently transfers all rights and responsibilities, along with filiation, from the biological parent or parents." .
+
+<http://hadatac.org/ont/chear#Adult> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Adult" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>,
+        <http://hadatac.org/ont/chear#DevelopmentalQuality> ;
+    skos:definition "Refers to a person above a threshold age." ;
+    skos:notation "3" .
+
+<http://hadatac.org/ont/chear#AdvancedDegree> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Advanced Graduate Degree" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "Having earned a pos-baccalaureate degree" ;
+    skos:notation "4" .
+
+<http://hadatac.org/ont/chear#BiologicalRelative> a owl:Class ;
+    rdfs:label "Biological Relative" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Relative> ;
+    skos:definition "Being from the same biological kinship as another person. In that aspect, consanguinity is the quality of being descended from the same ancestor as another person." .
+
+<http://hadatac.org/ont/chear#CollegeGraduate> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "College Graduate" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <ontoad:C0424933> ;
+    skos:definition "The quality of having graduated from College" ;
+    skos:notation "12" .
+
+<http://hadatac.org/ont/chear#DateOfBirth> a hasco:QuantityVariable,
+        owl:Class ;
+    rdfs:label "Date of Birth" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>,
+        <http://semanticscience.org/resource/TimeInterval> ;
+    skos:definition "Date of day on which a person was born." .
+
+<http://hadatac.org/ont/chear#Daughter> a owl:Class ;
+    rdfs:label "Daughter" ;
+    rdfs:subClassOf [  a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom <http://semanticscience.org/resource/Female> ] ;
+            owl:onProperty <http://semanticscience.org/resource/isRoleOf> ],
+        <http://hadatac.org/ont/chear#Child> ;
+    skos:definition "The female offspring in relation to her parents." .
+
+<http://hadatac.org/ont/chear#ElementarySchool> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Elementary School" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jim-McCusker" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#SomeElementarySchool> ;
+    skos:definition "Finished Elementary School" ;
+    skos:notation "15" .
+
+<http://hadatac.org/ont/chear#Father> a owl:Class ;
+    rdfs:label "Father" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom <http://semanticscience.org/resource/Male> ] ;
+            owl:onProperty <http://semanticscience.org/resource/isRoleOf> ],
+        <http://hadatac.org/ont/chear#Parent> ;
+    skos:definition "The male parent of a child. Besides the paternal bonds of a father to his children, the father may have a parental legal and social relationship with the child that carries with it certain rights and obligations. An adoptive father is a male who has become the child's parent through the legal process of adoption. A biological father is the male genetic contributor to the creation of the baby, through sexual intercourse or sperm donation. A biological father may have legal obligations to a child not raised by him, such as an obligation of monetary support. A putative father is a man whose biological relationship to a child is alleged but has not been established. A stepfather is a male who is the husband of a child's mother and they may form a family unit, but who generally does not have the legal rights and responsibilities of a parent in relation to the child." .
+
+<http://hadatac.org/ont/chear#Foster> a owl:Class ;
+    rdfs:label "Foster" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#NonBiologicalRelative> ;
+    skos:definition "Fosterage, the practice of a family bringing up a child not their own, differs from adoption in that the child's parents, not the foster-parents, remain the acknowledged parents. In many modern western societies foster care can be organized by the state to care for children with troubled family backgrounds, usually on a temporary basis. In many pre-modern societies fosterage was a form of patronage, whereby influential families cemented political relationships by bringing up each other's children, similar to arranged marriages, also based on dynastic or alliance calculations." .
+
+<http://hadatac.org/ont/chear#GestationalAgeAtBirth> a owl:Class ;
+    rdfs:label "Gestational Age at Birth" ;
+    rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0005112> ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf [ a rdf:List ;
+                    rdf:first <http://www.ebi.ac.uk/efo/EFO_0005112> ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first [ a owl:Restriction ;
+                                    owl:allValuesFrom <http://hadatac.org/ont/chear#Birth> ;
+                                    owl:onProperty <http://semanticscience.org/resource/measuredAt> ] ;
+                            rdf:rest () ] ]] ;
+    skos:definition "Describes how far along a pregnancy is, usually measured in weeks, as measured at birth." .
+
+<http://hadatac.org/ont/chear#HHEducationGrade> a owl:Class ;
+    rdfs:label "Head of Household's Education Grade" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#EducationGrade>,
+        <http://hadatac.org/ont/chear#HHEducationLevel> ;
+    skos:definition "Highest grade of education achieved by the head of household" .
+
+<http://hadatac.org/ont/chear#HeadOfHousehold> a owl:Class ;
+    rdfs:label "Head Of Household",
+        "Head of Household" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [  a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( <http://hadatac.org/ont/chear#Household> ) ] ;
+            owl:onProperty <http://semanticscience.org/resource/inRelationTo> ],
+        <http://hadatac.org/ont/chear#Demographic>,
+        <http://semanticscience.org/resource/Role> ;
+    skos:definition "Head of Household is a filing status for individual United States taxpayers. To use the Head of Household filing status, a taxpayer must: (1) Be unmarried or considered unmarried at the end of the year (2) Have paid more than half the cost of keeping up a home for the tax year (either one's own home or the home of a qualifying parent) (3) Usually have a qualifying person who lived with the head in the home for more than half of the tax year unless the qualifying person is a dependent parent.",
+        "The Person is the head of Household" .
+
+<http://hadatac.org/ont/chear#HighSchoolGraduate> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Graduated From High School" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess> ;
+    skos:definition "The quality of having graduated from High School" ;
+    skos:notation "32" .
+
+<http://hadatac.org/ont/chear#Mother> a owl:Class ;
+    rdfs:label "Mother" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom <http://semanticscience.org/resource/Female> ] ;
+            owl:onProperty <http://semanticscience.org/resource/isRoleOf>  ],
+        <http://hadatac.org/ont/chear#Parent> ;
+    skos:definition "A mother is the female parent of a child. Mothers are women who inhabit or perform the role of bearing some relation to their children, who may or may not be their biological offspring. Thus, dependent on the context, women can be considered mothers by virtue of having given birth, by raising their child(ren), supplying their ovum for fertilisation, or some combination thereof. Such conditions provide a way of delineating the concept of motherhood, or the state of being a mother. Women who meet the third and first categories usually fall under the terms 'birth mother' or 'biological mother', regardless of whether the individual in question goes on to parent their child. Accordingly, a woman who meets only the second condition may be considered an adoptive mother, and those who meet only the third a surrogacy mother. The above concepts defining the role of mother are neither exhaustive nor universal, as any definition of 'mother' may differ based on how social, cultural, and religious roles are defined." .
+
+<http://hadatac.org/ont/chear#NoFormalEducation> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "No Formal Education" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "Has not been educated in a formal setting." ;
+    skos:notation "57" .
+
+<http://hadatac.org/ont/chear#NonHispanicOrLatino> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Non-Hispanic Ethnicity" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Ethnicity> ;
+    skos:definition "Non-Hispanic Ethnicity" ;
+    skos:notation "58" .
+
+<http://hadatac.org/ont/chear#Religion> a hasco:QualityVariable,
+        owl:Class ;
+    rdfs:label "Religion" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic> ;
+    skos:definition "Religious Belief" .
+
+<http://hadatac.org/ont/chear#Sibling> a owl:Class ;
+    rdfs:label "Sibling" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [  a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( [ a owl:Restriction ;
+                                owl:allValuesFrom <http://hadatac.org/ont/chear#Sibling> ;
+                                owl:onProperty <http://semanticscience.org/resource/hasRole> ] <http://semanticscience.org/resource/Human> ) ] ;
+            owl:onProperty <http://semanticscience.org/resource/inRelationTo> ],
+        <http://hadatac.org/ont/chear#Relative> ;
+    skos:definition "One of two or more individuals having one or both parents in common. A male sibling is a brother, and a female sibling is a sister. In most societies throughout the world, siblings often grow up together, thereby facilitating the development of strong emotional bonds. The emotional bond between siblings is often complicated and is influenced by factors such as parental treatment, birth order, personality, and personal experiences outside the family. However, there are cases where siblings grow up in separate homes, in different environments." .
+
+<http://hadatac.org/ont/chear#SomeHighSchool> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Some High School" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess> ;
+    skos:definition "Education Level of Some High School" ;
+    skos:notation "87" .
+
+<http://hadatac.org/ont/chear#SomeMiddleSchool> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Some Middle School" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess> ;
+    skos:definition "Attended Some Middle School" ;
+    skos:notation "90" .
+
+<http://hadatac.org/ont/chear#Son> a owl:Class ;
+    rdfs:label "Son" ;
+    rdfs:subClassOf [a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Restriction ;
+                    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                    owl:someValuesFrom <http://semanticscience.org/resource/Male> ] ;
+            owl:onProperty <http://semanticscience.org/resource/isRoleOf>  ],
+        <http://hadatac.org/ont/chear#Child> ;
+    skos:definition "A son is a male offspring; a boy or man in relation to his parents." .
+
+<http://hadatac.org/ont/chear#Step> a owl:Class ;
+    rdfs:label "Step" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#NonBiologicalRelative> ;
+    skos:definition "A stepfamily is a family where at least one parent has children that are not genetically related to the other spouse or partner. Either one parent may have children from a previous relationship. Children in a stepfamily may live with one biological parent, or they may live with each biological parent for a period of time. In addition, visitation rights mean that children in stepfamilies often have contact with both biological parents, even if they permanently live with only one. A child is referred to as the stepchild, stepdaughter or stepson of their biological parent's new spouse, and that person as the stepparent, stepfather or stepmother of the child. A stepfather is the husband of one's mother, and not one's biological father. A stepmother is the wife of one's father, and not one's biological mother. A step-grandmother is the wife of one's grandfather, and not one's biological grandmother. A step-grandfather is the husband of one's grandmother, and not one's biological grandfather. Similarly, a stepbrother is the son of a stepparent who one is not biologically related to. A stepsister is the daughter of a stepparent to whom one is not biologically related. A step-grandson is the son of a stepson or stepdaughter who one is not biologically related to. A step-granddaughter is the daughter of a stepson or stepdaughter who one is not biologically related. A parent's spouse of the same sex may also count as a stepparent." .
+
+<http://hadatac.org/ont/chear#TechnicalPostJuniorCollege> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Technical Post Junior College" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#TechnicalSchool>,
+        <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "Attended a Technical Post Junior College" ;
+    skos:notation "93" .
+
+<http://hadatac.org/ont/chear#TechnicalPostMiddleSchool> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Technical Post-Middle School" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess>,
+        <http://hadatac.org/ont/chear#TechnicalSchool> ;
+    skos:definition "Attended a Technical Post-Middle School." ;
+    skos:notation "94" .
+
+<http://hadatac.org/ont/chear#TechnicalPostPrimarySchool> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Technical Post Primary School" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess>,
+        <http://hadatac.org/ont/chear#TechnicalSchool> ;
+    skos:definition "Attended a Technical Post Primary School" ;
+    skos:notation "95" .
+
+<http://hadatac.org/ont/chear#UnknownEducationLevel> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Unknown Education Level" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "Level of Education is not known" ;
+    skos:notation "101" .
+
+<http://hadatac.org/ont/chear#UnknownRace> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Unknown Race" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Race> ;
+    skos:definition "Unknown Race" ;
+    skos:notation "48" .
+
+<http://purl.obolibrary.org/obo/HsapDv_0000000> rdfs:subClassOf <http://semanticscience.org/resource/Age> .
+
+<http://purl.obolibrary.org/obo/NCIT_C16352> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "African American" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Race> ;
+    skos:definition "A person having origins in any of the Black racial groups of Africa. Terms such as \"Haitian\" or \"Negro\" can be used in addition to \"Black or African American\"." ;
+    skos:notation "8" .
+
+<http://purl.obolibrary.org/obo/NCIT_C17459> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Hispanic or Latino Ethnicity" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Ethnicity> ;
+    skos:definition "A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race. The term “Spanish origin” can also be used in addition to “Hispanic or Latino.”" ;
+    skos:notation "47" .
+
+<http://purl.obolibrary.org/obo/NCIT_C41219> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Native Hawaiian or Other Pacific Islander" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Race> ;
+    skos:definition "A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands." ;
+    skos:notation "55" .
+
+<http://purl.obolibrary.org/obo/NCIT_C41259> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "American Indian Or AlaskanNative" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Race> ;
+    skos:definition "A person having origins in any of the original peoples of North and South America (including Central America) and who maintains tribal affiliation or community attachment." ;
+    skos:notation "5" .
+
+<http://purl.obolibrary.org/obo/NCIT_C41260> a owl:Class ;
+    rdfs:label "Asian" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Race> ;
+    skos:definition "A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam." ;
+    skos:notation "6" .
+
+<http://purl.obolibrary.org/obo/NCIT_C41261> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "White" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Race> ;
+    skos:definition "A person having origins in any of the original peoples of Europe, the Middle East, or North Africa." ;
+    skos:notation "102" .
+
+<http://purl.obolibrary.org/obo/NCIT_C51775> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Widowed" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Unmarried> ;
+    skos:definition "Indicates a person who is no longer married because of the death of his/her spouse and has not remarried." ;
+    skos:notation "39" .
+
+<http://purl.obolibrary.org/obo/NCIT_C51776> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Divorced" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Unmarried> ;
+    skos:definition "Indicates a person whose marriage has been legally dissolved and has not remarried." ;
+    skos:notation "40" .
+
+<http://purl.obolibrary.org/obo/NCIT_C51777> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Separated" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C51773> ;
+    skos:definition "Indicates a person living apart from his/her spouse by legal arrangement." ;
+    skos:notation "41" .
+
+<http://purl.obolibrary.org/obo/NCIT_C52658> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Full Time Employment" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000034> ;
+    skos:definition "Employed for a standard number of hours of working time, at least 50% or 20 hours per week." ;
+    skos:notation "64" .
+
+<http://purl.obolibrary.org/obo/NCIT_C53262> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Domestic Partnership" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Unmarried> ;
+    skos:definition "Indicates a person who is a member of an unmarried couple, including same sex couples, living together in longstanding relationships, that are registered or unregistered." ;
+    skos:notation "42" .
+
+<http://purl.obolibrary.org/obo/NCIT_C67109> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Multiracial" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://semanticscience.org/resource/Race> ;
+    skos:definition "Having ancestors of several or various races." ;
+    skos:editorialNote "Not part of current prov for Race. Should we remove this concept?" ;
+    skos:notation "54" .
+
+<http://purl.obolibrary.org/obo/NCIT_C67137> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Some College" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <ontoad:C0424933> ;
+    skos:definition "Indicates that a person has attended college but that they did not receive any degree." ;
+    skos:notation "85" .
+
+<http://purl.obolibrary.org/obo/NCIT_C75560> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Homemaker" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000034> ;
+    skos:definition "A person who manages a home as their main daily activity." ;
+    skos:notation "68" .
+
+<http://purl.obolibrary.org/obo/NCIT_C75561> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Student" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000034> ;
+    skos:notation "66" .
+
+<http://purl.obolibrary.org/obo/NCIT_C75562> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Part Time Employment" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000034> ;
+    skos:definition "Employment involving less than the standard or customary working time." ;
+    skos:notation "65" .
+
+<http://purl.obolibrary.org/obo/NCIT_C75563> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Unemployment" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000034> ;
+    skos:definition "The state of not having a job." ;
+    skos:notation "67" .
+
+<http://purl.obolibrary.org/obo/NCIT_C76240> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Annulled" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C51774> ;
+    skos:definition "A marital status in which a voidable marriage is legally declared null and void, as though it never existed. Specific grounds for annullment vary within the presiding jurisdiction, whether geographic or religious." ;
+    skos:notation "43" .
+
+<http://purl.obolibrary.org/obo/NCIT_C76241> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Interlocutory Marital Status" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#MaritalStatus> ;
+    skos:definition "The condition existing when an order or judgement is considered temporary until either a specified period of time has passed or specific information is provided to assist in rendering a permanent decision." ;
+    skos:notation "44" .
+
+<http://purl.obolibrary.org/obo/NCIT_C76242> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Polygamous" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#MaritalStatus> ;
+    skos:definition "A type of living arrangement or mating system in which at least one member of a relationship has more than one mate." ;
+    skos:notation "45" .
+
+<http://purl.obolibrary.org/obo/NCIT_C89345> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Childhood" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>,
+        <http://hadatac.org/ont/chear#DevelopmentalQuality> ;
+    skos:definition "A time period that begins at the beginning of the human embryonic stage and continues until the end of adolescence." ;
+    skos:notation "11" .
+
+<http://semanticscience.org/resource/BiologicalSex> a hasco:QualityVariable,
+        owl:Class ;
+    rdfs:label "Biological Sex" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic> .
+
+<http://hadatac.org/ont/chear#Ancestor> a owl:Class ;
+    rdfs:label "Ancestor" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( [ a owl:Restriction ;
+                                owl:allValuesFrom <http://hadatac.org/ont/chear#Descendant> ;
+                                owl:onProperty <http://semanticscience.org/resource/hasRole> ] <http://semanticscience.org/resource/Human> ) ] ;
+            owl:onProperty <http://semanticscience.org/resource/inRelationTo>  ],
+        <http://hadatac.org/ont/chear#Relative> ;
+    skos:definition "An ancestor or forebear is a parent or (recursively) the parent of an ancestor (i.e., a grandparent, great-grandparent, great-great-grandparent, and so forth). Ancestor is \"any person from whom one is descended. In law the person from whom an estate has been inherited.\"" .
+
+<http://hadatac.org/ont/chear#Descendant> a owl:Class ;
+    rdfs:label "Descendant" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( [ a owl:Restriction ;
+                                owl:allValuesFrom <http://hadatac.org/ont/chear#Ancestor> ;
+                                owl:onProperty <http://semanticscience.org/resource/hasRole> ] <http://semanticscience.org/resource/Human> ) ] ;
+            owl:onProperty <http://semanticscience.org/resource/inRelationTo> ],
+        <http://hadatac.org/ont/chear#Relative> ;
+    skos:definition "The child of a human, or any grandchild, great-grandchild, and so on." .
+
+<http://hadatac.org/ont/chear#EducationGrade> a hasco:QualityVariable,
+        owl:Class ;
+    rdfs:label "Education Grade" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "The highest grade of education achieved" .
+
+<http://hadatac.org/ont/chear#HHEducationLevel> a owl:Class ;
+    rdfs:label "Head of Household's Education Level" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "Head of Household's Education Level" .
+
+<http://hadatac.org/ont/chear#SomeElementarySchool> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Some Elementary School" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess> ;
+    skos:definition "Attended Some Elementary School" ;
+    skos:notation "86" .
+
+<http://purl.obolibrary.org/obo/NCIT_C51773> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Married" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#MaritalStatus> ;
+    skos:definition "Indicates a person currently joined in a legally binding matrimonial union. Classify common law marriage as married. Includes married couples living together and not living together." ;
+    skos:notation "37" .
+
+<http://purl.obolibrary.org/obo/NCIT_C51774> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Never Married" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Unmarried> ;
+    skos:definition "Indicates a person who has never been married or whose marriages have been annulled." ;
+    skos:notation "38" .
+
+<http://hadatac.org/ont/chear#Child> a owl:Class ;
+    rdfs:label "Child" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( [ a owl:Restriction ;
+                                owl:allValuesFrom <http://hadatac.org/ont/chear#Parent> ;
+                                owl:onProperty <http://semanticscience.org/resource/hasRole> ] <http://semanticscience.org/resource/Human> ) ] ;
+            owl:onProperty <http://semanticscience.org/resource/inRelationTo>],
+        <http://hadatac.org/ont/chear#Descendant> ;
+    skos:definition "A relationship with a parent (such as sons and daughters of any age)." .
+
+<http://hadatac.org/ont/chear#Parent> a owl:Class ;
+    rdfs:label "Parent" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( [ a owl:Restriction ;
+                                owl:allValuesFrom <http://hadatac.org/ont/chear#Child> ;
+                                owl:onProperty <http://semanticscience.org/resource/hasRole> ] <http://semanticscience.org/resource/Human> ) ] ;
+            owl:onProperty <http://semanticscience.org/resource/inRelationTo> ],
+        <http://hadatac.org/ont/chear#Ancestor> ;
+    skos:definition "A parent is the caretaker of a child (where \"child\" refers to offspring, not necessarily age). A biological parent is a person whose gamete resulted in a child, a male through the sperm, and a female through the ovum. Parents are first-degree relatives and have 50% genetic meet. A female can also become a parent through surrogacy. Some parents may be adoptive parents, who nurture and raise an offspring, but are not actually biologically related to the child. Orphans without adoptive parents can be raised by their grandparents or other family members." .
+
+<http://semanticscience.org/resource/Age> a hasco:QuantityVariable,
+        owl:Class ;
+    rdfs:label "Age" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic> .
+
+<http://semanticscience.org/resource/Ethnicity> a hasco:QualityVariable,
+        owl:Class ;
+    rdfs:label "Ethnicity" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>,
+        <http://semanticscience.org/resource/BiologicalQuality> .
+
+<http://www.ebi.ac.uk/efo/EFO_0005112> a hasco:QuantityVariable,
+        owl:Class ;
+    rdfs:label "Gestational Age" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#BirthOutcome>,
+        <http://semanticscience.org/resource/Age>,
+        <http://www.ebi.ac.uk/efo/EFO_0005112> ;
+    skos:definition "The age of the conceptus, beginning from the time of FERTILIZATION. In clinical obstetrics, the gestational age is often estimated as the time from the last day of the last MENSTRUATION which is about 2 weeks before OVULATION and fertilization" .
+
+<ontoad:C0424933> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Higher Education" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "College or university education beyond the successful completion of high school or grammar school, or the attainment of an approved equivalent" ;
+    skos:notation "31" .
+
+<http://hadatac.org/ont/chear#NonBiologicalRelative> a owl:Class ;
+    rdfs:label "Non-Biological Relative" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Relative> ;
+    skos:definition "People that are considered relatives but are not related by blood. This includes relatives by marriage, adoption, or fosterage." .
+
+<http://hadatac.org/ont/chear#TechnicalSchool> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Technical School" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "Attended a Technical School." ;
+    skos:notation "96" .
+
+<http://hadatac.org/ont/chear#MaritalStatus> a hasco:QualityVariable,
+        owl:Class ;
+    rdfs:label "Marital Status" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>,
+        <http://semanticscience.org/resource/StatusDescriptor> ;
+    skos:definition "A person's current conjugal status." .
+
+<http://hadatac.org/ont/chear#Unmarried> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "Unmarried" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#MaritalStatus> ;
+    skos:definition "Indicates a person not currently joined in a legally binding matrimonial union." ;
+    skos:notation "46" .
+
+<http://hadatac.org/ont/chear#Relative> a owl:Class ;
+    rdfs:label "Relative" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:intersectionOf ( [ a owl:Restriction ;
+                                owl:allValuesFrom <http://hadatac.org/ont/chear#Relative> ;
+                                owl:onProperty <http://semanticscience.org/resource/hasRole> ] <http://semanticscience.org/resource/Human> ) ] ;
+            owl:onProperty <http://semanticscience.org/resource/inRelationTo> ],
+        <http://hadatac.org/ont/chear#Demographic>,
+        <http://semanticscience.org/resource/Role> ;
+     skos:definition "Broadly, kinship patterns may be considered to include people related by both descent â€“ i.e. social relations during development â€“ and by marriage. Human kinship relations through marriage are commonly called \"affinity\" in contrast to the relationships that arise in one's group of origin, which may be called one's descent group. In some cultures, kinship relationships may be considered to extend out to people an individual has economic or political relationships with, or other forms of social connections. Within a culture, some descent groups may be considered to lead back to gods or animal ancestors (totems). This may be conceived of on a more or less literal basis." .
+
+<http://purl.obolibrary.org/obo/ExO_0000034> a hasco:QualityVariable,
+        owl:Class ;
+    rdfs:label "Occupation" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>,
+        <http://hadatac.org/ont/chear#SocioeconomicStatus>,
+        <http://semanticscience.org/resource/Role> ;
+    skos:definition "An individual attribute that is the usual or principal work or business of an individual." .
+
+<http://hadatac.org/ont/chear#HighSchoolOrLess> a hasco:QualityValue,
+        owl:Class ;
+    rdfs:label "High School or Less" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000041> ;
+    skos:definition "Education Level of High School or Less" ;
+    skos:notation "33" .
+
+<http://semanticscience.org/resource/Race> a hasco:QualityVariable,
+        owl:Class ;
+    rdfs:label "Race" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>,
+        <http://semanticscience.org/resource/BiologicalQuality> .
+
+<http://purl.obolibrary.org/obo/ExO_0000041> a hasco:QualityVariable,
+        owl:Class ;
+    rdfs:label "Education" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>,
+        <http://hadatac.org/ont/chear#SocioeconomicStatus>,
+        <http://semanticscience.org/resource/ObjectQuality> ;
+    skos:definition "The act or process of imparting or acquiring knowledge." .
+
+<http://hadatac.org/ont/chear#Demographic> a owl:Class ;
+    rdfs:label "Demographic" ;
+    hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+    rdfs:subClassOf hasco:StudyIndicator ;
+    skos:definition "Demographics are quantifiable characteristics of a given population." .
