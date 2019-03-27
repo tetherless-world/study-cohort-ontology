@@ -1,0 +1,388 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns0: <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/>
+  a owl:Ontology ;
+  owl:versionIRI <https://idea.tw.rpi.edu/projects/heals/studycohort/1.0.0> ;
+  dc:license """
+        Copyright 2019 IBM Research and Rensselaer Polytechnic Institute
+
+            Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+        """ ;
+  rdfs:label "Study Cohort Ontology" ;
+  dc:title "Semantic Modeling of Cohort Descriptions in Research Studies" ;
+  dc:creator "Shruthi Chari" ;
+  dc:contributor "Oshani Seneviratne", "James P. McCusker", "Deborah L. McGuinness", "Amar Das" ;
+  dc:description """
+        The Study Cohort Ontology encodes the vocabulary to represent population desriptions in research studies, and provides the ability to model the aggregative descriptive statistical measures defined on the variables of subjects who are participants in the study population. We make it possible to represent a study component considered for determining the patient alignment to a research study, and we assist physicians in evaluating the fit of their patient population to the study population. In SCO, we are building a world-view inspired by the upper level Ontology SemanticScience Integrated Ontology (SIO) to model the descriptive statistics of characteristics on a set of patients (patient group) administered a medical intervention, and studied for an outcome in a research study.  Since we capture the various definitions of patient groups (ie. by interventional measures or by control mechanisms), we provide the basic framework for filtering searches and to define cohort similarity at different granularities. ( cohort level and the study group levels ). For researchers who wish to contribute to the expansion of our ontology, we advise that they refer to our ontology documentation to familiarize themselves with the structure and term annotations ( such as definitions and labels).
+        """ ;
+  dc:abstract """
+        The Study Cohort Ontology (SCO) is developed to model overall structure and patterns of cohort variables and control/intervention groups defined within the structured population descriptions (commonly referred to as Table1's or Cohort Summary Tables)of observational case studies and clinical trials. We maintain only domain agnostic and commonly occuring subject variables and interventions in SCO, and we have a suite of ontologies (Diseases, Medications, LabResults etc) to encode Diabetes related terminology. We have adopted a bottom-up approach to modeling and we have revised the structure of SCO upon investigation of a few research studies (11 to be precise) from the Pharmacological Interventions (Chapter 8) and Cardiovascular Complications (Chapter 9) of the American Diabetes Association (ADA)’s Standards of Medical Care 2018 CPG. We enable deep drive visualizations driven off queries to knowledge graphs modeled on SCO, to help assist physician visualize the similarity of a patient to a study group, at a quick glance. We welcome contributions and suggestions to extend SCO to represent cohort descriptions of publications targeted to other diseases, and we plan to release set of tools to make this process seamless."""^^xsd:string ;
+  owl:imports <https://idea.tw.rpi.edu/projects/heals/studycohort/external/ncit_externalbranches.owl>, <https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear_external.ttl>, <https://idea.tw.rpi.edu/projects/heals/studycohort/external/hp_external.owl>, <https://idea.tw.rpi.edu/projects/heals/studycohort/external/stato_external.owl>, <https://idea.tw.rpi.edu/projects/heals/studycohort/external/uo_external.owl>, <https://idea.tw.rpi.edu/projects/heals/studycohort/external/provcare.owl> .
+
+<http://semanticscience.org/resource/hasParticipant> a owl:ObjectProperty .
+<http://semanticscience.org/resource/hasProperty> a owl:ObjectProperty .
+<http://semanticscience.org/resource/hasUnit> a owl:ObjectProperty .
+<http://hadatac.org/ont/chear#Demographic>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic> ;
+  rdfs:label "demographic" ;
+  skos:definition "the science dealing with populations, including matters of health, disease, births, and mortality"^^xsd:string ;
+  dc:source "Miller-Keane Encyclopedia and Dictionary of Medicine, Nursing, and Allied Health, Seventh Edition" .
+
+<http://hadatac.org/ont/chear#MedicalTherapy>
+  rdfs:label "medical therapy" ;
+  skos:definition "the attempted remediation of a health problem, usually following a diagnosis"^^xsd:string ;
+  dc:source "https://en.wikipedia.org/wiki/Therapy" .
+
+<http://hadatac.org/ont/hasco#ResearchStudy>
+  dc:source <https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement> ;
+  rdfs:label "research study"^^xsd:string, "study" ;
+  skos:definition "a scientific study of nature that sometimes includes processes involved in health and disease"^^xsd:string ;
+  a owl:Class ;
+  rdfs:subClassOf <http://semanticscience.org/resource/Study>, <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasParticipant> ;
+    owl:someValuesFrom <http://semanticscience.org/resource/StudyGroup>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasParticipant> ;
+    owl:someValuesFrom <http://purl.obolibrary.org/obo/STATO_0000203>
+  ] .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/DiseaseOrCondition>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "disease condition" .
+
+<http://semanticscience.org/resource/BiologicalSex> rdfs:subClassOf <http://semanticscience.org/resource/BiologicalQuality> .
+<http://semanticscience.org/resource/MedicalIntervention> a owl:Class .
+<http://semanticscience.org/resource/Race> rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasValue> ;
+    owl:allValuesFrom xsd:string
+  ] .
+<http://semanticscience.org/resource/Study> a owl:Class .
+<http://semanticscience.org/resource/UnitOfMeasurement>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "unit of measurement" .
+
+<http://semanticscience.org/resource/Year>
+  a owl:Class ;
+  rdfs:subClassOf <http://semanticscience.org/resource/UnitOfMeasurement> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Active>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/EnrollmentStatus> ;
+  skos:definition "participants following clinical trial protocol"^^xsd:string ;
+  ns0:adaptedFrom "https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf" ;
+  dc:title "Clinical Trials Protocol Template - NIH Office of Science Policy" ;
+  rdfs:label "Active Subject" .
+
+<http://hadatac.org/ont/chear#Anthropometry>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic> ;
+  rdfs:label "anthorpometric property" .
+
+<http://purl.obolibrary.org/obo/NCIT_C15362>
+  a owl:Class ;
+  rdfs:subClassOf <http://hadatac.org/ont/hasco#ResearchStudy>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasValue> ;
+    owl:hasValue "Case Study"^^xsd:string
+  ] ;
+  rdfs:label "case study" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>
+  a owl:Class ;
+  rdfs:label "Cohort Description" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/ControlNature>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "control nature" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Controlled>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/ControlNature> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Discontinued>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/EnrollmentStatus> ;
+  rdfs:label "discontinued" ;
+  skos:definition "participants no longer, following clinical trial protocol"^^xsd:string ;
+  ns0:adaptedFrom "https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf" ;
+  dc:title "Clinical Trials Protocol Template - NIH Office of Science Policy" .
+
+<http://purl.obolibrary.org/obo/PATO_0001309>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/EnrollmentStatus>
+  a owl:Class ;
+  rdfs:subClassOf <http://semanticscience.org/resource/StatusDescriptor>, <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "enrollment status"^^xsd:string ;
+  skos:definition " patients are consented and screened, with eligibility verified "^^xsd:string ;
+  ns0:adaptedFrom "https://research-compliance.umich.edu/sites/default/files/resource-download/enrollmentdefinition_additionalhelp.pdf" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/IntentionToTreatPopulation>
+  a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000203> ;
+  dc:source "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3159210/" ;
+  rdfs:label "intention to treat population"^^xsd:string ;
+  skos:definition "every subject who is randomized according to randomized treatment assignment,  ignoring noncompliance, protocol deviations, withdrawal, and anything that happens after randomization" .
+
+<http://purl.obolibrary.org/obo/STATO_0000164>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+  rdfs:comment ""^^xsd:float .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/OrderedLaboratoryTestResult>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic> ;
+  rdfs:label "laboratory test result" .
+
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:allValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/UnitOfMeasurement>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasValue> ;
+    owl:someValuesFrom xsd:decimal
+  ] ;
+  dc:source <https://en.wikipedia.org/wiki/Measure> ;
+  rdfs:label "statistical measure" ;
+  skos:definition "a standard unit used to express the size, amount, or degree of something"^^xsd:string .
+
+<http://semanticscience.org/resource/Median>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+  rdfs:isDefinedBy xsd:float .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Medication>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic> .
+
+<http://purl.obolibrary.org/obo/NCIT_C61256>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> .
+
+<http://semanticscience.org/resource/Mean>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+  dc:source <https://en.wikipedia.org/wiki/Mean> ;
+  rdfs:label "mean" ;
+  skos:definition "the central value of a discrete set of numbers: specifically, the sum of the values divided by the number of values"^^xsd:string .
+
+<http://semanticscience.org/resource/StandardDeviation>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+  dc:source <https://en.wikipedia.org/wiki/Standard_deviation> ;
+  rdfs:label "standard deviation"^^xsd:string ;
+  skos:definition "a measure that is used to quantify the amount of variation or dispersion of a set of data values"^^xsd:string .
+
+<http://purl.obolibrary.org/obo/STATO_0000203>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/PopulationSize>
+  ] .
+
+<http://semanticscience.org/resource/StudyGroup>
+  a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000203>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/ControlNature>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+    owl:someValuesFrom <http://purl.obolibrary.org/obo/NCIT_C61256>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+    owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#Intervention>
+  ] ;
+  rdfs:label "study group" .
+
+<http://semanticscience.org/resource/StudySubject>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/EnrollmentStatus>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/DiseaseOrCondition>
+  ] ;
+  rdfs:label "study subject" ;
+  skos:definition "a person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary"^^xsd:string ;
+  dc:source "https://www.tititudorancea.com/z/patient_en.htm" .
+
+<http://semanticscience.org/resource/Patient>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/ElectronicHealthRecord>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/PatientProfile>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/DiseaseOrCondition>
+  ] ;
+  rdfs:label "study subject" ;
+  skos:definition "a person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary"^^xsd:string ;
+  dc:source "https://www.tititudorancea.com/z/patient_en.htm" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/ElectronicHealthRecord>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/MedicalIntervention>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/OrderedLaboratoryTestResult>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <http://hadatac.org/ont/chear#Anthropometry>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <http://hadatac.org/ont/chear#Demographic>
+  ] ;
+  dc:source <https://www.healthit.gov/faq/what-electronic-health-record-ehr> ;
+  rdfs:label "electronic health record"^^xsd:string ;
+  skos:definition "a digital version of a patient’s paper chart"^^xsd:string .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/PatientProfile>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "patient profile"^^xsd:string ;
+  skos:definition "a simple form that allows patients or caregivers to keep track of important health information" ;
+  dc:source "https://www.rimrehab.org/for-patients/patient-health-profile" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/PValue>
+  ] ;
+  rdfs:label "subject characteristic" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/PopulationSize>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasUnit> ;
+    owl:allValuesFrom <http://purl.obolibrary.org/obo/UO_0000186>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasValue> ;
+    owl:someValuesFrom xsd:integer
+  ] ;
+  rdfs:label "population size"^^xsd:string ;
+  ns0:adaptedFrom "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296634/" ;
+  skos:definition "number of patients to which the study results could be reasonably generalized"^^xsd:string .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/RandomizedPopulation>
+  a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000203> ;
+  ns0:adaptedFrom "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/" ;
+  rdfs:label "randomized population" ;
+  skos:definition "set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)" .
+
+<http://purl.obolibrary.org/obo/NCIT_C71104>
+  a owl:Class ;
+  rdfs:subClassOf <http://hadatac.org/ont/hasco#ResearchStudy> ;
+  rdfs:label "clinical trial" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Metaanalysis>
+  a owl:Class ;
+  rdfs:subClassOf <http://hadatac.org/ont/hasco#ResearchStudy> ;
+  rdfs:label "metaanalysis" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/SafetyPopulation>
+  a owl:Class ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000203> ;
+  ns0:adaptedFrom "https://www.ncbi.nlm.nih.gov/books/NBK209903/", "https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/" ;
+  rdfs:label "safety population" ;
+  skos:definition "set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group" ;
+  skos:altDefinition "this group usually consists of all subjects who received at least one dose of any study product (even a placebo) and had at least one subsequent safety-related visit or observation" .
+
+<http://www.case.edu/ProvCaRe/provcare#Intervention>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:comment "Capturing the interventions variables in research studies" ;
+  rdfs:label "study intervention" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Therapy>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+
+<http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/ThresholdSuspend>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/ControlNature> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/YearOfFollowUp>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/Duration> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/YearsOfExposure>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/Duration>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasUnit> ;
+    owl:someValuesFrom <http://semanticscience.org/resource/Year>
+  ] .
+
+<http://purl.obolibrary.org/obo/UO_0000015>
+  a owl:Class ;
+  rdfs:subClassOf <http://semanticscience.org/resource/UnitOfMeasurement> .
+
+<http://purl.obolibrary.org/obo/UO_0000009>
+  a owl:Class ;
+  rdfs:subClassOf <http://semanticscience.org/resource/UnitOfMeasurement> .
+
+<http://purl.obolibrary.org/obo/NCIT_C25613>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+
+<http://purl.obolibrary.org/obo/NCIT_C44256>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .

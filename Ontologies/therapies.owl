@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+    <!ENTITY therapies "https://idea.tw.rpi.edu/projects/heals/therapies/" >
+    <!ENTITY chear "http://hadatac.org/ont/chear#" >
+    <!ENTITY hasco "http://hadatac.org/ont/hasco#" >
+    <!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
+    <!ENTITY sio-f "http://semanticscience.org/ontology/sio.owl#">
+    <!ENTITY sio "http://semanticscience.org/resource/">
+    <!ENTITY obo "http://purl.obolibrary.org/obo/"> 
+    
+]>
+
+<rdf:RDF xml:base="https://idea.tw.rpi.edu/projects/heals/studycohort/"
+     xmlns:schema="http://schema.org/"
+     xmlns:chebi="http://purl.obolibrary.org/obo/chebi#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:entity_attribute1="http://purl.obolibrary.org/obo/envo-p/patterns/entity_attribute/"
+     xmlns:foo="http://geneontology.org/foo/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:hp="http://purl.obolibrary.org/obo/hp#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:doid="http://purl.obolibrary.org/obo/doid#"
+     xmlns:Wikipedia="http://purl.obolibrary.org/obo/Wikipedia#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:envo="http://purl.obolibrary.org/obo/envo#"
+     xmlns:cito="http://purl.org/spar/cito/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:core5="http://purl.obolibrary.org/obo/core#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:sio="http://semanticscience.org/resource/"
+     xmlns:uo="http://purl.obolibrary.org/obo/uo#"
+     xmlns:fibo-fnd-utl-av="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:therapies="https://idea.tw.rpi.edu/projects/heals/therapies/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:uberon="http://purl.obolibrary.org/obo/uberon#"
+     xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
+     xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+     xmlns:hasco="http://hadatac.org/ont/hasco#"
+     xmlns:hp3="http://purl.obolibrary.org/obo/hp.owl#"
+     xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
+     xmlns:entity_attribute="http://purl.obolibrary.org/obo/oba/patterns/entity_attribute/"
+     xmlns:core="http://purl.obolibrary.org/obo/uberon/core#"
+     xmlns:chear="http://hadatac.org/ont/chear#"
+     xmlns:chebi1="http://purl.obolibrary.org/obo/chebi/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:hsapdv="http://purl.obolibrary.org/obo/hsapdv#"
+     xmlns:sio-f="http://semanticscience.org/ontology/sio.owl#"
+     xmlns:entity_quality="http://purl.obolibrary.org/obo/oba/patterns/entity_quality/"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:patientcohorts="http://www.semanticweb.org/shruthichari/ontologies/2018/7/patientcohorts#"
+     xmlns:process_attribute="http://purl.obolibrary.org/obo/envo-p/patterns/process_attribute/"
+     xmlns:dct="http://purl.org/dc/elements/1.1/"
+     xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
+     >
+    <owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/therapies/">
+        <owl:versionIRI rdf:resource="&therapies;1.0.0"/>
+    </owl:Ontology>
+
+
+    <!-- &therapies;DualTherapy -->
+
+    <owl:Class rdf:about="&therapies;DualTherapy">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sio;hasValue"/>
+                <owl:hasValue rdf:datatype="&xsd;string">Dual Therapy</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>dual therapy</rdfs:label>
+    </owl:Class>
+
+
+
+
+    <!-- &therapies;Monotherapy -->
+
+    <owl:Class rdf:about="&therapies;Monotherapy">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sio;hasValue"/>
+                <owl:hasValue rdf:datatype="&xsd;string">Mono Therapy</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>monotherapy</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &therapies;HyperglycemiaRescue -->
+
+    <owl:Class rdf:about="&therapies;HyperglycemiaRescue">
+    </owl:Class>
+
+
+    <!-- &therapies;IntensiveTherapy -->
+
+    <owl:Class rdf:about="&therapies;IntensiveTherapy">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sio;hasValue"/>
+                <owl:hasValue rdf:datatype="&xsd;string">Intensive Therapy/Insulin Therapy</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>intensive therapy</rdfs:label>
+    </owl:Class>
+
+
+
+    <!-- &therapies;TripleTherapy -->
+
+    <owl:Class rdf:about="&therapies;TripleTherapy">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sio;hasValue"/>
+                <owl:hasValue rdf:datatype="&xsd;string">Triple Therapy</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+
+
+
+    <!-- &therapies;ConventionalTherapy -->
+
+    <owl:Class rdf:about="&therapies;ConventionalTherapy">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&sio;hasValue"/>
+                <owl:hasValue rdf:datatype="&xsd;string">Conventional Therapy</owl:hasValue>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>conventional therapy</rdfs:label>
+    </owl:Class>       
+    
+    
+    
+
+</rdf:RDF>
