@@ -1,0 +1,3772 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://idea.tw.rpi.edu/projects/heals/studycohort/external/provcare#"
+     xml:base="https://idea.tw.rpi.edu/projects/heals/studycohort/external/provcare.owl"
+     xmlns:Inclusion="http://www.case.edu/ProvCaRe/provcare#Inclusion/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ns="http://www.w3.org/ns/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:provcare="http://www.case.edu/ProvCaRe/provcare#"
+     xmlns:prov="http://www.w3.org/ns/prov#">
+    <owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/studycohort/external/provcare.owl">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/prov-o/"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov"/>
+        <owl:versionInfo>0.2 (Release 2018)</owl:versionInfo>
+        <prov:editorialNote xml:lang="en">The ProvCaRe ontology is released by the Case Western Reserve University, Cleveland, OH, USA under the  Creative Commons Non-Commercial, Share Alike and Unported License. 
+
+Author: Satya S. Sahoo, Contributor: Matthew Kim
+
+Contact: satya.sahoo@case.edu</prov:editorialNote>
+        <rdfs:comment xml:lang="en">ProvCaRe ontology developed as part of NIH BD2K Data Provenance project. The ProvCaRe ontology extends the W3C PROV Ontology with several edits, including addition of new terms and deletion of PROV-O terms.
+
+Website: https://provcare.case.edu/
+
+Citation: Valdez, J., Kim, M., Rueschman, M., Socrates, V., Redline, S. and Sahoo, S.S., 2017. ProvCaRe semantic provenance knowledgebase: evaluating scientific reproducibility of research studies. In AMIA Annual Symposium Proceedings (Vol. 2017, p. 1705). American Medical Informatics Association.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#synonym -->
+
+    <owl:AnnotationProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#synonym"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#comment -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#comment">
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#isDefinedBy -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#isDefinedBy"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#seeAlso -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#seeAlso">
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#versionInfo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#versionInfo"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#aq -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#aq">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#category -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#category">
+        <rdfs:comment xml:lang="en">Classify prov-o terms into three categories, including &apos;starting-point&apos;, &apos;qualifed&apos;, and &apos;extended&apos;. This classification is used by the prov-o html document to gently introduce prov-o terms to its users. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#component -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#component">
+        <rdfs:comment xml:lang="en">Classify prov-o terms into six components according to prov-dm, including &apos;agents-responsibility&apos;, &apos;alternate&apos;, &apos;annotations&apos;, &apos;collections&apos;, &apos;derivations&apos;, and &apos;entities-activities&apos;. This classification is used so that readers of prov-o specification can find its correspondence with the prov-dm specification.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#constraints -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#constraints">
+        <rdfs:comment xml:lang="en">A reference to the principal section of the PROV-CONSTRAINTS document that describes this concept.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#definition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#definition">
+        <rdfs:comment xml:lang="en">A definition quoted from PROV-DM or PROV-CONSTRAINTS that describes the concept expressed with this OWL term.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#dm -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#dm">
+        <rdfs:comment xml:lang="en">A reference to the principal section of the PROV-DM document that describes this concept.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#editorialNote -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#editorialNote">
+        <rdfs:comment xml:lang="en">A note by the OWL development team about how this term expresses the PROV-DM concept, or how it should be used in context of semantic web or linked data.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#editorsDefinition -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#editorsDefinition">
+        <rdfs:comment xml:lang="en">When the prov-o term does not have a definition drawn from prov-dm, and the prov-o editor provides one.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#definition"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#inverse -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#inverse">
+        <rdfs:comment xml:lang="en">PROV-O does not define all property inverses. The directionalities defined in PROV-O should be given preference over those not defined. However, if users wish to name the inverse of a PROV-O property, the local name given by prov:inverse should be used.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/prov-o/#names-of-inverse-properties"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#n -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#n">
+        <rdfs:comment xml:lang="en">A reference to the principal section of the PROV-DM document that describes this concept.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#order -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#order">
+        <rdfs:comment xml:lang="en">The position that this OWL term should be listed within documentation. The scope of the documentation (e.g., among all terms, among terms within a prov:category, among properties applying to a particular class, etc.) is unspecified.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#qualifiedForm -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#qualifiedForm">
+        <rdfs:comment xml:lang="en">This annotation property links a subproperty of prov:wasInfluencedBy with the subclass of prov:Influence and the qualifying property that are used to qualify it. 
+
+Example annotation:
+
+    prov:wasGeneratedBy prov:qualifiedForm prov:qualifiedGeneration, prov:Generation .
+
+Then this unqualified assertion:
+
+    :entity1 prov:wasGeneratedBy :activity1 .
+
+can be qualified by adding:
+
+   :entity1 prov:qualifiedGeneration :entity1Gen .
+   :entity1Gen 
+       a prov:Generation, prov:Influence;
+       prov:activity :activity1;
+       :customValue 1337 .
+
+Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1) is mirrored as the value of the prov:activity (or prov:entity, or prov:agent) property on the influence class.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#sharesDefinitionWith -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#sharesDefinitionWith">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#specializationOf -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#specializationOf"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#todo -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#todo"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#unqualifiedForm -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#unqualifiedForm">
+        <rdfs:comment xml:lang="en">Classes and properties used to qualify relationships are annotated with prov:unqualifiedForm to indicate the property used to assert an unqualified provenance relation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#seeAlso"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasRevisionOf -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/ns/prov#wasRevisionOf"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadDataAnalysisMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadDataAnalysisMethod">
+        <rdfs:subPropertyOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadDataCollectionMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadDataCollectionMethod">
+        <rdfs:subPropertyOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadReference -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadReference"/>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadSoftwareTool -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadSoftwareTool">
+        <rdfs:subPropertyOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyInstrument"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadStatisticalMeasure -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadStatisticalMeasure">
+        <rdfs:subPropertyOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadDataAnalysisMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadStudyConstraint -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadStudyConstraint">
+        <rdfs:subPropertyOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadStudyData -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadStudyData"/>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadStudyDesign -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadStudyDesign">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#hadPlan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadStudyInstrument -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadStudyInstrument">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadStudyMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadStudyMethod">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:comment>This links the study and its method</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadStudyObjective -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadStudyObjective"/>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#hadTemporalAttribute -->
+
+    <owl:ObjectProperty rdf:about="http://www.case.edu/ProvCaRe/provcare#hadTemporalAttribute"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#actedOnBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#actedOnBehalfOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment xml:lang="en">An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity. </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>actedOnBehalfOf</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:inverse>hadDelegate</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Delegation"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedDelegation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#alternateOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#alternateOf">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>alternateOf</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov#specializationOf"/>
+        <prov:category>expanded</prov:category>
+        <prov:component>alternate</prov:component>
+        <prov:constraints rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</prov:constraints>
+        <prov:definition xml:lang="en">Two alternate entities present aspects of the same thing. These aspects may be the same or different, and the alternate entities may or may not overlap in time.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-alternate</prov:dm>
+        <prov:inverse>alternateOf</prov:inverse>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-alternate</prov:n>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#atLocation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#atLocation">
+        <rdfs:comment xml:lang="en">The Location of any resource.</rdfs:comment>
+        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>atLocation</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:editorialNote xml:lang="en">The naming of prov:atLocation parallels prov:atTime, and is not named prov:hadLocation to avoid conflicting with the convention that prov:had* properties are used on prov:Influence classes.</prov:editorialNote>
+        <prov:editorialNote xml:lang="en">This property is not functional because the many values could be at a variety of granularies (In this building, in this room, in that chair).</prov:editorialNote>
+        <prov:inverse>locationOf</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#generated -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#generated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#influenced"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>generated</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:editorialNote xml:lang="en">prov:generated is one of few inverse property defined, to allow Activity-oriented assertions in addition to Entity-oriented assertions.</prov:editorialNote>
+        <prov:inverse>wasGeneratedBy</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Generation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadActivity -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadActivity">
+        <rdfs:comment xml:lang="en">The _optional_ Activity of an Influence, which used, generated, invalidated, or was the responsibility of some Entity. This property is _not_ used by ActivityInfluence (use prov:activity instead).</rdfs:comment>
+        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>hadActivity</rdfs:label>
+        <prov:category>qualified</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:editorialNote xml:lang="en">The multiple rdfs:domain assertions are intended. One is simpler and works for OWL-RL, the union is more specific but is not recognized by OWL-RL.</prov:editorialNote>
+        <prov:inverse>wasActivityOfInfluence</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadGeneration -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadGeneration">
+        <rdfs:comment xml:lang="en">The _optional_ Generation involved in an Entity&apos;s Derivation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>hadGeneration</rdfs:label>
+        <prov:category>qualified</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:inverse>generatedAsDerivation</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Generation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadMember -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadMember">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>hadMember</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>expanded</prov:component>
+        <prov:inverse>wasMemberOf</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Collection"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadPlan -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadPlan">
+        <rdfs:comment xml:lang="en">The _optional_ Plan adopted by an Agent in Association with some Activity. Plan specifications are out of the scope of this specification.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>hadPlan</rdfs:label>
+        <prov:category>qualified</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:inverse>wasPlanOf</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadPrimarySource -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadPrimarySource">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>hadPrimarySource</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:inverse>wasPrimarySourceOf</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#PrimarySource"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedPrimarySource"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.w3.org/ns/prov#hadPrimarySource"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <rdfs:comment>hadPrimarySource property is a particular case of wasDerivedFrom (see http://www.w3.org/TR/prov-dm/#term-original-source) that aims to give credit to the source that originated some information.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadRole">
+        <rdfs:comment xml:lang="en">The _optional_ Role that an Entity assumed in the context of an Activity. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ].</rdfs:comment>
+        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>hadRole</rdfs:label>
+        <prov:category>qualified</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:editorsDefinition xml:lang="en">prov:hadRole references the Role (i.e. the function of an entity with respect to an activity), in the context of an instantaneous usage, generation, association, start, and end.</prov:editorsDefinition>
+        <prov:inverse>wasRoleIn</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadUsage -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#hadUsage">
+        <rdfs:comment xml:lang="en">The _optional_ Usage involved in an Entity&apos;s Derivation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>hadUsage</rdfs:label>
+        <prov:category>qualified</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:inverse>wasUsedInDerivation</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Usage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#influenced -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#influenced">
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>influenced</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:inverse>wasInfluencedBy</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Influence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#invalidated -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#invalidated">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#influenced"/>
+        <owl:inverseOf rdf:resource="http://www.w3.org/ns/prov#wasInvalidatedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>invalidated</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:editorialNote xml:lang="en">prov:invalidated is one of few inverse property defined, to allow Activity-oriented assertions in addition to Entity-oriented assertions.</prov:editorialNote>
+        <prov:inverse>wasInvalidatedBy</prov:inverse>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Invalidation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#specializationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#specializationOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#alternateOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#used -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#used">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment xml:lang="en">A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven .</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>used</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:inverse>wasUsedBy</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Usage"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedUsage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAssociatedWith">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment xml:lang="en">An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasAssociatedWith</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:inverse>wasAssociateFor</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Association"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedAssociation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasAttributedTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment xml:lang="en">Attribution is the ascribing of an entity to an agent.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasAttributedTo</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition xml:lang="en">Attribution is the ascribing of an entity to an agent.</prov:definition>
+        <prov:inverse>contributed</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Attribution"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedAttribution"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.w3.org/ns/prov#wasAttributedTo"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment>Attribution is a particular case of trace (see http://www.w3.org/TR/prov-dm/#concept-trace), in the sense that it links an entity to the agent that ascribed it.</rdfs:comment>
+        <prov:definition>IF wasAttributedTo(e2,ag1,aAttr) holds, THEN wasInfluencedBy(e2,ag1) also holds. </prov:definition>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasDerivedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment xml:lang="en">The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasDerivedFrom</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:definition xml:lang="en">A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.</prov:definition>
+        <prov:inverse>hadDerivation</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Derivation"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedDerivation"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment>Derivation is a particular case of trace (see http://www.w3.org/TR/prov-dm/#term-trace), since it links an entity to another entity that contributed to its existence.</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasEndedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasEndedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment xml:lang="en">End is when an activity is deemed to have ended. An end may refer to an entity, known as trigger, that terminated the activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasEndedBy</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:inverse>ended</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#End"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedEnd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasGeneratedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasGeneratedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasGeneratedBy</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:inverse>generated</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Generation"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedGeneration"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInfluencedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasInfluencedBy">
+        <rdfs:comment xml:lang="en">Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable.</rdfs:comment>
+        <rdfs:comment>This property has multiple RDFS domains to suit multiple OWL Profiles. See &lt;a href=&quot;#owl-profile&quot;&gt;PROV-O OWL Profile&lt;/a&gt;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasInfluencedBy</rdfs:label>
+        <prov:category>qualified</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:editorialNote xml:lang="en">The sub-properties of prov:wasInfluencedBy can be elaborated in more detail using the Qualification Pattern. For example, the binary relation :baking prov:used :spoon can be qualified by asserting :baking prov:qualifiedUsage [ a prov:Usage; prov:entity :spoon; prov:atLocation :kitchen ] .
+
+Subproperties of prov:wasInfluencedBy may also be asserted directly without being qualified.
+
+prov:wasInfluencedBy should not be used without also using one of its subproperties. 
+</prov:editorialNote>
+        <prov:inverse>influenced</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Influence"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedInfluence"/>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#Influence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInformedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasInformedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment xml:lang="en">An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasInformedBy</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:inverse>informed</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Communication"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedCommunication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInvalidatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasInvalidatedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasInvalidatedBy</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:inverse>invalidated</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Invalidation"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedInvalidation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasQuotedFrom -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasQuotedFrom">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <rdfs:comment xml:lang="en">An entity is derived from an original entity by copying, or &apos;quoting&apos;, some or all of it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasQuotedFrom</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>derivations</prov:component>
+        <prov:inverse>quotedAs</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Quotation"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedQuotation"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.w3.org/ns/prov#wasQuotedFrom"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <rdfs:comment>Quotation is a particular case of derivation (see http://www.w3.org/TR/prov-dm/#term-quotation) in which an entity is derived from an original entity by copying, or &quot;quoting&quot;, some or all of it. </rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasRevisionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasRevisionOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.w3.org/ns/prov#wasRevisionOf"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+        <rdfs:comment>Revision is a derivation (see http://www.w3.org/TR/prov-dm/#term-Revision). Moreover, according to 
+http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 2012 &apos;wasRevisionOf is a strict sub-relation of wasDerivedFrom since two entities e2 and e1 may satisfy wasDerivedFrom(e2,e1) without being a variant of each other.&apos;</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasStartedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/prov#wasStartedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasInfluencedBy"/>
+        <rdfs:comment xml:lang="en">Start is when an activity is deemed to have started. A start may refer to an entity, known as trigger, that initiated the activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>wasStartedBy</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:inverse>started</prov:inverse>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Start"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedStart"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/prov#atTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#atTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>atTime</rdfs:label>
+        <prov:category>qualified</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:sharesDefinitionWith rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+        <prov:unqualifiedForm rdf:resource="http://www.w3.org/ns/prov#endedAtTime"/>
+        <prov:unqualifiedForm rdf:resource="http://www.w3.org/ns/prov#generatedAtTime"/>
+        <prov:unqualifiedForm rdf:resource="http://www.w3.org/ns/prov#invalidatedAtTime"/>
+        <prov:unqualifiedForm rdf:resource="http://www.w3.org/ns/prov#startedAtTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#endedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#endedAtTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The time at which an activity ended. See also prov:startedAtTime.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>endedAtTime</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:editorialNote xml:lang="en">It is the intent that the property chain holds: (prov:qualifiedEnd o prov:atTime) rdfs:subPropertyOf prov:endedAtTime.</prov:editorialNote>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#End"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#atTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#generatedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#generatedAtTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The time at which an entity was completely created and is available for use.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>generatedAtTime</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:editorialNote xml:lang="en">It is the intent that the property chain holds: (prov:qualifiedGeneration o prov:atTime) rdfs:subPropertyOf prov:generatedAtTime.</prov:editorialNote>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Generation"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#atTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#invalidatedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#invalidatedAtTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The time at which an entity was invalidated (i.e., no longer usable).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>invalidatedAtTime</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:editorialNote xml:lang="en">It is the intent that the property chain holds: (prov:qualifiedInvalidation o prov:atTime) rdfs:subPropertyOf prov:invalidatedAtTime.</prov:editorialNote>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Invalidation"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#atTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#startedAtTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#startedAtTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The time at which an activity started. See also prov:endedAtTime.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>startedAtTime</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:editorialNote xml:lang="en">It is the intent that the property chain holds: (prov:qualifiedStart o prov:atTime) rdfs:subPropertyOf prov:startedAtTime.</prov:editorialNote>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Start"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#atTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/prov#value">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>value</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:definition xml:lang="en">Provides a value that is a direct representation of an entity.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-value</prov:dm>
+        <prov:editorialNote>The editor&apos;s definition comes from http://www.w3.org/TR/rdf-primer/#rdfvalue</prov:editorialNote>
+        <prov:editorialNote xml:lang="en">This property serves the same purpose as rdf:value, but has been reintroduced to avoid some of the definitional ambiguity in the RDF specification (specifically, &apos;may be used in describing structured values&apos;).</prov:editorialNote>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AbdominalInductanceRespiratoryPlethysmography -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AbdominalInductanceRespiratoryPlethysmography">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Inductance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AcousticPharyngometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AcousticPharyngometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Acromegaly -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Acromegaly">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PituitaryDisease"/>
+        <rdfs:label>Anterior pituitary adenoma syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:label>Growth hormone hypersecretion syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:label>Marie disease (SNOMED CT)</rdfs:label>
+        <rdfs:label>STH hypersecretion syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/74107003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Actigraph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Actigraph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AdrenalCushingsSyndrome -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AdrenalCushingsSyndrome">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PituitaryDisease"/>
+        <rdfs:label>Adrenal Cushing syndrome</rdfs:label>
+        <rdfs:label>Cushing syndrome</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/237735008</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AdrenalDisease -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AdrenalDisease">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#EndocrineDisease"/>
+        <rdfs:label>Adrenal disease (SNOMED CT)</rdfs:label>
+        <rdfs:label>Adrenal disorder (SNOMED CT)</rdfs:label>
+        <rdfs:label>Disorder of adrenal gland (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/30171000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AdrenalInsufficiency -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AdrenalInsufficiency">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#AdrenalDisease"/>
+        <rdfs:label>Adrenal insufficiency</rdfs:label>
+        <rdfs:label>Adrenocortical hypofunction (SNOMED  CT)</rdfs:label>
+        <rdfs:label>Corticoadrenal insufficiency (SNOMED CT)</rdfs:label>
+        <rdfs:label>Hypoadrenocorticism (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/386584007</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Age -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Age">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ObservableMeasurement"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.bioontology.org/ontology/SNOMEDCT/397669002</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AirAudiometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AirAudiometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Audiometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AlternativeHealthyEatingIndex2010 -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AlternativeHealthyEatingIndex2010">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NutritionQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AmbulatoryAutomatedOscillometricSphygmomanometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AmbulatoryAutomatedOscillometricSphygmomanometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#AutomatedOscillometricSphygmomanometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Analyzer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Analyzer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/80617005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ApgarScore -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ApgarScore">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MeasurementData"/>
+        <rdfs:comment>&quot;Apgar score is a method to quickly summarize the health of newborn children.&quot; (Source: Wikipedia)</rdfs:comment>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/302083008</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AssociationAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AssociationAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#InferentialStatisticalAnalysis"/>
+        <rdfs:comment>Analysis of association or dependence between two random variables or set of data (derived from Wikipedia)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Audiometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Audiometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#AutomatedOscillometricSphygmomanometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#AutomatedOscillometricSphygmomanometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#OscillometricSphygmomanometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BalanceBeamScale -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BalanceBeamScale">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Scale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BaselineDataCollection -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BaselineDataCollection">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod"/>
+        <rdfs:comment>Method used to collect baseline data for research study</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BehaviorRatingInventoryOfExecutiveFunction -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BehaviorRatingInventoryOfExecutiveFunction">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveFunctionQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BerlinQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BerlinQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#Analyzer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BipolarElectrocardiograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BipolarElectrocardiograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Electrocardiograph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BipolarSubmentalElectromyograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BipolarSubmentalElectromyograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Electromyograph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BivariateAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BivariateAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DescriptiveStatisticalAnalysis"/>
+        <rdfs:comment>Method used to analyze relation between two variables in a research study (derived from Wikipedia article)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BloodOxygenLevel -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BloodOxygenLevel">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#GasLevel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BloodSubstanceMeasurement -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BloodSubstanceMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#LaboratoryTestData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BodyHeight -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BodyHeight">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PhysicalMeasurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BodyMass -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BodyMass">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PhysicalMeasurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BodyPartCircumference -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BodyPartCircumference">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PhysicalMeasurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BoneConductionAudiometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BoneConductionAudiometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Audiometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BoneMeasurement -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BoneMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PhysicalMeasurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#BoneMineralDensity -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#BoneMineralDensity">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BoneMeasurement"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The amount of mineral per square centimeter of BONE. This is the definition used in clinical practice. Actual bone density would be expressed in grams per milliliter. It is most frequently measured by X-RAY ABSORPTIOMETRY or TOMOGRAPHY, X RAY COMPUTED. Bone density is an important predictor for OSTEOPOROSIS. (Source: MeSH)</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bone density</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.bioontology.org/ontology/MESH/D015519</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CReactiveProtein -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CReactiveProtein">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Caliper -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Caliper">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/44056008</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Capnograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Capnograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+        <rdfs:comment>Capnograph is an instrument for monitoring of the concentration or partial pressure of carbon dioxide in the respiratory gases. (Source: Wikipedia)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CaseControlStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CaseControlStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ObservationalStudy"/>
+        <rdfs:comment>&quot;An observational epidemiological study of persons with the disease (or another outcome variable) of interest and a suitable control group of persons without the disease (comparison group, reference group)&quot; - Porta&apos;s Dictionary of Epidemiology</rdfs:comment>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/study_design.owl#OCRE100018</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CenterForEpidemiologicStudiesDepressionScale -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CenterForEpidemiologicStudiesDepressionScale">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MentalHealthQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CentralTendencyAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CentralTendencyAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#UnivariateAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure"/>
+        <rdfs:comment>Statistical measure describing the distribution of single variable</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ChestWallImpedanceRespiratoryPlethysmography -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ChestWallImpedanceRespiratoryPlethysmography">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Impedance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Cholesterol -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Cholesterol">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ClinicalDocument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ClinicalDocument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ClinicalFinding -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ClinicalFinding">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyData"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/404684003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Intervention"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/386053000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ClusterTrial -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ClusterTrial">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#RandomizedControlTrial"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;Preexisting groups of participants are randomly selected to receive (or not receive) an intervention&quot; (from Wikipedia)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">component of the CONSORT checklist</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CoagulationFactorAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CoagulationFactorAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/103800002</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CognitiveAbilitiesScreeningInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CognitiveAbilitiesScreeningInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveTest"/>
+        <rdfs:seeAlso>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C87307</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CohortStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CohortStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#LongitudinalStudy"/>
+        <rdfs:comment>A sub category of longitudinal study where group of participants are monitored over long periods of time (Wikipedia)</rdfs:comment>
+        <rdfs:label>Panel study</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Comparison -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Comparison">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataAnalysisMethod"/>
+        <rdfs:comment>The comparison component of PICO(T)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ComparisonData -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ComparisonData">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyData"/>
+        <rdfs:comment>The results of comparison between two or more intervention or treatment values (corresponds to C of PICO(T) model)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ComputedTomographyScan -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ComputedTomographyScan">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Radiograph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CongenitalAdrenalHyperplasia -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CongenitalAdrenalHyperplasia">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#AdrenalDisease"/>
+        <rdfs:label>CAH - Congenital adrenal hyperplasia (SNOMED CT)</rdfs:label>
+        <rdfs:label>Congenital adrenal cortical hyperplasia (SNOMED CT)</rdfs:label>
+        <rdfs:label>Congenital adrenal hyperplasia</rdfs:label>
+        <rdfs:label>Congenital adrenal hyperplasia (SNOMED CT)</rdfs:label>
+        <rdfs:label>Congenital adrenogenital syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/237751000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ConnersRatingScaleRevised -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ConnersRatingScaleRevised">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveFunctionQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ControlledOralWordAssociationTestOfTheMultilingualAphasiaExamination -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ControlledOralWordAssociationTestOfTheMultilingualAphasiaExamination">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveFunctionQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CoronaryComputedTomographyScan -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CoronaryComputedTomographyScan">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ComputedTomographyScan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CorrelationAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CorrelationAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BivariateAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CorrelationMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CorrelationMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CovarianceAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CovarianceAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BivariateAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CrossSectionalStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CrossSectionalStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ObservationalStudy"/>
+        <rdfs:comment>Study involving data collected from representative population of participants at specific time point (Wikipedia)</rdfs:comment>
+        <rdfs:label>Prevalence study</rdfs:label>
+        <rdfs:label>Transversal study</rdfs:label>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/study_design.owl#OCRE100039</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CrossoverTrial -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CrossoverTrial">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#RandomizedControlTrial"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;Each participant receives (or does not receive) an intervention in random sequence&quot; (from Wikipedia)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Component of the CONSORT checklist</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#CytokineLevel -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CytokineLevel">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ImmunologicSubstanceLevel"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.bioontology.org/ontology/SNOMEDCT/75777003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#D-dimerAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#D-dimerAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PlasminAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/70648006</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#D-dimerMeasurement -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#D-dimerMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DrugMeasurementData"/>
+        <rdfs:seeAlso>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C82621</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DataAnalysisMethod -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DataAnalysisMethod">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyMethod"/>
+        <rdfs:comment>Analysis technique used for the study data</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyMethod"/>
+        <rdfs:comment>Method used to collect study data</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DataSource -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DataSource">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Reference"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Source of a dataset</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DateTimeUnit -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DateTimeUnit">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#TemporalEntity"/>
+        <rdfs:comment>Concept modeling both calendar day and time value</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DeathCertificate -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DeathCertificate">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ClinicalDocument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DescriptiveStatisticalAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DescriptiveStatisticalAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalMethod"/>
+        <rdfs:comment>Statistical analysis technique that describes the data, for example data summarization</rdfs:comment>
+        <rdfs:seeAlso>http://purl.obolibrary.org/obo/OBI_0200184</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DevelopmentalNeuropsychologicalAssessment -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DevelopmentalNeuropsychologicalAssessment">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DiabetesInsipidus -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DiabetesInsipidus">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PituitaryDisease"/>
+        <rdfs:label>DI - Diabetes insipidus</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/15771004</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DiabeticNephropathy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DiabeticNephropathy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PancreaticDisease"/>
+        <rdfs:label>Diabetic renal disease (SNOMED CT)</rdfs:label>
+        <rdfs:label>Renal disorder associated with diabetes mellitus (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/127013003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DiabeticNeuropathy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DiabeticNeuropathy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PancreaticDisease"/>
+        <rdfs:label>Diabetes mellitus with neuropathy (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/230572002</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DiabeticRetinopathy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DiabeticRetinopathy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PancreaticDisease"/>
+        <rdfs:label>DR - Diabetic retinopathy (SNOMED CT)</rdfs:label>
+        <rdfs:label>Retinal abnormality - diabetes-related (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/4855003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DigitSymbolSubstitutionOfTheWechslerAdultIntelligenceScaleRevised -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DigitSymbolSubstitutionOfTheWechslerAdultIntelligenceScaleRevised">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DigitalScale -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DigitalScale">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Scale"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DiseaseDiagnosis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DiseaseDiagnosis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ClinicalFinding"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/439401001</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DispersionAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DispersionAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#UnivariateAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DispersionMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DispersionMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure"/>
+        <rdfs:comment>Statistical measure characterizing the distribution of single variable</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DrugMeasurementData -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DrugMeasurementData">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MeasurementData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DrugMeasurementProcess -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DrugMeasurementProcess">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DualEnergyXRayAbsorptiometry -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DualEnergyXRayAbsorptiometry">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Radiograph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#EcologicalStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#EcologicalStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ObservationalStudy"/>
+        <rdfs:comment>A study that measures at least a single variable at group level (Wikipedia)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ElectrocardiogramInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ElectrocardiogramInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ElectrophysiologySignalMeasurementInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Electrocardiograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Electrocardiograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ElectroecephalographyProcedure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ElectroecephalographyProcedure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyInstrument"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#ElectroencephalogramInstrument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/14318007</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ElectroencephalogramInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ElectroencephalogramInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ElectrophysiologySignalMeasurementInstrument"/>
+        <synonym>EEG Instrument</synonym>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/54550000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Electroencephalograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Electroencephalograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MeasurementData"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadDataCollectionMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#ElectroecephalographyProcedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>EEG</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/468441005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ElectromyogramInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ElectromyogramInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ElectrophysiologySignalMeasurementInstrument"/>
+        <rdfs:label>EMG</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Electromyograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Electromyograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Electrooculogram -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Electrooculogram">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ElectrooculogramInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ElectrooculogramInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ElectrophysiologySignalMeasurementInstrument"/>
+        <rdfs:label>EOG</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ElectrophysiologySignalMeasurementInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ElectrophysiologySignalMeasurementInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#EndocrineDisease -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#EndocrineDisease">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DiseaseDiagnosis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#EnzymaticReactionAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#EnzymaticReactionAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Enzyme-linkedImmunosorbentAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Enzyme-linkedImmunosorbentAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:comment>A test that detects substances through color change and use of antibodies. (Source: Wikipedia)</rdfs:comment>
+        <rdfs:label>ELISA</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/76978006</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#EpworthSleepinessScale -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#EpworthSleepinessScale">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#EquilibriumDialysisSeparation -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#EquilibriumDialysisSeparation">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#EstimationAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#EstimationAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#InferentialStatisticalAnalysis"/>
+        <synonym>Estimation</synonym>
+        <rdfs:comment>Method used to estimate value of parameters based on available data (derived from Wikipedia)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#FactorialStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#FactorialStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyDesign"/>
+        <rdfs:comment>This class is similar to the &quot;factorial design&quot; class defined in OBI.</rdfs:comment>
+        <rdfs:seeAlso>http://purl.obolibrary.org/obo/OBI_0500014</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#FactorialTrial -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#FactorialTrial">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#RandomizedControlTrial"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;Each participant is randomly assigned to group that receives particular combination of interventions or non interventions&quot; (from Wikipedia)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">component of the CONSORT checklist</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#FastingGlucose -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#FastingGlucose">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Glucose"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#FastingInsulin -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#FastingInsulin">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Insulin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#FibrinogenAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#FibrinogenAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#CoagulationFactorAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/90744006</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#FibrinogenMeasurementData -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#FibrinogenMeasurementData">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DrugMeasurementData"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/250346004</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#FingertipPulseOximetry -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#FingertipPulseOximetry">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PulseOximetry"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#FollowupDataCollection -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#FollowupDataCollection">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod"/>
+        <rdfs:comment>Method used to collect followup data in research study (one or more time points)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#GasLevel -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#GasLevel">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BloodSubstanceMeasurement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#GelElectrophoresis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#GelElectrophoresis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:comment>Gel electrophoresis separates macromolecules and their components for analysis based on their size and charge. (Source: Wikipedia)</rdfs:comment>
+        <rdfs:comment>Related to pulsed gel electrophoresis (http://purl.bioontology.org/ontology/SNOMEDCT/252329009)</rdfs:comment>
+        <rdfs:seeAlso>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45307</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Gender -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Gender">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ObservableMeasurement"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.bioontology.org/ontology/SNOMEDCT/263495000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#GenotypingPlatform -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#GenotypingPlatform">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#GeriatricDepressionScale -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#GeriatricDepressionScale">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MentalHealthQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#GlobalPhysicalActivityQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#GlobalPhysicalActivityQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PhysicalActivityQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Glucose -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Glucose">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#GlucoseToleranceTest -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#GlucoseToleranceTest">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Glucose"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#GlycosylatedHemoglobin -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#GlycosylatedHemoglobin">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#GravesDisease -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#GravesDisease">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease"/>
+        <rdfs:label>Basedow disease (SNOMED CT)</rdfs:label>
+        <rdfs:label>Basedow&apos;s disease (SNOMED CT)</rdfs:label>
+        <rdfs:label>Exophthalmic goiter (SNOMED CT)</rdfs:label>
+        <rdfs:label>Exophthalmic goitre (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/353295004</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#HarpendenStadiometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#HarpendenStadiometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Stadiometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#HealthStatusQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#HealthStatusQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#HighDensityLipoprotein -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#HighDensityLipoprotein">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#HispanicCommunityHealthStudySleepQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#HispanicCommunityHealthStudySleepQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#HomeostaticModelAssessmentIndex -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#HomeostaticModelAssessmentIndex">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BloodSubstanceMeasurement"/>
+        <rdfs:label>HOMA</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Hyperaldosteronism -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Hyperaldosteronism">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#AdrenalDisease"/>
+        <rdfs:label>Aldosteronism (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/88213004</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Hyperprolactinemia -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Hyperprolactinemia">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PituitaryDisease"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/237662005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Hyperthyroidism -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Hyperthyroidism">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/34486009</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Hypoglycemia -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Hypoglycemia">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PancreaticDisease"/>
+        <rdfs:label>Hypoglycaemia (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/302866003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Hypogonadism -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Hypogonadism">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ReproductiveDisease"/>
+        <rdfs:label>http://purl.bioontology.org/ontology/SNOMEDCT/48130008</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Hypopituitarism -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Hypopituitarism">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PituitaryDisease"/>
+        <rdfs:label>Deficient secretion of one OR more pituitary hormones (SNOMED CT)</rdfs:label>
+        <rdfs:label>Pituitary deficiency (SNOMED CT)</rdfs:label>
+        <rdfs:label>Pituitary failure (SNOMED CT)</rdfs:label>
+        <rdfs:label>Pituitary hypofunction (SNOMED CT)</rdfs:label>
+        <rdfs:label>Pituitary insufficiency (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/74728003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Hypothyroidism -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Hypothyroidism">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease"/>
+        <rdfs:label>Hypothyroid</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/40930008</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ImagingInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ImagingInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+        <rdfs:seeAlso>http://purl.obolibrary.org/obo/OBI_0000398</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ImmunochemiluminometricAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ImmunochemiluminometricAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/414465003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Immunoelectrophoresis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Immunoelectrophoresis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/708063006</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ImmunologicSubstanceLevel -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ImmunologicSubstanceLevel">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BloodSubstanceMeasurement"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.bioontology.org/ontology/SNOMEDCT/106181007</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ImmunoturbidimetricAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ImmunoturbidimetricAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Impedance -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Impedance">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#RespiratoryPlethysmography"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Inductance -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Inductance">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#RespiratoryPlethysmography"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#InferentialStatisticalAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#InferentialStatisticalAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalMethod"/>
+        <rdfs:seeAlso>Statistical analysis technique used to draw inference from data (derived from description on topic in Wikipedia)</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#InsomniaSeverityIndex -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#InsomniaSeverityIndex">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Insulin -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Insulin">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Interleukin-1Level -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Interleukin-1Level">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#InterleukinLevel"/>
+        <synonym>Endogenous pyrogen</synonym>
+        <synonym>IL-1</synonym>
+        <synonym>Interleukin-1 (substance)</synonym>
+        <synonym>LAF</synonym>
+        <synonym>LEM</synonym>
+        <synonym>Leucocyte endogenous mediator</synonym>
+        <synonym>Leukocyte endogenous mediator</synonym>
+        <synonym>Lymphocyte activating factor</synonym>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/68945006</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Interleukin-2Level -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Interleukin-2Level">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#InterleukinLevel"/>
+        <rdfs:label>IL-2</rdfs:label>
+        <rdfs:label>Interleukin-2 (substance)</rdfs:label>
+        <rdfs:label>T cell growth factor</rdfs:label>
+        <rdfs:label>T-stimulating factor</rdfs:label>
+        <rdfs:label>TCGF</rdfs:label>
+        <rdfs:label>TSF</rdfs:label>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.bioontology.org/ontology/SNOMEDCT/68945006</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Interleukin1 -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Interleukin1">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Interleukin10 -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Interleukin10">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Interleukin6 -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Interleukin6">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#InterleukinLevel -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#InterleukinLevel">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#CytokineLevel"/>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.bioontology.org/ontology/SNOMEDCT/38476002</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Intervention -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Intervention">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyMethod"/>
+        <synonym>Study intervention</synonym>
+        <rdfs:comment>The intervention type used in a research study (corresponding to I in the PICO(T) model )</rdfs:comment>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/386053000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#InterventionalStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#InterventionalStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyDesign"/>
+        <rdfs:comment>Also called Experiment Study (Reference: http://ssw.unc.edu/mch/node/214)</rdfs:comment>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/study_design.owl#OCRE100007</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#IntracranialElectrode -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#IntracranialElectrode">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ElectroencephalogramInstrument"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/16470007</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#LaboratoryTestData -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#LaboratoryTestData">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MeasurementData"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Data generated by laboratory test procedure (derived from SNOMED CT &quot;Laboratory Test&quot; term)</rdfs:comment>
+        <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://purl.bioontology.org/ontology/SNOMEDCT/15220000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#LateralLumbarSpineXRay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#LateralLumbarSpineXRay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#XRay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#LateralThoracicSpineXRay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#LateralThoracicSpineXRay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#XRay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#LeptinMeasurement -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#LeptinMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DrugMeasurementProcess"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/117694008</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#LeptinMeasurementData -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#LeptinMeasurementData">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DrugMeasurementData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#LiquidChromatography -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#LiquidChromatography">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/MESH/D002853</rdfs:seeAlso>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/51144003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#LongitudinalStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#LongitudinalStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ObservationalStudy"/>
+        <rdfs:comment>A study to correlate variables that are observed over long periods of time (Wikipedia)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#LowDensityLipoprotein -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#LowDensityLipoprotein">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MacarthurSubjectiveStatusScale -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MacarthurSubjectiveStatusScale">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SocialStatusQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MagneticResonanceImagingInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MagneticResonanceImagingInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ImagingInstrument"/>
+        <synonym>Magnetic resonance tomography</synonym>
+        <rdfs:comment>Medical imaging instruments that use nuclear magnetic resonance to image anatomy and physiological process</rdfs:comment>
+        <rdfs:label>MRI</rdfs:label>
+        <rdfs:label>MRT</rdfs:label>
+        <rdfs:label>NMRI</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MassSpectrometry -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MassSpectrometry">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:comment>Mass spectrometry measures the mass in a sample by ionizing material and sorting the constituent material by their mass to charge ratio. (Source: Wikipedia)</rdfs:comment>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/MESH/D013058</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Mean -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Mean">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure"/>
+        <synonym>Average</synonym>
+        <synonym>Expected value</synonym>
+        <synonym>Mean is the central tendency of a probability distribution or random variable that may have an associated value distribution (derived from Wikipedia)</synonym>
+        <rdfs:label>Statistical Mean</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MeasurementData -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MeasurementData">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Median -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Median">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure"/>
+        <rdfs:comment>The data value that separates higher valued data from lower valued data</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MedicalRecord -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MedicalRecord">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ClinicalDocument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Menopause -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Menopause">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ReproductiveDisease"/>
+        <rdfs:label>Change of life (SNOMED CT)</rdfs:label>
+        <rdfs:label>Menopausal state (SNOMED CT)</rdfs:label>
+        <rdfs:label>Menopause function (SNOMED CT)</rdfs:label>
+        <rdfs:label>The change (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/161712005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MentalHealthQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MentalHealthQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MercurySphygmomanometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MercurySphygmomanometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Sphygmomanometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Middle-ChildhoodHomeObservationforMeasurementoftheEnvironment -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Middle-ChildhoodHomeObservationforMeasurementoftheEnvironment">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#QualityOfLifeQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MissingDataProtocol -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MissingDataProtocol">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataAnalysisMethod"/>
+        <rdfs:comment>Method used to address the issue of missing data in research study</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Mode -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Mode">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure"/>
+        <rdfs:comment>The data element that occurs most frequently in study data set (derived from Wikipedia)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ModifiedMiniMentalState -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ModifiedMiniMentalState">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveFunctionQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#MultivariateAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#MultivariateAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DescriptiveStatisticalAnalysis"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#NasalCannulaPressureTransducer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#NasalCannulaPressureTransducer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PressureTransducer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#NeurocognitiveFunctionQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveFunctionQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#NeurocognitiveTest -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveTest">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#NeuroendocrineTumors -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#NeuroendocrineTumors">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PancreaticDisease"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/255046005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#NutritionDataSystemForResearch24HourDietaryRecall -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#NutritionDataSystemForResearch24HourDietaryRecall">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NutritionQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#NutritionQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#NutritionQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ObservableMeasurement -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ObservableMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MeasurementData"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">observable entity (source: SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/363787002</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ObservationalStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ObservationalStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyDesign"/>
+        <rdfs:comment>A study that draws conclusions from sub population of participants where independent variables are not under control of researcher (Wikipedia)</rdfs:comment>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/study_design.owl#OCRE100055</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ObstructiveSleepApnea18 -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ObstructiveSleepApnea18">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#OneLeadElectrocardiograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#OneLeadElectrocardiograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Electrocardiograph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#OralGlucoseToleranceTest -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#OralGlucoseToleranceTest">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#GlucoseToleranceTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#OronasalThermistor -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#OronasalThermistor">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Thermistor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#OscillometricSphygmomanometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#OscillometricSphygmomanometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Sphygmomanometer"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PancreaticDisease -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PancreaticDisease">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#EndocrineDisease"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ParallelGroupTrial -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ParallelGroupTrial">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#RandomizedControlTrial"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&quot;Each participant is randomly assigned to group and all participants in group receive (or do not receive) an intervention&quot; (from Wikipedia)</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">component of the CONSORT checklist</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PediatricQualityOfLifeInventory -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PediatricQualityOfLifeInventory">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#QualityOfLifeQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PediatricSleepQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PediatricSleepQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Pheochromocytoma -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Pheochromocytoma">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#AdrenalDisease"/>
+        <rdfs:label>Adrenal medullary paraganglioma (SNOMED CT)</rdfs:label>
+        <rdfs:label>Chromaffin paraganglioma (SNOMED CT)</rdfs:label>
+        <rdfs:label>Phaeochromocytoma (SNOMED CT)</rdfs:label>
+        <rdfs:label>Pheochromocytoma (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/302835009</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PhysicalActivityQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PhysicalActivityQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PhysicalActivityScaleForTheElderly -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PhysicalActivityScaleForTheElderly">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PhysicalActivityQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PhysicalMeasurement -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PhysicalMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MeasurementData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PittsburghSleepQualityIndex -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PittsburghSleepQualityIndex">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PituitaryAdenoma -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PituitaryAdenoma">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PituitaryDisease"/>
+        <rdfs:label>Adenoma of pituitary (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/254956000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PituitaryDisease -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PituitaryDisease">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#EndocrineDisease"/>
+        <rdfs:label>Disorder of pituitary (SNOMED CT)</rdfs:label>
+        <rdfs:label>Disorder of pituitary gland</rdfs:label>
+        <rdfs:label>Dyspituitarism (SNOMED CT)</rdfs:label>
+        <rdfs:label>Pituitary disease (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/399244003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PlasminAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PlasminAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/24593002</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PlasminogenActivatorInhibitorAssay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PlasminogenActivatorInhibitorAssay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PlasminAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/58543006</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PlasminogenActivatorInhibitorType1Assay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PlasminogenActivatorInhibitorType1Assay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PlasminogenActivatorInhibitorAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/103830005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PolycysticOvarySyndrome -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PolycysticOvarySyndrome">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ReproductiveDisease"/>
+        <rdfs:label>Cystic disease of ovaries (SNOMED CT)</rdfs:label>
+        <rdfs:label>Multicystic ovaries (SNOMED CT)</rdfs:label>
+        <rdfs:label>PCO Polycystic ovaries (SNOMED CT)</rdfs:label>
+        <rdfs:label>PCOD Polycystic ovarian disease (SNOMED CT)</rdfs:label>
+        <rdfs:label>PCOS Polycystic ovarian syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:label>Polycystic ovarian disease (SNOMED CT)</rdfs:label>
+        <rdfs:label>Polycystic ovarian syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:label>Polycystic ovaries (SNOMED CT)</rdfs:label>
+        <rdfs:label>Polycystic ovary syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:label>Sclerocystic ovary syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:label>Stein-Leventhal syndrome (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/69878008</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PolymeraseChainReaction -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PolymeraseChainReaction">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:comment>&quot;In vitro method for producing large amounts of specific DNA or RNA fragments of defined length and sequence from small amounts of short oligonucleotide flanking sequences (primers)&quot;. Source (MeSH)</rdfs:comment>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/MESH/D016133</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Polysomnograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Polysomnograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MeasurementData"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/463786005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PositronEmissionTomographyInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PositronEmissionTomographyInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ImagingInstrument"/>
+        <rdfs:label>PET instrument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PrematureOvarianFailure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PrematureOvarianFailure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ReproductiveDisease"/>
+        <rdfs:label>POF Premature ovarian failure (SNOMED CT)</rdfs:label>
+        <rdfs:label>Premature ovarian failure (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/237788002</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PressureTransducer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PressureTransducer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PrimaryOutcome -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PrimaryOutcome">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyOutcome"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">component of the CONSORT checklist</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ProspectiveCohortStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ProspectiveCohortStudy">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#CohortStudy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#PulseOximetry -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#PulseOximetry">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#QualityOfLifeQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#QualityOfLifeQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Questionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Questionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#RSoftwareTool -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#RSoftwareTool">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalSoftware"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R is an interpreted programming language and is used in a software environment for statistical computing</rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Radiograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Radiograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#RadiographyInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#RadiographyInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ImagingInstrument"/>
+        <rdfs:comment>X-Ray instrument use ionizing electromagnetic radiation to image entities (derived from Wikipedia)</rdfs:comment>
+        <rdfs:label>X-Ray instrument</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#RandomizedControlTrial -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#RandomizedControlTrial">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#InterventionalStudy"/>
+        <rdfs:label>RCT</rdfs:label>
+        <rdfs:seeAlso>Trial Design</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Reference -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Reference">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyData"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#Reference"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Citation for research study, data, and related resources</rdfs:comment>
+        <rdfs:seeAlso>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25641</rdfs:seeAlso>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/308910008</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ReproductiveDisease -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ReproductiveDisease">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#EndocrineDisease"/>
+        <rdfs:label>Disorder of reproductive system (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/362968007</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ResearchStudy -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ResearchStudy">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadDataAnalysisMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataAnalysisMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadDataCollectionMethod"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionMethod"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyData"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyData"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyDesign"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyDesign"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyInstrument"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyInstrument"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyObjective"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyObjective"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadTemporalAttribute"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#TemporalEntity"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <synonym>Experiment Study</synonym>
+        <synonym>Study</synonym>
+        <rdfs:comment>A research study aims to answer questions through collection and analysis of data and consists of three provenance-specific components: (1) Study Method; (2) Study Data; (3) Study Instruments. These three components form part of the ProvCaRe framework.</rdfs:comment>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/OCRe.owl#OCRE400029</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#RespiratoryPlethysmography -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#RespiratoryPlethysmography">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SF36Questionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SF36Questionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#HealthStatusQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Scale -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Scale">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ScalpElectrode -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ScalpElectrode">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ElectroencephalogramInstrument"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/16470007</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SecondaryOutcome -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SecondaryOutcome">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyOutcome"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">component of the CONSORT checklist</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SkinfoldCaliper -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SkinfoldCaliper">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Caliper"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/465182003</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SleepAndHealthModifiedScoreQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SleepAndHealthModifiedScoreQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SleepDiary -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SleepDiary">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SleepHeartHealthStudySleepHabitsQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SleepHeartHealthStudySleepHabitsQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SleepHeartHealthStudySleepQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SleepHeartHealthStudySleepQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SocialStatusQuestionnaire -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SocialStatusQuestionnaire">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Questionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SpanishEnglishVerbalLearningTest -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SpanishEnglishVerbalLearningTest">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#NeurocognitiveTest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SpectrophotometricMeasurement -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SpectrophotometricMeasurement">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/33139008</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Sphygmomanometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Sphygmomanometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#SpielbergerState-TraitAnxietyInventory -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#SpielbergerState-TraitAnxietyInventory">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#MentalHealthQuestionnaire"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/273830002</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Spirometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Spirometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Stadiometer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Stadiometer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StandardDeviationMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StandardDeviationMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DispersionMeasure"/>
+        <synonym>Standard deviation</synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StatisticalAnalysisSystem -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StatisticalAnalysisSystem">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalSoftware"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SAS</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StatisticalMethod -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StatisticalMethod">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataAnalysisMethod"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStatisticalMeasure"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <synonym>Statistical analysis</synonym>
+        <rdfs:comment>Statistical data analysis method used to analyze the research study data</rdfs:comment>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/statistics.owl#OCRE200072</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StatisticalSoftware -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StatisticalSoftware">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyConstraint -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyConstraint">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyMethod"/>
+        <rdfs:comment>Constraints associated with data collected for study</rdfs:comment>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/OCRe.owl#OCRE400042</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyData -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyData">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+                <owl:someValuesFrom rdf:resource="http://www.case.edu/ProvCaRe/provcare#Comparison"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Data collected and analyzed in a research study. Study data also includes the results derived from the analysis of collected data.</rdfs:comment>
+        <rdfs:label>dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyDesign -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyDesign">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyMethod"/>
+        <rdfs:comment>This class is similar to OCRe class &quot;Study design&quot; and OBI class &quot;study design&quot;, however it represents broader meaning with a focus on modeling design attributes necessary for reproducibility.</rdfs:comment>
+        <rdfs:seeAlso>http://purl.obolibrary.org/obo/OBI_0500000</rdfs:seeAlso>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/study_design.owl#OCRE100056</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyExclusionCriterion -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyExclusionCriterion">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyConstraint"/>
+        <synonym>Exclusion criteria</synonym>
+        <rdfs:comment>Exclusion criteria used during recruitment of participants in research study</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyInclusionCriterion -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyInclusionCriterion">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyConstraint"/>
+        <synonym>Inclusion criteria</synonym>
+        <rdfs:comment>Inclusion criteria to recruit participants in a research study</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyInstrument -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyInstrument">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+        <synonym>Instrument</synonym>
+        <synonym>Study tool</synonym>
+        <synonym>Tool</synonym>
+        <rdfs:comment>Instrument used to collect or analyze data in a research study</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyLocation -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyLocation">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Location"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Site</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyMethod -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyMethod">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <synonym>Method</synonym>
+        <rdfs:comment>The variety of methods or procedure used in a research study, including data collection and analysis methods</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyObjective -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyObjective">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyOutcome -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyOutcome">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyData"/>
+        <synonym>Outcome</synonym>
+        <rdfs:comment>The outcome information of a research study (corresponding to O of the PICO(T) model)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StudyPopulation -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyPopulation">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyData"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.case.edu/ProvCaRe/provcare#hadStudyConstraint"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyExclusionCriterion"/>
+                            <rdf:Description rdf:about="http://www.case.edu/ProvCaRe/provcare#StudyInclusionCriterion"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <synonym>Population</synonym>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/OCRe.owl#OCRE400061</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#TemporalEntity -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#TemporalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyData"/>
+        <rdfs:comment>A broadly defined term representing different temporal values</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Thermistor -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Thermistor">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataCollectionInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ThoracicInductanceRespiratoryPlethysmography -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ThoracicInductanceRespiratoryPlethysmography">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Inductance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ThreeLeadElectrocardiograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ThreeLeadElectrocardiograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Electrocardiograph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ThyroidCancer -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ThyroidCancer">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease"/>
+        <rdfs:label>Primary malignant neoplasm of thyroid gland (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/94098005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ThyroidDisease -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#EndocrineDisease"/>
+        <rdfs:label>Disorder of thyroid gland (SNOMED CT)</rdfs:label>
+        <rdfs:label>Thyroid disorder (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/14304000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ThyroidNodule -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ThyroidNodule">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/237495005</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Thyroiditis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Thyroiditis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/82119001</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#TimeIntervalUnit -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#TimeIntervalUnit">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DateTimeUnit"/>
+        <rdfs:comment>The interval between two timepoint values</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#TimePointUnit -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#TimePointUnit">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DateTimeUnit"/>
+        <rdfs:comment>A specific time value, for example timestamp. This definition differs from the OCRe class Timestamp and SNOMED CT Timestamp</rdfs:comment>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/398215006</rdfs:seeAlso>
+        <rdfs:seeAlso>http://purl.org/net/OCRe/OCRe.owl#OCRE400024</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ToxicAdenoma -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ToxicAdenoma">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease"/>
+        <rdfs:label>Plummer&apos;s disease</rdfs:label>
+        <rdfs:label>Toxic adenomatous goiter (SNOMED CT)</rdfs:label>
+        <rdfs:label>Toxic adenomatous goitre (SNOMED CT)</rdfs:label>
+        <rdfs:label>Toxic nodular goitre (SNOMED CT)</rdfs:label>
+        <rdfs:label>Toxic struma nodosa (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/57777000</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ToxicMultinodularGoiter -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ToxicMultinodularGoiter">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#ThyroidDisease"/>
+        <rdfs:label>Secondary thyroid hyperplasia (SNOMED CT)</rdfs:label>
+        <rdfs:label>Thyrotoxicosis due to multinodular goiter (SNOMED CT)</rdfs:label>
+        <rdfs:label>Thyrotoxicosis due to multinodular goitre (SNOMED CT)</rdfs:label>
+        <rdfs:label>Thyrotoxicosis with toxic multinodular goiter (SNOMED CT)</rdfs:label>
+        <rdfs:label>Thyrotoxicosis with toxic multinodular goitre (SNOMED CT)</rdfs:label>
+        <rdfs:label>Toxic multinodular goiter (SNOMED CT)</rdfs:label>
+        <rdfs:label>Toxic multinodular goitre (SNOMED CT)</rdfs:label>
+        <rdfs:label>Toxic multinodular thyroid goiter (SNOMED CT)</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Triglycerides -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Triglycerides">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#TumorNecrosisFactorAlpha -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#TumorNecrosisFactorAlpha">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#TwelveLeadElectrocardiograph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#TwelveLeadElectrocardiograph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Electrocardiograph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Type1DiabetesMellitus -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Type1DiabetesMellitus">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PancreaticDisease"/>
+        <rdfs:label>Diabetes mellitus type 1 (SNOMED CT)</rdfs:label>
+        <rdfs:label>Diabetes mellitus type I (SNOMED CT)</rdfs:label>
+        <rdfs:label>Type I diabetes mellitus (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/46635009</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Type2DiabetesMellitus -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Type2DiabetesMellitus">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#PancreaticDisease"/>
+        <rdfs:label>Diabetes mellitus type 2 (SNOMED CT)</rdfs:label>
+        <rdfs:label>Diabetes mellitus type II (SNOMED CT)</rdfs:label>
+        <rdfs:label>Type II diabetes mellitus (SNOMED CT)</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/44054006</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#UnivariateAnalysis -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#UnivariateAnalysis">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DescriptiveStatisticalAnalysis"/>
+        <rdfs:comment>Method for describing the distribution of a single variable in research study (derived from Wikipedia article)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#VarianceMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#VarianceMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DispersionMeasure"/>
+        <synonym>Variance</synonym>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#VisfatinMeasurementData -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#VisfatinMeasurementData">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DrugMeasurementData"/>
+        <rdfs:label>NAmPRTase</rdfs:label>
+        <rdfs:label>Nampt</rdfs:label>
+        <rdfs:label>Nicotinamide Phosphoribosyltransferase</rdfs:label>
+        <rdfs:label>PBEF1</rdfs:label>
+        <rdfs:label>pre-B-cell colony-enhancing factor 1</rdfs:label>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/MESH/D054409</rdfs:seeAlso>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/29253001</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#WomensHealthInitiativeInsomniaRatingScale -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#WomensHealthInitiativeInsomniaRatingScale">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#SleepQuestionnaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#WristActigraph -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#WristActigraph">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Actigraph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#XRay -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#XRay">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Radiograph"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#25HydroxyVitaminD -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#25HydroxyVitaminD">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#BiochemicalAssay"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2002/07/owl#Thing"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Activity">
+        <owl:disjointWith rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Activity</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:constraints rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</prov:constraints>
+        <prov:definition>An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Activity</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Activity</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Agent">
+        <owl:disjointWith rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Agent</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition xml:lang="en">An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent&apos;s activity. </prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Agent</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Bundle -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Bundle">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">Note that there are kinds of bundles (e.g. handwritten letters, audio recordings, etc.) that are not expressed in PROV-O, but can be still be described by PROV-O.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Bundle</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:definition xml:lang="en">A bundle is a named set of provenance descriptions, and is itself an Entity, so allowing provenance of provenance to be expressed.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-bundle-entity</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-bundle-declaration</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Collection -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Collection">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Collection</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>collections</prov:component>
+        <prov:definition xml:lang="en">A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-collection</prov:dm>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Entity">
+        <owl:disjointWith rdf:resource="http://www.w3.org/ns/prov#InstantaneousEvent"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Entity</rdfs:label>
+        <prov:category>starting-point</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:constraints rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</prov:constraints>
+        <prov:definition xml:lang="en">An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. </prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-entity</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Entity</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#InstantaneousEvent -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#InstantaneousEvent">
+        <rdfs:comment xml:lang="en">An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term &apos;event&apos; is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>InstantaneousEvent</rdfs:label>
+        <prov:category>qualified</prov:category>
+        <prov:component>entities-activities</prov:component>
+        <prov:constraints rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#dfn-event</prov:constraints>
+        <prov:definition xml:lang="en">The PROV data model is implicitly based on a notion of instantaneous events (or just events), that mark transitions in the world. Events include generation, usage, or invalidation of entities, as well as starting or ending of activities. This notion of event is not first-class in the data model, but it is useful for explaining its other concepts and its semantics.</prov:definition>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Location -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Location">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Location</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov#atLocation"/>
+        <prov:category>expanded</prov:category>
+        <prov:definition xml:lang="en">A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-location</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-attribute</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Organization -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Organization">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyInstrument"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Organization</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition>An organization is a social or legal institution such as a company, society, etc.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-types</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Person -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Person">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyInstrument"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Person</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition xml:lang="en">Person agents are people.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-types</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Plan -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Plan">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:comment xml:lang="en">There exist no prescriptive requirement on the nature of plans, their representation, the actions or steps they consist of, or their intended goals. Since plans may evolve over time, it may become necessary to track their provenance, so plans themselves are entities. Representing the plan explicitly in the provenance can be useful for various tasks: for example, to validate the execution as represented in the provenance record, to manage expectation failures, or to provide explanations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Plan</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:category>qualified</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition>A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-Association</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-Association</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Role -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#Role">
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <rdfs:label>Role</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov#hadRole"/>
+        <prov:category>qualified</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition xml:lang="en">A role is the function of an entity or agent with respect to an activity, in the context of a usage, generation, invalidation, association, start, and end.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-role</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-attribute</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#SoftwareAgent -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/prov#SoftwareAgent">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument"/>
+        <rdfs:label>SoftwareAgent</rdfs:label>
+        <prov:category>expanded</prov:category>
+        <prov:component>agents-responsibility</prov:component>
+        <prov:definition xml:lang="en">A software agent is running software.</prov:definition>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-agent</prov:dm>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-types</prov:n>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/prov-o -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov-o-20130312 -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o-20130312"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#EmptyCollection -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov#EmptyCollection"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov-o# -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/prov-o#">
+        <prov:specializationOf rdf:resource="http://www.w3.org/ns/prov-o"/>
+        <prov:wasRevisionOf rdf:resource="http://www.w3.org/ns/prov-o-20130312"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#specializationOf">
+        <prov:constraints rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#prov-dm-constraints-fig</prov:constraints>
+        <rdfs:label>specializationOf</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/ns/prov#alternateOf"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <prov:category>expanded</prov:category>
+        <prov:dm rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-specialization</prov:dm>
+        <prov:definition xml:lang="en">An entity that is a specialization of another shares all aspects of the latter, and additionally presents more specific aspects of the same thing as the latter. In particular, the lifetime of the entity being specialized contains that of any specialization. Examples of aspects include a time period, an abstraction, and a context associated with the entity.</prov:definition>
+        <prov:component>alternate</prov:component>
+        <prov:inverse>generalizationOf</prov:inverse>
+        <prov:n rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-specialization</prov:n>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/ns/prov#wasRevisionOf">
+        <rdfs:label>wasRevisionOf</rdfs:label>
+        <prov:component>derivations</prov:component>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#Revision"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/prov-o#"/>
+        <prov:qualifiedForm rdf:resource="http://www.w3.org/ns/prov#qualifiedRevision"/>
+        <prov:category>expanded</prov:category>
+        <prov:inverse>hadRevision</prov:inverse>
+        <rdfs:comment xml:lang="en">A revision is a derivation that revises an entity into a revised version.</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

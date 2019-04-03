@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:hasco="http://hadatac.org/ont/hasco/"
+         xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+
+  <owl:Class rdf:about="http://hadatac.org/kb/chear#IPT-Questionnaire">
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/hasco/InstrumentPerspective"/>
+  </owl:Class>
+
+  <owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear_external.owl">
+    <rdfs:comment>Children's health and wellbeing are influenced by interactions between environmental and genetic factors. NIEHS is establishing an infrastructure, the Children's Health Exposure Analysis Resource (CHEAR), to provide the extramural research community access to laboratory and data analyses that add or expand the inclusion of environmental exposures in children's health research. The goal of CHEAR is to provide tools so researchers can assess the full range of environmental exposures which may affect children's health. We anticipate that CHEAR will be used by children's health researchers conducting epidemiological or clinical studies that currently have limited consideration of environmental exposures, or those who have collected exposure data but seek more extensive analyses.
+
+Read more at: https://www.niehs.nih.gov/research/supported/exposure/chear/</rdfs:comment>
+    <owl:imports rdf:resource="http://hadatac.org/ont/hasco/"/>
+    <owl:imports rdf:resource="http://semanticscience.org/ontology/sio-subset-labels.owl"/>
+  </owl:Ontology>
+
+  <rdf:Description rdf:about="http://semanticscience.org/resource/Circumference">
+    <rdf:type rdf:resource="http://hadatac.org/ont/hasco/QuantityVariable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Circumference</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Anthropometry"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CMO_0000012">
+    <rdf:type rdf:resource="http://hadatac.org/ont/hasco/QuantityVariable"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Weight</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Anthropometry"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Mass"/>
+    <skos:definition>The resulting Force from the interaction between a person's Mass and Gravity.</skos:definition>
+  </rdf:Description>
+
+  <hasco:QuantityVariable rdf:about="http://semanticscience.org/resource/Height">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Height</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Anthropometry"/>
+    <skos:definition>Height</skos:definition>
+  </hasco:QuantityVariable>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Anthropometry">
+    <rdfs:label>Anthropometry</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/hasco/StudyIndicator"/>
+    <skos:definition>Attributes pertaining to the scientific study of the measurements and proportions of the human body.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#BodyWeightQuality">
+    <rdfs:label>Body Weight Quality</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Anthropometry"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Quality"/>
+    <skos:definition>A categorization of body mass relative to the height, as defined using Body Mass Index.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#UnderweightOrNormal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Underweight/Normal</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isAttributeOf"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://purl.org/twc/ontologies/cmo.owl#0000105"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/STATO_0000129"/>
+                            <owl:someValuesFrom>
+                              <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                <owl:withRestrictions>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</xsd:maxExclusive>
+                                      </rdf:Description>
+                                    </rdf:first>
+
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:Description>
+                                </owl:withRestrictions>
+
+                              </rdfs:Datatype>
+                            </owl:someValuesFrom>
+
+                          </owl:Restriction>
+                        </rdf:first>
+
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+
+                  </rdf:Description>
+                </owl:intersectionOf>
+
+              </owl:Class>
+            </owl:someValuesFrom>
+
+          </owl:Restriction>
+        </owl:someValuesFrom>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#BodyWeightQuality"/>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isAttributeOf"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://purl.org/twc/ontologies/cmo.owl#0000105"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/STATO_0000129"/>
+                            <owl:someValuesFrom>
+                              <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                <owl:withRestrictions>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</xsd:maxExclusive>
+                                      </rdf:Description>
+                                    </rdf:first>
+
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:Description>
+                                </owl:withRestrictions>
+
+                              </rdfs:Datatype>
+                            </owl:someValuesFrom>
+
+                          </owl:Restriction>
+                        </rdf:first>
+
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+
+                  </rdf:Description>
+                </owl:intersectionOf>
+
+              </owl:Class>
+            </owl:someValuesFrom>
+
+          </owl:Restriction>
+        </owl:someValuesFrom>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <skos:notation>100</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/HP_0001513">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Obese</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isAttributeOf"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://purl.org/twc/ontologies/cmo.owl#0000105"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/STATO_0000129"/>
+                            <owl:someValuesFrom>
+                              <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                <owl:withRestrictions>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.9</xsd:minExclusive>
+                                      </rdf:Description>
+                                    </rdf:first>
+
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:Description>
+                                </owl:withRestrictions>
+
+                              </rdfs:Datatype>
+                            </owl:someValuesFrom>
+
+                          </owl:Restriction>
+                        </rdf:first>
+
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+
+                  </rdf:Description>
+                </owl:intersectionOf>
+
+              </owl:Class>
+            </owl:someValuesFrom>
+
+          </owl:Restriction>
+        </owl:someValuesFrom>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#BodyWeightQuality"/>
+    <skos:notation>63</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/HP_0004324">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Increased Body Weight</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isAttributeOf"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://purl.org/twc/ontologies/cmo.owl#0000105"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/STATO_0000129"/>
+                            <owl:someValuesFrom>
+                              <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                <owl:withRestrictions>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</xsd:minExclusive>
+                                      </rdf:Description>
+                                    </rdf:first>
+
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:Description>
+                                </owl:withRestrictions>
+
+                              </rdfs:Datatype>
+                            </owl:someValuesFrom>
+
+                          </owl:Restriction>
+                        </rdf:first>
+
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+
+                  </rdf:Description>
+                </owl:intersectionOf>
+
+              </owl:Class>
+            </owl:someValuesFrom>
+
+          </owl:Restriction>
+        </owl:someValuesFrom>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#BodyWeightQuality"/>
+    <skos:definition>BMI &gt; 25</skos:definition>
+    <skos:notation>72</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/HP_0025502">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Overweight</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isAttributeOf"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://purl.org/twc/ontologies/cmo.owl#0000105"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/STATO_0000129"/>
+                            <owl:someValuesFrom>
+                              <rdfs:Datatype>
+                                <owl:intersectionOf>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                        <owl:withRestrictions>
+                                          <rdf:Description>
+                                            <rdf:first>
+                                              <rdf:Description>
+                                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</xsd:minExclusive>
+                                              </rdf:Description>
+                                            </rdf:first>
+
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                          </rdf:Description>
+                                        </owl:withRestrictions>
+
+                                      </rdfs:Datatype>
+                                    </rdf:first>
+
+                                    <rdf:rest>
+                                      <rdf:Description>
+                                        <rdf:first>
+                                          <rdfs:Datatype>
+                                            <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                            <owl:withRestrictions>
+                                              <rdf:Description>
+                                                <rdf:first>
+                                                  <rdf:Description>
+                                                    <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">29.9</xsd:maxExclusive>
+                                                  </rdf:Description>
+                                                </rdf:first>
+
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                              </rdf:Description>
+                                            </owl:withRestrictions>
+
+                                          </rdfs:Datatype>
+                                        </rdf:first>
+
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      </rdf:Description>
+                                    </rdf:rest>
+
+                                  </rdf:Description>
+                                </owl:intersectionOf>
+
+                              </rdfs:Datatype>
+                            </owl:someValuesFrom>
+
+                          </owl:Restriction>
+                        </rdf:first>
+
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+
+                  </rdf:Description>
+                </owl:intersectionOf>
+
+              </owl:Class>
+            </owl:someValuesFrom>
+
+          </owl:Restriction>
+        </owl:someValuesFrom>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#BodyWeightQuality"/>
+    <skos:notation>71</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/HP_0045082">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Underweight</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isAttributeOf"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://purl.org/twc/ontologies/cmo.owl#0000105"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/STATO_0000129"/>
+                            <owl:someValuesFrom>
+                              <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                <owl:withRestrictions>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">18.5</xsd:maxExclusive>
+                                      </rdf:Description>
+                                    </rdf:first>
+
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                  </rdf:Description>
+                                </owl:withRestrictions>
+
+                              </rdfs:Datatype>
+                            </owl:someValuesFrom>
+
+                          </owl:Restriction>
+                        </rdf:first>
+
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+
+                  </rdf:Description>
+                </owl:intersectionOf>
+
+              </owl:Class>
+            </owl:someValuesFrom>
+
+          </owl:Restriction>
+        </owl:someValuesFrom>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#BodyWeightQuality"/>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#UnderweightOrNormal"/>
+    <skos:definition>BMI &lt; 18.5</skos:definition>
+    <skos:notation>99</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QuantityVariable rdf:about="http://purl.org/twc/ontologies/cmo.owl#0000105">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Body Mass Index</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Anthropometry"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Quantity"/>
+    <skos:definition>A measurement relating body weight to height in an organism; typically calculated as the weight of an individual divided by the height of that individual squared. For quadrupeds, the square of body height is often replaced by the square of body length</skos:definition>
+    <skos:editorialNote>Should we note that this is derived from height and weight? JS: I think so</skos:editorialNote>
+  </hasco:QuantityVariable>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#NormalWeight">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Normal Weight</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isAttributeOf"/>
+        <owl:someValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom>
+              <owl:Class>
+                <owl:intersectionOf>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://purl.org/twc/ontologies/cmo.owl#0000105"/>
+                    <rdf:rest>
+                      <rdf:Description>
+                        <rdf:first>
+                          <owl:Restriction>
+                            <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/STATO_0000129"/>
+                            <owl:someValuesFrom>
+                              <rdfs:Datatype>
+                                <owl:intersectionOf>
+                                  <rdf:Description>
+                                    <rdf:first>
+                                      <rdfs:Datatype>
+                                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                        <owl:withRestrictions>
+                                          <rdf:Description>
+                                            <rdf:first>
+                                              <rdf:Description>
+                                                <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">18.5</xsd:minExclusive>
+                                              </rdf:Description>
+                                            </rdf:first>
+
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                          </rdf:Description>
+                                        </owl:withRestrictions>
+
+                                      </rdfs:Datatype>
+                                    </rdf:first>
+
+                                    <rdf:rest>
+                                      <rdf:Description>
+                                        <rdf:first>
+                                          <rdfs:Datatype>
+                                            <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+                                            <owl:withRestrictions>
+                                              <rdf:Description>
+                                                <rdf:first>
+                                                  <rdf:Description>
+                                                    <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</xsd:maxExclusive>
+                                                  </rdf:Description>
+                                                </rdf:first>
+
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                              </rdf:Description>
+                                            </owl:withRestrictions>
+
+                                          </rdfs:Datatype>
+                                        </rdf:first>
+
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                      </rdf:Description>
+                                    </rdf:rest>
+
+                                  </rdf:Description>
+                                </owl:intersectionOf>
+
+                              </rdfs:Datatype>
+                            </owl:someValuesFrom>
+
+                          </owl:Restriction>
+                        </rdf:first>
+
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </rdf:Description>
+                    </rdf:rest>
+
+                  </rdf:Description>
+                </owl:intersectionOf>
+
+              </owl:Class>
+            </owl:someValuesFrom>
+
+          </owl:Restriction>
+        </owl:someValuesFrom>
+
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#BodyWeightQuality"/>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#UnderweightOrNormal"/>
+    <skos:definition>18.5&lt;=BMI&lt;=25</skos:definition>
+    <skos:notation>61</skos:notation>
+  </hasco:QualityValue>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Adopted">
+    <rdfs:label>Adopted</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#NonBiologicalRelative"/>
+    <skos:definition>Adoption is a process whereby a person assumes the parenting of another, usually a child, from that person's biological or legal parent or parents, and, in so doing, permanently transfers all rights and responsibilities, along with filiation, from the biological parent or parents.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#Adult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Adult</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#DevelopmentalQuality"/>
+    <skos:definition>Refers to a person above a threshold age.</skos:definition>
+    <skos:notation>3</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#AdvancedDegree">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Advanced Graduate Degree</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+    <skos:definition>Having earned a pos-baccalaureate degree</skos:definition>
+    <skos:notation>4</skos:notation>
+  </hasco:QualityValue>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#BiologicalRelative">
+    <rdfs:label>Biological Relative</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Relative"/>
+    <skos:definition>Being from the same biological kinship as another person. In that aspect, consanguinity is the quality of being descended from the same ancestor as another person.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#CollegeGraduate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>College Graduate</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="ontoad:C0424933"/>
+    <skos:definition>The quality of having graduated from College</skos:definition>
+    <skos:notation>12</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QuantityVariable rdf:about="http://hadatac.org/ont/chear#DateOfBirth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Date of Birth</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/TimeInterval"/>
+    <skos:definition>Date of day on which a person was born.</skos:definition>
+  </hasco:QuantityVariable>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Daughter">
+    <rdfs:label>Daughter</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom rdf:resource="http://semanticscience.org/resource/Female"/>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isRoleOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Child"/>
+    <skos:definition>The female offspring in relation to her parents.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#ElementarySchool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Elementary School</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jim-McCusker</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#SomeElementarySchool">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>Some Elementary School</rdfs:label>
+        <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+        <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#HighSchoolOrLess"/>
+        <skos:definition>Attended Some Elementary School</skos:definition>
+        <skos:notation>86</skos:notation>
+      </hasco:QualityValue>
+    </rdfs:subClassOf>
+
+    <skos:definition>Finished Elementary School</skos:definition>
+    <skos:notation>15</skos:notation>
+  </hasco:QualityValue>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Father">
+    <rdfs:label>Father</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom rdf:resource="http://semanticscience.org/resource/Male"/>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isRoleOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Parent"/>
+    <skos:definition>The male parent of a child. Besides the paternal bonds of a father to his children, the father may have a parental legal and social relationship with the child that carries with it certain rights and obligations. An adoptive father is a male who has become the child's parent through the legal process of adoption. A biological father is the male genetic contributor to the creation of the baby, through sexual intercourse or sperm donation. A biological father may have legal obligations to a child not raised by him, such as an obligation of monetary support. A putative father is a man whose biological relationship to a child is alleged but has not been established. A stepfather is a male who is the husband of a child's mother and they may form a family unit, but who generally does not have the legal rights and responsibilities of a parent in relation to the child.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Foster">
+    <rdfs:label>Foster</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#NonBiologicalRelative"/>
+    <skos:definition>Fosterage, the practice of a family bringing up a child not their own, differs from adoption in that the child's parents, not the foster-parents, remain the acknowledged parents. In many modern western societies foster care can be organized by the state to care for children with troubled family backgrounds, usually on a temporary basis. In many pre-modern societies fosterage was a form of patronage, whereby influential families cemented political relationships by bringing up each other's children, similar to arranged marriages, also based on dynastic or alliance calculations.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#GestationalAgeAtBirth">
+    <rdfs:label>Gestational Age at Birth</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/efo/EFO_0005112"/>
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf>
+          <rdf:List>
+            <rdf:first rdf:resource="http://www.ebi.ac.uk/efo/EFO_0005112"/>
+            <rdf:rest>
+              <rdf:List>
+                <rdf:first>
+                  <owl:Restriction>
+                    <owl:allValuesFrom rdf:resource="http://hadatac.org/ont/chear#Birth"/>
+                    <owl:onProperty rdf:resource="http://semanticscience.org/resource/measuredAt"/>
+                  </owl:Restriction>
+                </rdf:first>
+
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:List>
+            </rdf:rest>
+
+          </rdf:List>
+        </owl:intersectionOf>
+
+      </owl:Class>
+    </owl:equivalentClass>
+
+    <skos:definition>Describes how far along a pregnancy is, usually measured in weeks, as measured at birth.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#HHEducationGrade">
+    <rdfs:label>Head of Household's Education Grade</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <hasco:QualityVariable rdf:about="http://hadatac.org/ont/chear#EducationGrade">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>Education Grade</rdfs:label>
+        <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+        <skos:definition>The highest grade of education achieved</skos:definition>
+      </hasco:QualityVariable>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://hadatac.org/ont/chear#HHEducationLevel">
+        <rdfs:label>Head of Household's Education Level</rdfs:label>
+        <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+        <skos:definition>Head of Household's Education Level</skos:definition>
+      </owl:Class>
+    </rdfs:subClassOf>
+
+    <skos:definition>Highest grade of education achieved by the head of household</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#HeadOfHousehold">
+    <rdfs:label>Head Of Household</rdfs:label>
+    <rdfs:label>Head of Household</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf>
+              <rdf:Description>
+                <rdf:first rdf:resource="http://hadatac.org/ont/chear#Household"/>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </rdf:Description>
+            </owl:intersectionOf>
+
+          </owl:Class>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/inRelationTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Role"/>
+    <skos:definition>Head of Household is a filing status for individual United States taxpayers. To use the Head of Household filing status, a taxpayer must: (1) Be unmarried or considered unmarried at the end of the year (2) Have paid more than half the cost of keeping up a home for the tax year (either one's own home or the home of a qualifying parent) (3) Usually have a qualifying person who lived with the head in the home for more than half of the tax year unless the qualifying person is a dependent parent.</skos:definition>
+    <skos:definition>The Person is the head of Household</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#HighSchoolGraduate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Graduated From High School</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#HighSchoolOrLess"/>
+    <skos:definition>The quality of having graduated from High School</skos:definition>
+    <skos:notation>32</skos:notation>
+  </hasco:QualityValue>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Mother">
+    <rdfs:label>Mother</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom rdf:resource="http://semanticscience.org/resource/Female"/>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isRoleOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Parent"/>
+    <skos:definition>A mother is the female parent of a child. Mothers are women who inhabit or perform the role of bearing some relation to their children, who may or may not be their biological offspring. Thus, dependent on the context, women can be considered mothers by virtue of having given birth, by raising their child(ren), supplying their ovum for fertilisation, or some combination thereof. Such conditions provide a way of delineating the concept of motherhood, or the state of being a mother. Women who meet the third and first categories usually fall under the terms 'birth mother' or 'biological mother', regardless of whether the individual in question goes on to parent their child. Accordingly, a woman who meets only the second condition may be considered an adoptive mother, and those who meet only the third a surrogacy mother. The above concepts defining the role of mother are neither exhaustive nor universal, as any definition of 'mother' may differ based on how social, cultural, and religious roles are defined.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#NoFormalEducation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>No Formal Education</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+    <skos:definition>Has not been educated in a formal setting.</skos:definition>
+    <skos:notation>57</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#NonHispanicOrLatino">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Non-Hispanic Ethnicity</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Ethnicity"/>
+    <skos:definition>Non-Hispanic Ethnicity</skos:definition>
+    <skos:notation>58</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityVariable rdf:about="http://hadatac.org/ont/chear#Religion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Religion</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <skos:definition>Religious Belief</skos:definition>
+  </hasco:QualityVariable>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Sibling">
+    <rdfs:label>Sibling</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf>
+              <rdf:Description>
+                <rdf:first>
+                  <owl:Restriction>
+                    <owl:allValuesFrom rdf:resource="http://hadatac.org/ont/chear#Sibling"/>
+                    <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasRole"/>
+                  </owl:Restriction>
+                </rdf:first>
+
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://semanticscience.org/resource/Human"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
+
+              </rdf:Description>
+            </owl:intersectionOf>
+
+          </owl:Class>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/inRelationTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Relative"/>
+    <skos:definition>One of two or more individuals having one or both parents in common. A male sibling is a brother, and a female sibling is a sister. In most societies throughout the world, siblings often grow up together, thereby facilitating the development of strong emotional bonds. The emotional bond between siblings is often complicated and is influenced by factors such as parental treatment, birth order, personality, and personal experiences outside the family. However, there are cases where siblings grow up in separate homes, in different environments.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#SomeHighSchool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Some High School</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#HighSchoolOrLess"/>
+    <skos:definition>Education Level of Some High School</skos:definition>
+    <skos:notation>87</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#SomeMiddleSchool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Some Middle School</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#HighSchoolOrLess"/>
+    <skos:definition>Attended Some Middle School</skos:definition>
+    <skos:notation>90</skos:notation>
+  </hasco:QualityValue>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Son">
+    <rdfs:label>Son</rdfs:label>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasAttribute"/>
+            <owl:someValuesFrom rdf:resource="http://semanticscience.org/resource/Male"/>
+          </owl:Restriction>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/isRoleOf"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Child"/>
+    <skos:definition>A son is a male offspring; a boy or man in relation to his parents.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Step">
+    <rdfs:label>Step</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#NonBiologicalRelative"/>
+    <skos:definition>A stepfamily is a family where at least one parent has children that are not genetically related to the other spouse or partner. Either one parent may have children from a previous relationship. Children in a stepfamily may live with one biological parent, or they may live with each biological parent for a period of time. In addition, visitation rights mean that children in stepfamilies often have contact with both biological parents, even if they permanently live with only one. A child is referred to as the stepchild, stepdaughter or stepson of their biological parent's new spouse, and that person as the stepparent, stepfather or stepmother of the child. A stepfather is the husband of one's mother, and not one's biological father. A stepmother is the wife of one's father, and not one's biological mother. A step-grandmother is the wife of one's grandfather, and not one's biological grandmother. A step-grandfather is the husband of one's grandmother, and not one's biological grandfather. Similarly, a stepbrother is the son of a stepparent who one is not biologically related to. A stepsister is the daughter of a stepparent to whom one is not biologically related. A step-grandson is the son of a stepson or stepdaughter who one is not biologically related to. A step-granddaughter is the daughter of a stepson or stepdaughter who one is not biologically related. A parent's spouse of the same sex may also count as a stepparent.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#TechnicalPostJuniorCollege">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Technical Post Junior College</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#TechnicalSchool"/>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+    <skos:definition>Attended a Technical Post Junior College</skos:definition>
+    <skos:notation>93</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#TechnicalPostMiddleSchool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Technical Post-Middle School</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#HighSchoolOrLess"/>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#TechnicalSchool"/>
+    <skos:definition>Attended a Technical Post-Middle School.</skos:definition>
+    <skos:notation>94</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#TechnicalPostPrimarySchool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Technical Post Primary School</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#HighSchoolOrLess"/>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#TechnicalSchool"/>
+    <skos:definition>Attended a Technical Post Primary School</skos:definition>
+    <skos:notation>95</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#UnknownEducationLevel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Unknown Education Level</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+    <skos:definition>Level of Education is not known</skos:definition>
+    <skos:notation>101</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#UnknownRace">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Unknown Race</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Race"/>
+    <skos:definition>Unknown Race</skos:definition>
+    <skos:notation>48</skos:notation>
+  </hasco:QualityValue>
+
+  <rdf:Description rdf:about="http://purl.obolibrary.org/obo/HsapDv_0000000">
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Age"/>
+  </rdf:Description>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C16352">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>African American</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Race"/>
+    <skos:definition>A person having origins in any of the Black racial groups of Africa. Terms such as &quot;Haitian&quot; or &quot;Negro&quot; can be used in addition to &quot;Black or African American&quot;.</skos:definition>
+    <skos:notation>8</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C17459">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Hispanic or Latino Ethnicity</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Ethnicity"/>
+    <skos:definition>A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race. The term “Spanish origin” can also be used in addition to “Hispanic or Latino.”</skos:definition>
+    <skos:notation>47</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C41219">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Native Hawaiian or Other Pacific Islander</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Race"/>
+    <skos:definition>A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands.</skos:definition>
+    <skos:notation>55</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C41259">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>American Indian Or AlaskanNative</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Race"/>
+    <skos:definition>A person having origins in any of the original peoples of North and South America (including Central America) and who maintains tribal affiliation or community attachment.</skos:definition>
+    <skos:notation>5</skos:notation>
+  </hasco:QualityValue>
+
+  <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C41260">
+    <rdfs:label>Asian</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Race"/>
+    <skos:definition>A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam.</skos:definition>
+    <skos:notation>6</skos:notation>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C41261">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>White</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Race"/>
+    <skos:definition>A person having origins in any of the original peoples of Europe, the Middle East, or North Africa.</skos:definition>
+    <skos:notation>102</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C51775">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Widowed</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Unmarried"/>
+    <skos:definition>Indicates a person who is no longer married because of the death of his/her spouse and has not remarried.</skos:definition>
+    <skos:notation>39</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C51776">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Divorced</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Unmarried"/>
+    <skos:definition>Indicates a person whose marriage has been legally dissolved and has not remarried.</skos:definition>
+    <skos:notation>40</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C51777">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Separated</rdfs:label>
+    <rdfs:subClassOf>
+      <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C51773">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>Married</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#MaritalStatus"/>
+        <skos:definition>Indicates a person currently joined in a legally binding matrimonial union. Classify common law marriage as married. Includes married couples living together and not living together.</skos:definition>
+        <skos:notation>37</skos:notation>
+      </hasco:QualityValue>
+    </rdfs:subClassOf>
+
+    <skos:definition>Indicates a person living apart from his/her spouse by legal arrangement.</skos:definition>
+    <skos:notation>41</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C52658">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Full Time Employment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000034"/>
+    <skos:definition>Employed for a standard number of hours of working time, at least 50% or 20 hours per week.</skos:definition>
+    <skos:notation>64</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C53262">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Domestic Partnership</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Unmarried"/>
+    <skos:definition>Indicates a person who is a member of an unmarried couple, including same sex couples, living together in longstanding relationships, that are registered or unregistered.</skos:definition>
+    <skos:notation>42</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C67109">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Multiracial</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Race"/>
+    <skos:definition>Having ancestors of several or various races.</skos:definition>
+    <skos:editorialNote>Not part of current prov for Race. Should we remove this concept?</skos:editorialNote>
+    <skos:notation>54</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C67137">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Some College</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="ontoad:C0424933"/>
+    <skos:definition>Indicates that a person has attended college but that they did not receive any degree.</skos:definition>
+    <skos:notation>85</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C75560">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Homemaker</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000034"/>
+    <skos:definition>A person who manages a home as their main daily activity.</skos:definition>
+    <skos:notation>68</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C75561">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Student</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000034"/>
+    <skos:notation>66</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C75562">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Part Time Employment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000034"/>
+    <skos:definition>Employment involving less than the standard or customary working time.</skos:definition>
+    <skos:notation>65</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C75563">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Unemployment</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000034"/>
+    <skos:definition>The state of not having a job.</skos:definition>
+    <skos:notation>67</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C76240">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Annulled</rdfs:label>
+    <rdfs:subClassOf>
+      <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C51774">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:label>Never Married</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Unmarried"/>
+        <skos:definition>Indicates a person who has never been married or whose marriages have been annulled.</skos:definition>
+        <skos:notation>38</skos:notation>
+      </hasco:QualityValue>
+    </rdfs:subClassOf>
+
+    <skos:definition>A marital status in which a voidable marriage is legally declared null and void, as though it never existed. Specific grounds for annullment vary within the presiding jurisdiction, whether geographic or religious.</skos:definition>
+    <skos:notation>43</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C76241">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Interlocutory Marital Status</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#MaritalStatus"/>
+    <skos:definition>The condition existing when an order or judgement is considered temporary until either a specified period of time has passed or specific information is provided to assist in rendering a permanent decision.</skos:definition>
+    <skos:notation>44</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C76242">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Polygamous</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#MaritalStatus"/>
+    <skos:definition>A type of living arrangement or mating system in which at least one member of a relationship has more than one mate.</skos:definition>
+    <skos:notation>45</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityValue rdf:about="http://purl.obolibrary.org/obo/NCIT_C89345">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Childhood</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#DevelopmentalQuality"/>
+    <skos:definition>A time period that begins at the beginning of the human embryonic stage and continues until the end of adolescence.</skos:definition>
+    <skos:notation>11</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityVariable rdf:about="http://semanticscience.org/resource/BiologicalSex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Biological Sex</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+  </hasco:QualityVariable>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Ancestor">
+    <rdfs:label>Ancestor</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf>
+              <rdf:Description>
+                <rdf:first>
+                  <owl:Restriction>
+                    <owl:allValuesFrom rdf:resource="http://hadatac.org/ont/chear#Descendant"/>
+                    <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasRole"/>
+                  </owl:Restriction>
+                </rdf:first>
+
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://semanticscience.org/resource/Human"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
+
+              </rdf:Description>
+            </owl:intersectionOf>
+
+          </owl:Class>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/inRelationTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Relative"/>
+    <skos:definition>An ancestor or forebear is a parent or (recursively) the parent of an ancestor (i.e., a grandparent, great-grandparent, great-great-grandparent, and so forth). Ancestor is &quot;any person from whom one is descended. In law the person from whom an estate has been inherited.&quot;</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Descendant">
+    <rdfs:label>Descendant</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf>
+              <rdf:Description>
+                <rdf:first>
+                  <owl:Restriction>
+                    <owl:allValuesFrom rdf:resource="http://hadatac.org/ont/chear#Ancestor"/>
+                    <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasRole"/>
+                  </owl:Restriction>
+                </rdf:first>
+
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://semanticscience.org/resource/Human"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
+
+              </rdf:Description>
+            </owl:intersectionOf>
+
+          </owl:Class>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/inRelationTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Relative"/>
+    <skos:definition>The child of a human, or any grandchild, great-grandchild, and so on.</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Child">
+    <rdfs:label>Child</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf>
+              <rdf:Description>
+                <rdf:first>
+                  <owl:Restriction>
+                    <owl:allValuesFrom rdf:resource="http://hadatac.org/ont/chear#Parent"/>
+                    <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasRole"/>
+                  </owl:Restriction>
+                </rdf:first>
+
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://semanticscience.org/resource/Human"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
+
+              </rdf:Description>
+            </owl:intersectionOf>
+
+          </owl:Class>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/inRelationTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Descendant"/>
+    <skos:definition>A relationship with a parent (such as sons and daughters of any age).</skos:definition>
+  </owl:Class>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Parent">
+    <rdfs:label>Parent</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf>
+              <rdf:Description>
+                <rdf:first>
+                  <owl:Restriction>
+                    <owl:allValuesFrom rdf:resource="http://hadatac.org/ont/chear#Child"/>
+                    <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasRole"/>
+                  </owl:Restriction>
+                </rdf:first>
+
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://semanticscience.org/resource/Human"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
+
+              </rdf:Description>
+            </owl:intersectionOf>
+
+          </owl:Class>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/inRelationTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Ancestor"/>
+    <skos:definition>A parent is the caretaker of a child (where &quot;child&quot; refers to offspring, not necessarily age). A biological parent is a person whose gamete resulted in a child, a male through the sperm, and a female through the ovum. Parents are first-degree relatives and have 50% genetic meet. A female can also become a parent through surrogacy. Some parents may be adoptive parents, who nurture and raise an offspring, but are not actually biologically related to the child. Orphans without adoptive parents can be raised by their grandparents or other family members.</skos:definition>
+  </owl:Class>
+
+  <hasco:QuantityVariable rdf:about="http://semanticscience.org/resource/Age">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Age</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+  </hasco:QuantityVariable>
+
+  <hasco:QualityVariable rdf:about="http://semanticscience.org/resource/Ethnicity">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Ethnicity</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/BiologicalQuality"/>
+  </hasco:QualityVariable>
+
+  <hasco:QuantityVariable rdf:about="http://www.ebi.ac.uk/efo/EFO_0005112">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Gestational Age</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#BirthOutcome"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Age"/>
+    <rdfs:subClassOf rdf:resource="http://www.ebi.ac.uk/efo/EFO_0005112"/>
+    <skos:definition>The age of the conceptus, beginning from the time of FERTILIZATION. In clinical obstetrics, the gestational age is often estimated as the time from the last day of the last MENSTRUATION which is about 2 weeks before OVULATION and fertilization</skos:definition>
+  </hasco:QuantityVariable>
+
+  <hasco:QualityValue rdf:about="ontoad:C0424933">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Higher Education</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+    <skos:definition>College or university education beyond the successful completion of high school or grammar school, or the attainment of an approved equivalent</skos:definition>
+    <skos:notation>31</skos:notation>
+  </hasco:QualityValue>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#NonBiologicalRelative">
+    <rdfs:label>Non-Biological Relative</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Relative"/>
+    <skos:definition>People that are considered relatives but are not related by blood. This includes relatives by marriage, adoption, or fosterage.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#TechnicalSchool">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Technical School</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+    <skos:definition>Attended a Technical School.</skos:definition>
+    <skos:notation>96</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityVariable rdf:about="http://hadatac.org/ont/chear#MaritalStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Marital Status</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/StatusDescriptor"/>
+    <skos:definition>A person's current conjugal status.</skos:definition>
+  </hasco:QualityVariable>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#Unmarried">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Unmarried</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#MaritalStatus"/>
+    <skos:definition>Indicates a person not currently joined in a legally binding matrimonial union.</skos:definition>
+    <skos:notation>46</skos:notation>
+  </hasco:QualityValue>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Relative">
+    <rdfs:label>Relative</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf>
+              <rdf:Description>
+                <rdf:first>
+                  <owl:Restriction>
+                    <owl:allValuesFrom rdf:resource="http://hadatac.org/ont/chear#Relative"/>
+                    <owl:onProperty rdf:resource="http://semanticscience.org/resource/hasRole"/>
+                  </owl:Restriction>
+                </rdf:first>
+
+                <rdf:rest>
+                  <rdf:Description>
+                    <rdf:first rdf:resource="http://semanticscience.org/resource/Human"/>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </rdf:Description>
+                </rdf:rest>
+
+              </rdf:Description>
+            </owl:intersectionOf>
+
+          </owl:Class>
+        </owl:allValuesFrom>
+
+        <owl:onProperty rdf:resource="http://semanticscience.org/resource/inRelationTo"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Role"/>
+    <skos:definition>Broadly, kinship patterns may be considered to include people related by both descent â€“ i.e. social relations during development â€“ and by marriage. Human kinship relations through marriage are commonly called &quot;affinity&quot; in contrast to the relationships that arise in one's group of origin, which may be called one's descent group. In some cultures, kinship relationships may be considered to extend out to people an individual has economic or political relationships with, or other forms of social connections. Within a culture, some descent groups may be considered to lead back to gods or animal ancestors (totems). This may be conceived of on a more or less literal basis.</skos:definition>
+  </owl:Class>
+
+  <hasco:QualityVariable rdf:about="http://purl.obolibrary.org/obo/ExO_0000034">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Occupation</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#SocioeconomicStatus"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/Role"/>
+    <skos:definition>An individual attribute that is the usual or principal work or business of an individual.</skos:definition>
+  </hasco:QualityVariable>
+
+  <hasco:QualityValue rdf:about="http://hadatac.org/ont/chear#HighSchoolOrLess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>High School or Less</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/ExO_0000041"/>
+    <skos:definition>Education Level of High School or Less</skos:definition>
+    <skos:notation>33</skos:notation>
+  </hasco:QualityValue>
+
+  <hasco:QualityVariable rdf:about="http://semanticscience.org/resource/Race">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Race</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/BiologicalQuality"/>
+  </hasco:QualityVariable>
+
+  <hasco:QualityVariable rdf:about="http://purl.obolibrary.org/obo/ExO_0000041">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>Education</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#Demographic"/>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/chear#SocioeconomicStatus"/>
+    <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/ObjectQuality"/>
+    <skos:definition>The act or process of imparting or acquiring knowledge.</skos:definition>
+  </hasco:QualityVariable>
+
+  <owl:Class rdf:about="http://hadatac.org/ont/chear#Demographic">
+    <rdfs:label>Demographic</rdfs:label>
+    <hasco:wasApprovedBy>chear-kb:PER-Jeanette-Stingone</hasco:wasApprovedBy>
+    <rdfs:subClassOf rdf:resource="http://hadatac.org/ont/hasco/StudyIndicator"/>
+    <skos:definition>Demographics are quantifiable characteristics of a given population.</skos:definition>
+  </owl:Class>
+
+</rdf:RDF>
