@@ -1,2 +1,0 @@
-# heals2vis
-
