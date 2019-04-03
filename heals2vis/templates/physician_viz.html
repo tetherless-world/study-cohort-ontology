@@ -1,0 +1,1062 @@
+{% extends "base.html" %}
+{% from "_macros.html" import render_resource_link, render_rdfa_resource_link, get_label, facts_panel, summary_panel, content %}
+{% block content %}
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/cdn/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/cdn/css/heals2vis.css">
+    <!-- jQuery library -->
+
+    <script src="/cdn/js/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
+    <script src="/cdn/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+    <div class="panel panel-default">
+        <div class="panel-heading top-level nav navbar-default">
+
+            <div class="row container-full">
+                <div class="col-md-8">
+                    <h3 class="panel-title" style="font-size: 22px"><center><b>Welcome Dr Miller</b></center></h3>
+                </div>
+                <div class="col-md-4">
+                    <ul class="nav navbar-nav navbar-right navbar-toggleable-md text-color=white">
+                        <li class="active"><a href="#">Faceted Search<span class="sr-only">(current)</span></a></li>
+                        <li class="text-white"><a href="#">Statistics Overview</a></li>
+                        <!--Will need this when we have more options-->
+                        <!--<li class="dropdown">-->
+                            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+                            <!--<ul class="dropdown-menu">-->
+                                <!--<li><a href="#">Configuration Menu</a></li>-->
+                                <!--<li><a href="#">Statistics Homepage</a></li>-->
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a href="#">Separated link</a></li>-->
+                                <!--<li role="separator" class="divider"></li>-->
+                                <!--<li><a href="#">One more separated link</a></li>-->
+                            <!--</ul>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <!--Patient Name Selection Portion-->
+            <form class="form-inline justify-content-center">
+                <div class="form-group">
+                    <label for="names" style="font-size: 16px;"> Choose Patient Name</label>
+                    <div class="btn-group" id="names">
+                        <button id="label" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="font-size: 16px" aria-expanded="false"><span id="areaCode">Enter Name</span><span class="caret"></span>
+
+                        </button>
+
+                        <ul id="patient" class="dropdown-menu pre-scrollable" role="menu" aria-labelledby="label" style="height: auto;max-height: 200px; overflow-x: hidden;">
+                        <!---Populate the dropdown with names of patients-->
+                        {% for name in this.graph.query('prefix sio:<http://semanticscience.org/resource/>
+                        prefix prov:<http://www.w3.org/ns/prov#>
+                        select distinct ?NameVal
+                        where{
+                        ?Tumor sio:isPartOf ?Subject .
+                        ?Tumor prov:wasGeneratedBy ?Cancer .
+                        OPTIONAL{
+                        ?Name sio:isAttributeOf ?Subject .
+                        ?Name rdf:type [ rdfs:subClassOf sio:FirstName ] .
+                        ?Name sio:hasValue ?NameVal . } } ') %}
+                            <li role="presentation" style="font-size: 16px;"><a role="menuitem" tabindex="-1" href="#">{{name[0]}}</a></li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </form>
+            <!--Patient Details-->
+            <div id ="staging" class="hideMe">
+
+                <input type="hidden" name ="pname" value="">
+
+
+                <form id="patientDetailsForm" class="form-inline justify-content-center">
+                    <p><h4 style="font-size: 18px">Patient Details</h4></p>
+                    </br>
+                    <div class ="row container-full">
+                        <div class="form-group form-inline col-md-6 col-sm-6">
+                            <label for="NameVal" style="font-size: 16px;">Patient Name</label>
+                            <input type="email" class="form-control no-border" id="NameVal" style="font-size: 16px;" placeholder="Alice" readonly>
+                        </div>
+                        <div class="form-group form-inline col-sm-4 col-md-4 col-md-offset-2 col-sm-offset-2">
+                            <label for="AgeVal" style="font-size: 16px;">Age at Diagnosis</label>
+                            <input type="email" class="form-control no-border" id="AgeVal" style="font-size: 16px;" placeholder="45" readonly>
+                        </div>
+                    </div>
+                    <div class ="row container-full">
+                        <div class="form-group form-inline col-md-6">
+                            <label for="SexVal" style="font-size: 16px;">Gender</label>
+                            <input type="text" class="form-control no-border" id="SexVal" style="font-size: 16px;" placeholder="Female" readonly>
+                        </div>
+                        <div class="form-group form-inline col-md-4 col-sm-4 col-md-offset-2 col-sm-offset-2 ">
+                            <label for="RaceVal" style="font-size: 16px;">Race</label>
+                            <input type="email" class="form-control no-border" id="RaceVal" style="font-size: 16px;" placeholder="White" readonly>
+                        </div>
+                    </div>
+                    <div class ="row container-full">
+                        <div class="form-group form-inline col-md-6 col-sm-6">
+                            <label for="DiagnosisMonthVal" style="font-size: 16px;">Month of Diagnosis</label>
+                            <input type="text" class="form-control no-border" id="DiagnosisMonthVal" style="font-size: 16px;" placeholder="January" readonly>
+                        </div>
+                        <div class="form-group form-inline col-md-4 col-sm-4 col-md-offset-2 col-sm-offset-2">
+                            <label for="DiagnosisYearVal" style="font-size: 16px;">Year of Diagnosis</label>
+                            <input type="email" class="form-control no-border" id="DiagnosisYearVal" style="font-size: 16px;" placeholder="2012" readonly>
+                        </div>
+                    </div>
+
+
+                </form>
+                <!--Line break-->
+                <hr class="half-rule" />
+
+                <div class="container text-center">
+
+                    <!--Grid row-->
+                    <div class="row">
+                        <h4 style="font-size: 18px">About the report</h4>
+                        <!--Grid column-->
+                        <div class="col-md-12 text-left">
+                            <p>
+                               Please find below the different staging details of your patient according to different versions of the AJCC guidelines.
+                                You can use the treatment options to find viable alternatives to your treatment plans.
+                            </p>
+
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+                </div>
+
+                <div class="row container-full card">
+                    <div class="row container-full voffset">
+                        <div class="col-md-6 col-sm-6">
+                            <!--Biomarker section-->
+                            <div class="row container-full">
+                                <div class="panel-group wrap col-md-12 col-sm-12" id="physician-collapse-one">
+
+                                    <div class="panel">
+                                        <div class="panel-heading collapsible green">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#" href="#one">
+                                                    Biomarkers
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="one" class="panel-collapse collapse in">
+                                            <div class="panel-body">
+                                                <div class="row container-full">
+                                                    <div class="form-group form-inline col-md-12">
+                                                        <label for="ERVal" style="font-size: 16px;">ER</label>
+                                                        <input type="email" class="form-control no-border" id="ERVal" style="font-size: 16px;" placeholder="ER+" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="row container-full">
+                                                    <div class="form-group form-inline col-md-12">
+                                                        <label for="PRVal" style="font-size: 16px;">PR</label>
+                                                        <input type="email" class="form-control no-border" id="PRVal" style="font-size: 16px;" placeholder="PR-" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="row container-full">
+                                                    <div class="form-group form-inline col-md-12">
+                                                        <label for="HER2Val" style="font-size: 16px;">HER2</label>
+                                                        <input type="email" class="form-control no-border" id="HER2Val" style="font-size: 16px;" placeholder="HER2+" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="row container-full">
+                                                    <div class="form-group form-inline col-md-12">
+                                                        <label for="GradeVal" style="font-size: 16px;">Grade</label>
+                                                        <input type="email" class="form-control no-border" id="GradeVal" style="font-size: 16px;" placeholder="Grade2" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--TNM Section-->
+                            <div class="row container-full">
+                                <div class="panel-group wrap col-md-12 col-sm-12" id="physician-collapse-two">
+
+                                    <div class="panel">
+                                        <div class="panel-heading collapsible green">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#" href="#two">
+                                                    TNM Values
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="two" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="row container-full">
+                                                    <div class="form-group form-inline col-md-12">
+                                                        <label for="TVal" style="font-size: 16px;">T</label>
+                                                        <input type="email" class="form-control no-border" id="TVal" style="font-size: 16px;" placeholder="T1a" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="row container-full">
+                                                    <div class="form-group form-inline col-md-12">
+                                                        <label for="NVal" style="font-size: 16px;">N</label>
+                                                        <input type="email" class="form-control no-border" id="NVal" style="font-size: 16px;" placeholder="N1" readonly>
+                                                    </div>
+                                                </div>
+                                                <div class="row container-full">
+                                                    <div class="form-group form-inline col-md-12">
+                                                        <label for="MVal" style="font-size: 16px;">M</label>
+                                                        <input type="email" class="form-control no-border" id="MVal" style="font-size: 16px;" placeholder="M0" readonly>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!--TNM Section-->
+                            <div class="row gene-panel container-full">
+                                <div class="panel-group wrap col-md-12 col-sm-12" id="physician-collapse-six">
+
+                                    <div class="panel">
+                                        <div class="panel-heading collapsible green">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#" href="#six">
+                                                   Gene Panel
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="six" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <div class="row container-full">
+                                                    <div class="table-responsive">
+                                                        <table id="geneTable" class="table table-bordered table-hover" style="font-size: 12px;">
+                                                            <thead>
+                                                                <th>Gene</th>
+                                                                <th>Gene Variant</th>
+                                                                <th>Zygosity</th>
+                                                                <th>Classification</th>
+                                                            </thead>
+                                                            <tbody id="geneBody">
+
+                                                            </tbody>
+                                                        </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--Restaging section-->
+                        <div class="col-md-6 col-sm-6">
+                            <!--Staging section-->
+
+                            <div class="row container-full">
+                                <div class="panel-group wrap col-md-12 col-sm-12" id="physician-collapse-three">
+
+                                    <div class="panel">
+                                        <div class="panel-heading collapsible green">
+                                            <h4 class="panel-title" id="stagingHeadline">
+                                                <a data-toggle="collapse" data-parent="#" href="#three" id="stagingHeadlineHref">
+                                                    Staging Guidelines: 6th Staging
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="three" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <!-- List group -->
+                                                <div class="list-group" id="guidelinesList" role="tablist">
+                                                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#" role="tab">AJCC 6th Staging Guideline</a>
+                                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">AJCC 7th Staging Guideline</a>
+                                                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#" role="tab">AJCC 8th Staging Guideline</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row container-full">
+                               <h4>Tumor Type: Breast Cancer</h4>
+                            </div>
+                            <div  class="row container-full">
+                                <!-- Tab panes -->
+                                <div class="panel-body col-md-12 col-sm-12">
+
+                                    <div class="row container-full">
+                                        <div class="form-group form-inline col-md-6">
+                                            <label for="StageVal" style="font-size: 16px;">Stage</label>
+                                            <input class="form-control no-border col-md-12 col-sm-12" id="StageVal" style="font-size: 16px" placeholder="IIA" readonly>
+                                        </div>
+
+                                        <div class="form-group form-inline col-md-4 col-sm-4 col-md-offset-1 col-sm-offset-1">
+                                            <input type="email" class="form-control stage8 no-border" id="changeVal" style="font-size: 16px;color: green" placeholder="Unchanged" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row container-full">
+                                        <div class="form-group form-inline col-md-12">
+                                            <label for="GuidelineVal" style="font-size: 16px;">Guideline</label>
+                                            <input type="email" class="form-control no-border" id="GuidelineVal" style="font-size: 16px;min-width:100%" placeholder="AJCC 6th Stage Guideline" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row container-full">
+                                        <div class="form-group form-inline col-md-12">
+                                            <label for="TypeVal" style="font-size: 16px;">Stage Type</label>
+                                            <input type="email" class="form-control no-border" id="TypeVal" style="font-size: 16px;" placeholder="Detected" readonly>
+                                        </div>
+                                    </div>
+                                    <div class="row stage8 stage7 container-full">
+                                        <div class="form-group  form-inline col-md-12">
+                                            <label for="JustificationVal" style="font-size: 16px;">Justification</label>
+                                            <textarea type="email" class="form-control no-border" id="JustificationVal" style="font-size: 16px;min-width:100%;height:20%" placeholder="Presence of HER2- and tumor > 2cm" readonly></textarea>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </div>
+
+                <hr class="half-rule" />
+
+                <!--Table Portion-->
+                <div class="row container-full">
+                    <div class="col-md-12 col-sm-12">
+                        <h4 id="treatmentHeading" style="font-size: 18px">Treatment Paths (Courtesy NCCN Guidelines)</h4>
+                        <table id="treatmentsTable" class="table table-bordered table-hover" style="font-size: 16px;">
+                            <thead>
+                            <tr>
+                                <th >Topic</th>
+                                <th >Suggested Path</th>
+                            </tr>
+                            </thead>
+                            <tbody id="treatmentsTableBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <hr class="half-rule" />
+
+                <!--Table Portion-->
+                <div class="row container-full">
+                    <div class="col-md-12 col-sm-12">
+                        <h4 style="font-size: 18px">Suggested Drugs (Courtesy CIViC)</h4>
+                        <table id="drugTable" class="table table-bordered table-hover" style="font-size: 16px;">
+                            <thead>
+                            <tr>
+                                <th >Drug(s)</th>
+                                <th >Justification</th>
+                                <th >Description Value</th>
+                                <th>Rating</th>
+                                <th>Evidence Level</th>
+                            </tr>
+                            </thead>
+                            <tbody id="drugTableBody">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+
+                    <!-- end of panel -->
+
+        </div>
+
+    </div>
+
+    <div class="container text-center">
+
+        <!--Grid row-->
+        <div class="row py-5">
+
+            <!--Grid column-->
+            <div class="col-md-12 text-center">
+
+                <p>Precision Oncology. Use this page to browse through your patient's cancer history, parameters and impact to restaging. Please toggle between the staging criteria, to see whether they are vulnerable to a grade increase due to the change in staging rules. If they are, the parameter that lead to the change will then light up. Make informed decisions on drugs to prescribe based on our justifications driven by semantics. </p>
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        var databaseURL = "/sparql";
+
+
+        console.log("Hi there" + "{{ config['SATORU_CDN_DIR'] }}" + "/images/precisiononcology.jpg");
+
+        function fillStageDetails(selectedStage,pname){
+            $("#stagingHeadlineHref").text("Staging Guidelines:" + selectedStage + " Staging");
+            var query = '\n\
+                              PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\
+                                PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n\
+                                prefix sio: <http://semanticscience.org/resource/>\n\
+                                prefix prov: <http://www.w3.org/ns/prov#>\n\
+                                prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>\n\
+                                prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\
+                                prefix cst: <http://idea.rpi.edu/ontologies/cancer_staging_terms.owl#>\n\
+                              select distinct ?Stage6Val ?Stage7Val ?Stage7JustVal ?Stage8Val ?Stage8JustVal ?monitoring ?recommendedTest  \n\
+                              where{ \n\
+                              ?Tumor sio:isPartOf ?Subject .\n\
+                              ?Tumor prov:wasGeneratedBy ?Cancer .\n\
+                                OPTIONAL{\n\
+                                 ?Name sio:isAttributeOf ?Subject.\n\
+                                 ?Name rdf:type [ rdfs:subClassOf sio:FirstName ] .\n\
+                                 ?Name sio:hasValue ?NameVal .\n\
+                                 }\n\
+                                OPTIONAL{\n\
+                                ?Stage6 sio:isAttributeOf ?Tumor .\n\
+                                ?Stage6 rdf:type [ rdfs:subClassOf ncit:C90513 ] .\n\
+                                ?Stage6 sio:hasValue ?Stage6Val .\n\
+                            }\n\
+                            OPTIONAL {\n\
+                        GRAPH ?stage8Assert { ?Tumor cst:hasAJCCStage ?stage8 . }\n\
+                        ?stage8 rdfs:subClassOf* cst:R8_Stage .\n\
+                        ?stage8 rdfs:label ?Stage8Val.\n\
+                        ?stage8Assert prov:value ?Stage8JustVal .\n\
+                        }\n\
+                        OPTIONAL {\n\
+                        GRAPH ?stage7Assert {?Tumor cst:hasAJCCStage ?stage7 . }\n\
+                        ?stage7 rdfs:subClassOf* cst:R7_Stage .\n\
+                        ?stage7 rdfs:label ?Stage7Val.\n\
+                        ?stage7Assert prov:value ?Stage7JustVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                        ?Subject cst:hasMonitoring ?monitoring .}\n\
+                         OPTIONAL{?Subject cst:hasRecommendedTest ?recommendedTest .}\n\
+        FILTER(str(?NameVal) = "' + pname + '") . }';
+
+
+            //Update the staging section based on details
+            $.ajax({
+                url:databaseURL,
+                async:false,
+                data:{"query":query},
+                type:"post",
+                dataType:"json",
+                cache:false,
+                success:function(responseText){
+                    console.log("Results",responseText);
+                    //Populate the patient name dropdown with the results of the query, they are contained in NameVal, value
+                    for(var i = 0; i < responseText.results.bindings.length; i++) {
+                        if(responseText.results.bindings[i].NameVal != "" || responseText.results.bindings[i].NameVal != "none"){
+                            var stage7Val = "";
+                            var stage8Val = "";
+                            var stage6Val = "";
+                            var monitoring = "";
+                            var recommendedTest = "";
+
+                            if("Stage8Val" in responseText.results.bindings[i]){
+                                stage8Val = responseText.results.bindings[i].Stage8Val.value;
+
+                            }
+
+                            if("Stage7Val" in responseText.results.bindings[i]){
+                                stage7Val = responseText.results.bindings[i].Stage7Val.value;
+
+                            }
+
+                            if("Stage6Val" in responseText.results.bindings[i]){
+                                stage6Val = responseText.results.bindings[i].Stage6Val.value;
+
+                            }
+
+                            if("monitoring" in responseText.results.bindings[i]){
+                                monitoring = responseText.results.bindings[i].monitoring.value;
+                            }
+
+                            if("recommendedTest" in responseText.results.bindings[i]){
+                                recommendedTest = responseText.results.bindings[i].recommendedTest.value;
+                            }
+
+                            //stage6Val = responseText.results.bindings[i].Stage6Val.value;
+                            var treatmentStage = "";
+                            if(selectedStage == "7th"){
+                                treatmentStage = stage7Val.replace("7th","8th");
+                                $("#StageVal").val(stage7Val);
+                                $("#treatmentHeading").text("Treatment Paths for " +  stage7Val + " (Courtesy NCCN Guidelines)");
+
+                                var stage7JustVal = responseText.results.bindings[i].Stage7JustVal.value.split(" ");
+                                stage7JustVal[0] = pname;
+                                stage7JustVal = stage7JustVal.join(" ");
+                                $("#JustificationVal").val(stage7JustVal);
+                                $("#TypeVal").val("Inferred");
+                                $(".stage8").hide();
+                                $(".stage7").show();
+                            }
+                            else if(selectedStage == "6th"){
+                                treatmentStage = stage7Val.replace("7th","8th");
+                                $("#treatmentHeading").text("Treatment Paths for " +  stage6Val + " (Courtesy NCCN Guidelines)");
+                                $("#StageVal").val(stage6Val);
+                                //$("#TypeVal").val("Detected");
+                                $("#TypeVal").val("Detected");
+                                $(".stage8").hide();
+                            }
+                            else if(selectedStage == "8th"){
+
+                                if(stage8Val != ""){
+                                    treatmentStage = stage8Val;
+
+                                    $("#treatmentHeading").text("Treatment Paths for " +  stage8Val + " (Courtesy NCCN Guidelines)");
+
+                                    $("#StageVal").val(stage8Val);
+                                    var stage8JustVal = responseText.results.bindings[i].Stage8JustVal.value.split(" ");
+                                    stage8JustVal[0] = pname;
+                                    stage8JustVal = stage8JustVal.join(" ");
+                                    stage8Val = stage8Val.split(" ")[1];
+                                    stage7Val = stage7Val.split(" ")[1];
+                                    console.log("Stage 7 " + stage7Val + "Stage8Val " + stage8Val)
+                                    $("#JustificationVal").val(stage8JustVal);
+                                    $("#TypeVal").val("Inferred");
+                                    //Print the result of staging on the RHS of the box
+                                    if(stage8Val > stage7Val){
+                                        $("#changeVal").val("Upstaged!!!");
+                                    }
+                                    else if(stage8Val < stage7Val){
+                                        $("#changeVal").val("Downstaged!!!");
+                                    }
+                                    else {
+                                        $("#changeVal").val("No Change!!!");
+                                    }
+                                    $(".stage8").show();
+
+                                }
+                                else {
+                                    $(".stage8").hide();
+                                }
+
+                            }
+
+                            if(treatmentStage != ""){
+                                var treatmentQuery = '\n\
+                                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\
+                                PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n\
+                                prefix sio: <http://semanticscience.org/resource/>\n\
+                                prefix prov: <http://www.w3.org/ns/prov#>\n\
+                                prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>\n\
+                                prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\
+                                prefix cst: <http://idea.rpi.edu/ontologies/cancer_staging_terms.owl#>\n\
+                                SELECT DISTINCT ?stageVal (group_concat(DISTINCT ?test ; separator = ", ") as ?tests) (group_concat(DISTINCT ?treatment ; separator = ", ") as ?treatments) WHERE {\n\
+                                 ?stage rdfs:subClassOf* ?stageSuper .\n\
+                                 ?stage rdfs:label ?stageVal .\n\
+                                 ?stageSuper cst:hasRecommendedTest ?test .\n\
+                                 ?stageSuper cst:hasTreatmentOption ?treatment .\n\
+                                 FILTER(str(?stageVal) = "' + treatmentStage + '")\n\
+                               } GROUP BY ?treatments ?tests ?stageVal';
+
+                                $.ajax({
+                                    url:databaseURL,
+                                    async:false,
+                                    data:{"query":treatmentQuery},
+                                    type:"post",
+                                    dataType:"json",
+                                    cache:false,
+                                    success:function(responseText){
+                                        console.log("Results",responseText);
+                                        var options = $("#patient");
+                                        $("#treatmentsTable tbody tr").remove();
+                                        //Populate the patient name dropdown with the results of the query, they are contained in NameVal, value
+                                        for(var i = 0; i < responseText.results.bindings.length; i++) {
+
+                                            if(responseText.results.bindings[i].NameVal != "" || responseText.results.bindings[i].NameVal != "none"){
+                                                fieldKeys = Object.keys(responseText.results.bindings[i]);
+                                                //Name the variables in a way that a loop can be run to set the value of the fields returned by the Sparql query
+                                                for(var fieldIndex in fieldKeys){
+                                                    var fieldKey = fieldKeys[fieldIndex];
+                                                    var fieldVal = responseText.results.bindings[i][fieldKey].value;
+                                                    if(fieldKey == "tests"){
+                                                        tableRow = "<tr>";
+                                                        tableRow += "<td>Recommended Tests</td>";
+                                                        tableRow += "<td>" + fieldVal + "</td>";
+                                                        tableRow += "</tr>";
+                                                        $("#treatmentsTable").append(tableRow);
+                                                    }
+                                                    else if(fieldKey == "treatments"){
+                                                        tableRow = "<tr>";
+                                                        tableRow += "<td>Treatment Options</td>";
+                                                        tableRow += "<td>" + fieldVal + "</td>";
+                                                        tableRow += "</tr>";
+                                                        $("#treatmentsTable").append(tableRow);
+                                                    }
+
+                                                    console.log("Staging Field Name",fieldKey,"Field Val",fieldVal);
+                                                    //Need to update the table row here
+
+                                                }
+                                            }
+
+                                        }
+                                        if(monitoring != ""){
+                                            tableRow = "<tr>";
+                                            tableRow += "<td>Monitoring Measures</td>";
+                                            tableRow += "<td>" + monitoring + "</td>";
+                                            tableRow += "</tr>";
+                                            $("#treatmentsTable").append(tableRow);
+                                        }
+
+                                        if(recommendedTest != ""){
+                                            tableRow = "<tr>";
+                                            tableRow += "<td>Additional Testing</td>";
+                                            tableRow += "<td>" + recommendedTest + "</td>";
+                                            tableRow += "</tr>";
+                                            $("#treatmentsTable").append(tableRow);
+                                        }
+                                    },
+                                    error:function(xhr){alert("Treatment Query Ajax error:" + xhr.status + " " + xhr.statusText);},
+                                });
+                            }
+                        }
+
+                    }
+                },
+                error:function(xhr){alert("material property x list Ajax error:" + xhr.status + " " + xhr.statusText);},
+            });
+            //Update the treatment options based on options
+
+
+
+        }
+        // $(function  () {
+        //     $("#patient").sortable();
+        // });
+
+        $("body").on("click",'#guidelinesList a',function(e) {
+            e.preventDefault();
+            $('.list-group-item.active').removeClass('active');
+            $(this).toggleClass('active');
+            console.log("Staging guidelines are changing",$(this).text());
+            var stagingVal = $(this).text();
+            $("#GuidelineVal").val(stagingVal);
+            //Read the json vals of stage and the justifications from files
+            //For now just hard code this portion
+            var pname = $("#NameVal").val();
+            var selectedStage = stagingVal.split(" ")[1];
+            //Build a query where the DB is queried for the specified stage.
+            console.log("Looking up staging info for ",pname,"According to guideline ",stagingVal.split(" ")[1]);
+            fillStageDetails(selectedStage,pname);
+
+
+        });
+        $("body").on("click", "#patient li", function(e){
+
+            console.log("Hi there");
+            //sets button text
+            $("#label").text($($(this).find("a")).text())
+            //removes isSelected class
+            $("#patient li a").removeClass("isSelected");
+            //add isSlected Class to clicked element
+            $($(this).find('a')).addClass("isSelected");
+            pnameSelected = $($(this).find('a')).text();
+
+            //Hard code the gene panel stuff for now
+            if(pnameSelected == "D"){
+
+
+                var geneQuery = '\n\
+                              PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\
+                                PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n\
+                                prefix sio: <http://semanticscience.org/resource/>\n\
+                                prefix prov: <http://www.w3.org/ns/prov#>\n\
+                                prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>\n\
+                                prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\
+                                prefix cst: <http://idea.rpi.edu/ontologies/cancer_staging_terms.owl#>\n\
+                              SELECT DISTINCT ?NameVal ?monitoring ?geneLabel ?geneType ?geneVariant ?geneZygosity ?geneClassification WHERE {\n\
+                                OPTIONAL{\n\
+                                ?Tumor sio:isPartOf ?Subject .\n\
+                                ?Tumor prov:wasGeneratedBy ?Cancer .\n\
+                                ?Tumor rdf:type ncit:C3262 . \n\
+                                ?Name sio:isAttributeOf ?Subject.\n\
+                                ?Name rdf:type [ rdfs:subClassOf sio:FirstName ] .\n\
+                                ?Name sio:hasValue ?NameVal .\n\
+                                ?Subject cst:hasMonitoring ?monitoring .\n\
+                                ?Subject cst:hasGene [ rdf:type ?geneType ;\n\
+                                           rdfs:label ?geneLabel ;\n\
+                                           cst:hasVariant ?geneVariant ;\n\
+                                          cst:hasZygosity ?geneZygosity ;\n\
+                                          cst:hasVariantClassification ?geneClassification ] }\n\
+                          FILTER(str(?NameVal) = "' + pnameSelected + '") .\n\
+                }';
+
+                $.ajax({
+                    url:databaseURL,
+                    async:false,
+                    data:{"query":geneQuery},
+                    type:"post",
+                    dataType:"json",
+                    cache:false,
+                    success:function(responseText){
+                        console.log("Results",responseText);
+                        var options = $("#patient");
+                        //Clear rows
+                        $("#geneTable tbody tr").remove();
+                        //Populate the patient name dropdown with the results of the query, they are contained in NameVal, value
+                        for(var i = 0; i < responseText.results.bindings.length; i++) {
+                            if(responseText.results.bindings[i].NameVal != "" || responseText.results.bindings[i].NameVal != "none"){
+                                fieldKeys = Object.keys(responseText.results.bindings[i]);
+
+                                var geneDict = {
+                                    "geneLabel":"",
+                                    "geneVariant":"",
+                                    "geneZygosity":"",
+                                    "geneClassification":""
+                                }
+
+                                var emptyGeneLabel = false;
+                                tableRow = "<tr>";
+
+
+
+                                //Name the variables in a way that a loop can be run to set the value of the fields returned by the Sparql query
+                                for(var fieldIndex in fieldKeys){
+                                    var fieldKey = fieldKeys[fieldIndex];
+                                    var fieldVal = responseText.results.bindings[i][fieldKey].value;
+
+                                    // if((fieldKey == "geneLabel") && ( fieldVal == "" || fieldVal == None)){
+                                    //     emptyGeneLabel = true;
+                                    // }
+                                    if(fieldKey in geneDict){
+
+                                        geneDict[fieldKey] = fieldVal;
+                                    }
+                                    console.log("Field Name",fieldKey,"Field Val",fieldVal);
+                                    //Append it to the drugs table
+                                    //$("#" + fieldKey).val(fieldVal);                            }
+                                }
+                                //Loop over columns and add to tr.
+                                for (var key in geneDict){
+                                    tableRow += "<td>" + geneDict[key] + "</td>";
+                                }
+                                tableRow += "</tr>";
+
+                                $("#geneTable").append(tableRow);
+
+                                // if(!emptyGeneLabel){
+                                //     console.log("Non empty gene row");
+                                //
+                                //
+                                // }
+                            }
+
+                        }
+                    },
+                    error:function(xhr){alert("material property x list Ajax error:" + xhr.status + " " + xhr.statusText);},
+                });
+
+                $(".gene-panel").show();
+
+            }
+            else{
+                $(".gene-panel").hide();
+            }
+            //Set the value of hidden field and this will be used to run the angular-js controller again, didn't work
+            $("input[id=\"pname\"]").val(($(this).text()));
+            var selectedStagePatient = $("#guidelinesList a.active").text().split(" ")[1];
+            fillStageDetails(selectedStagePatient,pnameSelected);
+
+            var drugQuery = 'prefix prov: <http://www.w3.org/ns/prov#>\n\
+                prefix sio: <http://semanticscience.org/resource/>\n\
+                prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>\n\
+                prefix cst: <http://idea.rpi.edu/ontologies/cancer_staging_terms.owl#>\n\
+                prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\
+                prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\
+                SELECT DISTINCT \n\
+                ?NameVal ?diseaseVal (group_concat(distinct ?drugVal; separator=";") as ?drugVals) ?descVal (group_concat(distinct ?evidenceIDVal; separator=";") as ?evidenceIDVals) ?ratingVal ?statusVal ?evidenceLevelVal\n\
+                WHERE { \n\
+                OPTIONAL {?Tumor sio:isPartOf ?Subject .\n\
+                ?Tumor prov:wasGeneratedBy ?Cancer .\n\
+                ?Tumor rdf:type ncit:C3262 . \n\
+                ?Subject cst:hasDisease ?diseaseType .\n\
+                ?Name sio:isAttributeOf ?Subject.\n\
+                ?Name rdf:type [ rdfs:subClassOf sio:FirstName ] .\n\
+                ?Name sio:hasValue ?NameVal .\n\
+                  }\n\
+                OPTIONAL {  \n\
+                ?evidence a ncit:C43583 .\n\
+                ?evidence sio:hasIdentifier ?evidenceID .\n\
+                ?evidenceID sio:hasValue ?evidenceIDVal .\n\
+                ?desc sio:isAttributeOf ?evidence . \n\
+                ?desc a sio:Description .\n\
+                ?desc sio:hasValue ?descVal .\n\
+                ?rating a ncit:C77538 . \n\
+                ?rating sio:isAttributeOf ?evidence .\n\
+                ?rating sio:hasValue ?ratingVal .\n\
+                ?drug a sio:Drug .\n\
+                ?drug prov:wasDerivedFrom ?evidence .\n\
+                ?drug sio:hasValue ?drugVal .\n\
+                ?drug sio:inRelationTo ?gene .\n\
+                ?disease a sio:Disease , ?diseaseType .\n\
+                ?disease sio:inRelationTo ?gene .\n\
+                ?disease sio:hasValue ?diseaseVal .\n\
+                ?gene sio:hasValue ?geneVal .\n\
+                ?evidenceStatus a sio:StatusDescriptor .\n\
+                ?evidenceStatus sio:isAttributeOf ?evidence .\n\
+                ?evidenceStatus sio:hasValue ?statusVal .\n\
+                ?evidenceLevel a ncit:C25554 .\n\
+                ?evidenceLevel sio:isAttributeOf ?evidence .\n\
+                ?evidenceLevel sio:hasValue ?evidenceLevelVal . \n\
+                }\n\
+                FILTER(str(?NameVal) = "' + pnameSelected + '") .\n\
+                } GROUP BY ?diseaseVal ?drugVals ?descVal ?evidenceIDVals ?ratingVal ?statusVal ?NameVal ?evidenceLevelVal';
+
+
+            var query = '\n\
+                              PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n\
+                                PREFIX foaf: <http://xmlns.com/foaf/0.1/>\n\
+                                PREFIX si: <http://sisteminformasi.com/>\n\
+                                PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n\
+                                prefix np: <http://www.nanopub.org/nschema#>\n\
+                                prefix sio: <http://semanticscience.org/resource/>\n\
+                                prefix prov: <http://www.w3.org/ns/prov#>\n\
+                                prefix ncit: <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#>\n\
+                                prefix hasco: <http://hadatac.org/ont/hasco#>\n\
+                                prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n\
+                              select distinct ?NameVal ?DiagnosisMonthVal ?DiagnosisYearVal ?AgeVal ?RaceVal  ?GradeVal ?HER2Val ?SexVal ?ERVal ?PRVal ?TVal ?NVal ?MVal \n\
+                              where{ \n\
+                              ?Tumor sio:isPartOf ?Subject .\n\
+                              ?Tumor prov:wasGeneratedBy ?Cancer .\n\
+                                OPTIONAL{\n\
+                                 ?Name sio:isAttributeOf ?Subject.\n\
+                                 ?Name rdf:type [ rdfs:subClassOf sio:FirstName ] .\n\
+                                 ?Name sio:hasValue ?NameVal .\n\
+                                 }\n\
+                                OPTIONAL{\n\
+                            ?Sex sio:isAttributeOf ?Subject.\n\
+                            ?Sex rdf:type [ rdfs:subClassOf sio:BiologicalSex ] .\n\
+                            ?Sex sio:hasValue ?SexVal .\n\ }\n\
+                          OPTIONAL{\n\
+                            ?Age sio:isAttributeOf ?Subject.\n\
+                            ?Age rdf:type [ rdfs:subClassOf sio:Age ] .\n\
+                            ?Age sio:hasValue ?AgeVal .\n\
+                            }\n\
+                        OPTIONAL{\n\
+                                ?DiagnosisMonth sio:isAttributeOf [ rdf:type sio:Diagnosis; sio:inRelationTo ?Subject ] .\n\
+                                ?DiagnosisMonth sio:hasUnit xsd:gMonth .\n\
+                                ?DiagnosisMonth rdf:type [ rdfs:subClassOf sio:TimeInstant ] .\n\
+                                ?DiagnosisMonth sio:hasValue ?DiagnosisMonthVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?DiagnosisYear sio:isAttributeOf [ rdf:type sio:Diagnosis; sio:inRelationTo ?Subject ] .\n\
+                                ?DiagnosisYear sio:hasUnit xsd:gYear .\n\
+                                ?DiagnosisYear rdf:type [ rdfs:subClassOf sio:TimeInstant ] .\n\
+                                ?DiagnosisYear sio:hasValue ?DiagnosisYearVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?Race sio:isAttributeOf ?Subject.\n\
+                                ?Race rdf:type [ rdfs:subClassOf sio:Race ] .\n\
+                                ?Race sio:hasValue ?RaceVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?T rdf:type [ rdfs:subClassOf sio:Diameter ;\n\
+                            rdfs:subClassOf ncit:C120284 ] .\n\
+                                ?T sio:isAttributeOf ?Tumor .\n\
+                                ?T sio:hasValue ?TVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?N rdf:type [ rdfs:subClassOf sio:Count ] . \n\
+                                ?N sio:isAttributeOf [ rdf:type ncit:C12745 ; \n\
+                            prov:wasDerivedFrom ?Subject ] .\n\
+                                ?N sio:hasValue ?NVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?M rdf:type [ rdfs:subClassOf sio:StatusDescriptor ] .\n\
+                                ?M sio:isAttributeOf [ rdf:type ncit:C19151 ;\n\
+                            sio:inRelationTo ?Tumor ] .\n\
+                                ?M sio:hasValue ?MVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?Grade sio:isAttributeOf ?Tumor .\n\
+                                ?Grade rdf:type [ rdfs:subClassOf ncit:C135461 ] .\n\
+                                ?Grade sio:hasValue ?GradeVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?ER rdf:type [ rdfs:subClassOf sio:StatusDescriptor ] .\n\
+                                ?ER sio:isAttributeOf [ rdf:type ncit:C38361 ;\n\
+                            prov:wasDerivedFrom ?Subject ] .\n\
+                                ?ER sio:hasValue ?ERVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?PR rdf:type [ rdfs:subClassOf sio:StatusDescriptor ] .\n\
+                                ?PR sio:isAttributeOf [ rdf:type ncit:C17075 ;\n\
+                            prov:wasDerivedFrom ?Subject ] .\n\
+                                ?PR sio:hasValue ?PRVal .\n\
+                        }\n\
+                        OPTIONAL{\n\
+                                ?HER2 rdf:type [ rdfs:subClassOf sio:StatusDescriptor ] .\n\
+                                ?HER2 sio:isAttributeOf [ rdf:type ncit:C17756 ;\n\
+                            prov:wasDerivedFrom ?Subject ] .\n\
+                                ?HER2 sio:hasValue ?HER2Val .\n\
+                        }\n\
+                          FILTER(str(?NameVal) = "' + pnameSelected + '") . }';
+            $.ajax({
+                url:databaseURL,
+                async:false,
+                data:{"query":query},
+                type:"post",
+                dataType:"json",
+                cache:false,
+                success:function(responseText){
+                    console.log("Results",responseText);
+                    var options = $("#patient");
+                    //Populate the patient name dropdown with the results of the query, they are contained in NameVal, value
+                    for(var i = 0; i < responseText.results.bindings.length; i++) {
+                        if(responseText.results.bindings[i].NameVal != "" || responseText.results.bindings[i].NameVal != "none"){
+                            fieldKeys = Object.keys(responseText.results.bindings[i]);
+                            //Name the variables in a way that a loop can be run to set the value of the fields returned by the Sparql query
+                            for(var fieldIndex in fieldKeys){
+                                var fieldKey = fieldKeys[fieldIndex];
+                                var fieldVal = responseText.results.bindings[i][fieldKey].value;
+                                console.log("Field Name",fieldKey,"Field Val",fieldVal);
+                                $("#" + fieldKey).val(fieldVal);
+
+                            }
+                        }
+
+                    }
+                },
+                error:function(xhr){alert("material property x list Ajax error:" + xhr.status + " " + xhr.statusText);},
+            });
+
+            $.ajax({
+                url:databaseURL,
+                async:false,
+                data:{"query":drugQuery},
+                type:"post",
+                dataType:"json",
+                cache:false,
+                success:function(responseText){
+                    console.log("Results",responseText);
+                    var options = $("#patient");
+                    $("#drugTable tbody tr").remove();
+                    //Populate the patient name dropdown with the results of the query, they are contained in NameVal, value
+                    for(var i = 0; i < responseText.results.bindings.length; i++) {
+                        if(responseText.results.bindings[i].NameVal != "" || responseText.results.bindings[i].NameVal != "none"){
+                            fieldKeys = Object.keys(responseText.results.bindings[i]);
+                            //Add a new row here
+                            tr_row = "<tr>";
+                            var drugsDict = {
+                                "drugVals":"",
+                                "diseaseVal":"",
+                                "descVal":"",
+                                "ratingVal":"",
+                                "evidenceLevelVal":""
+                            }
+                            var emptyDrug = false;
+                            //Name the variables in a way that a loop can be run to set the value of the fields returned by the Sparql query
+                            for(var fieldIndex in fieldKeys)
+                            {
+                                var fieldKey = fieldKeys[fieldIndex];
+                                //?NameVal ?diseaseVal (group_concat(distinct ?drugVal; separator=";") as ?drugVals)
+                                // ?descVal ?evidenceIDVals ?ratingVal ?statusVal ?evidenceLevelVal
+                                var fieldVal = responseText.results.bindings[i][fieldKey].value;
+
+                                if(fieldVal == "" || fieldVal == "none")
+                                {
+                                    emptyDrug = true;
+                                }
+                                if(fieldKey in drugsDict){
+
+                                    drugsDict[fieldKey] = fieldVal;
+                                }
+                                console.log("Field Name",fieldKey,"Field Val",fieldVal);
+                                //Append it to the drugs table
+                                //$("#" + fieldKey).val(fieldVal);                            }
+                            }
+                            //Loop over columns and add to tr.
+                            for (var key in drugsDict){
+                                tr_row += "<td>" + drugsDict[key] + "</td>";
+                            }
+                            tr_row += "</tr>";
+                            if(!emptyDrug){
+                                $("#drugTable").append(tr_row);
+                            }
+                        }
+
+                    }
+                    $('#drugTableBody').sortable();
+                },
+                error:function(xhr){alert("Drug fetch Ajax error:" + xhr.status + " " + xhr.statusText);},
+            });
+
+
+            $("#staging").show();
+
+
+
+        });
+        //Can comment this at a later point
+        //Query portion
+
+
+        // var query = '\n\
+        //                       prefix sio:<http://semanticscience.org/resource/> \n\
+        //                       prefix prov:<http://www.w3.org/ns/prov#> \n\
+        //                       select distinct ?NameVal \n\
+        //                       where{ \n\
+        //                       ?Tumor sio:isPartOf ?Subject .\n\
+        //                       ?Tumor prov:wasGeneratedBy ?Cancer .\n\
+        //                         OPTIONAL{\n\
+        //                          ?Name sio:isAttributeOf ?Subject.\n\
+        //                          ?Name rdf:type [ rdfs:subClassOf sio:FirstName ] .\n\
+        //                          ?Name sio:hasValue ?NameVal .\n\
+        //                   }\n\}';
+        // $.ajax({
+        //     url:databaseURL,
+        //     async:false,
+        //     data:{"query":query},
+        //     type:"post",
+        //     dataType:"json",
+        //     cache:false,
+        //     success:function(responseText){
+        //         console.log("Results",responseText);
+        //         var options = $("#patient");
+        //         //Populate the patient name dropdown with the results of the query, they are contained in NameVal, value
+        //         for(var i = 0; i < responseText.results.bindings.length; i++) {
+        //             if(responseText.results.bindings[i].NameVal != "" || responseText.results.bindings[i].NameVal != "none"){
+        //                 var pname = responseText.results.bindings[i].NameVal.value;
+        //                 console.log("Name",pname);
+        //                 $("#patient").append('<li role=\"presentation\" style="font-size: 14px;"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">' + pname + '</a></li>');
+        //             }
+        //
+        //         }
+        //     },
+        //     error:function(xhr){alert("material property x list Ajax error:" + xhr.status + " " + xhr.statusText);},
+        // });
+    });
+</script>
+<!--Main Layout-->
+
+</body>
+{% endblock %}

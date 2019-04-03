@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% from "_macros.html" import render_resource_link, render_rdfa_resource_link, get_label, facts_panel, summary_panel, content %}
+{% block title %}
+{{get_label(this.description())}}
+{% endblock %}
+{% block content %}
+<div class="row" >
+  <div class="col-md-8">
+    {{ summary_panel(this.description()) }}
+  </div>
+  <div class="col-md-4">
+{% if this.description().value(ns.foaf.depiction) %}
+  <img class="img-responsive img-thumbnail" src="{{this.description().value(ns.foaf.depiction)}}" alt="{{get_label(this.description())}}" />
+{% endif %}
+  </div>
+</div>
+{% endblock %}

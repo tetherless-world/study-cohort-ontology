@@ -1,0 +1,363 @@
+{% extends "base.html" %}
+{% from "_macros.html" import render_resource_link, render_rdfa_resource_link, get_label, facts_panel, summary_panel, content %}
+{% block title %}
+{{get_label(this.description())}}
+{% endblock %}
+{% block content %}
+<head>
+<meta charset="utf-8">
+<title>Force Layout with labels on edges</title>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<style type="text/css">
+</style>
+</head>
+<body>
+<script type="text/javascript">
+    var query="prefix np: <http://www.nanopub.org/nschema#> \
+prefix sio: <http://semanticscience.org/resource/> \
+prefix prov: <http://www.w3.org/ns/prov#> \
+prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> \
+select ?Subject ?Tumor ?Grade ?GradeVal ?OncoDX ?OncoDXVal ?HER2 ?HER2Gene ?HER2Val ?ER ?ERProtein ?ERVal ?PR ?PRProtein ?PRVal ?T ?TVal ?N ?NVal ?M ?MVal ?Lymphnode ?Metastasis ?Cancer where { \
+  ?Tumor sio:isPartOf ?Subject . \
+  ?Tumor prov:wasGeneratedBy ?Cancer . \
+  \
+  ?Grade rdf:type ?GradeSuper . \
+  ?GradeSuper rdfs:subClassOf* ncit:C135461 . \
+  ?Grade sio:hasValue ?GradeVal . \
+  ?Grade sio:isAttributeOf ?Tumor . \
+   \
+  ?OncoDX rdf:type ?OncoDXSuper . \
+  ?OncoDXSuper rdfs:subClassOf ncit:C116341 . \
+  ?OncoDX sio:hasValue ?OncoDXVal . \
+  ?OncoDX sio:isAttributeOf ?Subject . \
+   \
+  ?HER2 rdf:type ?HER2Super . \
+  ?HER2Super rdfs:subClassOf sio:StatusDescriptor . \
+  ?HER2 sio:isAttributeOf ?HER2Gene . \
+  ?HER2Gene rdf:type ncit:C17756 . \
+  ?HER2Gene sio:inRelationTo ?Tumor . \
+  ?HER2Gene prov:wasDerivedFrom ?Subject . \
+  ?HER2 sio:hasValue ?HER2Val . \
+   \
+  ?ER rdf:type ?ERSuper . \
+  ?ERSuper rdfs:subClassOf sio:StatusDescriptor . \
+  ?ER sio:isAttributeOf ?ERProtein . \
+  ?ERProtein rdf:type ncit:C38361 . \
+  ?ERProtein prov:wasDerivedFrom ?Subject . \
+  ?ERProtein sio:inRelationTo ?Tumor . \
+  ?ER sio:hasValue ?ERVal . \
+   \
+  ?PR rdf:type ?PRSuper . \
+  ?PRSuper rdfs:subClassOf sio:StatusDescriptor . \
+  ?PR sio:hasValue ?PRVal . \
+  ?PR sio:isAttributeOf ?PRProtein . \
+  ?PRProtein rdf:type ncit:C17075 . \
+  ?PRProtein prov:wasDerivedFrom ?Subject . \
+  ?PRProtein sio:inRelationTo ?Tumor . \
+  ?PR sio:hasValue ?PRVal . \
+   \
+  ?T rdf:type ?TSuper . \
+  ?TSuper rdfs:subClassOf sio:Diameter . \
+  ?TSuper rdfs:subClassOf ncit:C120284 . \
+  ?T sio:isAttributeOf ?Tumor . \
+  ?T sio:hasValue ?TVal . \
+   \
+  ?N rdf:type ?NSuper . \
+  ?NSuper rdfs:subClassOf sio:Count . \
+  ?N sio:isAttributeOf ?Lymphnode . \
+  ?Lymphnode sio:inRelationTo ?Tumor . \
+  ?Lymphnode rdf:type ncit:C12745 . \
+  ?Lymphnode prov:wasDerivedFrom ??Subject . \
+  ?N sio:hasValue ?NVal . \
+   \
+  ?M rdf:type ?MSuper . \
+  ?MSuper rdfs:subClassOf sio:StatusDescriptor . \
+  ?M sio:isAttributeOf ?Metastasis . \
+  ?Metastasis sio:inRelationTo ?Tumor . \
+  ?Metastasis rdf:type ncit:C19151 . \
+  ?M sio:hasValue ?MVal . \
+}".replace(/ /g,"%20").replace(/\n/g,"%20").replace(/</g,"%3C").replace(/>/g,"%3E").replace(/#/g,"%23");
+    console.log(query);
+
+    function getData(query){
+        var data;
+        var datasets = [];
+        //var dataset = { nodes : [], edges : []};
+        d3.json("/sparql?query=" + query, function(error,json) {
+            //if (error) return console.warn(error);
+            console.log("JSON ",json);
+            data=json;
+            var i;
+            for(i=0;i<data.results.bindings.length;i++){
+                datasets[i]=create_dataset(data.results.bindings[i]);
+            }
+            console.log("Datasets (Inner): ", datasets)
+            console.log("Error",error)
+            //return datasets;
+            //for (dataset in datasets){
+            //    visualize(dataset);
+            //}
+            handleDatasets(datasets);
+        });
+    }
+
+    getData(query);
+    function handleDatasets(datasets){
+        console.log("Datasets (Outer): ", datasets)
+        for (dataset1 in datasets){
+            console.log("The dataset input to the visualisation is : "+ datasets[dataset1]);
+            visualize(datasets[dataset1]);
+        }
+    }
+
+    function create_dataset(json_out){
+        console.log("Here's the result: ",json_out);
+        var dataset = { nodes : [], edges : []};
+        dataset.nodes = [
+            {name: json_out.Tumor.value,index:0}, // 0
+            {name: json_out.Subject.value,index:1}, // 1
+            {name: json_out.Cancer.value,index:2}, // 2
+            {name: json_out.Metastasis.value,index:3}, // 3
+            {name: json_out.Lymphnode.value,index:4}, // 4
+            {name: json_out.HER2.value,index:5}, // 5
+            {name: json_out.HER2Val.value,index:6}, // 6
+            {name: json_out.HER2Gene.value,index:7}, // 7
+            {name: json_out.ER.value,index:8}, // 8
+            {name: json_out.ERVal.value,index:9}, // 9
+            {name: json_out.ERProtein.value,index:10}, // 10
+            {name: json_out.PR.value,index:11}, // 11
+            {name: json_out.PRVal.value,index:12}, // 12
+            {name: json_out.PRProtein.value,index:13}, // 13
+            {name: json_out.T.value,index:14}, // 14
+            {name: json_out.TVal.value,index:15}, // 15
+            {name: json_out.N.value,index:16}, // 16
+            {name: json_out.NVal.value,index:17}, // 17
+            {name: json_out.M.value,index:18}, // 18
+            {name: json_out.MVal.value,index:19}, // 19
+            {name: json_out.Grade.value,index:20}, // 20
+            {name: json_out.GradeVal.value,index:21}, // 21
+            {name: json_out.OncoDX.value,index:22}, // 22
+            {name: json_out.OncoDXVal.value,index:23}, // 23
+        ];
+        dataset.edges = [
+            {source: 0, target: 1, label: "sio:isPartOf"}, // ?Tumor sio:isPartOf ?Subject
+            {source: 0, target: 2, label: "prov:wasGeneratedBy"}, // ?Tumor prov:wasGeneratedBy ?Cancer .
+            {source: 20, target: 21, label: "sio:hasValue"}, // ?Grade sio:hasValue ?GradeVal .
+            {source: 20, target: 0, label: "sio:isAttributeOf"}, // ?Grade sio:isAttributeOf ?Tumor .
+            {source: 22, target: 23, label: "sio:hasValue"}, // ?OncoDX sio:hasValue ?OncoDXVal .
+            {source: 22, target: 1, label: "sio:isAttributeOf"}, // ?OncoDX sio:isAttributeOf ?Tumor .
+            {source: 5, target: 7, label: "sio:isAttributeOf"}, // ?HER2 sio:isAttributeOf ?HER2Gene .
+            {source: 5, target: 6, label: "sio:hasValue"}, // ?HER2 sio:hasValue ?HER2Val .
+            {source: 7, target: 1, label: "prov:wasDerivedFrom"}, // ?HER2Gene prov:wasDerivedFrom ?Subject .
+            {source: 7, target: 0, label: "sio:inRelationTo"}, // ?HER2Gene sio:inRelationTo ?Tumor
+            {source: 11, target: 12, label: "sio:hasValue"}, // ?PR sio:hasValue ?PRVal
+            {source: 11, target: 13, label: "sio:isAttributeOf"}, // ?PR sio:isAttributeOf ?PRProtein 
+            {source: 13, target: 1, label: "prov:wasDerivedFrom"}, // ?PRProtein prov:wasDerivedFrom ?Subject 
+            {source: 13, target: 0, label: "sio:inRelationTo"}, // ?PRProtein sio:inRelationTo ?Tumor 
+            {source: 8, target: 9, label: "sio:hasValue"}, // ?ER sio:hasValue ?ERVal 
+            {source: 8, target: 10, label: "sio:isAttributeOf"}, // ?ER sio:isAttributeOf ?ERProtein
+            {source: 10, target: 1, label: "prov:wasDerivedFrom"}, // ?ERProtein prov:wasDerivedFrom ?Subject
+            {source: 10, target: 0, label: "sio:inRelationTo"}, // ?ERProtein sio:inRelationTo ?Tumor
+            {source: 14, target: 0, label: "sio:isAttributeOf"}, // ?T sio:isAttributeOf ?Tumor
+            {source: 14, target: 15, label: "sio:hasValue"}, // ?T sio:hasValue ?TVal
+            {source: 16, target: 4, label: "sio:isAttributeOf"}, // ?N sio:isAttributeOf ?Lymphnode
+            {source: 16, target: 17, label: "sio:hasValue"}, // ?N sio:hasValue ?NVal
+            {source: 4, target: 0, label: "sio:inRelationTo"}, // ?Lymphnode sio:inRelationTo ?Tumor
+            {source: 4, target: 1, label: "prov:wasDerivedFrom"}, // ?Lymphnode prov:wasDerivedFrom ??Subject 
+            {source: 18, target: 3, label: "sio:isAttributeOf"}, // ?M sio:isAttributeOf ?Metastasis 
+            {source: 18, target: 19, label: "sio:hasValue"}, // ?M sio:hasValue ?MVal
+            {source: 3, target: 0, label: "sio:inRelationTo"} // ?Metastasis sio:inRelationTo ?Tumor 
+        ];
+        console.log("The dataset input for visualisation ",dataset);
+        return dataset;
+        //
+    }
+    function visualize(dataset){
+        var w = 1200;
+        var h = 1000;
+        var linkDistance=250;
+
+        //var colors = d3.scaleOrdinal(d3.schemeCategory10);
+        var colors = d3.scale.category10();
+
+        var svg = d3.select("body").append("svg").attr({"width":w,"height":h});
+        console.log("Dataset nodes : ", dataset.edges);
+        var force = d3.layout.force()
+            .nodes(dataset.nodes)
+            .links(dataset.edges)
+            .size([w,h])
+            .linkDistance([linkDistance])
+            .charge([-500])
+            .theta(0.1)
+            .gravity(0.05)
+            .start();
+
+        var edges = svg.selectAll("line")
+          .data(dataset.edges)
+          .enter()
+          .append("line")
+          .attr("id",function(d,i) {return 'edge'+i})
+          .attr('marker-end','url(#arrowhead)')
+          .style("stroke","#999")
+          .style("pointer-events", "none");
+        
+        var nodes = svg.selectAll("circle")
+          .data(dataset.nodes)
+          .enter()
+          .append("circle")
+          .attr({"r":15})
+          .style("fill",function(d,i){return colors(i);})
+          .call(force.drag)
+
+        var nodelabels = svg.selectAll(".nodelabel") 
+           .data(dataset.nodes)
+           .enter()
+           .append("text")
+           .attr({"x":function(d){return d.x;},
+                  "y":function(d){return d.y;},
+                  "class":"nodelabel",
+                  "stroke":"black"})
+           .text(function(d){return d.name;});
+
+        var edgepaths = svg.selectAll(".edgepath")
+            .data(dataset.edges)
+            .enter()
+            .append('path')
+            .attr({'d': function(d) {return 'M '+d.source.x+' '+d.source.y+' L '+ d.target.x +' '+d.target.y},
+                   'class':'edgepath',
+                   'fill-opacity':0,
+                   'stroke-opacity':0,
+                   'fill':'blue',
+                   'stroke':'red',
+                   'id':function(d,i) {return 'edgepath'+i}})
+            .style("pointer-events", "none");
+
+        var edgelabels = svg.selectAll(".edgelabel")
+            .data(dataset.edges)
+            .enter()
+            .append('text')
+            .style("pointer-events", "none")
+            .attr({'class':'edgelabel',
+                   'id':function(d,i){return 'edgelabel'+i},
+                   'dx':80,
+                   'dy':0,
+                   'font-size':14,
+                   'fill':'#333'});
+
+        edgelabels.append('textPath')
+            .attr('xlink:href',function(d,i) {return '#edgepath'+i})
+            .style("pointer-events", "none")
+            .text(function(d,i){return d.label});//{return 'label '+i});
+
+
+        svg.append('defs').append('marker')
+            .attr({'id':'arrowhead',
+                   'viewBox':'-0 -5 10 10',
+                   'refX':25,
+                   'refY':0,
+                   //'markerUnits':'strokeWidth',
+                   'orient':'auto',
+                   'markerWidth':10,
+                   'markerHeight':10,
+                   'xoverflow':'visible'})
+            .append('svg:path')
+                .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+                .attr('fill', '#ccc')
+                .attr('stroke','#ccc');
+         
+
+        force.on("tick", function(){
+            edges.attr({"x1": function(d){return d.source.x;},
+                        "y1": function(d){return d.source.y;},
+                        "x2": function(d){return d.target.x;},
+                        "y2": function(d){return d.target.y;}
+            });
+
+            nodes.attr({"cx":function(d){return d.x;},
+                        "cy":function(d){return d.y;}
+            });
+
+            nodelabels.attr("x", function(d) { return d.x; })
+                      .attr("y", function(d) { return d.y; });
+
+            edgepaths.attr('d', function(d) { var path='M '+d.source.x+' '+d.source.y+' L '+ d.target.x +' '+d.target.y;
+                                               //console.log(d)
+                                               return path});
+
+            edgelabels.attr('transform',function(d,i){
+                if (d.target.x<d.source.x){
+                    bbox = this.getBBox();
+                    rx = bbox.x+bbox.width/2;
+                    ry = bbox.y+bbox.height/2;
+                    return 'rotate(180 '+rx+' '+ry+')';
+                    }
+                else {
+                    return 'rotate(0)';
+                    }
+            });
+        });
+    }
+
+    var dataset_modified = {
+        nodes: [
+            {name: "Tumor",index:0}, // 0
+            {name: "Subject",index:1}, // 1
+            {name: "Cancer",index:2}, // 2
+            {name: "Metastasis",index:3}, // 3
+            {name: "Lymphnode",index:4}, // 4
+            {name: "HER2",index:5}, // 5
+            {name: "HER2Val",index:6}, // 6
+            {name: "HER2Gene",index:7}, // 7
+            {name: "ER",index:8}, // 8
+            {name: "ERVal",index:9}, // 9
+            {name: "ERProtein",index:10}, // 10
+            {name: "PR",index:11}, // 11
+            {name: "PRVal",index:12}, // 12
+            {name: "PRProtein",index:13}, // 13
+            {name: "T",index:14}, // 14
+            {name: "TVal",index:15}, // 15
+            {name: "N",index:16}, // 16
+            {name: "NVal",index:17}, // 17
+            {name: "M",index:18}, // 18
+            {name: "MVal",index:19}, // 19
+            {name: "Grade",index:20}, // 20
+            {name: "GradeVal",index:21}, // 21
+            {name: "OncoDX",index:22}, // 22
+            {name: "OncoDXVal",index:23}, // 23
+        ],
+        edges: [
+            {source: 0, target: 1, label: "sio:isPartOf"}, // ?Tumor sio:isPartOf ?Subject
+            {source: 0, target: 2, label: "prov:wasGeneratedBy"}, // ?Tumor prov:wasGeneratedBy ?Cancer .
+            {source: 20, target: 21, label: "sio:hasValue"}, // ?Grade sio:hasValue ?GradeVal .
+            {source: 20, target: 0, label: "sio:isAttributeOf"}, // ?Grade sio:isAttributeOf ?Tumor .
+            {source: 22, target: 23, label: "sio:hasValue"}, // ?OncoDX sio:hasValue ?OncoDXVal .
+            {source: 22, target: 1, label: "sio:isAttributeOf"}, // ?OncoDX sio:isAttributeOf ?Tumor .
+            {source: 5, target: 7, label: "sio:isAttributeOf"}, // ?HER2 sio:isAttributeOf ?HER2Gene .
+            {source: 5, target: 6, label: "sio:hasValue"}, // ?HER2 sio:hasValue ?HER2Val .
+            {source: 7, target: 1, label: "prov:wasDerivedFrom"}, // ?HER2Gene prov:wasDerivedFrom ?Subject .
+            {source: 7, target: 0, label: "sio:inRelationTo"}, // ?HER2Gene sio:inRelationTo ?Tumor
+            {source: 11, target: 12, label: "sio:hasValue"}, // ?PR sio:hasValue ?PRVal
+            {source: 11, target: 13, label: "sio:isAttributeOf"}, // ?PR sio:isAttributeOf ?PRProtein 
+            {source: 13, target: 1, label: "prov:wasDerivedFrom"}, // ?PRProtein prov:wasDerivedFrom ?Subject 
+            {source: 13, target: 0, label: "sio:inRelationTo"}, // ?PRProtein sio:inRelationTo ?Tumor 
+            {source: 8, target: 9, label: "sio:hasValue"}, // ?ER sio:hasValue ?ERVal 
+            {source: 8, target: 10, label: "sio:isAttributeOf"}, // ?ER sio:isAttributeOf ?ERProtein
+            {source: 10, target: 1, label: "prov:wasDerivedFrom"}, // ?ERProtein prov:wasDerivedFrom ?Subject
+            {source: 10, target: 0, label: "sio:inRelationTo"}, // ?ERProtein sio:inRelationTo ?Tumor
+            {source: 14, target: 0, label: "sio:isAttributeOf"}, // ?T sio:isAttributeOf ?Tumor
+            {source: 14, target: 15, label: "sio:hasValue"}, // ?T sio:hasValue ?TVal
+            {source: 16, target: 4, label: "sio:isAttributeOf"}, // ?N sio:isAttributeOf ?Lymphnode
+            {source: 16, target: 17, label: "sio:hasValue"}, // ?N sio:hasValue ?NVal
+            {source: 4, target: 0, label: "sio:inRelationTo"}, // ?Lymphnode sio:inRelationTo ?Tumor
+            {source: 4, target: 1, label: "prov:wasDerivedFrom"}, // ?Lymphnode prov:wasDerivedFrom ??Subject 
+            {source: 18, target: 3, label: "sio:isAttributeOf"}, // ?M sio:isAttributeOf ?Metastasis 
+            {source: 18, target: 19, label: "sio:hasValue"}, // ?M sio:hasValue ?MVal
+            {source: 3, target: 0, label: "sio:inRelationTo"} // ?Metastasis sio:inRelationTo ?Tumor 
+        ]
+        };
+    console.log("Using a visualiser with the modelled data ");
+    visualize(dataset_modified);
+</script>
+</body>
+</div>
+{% endblock %}

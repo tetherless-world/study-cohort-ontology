@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+{% from "_macros.html" import render_resource_link, render_rdfa_resource_link, get_label, facts_panel, summary_panel, content %}
+{% block title %}
+{{get_label(this.description())}}
+{% endblock %}
+{% block content %}
+<head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/cdn/css/bootstrap.min.css">
+    <link href="/cdn/css/bootstrap-switch.css" rel="stylesheet">
+
+
+    <!-- jQuery library -->
+    <script src="/cdn/js/jquery-3.3.1.min.js"></script>
+    <script src="/cdn/js/bootstrap.min.js"></script>
+    <script src="/cdn/js/bootstrap-switch.js"></script>
+    <style type="text/css">
+        .intro-2 {
+            background: url("/cdn/images/precisiononcology.jpg")no-repeat center center;
+            background-size: cover;
+        }
+        .top-nav-collapse {
+            background-color: #3f51b5 !important;
+        }
+        .navbar:not(.top-nav-collapse) {
+            background: transparent !important;
+        }
+        @media (max-width: 768px) {
+            .navbar:not(.top-nav-collapse) {
+                background: #3f51b5 !important;
+            }
+        }
+        .hm-gradient .full-bg-img {
+            background: -webkit-linear-gradient(45deg, rgba(83, 125, 210, 0.4), rgba(178, 30, 123, 0.4) 100%);
+            background: -webkit-gradient(linear, 45deg, from(rgba(29, 236, 197, 0.4)), to(rgba(96, 0, 136, 0.4)));
+            background: linear-gradient(to 45deg, rgba(29, 236, 197, 0.4), rgba(96, 0, 136, 0.4) 100%);
+        }
+        .card {
+            background-color: rgba(47,79,79,0.4);
+        }
+
+        .md-form .prefix {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+        }
+        .md-form label {
+            color: #ffffff;
+        }
+        h6 {
+            line-height: 1.7;
+        }
+
+        @media (max-width: 740px) {
+            .full-height,
+            .full-height body,
+            .full-height header,
+            .full-height header .view {
+                height: 1040px;
+            }
+        }
+
+        .form-control {
+            display: inline-block;
+        }
+
+        .hideMe {
+            display: none;
+        }
+    </style>
+</head>
+<!--Main Navigation-->
+<header>
+
+    <!--  <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+         <div class="container">
+             <a class="navbar-brand" href="#"><strong>Configuration Menu</strong></a>
+             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+                 <ul class="navbar-nav mr-auto">
+                     <li class="nav-item active">
+                         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="#">Link</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="#">Profile</a>
+                     </li>
+                 </ul>
+                 <form class="form-inline">
+                     <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                 </form>
+             </div>
+         </div>
+     </nav> -->
+
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Configuration Menu</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!--Intro Section-->
+    <section class="view intro-2 hm-gradient">
+        <div class="full-bg-img">
+            <div class="container ">
+                <div class="">
+
+                    <!--Form-->
+                    <div class="col-lg-4 col-lg-offset-4 jumbotron card">
+                        <form class="form-inline justify-content-center">
+                            <div class="form-group text-white">
+                                <label for="names">Patient Name</label>
+                                <div class="btn-group" id="names">
+                                    <button id="label" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span id="areaCode">Enter Name</span><span class="caret"></span>
+
+                                    </button>
+                                    <ul id="patient" class="dropdown-menu" role="menu" aria-labelledby="label">
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Bob</a></li>
+                                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Alice</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                        <div id ="staging" class="hideMe text-white">
+                            <form id="stagingForm" class="form-inline justify-content-center card">
+                                <p><b>Patient Details</b></p>
+                                </br>
+
+                                <div class="checkbox">
+                                    <label for="names">Staging Criteria
+                                        <input id="toggle-stage" type="checkbox" name="my-checkbox" checked></label>
+                                </div>
+                                <div class="text-white card form-inline">
+                                    <center><b><p>Biomarkers</p></b></center>
+                                    </br>
+                                    <div class="form-group">
+                                        <label>HER2
+                                            <input type="text" class="form-control" value="POS"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>ER
+                                            <input type="text" class="form-control" value="POS"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>PR
+                                            <input type="text" class="form-control" value="NEG"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>T
+                                            <input type="text" class="form-control" value="3"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>N
+                                            <input type="text" class="form-control pull-right" value="3"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>M
+                                            <input type="text" class="form-control" value="0"></input>
+                                    </div>
+                                </div>
+
+
+
+                        </div>
+                        </form>
+
+                    </div>
+                </div>
+                <!--/.Form-->
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+</header>
+<!--Main Navigation-->
+
+<!--Main Layout-->
+<main>
+
+    <div class="container text-center">
+
+        <!--Grid row-->
+        <div class="row py-5">
+
+            <!--Grid column-->
+            <div class="col-md-12 text-center">
+
+                <p>Precision Oncology. Use this page to browse through your patient's cancer history, parameters and impact to restaging. Please toggle between the staging criteria, to see whether they are vulnerable to a grade increase due to the change in staging rules. If they are, the parameter that lead to the change will then light up. Make informed decisions on drugs to prescribe based on our justifications driven by semantics. </p>
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+    </div>
+
+</main>
+<script type="text/javascript">
+    $(document).ready(function() {
+        //$(".dropdown-toggle").dropdown();
+
+        //$("[name='my-checkbox']").bootstrapSwitch();
+        console.log("Hi there" + "{{ config['SATORU_CDN_DIR'] }}" + "/images/precisiononcology.jpg");
+        $("body").on("click", "#patient li", function(e){
+
+            $("#staging").show();
+
+            console.log("Hi there");
+            //sets button text
+            $("#label").text($($(this).find("a")).text())
+            //removes isSelected class
+            $("#patient li a").removeClass("isSelected");
+            //add isSlected Class to clicked element
+            $($(this).find('a')).addClass("isSelected")
+
+        });
+
+        // $("#patient li").click(function(){
+        //     $("#staging").show();
+        //
+        //     console.log("Hi there");
+        //     //sets button text
+        //     $("#label").text($($(this).find("a")).text())
+        //     //removes isSelected class
+        //     $("#patient li a").removeClass("isSelected");
+        //     //add isSlected Class to clicked element
+        //     $($(this).find('a')).addClass("isSelected")
+        // })
+
+        //Query portion
+        var databaseURL = "/sparql";
+        var nanoPrefix = "http://nanomine.tw.rpi.edu/ns/";
+        var unitPrefix = "http://nanomine.tw.rpi.edu/ns/unit/";
+        var samplePrefix = "http://nanomine.tw.rpi.edu/sample/";
+        var compoundPrefix = "http://nanomine.tw.rpi.edu/compound/";
+        var sioPrefix = "http://semanticscience.org/resource/";
+
+        var query = '\n\
+                              prefix sio:<http://semanticscience.org/resource/> \n\
+                              prefix prov:<http://www.w3.org/ns/prov#> \n\
+                              select distinct ?NameVal \n\
+                              where{ \n\
+                              ?Tumor sio:isPartOf ?Subject .\n\
+                              ?Tumor prov:wasGeneratedBy ?Cancer .\n\
+                                OPTIONAL{\n\
+                                 ?Name sio:isAttributeOf ?Subject.\n\
+                                 ?Name rdf:type [ rdfs:subClassOf sio:FirstName ] .\n\
+                                 ?Name sio:hasValue ?NameVal .\n\
+                          }\n\}';
+        $.ajax({
+            url:databaseURL,
+            async:false,
+            data:{"query":query},
+            type:"post",
+            dataType:"json",
+            cache:false,
+            success:function(responseText){
+                console.log("Results",responseText);
+                var options = $("#patient");
+                //Populate the patient name dropdown with the results of the query, they are contained in NameVal, value
+                for(var i = 0; i < responseText.results.bindings.length; i++) {
+                    if(responseText.results.bindings[i].NameVal != "" || responseText.results.bindings[i].NameVal != "none"){
+                        var pname = responseText.results.bindings[i].NameVal.value;
+                        console.log("Name",pname);
+                        $("#patient").append('<li role=\"presentation\"><a role=\"menuitem\" tabindex=\"-1\" href=\"#\">' + pname + '</a></li>');
+                    }
+
+                }
+            },
+            error:function(xhr){alert("material property x list Ajax error:" + xhr.status + " " + xhr.statusText);},
+        });
+    });
+</script>
+<!--Main Layout-->
+</body>
+{% endblock %}

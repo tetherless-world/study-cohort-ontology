@@ -1,0 +1,1 @@
+<http://localhost/physicianView> a <http://heals2vis.tw.rpi.edu/ns/Visualization> .

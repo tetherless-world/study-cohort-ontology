@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% from "_macros.html" import render_resource_link, render_rdfa_resource_link, get_label, facts_panel, summary_panel, content %}
+{% block title %}
+{{get_label(this.description())}}
+{% endblock %}
+{% block content %}
+
+<head>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="d3sparql.js"></script>
+    <script>
+        function exec() {
+            /* Uncomment to see debug information in console */
+            // d3sparql.debug = true
+            var endpoint = d3.select("#endpoint").property("value")
+            var sparql = d3.select("#sparql").property("value")
+            console.log("Here is the sparql output ",sparql)
+            d3sparql.query(endpoint, sparql, render)
+        }
+        function render(json) {
+            /* set options and call the d3spraql.xxxxx function in this library ... */
+            var config = {
+                "selector": "#result"
+            }
+            d3sparql.forcegraph(json, config)
+        }
+    </script>
+    <style>
+        <!-- customize CSS -->
+    </style>
+</head>
+<body onload="exec()">
+<form style="display:none">
+    <input id="endpoint" value="http://192.168.33.36:5000/sparql" type="text">
+    <textarea id="sparql">
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix np: <http://www.nanopub.org/nschema#>
+prefix sio: <http://semanticscience.org/resource/>
+prefix prov: <http://www.w3.org/ns/prov#>
+prefix ncit: <http://purl.obolibrary.org/obo/NCIT_>
+prefix hasco: <http://hadatac.org/ont/hasco#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+select ?Subject ?Tumor ?GradeVal ?OncoDXVal ?HER2Val ?ERVal ?PRVal ?TVal ?NVal ?MVal where {
+?Tumor sio:isPartOf ?Subject .
+?Tumor prov:wasGeneratedBy ?Cancer .
+
+OPTIONAL{
+?Grade rdf:type ?GradeSuper .
+?GradeSuper rdfs:subClassOf ncit:C135461 .
+?Grade sio:hasValue ?GradeVal .
+?Grade sio:isAttributeOf ?Tumor .
+  }
+OPTIONAL{
+?OncoDX rdf:type ?OncoDXSuper .
+?OncoDXSuper rdfs:subClassOf ncit:C116341 .
+?OncoDX sio:hasValue ?OncoDXVal .
+?OncoDX sio:isAttributeOf ?Subject .
+  }
+ OPTIONAL{
+?HER2 rdf:type ?HER2Super .
+?HER2Super rdfs:subClassOf sio:StatusDescriptor .
+?HER2 sio:hasValue ?HER2Val .
+?HER2 sio:isAttributeOf ?HER2Gene .
+?HER2Gene rdf:type ncit:C17756 .
+?HER2Gene prov:wasDerivedFrom ?Subject .
+?HER2 sio:hasValue ?HER2Val .
+  }
+OPTIONAL{
+?ER rdf:type ?ERSuper .
+?ERSuper rdfs:subClassOf sio:StatusDescriptor .
+?ER sio:hasValue ?ERVal .
+?ER sio:isAttributeOf ?ERProtein .
+?ERProtein rdf:type ncit:C38361 .
+?ERProtein prov:wasDerivedFrom ?Subject .
+?ER sio:hasValue ?ERVal .
+  }
+  OPTIONAL{
+?PR rdf:type ?PRSuper .
+?PRSuper rdfs:subClassOf sio:StatusDescriptor .
+?PR sio:hasValue ?PRVal .
+?PR sio:isAttributeOf ?PRProtein .
+?PRProtein rdf:type ncit:C17075 .
+?PRProtein prov:wasDerivedFrom ?Subject .
+?PR sio:hasValue ?PRVal .
+  }
+  OPTIONAL{
+?T rdf:type ?TSuper .
+?TSuper rdfs:subClassOf sio:Diameter .
+?TSuper rdfs:subClassOf ncit:C120284 .
+?T sio:isAttributeOf ?Tumor .
+?T sio:hasValue ?TVal .
+  }OPTIONAL{
+?N rdf:type ?NSuper .
+?NSuper rdfs:subClassOf sio:Count .
+?N sio:isAttributeOf ?Lymphnode .
+?Lymphnode prov:wasDerivedFrom ?Subject .
+?Lymphnode rdf:type ncit:C12745 .
+?N sio:hasValue ?NVal .
+  }OPTIONAL{
+?M rdf:type ?MSuper .
+?MSuper rdfs:subClassOf sio:StatusDescriptor .
+?M sio:isAttributeOf ?Metastasis .
+?Metastasis sio:inRelationTo ?Tumor .
+?Metastasis rdf:type ncit:C19151 .
+?M sio:hasValue ?MVal .
+  }
+}
+   </textarea>
+</form>
+<div id="result"></div>
+</body>
+
+{% endblock %}

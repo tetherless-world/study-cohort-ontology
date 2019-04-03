@@ -1,0 +1,575 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix seer-kb: <http://idea.rpi.edu/heals/kb/seer#> .
+@prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix cst: <http://idea.rpi.edu/ontologies/cancer_staging_terms.owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <http://idea.rpi.edu/ontologies/cancer_staging_terms.owl#> .
+
+<http://idea.rpi.edu/ontologies/cancer_staging_terms.owl>
+  a owl:Ontology ;
+  dc:license <http://www.apache.org/licenses/LICENSE-2.0> .
+
+:R7_Stage a owl:Class ;
+	rdfs:label "AJCC 7th Revision Stage".
+
+:R7_Stage_0 a owl:Class ;
+	rdfs:label "Stage 0 (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage .
+
+:R7_Stage_I a owl:Class ;
+	rdfs:label "Stage 1 (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage .
+
+:R7_Stage_IA a owl:Class ;
+	rdfs:label "Stage IA (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage_I .
+
+:R7_Stage_IB a owl:Class ;
+	rdfs:label "Stage IB (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage_I .
+
+:R7_Stage_II a owl:Class ;
+	rdfs:label "Stage II (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage .
+
+:R7_Stage_IIA a owl:Class ;
+	rdfs:label "Stage IIA (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage_II .
+
+:R7_Stage_IIB a owl:Class ;
+	rdfs:label "Stage IIB (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage_II .
+
+:R7_Stage_III a owl:Class ;
+	rdfs:label "Stage III (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage .
+
+:R7_Stage_IIIA a owl:Class ;
+	rdfs:label "Stage IIIA (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage_III .
+
+:R7_Stage_IIIB a owl:Class ;
+	rdfs:label "Stage IIIB (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage_III .
+
+:R7_Stage_IIIC a owl:Class ;
+	rdfs:label "Stage IIIC (AJCC 7th Revision)" ;
+    rdfs:subClassOf :R7_Stage_III .
+
+:R8_Stage a owl:Class ;
+	rdfs:label "AJCC 8th Revision Stage".
+
+:R8_Stage_0 a owl:Class ;
+	rdfs:label "Stage 0 (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage .
+
+:R8_Stage_I a owl:Class ;
+	rdfs:label "Stage I (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage ;
+    cst:hasRecommendedTest "Mammogram"^^xsd:string ,
+                            "Lymph Node Biopsy"^^xsd:string ,
+                            "Receptor Tests"^^xsd:string ;
+    cst:hasTreatmentOption "Radiation Therapy"^^xsd:string ,
+                            "Endocrine Therapy"^^xsd:string,
+                            "Surgery"^^xsd:string .
+
+:R8_Stage_IA a owl:Class ;
+	rdfs:label "Stage IA (AJCC 8th Revi(AJCC 7th Revision)sion)" ;
+    rdfs:subClassOf :R8_Stage_I .
+
+:R8_Stage_IB a owl:Class ;
+	rdfs:label "Stage IB (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage_I .
+
+:R8_Stage_II a owl:Class ;
+	rdfs:label "Stage II (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage ;
+    cst:hasRecommendedTest "Mammogram"^^xsd:string ,
+                            "Lymph Node Biopsy"^^xsd:string ,
+                            "Receptor Tests"^^xsd:string ;
+    cst:hasTreatmentOption "Radiation Therapy"^^xsd:string ,
+                            "Endocrine Therapy"^^xsd:string,
+                            "Surgery"^^xsd:string .
+
+:R8_Stage_IIA a owl:Class ;
+	rdfs:label "Stage IIA (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage_II .
+
+:R8_Stage_IIB a owl:Class ;
+	rdfs:label "Stage IIB (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage_II .
+
+:R8_Stage_III a owl:Class ;
+	rdfs:label "Stage III (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage ;
+    cst:hasRecommendedTest "Breast Biopsy"^^xsd:string ,
+                            "Bone Scan"^^xsd:string ,
+                            "HER2 Test"^^xsd:string ,
+                            "Histologic Typing"^^xsd:string ;
+    cst:hasTreatmentOption "Chemotherapy"^^xsd:string ,
+                            "Mastectomy"^^xsd:string ,
+                            "Lumpectomy"^^xsd:string .
+
+:R8_Stage_IIIA a owl:Class ;
+	rdfs:label "Stage IIIA (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage_III .
+
+:R8_Stage_IIIB a owl:Class ;
+	rdfs:label "Stage IIIB (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage_III .
+
+:R8_Stage_IIIC a owl:Class ;
+	rdfs:label "Stage IIIC (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage_III .
+
+:R8_Stage_IV a owl:Class ;
+	rdfs:label "Stage IV (AJCC 8th Revision)" ;
+    rdfs:subClassOf :R8_Stage ;
+    cst:hasRecommendedTest "Pathology Report"^^xsd:string ,
+                            "Receptor Testing"^^xsd:string ,
+                            "Hormone Receptor Test"^^xsd:string ,
+                            "HER2 Test"^^xsd:string ,
+                            "Histologic Typing"^^xsd:string ;
+    cst:hasTreatmentOption "Chemotherapy"^^xsd:string ,
+                            "Targeted Therapy"^^xsd:string ,
+                            "Whole Body Treatment"^^xsd:string .
+
+:T a owl:Class ;
+    rdfs:label "Generic T Stage Finding";
+	owl:equivalentClass ncit:C48885 .
+
+:T0 a owl:Class ;
+    rdfs:label "T0 Stage Finding";
+    rdfs:comment "Main tumor cannot be found";
+	owl:equivalentClass ncit:C48719 ;
+    rdfs:subClassOf :T .
+
+:Tis a owl:Class ;
+	rdfs:label "Tis Stage Finding" ;
+	rdfs:comment "Carcinoma In Situ";
+	owl:equivalentClass ncit:C48738 ;
+    rdfs:subClassOf :T .
+
+:T1 a owl:Class ;
+	rdfs:comment "Tumor 2 cm or less in greatest dimension" ;
+	rdfs:label "T1 Stage Finding";
+	owl:equivalentClass ncit:C48720 ;
+    rdfs:subClassOf :T .
+
+:T1a a owl:Class ;
+	rdfs:label "T1a Stage Finding";
+	rdfs:comment "Tumor greater than 0.1 cm, up to 0.5 cm in greatest dimension" ;
+    	rdfs:subClassOf :T1 ;
+	owl:equivalentClass ncit:C48721 .
+
+:T1a_m  a owl:Class ;
+	rdfs:label "T1a(m) Stage Finding" ;
+	rdfs:subClassOf :T1a .
+
+:T1a_s  a owl:Class ;
+	rdfs:label "T1a(s) Stage Finding" ;
+	rdfs:subClassOf :T1a .
+
+:T1a1  a owl:Class ;
+	rdfs:label "T1a1 Stage Finding" ;
+	rdfs:subClassOf :T1a .
+
+:T1a2  a owl:Class ;
+	rdfs:label "T1a2 Stage Finding" ;
+	rdfs:subClassOf :T1a .
+
+:T1b a owl:Class ;
+	rdfs:comment "Tumor greater than 0.5 cm, up to 1 cm in greatest dimension"  ;
+    rdfs:subClassOf :T1 ;
+	owl:equivalentClass ncit:C48722 .
+
+:T1b1  a owl:Class ;
+	rdfs:label "T1b1 Stage Finding" ;
+	rdfs:subClassOf :T1b .
+
+:T1b2  a owl:Class ;
+	rdfs:label "T1b2 Stage Finding" ;
+	rdfs:subClassOf :T1b .
+
+:T1b_m  a owl:Class ;
+	rdfs:label "T1b(m) Stage Finding" ;
+	rdfs:subClassOf :T1b .
+
+:T1b_s  a owl:Class ;
+	rdfs:label "T1b(s) Stage Finding" ;
+	rdfs:subClassOf :T1b .
+
+:T1c a owl:Class ;
+	rdfs:label "T1c Stage Finding" ;
+	rdfs:comment "Tumor greater than 1 cm, but not more than 2 cm in greatest dimension"  ;
+    	rdfs:subClassOf :T1 ;
+	owl:equivalentClass ncit:C48723 .
+
+:T1d  a owl:Class ;
+	rdfs:label "T1d Stage Finding" ;
+	rdfs:subClassOf :T1 .
+
+:T1mic a owl:Class ;
+	rdfs:label "T1mic Stage Finding" ;
+	rdfs:comment "Microinvasion of 0.1 cm or less in its largest dimension" ;
+    	rdfs:subClassOf :T1 ;
+	owl:equivalentClass ncit:C95805 .
+
+:T1NOS a owl:Class ;
+	rdfs:label "T1NOS Stage Finding" ;
+	rdfs:subClassOf :T1 .
+
+:T1NOS_s a owl:Class ;
+	rdfs:label "T1NOS(s) Stage Finding" ;
+	rdfs:subClassOf :T1NOS .
+
+:T2 a owl:Class ;
+	rdfs:label "T2 Stage Finding" ;
+	rdfs:comment "Tumor greater than 2 cm but not more than 5 cm in greatest dimension"  ;
+	owl:equivalentClass ncit:C48724 ;
+    rdfs:subClassOf :T .
+
+:T2_m a owl:Class ;
+	rdfs:label "T2(m) Stage Finding" ;
+	rdfs:subClassOf :T2 .
+
+:T2_s a owl:Class ;
+	rdfs:label "T2(s) Stage Finding" ;
+	rdfs:subClassOf :T2 .
+
+:T2a  a owl:Class ;
+	rdfs:label "T2a Stage Finding" ;
+	rdfs:subClassOf :T2 .
+
+:T2a1  a owl:Class ;
+	rdfs:label "T2a1 Stage Finding" ;
+	rdfs:subClassOf :T2a .
+
+:T2a2  a owl:Class ;
+	rdfs:label "T2a2 Stage Finding" ;
+	rdfs:subClassOf :T2a .
+
+:T2b  a owl:Class ;
+	rdfs:label "T2b Stage Finding" ;
+	rdfs:subClassOf :T2 .
+
+:T2c  a owl:Class ;
+	rdfs:label "T2c Stage Finding" ;
+	rdfs:subClassOf :T2 .
+
+:T2d  a owl:Class ;
+	rdfs:label "T2d Stage Finding" ;
+	rdfs:subClassOf :T2 .
+
+:T2NOS a owl:Class ;
+	rdfs:label "T2NOS Stage Finding" ;
+	rdfs:subClassOf :T2 .
+
+:T2aNOS a owl:Class ;
+	rdfs:label "T2NOS Stage Finding" ;
+	rdfs:subClassOf :T2a .
+
+:T3 a owl:Class ;
+	rdfs:comment "Tumor greater than 5 cm in greatest dimension"  ;
+	rdfs:label "T3 Stage Finding";
+	owl:equivalentClass ncit:C48728 ;
+    rdfs:subClassOf :T .
+
+:T3_m a owl:Class ;
+	rdfs:label "T3(m) Stage Finding" ;
+	rdfs:subClassOf :T3 .
+
+:T3_s a owl:Class ;
+	rdfs:label "T3(s) Stage Finding" ;
+	rdfs:subClassOf :T3 .
+
+:T3a a owl:Class ;
+	rdfs:label "T3a Stage Finding" ;
+	rdfs:subClassOf :T3 .
+
+:T3b a owl:Class ;
+	rdfs:label "T3b Stage Finding" ;
+	rdfs:subClassOf :T3 .
+
+:T3c a owl:Class ;
+	rdfs:label "T3c Stage Finding" ;
+	rdfs:subClassOf :T3 .
+
+:T3d a owl:Class ;
+	rdfs:label "T3d Stage Finding" ;
+	rdfs:subClassOf :T3 .
+
+:T3NOS a owl:Class ;
+	rdfs:label "T3NOS Stage Finding" ;
+	rdfs:subClassOf :T3 .
+
+:T4 a owl:Class ;
+	rdfs:label "T4 Stage Finding";
+	rdfs:comment "Tumor of any size with direct extension to the chest wall or to the skin, only as described in T4a and T4d"  ;
+	owl:equivalentClass ncit:C48732 ;
+    rdfs:subClassOf :T .
+
+:T4a a owl:Class ;
+	rdfs:label "T4a Stage Finding";
+	rdfs:comment "Extension to the chest wall"  ;
+    rdfs:subClassOf :T4 ;
+	owl:equivalentClass ncit:C48733 .
+
+:T4b a owl:Class ;
+	rdfs:label "T4b Stage Finding";
+	rdfs:comment "Edema (including 'orange peau'), or skin ulceration of the skin, or satellite cutaneous nodules confined to the same breast"  ;
+    rdfs:subClassOf :T4 ;
+	owl:equivalentClass ncit:C48734 .
+
+:T4c a owl:Class ;
+	rdfs:label "T4c Stage Finding";
+	rdfs:comment "Both (T4a and T4b) above"  ;
+    rdfs:subClassOf :T4 ;
+	owl:equivalentClass ncit:C48735 .
+
+:T4d a owl:Class ;
+	rdfs:label "T4d Stage Finding";
+	rdfs:comment "Inflammatory Carcinoma"  ;
+    rdfs:subClassOf :T4 ;
+	owl:equivalentClass ncit:C48736 .
+
+:TX a owl:Class ;
+	rdfs:label "TX Stage Finding" ;
+	owl:equivalentClass ncit:C48737 ;
+    rdfs:subClassOf :T .
+
+:N a owl:Class ;
+    rdfs:label "Generic N Stage Finding";
+	owl:equivalentClass ncit:C48884 .
+
+:N0 a owl:Class ;
+    rdfs:label "N0 Stage Finding";
+    rdfs:comment "There is no cancer in nearby lymph nodes";
+    owl:equivalentClass ncit:C48705 ;
+    rdfs:subClassOf :N .
+
+:N0_iPos a owl:Class ;
+    rdfs:comment "ITCs only (malignant cell clusters no larger than 2cm) in regional lymph nodes";
+    rdfs:label "N0 (i+) Stage Finding";
+    rdfs:subClassOf :N0 ;
+    owl:equivalentClass ncit:C95922.
+
+:N0_iNeg a owl:Class ;
+    rdfs:label "N0 (i-) Stage Finding";
+    rdfs:subClassOf :N0 ;
+    owl:equivalentClass ncit:C95921. 
+
+:N1 a owl:Class ;
+	rdfs:label "N1 Stage Finding";
+	rdfs:comment "Metastasis in axillary lymph node(s), homolateral(s), mobile(s)";
+	owl:equivalentClass ncit:C48706 ;
+    rdfs:subClassOf :N .
+
+:N1a a owl:Class ;
+    rdfs:comment "Metastases in 1-3 axillary lymph nodes, at least one metastasis larger than 20 cm";
+    rdfs:label "N1a Stage Finding";
+    rdfs:subClassOf :N1 ;
+    owl:equivalentClass ncit:C48707. 
+
+:N1b a owl:Class ;
+    rdfs:comment "Metastases in ipsilateral internal mammary sentinel lymph nodes, excluding ITCs";
+    rdfs:label "N1b Stage Finding";
+    rdfs:subClassOf :N1 ;
+    owl:equivalentClass ncit:C48708. 
+
+:N1c a owl:Class ;
+    rdfs:comment "N1a and N1b combined";
+    rdfs:label "N1c Stage Finding";
+    rdfs:subClassOf :N1 ;
+    owl:equivalentClass ncit:C48709. 
+
+:N1mi a owl:Class ;
+    rdfs:comment "Micrometastases (approximately 200 cells, larger than 0.2 mm, but none larger than 2.0 mm)";
+    rdfs:label "N1mi Stage Finding";
+    rdfs:subClassOf :N1 ;
+    owl:equivalentClass ncit:C95955. 
+
+:N1NOS a owl:Class ;
+    rdfs:label "N1NOS Stage Finding" ;
+    rdfs:subClassOf :N1 .
+
+:N2 a owl:Class ;
+	rdfs:label "N2 Stage Finding";
+	rdfs:comment "Metastasis in axillary lymph node (s), homolateral(s), fixed or clinically apparent metastasis in homolateral internal mammary lymph node(s), in the absence of clinical evidence of metastasis in Axillary lymph node(s)"  ;
+	owl:equivalentClass ncit:C48786 ;
+    rdfs:subClassOf :N .
+
+:N2a a owl:Class ;
+	rdfs:label "N2a Stage Finding";
+	rdfs:comment "Metastasis in axillary lymph node(s) fixed to each other or to other structures"  ;
+    rdfs:subClassOf :N2 ;
+	owl:equivalentClass ncit:C48711 .
+
+:N2b a owl:Class ;
+	rdfs:label "N2b Stage Finding";
+	rdfs:comment "Clinically apparent metastasis in internal mammary lymph node(s), in the absence of clinical evidence of metastasis in auxiliary lymph node(s)"  ;
+    rdfs:subClassOf :N2 ;
+	owl:equivalentClass ncit:C48712 .
+
+:N2c a owl:Class ;
+	rdfs:label "N2c Stage Finding" ;
+    rdfs:subClassOf :N2 ;
+	owl:equivalentClass ncit:C48713 .
+
+:N2NOS a owl:Class ;
+	rdfs:label "N2NOS Stage Finding" ;
+    rdfs:subClassOf :N2 .
+
+:N3 a owl:Class ;
+	rdfs:label "N3 Stage Finding";
+	rdfs:comment "Metastasis in homolateral infraclavicular lymph node(s) with or without involvement of axillary lymph node(s); Or clinically apparent in homolateral internal mammary lymph node(s), in the presence of clinical evidence of metastasis in axillary lymph node(s); Or metastasis in homolateral supraclavicular lymph node(s) with or without involvement of axillary lymph node(s) or internal mammary(ies)"  ;
+	owl:equivalentClass ncit:C48714 ;
+    rdfs:subClassOf :N .
+
+:N3a a owl:Class ;
+	rdfs:label "N3a Stage Finding";
+	rdfs:comment "Metastasis in homolateral infraclavicular lymph node(s) with or without involvement of axillary lymph node(s); Or clinically apparent in homolateral internal mammary lymph node(s), in the presence of clinical evidence of metastasis in axillary lymph node(s); Or metastasis in homolateral supraclavicular lymph node(s) with or without involvement of axillary lymph node(s) or internal mammary(ies)"  ;
+    rdfs:subClassOf :N3 ;
+	owl:equivalentClass ncit:C48715 .
+
+:N3b a owl:Class ;
+	rdfs:label "N3b Stage Finding";
+	rdfs:comment "Metastasis in internal mammary(ies) and axillary lymph nodes"  ;
+    rdfs:subClassOf :N3 ;
+	owl:equivalentClass ncit:C48716 .
+
+:N3c a owl:Class ;
+	rdfs:label "N3c Stage Finding";
+	rdfs:comment "Metastasis in supraclavicular lymph node(s)"  ;
+    rdfs:subClassOf :N3 ;
+	owl:equivalentClass ncit:C48717 .
+
+:N3NOS a owl:Class ;
+	rdfs:label "N3NOS Stage Finding" ;
+    rdfs:subClassOf :N3 .
+
+:N4 a owl:Class ;
+	rdfs:label "N4 Stage Finding" ;
+	owl:equivalentClass ncit:C96026 ;
+    rdfs:subClassOf :N .
+
+:NX a owl:Class ;
+	rdfs:label "NX Stage Finding" ;
+	owl:equivalentClass ncit:C48718 ;
+    rdfs:subClassOf :N .
+
+:M a owl:Class ;
+    rdfs:label "Generic M Stage Finding";
+	owl:equivalentClass ncit:C48883 .
+
+:M0 a owl:Class  ;
+	rdfs:label "M0 Stage Finding";
+	rdfs:comment: "No clinical or radiographic evidence of distant metastases";
+	owl:equivalentClass ncit:C48699 ;
+    rdfs:subClassOf :M .
+
+:M0_iPos a owl:Class ;
+	rdfs:comment: "No clinical or radiographic evidence of distant metastasesin the presence of tumor cells or and no deposits nogreater than 0.2 mm detected microscopically or by usingmolecular techniques in circulating blood, bone marrow, orother nonregional lymph node tissue in a patient withoutsymptoms or signs of metastases";
+	rdfs:label "M0(i+) Stage Finding" ;
+    rdfs:subClassOf :M0 .
+
+:M0_iNeg a owl:Class ;
+	rdfs:label "M0(i-) Stage Finding" ;
+    rdfs:subClassOf :M0 .
+
+:M1 a owl:Class  ;
+	rdfs:comment: "Distant metastases detected by clinical and radiographicmeans (cM) and/or histologically proven metastases largerthan 0.2 mm (pM)";
+	rdfs:label "M1 Stage Finding" ;
+	owl:equivalentClass ncit:C48700 ;
+    rdfs:subClassOf :M .
+
+:M1a a owl:Class  ;
+	rdfs:label "M1a Stage Finding" ;
+    rdfs:subClassOf :M1 ;
+	owl:equivalentClass ncit:C48701 .
+
+:M1b a owl:Class  ;
+	rdfs:label "M1b Stage Finding" ;
+    rdfs:subClassOf :M1 ;
+	owl:equivalentClass ncit:C48702 .
+
+:M1c a owl:Class  ;
+	rdfs:label "M1c Stage Finding" ;
+    rdfs:subClassOf :M1 ;
+	owl:equivalentClass ncit:C48703 .
+
+:M1NOS a owl:Class ;
+	rdfs:label "M1NOS Stage Finding" ;
+    rdfs:subClassOf :M1 .
+
+:MX a owl:Class  ;
+	rdfs:label "MX Stage Finding" ;
+	owl:equivalentClass ncit:C48704 ;
+    rdfs:subClassOf :M .
+
+:Grade a owl:Class ;
+    rdfs:label "Generic Histologic Grade Finding";
+	owl:equivalentClass ncit:C36041 .
+
+:Grade1  a owl:Class ;
+	rdfs:label "Histologic Grade is 1" ;
+	owl:equivalentClass ncit:C36039 ;
+    rdfs:subClassOf :Grade .
+
+:Grade2  a owl:Class ;
+	rdfs:label "Histologic Grade is 2" ;
+	owl:equivalentClass ncit:C36040 ;
+    rdfs:subClassOf :Grade .
+
+:Grade3  a owl:Class ;
+	rdfs:label "Histologic Grade is 3" ;
+	owl:equivalentClass ncit:C36042 ;
+    rdfs:subClassOf :Grade .
+
+:Grade4  a owl:Class ;
+	rdfs:label "Histologic Grade is 4" ;
+	owl:equivalentClass ncit:C36045 ;
+    rdfs:subClassOf :Grade .
+
+:Receptor_Status a owl:Class;
+	rdfs:label "Receptor Status";
+	owl:equivalentClass ncit:C94299 .
+
+:HER2_Pos  a owl:Class ;
+	rdfs:label "HER2+";
+	rdfs:comment "Human Epidermal growth factor Receptor 2 is positive" ;
+	owl:equivalentClass ncit:C68748 ;
+    rdfs:subClassOf :Receptor_Status .
+
+:HER2_Neg  a owl:Class ;
+	rdfs:label "HER2-";
+	rdfs:comment "Human Epidermal growth factor Receptor 2 is negative" ;
+	owl:equivalentClass ncit:C68749 ;
+    rdfs:subClassOf :Receptor_Status .
+
+:ER_Pos a owl:Class ;
+	rdfs:label "ER+";
+	rdfs:comment "Estrogen receptor is positive" ;
+	owl:equivalentClass ncit:C15492 ;
+    rdfs:subClassOf :Receptor_Status .
+
+:ER_Neg a owl:Class ;
+	rdfs:label "ER-";
+	rdfs:comment "Estrogen receptor is negative" ;
+	owl:equivalentClass ncit:C15493 ;
+    rdfs:subClassOf :Receptor_Status .
+
+:PR_Pos a owl:Class ;
+	rdfs:label "PR+";
+	rdfs:comment "Progesterone receptor is positive" ;
+	owl:equivalentClass ncit:C15496 ;
+    rdfs:subClassOf :Receptor_Status .
+
+:PR_Neg a owl:Class ;
+	rdfs:label "PR-";
+	rdfs:comment "Progesterone receptor is negative" ;
+	owl:equivalentClass ncit:C15497 ;
+    rdfs:subClassOf :Receptor_Status .
