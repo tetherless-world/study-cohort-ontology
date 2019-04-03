@@ -11,8 +11,9 @@
 	<!ENTITY sco "https://idea.tw.rpi.edu/projects/heals/studycohort/" >
 	<!ENTITY chear "http://hadatac.org/ont/chear#" >
 	<!ENTITY hasco "http://hadatac.org/ont/hasco#" >
+	<!ENTITY prov "http://www.w3.org/ns/prov-o#" >
 	<!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
-	<!ENTITY sio "http://semanticscience.org/resource/">
+	<!ENTITY sio "http://semanticscience.org/redct/">
 	<!ENTITY obo "http://purl.obolibrary.org/obo/">
 	<!ENTITY stato "http://purl.obolibrary.org/obo/STATO_">
 	<!ENTITY uo "http://purl.obolibrary.org/obo/UO_">
@@ -510,29 +511,23 @@
 		</rdfs:subClassOf>
 	</owl:Class>
 
-	<!-- &sio;StudyGroup -->
+	<!-- &ocre;Arm -->
 
-	<owl:Class rdf:about="&sio;StudyGroup">
-		<rdfs:subClassOf rdf:resource="&stato;0000203"/>       
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
-				<owl:someValuesFrom rdf:resource="&sco;ControlNature"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>  
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasProperty"/>
-				<owl:someValuesFrom rdf:resource="&ncit;C61256"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>        
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasProperty"/>
-				<owl:someValuesFrom rdf:resource="&provcare;Intervention"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>        
-		<rdfs:label>study group</rdfs:label>
+	<owl:Class rdf:about="&sco;StudyArm">
+		<rdfs:subClassOf rdf:resource="&stato;0000203"/>            
+		<rdfs:label>study arm</rdfs:label>
+		<sio:hasAttribute>
+      		<skos:definition>
+		        <sio:hasValue>An arm in a clinical trial is agroup of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
+		        <prov:wasAttributedTo>https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas</prov:wasAttributedTo>
+	     	</skos:definition>
+    	</sio:hasAttribute>
+    	<sio:hasAttribute>
+      		<skos:definition>
+		        <sio:hasValue>A group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial's protocol. </sio:hasValue>
+		        <dct:source>https://clinicaltrials.gov/ct2/about-studies/glossary</dct:source>
+	     	</skos:definition>
+    	</sio:hasAttribute>
 	</owl:Class>
 
 	<owl:Class rdf:about="&sio;StudySubject">
@@ -734,7 +729,7 @@
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
-				<owl:someValuesFrom rdf:resource="&sio;StudyGroup"/>
+				<owl:someValuesFrom rdf:resource="&sco;StudyArm"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
