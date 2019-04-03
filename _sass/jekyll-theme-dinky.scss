@@ -428,29 +428,7 @@ footer {
   }
 }
 
-@media print, screen and (max-width: 720px) {
-  body {
-    word-wrap:break-word;
-  }
 
-  header {
-    padding:10px 20px 0;
-		margin-right: 0;
-  }
-
-	section {
-    padding:10px 0 10px 20px;
-    margin:0 0 30px;
-  }
-
-	footer {
-		margin: 0 0 0 30px;
-	}
-
-  header ul, header p.view {
-    position:static;
-  }
-}
 
 
 @media print {
