@@ -85,7 +85,7 @@
 		<owl:imports rdf:resource="external/hp_external.owl"/>
 		<owl:imports rdf:resource="external/stato_external.owl"/>
 		<owl:imports rdf:resource="external/uo_external.owl"/>
-		<owl:imports rdf:resource="external/provcare.owl"/>
+		<!--<owl:imports rdf:resource="external/provcare.owl"/>-->
 		<!--<owl:imports rdf:resource="http://purl.obolibrary.org/obo/stato.owl">-->
 	</owl:Ontology>
 	
@@ -151,7 +151,7 @@
 
 	<!-- &sio;hasUnit -->
 
-	<owl:DataProperty rdf:about="&sio;hasValue"/>
+	<owl:DataxfxfProperty rdf:about="&sio;hasValue"/>
 
 
 	
@@ -166,6 +166,45 @@
 	///////////////////////////////////////////////////////////////////////////////////////
 	 -->
 	
+
+	<!--Copying in provcare classes of need-->
+
+	<!-- http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure"/>
+        <rdfs:comment>Statistical measure describing the distribution of single variable</rdfs:comment>
+    </owl:Class>
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#DispersionMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#DispersionMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure"/>
+        <rdfs:comment>Statistical measure characterizing the distribution of single variable</rdfs:comment>
+    </owl:Class>
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument"/>
+    </owl:Class>
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#Intervention"/>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/386053000</rdfs:seeAlso>
+    </owl:Class>
+
+    <!-- http://www.case.edu/ProvCaRe/provcare#Intervention -->
+
+    <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Intervention">
+        <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyMethod"/>
+        <synonym>Study intervention</synonym>
+        <rdfs:comment>The intervention type used in a research study (corresponding to I in the PICO(T) model )</rdfs:comment>
+        <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/386053000</rdfs:seeAlso>
+    </owl:Class>
+    
 
 
 	<!-- &chear;Demographic -->
@@ -414,8 +453,7 @@
 	<!-- &sio;Median -->
 
 	<owl:Class rdf:about="&sio;Median">
-		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
-		<rdfs:isDefinedBy rdf:resource="&xsd;float"/>
+		<rdfs:subClassOf rdf:resource="&provcare;CentralTendencyMeasure"/>
 	</owl:Class>
 	
 
@@ -464,7 +502,7 @@
 	<!-- &sio;Mean -->
 
 	<owl:Class rdf:about="&sio;Mean">
-		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+		<rdfs:subClassOf rdf:resource="&provcare;CentralTendencyMeasure"/>
 		<dct:source rdf:resource="https://en.wikipedia.org/wiki/Mean"/>
 		<rdfs:label>mean</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">the central value of a discrete set of numbers: specifically, the sum of the values divided by the number of values</skos:definition>
@@ -473,7 +511,7 @@
 	<!-- &sio;StandardDeviation -->
 
 	<owl:Class rdf:about="&sio;StandardDeviation">
-		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+		<rdfs:subClassOf rdf:resource="&provcare;DispersionMeasure"/>
 		<dct:source rdf:resource="https://en.wikipedia.org/wiki/Standard_deviation"/>
 		<rdfs:label rdf:datatype="&xsd;string">standard deviation</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">a measure that is used to quantify the amount of variation or dispersion of a set of data values</skos:definition>
@@ -724,6 +762,12 @@
 	<owl:Class rdf:about="&sco;Metaanalysis">
 		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
 		<rdfs:label>metaanalysis</rdfs:label>
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>A quantitative, formal, epidemiological study design used to systematically assess previous research studies to derive conclusions about that body of research</sio:hasValue>
+				<dct:source>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049418/</dct:source>
+			</skos:definition>
+		</sio:hasAttribute>
 	</owl:Class>
 
 	<!-- &sco;SafetyPopulation -->
