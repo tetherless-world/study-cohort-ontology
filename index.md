@@ -1,12 +1,13 @@
 ---
 title: Welcome
 ---
-<head>
-  <title>{{ page.title }}</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-</head>
+
+<header>
+    <div class="my-auto">
+        <br/>
+        <center><a class="title-a" href="#"><h1 class="title">{{page.title}}</h1></a></center>
+    </div>
+</header>
 
 
 <div class="container-fluid p-0">
