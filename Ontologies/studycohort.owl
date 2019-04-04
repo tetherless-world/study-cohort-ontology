@@ -149,7 +149,9 @@
 	///////////////////////////////////////////////////////////////////////////////////////
 	 -->
 
-	
+	<!-- &sio;hasUnit -->
+
+	<owl:DataProperty rdf:about="&sio;hasValue"/>
 
 
 	
@@ -193,7 +195,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue rdf:datatype="&xsd;string">A scientific investigation that involves testing a hypothesis</sio:hasValue>
-				<prov:wasAttributedTo>&ibm;Amar</prov:wasAttributedTo>
+				<prov:wasAttributedTo rdf:datatype="xsd:anyURI">&ibm;us-amardas</prov:wasAttributedTo>
 			</skos:definition>
 		</sio:hasAttribute>
 	</rdf:Description>  
@@ -489,7 +491,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>"Top-level group of subjects participating in a study"</sio:hasValue>
-				<prov:wasAttributedTo>&person;JamesMcCusker</prov:wasAttributedTo>
+				<prov:wasAttributedTo rdf:datatype="xsd:anyURI">&person;JamesMcCusker</prov:wasAttributedTo>
 			</skos:definition>
 		</sio:hasAttribute>
 	  <rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
@@ -509,7 +511,7 @@
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
-		        <prov:wasAttributedTo>&ibm;us-amardas</prov:wasAttributedTo>
+		        <prov:wasAttributedTo rdf:datatype="xsd:anyURI">&ibm;us-amardas</prov:wasAttributedTo>
 	     	</skos:definition>
     	</sio:hasAttribute>
     	<sio:hasAttribute>
@@ -691,9 +693,14 @@
 
 	<owl:Class rdf:about="&sco;RandomizedPopulation">
 		<rdfs:subClassOf rdf:resource="&stato;0000203"/>
-		<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/</fibo-fnd-utl-av:adaptedFrom>
+		
 		<rdfs:label>randomized population</rdfs:label>
-		<skos:definition>set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)</skos:definition>
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)</sio:hasValue>
+				<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/</fibo-fnd-utl-av:adaptedFrom>
+		</skos:definition>
+		</sio:hasAttribute>
 	</owl:Class>
 	
 
@@ -706,7 +713,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
-				<prov:wasAttributedTo>&ibm;us-amardas</prov:wasAttributedTo>
+				<prov:wasAttributedTo rdf:datatype="xsd:anyURI">&ibm;us-amardas</prov:wasAttributedTo>
 			</skos:definition>
 		</sio:hasAttribute>
 	</owl:Class>
@@ -723,11 +730,16 @@
 
 	<owl:Class rdf:about="&sco;SafetyPopulation">
 		<rdfs:subClassOf rdf:resource="&stato;0000203"/>
-		<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/books/NBK209903/</fibo-fnd-utl-av:adaptedFrom>
-		<fibo-fnd-utl-av:adaptedFrom>https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/</fibo-fnd-utl-av:adaptedFrom>
 		<rdfs:label>safety population</rdfs:label>
-		<skos:definition>set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group</skos:definition>
-		<skos:altDefinition>this group usually consists of all subjects who received at least one dose of any study product (even a placebo) and had at least one subsequent safety-related visit or observation</skos:altDefinition>
+
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group</sio:hasValue>
+				<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/books/NBK209903/</fibo-fnd-utl-av:adaptedFrom>
+				<fibo-fnd-utl-av:adaptedFrom>https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/</fibo-fnd-utl-av:adaptedFrom>
+				
+			</skos:definition>
+		</sio:hasAttribute>		
 	</owl:Class>
 	
 
@@ -737,6 +749,12 @@
 	<owl:Class rdf:about="&hasco;ResearchStudy">
 		<rdfs:subClassOf rdf:resource="&sio;Study"/>
 		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
+				<prov:wasAttributedTo rdf:datatype="xsd:anyURI">&ibm;us-amardas</prov:wasAttributedTo>
+			</skos:definition>
+		</sio:hasAttribute>	
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
