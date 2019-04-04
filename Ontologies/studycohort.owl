@@ -511,7 +511,7 @@
 		</rdfs:subClassOf>
 	</owl:Class>
 
-	<!-- &ocre;Arm -->
+	<!-- &sco;StudyArm -->
 
 	<owl:Class rdf:about="&sco;StudyArm">
 		<rdfs:subClassOf rdf:resource="&stato;0000203"/>            
@@ -528,6 +528,27 @@
 		        <dct:source>https://clinicaltrials.gov/ct2/about-studies/glossary</dct:source>
 	     	</skos:definition>
     	</sio:hasAttribute>
+	</owl:Class>
+
+	<!-- &sco;InterventionArm -->
+
+	<owl:Class rdf:about="&sco;InterventionArm">
+		<rdfs:subClassOf rdf:resource="&sco;StudyArm"/>            
+		<rdfs:label>intervention arm</rdfs:label>
+		<rdfs:subClassOf>
+	    	<owl:Restriction>
+	            <owl:onProperty rdf:resource="&rdfs;subClassOf"/>
+	            <owl:someValuesFrom rdf:resource = "&sio;StudySubject"/>                        
+	        </owl:Restriction>
+    	</rdfs:subClassOf>
+		<sio:hasAttribute>
+      		<skos:definition>
+		        <sio:hasValue>An arm type in which a group of participants receives the intervention/treatment that is the focus of the clinical trial</sio:hasValue>
+		        <dct:source>https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas</dct:source>
+	     	</skos:definition>
+    	</sio:hasAttribute>
+    	
+    	<rdfs:seeAlso>http://semanticscience.org/resource/SIO_001069.rdf</rdfs:seeAlso>
 	</owl:Class>
 
 	<owl:Class rdf:about="&sio;StudySubject">
