@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="therapies.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="labresults.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="measures.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="studycohort.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="sco_working.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="studycohort_nonwidoco.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="units.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="diseases.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="duplicate:https://idea.tw.rpi.edu/projects/heals/studycohort/" uri="medications.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/hp_external.owl" uri="external/hp_external.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/ncit_externalbranches.owl" uri="external/ncit_externalallbranches.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/provcare.owl" uri="external/provcare.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/stato_external.owl" uri="external/stato_external.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/uo_external.owl" uri="external/uo_external.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554350465987" name="https://w3id.org/enigma" uri="external/cohortontology.xml"/>
+    </group>
+</catalog>
