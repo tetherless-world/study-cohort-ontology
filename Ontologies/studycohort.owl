@@ -197,14 +197,7 @@
 		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
 		<rdfs:label>disease condition</rdfs:label>
 	</owl:Class>
-	
 
-
-	<!-- &sio;BiologicalSex -->
-
-	<rdf:Description rdf:about="&sio;BiologicalSex">
-		<rdfs:subClassOf rdf:resource="&sio;BiologicalQuality"/>
-	</rdf:Description>
 	
 
 
@@ -212,18 +205,6 @@
 
 	<owl:Class rdf:about="&sio;MedicalIntervention"/>
 	
-
-
-	<!-- &sio;Race -->
-
-	<rdf:Description rdf:about="&sio;Race">
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasValue"/>
-				<owl:allValuesFrom rdf:resource="&xsd;string"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-	</rdf:Description>
 	
 
 
@@ -535,20 +516,35 @@
 	<owl:Class rdf:about="&sco;InterventionArm">
 		<rdfs:subClassOf rdf:resource="&sco;StudyArm"/>            
 		<rdfs:label>intervention arm</rdfs:label>
-		<rdfs:subClassOf>
-	    	<owl:Restriction>
-	            <owl:onProperty rdf:resource="&rdfs;subClassOf"/>
-	            <owl:someValuesFrom rdf:resource = "&sio;StudySubject"/>                        
-	        </owl:Restriction>
-    	</rdfs:subClassOf>
+		
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm type in which a group of participants receives the intervention/treatment that is the focus of the clinical trial</sio:hasValue>
-		        <dct:source>https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas</dct:source>
+		        <dct:source>https://clinicaltrials.gov/ct2/about-studies/glossary</dct:source>
 	     	</skos:definition>
     	</sio:hasAttribute>
+    	<rdfs:subClassOf>
+	    	<owl:Restriction>
+	            <owl:onProperty rdf:resource="&rdfs;subClassOf"/>
+	            <owl:someValuesFrom rdf:resource="&sio;StudySubject"/>
+	        </owl:Restriction>
+    	</rdfs:subClassOf>
     	
     	<rdfs:seeAlso>http://semanticscience.org/resource/SIO_001069.rdf</rdfs:seeAlso>
+	</owl:Class>
+
+	<!-- &sco;ControlArm -->
+
+	<owl:Class rdf:about="&sco;ControlArm">
+		<rdfs:subClassOf rdf:resource="&sco;StudyArm"/>            
+		<rdfs:label>control arm</rdfs:label>		
+		<sio:hasAttribute>
+      		<skos:definition>
+		        <sio:hasValue>An arm type that can receive an intervention that is considered effective (the standard), a placebo, or no intervention</sio:hasValue>
+		        <fibo-fnd-utl-av:adaptedFrom>https://aidsinfo.nih.gov/understanding-hiv-aids/glossary/3392/control-arm</fibo-fnd-utl-av:adaptedFrom>
+	     	</skos:definition>
+    	</sio:hasAttribute>    	
+    	<rdfs:seeAlso>http://semanticscience.org/resource/SIO_001068.rdf</rdfs:seeAlso>
 	</owl:Class>
 
 	<owl:Class rdf:about="&sio;StudySubject">
