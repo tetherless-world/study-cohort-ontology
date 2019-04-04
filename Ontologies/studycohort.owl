@@ -4058,11 +4058,13 @@ Previous. An information content entity is a non-realizable information entity t
 		</sio:hasAttribute>
 	</rdf:Description>  
 
-	<!-- &sco;DiseaseOrCondition -->
 
-	<owl:Class rdf:about="&sco;DiseaseOrCondition">
+	<owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_4">
 		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
-		<rdfs:label>disease condition</rdfs:label>
+		<rdfs:label>disease or condition</rdfs:label>
+		<skos:definition>A disease is a disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism</skos:definition>
+		<dct:source>http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf</dct:source>
+		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/doid.owl"/>
 	</owl:Class>
 
 	
