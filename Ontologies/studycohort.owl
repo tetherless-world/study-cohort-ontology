@@ -149,9 +149,9 @@
 	///////////////////////////////////////////////////////////////////////////////////////
 	 -->
 
-	<!-- &sio;hasUnit -->
+	<!-- &sio;hasValue -->
 
-	<owl:DataxfxfProperty rdf:about="&sio;hasValue"/>
+	<owl:DataProperty rdf:about="&sio;hasValue"/>
 
 
 	
@@ -234,7 +234,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue rdf:datatype="&xsd;string">A scientific investigation that involves testing a hypothesis</sio:hasValue>
-				<prov:wasAttributedTo rdf:datatype="xsd:anyURI">&ibm;us-amardas</prov:wasAttributedTo>
+				<prov:wasAttributedTo rdf:datatype="&xsd;anyURI">&ibm;us-amardas</prov:wasAttributedTo>
 			</skos:definition>
 		</sio:hasAttribute>
 	</rdf:Description>  
@@ -529,7 +529,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>"Top-level group of subjects participating in a study"</sio:hasValue>
-				<prov:wasAttributedTo rdf:datatype="xsd:anyURI">&person;JamesMcCusker</prov:wasAttributedTo>
+				<prov:wasAttributedTo rdf:datatype="&xsd;anyURI">&person;JamesMcCusker</prov:wasAttributedTo>
 			</skos:definition>
 		</sio:hasAttribute>
 	  <rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
@@ -549,7 +549,7 @@
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
-		        <prov:wasAttributedTo rdf:datatype="xsd:anyURI">&ibm;us-amardas</prov:wasAttributedTo>
+		        <prov:wasAttributedTo rdf:datatype="&xsd;anyURI">&ibm;us-amardas</prov:wasAttributedTo>
 	     	</skos:definition>
     	</sio:hasAttribute>
     	<sio:hasAttribute>
@@ -751,7 +751,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
-				<prov:wasAttributedTo rdf:datatype="xsd:anyURI">&ibm;us-amardas</prov:wasAttributedTo>
+				<prov:wasAttributedTo rdf:datatype="&xsd;anyURI">&ibm;us-amardas</prov:wasAttributedTo>
 			</skos:definition>
 		</sio:hasAttribute>
 	</owl:Class>
@@ -796,7 +796,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
-				<prov:wasAttributedTo rdf:datatype="xsd:anyURI">&ibm;us-amardas</prov:wasAttributedTo>
+				<prov:wasAttributedTo rdf:datatype="&xsd;anyURI">&ibm;us-amardas</prov:wasAttributedTo>
 			</skos:definition>
 		</sio:hasAttribute>	
 		<rdfs:subClassOf>
