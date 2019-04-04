@@ -13,7 +13,7 @@
 	<!ENTITY hasco "http://hadatac.org/ont/hasco#" >
 	<!ENTITY prov "http://www.w3.org/ns/prov-o#" >
 	<!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
-	<!ENTITY sio "http://semanticscience.org/redct/">
+	<!ENTITY sio "http://semanticscience.org/resource/">
 	<!ENTITY person "https://tw.rpi.edu/web/People/">
 	<!ENTITY ibm "https://researcher.watson.ibm.com/researcher/view.php?person=">
 	<!ENTITY obo "http://purl.obolibrary.org/obo/">
@@ -190,7 +190,12 @@
 	<rdf:Description rdf:about="&hasco;ResearchStudy">
 		<dct:source rdf:resource="https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement"/>
 		<rdfs:label rdf:datatype="&xsd;string">research study</rdfs:label>
-		<skos:definition rdf:datatype="&xsd;string">a scientific study of nature that sometimes includes processes involved in health and disease</skos:definition>
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue rdf:datatype="&xsd;string">A scientific investigation that involves testing a hypothesis</sio:hasValue>
+				<prov:wasAttributedTo>&ibm;Amar</prov:wasAttributedTo>
+			</skos:definition>
+		</sio:hasAttribute>
 	</rdf:Description>  
 
 	<!-- &sco;DiseaseOrCondition -->
@@ -503,7 +508,7 @@
 		<rdfs:label>study arm</rdfs:label>
 		<sio:hasAttribute>
       		<skos:definition>
-		        <sio:hasValue>An arm in a clinical trial is agroup of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
+		        <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
 		        <prov:wasAttributedTo>&ibm;us-amardas</prov:wasAttributedTo>
 	     	</skos:definition>
     	</sio:hasAttribute>
@@ -698,27 +703,12 @@
 	<owl:Class rdf:about="&ncit;C71104">
 		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
 		 <rdfs:label>Clinical Trial</rdfs:label>
-		<obo:NCIT_P325>1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)</obo:NCIT_P325>
-		<obo:NCIT_P108>Clinical Trial</obo:NCIT_P108>
-		<oboInOwl:hasExactSynonym>Clinical Trials</oboInOwl:hasExactSynonym>
-		<obo:IAO_0000115>A research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.</obo:IAO_0000115>
-		<obo:NCIT_P322>CDISC-GLOSS</obo:NCIT_P322>
-		<obo:NCIT_NHC0>C71104</obo:NCIT_NHC0>
-		<obo:NCIT_P322>CDISC</obo:NCIT_P322>
-		<oboInOwl:hasExactSynonym>clinical trial</oboInOwl:hasExactSynonym>
-		<obo:NCIT_P106>Research Activity</obo:NCIT_P106>
-		<obo:NCIT_P207>C0008976</obo:NCIT_P207>
-		<obo:NCIT_P325>A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). NOTE: NIH Office of Science Policy further specifies that a clinical trial is a type of research study that prospectively assigns subjects to interventions, and the EU clinical trial regulations set forth 3 specific conditions, any one of which qualifies a study as a clinical trial. These conditions include applying diagnostic or monitoring procedures not used in normal clinical practice to subjects. [after ICH E6 [R2], EU CTR 2014] See also clinical study, clinical investigation.</obo:NCIT_P325>
-		<oboInOwl:hasExactSynonym>Trial</oboInOwl:hasExactSynonym>
-		<obo:NCIT_P366>Clinical_Trial_Generic</obo:NCIT_P366>
-		<oboInOwl:hasExactSynonym>Clinical Trial</oboInOwl:hasExactSynonym>
-		<obo:NCIT_P325>A type of research study that tests how well new medical approaches work in people. These studies test new methods of screening, prevention, diagnosis, or treatment of a disease.</obo:NCIT_P325>
-		<oboInOwl:hasExactSynonym>Clinical Trials, Unspecified</oboInOwl:hasExactSynonym>
-		<oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298"/>
-		<oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132310"/>
-		<oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410"/>
-		<oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
-		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
+				<prov:wasAttributedTo>&ibm;us-amardas</prov:wasAttributedTo>
+			</skos:definition>
+		</sio:hasAttribute>
 	</owl:Class>
 
 
