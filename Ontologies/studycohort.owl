@@ -14,6 +14,8 @@
 	<!ENTITY prov "http://www.w3.org/ns/prov-o#" >
 	<!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
 	<!ENTITY sio "http://semanticscience.org/redct/">
+	<!ENTITY person "https://tw.rpi.edu/web/People/">
+	<!ENTITY ibm "https://researcher.watson.ibm.com/researcher/view.php?person=">
 	<!ENTITY obo "http://purl.obolibrary.org/obo/">
 	<!ENTITY stato "http://purl.obolibrary.org/obo/STATO_">
 	<!ENTITY uo "http://purl.obolibrary.org/obo/UO_">
@@ -473,16 +475,18 @@
 	<owl:Class rdf:about="&stato;0000203">
 		<rdfs:label>cohort</rdfs:label>
 		<rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000193"/>
-		<obo:IAO_0000117>Orlaith Burke</obo:IAO_0000117>
-		<obo:STATO_0000032 xml:lang="en"></obo:STATO_0000032>
-		<obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
-		<obo:IAO_0000117 xml:lang="en">Alejandra Gonzalez-Beltran</obo:IAO_0000117>
-		<obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
-		<obo:IAO_0000119 xml:lang="en">STATO</obo:IAO_0000119>
-		<obo:IAO_0000115 xml:lang="en">a cohort is a study group population where the members are human beings which meet inclusion criteria and undergo a longitudinal design</obo:IAO_0000115>
-		<obo:IAO_0000116 xml:lang="en">possibly submit to &#39;Population and Community Ontology&#39;</obo:IAO_0000116>
-		<obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/stato.owl"/>
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>A cohort is the group of subjects enrolled in a study"</sio:hasValue>
+				<prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
+			</skos:definition>
+		</sio:hasAttribute>
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>"Top-level group of subjects participating in a study"</sio:hasValue>
+				<prov:wasAttributedTo>&person;JamesMcCusker</prov:wasAttributedTo>
+			</skos:definition>
+		</sio:hasAttribute>
 	  <rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
 	  <rdfs:subClassOf>
 			<owl:Restriction>
@@ -500,7 +504,7 @@
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm in a clinical trial is agroup of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
-		        <prov:wasAttributedTo>https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas</prov:wasAttributedTo>
+		        <prov:wasAttributedTo>&ibm;us-amardas</prov:wasAttributedTo>
 	     	</skos:definition>
     	</sio:hasAttribute>
     	<sio:hasAttribute>
