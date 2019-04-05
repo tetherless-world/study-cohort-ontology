@@ -1,0 +1,2316 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ns0: <http://purl.obolibrary.org/obo/> .
+@prefix ns1: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix ns2: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix ns3: <s> .
+@prefix ns4: <http://hadatac.org/ont/hasco#> .
+@prefix ns5: <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/>
+  a owl:Ontology ;
+  owl:versionIRI <https://idea.tw.rpi.edu/projects/heals/studycohort/1.0.0> ;
+  dc:license """
+    Copyright 2019 IBM Research and Rensselaer Polytechnic Institute
+
+      Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+    """ ;
+  rdfs:label "Study Cohort Ontology" ;
+  dc:title "Semantic Modeling of Cohort Descriptions in Research Studies" ;
+  dc:creator "Shruthi Chari" ;
+  dc:contributor "Oshani Seneviratne", "James P. McCusker", "Deborah L. McGuinness", "Amar Das" ;
+  dc:description """
+    The Study Cohort Ontology encodes the vocabulary to represent population desriptions in research studies, and provides the ability to model the aggregative descriptive statistical measures defined on the variables of subjects who are participants in the study population. We make it possible to represent a study component considered for determining the patient alignment to a research study, and we assist physicians in evaluating the fit of their patient population to the study population. In SCO, we are building a world-view inspired by the upper level Ontology SemanticScience Integrated Ontology (SIO) to model the descriptive statistics of characteristics on a set of patients (patient group) administered a medical intervention, and studied for an outcome in a research study.  Since we capture the various definitions of patient groups (ie. by interventional measures or by control mechanisms), we provide the basic framework for filtering searches and to define cohort similarity at different granularities. ( cohort level and the study group levels ). For researchers who wish to contribute to the expansion of our ontology, we advise that they refer to our ontology documentation to familiarize themselves with the structure and term annotations ( such as definitions and labels).
+    """ ;
+  dc:abstract """
+    The Study Cohort Ontology (SCO) is developed to model overall structure and patterns of cohort variables and control/intervention groups defined within the structured population descriptions (commonly referred to as Table1's or Cohort Summary Tables)of observational case studies and clinical trials. We maintain only domain agnostic and commonly occuring subject variables and interventions in SCO, and we have a suite of ontologies (Diseases, Medications, LabResults etc) to encode Diabetes related terminology. We have adopted a bottom-up approach to modeling and we have revised the structure of SCO upon investigation of a few research studies (11 to be precise) from the Pharmacological Interventions (Chapter 8) and Cardiovascular Complications (Chapter 9) of the American Diabetes Association (ADA)’s Standards of Medical Care 2018 CPG. We enable deep drive visualizations driven off queries to knowledge graphs modeled on SCO, to help assist physician visualize the similarity of a patient to a study group, at a quick glance. We welcome contributions and suggestions to extend SCO to represent cohort descriptions of publications targeted to other diseases, and we plan to release set of tools to make this process seamless."""^^xsd:string ;
+  owl:imports <http://hadatac.org/ont/hasco/>, <http://semanticscience.org/ontology/sio-subset-labels.owl> .
+
+<http://semanticscience.org/resource/hasParticipant> a owl:ObjectProperty .
+<http://semanticscience.org/resource/hasProperty> a owl:ObjectProperty .
+<http://semanticscience.org/resource/hasUnit> a owl:ObjectProperty .
+<http://semanticscience.org/resource/hasValue> a owl:DataProperty .
+<http://purl.obolibrary.org/obo/PATO_0000125>
+  a owl:Class ;
+  ns0:IAO_0000412 ns0:uo.owl .
+
+ns0:PATO_0000128
+  a owl:Class ;
+  ns0:IAO_0000412 ns0:uo.owl, ns0:hp.owl ;
+  rdfs:label "weight"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0001035 .
+
+ns0:PATO_0001708
+  a owl:Class ;
+  ns0:IAO_0000412 ns0:uo.owl .
+
+ns0:UO_0000001
+  a owl:Class ;
+  rdfs:label "length unit"^^xsd:string ;
+  ns0:IAO_0000115 "A unit which is a standard measure of the distance between two points."^^xsd:string ;
+  ns1:id "UO:0000001"^^xsd:string ;
+  ns1:created_by "george gkoutos"^^xsd:string ;
+  ns1:hasOBONamespace "unit.ontology"^^xsd:string ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> ;
+  ns0:IAO_0000412 ns0:uo.owl .
+
+ns0:UO_0000002
+  a owl:Class ;
+  rdfs:label "mass unit"^^xsd:string ;
+  ns0:IAO_0000115 "A unit which is a standard measure of the amount of matter/energy of a physical object."^^xsd:string ;
+  ns1:id "UO:0000002"^^xsd:string ;
+  ns1:created_by "george gkoutos"^^xsd:string ;
+  ns1:hasOBONamespace "unit.ontology"^^xsd:string ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> ;
+  ns0:IAO_0000412 ns0:uo.owl .
+
+ns0:UO_0000009
+  a owl:Class ;
+  rdfs:label "kilogram"^^xsd:string ;
+  rdfs:subClassOf ns0:UO_0000002, ns0:UO_0000045, <http://semanticscience.org/resource/UnitOfMeasurement> ;
+  ns0:IAO_0000115 "A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France."^^xsd:string ;
+  ns1:id "UO:0000009"^^xsd:string ;
+  ns1:created_by "george gkoutos"^^xsd:string ;
+  ns1:hasExactSynonym "kg"^^xsd:string ;
+  ns1:hasOBONamespace "unit.ontology"^^xsd:string ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim> ;
+  ns0:IAO_0000412 ns0:uo.owl .
+
+ns0:UO_0000015
+  a owl:Class ;
+  rdfs:label "centimeter"^^xsd:string ;
+  rdfs:subClassOf ns0:UO_0000001, <http://semanticscience.org/resource/UnitOfMeasurement> ;
+  ns0:IAO_0000115 "A length unit which is equal to one hundredth of a meter or 10^[-2] m."^^xsd:string ;
+  ns1:id "UO:0000015"^^xsd:string ;
+  ns1:hasExactSynonym "centimetre"^^xsd:string, "cm"^^xsd:string ;
+  ns1:created_by "george gkoutos"^^xsd:string ;
+  ns1:hasOBONamespace "unit.ontology"^^xsd:string ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim> ;
+  ns0:IAO_0000412 ns0:uo.owl .
+
+ns0:UO_0000045
+  a owl:Class ;
+  rdfs:label "base unit"^^xsd:string ;
+  ns0:IAO_0000115 "A unit which is one of a particular measure to which all measures of that type can be related."^^xsd:string ;
+  ns1:id "UO:0000045"^^xsd:string ;
+  ns1:created_by "george gkoutos"^^xsd:string ;
+  ns1:hasOBONamespace "unit.ontology"^^xsd:string ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> ;
+  ns0:IAO_0000412 ns0:uo.owl .
+
+ns0:BFO_0000001
+  a owl:Class ;
+  rdfs:label "entity"@en ;
+  rdfs:subClassOf owl:Thing ;
+  ns0:IAO_0000600 "An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])"@en ;
+  ns0:IAO_0000116 "Entity doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example Werner Ceusters 'portions of reality' include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, 'How to track absolutely everything' at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf"@en, "BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81"@en ;
+  ns0:IAO_0000112 "Julius Caesar"@en, "Verdi’s Requiem"@en, "the Second World War"@en, "your body mass index"@en ;
+  ns0:BFO_0000179 "entity" ;
+  ns0:BFO_0000180 "Entity" ;
+  rdfs:isDefinedBy ns0:bfo.owl ;
+  ns0:IAO_0000412 ns0:obi.owl, ns0:stato.owl .
+
+ns0:BFO_0000002
+  a owl:Class ;
+  rdfs:label "continuant"@en ;
+  rdfs:subClassOf ns0:BFO_0000001 ;
+  ns0:IAO_0000602 "(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] ", "(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] ", "(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] ", "(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] " ;
+  ns0:IAO_0000600 "A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])"@en ;
+  ns0:BFO_0000180 "Continuant" ;
+  ns0:BFO_0000179 "continuant" ;
+  ns0:IAO_0000115 "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts."@en ;
+  ns0:IAO_0000116 "BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240"@en, "Continuant doesn't have a closure axiom because the subclasses don't necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster's other portions of reality, questions are raised as to whether universals are continuants"@en ;
+  ns0:IAO_0000601 "if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])"@en, "if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])"@en, "if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])"@en ;
+  rdfs:isDefinedBy ns0:bfo.owl ;
+  ns0:IAO_0000412 ns0:obi.owl, ns0:stato.owl, ns0:hp.owl .
+
+ns0:BFO_0000031
+  a owl:Class ;
+  rdfs:label "generically dependent continuant"@en ;
+  rdfs:subClassOf ns0:BFO_0000002 ;
+  ns0:BFO_0000179 "gdc" ;
+  ns0:BFO_0000180 "GenericallyDependentContinuant" ;
+  ns0:IAO_0000602 "(iff (GenericallyDependentContinuant a) (and (Continuant a) (exists (b t) (genericallyDependsOnAt a b t)))) // axiom label in BFO2 CLIF: [074-001] " ;
+  ns0:IAO_0000115 "A continuant that is dependent on one or other independent continuant bearers. For every instance of A requires some instance of (an independent continuant type) B but which instance of B serves can change from time to time."@en, "b is a generically dependent continuant = Def. b is a continuant that g-depends_on one or more other entities. (axiom label in BFO2 Reference: [074-001])"@en ;
+  ns0:IAO_0000112 "The entries in your database are patterns instantiated as quality instances in your hard drive. The database itself is an aggregate of such patterns. When you create the database you create a particular instance of the generically dependent continuant type database. Each entry in the database is an instance of the generically dependent continuant type IAO: information content entity."@en, "the pdf file on your laptop, the pdf file that is a copy thereof on my laptop"@en, "the sequence of this protein molecule; the sequence that is a copy thereof in that protein molecule."@en ;
+  rdfs:isDefinedBy ns0:bfo.owl ;
+  ns0:IAO_0000412 ns0:obi.owl, ns0:stato.owl .
+
+ns0:IAO_0000027
+  a owl:Class ;
+  rdfs:label "data item"@en ;
+  rdfs:subClassOf ns0:IAO_0000030 ;
+  ns0:IAO_0000116 "2/2/2009 Alan and Bjoern discussing FACS run output data. This is a data item because it is about the cell population. Each element records an event and is typically further composed a set of measurment data items that record the fluorescent intensity stimulated by one of the lasers."@en, "2014-03-31: See discussion at http://odontomachus.wordpress.com/2014/03/30/aboutness-objects-propositions/", "2009-03-16: data item deliberatly ambiguous: we merged data set and datum to be one entity, not knowing how to define singular versus plural. So data item is more general than datum."@en, "2009-03-16: removed datum as alternative term as datum specifically refers to singular form, and is thus not an exact synonym."@en, """JAR: datum     -- well, this will be very tricky to define, but maybe some 
+information-like stuff that might be put into a computer and that is 
+meant, by someone, to denote and/or to be interpreted by some 
+process... I would include lists, tables, sentences... I think I might 
+defer to Barry, or to Brian Cantwell Smith
+
+JAR: A data item is an approximately justified approximately true approximate belief"""@en ;
+  ns0:IAO_0000112 "Data items include counts of things, analyte concentrations, and statistical summaries."@en ;
+  ns0:IAO_0000117 "PERSON: Alan Ruttenberg"@en, "PERSON: Chris Stoeckert"@en, "PERSON: Jonathan Rees"@en ;
+  ns0:IAO_0000115 "a data item is an information content entity that is intended to be a truthful statement about something (modulo, e.g., measurement precision or other systematic errors) and is constructed/acquired by a method which reliably tends to produce (approximately) truthful statements."@en ;
+  ns0:IAO_0000118 "data"@en ;
+  ns0:IAO_0000111 "data item"@en ;
+  ns0:IAO_0000114 ns0:IAO_0000125 ;
+  ns0:IAO_0000412 ns0:obi.owl, ns0:stato.owl .
+
+ns0:IAO_0000030
+  a owl:Class ;
+  rdfs:label "information content entity"@en ;
+  rdfs:subClassOf ns0:BFO_0000031 ;
+  ns0:IAO_0000116 "2014-03-10: The use of \"thing\" is intended to be general enough to include universals and configurations (see https://groups.google.com/d/msg/information-ontology/GBxvYZCk1oc/-L6B5fSBBTQJ)."@en, """information_content_entity 'is_encoded_in' some digital_entity in obi before split (040907). information_content_entity 'is_encoded_in' some physical_document in obi before split (040907).
+
+Previous. An information content entity is a non-realizable information entity that 'is encoded in' some digital or physical entity."""@en ;
+  ns0:IAO_0000115 "A generically dependent continuant that is about some thing."@en ;
+  ns0:IAO_0000112 "Examples of information content entites include journal articles, data, graphical layouts, and graphs."@en ;
+  ns0:IAO_0000119 "OBI_0000142"@en ;
+  ns0:IAO_0000117 "PERSON: Chris Stoeckert"@en ;
+  ns0:IAO_0000111 "information content entity"@en ;
+  ns0:IAO_0000114 ns0:IAO_0000122 ;
+  ns0:IAO_0000412 ns0:obi.owl, ns0:stato.owl .
+
+ns0:IAO_0000078
+  a owl:Class ;
+  rdfs:label "curation status specification"@en ;
+  owl:equivalentClass [
+    a owl:Class ;
+    owl:oneOf (
+     ns0:IAO_0000124
+     ns0:IAO_0000125
+     ns0:IAO_0000423
+     ns0:IAO_0000122
+     ns0:IAO_0000123
+     ns0:IAO_0000120
+     ns0:IAO_0000428
+     ns0:IAO_0000121
+     ns0:IAO_0000002
+   )
+  ] ;
+  rdfs:subClassOf ns0:IAO_0000102 ;
+  ns0:IAO_0000116 "Better to represent curation as a process with parts and then relate labels to that process (in IAO meeting)"@en ;
+  ns0:IAO_0000119 "GROUP:OBI:<http://purl.obolibrary.org/obo/obi>"@en, "OBI_0000266"@en ;
+  ns0:IAO_0000117 "PERSON:Bill Bug"@en ;
+  ns0:IAO_0000115 "The curation status of the term. The allowed values come from an enumerated list of predefined terms. See the specification of these instances for more detailed definitions of each enumerated value."@en ;
+  ns0:IAO_0000111 "curation status specification"@en ;
+  ns0:IAO_0000114 ns0:IAO_0000125 ;
+  ns0:IAO_0000412 ns0:obi.owl, ns0:stato.owl .
+
+ns0:IAO_0000102
+  a owl:Class ;
+  rdfs:label "data about an ontology part"@en ;
+  rdfs:subClassOf ns0:IAO_0000027 ;
+  ns0:IAO_0000117 "Person:Alan Ruttenberg"^^xsd:string ;
+  ns0:IAO_0000115 "data about an ontology part is a data item about a part of an ontology, for example a term"@en ;
+  ns0:IAO_0000412 ns0:obi.owl, ns0:stato.owl .
+
+ns0:STATO_0000193
+  a owl:Class ;
+  rdfs:label "study group population" ;
+  ns0:IAO_0000117 "Alejandra Gonzalez-Beltran"@en, "Philippe Rocca-Serra", "Orlaith Burke" ;
+  ns0:IAO_0000115 "is a population whose individual members realize (may be expressed as) a combination of  inclusion rule values specifications or resulting from a sampling process (e.g. recruitment followed by randomization to group) on which a number of measurements will be carried out, which may be used as input to statistical tests and statistical inference." ;
+  ns0:IAO_0000119 "STATO"@en ;
+  ns0:STATO_0000032 "statistical sample"@en ;
+  ns0:IAO_0000114 ns0:IAO_0000122 ;
+  ns0:IAO_0000412 ns0:stato.owl .
+
+ns0:STATO_0000203
+  a owl:Class ;
+  rdfs:label "cohort" ;
+  rdfs:subClassOf ns0:STATO_0000193, <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/PopulationSize>
+  ] ;
+  ns0:IAO_0000117 "Orlaith Burke", "Alejandra Gonzalez-Beltran"@en, "Philippe Rocca-Serra"@en ;
+  ns0:STATO_0000032 ""@en ;
+  ns0:IAO_0000112 ""@en ;
+  ns0:IAO_0000119 "STATO"@en ;
+  ns0:IAO_0000115 "a cohort is a study group population where the members are human beings which meet inclusion criteria and undergo a longitudinal design"@en ;
+  ns0:IAO_0000116 "possibly submit to 'Population and Community Ontology'"@en ;
+  ns0:IAO_0000114 ns0:IAO_0000122 ;
+  ns0:IAO_0000412 ns0:stato.owl ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "A cohort is the group of subjects enrolled in a study\"" ;
+    rdfs:isDefinedBy "https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"
+  ], [
+    a skos:definition ;
+    ns2:hasValue "\"Top-level group of subjects participating in a study\"" ;
+    rdfs:isDefinedBy "https://tw.rpi.edu/web/People/JamesMcCusker"
+  ] .
+
+ns0:NCIT_C142488
+  a owl:Class ;
+  rdfs:label "Data Monitoring" ;
+  rdfs:subClassOf ns0:NCIT_C61256 ;
+  ns1:hasExactSynonym "data monitoring", "Data Monitoring" ;
+  ns0:NCIT_P108 "Data Monitoring" ;
+  ns0:IAO_0000115 "Review of clinical information to determine veracity, thoroughness, and dependability." ;
+  ns0:NCIT_NHC0 "C142488" ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:NCIT_P325 "Process by which clinical data are examined for completeness, consistency, and accuracy." ;
+  ns0:NCIT_P106 "Activity" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C142526
+  a owl:Class ;
+  rdfs:label "Electronic Clinical Trial" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns1:hasExactSynonym "eclinical trial", "Electronic Clinical Trial", "eClinical Trial" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_NHC0 "C142526" ;
+  ns0:IAO_0000115 "A clinical trial in which computerized systems are used to plan, collect, access, exchange, and archive data." ;
+  ns0:NCIT_P325 "Clinical trial in which primarily electronic processes are used to plan, collect (acquire), access, exchange, and archive data required for conduct, management, analysis, and reporting of the trial. NOTE: FDA has recently drawn a distinction between studies and trials. Both words refer to systematic efforts to obtain evidence relevant to regulatory authorities, but, depending on regulatory context and particularly in the case of postmarketing commitments, a study might not be the appropriate word for a clinical trial (prospective, controlled, randomized), but should be reserved instead for surveillance, structured gathering of information, epidemiological studies, or even animal studies [DRAFT Guidance for industry Postmarketing studies and Clinical Trials-implementation of section 505(o) of the Federal Food, Drug, and Cosmetic act]. Synonyms: eClinical study, eClinical investigation." ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:NCIT_P108 "Electronic Clinical Trial" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C142539
+  a owl:Class ;
+  rdfs:label "Equivalence Trial" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns1:hasExactSynonym "Equivalence Trial", "equivalence trial" ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:NCIT_NHC0 "C142539" ;
+  ns0:NCIT_P325 "A trial with the primary objective of showing that the response to two or more treatments differs by an amount that is clinically unimportant. NOTE: This is usually demonstrated by showing that the true treatment difference is likely to lie between a lower and an upper equivalence margin of clinically acceptable differences." ;
+  ns0:NCIT_P108 "Equivalence Trial" ;
+  ns0:IAO_0000115 "A clinical trial with the objective of demonstrating clinical insignificance between the responses to two or more treatments." ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C142547
+  a owl:Class ;
+  rdfs:label "Exploratory Investigational New Drug Study" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns0:NCIT_P325 "A clinical study that is conducted early in Phase 1; involves very limited human exposure and has no therapeutic or diagnostic intent (e.g., screening studies, microdose studies) [FDA Guidance for industry, investigators, and Reviewers: exploratory IND studies, January 2006] See also Phase 0." ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:IAO_0000115 "A type of clinical trial that involves low dosage and short duration of drug exposure for a limited number of study participants with the intent of gathering preliminary data on the mechanism of action, pharmacodynamics, pharmacokinetics, or bioavailability of promising therapeutic candidate agents in human subjects." ;
+  ns0:NCIT_NHC0 "C142547" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns1:hasExactSynonym "Exploratory Investigational New Drug Study", "Exploratory IND Study", "exploratory IND study" ;
+  ns0:NCIT_P108 "Exploratory Investigational New Drug Study" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C142601
+  a owl:Class ;
+  rdfs:label "Low-interventional Clinical Trial" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns1:hasExactSynonym "low-interventional clinical trial", "Low-interventional Clinical Trial" ;
+  ns0:NCIT_P108 "Low-interventional Clinical Trial" ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:NCIT_NHC0 "C142601" ;
+  ns0:NCIT_P325 "A clinical trial which fulfills all of the following conditions: (a) the investigational medicinal products, excluding placebos, are authorized; (b) according to the protocol of the clinical trial, (i) the investigational medicinal products are used in accordance with the terms of the marketing authorization; or (ii) the use of the investigational medicinal products is evidence-based and supported by published scientific evidence on the safety and efficacy of those investigational medicinal products in any of the Member States concerned; and (c) the additional diagnostic or monitoring procedures do not pose more than minimal additional risk or burden to the safety of the subjects compared to normal clinical practice in any Member State concerned. [REGULATION (EU) No 536/2014 Article 2.2.(3)]" ;
+  ns0:IAO_0000115 "A clinical trial that is non-interventional by design but includes diagnostic or monitoring procedures that carry minimal risk or impact on patients." ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C142603
+  a owl:Class ;
+  rdfs:label "Marketing Support Trials" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns0:IAO_0000115 "A type of clinical trial in which the therapeutic benefits of a marketed product are either clarified or preferentially compared to another marketed product." ;
+  ns0:NCIT_P325 "Clinical studies that are designed to clarify therapeutic benefits of a marketed product or to show potential decision-makers the rationale for preferring one therapy over another." ;
+  ns1:hasExactSynonym "Marketing Support Trials", "marketing support trials" ;
+  ns0:NCIT_P108 "Marketing Support Trials" ;
+  ns0:NCIT_NHC0 "C142603" ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C142609
+  a owl:Class ;
+  rdfs:label "Mega-Trial" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns1:hasExactSynonym "large sample trial", "mega-trials", "Mega-Trial" ;
+  ns0:IAO_0000115 "A type of clinical trial in which 10,000 or more subjects are enrolled." ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P325 "Massive trials that test the advantages of therapeutic interventions by enrolling 10,000 or more subjects." ;
+  ns0:NCIT_P108 "Mega-Trial" ;
+  ns0:NCIT_NHC0 "C142609" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C142641
+  a owl:Class ;
+  rdfs:label "Pragmatic Trial" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns0:IAO_0000115 "A study designed to test the effectiveness of an intervention in a broad routine clinical practice." ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P325 "Term used to describe a clinical study designed to examine the benefits of a product under real world conditions." ;
+  ns1:hasExactSynonym "pragmatic trial", "Pragmatic Trial" ;
+  ns0:NCIT_NHC0 "C142641" ;
+  ns0:NCIT_P108 "Pragmatic Trial" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C142722
+  a owl:Class ;
+  rdfs:label "Superiority Trial" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns0:IAO_0000115 "A trial with the primary objective of showing that the response to the investigational product is superior to a comparative agent (active or placebo control). (ICH)" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P325 "A trial with the primary objective of showing that the response to the investigational product is superior to a comparative agent (active or placebo control). [ICH E9]" ;
+  ns0:NCIT_NHC0 "C142722" ;
+  ns1:hasExactSynonym "Superiority Trial", "superiority trial" ;
+  ns0:NCIT_P108 "Superiority Trial" ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C15206
+  a owl:Class ;
+  rdfs:label "Clinical Study" ;
+  rdfs:subClassOf ns0:NCIT_C63536 ;
+  ns0:NCIT_P325 "A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. [ClinicalTrials.gov] See also clinical trial.", "A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. [ClinicalTrials.gov] See also clinical trial. (CDISC Glossary)" ;
+  ns1:hasExactSynonym "CLINICAL STUDY", "Clinical Research", "clinical study", "Clinical Studies", "Clinical Study", "Study" ;
+  ns0:NCIT_P207 "C0008972" ;
+  ns0:NCIT_P322 "CDISC", "CDISC-GLOSS", "FDA" ;
+  ns0:NCIT_P366 "Clinical_Study" ;
+  ns0:NCIT_NHC0 "C15206" ;
+  ns0:IAO_0000115 "Research conducted with human subjects or on material of human origin in which an investigator directly interacts with human subjects; includes development of new technologies, study of mechanisms of human diseases, therapy, clinical trials, epidemiologic, behavior, and health services research." ;
+  ns0:NCIT_P108 "Clinical Study" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132310>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C54447>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C54587>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C15362
+  a owl:Class ;
+  rdfs:label "Case Study" ;
+  ns1:hasExactSynonym "CASE ONLY", "case report", "Case Study", "Case Report" ;
+  ns0:NCIT_NHC0 "C15362" ;
+  ns0:IAO_0000115 "An uncontrolled observational study containing a detailed report of the diagnosis, treatment, and follow-up of an individual patient. Case reports also contain some demographic information about the patient (for example, age, gender, ethnic origin)." ;
+  ns0:NCIT_P108 "Case Study" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P325 "A study in which the subject with the condition under study (the case) is compared against a theoretical/historical model of distribution that serves as a control.", "A detailed report of the diagnosis, treatment, and follow-up of an individual patient. Case reports also contain some demographic information about the patient (for example, age, gender, ethnic origin)." ;
+  ns0:NCIT_P207 "C0085973" ;
+  ns0:NCIT_P322 "CDISC" ;
+  ns0:NCIT_P366 "Case_Study" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C127259>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> ;
+  ns0:IAO_0000412 ns0:ncit.owl ;
+  rdfs:subClassOf <http://hadatac.org/ont/hasco#ResearchStudy> .
+
+ns0:NCIT_C15429
+  a owl:Class ;
+  rdfs:label "Research Activity" ;
+  rdfs:subClassOf ns0:NCIT_C16203 ;
+  ns0:NCIT_NHC0 "C15429" ;
+  ns1:hasExactSynonym "research study", "Research Activity", "Research" ;
+  ns0:NCIT_P108 "Research Activity" ;
+  ns0:NCIT_P325 "A scientific study of nature that sometimes includes processes involved in health and disease. For example, clinical trials are research studies that involve people.  These studies may be related to new ways to screen, prevent, diagnose, and treat disease.  They may also study certain outcomes and certain groups of people by looking at data collected in the past or future." ;
+  ns0:NCIT_P366 "Research_Activity" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:IAO_0000115 "Systematic investigation into a subject in order to discover facts, establish or revise a theory, or develop a plan of action based on the facts discovered." ;
+  ns0:NCIT_P207 "C0242481" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C15602
+  a owl:Class ;
+  rdfs:label "Phase III Trial" ;
+  rdfs:subClassOf ns0:NCIT_C70820 ;
+  ns0:NCIT_P325 "Phase 3. Studies are expanded controlled and uncontrolled trials. They are performed after preliminary evidence suggesting effectiveness of the drug has been obtained, and are intended to gather the additional information about effectiveness and safety that is needed to confirm efficacy and evaluate the overall benefit-risk relationship of the drug and to provide an adequate basis for physician labeling. NOTE: Phase 3 studies usually include from several hundred to several thousand subjects. [After FDA CDER Handbook, ICH E8] (CDISC glossary)", "A study to compare the results of people taking a new treatment with the results of people taking the standard treatment (for example, which group has better survival rates or fewer side effects). In most cases, studies move into phase III only after a treatment seems to work in phases I and II. Phase III trials may include hundreds of people.", "Studies are expanded controlled and uncontrolled trials. They are performed after preliminary evidence suggesting effectiveness of the drug has been obtained and are intended to gather the additional information about effectiveness and safety that is needed to confirm efficacy and evaluate the overall benefit-risk relationship of the drug and to provide an adequate basis for physician labeling. NOTE: Phase 3 studies usually include from several hundred to several thousand subjects. [after FDA CDER handbook, ICH E8]" ;
+  ns0:NCIT_P322 "CDISC", "CDISC-GLOSS" ;
+  ns1:hasExactSynonym "phase III trial", "Phase III Protocol", "Phase III Trial", "Trial Phase 3", "phase 3", "PHASE III TRIAL", "Phase III Clinical Trial", "3", "Clinical Trials, Phase III", "Phase 3 Study", "Phase III Study", "Phase III Trials" ;
+  ns0:NCIT_P366 "Phase_III_Trial" ;
+  ns0:NCIT_P207 "C0282461" ;
+  ns0:IAO_0000115 "A clinical research protocol designed to investigate the efficacy of the biomedical or behavioral intervention in large groups of human subjects (from several hundred to several thousand), to confirm efficacy, to monitor adverse reactions to the new medication or treatment regimen with respect to long-term use and by comparing the intervention to other standard or experimental interventions as well as to a placebo." ;
+  ns0:NCIT_NHC0 "C15602" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P108 "Phase III Trial" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66737>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C15693
+  a owl:Class ;
+  rdfs:label "Phase I/II Trial" ;
+  rdfs:subClassOf ns0:NCIT_C70820 ;
+  ns0:NCIT_P108 "Phase I/II Trial" ;
+  ns1:hasExactSynonym "Phase I/II trial", "Phase I/II Trial", "Trial Phase 1-2", "PHASE I/II TRIAL", "Trial Phase 1/2", "1-2" ;
+  ns0:NCIT_P207 "C1519043" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_NHC0 "C15693" ;
+  ns0:NCIT_P325 "A class of clinical study that combines elements characteristic of traditional Phase I and Phase II trials. See also Phase I, Phase II.", "A trial to study the safety, dosage levels, and response to a new treatment." ;
+  ns0:IAO_0000115 "A clinical research protocol designed to study the safety, dosage levels and response to new treatment. Phase I/II trials combine a Phase I and a Phase II trial of the same treatment into a single protocol." ;
+  ns0:NCIT_P366 "Phase_I_II_Trial" ;
+  ns0:NCIT_P322 "CDISC" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66737>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C15835
+  a owl:Class ;
+  rdfs:label "Phase I and II Vaccine Trials" ;
+  rdfs:subClassOf ns0:NCIT_C15693, ns0:NCIT_C15864 ;
+  ns0:NCIT_P207 "C1519044" ;
+  ns0:NCIT_P366 "Phase_I_and_II_Vaccine_Trials" ;
+  ns0:NCIT_NHC0 "C15835" ;
+  ns0:IAO_0000115 "Select candidate vaccines or concepts suitable for Phase I and Phase II trials and conduct these trials." ;
+  ns1:hasExactSynonym "Phase I and II Vaccine Trials" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P108 "Phase I and II Vaccine Trials" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C15864
+  a owl:Class ;
+  rdfs:label "Vaccine Clinical Trial" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns0:NCIT_P207 "C1519888" ;
+  ns0:NCIT_P366 "Vaccine_Clinical_Trial" ;
+  ns1:hasExactSynonym "Vaccine Clinical Trial" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_NHC0 "C15864" ;
+  ns0:NCIT_P108 "Vaccine Clinical Trial" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C15873
+  a owl:Class ;
+  rdfs:label "Phase III Large Scale Vaccine Trial" ;
+  rdfs:subClassOf ns0:NCIT_C15602, ns0:NCIT_C15864 ;
+  ns1:hasExactSynonym "Vaccine Trial-Phase III Large Scale", "Phase III Large Scale Vaccine Trial" ;
+  ns0:NCIT_P366 "Vaccine_Trial-Phase_III_Large_Scale" ;
+  ns0:NCIT_NHC0 "C15873" ;
+  ns0:NCIT_P108 "Phase III Large Scale Vaccine Trial" ;
+  ns0:NCIT_P207 "C1519902" ;
+  ns0:IAO_0000115 "Select suitable vaccine candidates and support efficacy trials when appropriate criteria are met." ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C16104
+  a owl:Class ;
+  rdfs:label "Multi-Institutional Clinical Trial" ;
+  rdfs:subClassOf ns0:NCIT_C70824, ns0:NCIT_C71104 ;
+  ns1:hasExactSynonym "Multi-Institutional Clinical Trial", "multicenter study", "multicenter trial" ;
+  ns0:NCIT_NHC0 "C16104" ;
+  ns0:NCIT_P366 "Multi-Institutional_Clinical_Trial" ;
+  ns0:NCIT_P207 "C0206012" ;
+  ns0:NCIT_P108 "Multi-Institutional Clinical Trial" ;
+  ns0:NCIT_P322 "CDISC-GLOSS" ;
+  ns0:NCIT_P325 "Clinical trial conducted according to a single protocol but at more than one site and, therefore, carried out by more than one investigator. [ICH E9 Glossary] See investigator/ institution.", "A clinical trial that is carried out at more than one medical institution." ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C16123
+  a owl:Class ;
+  rdfs:label "Clinical Trial, Other" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns1:hasExactSynonym "Other Clinical Trial", "Clinical Trials, Other", "Clinical Trial, Other" ;
+  ns0:NCIT_P207 "C1516648" ;
+  ns0:NCIT_P366 "Clinical_Trials_Other" ;
+  ns0:NCIT_NHC0 "C16123" ;
+  ns0:NCIT_P108 "Clinical Trial, Other" ;
+  ns0:IAO_0000115 "A clinical trial that is not therapeutic, preventive or diagnostic." ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C16203
+  a owl:Class ;
+  rdfs:label "Clinical or Research Activity" ;
+  rdfs:subClassOf ns0:NCIT_C43431 ;
+  ns1:hasExactSynonym "Clinical or Research Activity" ;
+  ns0:NCIT_P108 "Clinical or Research Activity" ;
+  ns0:IAO_0000115 "Any specific activity undertaken during the course of a clinical study or research protocol." ;
+  ns0:NCIT_P106 "Activity" ;
+  ns0:NCIT_P366 "Clinical_or_Research_Activity" ;
+  ns0:NCIT_NHC0 "C16203" ;
+  ns0:NCIT_P207 "C1516654" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C18707
+  a owl:Class ;
+  rdfs:label "Adjunct Clinical Trial" ;
+  rdfs:subClassOf ns0:NCIT_C71104 ;
+  ns0:NCIT_P108 "Adjunct Clinical Trial" ;
+  ns0:IAO_0000115 "A clinical trial that uses materials from some other clinical trial." ;
+  ns0:NCIT_P366 "Clinical_Trials_Adjunct" ;
+  ns1:hasExactSynonym "Clinical Trials, Adjunct", "Adjunct Clinical Trial", "Clinical Trial, Adjunct" ;
+  ns0:NCIT_P207 "C1516638" ;
+  ns0:NCIT_P106 "Governmental or Regulatory Activity" ;
+  ns0:NCIT_NHC0 "C18707" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C43431
+  a owl:Class ;
+  rdfs:label "Activity" ;
+  rdfs:subClassOf owl:Thing ;
+  ns1:hasExactSynonym "General activity", "Activity" ;
+  ns0:NCIT_P366 "Activity" ;
+  ns0:NCIT_P322 "BRIDG" ;
+  ns0:NCIT_NHC0 "C43431" ;
+  ns0:NCIT_P108 "Activity" ;
+  ns0:NCIT_P106 "Activity" ;
+  ns0:NCIT_P325 "Any action that can, in the context of a study or a post-marketing investigation, be defined, planned, scheduled or performed. EXAMPLE(S): surgical procedure, laboratory test, administration of a drug." ;
+  ns0:IAO_0000115 "An active process; excludes processes and mechanisms which fulfill biological functions." ;
+  ns0:NCIT_P207 "C0441655" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C105551> ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C61256
+  a owl:Class ;
+  rdfs:label "Monitoring" ;
+  ns0:NCIT_P208 "CL415337" ;
+  ns0:NCIT_P325 "In medicine, to regularly watch and check a person or condition to see if there is any change. Also refers to a device that records and/or displays patient data, such as for an electrocardiogram (EKG)." ;
+  ns0:NCIT_P108 "Monitoring" ;
+  ns0:NCIT_NHC0 "C61256" ;
+  ns1:hasExactSynonym "monitor", "Monitoring" ;
+  ns0:NCIT_P106 "Activity" ;
+  ns0:NCIT_P366 "Monitoring" ;
+  ns0:IAO_0000115 "The act of observing something (and sometimes keeping a record of it)." ;
+  ns0:IAO_0000412 ns0:ncit.owl ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> .
+
+ns0:NCIT_C63536
+  a owl:Class ;
+  rdfs:label "Study" ;
+  rdfs:subClassOf ns0:NCIT_C15429 ;
+  ns0:NCIT_P207 "C0947630" ;
+  ns0:NCIT_P366 "Study" ;
+  ns0:IAO_0000115 "A detailed examination, analysis, or critical inspection of a subject designed to discover facts about it." ;
+  ns1:hasExactSynonym "Study" ;
+  ns0:NCIT_NHC0 "C63536" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P108 "Study" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C70820
+  a owl:Class ;
+  rdfs:label "Clinical Study by Phase" ;
+  rdfs:subClassOf ns0:NCIT_C15206 ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns1:hasExactSynonym "Clinical Study by Phase" ;
+  ns0:NCIT_P366 "Clinical_Study_by_Phase" ;
+  ns0:NCIT_P207 "C2347801" ;
+  ns0:NCIT_P108 "Clinical Study by Phase" ;
+  ns0:NCIT_NHC0 "C70820" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C70824
+  a owl:Class ;
+  rdfs:label "Clinical Study by Organizational Parameters" ;
+  rdfs:subClassOf ns0:NCIT_C15206 ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P366 "Clinical_Study_by_Organizational_Parameters" ;
+  ns0:NCIT_P207 "C2347800" ;
+  ns0:NCIT_NHC0 "C70824" ;
+  ns1:hasExactSynonym "Clinical Study by Organizational Parameters" ;
+  ns0:NCIT_P108 "Clinical Study by Organizational Parameters" ;
+  ns0:IAO_0000412 ns0:ncit.owl .
+
+ns0:NCIT_C71104
+  a owl:Class ;
+  rdfs:label "Clinical Trial" ;
+  ns0:NCIT_P325 "1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)", "A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). NOTE: NIH Office of Science Policy further specifies that a clinical trial is a type of research study that prospectively assigns subjects to interventions, and the EU clinical trial regulations set forth 3 specific conditions, any one of which qualifies a study as a clinical trial. These conditions include applying diagnostic or monitoring procedures not used in normal clinical practice to subjects. [after ICH E6 [R2], EU CTR 2014] See also clinical study, clinical investigation.", "A type of research study that tests how well new medical approaches work in people. These studies test new methods of screening, prevention, diagnosis, or treatment of a disease." ;
+  ns0:NCIT_P108 "Clinical Trial" ;
+  ns1:hasExactSynonym "Clinical Trials", "clinical trial", "Trial", "Clinical Trial", "Clinical Trials, Unspecified" ;
+  ns0:IAO_0000115 "A research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes." ;
+  ns0:NCIT_P322 "CDISC-GLOSS", "CDISC" ;
+  ns0:NCIT_NHC0 "C71104" ;
+  ns0:NCIT_P106 "Research Activity" ;
+  ns0:NCIT_P207 "C0008976" ;
+  ns0:NCIT_P366 "Clinical_Trial_Generic" ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132310>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+  ns0:IAO_0000412 ns0:ncit.owl ;
+  rdfs:subClassOf <http://hadatac.org/ont/hasco#ResearchStudy> ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "A prospective study designed to evaluate whether one or more interventions are associated with an outcome" ;
+    rdfs:isDefinedBy "https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"
+  ] .
+
+ns0:NCIT_C25613
+  a owl:Class ;
+  rdfs:label "Percentage" ;
+  ns0:IAO_0000115 """
+        A fraction or ratio with 100 understood as the denominator.
+        """, """
+    A fraction or ratio with 100 understood as the denominator.
+    """ ;
+  ns0:NCIT_P108 "Percentage" ;
+  ns0:NCIT_P366 "Percentage" ;
+  ns0:NCIT_P106 "Conceptual Entity" ;
+  ns0:NCIT_NHC0 "C25613" ;
+  ns0:NCIT_P207 "C0439165" ;
+  ns0:NCIT_P322 "CDISC", "NCPDP" ;
+  ns1:hasExactSynonym "Percentage", "%" ;
+  ns0:NCIT_P325 """
+        One hundred times the quotient of one quantity divided by another, with the same units of measurement.
+        """, """
+    One hundred times the quotient of one quantity divided by another, with the same units of measurement.
+    """ ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66770>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C71620>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C77526>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C85494>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C89415>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C89509>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C91101> ;
+  ns0:IAO_0000412 ns0:ncit.owl ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+
+ns0:NCIT_C44256
+  a owl:Class ;
+  rdfs:label "Ratio" ;
+  ns1:hasExactSynonym "RATIO", "{Ratio}", "ratio", "Ratio", "{RATIO}" ;
+  ns0:IAO_0000115 """
+        Quotient of quantities of the same kind for different components within the same system.
+        """, """
+    Quotient of quantities of the same kind for different components within the same system.
+    """ ;
+  ns0:NCIT_P108 "Ratio" ;
+  ns0:NCIT_P106 "Quantitative Concept" ;
+  ns0:NCIT_P207 "C0456603" ;
+  ns0:NCIT_P322 "UCUM", "CDISC" ;
+  ns0:NCIT_NHC0 "C44256" ;
+  ns0:NCIT_P366 "Ratio" ;
+  ns0:NCIT_P325 """
+        The quotient of one quantity divided by another, with the same units of measurement.
+        """, """
+    The quotient of one quantity divided by another, with the same units of measurement.
+    """ ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C19752>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66770>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67567>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C71620>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C77526>, <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C85494> ;
+  ns0:IAO_0000412 ns0:ncit.owl ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+
+ns0:BFO_0000003
+  a owl:Class ;
+  rdfs:label "occurrent"@en ;
+  ns0:IAO_0000115 "An entity that has temporal parts and that happens, unfolds or develops through time."@en ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:BFO_0000004
+  a owl:Class ;
+  rdfs:label "independent continuant"@en ;
+  rdfs:subClassOf ns0:BFO_0000002 ;
+  ns0:IAO_0000115 "A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything."@en ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:BFO_0000020
+  a owl:Class ;
+  rdfs:label "specifically dependent continuant"@en ;
+  rdfs:subClassOf ns0:BFO_0000002 ;
+  ns0:IAO_0000115 "A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same."@en ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:BFO_0000040
+  a owl:Class ;
+  rdfs:label "material entity"^^xsd:string, "material entity"@en ;
+  rdfs:subClassOf ns0:BFO_0000004 ;
+  ns0:IAO_0000115 "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time."@en ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:BFO_0000141
+  a owl:Class ;
+  rdfs:label "immaterial entity"@en ;
+  rdfs:subClassOf ns0:BFO_0000004 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:CARO_0000000
+  a owl:Class ;
+  rdfs:label "anatomical entity"^^xsd:string ;
+  rdfs:subClassOf ns0:CARO_0030000 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:CARO_0000006
+  a owl:Class ;
+  rdfs:label "material anatomical entity"^^xsd:string, "material anatomical entity"@en ;
+  rdfs:subClassOf ns0:BFO_0000040, ns0:CARO_0000000 ;
+  ns0:IAO_0000412 ns0:caro.owl, ns0:hp.owl .
+
+ns0:CARO_0010000
+  a owl:Class ;
+  rdfs:label "multicellular anatomical structure"^^xsd:string ;
+  rdfs:subClassOf ns0:CARO_0000003 ;
+  ns0:IAO_0000412 ns0:caro.owl, ns0:hp.owl .
+
+ns0:CARO_0030000
+  a owl:Class ;
+  rdfs:label "biological entity"^^xsd:string ;
+  rdfs:subClassOf ns0:BFO_0000004 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:CL_0000000
+  a owl:Class ;
+  rdfs:label "cell"^^xsd:string, "cell"@en ;
+  rdfs:subClassOf ns0:CARO_0000003 ;
+  ns0:IAO_0000412 ns0:cl.owl, ns0:hp.owl .
+
+ns0:HP_0001513
+  a owl:Class, <http://hadatac.org/ont/hasco#QualityValue> ;
+  rdfs:label "Obesity"^^xsd:string, "Obese" ;
+  ns1:id "HP:0001513"^^xsd:string ;
+  ns1:hasDbXref "MSH:D009765"^^xsd:string, "SNOMEDCT_US:414915002"^^xsd:string, "SNOMEDCT_US:414916001"^^xsd:string, "UMLS:C0028754"^^xsd:string ;
+  ns1:hasExactSynonym "Obesity"^^xsd:string, "Having too much body fat" ;
+  ns1:hasOBONamespace "human_phenotype"^^xsd:string ;
+  ns0:IAO_0000115 "Accumulation of substantial excess body fat." ;
+  ns0:IAO_0000412 ns0:hp.owl ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ns2:isAttributeOf ;
+    owl:someValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom [
+        a owl:Class ;
+        owl:intersectionOf (
+         <http://purl.org/twc/ontologies/cmo.owl#0000105>
+         _:genid66
+       )
+      ]
+    ]
+  ], <http://hadatac.org/ont/chear#BodyWeightQuality> ;
+  skos:notation "63" .
+
+ns0:HP_0001956
+  a owl:Class ;
+  rdfs:label "Truncal obesity"^^xsd:string ;
+  rdfs:subClassOf ns0:HP_0001513 ;
+  ns1:hasExactSynonym "Centripetal obesity"^^xsd:string, "Truncal obesity"^^xsd:string ;
+  ns1:id "HP:0001956"^^xsd:string ;
+  ns1:hasAlternativeId "HP:0008885"^^xsd:string ;
+  ns1:hasDbXref "MSH:D056128"^^xsd:string, "SNOMEDCT_US:248311001"^^xsd:string, "UMLS:C0311277"^^xsd:string ;
+  ns0:IAO_0000115 "Obesity located preferentially in the trunk of the body as opposed to the extremities."^^xsd:string ;
+  ns1:hasOBONamespace "human_phenotype"^^xsd:string ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:HP_0004324
+  a owl:Class, <http://hadatac.org/ont/hasco#QualityValue> ;
+  rdfs:label "Increased body weight"^^xsd:string, "Increased Body Weight" ;
+  ns1:creation_date "2008-02-27T03:21:00Z"^^xsd:string ;
+  ns1:id "HP:0004324"^^xsd:string ;
+  ns1:hasExactSynonym "Increased body weight"^^xsd:string ;
+  ns1:hasDbXref "MSH:D015430"^^xsd:string, "SNOMEDCT_US:161831008"^^xsd:string, "SNOMEDCT_US:262286000"^^xsd:string, "SNOMEDCT_US:8943002"^^xsd:string, "UMLS:C0043094"^^xsd:string ;
+  ns1:hasRelatedSynonym "Weight gain"^^xsd:string ;
+  ns1:hasOBONamespace "human_phenotype"^^xsd:string ;
+  ns1:created_by "peter"^^xsd:string ;
+  ns1:hasAlternativeId "HP:0045083" ;
+  ns0:IAO_0000115 "Abnormally increased body weight." ;
+  ns0:IAO_0000412 ns0:hp.owl ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ns2:isAttributeOf ;
+    owl:someValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom [
+        a owl:Class ;
+        owl:intersectionOf (
+         <http://purl.org/twc/ontologies/cmo.owl#0000105>
+         _:genid75
+       )
+      ]
+    ]
+  ], <http://hadatac.org/ont/chear#BodyWeightQuality> ;
+  skos:definition "BMI > 25" ;
+  skos:notation "72" .
+
+ns0:HP_0008915
+  a owl:Class ;
+  rdfs:label "Childhood-onset truncal obesity"^^xsd:string ;
+  rdfs:subClassOf ns0:HP_0001956 ;
+  ns1:hasAlternativeId "HP:0008874"^^xsd:string ;
+  ns1:id "HP:0008915"^^xsd:string ;
+  ns1:hasExactSynonym "Truncal obesity apparent in childhood"^^xsd:string ;
+  ns0:IAO_0000115 "Truncal obesity with onset during childhood, defined as between 2 and 10 years of age."^^xsd:string ;
+  ns1:hasDbXref "UMLS:C1859846"^^xsd:string ;
+  ns1:hasOBONamespace "human_phenotype"^^xsd:string ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:HP_0012743
+  a owl:Class ;
+  rdfs:label "Abdominal obesity"^^xsd:string ;
+  rdfs:subClassOf ns0:HP_0001513 ;
+  ns1:creation_date "2014-03-23T05:00:05Z"^^xsd:string ;
+  ns1:hasExactSynonym "Abdominal obesity"^^xsd:string, "Central obesity" ;
+  ns0:IAO_0000115 "Excessive fat around the stomach and abdomen."^^xsd:string ;
+  ns1:id "HP:0012743"^^xsd:string ;
+  ns1:hasDbXref "MSH:D056128"^^xsd:string, "SNOMEDCT_US:248311001"^^xsd:string, "UMLS:C0311277"^^xsd:string ;
+  ns1:hasOBONamespace "human_phenotype"^^xsd:string ;
+  ns1:created_by "peter"^^xsd:string ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:HP_0025499
+  a owl:Class ;
+  rdfs:label "Class I obesity"@en ;
+  rdfs:subClassOf ns0:HP_0001513 ;
+  dc11:date "2017-05-14T20:06:40Z"^^xsd:dateTime ;
+  dc11:creator "HPO:probinson"^^xsd:string ;
+  ns0:IAO_0000115 "Obesity with a body mass index of 30 to 34.9 kg per square meter." ;
+  ns1:hasExactSynonym "Obesity grade 1" ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:HP_0025500
+  a owl:Class ;
+  rdfs:label "Class II obesity"@en ;
+  rdfs:subClassOf ns0:HP_0001513 ;
+  dc11:date "2017-05-14T20:08:43Z"^^xsd:dateTime ;
+  dc11:creator "HPO:probinson"^^xsd:string ;
+  ns1:hasExactSynonym "Obesity grade 2" ;
+  ns0:IAO_0000115 "Obesity with a body mass index of 35 to 39.9 kg per square meter." ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:HP_0025501
+  a owl:Class ;
+  rdfs:label "Class III obesity"@en ;
+  rdfs:subClassOf ns0:HP_0001513 ;
+  dc11:date "2017-05-14T20:09:17Z"^^xsd:dateTime ;
+  dc11:creator "HPO:probinson"^^xsd:string ;
+  ns1:hasExactSynonym "Obesity grade 3" ;
+  ns0:IAO_0000115 "Obesity with a body mass index of 40 kg per square meter or higher." ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:HP_0025502
+  a owl:Class, <http://hadatac.org/ont/hasco#QualityValue> ;
+  rdfs:label "Overweight"@en, "Overweight" ;
+  dc11:date "2017-05-14T20:12:36Z"^^xsd:dateTime ;
+  dc11:creator "HPO:probinson"^^xsd:string ;
+  ns0:IAO_0000115 "Increased body weight with a body mass index of 25-29.9 kg per square meter." ;
+  ns0:IAO_0000412 ns0:hp.owl ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ns2:isAttributeOf ;
+    owl:someValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom [
+        a owl:Class ;
+        owl:intersectionOf (
+         <http://purl.org/twc/ontologies/cmo.owl#0000105>
+         _:genid84
+       )
+      ]
+    ]
+  ], <http://hadatac.org/ont/chear#BodyWeightQuality> ;
+  skos:notation "71" .
+
+ns0:HP_0045082
+  a owl:Class, <http://hadatac.org/ont/hasco#QualityValue> ;
+  rdfs:label "Decreased body mass index", "Underweight" ;
+  ns1:hasExactSynonym "Decreased BMI" ;
+  ns0:IAO_0000115 "Abnormally decreased weight-to-height squared ratio, calculated by dividing the individual's weight in kilograms by the square of the individual's height in meters and used as an indicator of underweight compared to averages." ;
+  ns0:IAO_0000412 ns0:hp.owl ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ns2:isAttributeOf ;
+    owl:someValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom [
+        a owl:Class ;
+        owl:intersectionOf (
+         <http://purl.org/twc/ontologies/cmo.owl#0000105>
+         _:genid99
+       )
+      ]
+    ]
+  ], <http://hadatac.org/ont/chear#BodyWeightQuality>, <http://hadatac.org/ont/chear#UnderweightOrNormal> ;
+  skos:definition "BMI < 18.5" ;
+  skos:notation "99" .
+
+ns0:PATO_0000001
+  a owl:Class ;
+  rdfs:label "quality"^^xsd:string ;
+  rdfs:subClassOf ns0:BFO_0000020 ;
+  ns0:IAO_0000589 "quality (PATO)" ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0000068
+  a owl:Class ;
+  rdfs:label "qualitative"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0000001 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0000069
+  a owl:Class ;
+  rdfs:label "deviation(from_normal)"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0000068 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0000460
+  a owl:Class ;
+  rdfs:label "abnormal"^^xsd:string, "abnormal" ;
+  rdfs:subClassOf ns0:PATO_0000069 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0000582
+  a owl:Class ;
+  rdfs:label "increased weight"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0000128, ns0:PATO_0002245 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0001018
+  a owl:Class ;
+  rdfs:label "physical quality"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0001241 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0001035
+  a owl:Class ;
+  rdfs:label "force"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0001018 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0001241
+  a owl:Class ;
+  rdfs:label "physical object quality"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0000001 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0001869
+  a owl:Class ;
+  rdfs:label "pathological"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0000460 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0002245
+  a owl:Class ;
+  rdfs:label "increased force"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0001035, ns0:PATO_0002305 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0002300
+  a owl:Class ;
+  rdfs:label "increased quality"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0000069 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:PATO_0002305
+  a owl:Class ;
+  rdfs:label "increased object quality"^^xsd:string ;
+  rdfs:subClassOf ns0:PATO_0001241, ns0:PATO_0002300 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:UBERON_0000061
+  a owl:Class ;
+  rdfs:label "anatomical structure"^^xsd:string ;
+  rdfs:subClassOf ns0:CARO_0000003, ns0:UBERON_0000465 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:CARO_0000003
+  a owl:Class ;
+  rdfs:label "connected anatomical structure"^^xsd:string, "anatomical structure"@en ;
+  rdfs:subClassOf ns0:CARO_0000006 ;
+  ns0:IAO_0000412 ns0:caro.owl, ns0:hp.owl .
+
+ns0:UBERON_0000465
+  a owl:Class ;
+  rdfs:label "material anatomical entity"^^xsd:string ;
+  rdfs:subClassOf ns0:BFO_0000040, ns0:CARO_0000006, ns0:UBERON_0001062 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+ns0:UBERON_0001062
+  a owl:Class ;
+  rdfs:label "anatomical entity"^^xsd:string ;
+  rdfs:subClassOf ns0:BFO_0000004 ;
+  ns0:IAO_0000412 ns0:hp.owl .
+
+<http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+  rdfs:comment "Statistical measure describing the distribution of single variable" .
+
+<http://www.case.edu/ProvCaRe/provcare#DispersionMeasure>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+  rdfs:comment "Statistical measure characterizing the distribution of single variable" .
+
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument>, <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasAttribute ;
+    owl:allValuesFrom ns2:UnitOfMeasurement
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasValue ;
+    owl:someValuesFrom xsd:decimal
+  ] ;
+  dc:source <https://en.wikipedia.org/wiki/Measure> ;
+  rdfs:label "statistical measure" ;
+  skos:definition "a standard unit used to express the size, amount, or degree of something"^^xsd:string .
+
+<http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#Intervention> ;
+  rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/386053000" .
+
+<http://www.case.edu/ProvCaRe/provcare#Intervention>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StudyMethod>, <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  ns3:ynonym "Study intervention" ;
+  rdfs:comment "The intervention type used in a research study (corresponding to I in the PICO(T) model )", "Capturing the interventions variables in research studies" ;
+  rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/386053000" ;
+  rdfs:label "study intervention" .
+
+<http://hadatac.org/ont/chear#Demographic>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic>, <http://hadatac.org/ont/hasco/StudyIndicator> ;
+  skos:definition "the science dealing with populations, including matters of health, disease, births, and mortality"^^xsd:string, "Demographics are quantifiable characteristics of a given population." ;
+  dc:source "Miller-Keane Encyclopedia and Dictionary of Medicine, Nursing, and Allied Health, Seventh Edition" ;
+  rdfs:label "Demographic" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" .
+
+<http://hadatac.org/ont/chear#MedicalTherapy>
+  rdfs:label "medical therapy" ;
+  skos:definition "the attempted remediation of a health problem, usually following a diagnosis"^^xsd:string ;
+  dc:source "https://en.wikipedia.org/wiki/Therapy" .
+
+ns0:DOID_4
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "disease or condition" ;
+  skos:definition "A disease is a disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism" ;
+  dc:source "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
+  ns0:IAO_0000412 ns0:doid.owl .
+
+ns2:MedicalIntervention a owl:Class .
+ns2:Study a owl:Class .
+ns2:UnitOfMeasurement
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "unit of measurement" .
+
+ns2:Year
+  a owl:Class ;
+  rdfs:subClassOf ns2:UnitOfMeasurement .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Active>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/EnrollmentStatus> ;
+  skos:definition "participants following clinical trial protocol"^^xsd:string ;
+  ns5:adaptedFrom "https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf" ;
+  dc:title "Clinical Trials Protocol Template - NIH Office of Science Policy" ;
+  rdfs:label "Active Subject" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>
+  a owl:Class ;
+  rdfs:label "Cohort Description" ;
+  rdfs:comment "All typical components that constitute the description of study populations, captured in the first table of a research study, and hence called Table 1s" .
+
+ns0:PATO_0001309
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+  rdfs:label "Duration" ;
+  ns0:IAO_0000115 """
+    A process quality inhering in a bearer by virtue of the bearer's magnitude of the temporal extent between the starting and ending point.
+    """^^xsd:string ;
+  ns1:hasAlternativeId "PATO:0000081"^^xsd:string ;
+  ns1:id "PATO:0001309"^^xsd:string ;
+  ns1:hasExactSynonym "period"^^xsd:string ;
+  ns1:hasOBONamespace "quality"^^xsd:string ;
+  ns1:hasRelatedSynonym "time"^^xsd:string ;
+  ns1:inSubset <http://purl.oboInOwllibrary.org/oboInOwl/pato#attribute_slim>, <http://purl.oboInOwllibrary.org/oboInOwl/pato#hpo_slim> ;
+  ns0:IAO_0000412 ns0:pato.owl .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/EnrollmentStatus>
+  a owl:Class ;
+  rdfs:subClassOf ns2:StatusDescriptor, <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "enrollment status"^^xsd:string ;
+  skos:definition " patients are consented and screened, with eligibility verified "^^xsd:string ;
+  ns5:adaptedFrom "https://research-compliance.umich.edu/sites/default/files/resource-download/enrollmentdefinition_additionalhelp.pdf" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/IntentionToTreatPopulation>
+  a owl:Class ;
+  rdfs:subClassOf ns0:STATO_0000203 ;
+  dc:source "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3159210/" ;
+  rdfs:label "intention to treat population"^^xsd:string ;
+  skos:definition "every subject who is randomized according to randomized treatment assignment,  ignoring noncompliance, protocol deviations, withdrawal, and anything that happens after randomization" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/OrderedLaboratoryTestResult>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic> ;
+  rdfs:label "laboratory test result" .
+
+ns2:Median
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Medication>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic> .
+
+ns2:Mean
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> ;
+  dc:source <https://en.wikipedia.org/wiki/Mean> ;
+  rdfs:label "mean" ;
+  skos:definition "the central value of a discrete set of numbers: specifically, the sum of the values divided by the number of values"^^xsd:string .
+
+ns2:StandardDeviation
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#DispersionMeasure> ;
+  dc:source <https://en.wikipedia.org/wiki/Standard_deviation> ;
+  rdfs:label "standard deviation"^^xsd:string ;
+  skos:definition "a measure that is used to quantify the amount of variation or dispersion of a set of data values"^^xsd:string .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/StudyArm>
+  a owl:Class ;
+  rdfs:subClassOf ns0:STATO_0000203 ;
+  rdfs:label "study arm" ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)" ;
+    rdfs:isDefinedBy "https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas\""
+  ], [
+    a skos:definition ;
+    ns2:hasValue "A group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial's protocol. " ;
+    dc:source "https://clinicaltrials.gov/ct2/about-studies/glossary"
+  ] .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/InterventionArm>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/StudyArm>, [
+    a owl:Restriction ;
+    owl:onProperty rdfs:subClassOf ;
+    owl:someValuesFrom ns2:StudySubject
+  ] ;
+  rdfs:label "intervention arm" ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "An arm type in which a group of participants receives the intervention/treatment that is the focus of the clinical trial" ;
+    dc:source "https://clinicaltrials.gov/ct2/about-studies/glossary"
+  ] ;
+  rdfs:seeAlso "http://semanticscience.org/resource/SIO_001069.rdf" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/ControlArm>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/StudyArm> ;
+  rdfs:label "control arm" ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "An arm type that can receive an intervention that is considered effective (the standard), a placebo, or no intervention" ;
+    ns5:adaptedFrom "https://aidsinfo.nih.gov/understanding-hiv-aids/glossary/3392/control-arm"
+  ] ;
+  rdfs:seeAlso "http://semanticscience.org/resource/SIO_001068.rdf" .
+
+ns2:StudySubject
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasProperty ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/EnrollmentStatus>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasAttribute ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasProperty ;
+    owl:someValuesFrom ns0:DOID_4
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasProperty ;
+    owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#Intervention>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasProperty ;
+    owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#Intervention>
+  ] ;
+  rdfs:label "study subject" ;
+  skos:definition "A research participant, also called a human subject or an experiment, trial, or study participant or subject, is a person who participates in human subject research by being the target of observation by researchers"^^xsd:string ;
+  dc:source "https://en.wikipedia.org/wiki/Research_participant" .
+
+ns2:Patient
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing, [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasAttribute ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/ElectronicHealthRecord>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasProperty ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/PatientProfile>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasProperty ;
+    owl:someValuesFrom ns0:DOID_4
+  ] ;
+  rdfs:label "patient" ;
+  skos:definition "a person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary"^^xsd:string ;
+  dc:source "https://www.tititudorancea.com/z/patient_en.htm" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/ElectronicHealthRecord>
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing, [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasProperty ;
+    owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#Intervention>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasAttribute ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/OrderedLaboratoryTestResult>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasAttribute ;
+    owl:someValuesFrom <http://hadatac.org/ont/chear#Anthropometry>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasAttribute ;
+    owl:someValuesFrom <http://hadatac.org/ont/chear#Demographic>
+  ] ;
+  dc:source <https://www.healthit.gov/faq/what-electronic-health-record-ehr> ;
+  rdfs:label "electronic health record"^^xsd:string ;
+  skos:definition "a digital version of a patient’s paper chart"^^xsd:string .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/PatientProfile>
+  a owl:Class ;
+  rdfs:subClassOf owl:Thing ;
+  rdfs:label "patient profile"^^xsd:string ;
+  skos:definition "a simple form that allows patients or caregivers to keep track of important health information" ;
+  dc:source "https://www.rimrehab.org/for-patients/patient-health-profile" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription> ;
+  rdfs:label "subject characteristic" ;
+  skos:definition "Property that summarizes important attributes of the participants enrolled in a study" ;
+  dc:source "R. J. Little et al., \"The prevention and treatment of missing data in clinical trials,\" New England J. Medicine, vol. 367, no. 14, pp. 1355{1360, 2012" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/PopulationSize>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure>, [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasValue ;
+    owl:someValuesFrom xsd:integer
+  ] ;
+  rdfs:label "population size"^^xsd:string ;
+  ns5:adaptedFrom "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296634/" ;
+  skos:definition "number of patients to which the study results could be reasonably generalized"^^xsd:string .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/RandomizedPopulation>
+  a owl:Class ;
+  rdfs:subClassOf ns0:STATO_0000203 ;
+  rdfs:label "randomized population" ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)" ;
+    ns5:adaptedFrom "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/"
+  ] .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Metaanalysis>
+  a owl:Class ;
+  rdfs:subClassOf ns4:ResearchStudy ;
+  rdfs:label "metaanalysis" ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "A quantitative, formal, epidemiological study design used to systematically assess previous research studies to derive conclusions about that body of research" ;
+    dc:source "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049418/"
+  ] .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/SafetyPopulation>
+  a owl:Class ;
+  rdfs:subClassOf ns0:STATO_0000203 ;
+  rdfs:label "safety population" ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group" ;
+    ns5:adaptedFrom "https://www.ncbi.nlm.nih.gov/books/NBK209903/", "https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/"
+  ] .
+
+ns4:ResearchStudy
+  a owl:Class ;
+  rdfs:subClassOf ns2:Study, <https://idea.tw.rpi.edu/projects/heals/studycohort/CohortDescription>, [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasParticipant ;
+    owl:someValuesFrom <https://idea.tw.rpi.edu/projects/heals/studycohort/StudyArm>
+  ], [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasParticipant ;
+    owl:someValuesFrom ns0:STATO_0000203
+  ] ;
+  ns2:hasAttribute [
+    a skos:definition ;
+    ns2:hasValue "A scientific investigation that involves testing a hypothesi" ;
+    rdfs:isDefinedBy "https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"
+  ], [
+    a skos:definition ;
+    ns2:hasValue "A scientific study of nature that sometimes includes processes involved in health and disease" ;
+    dc:source <https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement>
+  ] ;
+  rdfs:label "study" .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/Therapy>
+  a owl:Class ;
+  rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/ThresholdSuspend>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/ControlNature> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/YearOfFollowUp>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/Duration> .
+
+<https://idea.tw.rpi.edu/projects/heals/studycohort/YearsOfExposure>
+  a owl:Class ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/Duration>, [
+    a owl:Restriction ;
+    owl:onProperty ns2:hasUnit ;
+    owl:someValuesFrom ns2:Year
+  ] .
+
+ns2:Circumference
+  a <http://hadatac.org/ont/hasco/QuantityVariable>, owl:Class ;
+  rdfs:label "Circumference" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry> .
+
+ns0:CMO_0000012
+  a <http://hadatac.org/ont/hasco/QuantityVariable>, owl:Class ;
+  rdfs:label "Weight" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry>, ns2:Mass ;
+  skos:definition "The resulting Force from the interaction between a person's Mass and Gravity." .
+
+ns2:Height
+  a ns4:QuantityVariable, owl:Class ;
+  rdfs:label "Height" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry> ;
+  skos:definition "Height" .
+
+<http://hadatac.org/ont/chear#Anthropometry>
+  a owl:Class ;
+  rdfs:label "Anthropometry" ;
+  rdfs:subClassOf <https://idea.tw.rpi.edu/projects/heals/studycohort/SubjectCharacteristic>, <http://hadatac.org/ont/hasco/StudyIndicator> ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  skos:definition "Attributes pertaining to the scientific study of the measurements and proportions of the human body." .
+
+<http://hadatac.org/ont/chear#BodyWeightQuality>
+  a owl:Class ;
+  rdfs:label "Body Weight Quality" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry>, ns2:Quality ;
+  skos:definition "A categorization of body mass relative to the height, as defined using Body Mass Index." .
+
+<http://hadatac.org/ont/chear#UnderweightOrNormal>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Underweight/Normal" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ns2:isAttributeOf ;
+    owl:someValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom [
+        a owl:Class ;
+        owl:intersectionOf (
+         <http://purl.org/twc/ontologies/cmo.owl#0000105>
+         _:genid48
+       )
+      ]
+    ]
+  ], <http://hadatac.org/ont/chear#BodyWeightQuality>, [
+    a owl:Restriction ;
+    owl:onProperty ns2:isAttributeOf ;
+    owl:someValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom [
+        a owl:Class ;
+        owl:intersectionOf (
+         <http://purl.org/twc/ontologies/cmo.owl#0000105>
+         _:genid57
+       )
+      ]
+    ]
+  ] ;
+  skos:notation "100" .
+
+<http://purl.org/twc/ontologies/cmo.owl#0000105>
+  a ns4:QuantityVariable, owl:Class ;
+  rdfs:label "Body Mass Index" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Anthropometry>, ns2:Quantity ;
+  skos:definition "A measurement relating body weight to height in an organism; typically calculated as the weight of an individual divided by the height of that individual squared. For quadrupeds, the square of body height is often replaced by the square of body length" ;
+  skos:editorialNote "Should we note that this is derived from height and weight? JS: I think so" .
+
+<http://hadatac.org/ont/chear#NormalWeight>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Normal Weight" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty ns2:isAttributeOf ;
+    owl:someValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom [
+        a owl:Class ;
+        owl:intersectionOf (
+         <http://purl.org/twc/ontologies/cmo.owl#0000105>
+         _:genid108
+       )
+      ]
+    ]
+  ], <http://hadatac.org/ont/chear#BodyWeightQuality>, <http://hadatac.org/ont/chear#UnderweightOrNormal> ;
+  skos:definition "18.5<=BMI<=25" ;
+  skos:notation "61" .
+
+<http://hadatac.org/ont/chear#Adopted>
+  a owl:Class ;
+  rdfs:label "Adopted" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#NonBiologicalRelative> ;
+  skos:definition "Adoption is a process whereby a person assumes the parenting of another, usually a child, from that person's biological or legal parent or parents, and, in so doing, permanently transfers all rights and responsibilities, along with filiation, from the biological parent or parents." .
+
+<http://hadatac.org/ont/chear#Adult>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Adult" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>, <http://hadatac.org/ont/chear#DevelopmentalQuality> ;
+  skos:definition "Refers to a person above a threshold age." ;
+  skos:notation "3" .
+
+<http://hadatac.org/ont/chear#AdvancedDegree>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Advanced Graduate Degree" ;
+  rdfs:subClassOf ns0:ExO_0000041 ;
+  skos:definition "Having earned a pos-baccalaureate degree" ;
+  skos:notation "4" .
+
+<http://hadatac.org/ont/chear#BiologicalRelative>
+  a owl:Class ;
+  rdfs:label "Biological Relative" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Relative> ;
+  skos:definition "Being from the same biological kinship as another person. In that aspect, consanguinity is the quality of being descended from the same ancestor as another person." .
+
+<http://hadatac.org/ont/chear#CollegeGraduate>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "College Graduate" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <ontoad:C0424933> ;
+  skos:definition "The quality of having graduated from College" ;
+  skos:notation "12" .
+
+<http://hadatac.org/ont/chear#DateOfBirth>
+  a ns4:QuantityVariable, owl:Class ;
+  rdfs:label "Date of Birth" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>, ns2:TimeInterval ;
+  skos:definition "Date of day on which a person was born." .
+
+<http://hadatac.org/ont/chear#Daughter>
+  a owl:Class ;
+  rdfs:label "Daughter" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom ns2:Female
+    ] ;
+    owl:onProperty ns2:isRoleOf
+  ], <http://hadatac.org/ont/chear#Child> ;
+  skos:definition "The female offspring in relation to her parents." .
+
+<http://hadatac.org/ont/chear#ElementarySchool>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Elementary School" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jim-McCusker" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#SomeElementarySchool> ;
+  skos:definition "Finished Elementary School" ;
+  skos:notation "15" .
+
+<http://hadatac.org/ont/chear#SomeElementarySchool>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Some Elementary School" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess> ;
+  skos:definition "Attended Some Elementary School" ;
+  skos:notation "86" .
+
+<http://hadatac.org/ont/chear#Father>
+  a owl:Class ;
+  rdfs:label "Father" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom ns2:Male
+    ] ;
+    owl:onProperty ns2:isRoleOf
+  ], <http://hadatac.org/ont/chear#Parent> ;
+  skos:definition "The male parent of a child. Besides the paternal bonds of a father to his children, the father may have a parental legal and social relationship with the child that carries with it certain rights and obligations. An adoptive father is a male who has become the child's parent through the legal process of adoption. A biological father is the male genetic contributor to the creation of the baby, through sexual intercourse or sperm donation. A biological father may have legal obligations to a child not raised by him, such as an obligation of monetary support. A putative father is a man whose biological relationship to a child is alleged but has not been established. A stepfather is a male who is the husband of a child's mother and they may form a family unit, but who generally does not have the legal rights and responsibilities of a parent in relation to the child." .
+
+<http://hadatac.org/ont/chear#Foster>
+  a owl:Class ;
+  rdfs:label "Foster" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#NonBiologicalRelative> ;
+  skos:definition "Fosterage, the practice of a family bringing up a child not their own, differs from adoption in that the child's parents, not the foster-parents, remain the acknowledged parents. In many modern western societies foster care can be organized by the state to care for children with troubled family backgrounds, usually on a temporary basis. In many pre-modern societies fosterage was a form of patronage, whereby influential families cemented political relationships by bringing up each other's children, similar to arranged marriages, also based on dynastic or alliance calculations." .
+
+<http://hadatac.org/ont/chear#GestationalAgeAtBirth>
+  a owl:Class ;
+  rdfs:label "Gestational Age at Birth" ;
+  rdfs:subClassOf <http://www.ebi.ac.uk/efo/EFO_0005112> ;
+  owl:equivalentClass [
+    a owl:Class ;
+    owl:intersectionOf (
+     <http://www.ebi.ac.uk/efo/EFO_0005112>
+     _:genid125
+   )
+  ] ;
+  skos:definition "Describes how far along a pregnancy is, usually measured in weeks, as measured at birth." .
+
+<http://hadatac.org/ont/chear#HHEducationGrade>
+  a owl:Class ;
+  rdfs:label "Head of Household's Education Grade" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#EducationGrade>, <http://hadatac.org/ont/chear#HHEducationLevel> ;
+  skos:definition "Highest grade of education achieved by the head of household" .
+
+<http://hadatac.org/ont/chear#EducationGrade>
+  a ns4:QualityVariable, owl:Class ;
+  rdfs:label "Education Grade" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns0:ExO_0000041 ;
+  skos:definition "The highest grade of education achieved" .
+
+<http://hadatac.org/ont/chear#HHEducationLevel>
+  a owl:Class ;
+  rdfs:label "Head of Household's Education Level" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns0:ExO_0000041 ;
+  skos:definition "Head of Household's Education Level" .
+
+<http://hadatac.org/ont/chear#HeadOfHousehold>
+  a owl:Class ;
+  rdfs:label "Head Of Household", "Head of Household" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Class ;
+      owl:intersectionOf ( <http://hadatac.org/ont/chear#Household> )
+    ] ;
+    owl:onProperty ns2:inRelationTo
+  ], <http://hadatac.org/ont/chear#Demographic>, ns2:Role ;
+  skos:definition "Head of Household is a filing status for individual United States taxpayers. To use the Head of Household filing status, a taxpayer must: (1) Be unmarried or considered unmarried at the end of the year (2) Have paid more than half the cost of keeping up a home for the tax year (either one's own home or the home of a qualifying parent) (3) Usually have a qualifying person who lived with the head in the home for more than half of the tax year unless the qualifying person is a dependent parent.", "The Person is the head of Household" .
+
+<http://hadatac.org/ont/chear#HighSchoolGraduate>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Graduated From High School" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess> ;
+  skos:definition "The quality of having graduated from High School" ;
+  skos:notation "32" .
+
+<http://hadatac.org/ont/chear#Mother>
+  a owl:Class ;
+  rdfs:label "Mother" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom ns2:Female
+    ] ;
+    owl:onProperty ns2:isRoleOf
+  ], <http://hadatac.org/ont/chear#Parent> ;
+  skos:definition "A mother is the female parent of a child. Mothers are women who inhabit or perform the role of bearing some relation to their children, who may or may not be their biological offspring. Thus, dependent on the context, women can be considered mothers by virtue of having given birth, by raising their child(ren), supplying their ovum for fertilisation, or some combination thereof. Such conditions provide a way of delineating the concept of motherhood, or the state of being a mother. Women who meet the third and first categories usually fall under the terms 'birth mother' or 'biological mother', regardless of whether the individual in question goes on to parent their child. Accordingly, a woman who meets only the second condition may be considered an adoptive mother, and those who meet only the third a surrogacy mother. The above concepts defining the role of mother are neither exhaustive nor universal, as any definition of 'mother' may differ based on how social, cultural, and religious roles are defined." .
+
+<http://hadatac.org/ont/chear#NoFormalEducation>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "No Formal Education" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns0:ExO_0000041 ;
+  skos:definition "Has not been educated in a formal setting." ;
+  skos:notation "57" .
+
+<http://hadatac.org/ont/chear#NonHispanicOrLatino>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Non-Hispanic Ethnicity" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns2:Ethnicity ;
+  skos:definition "Non-Hispanic Ethnicity" ;
+  skos:notation "58" .
+
+<http://hadatac.org/ont/chear#Religion>
+  a ns4:QualityVariable, owl:Class ;
+  rdfs:label "Religion" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic> ;
+  skos:definition "Religious Belief" .
+
+<http://hadatac.org/ont/chear#Sibling>
+  a owl:Class ;
+  rdfs:label "Sibling" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Class ;
+      owl:intersectionOf (
+       _:genid134
+       ns2:Human
+     )
+    ] ;
+    owl:onProperty ns2:inRelationTo
+  ], <http://hadatac.org/ont/chear#Relative> ;
+  skos:definition "One of two or more individuals having one or both parents in common. A male sibling is a brother, and a female sibling is a sister. In most societies throughout the world, siblings often grow up together, thereby facilitating the development of strong emotional bonds. The emotional bond between siblings is often complicated and is influenced by factors such as parental treatment, birth order, personality, and personal experiences outside the family. However, there are cases where siblings grow up in separate homes, in different environments." .
+
+<http://hadatac.org/ont/chear#SomeHighSchool>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Some High School" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess> ;
+  skos:definition "Education Level of Some High School" ;
+  skos:notation "87" .
+
+<http://hadatac.org/ont/chear#SomeMiddleSchool>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Some Middle School" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess> ;
+  skos:definition "Attended Some Middle School" ;
+  skos:notation "90" .
+
+<http://hadatac.org/ont/chear#Son>
+  a owl:Class ;
+  rdfs:label "Son" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Restriction ;
+      owl:onProperty ns2:hasAttribute ;
+      owl:someValuesFrom ns2:Male
+    ] ;
+    owl:onProperty ns2:isRoleOf
+  ], <http://hadatac.org/ont/chear#Child> ;
+  skos:definition "A son is a male offspring; a boy or man in relation to his parents." .
+
+<http://hadatac.org/ont/chear#Step>
+  a owl:Class ;
+  rdfs:label "Step" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#NonBiologicalRelative> ;
+  skos:definition "A stepfamily is a family where at least one parent has children that are not genetically related to the other spouse or partner. Either one parent may have children from a previous relationship. Children in a stepfamily may live with one biological parent, or they may live with each biological parent for a period of time. In addition, visitation rights mean that children in stepfamilies often have contact with both biological parents, even if they permanently live with only one. A child is referred to as the stepchild, stepdaughter or stepson of their biological parent's new spouse, and that person as the stepparent, stepfather or stepmother of the child. A stepfather is the husband of one's mother, and not one's biological father. A stepmother is the wife of one's father, and not one's biological mother. A step-grandmother is the wife of one's grandfather, and not one's biological grandmother. A step-grandfather is the husband of one's grandmother, and not one's biological grandfather. Similarly, a stepbrother is the son of a stepparent who one is not biologically related to. A stepsister is the daughter of a stepparent to whom one is not biologically related. A step-grandson is the son of a stepson or stepdaughter who one is not biologically related to. A step-granddaughter is the daughter of a stepson or stepdaughter who one is not biologically related. A parent's spouse of the same sex may also count as a stepparent." .
+
+<http://hadatac.org/ont/chear#TechnicalPostJuniorCollege>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Technical Post Junior College" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#TechnicalSchool>, ns0:ExO_0000041 ;
+  skos:definition "Attended a Technical Post Junior College" ;
+  skos:notation "93" .
+
+<http://hadatac.org/ont/chear#TechnicalPostMiddleSchool>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Technical Post-Middle School" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess>, <http://hadatac.org/ont/chear#TechnicalSchool> ;
+  skos:definition "Attended a Technical Post-Middle School." ;
+  skos:notation "94" .
+
+<http://hadatac.org/ont/chear#TechnicalPostPrimarySchool>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Technical Post Primary School" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#HighSchoolOrLess>, <http://hadatac.org/ont/chear#TechnicalSchool> ;
+  skos:definition "Attended a Technical Post Primary School" ;
+  skos:notation "95" .
+
+<http://hadatac.org/ont/chear#UnknownEducationLevel>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Unknown Education Level" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns0:ExO_0000041 ;
+  skos:definition "Level of Education is not known" ;
+  skos:notation "101" .
+
+<http://hadatac.org/ont/chear#UnknownRace>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Unknown Race" ;
+  rdfs:subClassOf ns2:Race ;
+  skos:definition "Unknown Race" ;
+  skos:notation "48" .
+
+ns0:HsapDv_0000000 rdfs:subClassOf ns2:Age .
+ns0:NCIT_C16352
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "African American" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns2:Race ;
+  skos:definition "A person having origins in any of the Black racial groups of Africa. Terms such as \"Haitian\" or \"Negro\" can be used in addition to \"Black or African American\"." ;
+  skos:notation "8" .
+
+ns0:NCIT_C17459
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Hispanic or Latino Ethnicity" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns2:Ethnicity ;
+  skos:definition "A person of Cuban, Mexican, Puerto Rican, South or Central American, or other Spanish culture or origin, regardless of race. The term “Spanish origin” can also be used in addition to “Hispanic or Latino.”" ;
+  skos:notation "47" .
+
+ns0:NCIT_C41219
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Native Hawaiian or Other Pacific Islander" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns2:Race ;
+  skos:definition "A person having origins in any of the original peoples of Hawaii, Guam, Samoa, or other Pacific Islands." ;
+  skos:notation "55" .
+
+ns0:NCIT_C41259
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "American Indian Or AlaskanNative" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns2:Race ;
+  skos:definition "A person having origins in any of the original peoples of North and South America (including Central America) and who maintains tribal affiliation or community attachment." ;
+  skos:notation "5" .
+
+ns0:NCIT_C41260
+  a owl:Class ;
+  rdfs:label "Asian" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns2:Race ;
+  skos:definition "A person having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent, including for example, Cambodia, China, India, Japan, Korea, Malaysia, Pakistan, the Philippine Islands, Thailand, and Vietnam." ;
+  skos:notation "6" .
+
+ns0:NCIT_C41261
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "White" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns2:Race ;
+  skos:definition "A person having origins in any of the original peoples of Europe, the Middle East, or North Africa." ;
+  skos:notation "102" .
+
+ns0:NCIT_C51775
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Widowed" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Unmarried> ;
+  skos:definition "Indicates a person who is no longer married because of the death of his/her spouse and has not remarried." ;
+  skos:notation "39" .
+
+ns0:NCIT_C51776
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Divorced" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Unmarried> ;
+  skos:definition "Indicates a person whose marriage has been legally dissolved and has not remarried." ;
+  skos:notation "40" .
+
+ns0:NCIT_C51777
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Separated" ;
+  rdfs:subClassOf ns0:NCIT_C51773 ;
+  skos:definition "Indicates a person living apart from his/her spouse by legal arrangement." ;
+  skos:notation "41" .
+
+ns0:NCIT_C51773
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Married" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#MaritalStatus> ;
+  skos:definition "Indicates a person currently joined in a legally binding matrimonial union. Classify common law marriage as married. Includes married couples living together and not living together." ;
+  skos:notation "37" .
+
+ns0:NCIT_C52658
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Full Time Employment" ;
+  rdfs:subClassOf ns0:ExO_0000034 ;
+  skos:definition "Employed for a standard number of hours of working time, at least 50% or 20 hours per week." ;
+  skos:notation "64" .
+
+ns0:NCIT_C53262
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Domestic Partnership" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Unmarried> ;
+  skos:definition "Indicates a person who is a member of an unmarried couple, including same sex couples, living together in longstanding relationships, that are registered or unregistered." ;
+  skos:notation "42" .
+
+ns0:NCIT_C67109
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Multiracial" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns2:Race ;
+  skos:definition "Having ancestors of several or various races." ;
+  skos:editorialNote "Not part of current prov for Race. Should we remove this concept?" ;
+  skos:notation "54" .
+
+ns0:NCIT_C67137
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Some College" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <ontoad:C0424933> ;
+  skos:definition "Indicates that a person has attended college but that they did not receive any degree." ;
+  skos:notation "85" .
+
+ns0:NCIT_C75560
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Homemaker" ;
+  rdfs:subClassOf ns0:ExO_0000034 ;
+  skos:definition "A person who manages a home as their main daily activity." ;
+  skos:notation "68" .
+
+ns0:NCIT_C75561
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Student" ;
+  rdfs:subClassOf ns0:ExO_0000034 ;
+  skos:notation "66" .
+
+ns0:NCIT_C75562
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Part Time Employment" ;
+  rdfs:subClassOf ns0:ExO_0000034 ;
+  skos:definition "Employment involving less than the standard or customary working time." ;
+  skos:notation "65" .
+
+ns0:NCIT_C75563
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Unemployment" ;
+  rdfs:subClassOf ns0:ExO_0000034 ;
+  skos:definition "The state of not having a job." ;
+  skos:notation "67" .
+
+ns0:NCIT_C76240
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Annulled" ;
+  rdfs:subClassOf ns0:NCIT_C51774 ;
+  skos:definition "A marital status in which a voidable marriage is legally declared null and void, as though it never existed. Specific grounds for annullment vary within the presiding jurisdiction, whether geographic or religious." ;
+  skos:notation "43" .
+
+ns0:NCIT_C51774
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Never Married" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Unmarried> ;
+  skos:definition "Indicates a person who has never been married or whose marriages have been annulled." ;
+  skos:notation "38" .
+
+ns0:NCIT_C76241
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Interlocutory Marital Status" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#MaritalStatus> ;
+  skos:definition "The condition existing when an order or judgement is considered temporary until either a specified period of time has passed or specific information is provided to assist in rendering a permanent decision." ;
+  skos:notation "44" .
+
+ns0:NCIT_C76242
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Polygamous" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#MaritalStatus> ;
+  skos:definition "A type of living arrangement or mating system in which at least one member of a relationship has more than one mate." ;
+  skos:notation "45" .
+
+ns0:NCIT_C89345
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Childhood" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>, <http://hadatac.org/ont/chear#DevelopmentalQuality> ;
+  skos:definition "A time period that begins at the beginning of the human embryonic stage and continues until the end of adolescence." ;
+  skos:notation "11" .
+
+ns2:BiologicalSex
+  a ns4:QualityVariable, owl:Class ;
+  rdfs:label "Biological Sex" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic> .
+
+<http://hadatac.org/ont/chear#Ancestor>
+  a owl:Class ;
+  rdfs:label "Ancestor" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Class ;
+      owl:intersectionOf (
+       _:genid141
+       ns2:Human
+     )
+    ] ;
+    owl:onProperty ns2:inRelationTo
+  ], <http://hadatac.org/ont/chear#Relative> ;
+  skos:definition "An ancestor or forebear is a parent or (recursively) the parent of an ancestor (i.e., a grandparent, great-grandparent, great-great-grandparent, and so forth). Ancestor is \"any person from whom one is descended. In law the person from whom an estate has been inherited.\"" .
+
+<http://hadatac.org/ont/chear#Descendant>
+  a owl:Class ;
+  rdfs:label "Descendant" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Class ;
+      owl:intersectionOf (
+       _:genid146
+       ns2:Human
+     )
+    ] ;
+    owl:onProperty ns2:inRelationTo
+  ], <http://hadatac.org/ont/chear#Relative> ;
+  skos:definition "The child of a human, or any grandchild, great-grandchild, and so on." .
+
+<http://hadatac.org/ont/chear#Child>
+  a owl:Class ;
+  rdfs:label "Child" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Class ;
+      owl:intersectionOf (
+       _:genid151
+       ns2:Human
+     )
+    ] ;
+    owl:onProperty ns2:inRelationTo
+  ], <http://hadatac.org/ont/chear#Descendant> ;
+  skos:definition "A relationship with a parent (such as sons and daughters of any age)." .
+
+<http://hadatac.org/ont/chear#Parent>
+  a owl:Class ;
+  rdfs:label "Parent" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Class ;
+      owl:intersectionOf (
+       _:genid156
+       ns2:Human
+     )
+    ] ;
+    owl:onProperty ns2:inRelationTo
+  ], <http://hadatac.org/ont/chear#Ancestor> ;
+  skos:definition "A parent is the caretaker of a child (where \"child\" refers to offspring, not necessarily age). A biological parent is a person whose gamete resulted in a child, a male through the sperm, and a female through the ovum. Parents are first-degree relatives and have 50% genetic meet. A female can also become a parent through surrogacy. Some parents may be adoptive parents, who nurture and raise an offspring, but are not actually biologically related to the child. Orphans without adoptive parents can be raised by their grandparents or other family members." .
+
+ns2:Age
+  a ns4:QuantityVariable, owl:Class ;
+  rdfs:label "Age" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic> .
+
+ns2:Ethnicity
+  a ns4:QualityVariable, owl:Class ;
+  rdfs:label "Ethnicity" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>, ns2:BiologicalQuality .
+
+<http://www.ebi.ac.uk/efo/EFO_0005112>
+  a ns4:QuantityVariable, owl:Class ;
+  rdfs:label "Gestational Age" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#BirthOutcome>, ns2:Age, <http://www.ebi.ac.uk/efo/EFO_0005112> ;
+  skos:definition "The age of the conceptus, beginning from the time of FERTILIZATION. In clinical obstetrics, the gestational age is often estimated as the time from the last day of the last MENSTRUATION which is about 2 weeks before OVULATION and fertilization" .
+
+<ontoad:C0424933>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Higher Education" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns0:ExO_0000041 ;
+  skos:definition "College or university education beyond the successful completion of high school or grammar school, or the attainment of an approved equivalent" ;
+  skos:notation "31" .
+
+<http://hadatac.org/ont/chear#NonBiologicalRelative>
+  a owl:Class ;
+  rdfs:label "Non-Biological Relative" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Relative> ;
+  skos:definition "People that are considered relatives but are not related by blood. This includes relatives by marriage, adoption, or fosterage." .
+
+<http://hadatac.org/ont/chear#TechnicalSchool>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Technical School" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns0:ExO_0000041 ;
+  skos:definition "Attended a Technical School." ;
+  skos:notation "96" .
+
+<http://hadatac.org/ont/chear#MaritalStatus>
+  a ns4:QualityVariable, owl:Class ;
+  rdfs:label "Marital Status" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>, ns2:StatusDescriptor ;
+  skos:definition "A person's current conjugal status." .
+
+<http://hadatac.org/ont/chear#Unmarried>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "Unmarried" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#MaritalStatus> ;
+  skos:definition "Indicates a person not currently joined in a legally binding matrimonial union." ;
+  skos:notation "46" .
+
+<http://hadatac.org/ont/chear#Relative>
+  a owl:Class ;
+  rdfs:label "Relative" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:allValuesFrom [
+      a owl:Class ;
+      owl:intersectionOf (
+       _:genid161
+       ns2:Human
+     )
+    ] ;
+    owl:onProperty ns2:inRelationTo
+  ], <http://hadatac.org/ont/chear#Demographic>, ns2:Role ;
+  skos:definition "Broadly, kinship patterns may be considered to include people related by both descent â€“ i.e. social relations during development â€“ and by marriage. Human kinship relations through marriage are commonly called \"affinity\" in contrast to the relationships that arise in one's group of origin, which may be called one's descent group. In some cultures, kinship relationships may be considered to extend out to people an individual has economic or political relationships with, or other forms of social connections. Within a culture, some descent groups may be considered to lead back to gods or animal ancestors (totems). This may be conceived of on a more or less literal basis." .
+
+ns0:ExO_0000034
+  a ns4:QualityVariable, owl:Class ;
+  rdfs:label "Occupation" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>, <http://hadatac.org/ont/chear#SocioeconomicStatus>, ns2:Role ;
+  skos:definition "An individual attribute that is the usual or principal work or business of an individual." .
+
+<http://hadatac.org/ont/chear#HighSchoolOrLess>
+  a ns4:QualityValue, owl:Class ;
+  rdfs:label "High School or Less" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf ns0:ExO_0000041 ;
+  skos:definition "Education Level of High School or Less" ;
+  skos:notation "33" .
+
+ns2:Race
+  a ns4:QualityVariable, owl:Class ;
+  rdfs:label "Race" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>, ns2:BiologicalQuality .
+
+ns0:ExO_0000041
+  a ns4:QualityVariable, owl:Class ;
+  rdfs:label "Education" ;
+  ns4:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Demographic>, <http://hadatac.org/ont/chear#SocioeconomicStatus>, ns2:ObjectQuality ;
+  skos:definition "The act or process of imparting or acquiring knowledge." .
+
+ns0:IAO_0000122
+  a owl:NamedIndividual, owl:Thing, ns0:IAO_0000078 ;
+  rdfs:label "ready for release"@en ;
+  ns0:IAO_0000114 ns0:IAO_0000125 ;
+  ns0:IAO_0000115 "Class has undergone final review, is ready for use, and will be included in the next release. Any class lacking \"ready_for_release\" should be considered likely to change place in hierarchy, have its definition refined, or be obsoleted in the next release.  Those classes deemed \"ready_for_release\" will also derived from a chain of ancestor classes that are also \"ready_for_release.\""@en .
+
+ns0:IAO_0000125
+  a owl:NamedIndividual, owl:Thing, ns0:IAO_0000078 ;
+  rdfs:label "pending final vetting"@en ;
+  ns0:IAO_0000114 ns0:IAO_0000125 ;
+  ns0:IAO_0000115 "All definitions, placement in the asserted IS_A hierarchy and required minimal metadata are complete. The class is awaiting a final review by someone other than the term editor."@en .
+
+ns0:IAO_0000428
+  a owl:NamedIndividual, ns0:IAO_0000078 ;
+  rdfs:label "requires discussion"@en ;
+  ns0:IAO_0000114 ns0:IAO_0000125 ;
+  ns0:IAO_0000115 "A term that is metadata complete, has been reviewed, and problems have been identified that require discussion before release. Such a term requires editor note(s) to identify the outstanding issues."@en ;
+  ns0:IAO_0000117 "Alan Ruttenberg"@en ;
+  ns0:IAO_0000119 "group:OBI"@en .
+
+ns0:RO_0001901
+  a owl:NamedIndividual ;
+  rdfs:label "axiom holds for all times"@en ;
+  ns0:IAO_0000115 """
+
+## Elucidation
+
+This is used when the statement/axiom is assumed to hold true 'eternally'
+
+## How to interpret (informal)
+
+First the "atemporal" FOL is derived from the OWL using the standard
+interpretation. This axiom is temporalized by embedding the axiom
+within a for-all-times quantified sentence. The t argument is added to
+all instantiation predicates and predicates that use this relation.
+
+## Example
+
+    Class: nucleus
+    SubClassOf: part_of some cell
+
+    forall t :
+      forall n :
+        instance_of(n,Nucleus,t)
+         implies
+        exists c :
+          instance_of(c,Cell,t)
+          part_of(n,c,t)
+
+## Notes
+
+This interpretation is *not* the same as an at-all-times relation
+
+""" .
+
+ns0:IAO_0000002
+  a owl:NamedIndividual, ns0:IAO_0000078 ;
+  rdfs:label "example to be eventually removed"@en .
+
+ns0:IAO_0000120
+  a owl:Thing, ns0:IAO_0000078, owl:NamedIndividual ;
+  rdfs:label "metadata complete"@en ;
+  ns0:IAO_0000115 "Class has all its metadata, but is either not guaranteed to be in its final location in the asserted IS_A hierarchy or refers to another class that is not complete."@en .
+
+ns0:IAO_0000121
+  a owl:Thing, ns0:IAO_0000078, owl:NamedIndividual ;
+  rdfs:label "organizational term"@en ;
+  ns0:IAO_0000117 "PERSON:Alan Ruttenberg"^^xsd:string ;
+  ns0:IAO_0000115 "term created to ease viewing/sort terms for development purpose, and will not be included in a release"@en .
+
+ns0:IAO_0000123
+  a owl:Thing, ns0:IAO_0000078, owl:NamedIndividual ;
+  rdfs:label "metadata incomplete"@en ;
+  ns0:IAO_0000115 "Class is being worked on; however, the metadata (including definition) are not complete or sufficiently clear to the branch editors."@en .
+
+ns0:IAO_0000124
+  a owl:Thing, ns0:IAO_0000078, owl:NamedIndividual ;
+  rdfs:label "uncurated"@en ;
+  ns0:IAO_0000115 "Nothing done yet beyond assigning a unique class ID and proposing a preferred term."@en .
+
+ns0:IAO_0000423
+  a owl:NamedIndividual, ns0:IAO_0000078 ;
+  rdfs:label "to be replaced with external ontology term"@en ;
+  ns0:IAO_0000117 "Alan Ruttenberg"@en ;
+  ns0:IAO_0000115 "Terms with this status should eventually replaced with a term from another ontology."@en ;
+  ns0:IAO_0000119 "group:OBI"@en .
+
+_:genid48
+  a owl:Restriction ;
+  owl:onProperty ns0:STATO_0000129 ;
+  owl:someValuesFrom [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:float ;
+    owl:withRestrictions ( _:genid51 )
+  ] .
+
+_:genid51 xsd:maxExclusive "25.0"^^xsd:float .
+_:genid57
+  a owl:Restriction ;
+  owl:onProperty ns0:STATO_0000129 ;
+  owl:someValuesFrom [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:float ;
+    owl:withRestrictions ( _:genid60 )
+  ] .
+
+_:genid60 xsd:maxExclusive "25.0"^^xsd:float .
+_:genid66
+  a owl:Restriction ;
+  owl:onProperty ns0:STATO_0000129 ;
+  owl:someValuesFrom [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:float ;
+    owl:withRestrictions ( _:genid69 )
+  ] .
+
+_:genid69 xsd:minExclusive "29.9"^^xsd:float .
+_:genid75
+  a owl:Restriction ;
+  owl:onProperty ns0:STATO_0000129 ;
+  owl:someValuesFrom [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:float ;
+    owl:withRestrictions ( _:genid78 )
+  ] .
+
+_:genid78 xsd:minExclusive "25.0"^^xsd:float .
+_:genid84
+  a owl:Restriction ;
+  owl:onProperty ns0:STATO_0000129 ;
+  owl:someValuesFrom [
+    a rdfs:Datatype ;
+    owl:intersectionOf (
+     _:genid87
+     _:genid91
+   )
+  ] .
+
+_:genid87
+  a rdfs:Datatype ;
+  owl:onDatatype xsd:float ;
+  owl:withRestrictions ( _:genid89 ) .
+
+_:genid89 xsd:minExclusive "25.0"^^xsd:float .
+_:genid91
+  a rdfs:Datatype ;
+  owl:onDatatype xsd:float ;
+  owl:withRestrictions ( _:genid93 ) .
+
+_:genid93 xsd:maxExclusive "29.9"^^xsd:float .
+_:genid99
+  a owl:Restriction ;
+  owl:onProperty ns0:STATO_0000129 ;
+  owl:someValuesFrom [
+    a rdfs:Datatype ;
+    owl:onDatatype xsd:float ;
+    owl:withRestrictions ( _:genid102 )
+  ] .
+
+_:genid102 xsd:maxExclusive "18.5"^^xsd:float .
+_:genid108
+  a owl:Restriction ;
+  owl:onProperty ns0:STATO_0000129 ;
+  owl:someValuesFrom [
+    a rdfs:Datatype ;
+    owl:intersectionOf (
+     _:genid111
+     _:genid115
+   )
+  ] .
+
+_:genid111
+  a rdfs:Datatype ;
+  owl:onDatatype xsd:float ;
+  owl:withRestrictions ( _:genid113 ) .
+
+_:genid113 xsd:minExclusive "18.5"^^xsd:float .
+_:genid115
+  a rdfs:Datatype ;
+  owl:onDatatype xsd:float ;
+  owl:withRestrictions ( _:genid117 ) .
+
+_:genid117 xsd:maxExclusive "25.0"^^xsd:float .
+_:genid125
+  a owl:Restriction ;
+  owl:allValuesFrom <http://hadatac.org/ont/chear#Birth> ;
+  owl:onProperty ns2:measuredAt .
+
+_:genid134
+  a owl:Restriction ;
+  owl:allValuesFrom <http://hadatac.org/ont/chear#Sibling> ;
+  owl:onProperty ns2:hasRole .
+
+_:genid141
+  a owl:Restriction ;
+  owl:allValuesFrom <http://hadatac.org/ont/chear#Descendant> ;
+  owl:onProperty ns2:hasRole .
+
+_:genid146
+  a owl:Restriction ;
+  owl:allValuesFrom <http://hadatac.org/ont/chear#Ancestor> ;
+  owl:onProperty ns2:hasRole .
+
+_:genid151
+  a owl:Restriction ;
+  owl:allValuesFrom <http://hadatac.org/ont/chear#Parent> ;
+  owl:onProperty ns2:hasRole .
+
+_:genid156
+  a owl:Restriction ;
+  owl:allValuesFrom <http://hadatac.org/ont/chear#Child> ;
+  owl:onProperty ns2:hasRole .
+
+_:genid161
+  a owl:Restriction ;
+  owl:allValuesFrom <http://hadatac.org/ont/chear#Relative> ;
+  owl:onProperty ns2:hasRole .
+
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
+[] ns0:IAO_0000412 ns0:hp.owl .
