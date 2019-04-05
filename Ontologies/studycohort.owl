@@ -2671,8 +2671,10 @@ Previous. An information content entity is a non-realizable information entity t
 		 <rdfs:label>medical therapy</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">the attempted remediation of a health problem, usually following a diagnosis</skos:definition>
 		<dct:source>https://en.wikipedia.org/wiki/Therapy</dct:source>
-	</rdf:Description> 
+	</rdf:Description>   
 
+
+	
 
 	<owl:Class rdf:about="&doid;4">
 		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
@@ -2869,7 +2871,7 @@ Previous. An information content entity is a non-realizable information entity t
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
-				<owl:allValuesFrom rdf:resource="&sco;UnitOfMeasurement"/>
+				<owl:allValuesFrom rdf:resource="&sio;UnitOfMeasurement"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -2984,7 +2986,7 @@ Previous. An information content entity is a non-realizable information entity t
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
-		        <rdfs:isDefinedBy>&ibm;us-amardas</rdfs:isDefinedBy>
+		        <rdfs:isDefinedBy>&ibm;us-amardas"</rdfs:isDefinedBy>
 	     	</skos:definition>
     	</sio:hasAttribute>
     	<sio:hasAttribute>
@@ -3247,14 +3249,22 @@ Previous. An information content entity is a non-realizable information entity t
 				<sio:hasValue>A scientific study of nature that sometimes includes processes involved in health and disease</sio:hasValue>
 				<dct:source rdf:resource="https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement"/>
 			</skos:definition>
-		</sio:hasAttribute>
+		</sio:hasAttribute>	
+
+		
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
-				<owl:someValuesFrom rdf:resource="&sio;StudySubject"/>
+				<owl:someValuesFrom rdf:resource="&sco;StudyArm"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:label>research study</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
+				<owl:someValuesFrom rdf:resource="&stato;0000203"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>study</rdfs:label>
 	</owl:Class>
 	
 
