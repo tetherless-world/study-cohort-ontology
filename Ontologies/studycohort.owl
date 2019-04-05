@@ -1752,13 +1752,13 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A cohort is the group of subjects enrolled in a study"</sio:hasValue>
-				<rdfs:isDefinedBy>https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas</rdfs:isDefinedBy>
+				<rdfs:isDefinedBy rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
 			</skos:definition>
 		</sio:hasAttribute>
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>"Top-level group of subjects participating in a study"</sio:hasValue>
-				<rdfs:isDefinedBy>&person;JamesMcCusker</rdfs:isDefinedBy>
+				<rdfs:isDefinedBy rdf:resource="&person;JamesMcCusker"/>
 			</skos:definition>
 		</sio:hasAttribute>
 	  <rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
@@ -1778,7 +1778,7 @@
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
-		        <rdfs:isDefinedBy>&ibm;us-amardas"</rdfs:isDefinedBy>
+		        <rdfs:isDefinedBy rdf:resource="&ibm;us-amardas"/>
 	     	</skos:definition>
     	</sio:hasAttribute>
     	<sio:hasAttribute>
@@ -1988,7 +1988,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
-				<rdfs:isDefinedBy>&ibm;us-amardas</rdfs:isDefinedBy>
+				<rdfs:isDefinedBy rdf:resoure="&ibm;us-amardas"/>
 			</skos:definition>
 		</sio:hasAttribute>
 	</owl:Class>
@@ -2033,7 +2033,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
-				<rdfs:isDefinedBy>&ibm;us-amardas</rdfs:isDefinedBy>
+				<rdfs:isDefinedBy rdf:resource="&ibm;us-amardas"/>
 			</skos:definition>
 		</sio:hasAttribute>	
 		<sio:hasAttribute>
