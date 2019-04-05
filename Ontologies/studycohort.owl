@@ -2671,21 +2671,7 @@ Previous. An information content entity is a non-realizable information entity t
 		 <rdfs:label>medical therapy</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">the attempted remediation of a health problem, usually following a diagnosis</skos:definition>
 		<dct:source>https://en.wikipedia.org/wiki/Therapy</dct:source>
-	</rdf:Description>   
-
-
-	<!-- &hasco;ResearchStudy -->
-
-	<rdf:Description rdf:about="&hasco;ResearchStudy">
-		<dct:source rdf:resource="https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement"/>
-		<rdfs:label rdf:datatype="&xsd;string">research study</rdfs:label>
-		<sio:hasAttribute>
-			<skos:definition>
-				<sio:hasValue rdf:datatype="&xsd;string">A scientific investigation that involves testing a hypothesis</sio:hasValue>
-				<rdfs:isDefinedBy>&ibm;us-amardas</rdfs:isDefinedBy>
-			</skos:definition>
-		</sio:hasAttribute>
-	</rdf:Description>  
+	</rdf:Description> 
 
 
 	<owl:Class rdf:about="&doid;4">
@@ -2998,7 +2984,7 @@ Previous. An information content entity is a non-realizable information entity t
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
-		        <rdfs:isDefinedBy>&ibm;us-amardas"</rdfs:isDefinedBy>
+		        <rdfs:isDefinedBy>&ibm;us-amardas</rdfs:isDefinedBy>
 	     	</skos:definition>
     	</sio:hasAttribute>
     	<sio:hasAttribute>
@@ -3121,7 +3107,7 @@ Previous. An information content entity is a non-realizable information entity t
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasProperty"/>
-				<owl:someValuesFrom rdf:resource="&sco;MedicalIntervention"/>
+				<owl:someValuesFrom rdf:resource="&provcare;Intervention"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -3253,22 +3239,22 @@ Previous. An information content entity is a non-realizable information entity t
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
-				<rdfs:isDefinedBy>&ibm;us-amardas"</rdfs:isDefinedBy>
+				<rdfs:isDefinedBy>&ibm;us-amardas</rdfs:isDefinedBy>
 			</skos:definition>
 		</sio:hasAttribute>	
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>A scientific study of nature that sometimes includes processes involved in health and disease</sio:hasValue>
+				<dct:source rdf:resource="https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement"/>
+			</skos:definition>
+		</sio:hasAttribute>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
-				<owl:someValuesFrom rdf:resource="&sco;StudyArm"/>
+				<owl:someValuesFrom rdf:resource="&sio;StudySubject"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
-				<owl:someValuesFrom rdf:resource="&stato;0000203"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:label>study</rdfs:label>
+		<rdfs:label>research study</rdfs:label>
 	</owl:Class>
 	
 
