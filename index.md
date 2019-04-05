@@ -2,12 +2,33 @@
 title: Welcome
 ---
 
-<header>
-    <div class="header">
-        <br/>
-        <center><a class="title-a" href="#"><h1 class="title">{{page.title}}</h1></a></center>
-    </div>
-</header>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vega</title>
+    <meta name="description" content="Vega is a declarative format for creating, saving, and sharing visualization designs. With Vega, visualizations are described in JSON, and generate interactive views using either HTML5 Canvas or SVG.">
+
+    <!-- Twitter card -->
+    <meta name="twitter:card" value="summary_large_image">
+    <meta name="twitter:site" value="@uwdata">
+    <meta name="twitter:creator" value="@uwdata">
+    <meta name="twitter:url" value="https://vega.github.io/">
+    <meta name="twitter:title" value="Vega: A Visualization Grammar">
+    <meta name="twitter:description" value="Vega is a declarative format for creating, saving, and sharing visualization designs. With Vega, visualizations are described in JSON, and generate interactive views using either HTML5 Canvas or SVG.">
+    <meta name="twitter:image" value="https://vega.github.io/images/vg.png">
+
+    <!--facebook open graph-->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vega: A Visualization Grammar">
+    <meta property="og:url" content="https://vega.github.io/">
+    <meta property="og:description" content="Vega is a declarative format for creating, saving, and sharing visualization designs. With Vega, visualizations are described in JSON, and generate interactive views using either HTML5 Canvas or SVG.">
+    <meta property="og:site_name" content="Vega">
+    <meta property="og:image" content="https://vega.github.io/images/vg.png">
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
 
 
 <div class="container-fluid p-0">
