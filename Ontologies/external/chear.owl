@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF
+  xmlns="https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear#"
+  xml:base="https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear.owl"
    xmlns:ns1="http://www.w3.org/2004/02/skos/core#"
    xmlns:ns2="http://purl.org/dc/terms/"
    xmlns:ns3="http://hadatac.org/ont/hasco/"
