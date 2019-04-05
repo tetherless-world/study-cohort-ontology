@@ -13,6 +13,7 @@
     <![endif]-->
   </head>
   <body>
+    <div class="wrapper">
       <header>
         <ul class="navbar-nav">
             <li class="nav-item">
@@ -37,10 +38,18 @@
                 <a class="nav-link js-scroll-trigger" href="{{site.baseurl}}/contact">Contact</a>
             </li>
         </ul>
+        
+          </head>
+
+
+
+
+        {% if site.github.is_project_page %}
+
+          <p class="header">This project is maintained by <a class="header name" href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+        {% endif %}
 
         
-          <p class="header">This project is maintained by <a class="header name" href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
-
 
         {% if site.github.is_user_page %}
           <ul>
