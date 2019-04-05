@@ -3,7 +3,7 @@ title: Welcome
 ---
 
 <header>
-    <div class="my-auto">
+    <div class="header">
         <br/>
         <center><a class="title-a" href="#"><h1 class="title">{{page.title}}</h1></a></center>
     </div>
