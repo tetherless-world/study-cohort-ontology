@@ -1,173 +1,302 @@
----
-title: Welcome
----
+<!DOCTYPE HTML>
+<html>
 
-<header>
-    <div class="my-auto">
-        <br/>
-        <center><a class="title-a" href="#"><h1 class="title">{{page.title}}</h1></a></center>
-    </div>
-</header>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vega</title>
+    <meta name="description" content="Vega is a declarative format for creating, saving, and sharing visualization designs. With Vega, visualizations are described in JSON, and generate interactive views using either HTML5 Canvas or SVG.">
 
+    <!-- Twitter card -->
+    <meta name="twitter:card" value="summary_large_image">
+    <meta name="twitter:site" value="@uwdata">
+    <meta name="twitter:creator" value="@uwdata">
+    <meta name="twitter:url" value="https://vega.github.io/">
+    <meta name="twitter:title" value="Vega: A Visualization Grammar">
+    <meta name="twitter:description" value="Vega is a declarative format for creating, saving, and sharing visualization designs. With Vega, visualizations are described in JSON, and generate interactive views using either HTML5 Canvas or SVG.">
+    <meta name="twitter:image" value="https://vega.github.io/images/vg.png">
 
-<div class="container-fluid p-0">
+    <!--facebook open graph-->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Vega: A Visualization Grammar">
+    <meta property="og:url" content="https://vega.github.io/">
+    <meta property="og:description" content="Vega is a declarative format for creating, saving, and sharing visualization designs. With Vega, visualizations are described in JSON, and generate interactive views using either HTML5 Canvas or SVG.">
+    <meta property="og:site_name" content="Vega">
+    <meta property="og:image" content="https://vega.github.io/images/vg.png">
 
-    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-            <div class="subheading mb-5">Shruthi Chari, Miao Qi, Nkcheniyere N. Agu, Oshani Seneviratne, James P. McCusker, Kristin P. Bennett, Amar K. Das and Deborah L. McGuinness<br/>
-                <b><a href="https://science.rpi.edu/biology/news/ibm-and-rensselaer-team-research-chronic-diseases-cognitive-computing"> HEALS</a></b>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+
+<body>
+    <div id="main">
+        <div class="header">
+            <div class="pull-right">
+                <a href="https://www.trifacta.com/" title="Trifacta">
+                    <img src="images/trifacta-logo.png" />
+                </a> &nbsp;
+                <a href="https://idl.cs.washington.edu/" title="Interactive Data Lab">
+                    <img src="images/idl-logo.png" />
+                </a>
+            </div>
+            <div class="mark">
+                <span class="uw">Vega &amp; Vega-Lite</span>
+                <!-- <span class="mark-i">Vega</span> -->
+                <!-- <span class="mark-d">Projects</span> -->
+                <!-- <span class="mark-l">Lab</span> -->
+            </div>
+            <div id="title">
+                Visualization Grammars
+            </div>
+            <br/>
+        </div>
+        <div class="content">
+            <div class="mission">
+                Vega is a declarative format for creating, saving, and sharing visualization designs. With Vega, visualizations are described
+                in JSON, and generate interactive views using either HTML5 Canvas or SVG.
+            </div>
+            <div class="header">
+                <div class="lead">Toolkits</div>
             </div>
 
-            <article class="mb-5">
-                <content>
-                    <h3>Publications</h3>
-                    <ul>
-                        <li><strong>The Semantic Data Dictionary Approach to Data Annotation & Integration</strong>, International Semantic Web Conference 2017 Semantic Science (SemSci) <a href="https:http://ceur-ws.org/Vol-1931/paper-07.pdf">workshop paper</a>      
-                        </li>
-                    </ul>
-                 </content>
-             <div class="my-auto">
-            <p>A standard approach to describing datasets is through the
-use of data dictionaries: tables which contain information about the content, description, and format of each data variable. While this approach is helpful for a human readability, it is difficult for a machine to understand the meaning behind the data. Consequently, tasks involving the combination of data from multiple sources, such as data integration or schema merging, are not easily automated. In response, we present the Semantic Data Dictionary (SDD) specification, which allows for extension and integration of data from multiple domains using a common metadata standard. We have developed a structure based on the Semanticscience Integrated Ontology’s (SIO) high-level, domain-agnostic conceptualization of scientific data, which is then annotated with more specific terminology from domain-relevant ontologies. The SDD format will make the specification, curation and search of data much easier than direct search of data dictionaries through terminology alignment, but also through the use of "compositional" classes for column descriptions, rather than needing a 1:1 mapping from column to class.
-            </p>
+            <!-- VEGA AND VEGA LITE -->
+            <div class="thumbnail-wrapper">
+
+                <!-- Vega -->
+                <div class="thumbnail">
+                    <div class="thumbnail--image">
+                        <a href="https://vega.github.io/vega/">
+                            <img src="images/vg.png" alt="Vega 3" />
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <span class="lead">
+                            Vega
+                        </span>
+                        is a visualization grammar, a declarative language for creating, saving, and sharing interactive visualization designs. With
+                        Vega, you can describe the visual appearance and interactive behavior of a visualization in a JSON
+                        format, and generate web-based views using Canvas or SVG.
+                        <div class="links">
+                            <p>
+                                <a href="https://vega.github.io/vega/examples/">Examples</a>
+                                |
+                                <a href="https://vega.github.io/vega">Docs & Tutorials</a>
+                                |
+                                <a href="https://vega.github.io/editor/#/custom/vega">Online Editor</a>
+                                |
+                                <a href="https://www.github.com/vega/vega">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Vega -->
+
+                <!-- Vega Lite -->
+                <div class="thumbnail">
+                    <div class="thumbnail--image">
+                        <a href="https://vega.github.io/vega-lite">
+                            <img src="images/vega-lite.png" alt="Vega-Lite" />
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <span class="lead">
+                            Vega-Lite
+                        </span>
+                        is a high-level visualization grammar. It provides a concise JSON syntax for supporting rapid generation of visualizations
+                        to support analysis. Vega-Lite support interactive multi-view graphics. Specifications can be compiled
+                        to Vega.
+                        <div class="links">
+                            <p>
+                                <a href="https://vega.github.io/vega-lite/examples/">Examples</a>
+                                |
+                                <a href="https://vega.github.io/vega-lite">Docs & Tutorials</a>
+                                |
+                                <a href="https://vega.github.io/editor/#/custom/vega-lite">Online Editor</a>
+                                |
+                                <a href="https://www.github.com/vega/vega-lite">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Vega-Lite -->
+
+            </div>
+            <!-- /VEGA AND VEGA LITE -->
+
+            <div class="header">
+                <div class="lead">Systems</div>
+            </div>
+
+            <!-- LYRA AND POLESTAR -->
+            <div class="thumbnail-wrapper">
+
+                <!-- Lyra -->
+                <div class="thumbnail">
+                    <div class="thumbnail--image">
+                        <a href="https://idl.cs.washington.edu/projects/lyra/">
+                            <img src="images/lyra.png" alt="Lyra" />
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <span class="lead">
+                            <a href="https://idl.cs.washington.edu/projects/lyra/">Lyra</a>
+                        </span>
+                        is an interactive environment that enables custom visualization design. Without writing any code, designers can create visualizations
+                        on-par with hand-coded D3 and Processing.
+                        <div class="links">
+                            <p>
+                                <a href="https://idl.cs.washington.edu/projects/lyra/app/">Online App</a>
+                                |
+                                <a href="https://idl.cs.washington.edu/projects/lyra/#examples">Examples</a>
+                                |
+                                <a href="https://github.com/vega/lyra/wiki">Documentation</a>
+                                |
+                                <a href="https://github.com/vega/lyra">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Lyra -->
+
+                <!-- Polestar -->
+                <div class="thumbnail">
+                    <div class="thumbnail--image">
+                        <a href="https://www.github.com/vega/polestar">
+                            <img src="images/polestar.png" alt="Polestar" />
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <span class="lead">
+                            <a href="https://www.github.com/vega/polestar">Polestar</a>
+                        </span>
+                        is a web-based visualization specification interface, inspired by Tableau. Analysts can rapidly generate visualizations as
+                        part of the data exploration process.
+                        <div class="links">
+                            <p>
+                                <a href="https://vega.github.io/polestar">Online App</a>
+                                |
+                                <a href="https://www.github.com/vega/polestar">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Polestar -->
+
+            </div>
+            <!-- LYRA AND POLESTAR END -->
+
+            <!-- VOYAGER AND COMPASSQL -->
+            <div class="thumbnail-wrapper">
+
+                <!-- Voyager -->
+                <div class="thumbnail">
+                    <div class="thumbnail--image">
+                        <a href="https://www.github.com/vega/voyager">
+                            <img src="images/voyager_main.png" alt="Voyager" />
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <span class="lead">
+                            <a href="https://www.github.com/vega/voyager">Voyager</a>
+                        </span>
+                        is a visualization browser for open-ended data exploration. It provides a gallery of recommended visualizations, produced
+                        by Compass visualization recommender engine.
+                        <div class="links">
+                            <p>
+                                <a href="https://vega.github.io/voyager">Online App</a>
+                                |
+                                <a href="https://www.github.com/vega/voyager">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Voyager -->
+
+                <!-- Compassql -->
+                <div class="thumbnail">
+                    <div class="thumbnail--image">
+                        <a href="https://www.github.com/vega/compassql">
+                            <img src="images/compass.png" alt="Compassql" />
+                        </a>
+                    </div>
+                    <div class="desc">
+                        <span class="lead">
+                            <a href="https://www.github.com/vega/compassql">Compassql</a>
+                        </span>
+                        is a visualization recommendation engine. Given user query, it suggests visualizations, ranked by both data properties and
+                        perceptual principles.
+                        <div class="links">
+                            <p>
+                                <a href="https://www.github.com/vega/compassql">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Compassql -->
+
+            </div>
+            <!-- VOYAGER AND COMPASSQL -->
+
+            <div class="header">
+                <div class="lead">Utilities</div>
+                <p class="desc">
+                    <a href="http://vega.github.io/datalib/">Datalib</a> is a JavaScript data utility library. It provides facilities for data loading, type inference,
+                    common statistics, and string templates. This is a standalone library useful for data-driven JavaScript
+                    applications on both the both the client (web browser) and server (e.g., node.js).
+                </p>
+            </div>
+
+            <div class="header">
+                <div class="lead">
+                    Vega's 3rd Party Integration
+                </div>
+            </div>
+
+            <div class="paper project">
+                <p>The MediaWiki
+                    <a href="https://www.mediawiki.org/wiki/Extension:Graph/Demo">Graph extension</a> allows you to embed Vega visualizations on MediaWiki sites, including Wikipedia.
+                </p>
+            </div>
+
+            <div class="header">
+                <div class="lead">Vega-Lite's 3rd Party Integration</div>
+                <p>
+                    <a href="https://vega.github.io/vega-lite/applications.html">
+                        Check out the list of applications on the Vega-Lite website.
+                    </a>
+                </p>
+            </div>
+
         </div>
-            </article>
-            
-            
-            <!-- <h3>Abstract</h3> -->
-            <p class="mb-5">
-            <blockquote>
-                The Semantic Data Dictionary is a specification formalizing how to assign a semantic representation of data by annotating dataset variables and their values using concepts from best practice vocabularies and ontologies. It is a collection of individual documents that each play a role in creating a concise and consistent knowledge representation, including the Dictionary Mapping, Codebook, Timeline, and Code Mapping specifications, and the Infosheet, which is used to link these Semantic Data Dictionary elements together. Throughout this website, each of these elements are described.
-            </blockquote>
-            </p>
+
+        <div class="footer">
+            Edit this page at
+            <a href="https://github.com/vega/vega.github.io">github.com/vega/vega.github.io</a>.
         </div>
-    </section>
-</div>
-<div class="post-list">
-    {% for post in site.posts %}
-    
-        <a class="post-title" href="{{site.baseurl}}{{post.url}}"><h2>{{ post.title }}</h2></a>
-        <p class="date">{{ post.date | date: "%b %-d, %Y" }}</p>
-        <p>{{post.excerpt | strip_html}}</p>
-    
-    {% endfor %}
 
-</div>
+    </div>
+    <script type="text/javascript">
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-[Link to another page](./another-page.html).
+        ga('create', 'UA-44428446-5', 'auto');
+        ga('send', 'pageview');
 
-There should be whitespace between paragraphs.
+        ga('create', 'UA-48049134-5', 'auto', {
+            'name': 'arvindsatya1'
+        });
+        ga('arvindsatya1.send', 'pageview');
+    </script>
+</body>
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
-
-# Header 1 <a class="post-title" href="{{site.baseurl}}{{post.url}}"><h2>{{ post.title }}</h2></a>
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://assets-cdn.github.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
-
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
-
-```
-The final element.
-```
+</html>
