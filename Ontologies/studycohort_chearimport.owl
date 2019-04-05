@@ -818,10 +818,18 @@
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C71104 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C71104">
+    <owl:Class rdf:about="&ncit;C71104">
         <rdfs:label>Clinical Trial</rdfs:label>
         <obo:NCIT_P325>1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)</obo:NCIT_P325>
         <obo:NCIT_P108>Clinical Trial</obo:NCIT_P108>
+        <rdfs:subClassOf rdf:resource="&ncit;C15206"/>
+        <rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
+				<prov:wasAttributedTo rdf:resoure="&ibm;us-amardas"/>
+			</skos:definition>
+		</sio:hasAttribute>
         <oboInOwl:hasExactSynonym>Clinical Trials</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.</obo:IAO_0000115>
         <obo:NCIT_P322>CDISC-GLOSS</obo:NCIT_P322>
@@ -1352,17 +1360,10 @@
 	</owl:Class>
 
 	 <owl:Class rdf:about="&sio;Patient">
-		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
 				<owl:someValuesFrom rdf:resource="&sco;ElectronicHealthRecord"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasProperty"/>
-				<owl:someValuesFrom rdf:resource="&sco;PatientProfile"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -1418,18 +1419,7 @@
 	<owl:Class rdf:about="&chear;Anthropometry">
 				<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
 	</owl:Class>
-
-	<!-- &sco;PatientProfile -->
-
-	<owl:Class rdf:about="&sco;PatientProfile">
-		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
-		<rdfs:label rdf:datatype="&xsd;string">patient profile</rdfs:label>
-		<skos:definition>a simple form that allows patients or caregivers to keep track of important health information</skos:definition>
-		<dct:source>https://www.rimrehab.org/for-patients/patient-health-profile</dct:source>
-	</owl:Class>
 	
-
-
 	<!-- &sco;SubjectCharacteristic -->
 
 	<owl:Class rdf:about="&sco;SubjectCharacteristic">
@@ -1487,9 +1477,9 @@
 
 	<!-- &sco;Metaanalysis -->
 
-	<owl:Class rdf:about="&sco;Metaanalysis">
+	<owl:Class rdf:about="&sco;Meta-analysis">
 		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
-		<rdfs:label>metaanalysis</rdfs:label>
+		<rdfs:label>meta-analysis</rdfs:label>
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A quantitative, formal, epidemiological study design used to systematically assess previous research studies to derive conclusions about that body of research</sio:hasValue>
@@ -1520,6 +1510,7 @@
 
 	<owl:Class rdf:about="&hasco;ResearchStudy">
 		<rdfs:subClassOf rdf:resource="&sio;Study"/>
+		<rdfs:label>research study</rdfs:label>
 		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
 		<sio:hasAttribute>
 			<skos:definition>
@@ -1563,13 +1554,13 @@
 	
 
 
-	<!-- &sco;Therapy -->
+	<!-- &chear;MedicalTherapy -->
 
-	<owl:Class rdf:about="&sco;Therapy">
+	<owl:Class rdf:about="&chear;MedicalTherapy">
 		<rdfs:subClassOf rdf:resource="&provcare;Intervention"/>
 	</owl:Class>
 
-	<!-- &sco;Therapy -->
+	<!-- &provcare;ClinicalIntervention -->
 
 	<owl:Class rdf:about="&provcare;ClinicalIntervention">
 		<rdfs:subClassOf rdf:resource="&provcare;Intervention"/>
