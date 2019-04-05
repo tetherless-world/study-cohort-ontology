@@ -4301,7 +4301,7 @@ The number of time that a viviparous organism has given birth</ns1:definition>
     <rdfs:comment>Children's health and wellbeing are influenced by interactions between environmental and genetic factors. NIEHS is establishing an infrastructure, the Children's Health Exposure Analysis Resource (CHEAR), to provide the extramural research community access to laboratory and data analyses that add or expand the inclusion of environmental exposures in children's health research. The goal of CHEAR is to provide tools so researchers can assess the full range of environmental exposures which may affect children's health. We anticipate that CHEAR will be used by children's health researchers conducting epidemiological or clinical studies that currently have limited consideration of environmental exposures, or those who have collected exposure data but seek more extensive analyses.
 
 Read more at: https://www.niehs.nih.gov/research/supported/exposure/chear/</rdfs:comment>
-    <owl:imports rdf:resource="http://purl.obolibrary.org/obo/stato.owl"/>
+    <owl:imports rdf:resource="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/external/stato_external.owl"/>
     <owl:imports rdf:resource="http://hadatac.org/ont/cogat/"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://hadatac.org/ont/chear#DCVMA12">

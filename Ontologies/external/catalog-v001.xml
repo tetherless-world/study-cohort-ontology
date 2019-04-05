@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
     <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
-        <uri id="Automatically generated entry, Timestamp=1554338022771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/hp_external.owl" uri="hp_external.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1554338022771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/ncit_externalbranches.owl" uri="ncit_externalallbranches.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1554338022771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/provcare.owl" uri="provcare.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1554338022771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/stato_external.owl" uri="stato_external.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1554338022771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/uo_external.owl" uri="uo_external.owl"/>
-        <uri id="Automatically generated entry, Timestamp=1554338022771" name="https://w3id.org/enigma" uri="cohortontology.xml"/>
+        <uri id="Automatically generated entry, Timestamp=1554496193771" name="http://purl.obolibrary.org/obo/cl/cl-basic.owl" uri="cl-basic.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554496193771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/hp_external.owl" uri="hp_external.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554496193771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/ncit_externalbranches.owl" uri="ncit_externalallbranches.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554496193771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/provcare.owl" uri="provcare.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554496193771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/stato_external.owl" uri="stato_external.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554496193771" name="https://idea.tw.rpi.edu/projects/heals/studycohort/external/uo_external.owl" uri="uo_external.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1554496193771" name="https://w3id.org/enigma" uri="cohortontology.xml"/>
     </group>
 </catalog>
