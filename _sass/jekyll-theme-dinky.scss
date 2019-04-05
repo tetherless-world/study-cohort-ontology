@@ -672,6 +672,28 @@ footer {
 	padding-left: 50px;
 }
 
+@media print, screen and (max-width: 720px) {
+
+  #title {
+    .credits {
+      display: block;
+      width: 100%;
+      line-height: 30px;
+      text-align: center;
+
+      .left {
+        float: none;
+        display: block;
+      }
+
+      .right {
+        float: none;
+        display: block;
+      }
+    }
+  }
+}
+
 @media print, screen and (max-width: 960px) {
 
   div.wrapper {
