@@ -1,11 +1,10 @@
-<!DOCTYPE HTML>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vega</title>
+    <title>Study Cohort Ontology (SCO)</title>
     <meta name="description" content="Vega is a declarative format for creating, saving, and sharing visualization designs. With Vega, visualizations are described in JSON, and generate interactive views using either HTML5 Canvas or SVG.">
 
     <!-- Twitter card -->
