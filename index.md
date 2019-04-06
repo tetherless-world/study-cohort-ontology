@@ -1,6 +1,5 @@
 ---
 title: Welcome
-layout: main
 ---
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
