@@ -1,4 +1,4 @@
-[Authors](#authors)
+[Authors](#authors) [Abstract](#abstract) [Workflow](#workflow) [Resource List](#resources) [License](#license) [Acknowledgements](#acknowledgements)
 <div class="wrapper">
  <nav class="navbar navbar-default">
 
