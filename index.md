@@ -3,11 +3,11 @@
 <h3>Authors</h3>
  <ul>
  Shruthi Chari<sup>1</sup>, Miao Qi <sup>2</sup>, Nkcheniyere N. Agu <sup>1</sup>, Oshani Seneviratne <sup>2</sup>, James P. McCusker <sup>1</sup>, Kristin P. Bennett, <sup>2</sup> Amar K. Das <sup>3</sup> and Deborah L. McGuinness <sup>1</sup>
-  </br>
+  <br>
  <strong><sup>1</sup><a href="https://tw.rpi.edu/"> Tetherless World Constellation</a>, Rensselaer Polytechnic Institute</strong>
- </br>
+ <br>
  <strong><sup>2</sup><a href="https://idea.rpi.edu/">Instiute for Data Exploration and Applications</a>, Rensselaer Polytechnic Institute</strong>
- </br>
+ <br>
  <strong><sup>3</sup><a href="http://www.research.ibm.com/">IBM Research</a>, Cambridge</strong>
  </ul>
  </content>
