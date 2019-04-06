@@ -19,7 +19,7 @@
               <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
                 <ul class="nav navbar-nav navbar-right">
                   <li class="">
-                    <a class="page-scroll" href="#home">Home</a>
+                    <a class="page-scroll" href="#authors">Authors</a>
                   </li>
                   <li class="">
                     <a class="page-scroll" href="#about">About</a>
@@ -39,7 +39,7 @@
             </nav>
 </div>
 
-<article class="mb-5">
+<article class="mb-5" id="authors">
 <content>
 <h3>Authors</h3>
  <ul>
