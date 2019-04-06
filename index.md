@@ -39,6 +39,7 @@
  
  <article class="mb-5">
 <content>
+ <h3>Acknowledgements</h3>
  <p>This work is undertaken as a part of the <a href="https://science.rpi.edu/biology/news/ibm-and-rensselaer-team-research-chronic-diseases-cognitive-computing"> Health Empowerement by Analytics, Learning and Semantics (HEALS) </a> project , and is  partially supported by IBM Research AI through the AI Horizons Network. We thank our colleagues from IBM Research, Dan Gruen, Morgan Foreman and Ching-Hua Chen, and from RPI, John Erickson, Alexander New, Neha Keshan and Rebecca Cowan, who provided insight and expertise that greatly assisted the research.</p>
 <ul>
     
