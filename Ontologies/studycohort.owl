@@ -247,49 +247,7 @@
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
 	
-	 <!--copying in classes from STATO-->
-
-	 <!-- http://purl.obolibrary.org/obo/BFO_0000001 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000001">
-        <rdfs:label xml:lang="en">entity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <obo:IAO_0000600 xml:lang="en">An entity is anything that exists or has existed or will exist. (axiom label in BFO2 Reference: [001-001])</obo:IAO_0000600>
-        <obo:IAO_0000116 xml:lang="en">Entity doesn&#39;t have a closure axiom because the subclasses don&#39;t necessarily exhaust all possibilites. For example Werner Ceusters &#39;portions of reality&#39; include 4 sorts, entities (as BFO construes them), universals, configurations, and relations. It is an open question as to whether entities as construed in BFO will at some point also include these other portions of reality. See, for example, &#39;How to track absolutely everything&#39; at http://www.referent-tracking.com/_RTU/papers/CeustersICbookRevised.pdf</obo:IAO_0000116>
-        <obo:IAO_0000112 xml:lang="en">Julius Caesar</obo:IAO_0000112>
-        <rdfs:label>entity</rdfs:label>
-        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: In all areas of empirical inquiry we encounter general terms of two sorts. First are general terms which refer to universals or types:animaltuberculosissurgical procedurediseaseSecond, are general terms used to refer to groups of entities which instantiate a given universal but do not correspond to the extension of any subuniversal of that universal because there is nothing intrinsic to the entities in question by virtue of which they – and only they – are counted as belonging to the given group. Examples are: animal purchased by the Emperortuberculosis diagnosed on a Wednesdaysurgical procedure performed on a patient from Stockholmperson identified as candidate for clinical trial #2056-555person who is signatory of Form 656-PPVpainting by Leonardo da VinciSuch terms, which represent what are called ‘specializations’ in [81</obo:IAO_0000116>
-        <obo:IAO_0000112 xml:lang="en">Verdi’s Requiem</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">the Second World War</obo:IAO_0000112>
-        <obo:IAO_0000112 xml:lang="en">your body mass index</obo:IAO_0000112>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/stato.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
-        <rdfs:label xml:lang="en">continuant</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000001"/>
-        <obo:IAO_0000602>(forall (x) (if (Material Entity x) (exists (t) (and (TemporalRegion t) (existsAt x t))))) // axiom label in BFO2 CLIF: [011-002] </obo:IAO_0000602>
-        <obo:IAO_0000602>(forall (x) (if (Continuant x) (Entity x))) // axiom label in BFO2 CLIF: [008-002] </obo:IAO_0000602>
-        <obo:IAO_0000602>(forall (x y) (if (and (Continuant x) (exists (t) (continuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [009-002] </obo:IAO_0000602>
-        <obo:IAO_0000600 xml:lang="en">A continuant is an entity that persists, endures, or continues to exist through time while maintaining its identity. (axiom label in BFO2 Reference: [008-002])</obo:IAO_0000600>
-        <rdfs:label>continuant</rdfs:label>
-        <obo:IAO_0000602>(forall (x y) (if (and (Continuant x) (exists (t) (hasContinuantPartOfAt y x t))) (Continuant y))) // axiom label in BFO2 CLIF: [126-001] </obo:IAO_0000602>
-        <obo:IAO_0000115 xml:lang="en">An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts.</obo:IAO_0000115>
-        <obo:IAO_0000116 xml:lang="en">BFO 2 Reference: Continuant entities are entities which can be sliced to yield parts only along the spatial dimension, yielding for example the parts of your table which we call its legs, its top, its nails. ‘My desk stretches from the window to the door. It has spatial parts, and can be sliced (in space) in two. With respect to time, however, a thing is a continuant.’ [60, p. 240</obo:IAO_0000116>
-        <obo:IAO_0000116 xml:lang="en">Continuant doesn&#39;t have a closure axiom because the subclasses don&#39;t necessarily exhaust all possibilites. For example, in an expansion involving bringing in some of Ceuster&#39;s other portions of reality, questions are raised as to whether universals are continuants</obo:IAO_0000116>
-        <obo:IAO_0000601 xml:lang="en">if b is a continuant and if, for some t, c has_continuant_part b at t, then c is a continuant. (axiom label in BFO2 Reference: [126-001])</obo:IAO_0000601>
-        <obo:IAO_0000601 xml:lang="en">if b is a continuant and if, for some t, cis continuant_part of b at t, then c is a continuant. (axiom label in BFO2 Reference: [009-002])</obo:IAO_0000601>
-        <obo:IAO_0000601 xml:lang="en">if b is a material entity, then there is some temporal interval (referred to below as a one-dimensional temporal region) during which b exists. (axiom label in BFO2 Reference: [011-002])</obo:IAO_0000601>
-        <rdfs:isDefinedBy rdf:resource="http://purl.obolibrary.org/obo/bfo.owl"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/obi.owl"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/stato.owl"/>
-    </owl:Class>  
+	 <!--copying in classes from STATO-->    
     
 
 
@@ -880,10 +838,18 @@
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C71104 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C71104">
+    <owl:Class rdf:about="&ncit;C71104">
         <rdfs:label>Clinical Trial</rdfs:label>
         <obo:NCIT_P325>1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)</obo:NCIT_P325>
         <obo:NCIT_P108>Clinical Trial</obo:NCIT_P108>
+        <rdfs:subClassOf rdf:resource="&ncit;C15206"/>
+        <rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
+		<sio:hasAttribute>
+			<skos:definition>
+				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
+				<prov:wasAttributedTo rdf:resoure="&ibm;us-amardas"/>
+			</skos:definition>
+		</sio:hasAttribute>
         <oboInOwl:hasExactSynonym>Clinical Trials</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.</obo:IAO_0000115>
         <obo:NCIT_P322>CDISC-GLOSS</obo:NCIT_P322>
@@ -966,45 +932,6 @@
     </owl:Class>
 
 	<!---Copying in classes from HP-->
-	<!-- http://purl.obolibrary.org/obo/BFO_0000002 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000002">
-        <rdfs:label xml:lang="en">continuant</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000003 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000003">
-        <rdfs:label xml:lang="en">occurrent</rdfs:label>
-        <obo:IAO_0000115 xml:lang="en">An entity that has temporal parts and that happens, unfolds or develops through time.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000004 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000004">
-        <rdfs:label xml:lang="en">independent continuant</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <obo:IAO_0000115 xml:lang="en">A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/BFO_0000020 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000020">
-        <rdfs:label xml:lang="en">specifically dependent continuant</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <obo:IAO_0000115 xml:lang="en">A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.</obo:IAO_0000115>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
-    </owl:Class>
 
     <!-- http://purl.obolibrary.org/obo/CARO_0000000 -->
 
@@ -1043,7 +970,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0030000">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological entity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
     
@@ -1227,7 +1153,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000020"/>
         <obo:IAO_0000589>quality (PATO)</obo:IAO_0000589>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
@@ -1398,7 +1323,6 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062">
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
     
@@ -1443,8 +1367,7 @@
         <synonym>Study intervention</synonym>
         <rdfs:comment>The intervention type used in a research study (corresponding to I in the PICO(T) model )</rdfs:comment>
         <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/386053000</rdfs:seeAlso>
-    </owl:Class>
-    
+    </owl:Class> 
 
 
 	<!-- &chear;Demographic -->
@@ -1752,13 +1675,13 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A cohort is the group of subjects enrolled in a study"</sio:hasValue>
-				<rdfs:isDefinedBy rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
+				<prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
 			</skos:definition>
 		</sio:hasAttribute>
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>"Top-level group of subjects participating in a study"</sio:hasValue>
-				<rdfs:isDefinedBy rdf:resource="&person;JamesMcCusker"/>
+				<prov:wasAttributedTo rdf:resource="&person;JamesMcCusker"/>
 			</skos:definition>
 		</sio:hasAttribute>
 	  <rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
@@ -1778,7 +1701,7 @@
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
-		        <rdfs:isDefinedBy rdf:resource="&ibm;us-amardas"/>
+		        <prov:wasAttributedTo rdf:resource="&ibm;us-amardas"/>
 	     	</skos:definition>
     	</sio:hasAttribute>
     	<sio:hasAttribute>
@@ -1869,17 +1792,10 @@
 	</owl:Class>
 
 	 <owl:Class rdf:about="&sio;Patient">
-		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
 				<owl:someValuesFrom rdf:resource="&sco;ElectronicHealthRecord"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasProperty"/>
-				<owl:someValuesFrom rdf:resource="&sco;PatientProfile"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -1926,15 +1842,6 @@
 		<dct:source rdf:resource="https://www.healthit.gov/faq/what-electronic-health-record-ehr"/>
 		<rdfs:label rdf:datatype="&xsd;string">electronic health record</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">a digital version of a patient’s paper chart</skos:definition>
-	</owl:Class>
-
-	<!-- &sco;PatientProfile -->
-
-	<owl:Class rdf:about="&sco;PatientProfile">
-		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
-		<rdfs:label rdf:datatype="&xsd;string">patient profile</rdfs:label>
-		<skos:definition>a simple form that allows patients or caregivers to keep track of important health information</skos:definition>
-		<dct:source>https://www.rimrehab.org/for-patients/patient-health-profile</dct:source>
 	</owl:Class>
 	
 
@@ -1988,7 +1895,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
-				<rdfs:isDefinedBy rdf:resoure="&ibm;us-amardas"/>
+				<prov:wasAttributedTo rdf:resoure="&ibm;us-amardas"/>
 			</skos:definition>
 		</sio:hasAttribute>
 	</owl:Class>
@@ -1996,9 +1903,9 @@
 
 	<!-- &sco;Metaanalysis -->
 
-	<owl:Class rdf:about="&sco;Metaanalysis">
+	<owl:Class rdf:about="&sco;Meta-analysis">
 		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
-		<rdfs:label>metaanalysis</rdfs:label>
+		<rdfs:label>meta-analysis</rdfs:label>
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A quantitative, formal, epidemiological study design used to systematically assess previous research studies to derive conclusions about that body of research</sio:hasValue>
@@ -2029,11 +1936,12 @@
 
 	<owl:Class rdf:about="&hasco;ResearchStudy">
 		<rdfs:subClassOf rdf:resource="&sio;Study"/>
+		<rdfs:label>research study</rdfs:label>
 		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
-				<rdfs:isDefinedBy rdf:resource="&ibm;us-amardas"/>
+				<prov:wasAttributedTo rdf:resource="&ibm;us-amardas"/>
 			</skos:definition>
 		</sio:hasAttribute>	
 		<sio:hasAttribute>
@@ -2072,13 +1980,13 @@
 	
 
 
-	<!-- &sco;Therapy -->
+	<!-- &chear;MedicalTherapy -->
 
-	<owl:Class rdf:about="&sco;Therapy">
+	<owl:Class rdf:about="&chear;MedicalTherapy">
 		<rdfs:subClassOf rdf:resource="&provcare;Intervention"/>
 	</owl:Class>
 
-	<!-- &sco;Therapy -->
+	<!-- &provcare;ClinicalIntervention -->
 
 	<owl:Class rdf:about="&provcare;ClinicalIntervention">
 		<rdfs:subClassOf rdf:resource="&provcare;Intervention"/>
