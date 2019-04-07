@@ -1,32 +1,4 @@
 [Authors](#authors) [Abstract](#abstract) [Workflow](#workflow) [Resource List](#resources) [License](#license) [Acknowledgements](#acknowledgements)
-<div class="wrapper">
- <nav class="navbar navbar-default">
-
-              <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
-                <ul class="nav navbar-nav navbar-right">
-                  <li class="">
-                    <a class="page-scroll" href="#authors">Authors</a>
-                  </li>
-                  <li class="">
-                    <a class="page-scroll" href="#abstract">Abstract</a>
-                  </li>
-                  <li class="">
-                    <a class="page-scroll" href="#workflow">Workflow Diagram</a>
-                  </li>
-                  <li class="active">
-                    <a class="page-scroll" href="#resources">Resources</a>
-                  </li>
-                  <li class="">
-                    <a class="page-scroll" href="#license">License</a>
-                  </li>
-		<li class="">
-                    <a class="page-scroll" href="#acknowledgements">Acknowledgements</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- navbar-collapse -->
-            </nav>
-</div>
 
 <article class="mb-5" id="authors">
 <content>
