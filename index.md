@@ -6,7 +6,7 @@
  <ul>
  Shruthi Chari<sup>1</sup>, Miao Qi<sup>2</sup>, Nkcheniyere N. Agu<sup>1</sup>, Oshani Seneviratne<sup>2</sup>, James P. McCusker<sup>1</sup>, Kristin P. Bennett<sup>2</sup>, Amar K. Das<sup>3</sup> and Deborah L. McGuinness<sup>1</sup>
   <br>
- <strong><sup>1</sup><a href="https://tw.rpi.edu/"> Tetherless World Constellation</a></strong>, Rensselaer Polytechnic Institute
+ <strong><sup>1</sup><a href="https://tw.rpi.edu/">Tetherless World Constellation</a></strong>, Rensselaer Polytechnic Institute
  <br>
  <strong><sup>2</sup><a href="https://idea.rpi.edu/">Instiute for Data Exploration and Applications</a></strong>, Rensselaer Polytechnic Institute
  <br>
