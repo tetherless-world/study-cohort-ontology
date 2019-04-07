@@ -4,6 +4,5 @@
 <h2>List of Research Studies Utilized</h2>
 <ul>
 
- </content>
  
  
