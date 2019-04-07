@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/external/cl_external.owl#"
-     xml:base="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/external/cl_external.owl"
+<rdf:RDF xmlns="https://idea.tw.rpi.edu/projects/heals/studycohort/external/cl_external.owl#"
+     xml:base="https://idea.tw.rpi.edu/projects/heals/studycohort/external/cl_external.owl"
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:uberon="http://purl.obolibrary.org/obo/uberon#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -11,7 +11,7 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
      xmlns:dc="http://purl.org/dc/elements/1.1/">
-    <owl:Ontology rdf:about="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/external/cl_external.owl">
+    <owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/studycohort/external/cl_external.owl">
         <dc:contributor>Chris Mungall</dc:contributor>
         <dc:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
         <dc:contributor>Ceri van Slyke</dc:contributor>
