@@ -23,6 +23,16 @@
 <h2> Modeling Examples</h2>
 <ul>
    <h3> Modeling of Collections of Study Subjects </h3>
+  <ul>
+   sco-i:RamiprilArm
+        a                      owl:Class, sco:InterventionArm; 
+        rdfs:subClassOf        sio:StudySubject;
+        sio:isParticipantIn    sco-i:TelmisartanRamiprilStudy;   
+       sio:hasAttribute    
+       [ a sco:PopulationSize; sio:hasValue 8576] .
+  
+  
+  </ul>
    <h3> Modeling of Subject Characteristics </h3>
    <h3> Modeling of Aggregations on Subject Characteristics</h3>
  </ul>
