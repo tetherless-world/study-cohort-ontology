@@ -7,9 +7,9 @@
 
 <article class="mb-5" id="ontologyfile">
 <content>
-<h2>Ontology Files (Add links)</h2>
+<h2>Ontology Files</h2>
 <ul>
-<h3> SCO </h3>
+<h3> Study Cohort Ontology (SCO) </h3>
 <h3> Accompaniment Files </h3>
   <ul>
 <li> Medications</li>
