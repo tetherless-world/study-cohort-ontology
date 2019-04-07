@@ -4,7 +4,7 @@
 <content>
 <h2>Annotated Table 1 Example</h2>
 <img src="images/Table1Example2.png">
-  <p style="text-align:center>An annotated example of Table 1 from a clinical trial "Telmisartan, ramipril, or
+  <p style="text-align:center">An annotated example of Table 1 from a clinical trial "Telmisartan, ramipril, or
 both in patients at high risk for vascular events" [50] cited in the Cardiovascular Complications (Chapter 9) of the ADA 2018 CPG</p>
 <ul>
   
