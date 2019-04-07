@@ -3,7 +3,7 @@
  <article class="mb-5" id="conceptmap">
 <content>
 <h2>Conceptual Model</h2>
- ![Concept Map]({{images/ConceptMap_SubjectModel.pdf | relative_url }})
+ ![Concept Map](images/ConceptMap_SubjectModel.pdf)
 
  </content>
 
