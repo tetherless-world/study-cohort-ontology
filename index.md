@@ -37,6 +37,36 @@
 <content>
 <h2>List of Resources </h2>
 <ul>
+ <table style="width:100%">
+  <tr>
+    <th>1. Ontologies</th>
+    <th>    (c) Cohort Similarity Visualization</th> 
+  </tr>
+  <tr>
+    <td>     (a) Study Cohort Ontology (SCO)</td>
+    <td></td> 
+  </tr>
+  <tr>
+    <td>2. Knowledge Graphs:</td>
+    <td></td> 
+  </tr>
+    <tr>
+    <td>      (a) Table 1 Knowledge Graphs</td>
+    <td></td> 
+  </tr>
+    <tr>
+    <td>3. Source Code:</td>
+    <td></td> 
+  </tr>
+    <tr>
+    <td>      (a) MIREOT Script</td>
+    <td>4 .Data:</td> 
+  </tr>
+   <tr>
+    <td>      (b)  Whyis Visualization</td>
+    <td>      (a) NHANES Patient Records</td> 
+  </tr>
+</table>
   
  </ul>
  </content>
