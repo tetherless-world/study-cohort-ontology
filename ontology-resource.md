@@ -1,6 +1,6 @@
 ## Ontology File (Add links)
 ### SCO
-#### Accompaniment files
+### Accompaniment files
 #### Medications
 #### Diseases
 #### Lab results
