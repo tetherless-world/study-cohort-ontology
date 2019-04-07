@@ -81,14 +81,7 @@
 		</dct:description>          
 		<dct:abstract rdf:datatype="&xsd;string">
 		The Study Cohort Ontology (SCO) is developed to model overall structure and patterns of cohort variables and control/intervention groups defined within the structured population descriptions (commonly referred to as Table1's or Cohort Summary Tables)of observational case studies and clinical trials. We maintain only domain agnostic and commonly occuring subject variables and interventions in SCO, and we have a suite of ontologies (Diseases, Medications, LabResults etc) to encode Diabetes related terminology. We have adopted a bottom-up approach to modeling and we have revised the structure of SCO upon investigation of a few research studies (11 to be precise) from the Pharmacological Interventions (Chapter 8) and Cardiovascular Complications (Chapter 9) of the American Diabetes Association (ADA)’s Standards of Medical Care 2018 CPG. We enable deep drive visualizations driven off queries to knowledge graphs modeled on SCO, to help assist physician visualize the similarity of a patient to a study group, at a quick glance. We welcome contributions and suggestions to extend SCO to represent cohort descriptions of publications targeted to other diseases, and we plan to release set of tools to make this process seamless.</dct:abstract>
-		<!--<owl:imports rdf:resource="external/ncit_externalbranches.owl"/>-->
-		<!--<owl:imports rdf:resource="http://hadatac.org/ont/chear/"/>-->
-		<owl:imports rdf:resource="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/external/chear.owl"/>
-		<!--<owl:imports rdf:resource="external/hp_external.owl"/>-->
-		<!--<owl:imports rdf:resource="external/stato_external.owl"/>-->
-		<!--<owl:imports rdf:resource="external/uo_external.owl"/>-->
-		<!--<owl:imports rdf:resource="external/provcare.owl"/>-->
-		<!--<owl:imports rdf:resource="http://purl.obolibrary.org/obo/stato.owl">-->
+		<owl:imports rdf:resource="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/external/chear_external.owl"/>
 	</owl:Ontology>
 	
 
@@ -144,126 +137,8 @@
 	// Classes
 	//
 	///////////////////////////////////////////////////////////////////////////////////////
-	 -->
-
-	 <!--copying in classes from UO-->
-
-	 <!-- http://purl.obolibrary.org/obo/PATO_0000125 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000125">
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-    </owl:Class>
+	 -->	
     
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0000128 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000128">
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PATO_0001708 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001708">
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UO_0000001 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000001">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">length unit</rdfs:label>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unit which is a standard measure of the distance between two points.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000001</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UO_0000002 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000002">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mass unit</rdfs:label>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unit which is a standard measure of the amount of matter/energy of a physical object.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000002</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UO_0000009 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000009">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kilogram</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UO_0000002"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UO_0000045"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000009</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kg</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UO_0000015 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000015">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">centimeter</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UO_0000001"/>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A length unit which is equal to one hundredth of a meter or 10^[-2] m.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000015</oboInOwl:id>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">centimetre</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cm</oboInOwl:hasExactSynonym>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UO_0000045 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UO_0000045">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">base unit</rdfs:label>
-        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A unit which is one of a particular measure to which all measures of that type can be related.</obo:IAO_0000115>
-        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UO:0000045</oboInOwl:id>
-        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">george gkoutos</oboInOwl:created_by>
-        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unit.ontology</oboInOwl:hasOBONamespace>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
-    </owl:Class>
-	
-	 <!--copying in classes from STATO-->   
-
-
-    <!-- http://purl.obolibrary.org/obo/STATO_0000193 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/STATO_0000193">
-        <rdfs:label>study group population</rdfs:label>
-        <obo:IAO_0000117 xml:lang="en">Alejandra Gonzalez-Beltran</obo:IAO_0000117>
-        <obo:IAO_0000115>is a population whose individual members realize (may be expressed as) a combination of  inclusion rule values specifications or resulting from a sampling process (e.g. recruitment followed by randomization to group) on which a number of measurements will be carried out, which may be used as input to statistical tests and statistical inference.</obo:IAO_0000115>
-        <obo:IAO_0000117>Philippe Rocca-Serra</obo:IAO_0000117>
-        <obo:IAO_0000117>Orlaith Burke</obo:IAO_0000117>
-        <obo:IAO_0000119 xml:lang="en">STATO</obo:IAO_0000119>
-        <obo:STATO_0000032 xml:lang="en">statistical sample</obo:STATO_0000032>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-    </owl:Class>
-    
-
-
 
 	 <!--Copying in classes from NCIT-->
 
@@ -909,7 +784,403 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C77526"/>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C85494"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
+    </owl:Class>
+
+	<!---Copying in classes from HP-->
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000000">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0030000"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class> 
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000006">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material anatomical entity</rdfs:label>
+        <rdfs:label xml:lang="en">material anatomical entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0010000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0010000">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">multicellular anatomical structure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0030000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0030000">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological entity</rdfs:label>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000000">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cell</rdfs:label>
+        <rdfs:label xml:lang="en">cell</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>   
+
+
+    
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0001513 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001513">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity</rdfs:label>       
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001513</oboInOwl:id>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D009765</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:414915002</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:414916001</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0028754</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasExactSynonym>Having too much body fat</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>Accumulation of substantial excess body fat.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0001956 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001956">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Truncal obesity</rdfs:label>        
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001513"/>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Centripetal obesity</oboInOwl:hasExactSynonym>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001956</oboInOwl:id>
+        <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0008885</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D056128</oboInOwl:hasDbXref>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity located preferentially in the trunk of the body as opposed to the extremities.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:248311001</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Truncal obesity</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0311277</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0004324 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0004324">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Increased body weight</rdfs:label>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2008-02-27T03:21:00Z</oboInOwl:creation_date>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0004324</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Increased body weight</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D015430</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:161831008</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:262286000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:8943002</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0043094</oboInOwl:hasDbXref>
+        <oboInOwl:hasRelatedSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Weight gain</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peter</oboInOwl:created_by>
+        <oboInOwl:hasAlternativeId>HP:0045083</oboInOwl:hasAlternativeId>
+        <obo:IAO_0000115>Abnormally increased body weight.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0008915 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0008915">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Childhood-onset truncal obesity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001956"/>
+        <oboInOwl:hasAlternativeId rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0008874</oboInOwl:hasAlternativeId>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0008915</oboInOwl:id>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Truncal obesity apparent in childhood</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Truncal obesity with onset during childhood, defined as between 2 and 10 years of age.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C1859846</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0012743 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0012743">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abdominal obesity</rdfs:label>       
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001513"/>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-03-23T05:00:05Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abdominal obesity</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Excessive fat around the stomach and abdomen.</obo:IAO_0000115>
+        <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0012743</oboInOwl:id>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D056128</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SNOMEDCT_US:248311001</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UMLS:C0311277</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
+        <oboInOwl:created_by rdf:datatype="http://www.w3.org/2001/XMLSchema#string">peter</oboInOwl:created_by>
+        <oboInOwl:hasExactSynonym>Central obesity</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0025499 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0025499">
+        <rdfs:label xml:lang="en">Class I obesity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001513"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-14T20:06:40Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</dc:creator>
+        <obo:IAO_0000115>Obesity with a body mass index of 30 to 34.9 kg per square meter.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>Obesity grade 1</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0025500 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0025500">
+        <rdfs:label xml:lang="en">Class II obesity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001513"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-14T20:08:43Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</dc:creator>
+        <oboInOwl:hasExactSynonym>Obesity grade 2</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>Obesity with a body mass index of 35 to 39.9 kg per square meter.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0025501 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0025501">
+        <rdfs:label xml:lang="en">Class III obesity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001513"/>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-14T20:09:17Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</dc:creator>
+        <oboInOwl:hasExactSynonym>Obesity grade 3</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>Obesity with a body mass index of 40 kg per square meter or higher.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0025502 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0025502">
+        <rdfs:label xml:lang="en">Overweight</rdfs:label>
+        <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2017-05-14T20:12:36Z</dc:date>
+        <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HPO:probinson</dc:creator>
+        <obo:IAO_0000115>Increased body weight with a body mass index of 25-29.9 kg per square meter.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/HP_0045082 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0045082">
+        <rdfs:label>Decreased body mass index</rdfs:label>
+        <oboInOwl:hasExactSynonym>Decreased BMI</oboInOwl:hasExactSynonym>
+        <obo:IAO_0000115>Abnormally decreased weight-to-height squared ratio, calculated by dividing the individual&#39;s weight in kilograms by the square of the individual&#39;s height in meters and used as an indicator of underweight compared to averages.</obo:IAO_0000115>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000001">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">quality</rdfs:label>
+        <obo:IAO_0000589>quality (PATO)</obo:IAO_0000589>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000068 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000068">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">qualitative</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000069 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000069">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deviation(from_normal)</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000068"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000128 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000128">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">weight</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001035"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000460 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000460">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">abnormal</rdfs:label>
+        <rdfs:label>abnormal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000069"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0000582 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000582">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased weight</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000128"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002245"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001018 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001018">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001035 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001035">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">force</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001241 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001241">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">physical object quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0001869 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001869">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pathological</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000460"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002245 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002245">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased force</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001035"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002300 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002300">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000069"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002305 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002305">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increased object quality</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002300"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBERON_0000061 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000061">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical structure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000003 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000003">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">connected anatomical structure</rdfs:label>
+        <rdfs:label xml:lang="en">anatomical structure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000006 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000006">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">material anatomical entity</rdfs:label>
+        <rdfs:label xml:lang="en">material anatomical entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+
+    <!-- http://purl.obolibrary.org/obo/CARO_0000000 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CARO_0000000">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0030000"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+
+     <!-- http://purl.obolibrary.org/obo/UBERON_0001062 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001062">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
+    </owl:Class>
+    
 
 
     
@@ -954,7 +1225,23 @@
     </owl:Class> 
 
 
-	  
+	<!-- &chear;Demographic -->
+
+	<owl:Class rdf:about="&chear;Demographic">
+		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
+		<skos:definition rdf:datatype="&xsd;string">the science dealing with populations, including matters of health, disease, births, and mortality</skos:definition>
+		<dct:source>Miller-Keane Encyclopedia and Dictionary of Medicine, Nursing, and Allied Health, Seventh Edition</dct:source>
+	</owl:Class>
+	
+
+
+	<!-- &chear;MedicalTherapy -->
+
+	<rdf:Description rdf:about="&chear;MedicalTherapy">
+		 <rdfs:label>medical therapy</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">the attempted remediation of a health problem, usually following a diagnosis</skos:definition>
+		<dct:source>https://en.wikipedia.org/wiki/Therapy</dct:source>
+	</rdf:Description>   
 
 
 	
@@ -1411,15 +1698,9 @@
 		<rdfs:label rdf:datatype="&xsd;string">electronic health record</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">a digital version of a patient’s paper chart</skos:definition>
 	</owl:Class>
-
-	<owl:Class rdf:about="&chear;Demographic">
-				<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
-	</owl:Class>
-
-	<owl:Class rdf:about="&chear;Anthropometry">
-				<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
-	</owl:Class>
 	
+
+
 	<!-- &sco;SubjectCharacteristic -->
 
 	<owl:Class rdf:about="&sco;SubjectCharacteristic">
@@ -1719,7 +2000,6 @@
 		<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296634/</fibo-fnd-utl-av:adaptedFrom>
 		<skos:definition rdf:datatype="&xsd;string">number of patients to which the study results could be reasonably generalized</skos:definition>
 	</owl:Class> 
-
 
 </rdf:RDF>
 
