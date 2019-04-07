@@ -1,28 +1,24 @@
 <header>
     <nav class="nav2">
-            <li class="nav-item">
+            <li>
                 <a class="nav-link js-scroll-trigger" href="{{'authors' | absolute_url}}">Authors</a>
             </li>
-            <li class="nav-item">
+            <li>
                 <a class="nav-link js-scroll-trigger" href="{{'abstract' | absolute_url}}">Abstract</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="{{'workflow' | absolute_url}}">Workflow</a>
             </li>
-            <li class="nav-item">
+            <li >
                 <a class="nav-link js-scroll-trigger" href="{{'resources' | absolute_url}}">Resource List</a>
             </li>
-            <li class="nav-item">
+            <li>
                 <a class="nav-link js-scroll-trigger" href="{{'license' | absolute_url}}">License</a>
             </li>
-            <li class="nav-item">
+            <li >
                 <a class="nav-link js-scroll-trigger" href="{{'acknowledgements' | absolute_url}}">Acknowledgements</a>
             </li>
     </nav>
-    <div class="my-auto">
-        <br/>
-        <center><a class="title-a" href="#"><h1 class="title">{{page.title}}</h1></a></center>
-    </div>
 </header>
 
 [Authors](#authors) [Abstract](#abstract) [Workflow](#workflow) [Resource List](#resources) [License](#license)  [Acknowledgements](#acknowledgements)
