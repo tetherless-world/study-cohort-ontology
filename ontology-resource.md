@@ -1,8 +1,13 @@
-[Ontology File](#ontologyfile) [Ontologies Reused](#ontologyreused) 
+[Concept Map](#conceptmap) [Ontology File](#ontologyfile) [Ontologies Reused](#ontologyreused) 
+
+ <article class="mb-5" id="conceptmap">
+<content>
+<h2>Conceptual Model</h2>
+ </content>
 
 <article class="mb-5" id="ontologyfile">
 <content>
-<h2>Ontology File (Add links)</h2>
+<h2>Ontology Files (Add links)</h2>
 <ul>
 <h3> SCO </h3>
 <h3> Accompaniment Files </h3>
