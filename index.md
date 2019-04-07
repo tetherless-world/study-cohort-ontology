@@ -1,6 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-sm bg-light">
-        <ul class="navbar-nav">
+    <nav class="nav2">
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="{{'authors' | absolute_url}}">Authors</a>
             </li>
@@ -19,7 +18,6 @@
             <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="{{'acknowledgements' | absolute_url}}">Acknowledgements</a>
             </li>
-        </ul>
     </nav>
     <div class="my-auto">
         <br/>
@@ -27,8 +25,7 @@
     </div>
 </header>
 
-
-[Authors](#authors)      [Abstract](#abstract)    [Workflow](#workflow)      [Resource List](#resources)         [License](#license)         [Acknowledgements](#acknowledgements)
+[Authors](#authors) [Abstract](#abstract) [Workflow](#workflow) [Resource List](#resources) [License](#license)  [Acknowledgements](#acknowledgements)
 
 <article class="mb-5" id="authors">
 <content>
