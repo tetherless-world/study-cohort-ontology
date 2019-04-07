@@ -4,9 +4,8 @@
 <content>
 <h2>Conceptual Model</h2>
  
-   <embed src="images/ConceptMap_SubjectModel.pdf" width="100%" height="100%" title="hover text">
-
-
+   <img src="images/ConceptMap_SubjectModel.png" width="100%" height="100%">
+   <p style="text-align:center;">An overview of the main classes and their property associations. Some property associations exist only upon representation of the Table 1 data, and so we highlight instances in pink</p>
  </content>
 
 <article class="mb-5" id="ontologyfile">

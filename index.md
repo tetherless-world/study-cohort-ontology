@@ -1,34 +1,4 @@
-<header>
-    <nav class="navbar navbar-expand-sm bg-light">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{{'authors' | absolute_url}}">Authors</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{{'abstract' | absolute_url}}">Abstract</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{{'workflow' | absolute_url}}">Workflow</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{{'resources' | absolute_url}}">Resource List</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{{'license' | absolute_url}}">License</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="{{'acknowledgements' | absolute_url}}">Acknowledgements</a>
-            </li>
-        </ul>
-    </nav>
-    <div class="my-auto">
-        <br/>
-        <center><a class="title-a" href="#"><h1 class="title">{{page.title}}</h1></a></center>
-    </div>
-</header>
-
-
-[Authors](#authors)      [Abstract](#abstract)    [Workflow](#workflow)      [Resource List](#resources)         [License](#license)         [Acknowledgements](#acknowledgements)
+[       Authors       ](#authors) [Abstract](#abstract) [Workflow](#workflow) [Resource List](#resources) [License](#license)  [Acknowledgements](#acknowledgements)
 
 <article class="mb-5" id="authors">
 <content>
@@ -73,9 +43,9 @@
  
  <article class="mb-5" id="license">
 <content>
-<h2>Link to License </h2>
-<ul>
- 
+<h2>License</h2>
+ <ul> 
+<iframe src="images/License.pdf" style="width: 100%;height: 700px;border: none;"></iframe>
   </ul>
  </content>
  
