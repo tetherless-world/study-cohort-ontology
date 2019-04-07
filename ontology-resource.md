@@ -4,7 +4,7 @@
 <content>
 <h2>Conceptual Model</h2>
  
-   <img src="images/ConceptMap_SubjectModel.pdf" width="100%" title="hover text">
+   <embed src="images/ConceptMap_SubjectModel.pdf" width="100%" title="hover text">
 
 
  </content>
