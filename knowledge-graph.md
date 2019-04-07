@@ -27,7 +27,7 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
 <ul>
    <h3> Modeling of Collections of Study Subjects </h3>
   
-   <strong> Listing 5.1: Sample RDF N-Triples representation snippet of the Ramipril intervention arm </strong>
+   <strong> Listing 1: Sample RDF N-Triples representation snippet of the Ramipril intervention arm </strong>
    <pre>
    sco-i:RamiprilArm
         a                      owl:Class, sco:InterventionArm; 
@@ -37,7 +37,7 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
        [ a sco:PopulationSize; sio:hasValue 8576] .
   </pre>
   
-  <strong> Listing 5.2: Representation of a sub-population within a study arm </strong>
+  <strong> Listing 2: Representation of a sub-population within a study arm </strong>
    <pre>
   sco-i:AsianSubPopulation a owl:Class;
         rdfs:subClassOf sco-i:RamiprilArm;
