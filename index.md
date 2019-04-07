@@ -1,4 +1,4 @@
-<header>
+
     <nav class="nav2">
             <li>
                 <a class="nav-link js-scroll-trigger" href="{{'authors' | absolute_url}}">Authors</a>
@@ -19,7 +19,6 @@
                 <a class="nav-link js-scroll-trigger" href="{{'acknowledgements' | absolute_url}}">Acknowledgements</a>
             </li>
     </nav>
-</header>
 
 [Authors](#authors) [Abstract](#abstract) [Workflow](#workflow) [Resource List](#resources) [License](#license)  [Acknowledgements](#acknowledgements)
 
