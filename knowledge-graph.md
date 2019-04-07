@@ -21,11 +21,16 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
  </content>
 
 
- <article class="mb-5" id="modelingexample">
+<article class="mb-5" id="modelingexample">
 <h2> Modeling Examples</h2>
 <ul>
    <h3> Modeling of Collections of Study Subjects </h3>
+
+   <h3> Modeling of Subject Characteristics </h3>
+   <h3> Modeling of Aggregations on Subject Characteristics</h3>
+ </ul>
  
+  
  ```ruby
    sco-i:RamiprilArm
         a                      owl:Class, sco:InterventionArm; 
@@ -34,7 +39,4 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
        sio:hasAttribute    
        [ a sco:PopulationSize; sio:hasValue 8576] .
   ```
-   <h3> Modeling of Subject Characteristics </h3>
-   <h3> Modeling of Aggregations on Subject Characteristics</h3>
- </ul>
 
