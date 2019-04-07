@@ -6,11 +6,13 @@
 <ul>
 <h3> SCO </h3>
 <h3> Accompaniment Files </h3>
+  <ul>
 <li> Medications</li>
 <li> Diseases</li>
 <li> Lab results</li>
 <li> Measures</li>
 <li> Units</li>
+     </ul>
   
  </ul>
  </content>
