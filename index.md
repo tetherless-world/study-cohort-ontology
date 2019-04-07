@@ -1,4 +1,4 @@
-[       Authors       ](#authors) [Abstract](#abstract) [Workflow](#workflow) [Resource List](#resources) [License](#license)  [Acknowledgements](#acknowledgements)
+[Authors](#authors) [Abstract](#abstract) [Workflow](#workflow) [Resource List](#resources) [License](#license)  [Acknowledgements](#acknowledgements)
 
 <article class="mb-5" id="authors">
 <content>
@@ -37,6 +37,36 @@
 <content>
 <h2>List of Resources </h2>
 <ul>
+ <table style="width:100%">
+    <tr>
+    <th>Resources</th>
+    <th>Links</th> 
+  </tr>
+  <tr>
+    <td>1. Ontologies</td>
+    <td> (a) Study Cohort Ontology (SCO)</td> 
+  </tr>
+  <tr>
+    <td>2. Knowledge Graphs:</td>
+    <td>(a) Table 1 Knowledge Graphs</td> 
+  </tr>
+  <tr>
+    <td>3. Source Code:</td>
+    <td>(a) MIREOT Script</td> 
+  </tr>
+    <tr>
+    <td> </td>
+    <td> (b) Faceted Browser</td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td>(c) Cohort Similarity Visualization</td> 
+  </tr>
+   <tr>
+    <td>4 .Data: </td>
+    <td> (a) NHANES Patient Records</td> 
+  </tr>
+</table>
   
  </ul>
  </content>
