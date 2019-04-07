@@ -39,32 +39,28 @@
 <ul>
  <table style="width:100%">
   <tr>
-    <td>1. Ontologies</th>
-    <td>    (c) Cohort Similarity Visualization</th> 
-  </tr>
-  <tr>
-    <td>     (a) Study Cohort Ontology (SCO)</td>
-    <td></td> 
+    <td>1. Ontologies</td>
+    <td> (a) Study Cohort Ontology (SCO)</td> 
   </tr>
   <tr>
     <td>2. Knowledge Graphs:</td>
-    <td></td> 
+    <td>(a) Table 1 Knowledge Graphs</td> 
   </tr>
-    <tr>
-    <td>      (a) Table 1 Knowledge Graphs</td>
-    <td></td> 
-  </tr>
-    <tr>
+  <tr>
     <td>3. Source Code:</td>
-    <td></td> 
+    <td>(a) MIREOT Script</td> 
   </tr>
     <tr>
-    <td>      (a) MIREOT Script</td>
-    <td>4 .Data:</td> 
+    <td> </td>
+    <td> (b) Faceted Browser</td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td>(c) Cohort Similarity Visualization</td> 
   </tr>
    <tr>
-    <td>      (b)  Whyis Visualization</td>
-    <td>      (a) NHANES Patient Records</td> 
+    <td>4 .Data: </td>
+    <td> (a) NHANES Patient Records</td> 
   </tr>
 </table>
   
