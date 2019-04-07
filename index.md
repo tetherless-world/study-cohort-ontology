@@ -39,8 +39,8 @@
 <ul>
  <table style="width:100%">
   <tr>
-    <th>1. Ontologies</th>
-    <th>    (c) Cohort Similarity Visualization</th> 
+    <td>1. Ontologies</th>
+    <td>    (c) Cohort Similarity Visualization</th> 
   </tr>
   <tr>
     <td>     (a) Study Cohort Ontology (SCO)</td>
