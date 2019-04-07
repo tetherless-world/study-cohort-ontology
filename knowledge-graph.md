@@ -26,6 +26,7 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
 <h2> Modeling Examples</h2>
 <ul>
    <h3> Modeling of Collections of Study Subjects </h3>
+   ### Header 3
  
  ```ruby
    sco-i:RamiprilArm
