@@ -22,21 +22,48 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
 
 
 <article class="mb-5" id="modelingexample">
+  <content>
 <h2> Modeling Examples</h2>
 <ul>
    <h3> Modeling of Collections of Study Subjects </h3>
-
-   <h3> Modeling of Subject Characteristics </h3>
-   <h3> Modeling of Aggregations on Subject Characteristics</h3>
- </ul>
- 
   
- ```ruby
+   <strong> Listing 1: Sample RDF N-Triples representation snippet of the Ramipril intervention arm </strong>
+   <pre>
    sco-i:RamiprilArm
         a                      owl:Class, sco:InterventionArm; 
         rdfs:subClassOf        sio:StudySubject;
         sio:isParticipantIn    sco-i:TelmisartanRamiprilStudy;   
        sio:hasAttribute    
        [ a sco:PopulationSize; sio:hasValue 8576] .
-  ```
+  </pre>
+  
+  <strong> Listing 2: Representation of a sub-population within a study arm </strong>
+   <pre>
+  sco-i:AsianSubPopulation a owl:Class;
+        rdfs:subClassOf sco-i:RamiprilArm;
+        rdfs:subClassOf 
+        [ 
+            a owl:Restriction; 
+            owl:onProperty sio:hasAttribute;
+            owl:someValuesFrom chear:Asian
+        ];
+     sio:hasAttribute
+     [ 
+        a sco:PopulationSize; 
+        sio:hasValue 1182; 
+        sio:hasAttribute 
+        [ 
+            a sio:Percentage; 
+            sio:hasValue 13.8 
+        ] 
+    ] .
+    </pre>
+
+   <h3> Modeling of Subject Characteristics </h3>
+   <h3> Modeling of Aggregations on Subject Characteristics</h3>
+ </ul>
+ </content>
+ 
+  
+
 
