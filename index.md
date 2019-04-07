@@ -43,10 +43,9 @@
  
  <article class="mb-5" id="license">
 <content>
-<h2>Link to License </h2>
- <embed src="images/License.pdf">
-<ul>
- 
+<h2>License</h2>
+ <ul> 
+<iframe src="images/License.pdf" style="width: 100%;height: 100%;border: none;"></iframe>
   </ul>
  </content>
  
