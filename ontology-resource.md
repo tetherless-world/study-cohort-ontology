@@ -2,15 +2,15 @@
 
 <article class="mb-5" id="ontologyfile">
 <content>
-<h3>Ontology File (Add links)/h3>
+<h2>Ontology File (Add links)</h2>
 <ul>
-### SCO
-### Accompaniment files
-* Medications
-* Diseases
-* Lab results
-* Measures
-* Units
+<h3> SCO </h3>
+<h3> Accompaniment Files </h3>
+<li> Medications</li>
+<li> Diseases</li>
+<li> Lab results</li>
+<li> Measures</li>
+<li> Units</li>
   
  </ul>
  </content>
@@ -18,9 +18,9 @@
  
  <article class="mb-5" id="ontologyreused">
 <content>
-<h3> Ontologies Reused</h3>
+<h2> Ontologies Reused</h2>
 <ul>
-   ### MIREOT Script
+   <h3> MIREOT Script </h3>
  </ul>
  </content>
  
