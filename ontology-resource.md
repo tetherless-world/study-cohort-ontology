@@ -3,6 +3,8 @@
  <article class="mb-5" id="conceptmap">
 <content>
 <h2>Conceptual Model</h2>
+ ![]({{images/ConceptMap_SubjectModel.pdf | relative_url }})
+
  </content>
 
 <article class="mb-5" id="ontologyfile">
