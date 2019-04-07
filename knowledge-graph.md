@@ -22,11 +22,9 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
 
 
  <article class="mb-5" id="modelingexample">
-<content>
 <h2> Modeling Examples</h2>
 <ul>
    <h3> Modeling of Collections of Study Subjects </h3>
-   ### Header 3
  
  ```ruby
    sco-i:RamiprilArm
@@ -39,5 +37,4 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
    <h3> Modeling of Subject Characteristics </h3>
    <h3> Modeling of Aggregations on Subject Characteristics</h3>
  </ul>
- </content>
 
