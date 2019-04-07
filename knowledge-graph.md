@@ -24,8 +24,7 @@
 <ul>
    <h3> Modeling of Collections of Study Subjects </h3>
    <h3> Modeling of Subject Characteristics </h3>
-   <h3> Modeling of Aggregations on Subject Characteristics
- </h3>
+   <h3> Modeling of Aggregations on Subject Characteristics</h3>
  </ul>
  </content>
 
