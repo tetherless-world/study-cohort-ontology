@@ -44,7 +44,7 @@
  <article class="mb-5" id="license">
 <content>
 <h2>Link to License </h2>
- <embed src="images/License.pdf>
+ <embed src="images/License.pdf">
 <ul>
  
   </ul>
