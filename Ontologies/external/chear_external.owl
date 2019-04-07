@@ -4292,8 +4292,8 @@ The number of time that a viviparous organism has given birth</ns1:definition>
     <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_35366"/>
     <rdfs:label>arachidonic acid</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="http://hadatac.org/ont/chear">
-    <owl:versionIRI rdf:resource="http://hadatac.org/ont/chear/2.4"/>
+  <rdf:Description rdf:about="https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear_external">
+    <owl:versionIRI rdf:resource="https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear_external/1.0"/>
     <owl:imports rdf:resource="http://semanticscience.org/ontology/sio-subset-labels.owl"/>
     <owl:imports rdf:resource="http://hadatac.org/ont/hasco/"/>
     <owl:imports rdf:resource="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/external/cl-basic.owl"/>
