@@ -3,7 +3,9 @@
  <article class="mb-5" id="conceptmap">
 <content>
 <h2>Conceptual Model</h2>
- ![Concept Map](images/ConceptMap_SubjectModel.pdf)
+ 
+   <img src="images/ConceptMap_SubjectModel.pdf" width="100%" title="hover text">
+
 
  </content>
 
