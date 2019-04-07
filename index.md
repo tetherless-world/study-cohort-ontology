@@ -45,7 +45,7 @@
 <content>
 <h2>License</h2>
  <ul> 
-<iframe src="images/License.pdf" style="width: 100%;height: 100%;border: none;"></iframe>
+<iframe src="images/License.pdf" style="width: 100%;height: 700px;border: none;"></iframe>
   </ul>
  </content>
  
