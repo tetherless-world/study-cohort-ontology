@@ -38,6 +38,10 @@
 <h2>List of Resources </h2>
 <ul>
  <table style="width:100%">
+    <tr>
+    <th>Resources</th>
+    <th>Links</th> 
+  </tr>
   <tr>
     <td>1. Ontologies</td>
     <td> (a) Study Cohort Ontology (SCO)</td> 
