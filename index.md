@@ -60,11 +60,11 @@
   </tr>
     <tr>
     <td></td>
-    <td>(c) <a href="./ontology-resource.md#ontologyfile">Cohort Similarity Visualization</a> </td> 
+    <td>(c) <a href="./ontology-resource.html#ontologyfile">Cohort Similarity Visualization</a> </td> 
   </tr>
    <tr>
     <td>4 .Data: </td>
-    <td> (a) <a href="./ontology-resource.md#ontologyfile">NHANES Patient Records</a> </td> 
+    <td> (a) <a href="./ontology-resource.html#ontologyfile">NHANES Patient Records</a> </td> 
   </tr>
 </table>
   
