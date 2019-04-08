@@ -773,3 +773,123 @@ Read more at: https://www.niehs.nih.gov/research/supported/exposure/chear/""" ;
     hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
     rdfs:subClassOf hasco:StudyIndicator ;
     skos:definition "Demographics are quantifiable characteristics of a given population." .
+
+<http://scai.fraunhofer.de/CSEO#Never_Smoker>
+  a <http://hadatac.org/ont/hasco/QualityValue>, owl:Class ;
+  rdfs:label "Never Smoked" ;
+  skos:definition "The quality of never smoking in the past." ;
+  skos:notation "56" ;
+  hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000113> .
+
+<http://hadatac.org/ont/chear#ActiveNonTobaccoSmoker>
+  a hasco:QualityValue, owl:Class ;
+  rdfs:label "Active Non-Tobacco Smoker" ;
+  skos:notation "1" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#ActiveSmoker> ;
+  skos:definition "Active Non-Tobacco Smoker" .
+
+<http://hadatac.org/ont/chear#DrugHistory>
+  a owl:Class, hasco:QualityVariable ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#ATIDU> ;
+  skos:notation "14" ;
+  rdfs:label "Drug History" .
+
+<http://hadatac.org/ont/chear#QuitAfterPregnancy>
+  a hasco:QualityValue, owl:Class ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#QuitSmoking>, <http://hadatac.org/ont/chear#PrenatalSmoker>, <http://hadatac.org/ont/chear#PregnancyCharacteristic> ;
+  skos:definition "Quit Smoking After Pregnancy" ;
+  skos:notation "80" ;
+  rdfs:label "Quit Smoking After Pregnancy" .
+
+<http://hadatac.org/ont/chear#QuitBeforePregnancy>
+  a hasco:QualityValue, owl:Class ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#QuitSmoking>, <http://hadatac.org/ont/chear#PregnancyCharacteristic>, <http://hadatac.org/ont/chear#PrenatalNonSmoker> ;
+  skos:notation "81" ;
+  rdfs:label "Quit Smoking Before Pregnancy" ;
+  skos:definition "A Previous Smoker who Quit Smoking Before Pregnancy" .
+
+<http://hadatac.org/ont/chear#ConsumedAlcohol>
+  a hasco:QualityValue, owl:Class ;
+  skos:notation "52" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#AlcoholUse> ;
+  rdfs:label "Consumed Alcohol" .
+
+<http://hadatac.org/ont/chear#DidNotConsumeAlcohol>
+  a owl:Class, hasco:QualityValue ;
+  skos:notation "53" ;
+  rdfs:label "Did Not Consume Alcohol" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#AlcoholUse> .
+
+<http://hadatac.org/ont/chear#Smoker>
+  a hasco:QualityValue, owl:Class ;
+  skos:notation "105" ;
+  rdfs:label "Smoker" ;
+  skos:definition "The quality of smoking cigarettes." ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000113> .
+
+<http://hadatac.org/ont/chear#ATIDU>
+  a owl:Class ;
+  hasco:wasApprovedBy "chear-kb:PER-Jeanette-Stingone" ;
+  skos:definition "Alcohol, Tobacco, and Illicit Drug Use Indicator Class" ;
+  rdfs:subClassOf hasco:StudyIndicator ;
+  rdfs:label "Alcohol, Tobacco, and Illicit Drug Use" .
+
+<http://hadatac.org/ont/chear#PrenatalNonSmoker>
+  a hasco:QualityValue, owl:Class ;
+  skos:definition "Could be a former smoker or a non-smoker, so neither should be encoded as the superclass." ;
+  rdfs:label "Prenatal Nonsmoker" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#NonSmoker> ;
+  skos:notation "76" ;
+  skos:editorialNote "Should this be a subClassOf PregnancyCharactistic as well?" .
+
+<http://hadatac.org/ont/chear#QuitSmoking>
+  a hasco:QualityValue, owl:Class ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#PreviousSmoker> ;
+  skos:notation "82" ;
+  skos:definition "Quit Smoking Cigarettes" ;
+  rdfs:label "Quit Smoking" .
+
+<http://hadatac.org/ont/chear#AlcoholUse>
+  a hasco:QualityValue, owl:Class ;
+  skos:notation "83" ;
+  rdfs:label "Alcohol Use" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#ATIDU> ;
+  skos:definition "Uses Alcohol" .
+
+<http://hadatac.org/ont/chear#NonSmoker>
+  a hasco:QualityValue, owl:Class ;
+  rdfs:label "Non-smoker" ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000113> ;
+  skos:notation "59" ;
+  skos:definition "Doesn't smoker cigarettes." .
+
+<http://purl.obolibrary.org/obo/ExO_0000113>
+  a hasco:QualityVariable, owl:Class ;
+  skos:definition "An indication of a person's current tobacco and nicotine consumption as well as some indication of smoking history" ;
+  rdfs:subClassOf <http://semanticscience.org/resource/StatusDescriptor>, <http://hadatac.org/ont/chear#ATIDU> ;
+  rdfs:label "Smoking Status" ;
+  skos:editorialNote "We need to discuss this entire hierarchy." .
+
+<http://hadatac.org/ont/chear#PreviousSmoker>
+  a hasco:QualityValue, owl:Class ;
+  skos:notation "78" ;
+  skos:definition "The quality of having smoked in the past." ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000113> ;
+  rdfs:label "Previous Smoker" .
+
+<http://hadatac.org/ont/chear#ActiveSmoker>
+  a owl:Class, hasco:QualityValue ;
+  rdfs:label "Smoking Status", "Active Smoker" ;
+  skos:editorialNote "How is this different from \"smoker'?" ;
+  skos:definition "The quality of actively smoking." ;
+  rdfs:subClassOf <http://purl.obolibrary.org/obo/ExO_0000113> ;
+  skos:notation "2" .
+
+<http://hadatac.org/ont/chear#PrenatalSmoker>
+  a hasco:QualityValue, owl:Class ;
+  skos:definition "The quality of having smoked while being pregnant." ;
+  rdfs:label "Prenatal Smoker" ;
+  rdfs:subClassOf <http://hadatac.org/ont/chear#Smoker> ;
+  skos:notation "77" ;
+  skos:editorialNote "Should this be a subClassOf PregnancyCharactistic as well?" .
