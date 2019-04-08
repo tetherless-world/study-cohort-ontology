@@ -14,9 +14,11 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
  
  <article class="mb-5" id="linktotable">
 <content>
-<h2> Link to Table 1 KG </h2>
+<h2>Table 1 KG </h2>
 <ul>
-   <h3> MIREOT Script </h3>
+  <img src="images/rdfviewerkg.png">
+  <p style="text-align:center">Visualizing the RDF representation for an age characteristic with the descriptive statistics for the Ramipril study arm, of the "Telmisartan, ramipril, or
+both in patients at high risk for vascular events" clinical trial</p>
  </ul>
  </content>
 
