@@ -38,7 +38,7 @@ sco-i:TelmisartanRamiprilStudy
 	a  owl:NamedIndividual , ncit:C71104 ;
 	rdfs:seeAlso   
 	"https://ClinicalTrials.gov/NCT00153101" ;
-	dct:abstract    "In patients who have vascular disease or high-risk diabetes without heart failure, angiotensin-converting-enzyme (ACE) inhibitors reduce mortality and morbidity from cardiovascular causes, but the role of angiotensin-receptor blockers (ARBs) in such patients is unknown. We compared the ACE inhibitor ramipril, the ARB telmisartan, and the combination of the two drugs in patients with vascular disease or high-risk diabetes" ;
+	dct:abstract    "In patients who have vascular disease or high-risk diabetes without heart failure, angiotensin-converting-enzyme ACE) inhibitors reduce mortality and morbidity from cardiovascular causes, but the role of angiotensin-receptor blockers (ARBs) in such patients is unknown. We compared the ACE inhibitor ramipril, the ARB telmisartan, and the combination of the two drugs in patients with vascular disease or high-risk diabetes" ;
 	dct:creator     "ONTARGET Investigators", "Yusuf S.", "Teo KK.", "Pogue J.", "Dyal L.", "Copland I.", "Schumacher H.", 
 "Dagenais G.", "Sleight P.", "Anderson C." ;
 	dct:title       "Telmisartan, Ramipril, or Both in Patients at High Risk for Vascular Events" ;
