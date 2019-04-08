@@ -1,0 +1,812 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE rdf:RDF [
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY dct "http://purl.org/dc/terms/" >
+	<!ENTITY dc  "http://purl.org/dc/elements/1.1/">
+	<!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+	<!ENTITY sco "https://idea.tw.rpi.edu/projects/heals/studycohort/" >
+	<!ENTITY chear "http://hadatac.org/ont/chear#" >
+	<!ENTITY hasco "http://hadatac.org/ont/hasco#" >
+	<!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
+	<!ENTITY sio "http://semanticscience.org/resource/">
+	<!ENTITY obo "http://purl.obolibrary.org/obo/">
+	<!ENTITY stato "http://purl.obolibrary.org/obo/STATO_">
+	<!ENTITY uo "http://purl.obolibrary.org/obo/UO_">
+	<!ENTITY pato "http://purl.obolibrary.org/obo/PATO_">
+	<!ENTITY ncit "http://purl.obolibrary.org/obo/NCIT_">
+	<!ENTITY provcare "http://www.case.edu/ProvCaRe/provcare#">
+	
+]>
+
+<rdf:RDF xml:base="https://idea.tw.rpi.edu/projects/heals/studycohort/"
+	 xmlns:owl="http://www.w3.org/2002/07/owl#"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	 xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	 xmlns:xml="http://www.w3.org/XML/1998/namespace"
+	 xmlns:sio="http://semanticscience.org/resource/"
+	 xmlns:fibo-fnd-utl-av="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"
+	 xmlns:prov="http://www.w3.org/ns/prov#"
+	 xmlns:sco="https://idea.tw.rpi.edu/projects/heals/studycohort/"
+	 xmlns:hasco="http://hadatac.org/ont/hasco#"
+	 xmlns:chear="http://hadatac.org/ont/chear#"
+	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	 xmlns:obo="http://purl.obolibrary.org/obo/"
+	 xmlns:stato="http://purl.obolibrary.org/obo/STATO_"
+	 xmlns:uo="http://purl.obolibrary.org/obo/UO_"
+	 xmlns:ncit="http://purl.obolibrary.org/obo/NCIT_"
+	 xmlns:pato="http://purl.obolibrary.org/obo/PATO_"
+	 xmlns:dc="http://purl.org/dc/elements/1.1/"
+	 xmlns:dct="http://purl.org/dc/terms/"
+	 xmlns:provcare="http://www.case.edu/ProvCaRe/provcare#"
+	 >
+	<owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/studycohort/">
+		<owl:versionIRI rdf:resource="&sco;1.0.0"/>
+		<dct:license>
+		Copyright 2019 IBM Research and Rensselaer Polytechnic Institute
+
+			Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+		</dct:license>
+		<rdfs:label>Study Cohort Ontology</rdfs:label>
+		<dct:title>Semantic Modeling of Cohort Descriptions in Research Studies</dct:title>
+		<dct:creator>Shruthi Chari</dct:creator>
+		<dct:contributor>Oshani Seneviratne</dct:contributor>
+		<dct:contributor>James P. McCusker</dct:contributor>
+		<dct:contributor>Deborah L. McGuinness</dct:contributor>
+		<dct:contributor>Amar Das</dct:contributor> 
+		<dct:description>
+		The Study Cohort Ontology encodes the vocabulary to represent population desriptions in research studies, and provides the ability to model the aggregative descriptive statistical measures defined on the variables of subjects who are participants in the study population. We make it possible to represent a study component considered for determining the patient alignment to a research study, and we assist physicians in evaluating the fit of their patient population to the study population. In SCO, we are building a world-view inspired by the upper level Ontology SemanticScience Integrated Ontology (SIO) to model the descriptive statistics of characteristics on a set of patients (patient group) administered a medical intervention, and studied for an outcome in a research study.  Since we capture the various definitions of patient groups (ie. by interventional measures or by control mechanisms), we provide the basic framework for filtering searches and to define cohort similarity at different granularities. ( cohort level and the study group levels ). For researchers who wish to contribute to the expansion of our ontology, we advise that they refer to our ontology documentation to familiarize themselves with the structure and term annotations ( such as definitions and labels).
+		</dct:description>          
+		<dct:abstract rdf:datatype="&xsd;string">
+		The Study Cohort Ontology (SCO) is developed to model overall structure and patterns of cohort variables and control/intervention groups defined within the structured population descriptions (commonly referred to as Table1's or Cohort Summary Tables)of observational case studies and clinical trials. We maintain only domain agnostic and commonly occuring subject variables and interventions in SCO, and we have a suite of ontologies (Diseases, Medications, LabResults etc) to encode Diabetes related terminology. We have adopted a bottom-up approach to modeling and we have revised the structure of SCO upon investigation of a few research studies (11 to be precise) from the Pharmacological Interventions (Chapter 8) and Cardiovascular Complications (Chapter 9) of the American Diabetes Association (ADA)’s Standards of Medical Care 2018 CPG. We enable deep drive visualizations driven off queries to knowledge graphs modeled on SCO, to help assist physician visualize the similarity of a patient to a study group, at a quick glance. We welcome contributions and suggestions to extend SCO to represent cohort descriptions of publications targeted to other diseases, and we plan to release set of tools to make this process seamless.</dct:abstract>
+		<owl:imports rdf:resource="external/ncit_externalbranches.owl"/>
+		<owl:imports rdf:resource="https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear_external.owl"/>
+		<owl:imports rdf:resource="external/hp_external.owl"/>
+		<owl:imports rdf:resource="external/stato_external.owl"/>
+		<owl:imports rdf:resource="external/uo_external.owl"/>
+		<owl:imports rdf:resource="external/provcare.owl"/>
+		<!--<owl:imports rdf:resource="http://purl.obolibrary.org/obo/stato.owl">-->
+	</owl:Ontology>
+	
+
+
+	
+	
+
+
+	<!-- 
+	///////////////////////////////////////////////////////////////////////////////////////
+	//
+	// Object Properties
+	//
+	///////////////////////////////////////////////////////////////////////////////////////
+	 -->
+
+	
+
+
+	<!-- &sio;hasParticipant -->
+
+	<owl:ObjectProperty rdf:about="&sio;hasParticipant"/>
+	
+
+
+	<!-- &sio;hasProperty -->
+
+	<owl:ObjectProperty rdf:about="&sio;hasProperty"/>
+	
+
+
+	<!-- &sio;hasUnit -->
+
+	<owl:ObjectProperty rdf:about="&sio;hasUnit"/>
+	
+
+
+	
+	
+
+
+	
+	
+
+
+	
+
+	
+
+
+   
+	
+
+
+	<!-- 
+	///////////////////////////////////////////////////////////////////////////////////////
+	//
+	// Data properties
+	//
+	///////////////////////////////////////////////////////////////////////////////////////
+	 -->
+
+	
+
+
+	
+	
+
+
+	<!-- 
+	///////////////////////////////////////////////////////////////////////////////////////
+	//
+	// Classes
+	//
+	///////////////////////////////////////////////////////////////////////////////////////
+	 -->
+	
+
+
+	<!-- &chear;Demographic -->
+
+	<owl:Class rdf:about="&chear;Demographic">
+		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
+		<rdfs:label>demographic</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">the science dealing with populations, including matters of health, disease, births, and mortality</skos:definition>
+		<dct:source>Miller-Keane Encyclopedia and Dictionary of Medicine, Nursing, and Allied Health, Seventh Edition</dct:source>
+	</owl:Class>
+	
+
+
+	<!-- &chear;MedicalTherapy -->
+
+	<rdf:Description rdf:about="&chear;MedicalTherapy">
+		 <rdfs:label>medical therapy</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">the attempted remediation of a health problem, usually following a diagnosis</skos:definition>
+		<dct:source>https://en.wikipedia.org/wiki/Therapy</dct:source>
+	</rdf:Description>   
+
+
+	<!-- &hasco;ResearchStudy -->
+
+	<rdf:Description rdf:about="&hasco;ResearchStudy">
+		<dct:source rdf:resource="https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement"/>
+		<rdfs:label rdf:datatype="&xsd;string">research study</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">a scientific study of nature that sometimes includes processes involved in health and disease</skos:definition>
+	</rdf:Description>  
+
+	<!-- &sco;DiseaseOrCondition -->
+
+	<owl:Class rdf:about="&sco;DiseaseOrCondition">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:label>disease condition</rdfs:label>
+	</owl:Class>
+	
+
+
+	<!-- &sio;BiologicalSex -->
+
+	<rdf:Description rdf:about="&sio;BiologicalSex">
+		<rdfs:subClassOf rdf:resource="&sio;BiologicalQuality"/>
+	</rdf:Description>
+	
+
+
+	<!-- &sio;MedicalIntervention -->
+
+	<owl:Class rdf:about="&sio;MedicalIntervention"/>
+	
+
+
+	<!-- &sio;Race -->
+
+	<rdf:Description rdf:about="&sio;Race">
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasValue"/>
+				<owl:allValuesFrom rdf:resource="&xsd;string"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</rdf:Description>
+	
+
+
+	<!-- &sio;Study -->
+
+	<owl:Class rdf:about="&sio;Study"/>
+
+
+	<!-- &sio;UnitOfMeasurement -->
+
+	<owl:Class rdf:about="&sio;UnitOfMeasurement">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:label>unit of measurement</rdfs:label>
+	</owl:Class>
+	
+
+
+	<!-- &sio;Year -->
+
+	<owl:Class rdf:about="&sio;Year"/>
+	
+
+
+	<!-- &sco;Active -->
+
+	<owl:Class rdf:about="&sco;Active">
+		<rdfs:subClassOf rdf:resource="&sco;EnrollmentStatus"/>
+		<skos:definition rdf:datatype="&xsd;string">participants following clinical trial protocol</skos:definition>
+		<fibo-fnd-utl-av:adaptedFrom>https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf</fibo-fnd-utl-av:adaptedFrom>
+		<dct:title>Clinical Trials Protocol Template - NIH Office of Science Policy</dct:title>
+		<rdfs:label>Active Subject</rdfs:label>
+	</owl:Class>
+
+
+	
+	
+
+
+	
+
+
+	<!-- &chear;Anthropometry -->
+
+	<owl:Class rdf:about="&chear;Anthropometry">
+		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
+		<rdfs:label>anthorpometric property</rdfs:label>
+	</owl:Class>   
+
+
+	<!-- &ncit;C15362 -->
+
+	<owl:Class rdf:about="&ncit;C15362">
+		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasValue"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Case Study</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>case study</rdfs:label>
+	</owl:Class>
+	
+
+
+	<!-- &sco;CohortDescription -->
+
+	<owl:Class rdf:about="&sco;CohortDescription">
+		<rdfs:label>Cohort Description</rdfs:label>
+	</owl:Class>
+	
+
+
+	<!-- &sco;ComparativeStudy -->
+
+	<!--<owl:Class rdf:about="&sco;ComparativeStudy">
+		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasValue"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Comparative Study</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>comparative study</rdfs:label>
+	</owl:Class>-->
+	
+
+
+	<!-- &sco;ControlNature -->
+
+	<owl:Class rdf:about="&sco;ControlNature">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:label>control nature</rdfs:label>
+	</owl:Class>
+	
+
+
+	<!-- &sco;Controlled -->
+
+	<owl:Class rdf:about="&sco;Controlled">
+		<rdfs:subClassOf rdf:resource="&sco;ControlNature"/>
+	</owl:Class>    
+	
+
+
+	<!-- &sco;Discontinued -->
+
+	<owl:Class rdf:about="&sco;Discontinued">
+		<rdfs:subClassOf rdf:resource="&sco;EnrollmentStatus"/>
+		<rdfs:label>discontinued</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">participants no longer, following clinical trial protocol</skos:definition>
+		<fibo-fnd-utl-av:adaptedFrom>https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf</fibo-fnd-utl-av:adaptedFrom>
+		<dct:title>Clinical Trials Protocol Template - NIH Office of Science Policy</dct:title>
+	</owl:Class>
+	
+	
+
+
+	
+	
+
+
+	<!-- &pato;0001309 -->
+
+	<owl:Class rdf:about="&pato;0001309">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+	</owl:Class>
+	
+
+
+	<!-- &sco;EnrollmentStatus -->
+
+	<owl:Class rdf:about="&sco;EnrollmentStatus">
+		<rdfs:subClassOf rdf:resource="&sio;StatusDescriptor"/>
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:label rdf:datatype="&xsd;string">enrollment status</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string"> patients are consented and screened, with eligibility verified </skos:definition>
+		<fibo-fnd-utl-av:adaptedFrom>https://research-compliance.umich.edu/sites/default/files/resource-download/enrollmentdefinition_additionalhelp.pdf</fibo-fnd-utl-av:adaptedFrom>
+	</owl:Class>   
+
+
+
+
+	<!-- &sco;IntentionToTreat -->
+
+	<owl:Class rdf:about="&sco;IntentionToTreatPopulation">
+		<rdfs:subClassOf rdf:resource="&stato;0000203"/>
+		<dct:source>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3159210/</dct:source>
+		<rdfs:label rdf:datatype="&xsd;string">intention to treat population</rdfs:label>
+		<skos:definition>every subject who is randomized according to randomized treatment assignment,  ignoring noncompliance, protocol deviations, withdrawal, and anything that happens after randomization</skos:definition>
+	</owl:Class>
+	
+
+
+	<!-- &sco;InterquartileRange -->
+
+	<owl:Class rdf:about="&stato;0000164">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+		<rdfs:comment rdf:datatype="&xsd;float"></rdfs:comment>
+	</owl:Class>
+	
+
+
+	<!-- &sco;OrderedLaboratoryTestResult -->
+
+	<owl:Class rdf:about="&sco;OrderedLaboratoryTestResult">
+		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
+		<rdfs:label>laboratory test result</rdfs:label>
+	</owl:Class>
+	
+
+	<!-- &provcare;StatisticalMeasure -->
+
+	<owl:Class rdf:about="&provcare;StatisticalMeasure">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:allValuesFrom rdf:resource="&sco;UnitOfMeasurement"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasValue"/>
+				<owl:someValuesFrom rdf:resource="&xsd;decimal"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<dct:source rdf:resource="https://en.wikipedia.org/wiki/Measure"/>
+		<rdfs:label>statistical measure</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">a standard unit used to express the size, amount, or degree of something</skos:definition>
+	</owl:Class>
+	
+
+
+	<!-- &sio;Median -->
+
+	<owl:Class rdf:about="&sio;Median">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+		<rdfs:isDefinedBy rdf:resource="&xsd;float"/>
+	</owl:Class>
+	
+
+
+	
+
+	<!-- &sco;Medication -->
+
+	<owl:Class rdf:about="&sco;Medication">
+		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
+	</owl:Class>     
+
+
+	<!-- &ncit;C61256 -->
+	<!-- Can use http://www.ontobee.org/ontology/NCIT?iri=http://purl.obolibrary.org/obo/NCIT_C61256 -->
+
+	<owl:Class rdf:about="&ncit;C61256">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<!--<rdfs:label>Monitoring</rdfs:label>-->
+	</owl:Class>   
+
+
+	<!-- &sco;MulticenterStudy -->
+
+	<!--<owl:Class rdf:about="&sco;MulticenterStudy">
+		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasValue"/>
+				<owl:hasValue rdf:datatype="&xsd;string">Multicenter Study</owl:hasValue>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>multicenter study</rdfs:label>
+	</owl:Class>--> 
+
+	<!-- &sio;Mean -->
+
+	<owl:Class rdf:about="&sio;Mean">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+		<dct:source rdf:resource="https://en.wikipedia.org/wiki/Mean"/>
+		<rdfs:label>mean</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">the central value of a discrete set of numbers: specifically, the sum of the values divided by the number of values</skos:definition>
+	</owl:Class>
+
+	<!-- &sio;StandardDeviation -->
+
+	<owl:Class rdf:about="&sio;StandardDeviation">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+		<dct:source rdf:resource="https://en.wikipedia.org/wiki/Standard_deviation"/>
+		<rdfs:label rdf:datatype="&xsd;string">standard deviation</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">a measure that is used to quantify the amount of variation or dispersion of a set of data values</skos:definition>
+	</owl:Class>
+	
+	<owl:Class rdf:about="&stato;0000203">
+	  <rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+	  <rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sco;PopulationSize"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+
+	<!-- &sio;StudyGroup -->
+
+	<owl:Class rdf:about="&sio;StudyGroup">
+		<rdfs:subClassOf rdf:resource="&stato;0000203"/>       
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sco;ControlNature"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>  
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasProperty"/>
+				<owl:someValuesFrom rdf:resource="&ncit;C61256"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>        
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasProperty"/>
+				<owl:someValuesFrom rdf:resource="&provcare;Intervention"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>        
+		<rdfs:label>study group</rdfs:label>
+	</owl:Class>
+
+	<owl:Class rdf:about="&sio;StudySubject">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasProperty"/>
+				<owl:someValuesFrom rdf:resource="&sco;EnrollmentStatus"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sco;SubjectCharacteristic"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasProperty"/>
+				<owl:someValuesFrom rdf:resource="&sco;DiseaseOrCondition"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>study subject</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">a person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary</skos:definition>
+		<dct:source>https://www.tititudorancea.com/z/patient_en.htm</dct:source>
+	</owl:Class>
+
+	 <owl:Class rdf:about="&sio;Patient">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sco;ElectronicHealthRecord"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasProperty"/>
+				<owl:someValuesFrom rdf:resource="&sco;PatientProfile"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasProperty"/>
+				<owl:someValuesFrom rdf:resource="&sco;DiseaseOrCondition"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>study subject</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">a person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary</skos:definition>
+		<dct:source>https://www.tititudorancea.com/z/patient_en.htm</dct:source>
+	</owl:Class>
+
+	<!-- &sco;ElectronicHealthRecord -->
+
+	<owl:Class rdf:about="&sco;ElectronicHealthRecord">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasProperty"/>
+				<owl:someValuesFrom rdf:resource="&sco;MedicalIntervention"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&chear;Anthropometry"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&chear;Demographic"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>   
+		
+		<dct:source rdf:resource="https://www.healthit.gov/faq/what-electronic-health-record-ehr"/>
+		<rdfs:label rdf:datatype="&xsd;string">electronic health record</rdfs:label>
+		<skos:definition rdf:datatype="&xsd;string">a digital version of a patient’s paper chart</skos:definition>
+	</owl:Class>
+
+	<!-- &sco;PatientProfile -->
+
+	<owl:Class rdf:about="&sco;PatientProfile">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:label rdf:datatype="&xsd;string">patient profile</rdfs:label>
+		<skos:definition>a simple form that allows patients or caregivers to keep track of important health information</skos:definition>
+		<dct:source>https://www.rimrehab.org/for-patients/patient-health-profile</dct:source>
+	</owl:Class>
+	
+
+
+	<!-- &sco;SubjectCharacteristic -->
+
+	<owl:Class rdf:about="&sco;SubjectCharacteristic">
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sco;PValue"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>subject characteristic</rdfs:label>
+	</owl:Class> 
+	
+
+
+	<!-- &sco;PopulationSize -->
+
+	<owl:Class rdf:about="&sco;PopulationSize">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasUnit"/>
+				<owl:allValuesFrom rdf:resource="&uo;0000186"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasValue"/>
+				<owl:someValuesFrom rdf:resource="&xsd;integer"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+
+
+	<!-- &sco;RandomizedPopulation -->
+
+	<owl:Class rdf:about="&sco;RandomizedPopulation">
+		<rdfs:subClassOf rdf:resource="&stato;0000203"/>
+		<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/</fibo-fnd-utl-av:adaptedFrom>
+		<rdfs:label>randomized population</rdfs:label>
+		<skos:definition>set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)</skos:definition>
+	</owl:Class>
+	
+
+
+	<!-- &ncit;C71104 -->
+
+	<owl:Class rdf:about="&ncit;C71104">
+		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
+		<rdfs:label>clinical trial</rdfs:label>
+	</owl:Class>
+
+
+	<!-- &sco;Metaanalysis -->
+
+	<owl:Class rdf:about="&sco;Metaanalysis">
+		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
+		<rdfs:label>metaanalysis</rdfs:label>
+	</owl:Class>
+
+	<!-- &sco;SafetyPopulation -->
+
+	<owl:Class rdf:about="&sco;SafetyPopulation">
+		<rdfs:subClassOf rdf:resource="&stato;0000203"/>
+		<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/books/NBK209903/</fibo-fnd-utl-av:adaptedFrom>
+		<fibo-fnd-utl-av:adaptedFrom>https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/</fibo-fnd-utl-av:adaptedFrom>
+		<rdfs:label>safety population</rdfs:label>
+		<skos:definition>set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group</skos:definition>
+		<skos:altDefinition>this group usually consists of all subjects who received at least one dose of any study product (even a placebo) and had at least one subsequent safety-related visit or observation</skos:altDefinition>
+	</owl:Class>
+	
+
+
+	<!-- &hasco;ResearchStudy -->
+
+	<owl:Class rdf:about="&hasco;ResearchStudy">
+		<rdfs:subClassOf rdf:resource="&sio;Study"/>
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
+				<owl:someValuesFrom rdf:resource="&sio;StudyGroup"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
+				<owl:someValuesFrom rdf:resource="&stato;0000203"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:label>study</rdfs:label>
+	</owl:Class>
+	
+
+
+	<!-- &provcare;Intervention -->
+
+	<owl:Class rdf:about="&provcare;Intervention">
+		<!--<rdfs:subClassOf rdf:resource="&sio;MedicalIntervention"/>-->
+		<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>
+		<rdfs:comment>Capturing the interventions variables in research studies</rdfs:comment>
+		<rdfs:label>study intervention</rdfs:label>
+	</owl:Class>
+	
+
+
+	<!-- &sco;Therapy -->
+
+	<owl:Class rdf:about="&sco;Therapy">
+		<rdfs:subClassOf rdf:resource="&provcare;Intervention"/>
+	</owl:Class>
+
+	<!-- &sco;Therapy -->
+
+	<owl:Class rdf:about="&provcare;ClinicalIntervention">
+		<rdfs:subClassOf rdf:resource="&provcare;Intervention"/>
+	</owl:Class>
+	
+
+
+	<!-- &sco;ThresholdSuspend -->
+
+	<owl:Class rdf:about="&sco;ThresholdSuspend">
+		<rdfs:subClassOf rdf:resource="&sco;ControlNature"/>
+	</owl:Class>
+  
+	
+
+
+	<!-- &sco;YearOfFollowUp -->
+
+	<owl:Class rdf:about="&sco;YearOfFollowUp">
+		<rdfs:subClassOf rdf:resource="&sco;Duration"/>
+	</owl:Class>
+	
+
+
+	<!-- &sco;YearsOfExposure -->
+
+	<owl:Class rdf:about="&sco;YearsOfExposure">
+		<rdfs:subClassOf rdf:resource="&sco;Duration"/>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasUnit"/>
+				<owl:someValuesFrom rdf:resource="&sio;Year"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+	</owl:Class>
+	
+
+
+	<!-- &uo;0000015 -->
+
+	<owl:Class rdf:about="&uo;0000015">
+		<rdfs:subClassOf rdf:resource="&sio;UnitOfMeasurement"/>
+	</owl:Class>
+	
+
+
+	<!-- &uo;0000009 -->
+
+	<owl:Class rdf:about="&uo;0000009">
+		<rdfs:subClassOf rdf:resource="&sio;UnitOfMeasurement"/>
+	</owl:Class>
+
+	<!-- &sio;Year -->
+
+	<owl:Class rdf:about="&sio;Year">
+		<rdfs:subClassOf rdf:resource="&sio;UnitOfMeasurement"/>
+	</owl:Class>
+	
+
+
+	<!-- &ncit;C25613 -->
+
+	<owl:Class rdf:about="&ncit;C25613">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+	</owl:Class>
+	
+
+
+	<!-- &ncit;C44256 -->
+
+	<owl:Class rdf:about="&ncit;C44256">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+	</owl:Class>
+
+
+	
+	<!-- &sco;PopulationSize -->
+
+	<owl:Class rdf:about="&sco;PopulationSize">
+		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
+		<rdfs:label rdf:datatype="&xsd;string">population size</rdfs:label>
+		<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296634/</fibo-fnd-utl-av:adaptedFrom>
+		<skos:definition rdf:datatype="&xsd;string">number of patients to which the study results could be reasonably generalized</skos:definition>
+	</owl:Class> 
+	
+
+
+
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
