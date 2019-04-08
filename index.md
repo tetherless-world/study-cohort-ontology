@@ -48,7 +48,7 @@
   </tr>
   <tr>
     <td>2. Knowledge Graphs:</td>
-    <td>(a) [Table 1 Knowledge Graphs](./ontology-resource.md)</td> 
+    <td>(a) <a href=./ontology-resource.md>Table 1 Knowledge Graphs</a> </td> 
   </tr>
   <tr>
     <td>3. Source Code:</td>
@@ -56,15 +56,15 @@
   </tr>
     <tr>
     <td> </td>
-    <td> (b) <a href="http://www.research.ibm.com/">Faceted Browser</a> </td> 
+    <td> (b) <a href=./ontology-resource.md>Faceted Browser</a> </td> 
   </tr>
     <tr>
     <td></td>
-    <td>(c) <a href="http://www.research.ibm.com/">Cohort Similarity Visualization</a> </td> 
+    <td>(c) <a href=./ontology-resource.md">Cohort Similarity Visualization</a> </td> 
   </tr>
    <tr>
     <td>4 .Data: </td>
-    <td> (a) <a href="http://www.research.ibm.com/">NHANES Patient Records</a> </td> 
+    <td> (a) <a href=./ontology-resource.md>NHANES Patient Records</a> </td> 
   </tr>
 </table>
   
