@@ -22,7 +22,7 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 
 sco-i:RamiprilArm
-       a    owl:Class, sio:InterventionGroup; 
+       a    owl:Class, sco:InterventionArm; 
        rdfs:subClassOf        sio:StudySubject;
        sio:isParticipantIn    sco-i:TelmisartanRamiprilStudy;   
        sio:hasAttribute    
