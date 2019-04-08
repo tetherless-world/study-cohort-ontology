@@ -60,7 +60,7 @@
   </tr>
     <tr>
     <td></td>
-    <td>(c) <a href=./ontology-resource.md">Cohort Similarity Visualization</a> </td> 
+    <td>(c) <a href=./ontology-resource.md>Cohort Similarity Visualization</a> </td> 
   </tr>
    <tr>
     <td>4 .Data: </td>
