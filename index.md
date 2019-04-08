@@ -52,7 +52,7 @@
   </tr>
   <tr>
     <td>3. Source Code:</td>
-    <td>(a) <a href=./ontology-resource.md>MIREOT Script</a> </td> 
+    <td>(a) [MIREOT Script](./ontology-resource.md) </td> 
   </tr>
     <tr>
     <td> </td>
