@@ -48,15 +48,15 @@
   </tr>
   <tr>
     <td>2. Knowledge Graphs:</td>
-    <td>(a) <a href="./ontology-resource.md#ontologyfile">Table 1 Knowledge Graphs</a> </td> 
+    <td>(a) <a href="./ontology-resource.html#ontologyfile">Table 1 Knowledge Graphs</a> </td> 
   </tr>
   <tr>
     <td>3. Source Code:</td>
-    <td>(a) <a href="./ontology-resource.md#ontologyfile">MIREOT Script </a> </td> 
+    <td>(a) <a href="./ontology-resource.html#ontologyfile">MIREOT Script </a> </td> 
   </tr>
     <tr>
     <td> </td>
-    <td> (b) <a href="./ontology-resource.md#ontologyfile">Faceted Browser</a> </td> 
+    <td> (b) <a href="./ontology-resource.html#ontologyfile">Faceted Browser</a> </td> 
   </tr>
     <tr>
     <td></td>
