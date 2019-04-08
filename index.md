@@ -44,27 +44,27 @@
   </tr>
   <tr>
     <td>1. Ontologies</td>
-    <td> (a) Study Cohort Ontology (SCO)</td> 
+    <td> (a) <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/studycohort.owl">Study Cohort Ontology (SCO)</a></td> 
   </tr>
   <tr>
     <td>2. Knowledge Graphs:</td>
-    <td>(a) Table 1 Knowledge Graphs</td> 
+    <td>(a) [Table 1 Knowledge Graphs](./ontology-resource.md)</td> 
   </tr>
   <tr>
     <td>3. Source Code:</td>
-    <td>(a) MIREOT Script</td> 
+    <td>(a) <a href=./ontology-resource.md>MIREOT Script</a> </td> 
   </tr>
     <tr>
     <td> </td>
-    <td> (b) Faceted Browser</td> 
+    <td> (b) <a href="http://www.research.ibm.com/">Faceted Browser</a> </td> 
   </tr>
     <tr>
     <td></td>
-    <td>(c) Cohort Similarity Visualization</td> 
+    <td>(c) <a href="http://www.research.ibm.com/">Cohort Similarity Visualization</a> </td> 
   </tr>
    <tr>
     <td>4 .Data: </td>
-    <td> (a) NHANES Patient Records</td> 
+    <td> (a) <a href="http://www.research.ibm.com/">NHANES Patient Records</a> </td> 
   </tr>
 </table>
   
