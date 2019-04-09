@@ -5,6 +5,42 @@
 <h2>Scenario Queries</h2>
 <ul>
     <h3> Study Match: Is there a study that matches this patient on a feature (s)? </h3>
+    <strong> Query 1: PARQL Query to fetch study titles that match a patient's race and gender </strong>
+   <pre>
+    PREFIX resource: <http://semanticscience.org/resource/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX sio: <http://semanticscience.org/resource/>
+    PREFIX dct: <http://purl.org/dc/terms/>
+    PREFIX chear: <http://hadatac.org/ont/chear#>
+    PREFIX ncit: <http://purl.obolibrary.org/obo/NCIT_>
+
+	SELECT DISTINCT ?studyTitle ?study WHERE 
+	{
+  		?study a sco:ClinicalTrial .
+  		?study dct:title ?studyTitle .
+  		?study sio:hasParticipant ?studyArm .
+  		?studyArm sio:hasProperty ?studyIntervention .
+  
+  		{
+
+  			?subPatient rdfs:subClassOf ?studyArm .
+  			?subPatient rdfs:subClassOf ?restriction .
+  			?restriction a owl:Restriction .
+  			?restriction owl:someValuesFrom ncit:C16352 .
+  
+	}
+  	{
+
+  		?subPatient1 rdfs:subClassOf ?studyArm .
+  		?subPatient1 rdfs:subClassOf ?restriction1 .
+  		?restriction1 a owl:Restriction .
+  		?restriction1 owl:someValuesFrom sio:Male .
+  
+	}
+ 
+    }
+  </pre>
+    
    <h3> Study Limitations: Are there absence or underrepresentation of population groups in this study? </h3>
    <h3> Study Quality Evaluation: Are there adequate population sizes and is there a heterogeneity of treatment effect among arms? </h3> 
  </ul>
