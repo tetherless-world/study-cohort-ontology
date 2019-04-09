@@ -1501,12 +1501,6 @@
 				<owl:someValuesFrom rdf:resource="&provcare;StatisticalMeasure"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;isDataItemIn"/>
-				<owl:someValuesFrom rdf:resource="&hasco;ResearchStudy"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
 		<rdfs:synonym>Table 1</rdfs:synonym>
 		<rdfs:comment>All typical components that constitute the description of study populations, captured in the first table of a research study, and hence called Table 1s</rdfs:comment>
 	</owl:Class>
@@ -1978,11 +1972,10 @@
 			</skos:definition>
 		</sio:hasAttribute>	
 
-		
 		<rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
-				<owl:someValuesFrom rdf:resource="&sco;StudyArm"/>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sco;CohortDescription"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<rdfs:subClassOf>
@@ -1991,12 +1984,7 @@
 				<owl:someValuesFrom rdf:resource="&sio;StudySubject"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasParticipant"/>
-				<owl:someValuesFrom rdf:resource="&stato;0000203"/>
-			</owl:Restriction>
-		</rdfs:subClassOf>
+		
 		<rdfs:label>study</rdfs:label>
 	</owl:Class>
 	
