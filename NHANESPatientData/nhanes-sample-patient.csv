@@ -1,0 +1,7 @@
+name,gender,age,ethnicity,bmi,sbp,dbp,A1c
+A,male,15,NonHispanicBlack,26.53,106,72.66666667,5.2
+B,female,44,NonHispanicBlack,30.9,139.3333333,73.33333333,6
+C,male,70,NonHispanicWhite,24.74,130.6666667,57.33333333,7.1
+D,female,16,NonHispanicBlack,16.79,118.6666667,50.66666667,4.7
+E,male,73,NonHispanicWhite,30.63,120,67.33333333,5.9
+F,female,14,NonHispanicBlack,27.78,110,77.33333333,5.7
