@@ -2,10 +2,9 @@
 <article class="mb-5" id="ontologyfile">
 <content>
 <h2>List of Research Studies Utilized</h2>
+ <h3> <strong> Pharmacologic Approaches to Glycemic Treatment (CHAPTER 8) </strong> <\h3>
 <ol>
- <strong> CHAPTER 8 </strong>
- 
- <li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1056/NEJMoa0806470&link_type=DOI">10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes</a></li>
+<li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1056/NEJMoa0806470&link_type=DOI">10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes</a></li>
  
  <li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1210/jc.2015-3754&link_type=DOI">Long-term Metformin Use and Vitamin B12 Deficiency in the Diabetes Prevention Program Outcomes Study</a></li>
  
@@ -18,9 +17,11 @@
  <li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1056/NEJMoa1615692&link_type=DOI">Efficacy and Safety of Degludec versus Glargine in Type 2 Diabetes</a></li>
  
  <li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1016/j.pcd.2013.07.005&link_type=DOI">Safety and effectiveness of biphasic insulin aspart 30 in people with type 2 diabetes switching from basal-bolus insulin regimens in the A1chieve study</a></li>
- 
- <strong> CHAPTER 9 </strong>
- 
+ </ol>
+
+
+<h3> <strong> Cardiovascular Disease and Risk Management (CHAPTER 9) </strong> <\h3>
+ <ol>
  <li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1056/NEJMoa1001286&link_type=DOI">Effects of intensive blood-pressure control in type 2 diabetes mellitus</a></li>
  
  <li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1016/S0140-6736(07)61303-8&link_type=DOI">Effects of a fixed combination of perindopril and indapamide on macrovascular and microvascular outcomes in patients with type 2 diabetes mellitus (the ADVANCE trial): a randomised controlled trial</a></li>
