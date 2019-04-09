@@ -109,7 +109,7 @@ class User:
         return graph.run(query, username=self.username)
 
 def provenance_Information():
-    foaf.parse("blog/static/rdf/studycohort.owl",format="owl")
+    foaf.parse("blog/static/rdf/studycohort.owl",format="application/rdf+xml")
     foaf.parse("blog/static/rdf/Table1KG.ttl",format='turtle')
     
 #    foaf.bind('bibo', URIRef('http://bibliontology.com/index.html#'))
@@ -126,10 +126,15 @@ def provenance_Information():
     PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX sio: <http://semanticscience.org/resource/>
+    PREFIX dct: <http://purl.org/dc/terms/>
+    PREFIX chear: <http://hadatac.org/ont/chear#>
+    PREFIX stato: <http://purl.obolibrary.org/obo/STATO_>
 
     SELECT DISTINCT ?propType ?attrType ?propVal WHERE {
-      ?studyArm sio:hasAttribute ?prop .
-      ?studyArm rdfs:subClassOf sco:StudyArm .
+      ?studyArm sio:hasAttribute ?prop .  
+      ?studyArm a ?type .
+      ?type rdfs:subClassOf* sco:StudyArm .
+      
       ?prop a ?propType .
       ?prop sio:hasAttribute ?attr .
       {
@@ -142,6 +147,7 @@ def provenance_Information():
         ?intermediate a ?attrType .
         ?intermediate sio:hasValue ?propVal .
         }
+
       
     }
     '''
