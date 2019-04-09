@@ -20,7 +20,7 @@
     This query can flexibly retrieve values for both mean +/- standard deviation, median and interquartile range representations with being agnostic of the expression of the characteristic. Also, if we were to constrain the query for values of other parameters, we would just included them in the filter clause. Hence, this query is a generalized faceted browser query.</p> 
     <p>The star plot code can be browsed at: <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/starplot.py"><small>https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/starplot.py</small></a></p>
     <pre>
-    PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
+PREFIX sco: <small><https://idea.tw.rpi.edu/projects/heals/studycohort/></small>
 PREFIX resource: <http://semanticscience.org/resource/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sio: <http://semanticscience.org/resource/>
@@ -64,7 +64,6 @@ SELECT DISTINCT ?studyTitle ?propType ?lowerBound ?propVal
    FILTER  (
     ?propType IN (
        sio:Age,
-       chear:BodyMassIndex, 
        ncit:C64796,
        sco:SystolicBloodPressure, 
        sco:DiastolicBloodPressure
