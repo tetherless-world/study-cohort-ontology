@@ -1388,7 +1388,6 @@
 	
 
 	<owl:Class rdf:about="&doid;4">
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		<rdfs:label>disease or condition</rdfs:label>
 		<skos:definition>A disease is a disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism</skos:definition>
 		<dct:source>http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf</dct:source>
@@ -1413,7 +1412,6 @@
 	<!-- &sio;UnitOfMeasurement -->
 
 	<owl:Class rdf:about="&sio;UnitOfMeasurement">
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		<rdfs:label>unit of measurement</rdfs:label>
 	</owl:Class>
 	
@@ -1572,7 +1570,6 @@
 
 	<owl:Class rdf:about="&sco;EnrollmentStatus">
 		<rdfs:subClassOf rdf:resource="&sio;StatusDescriptor"/>
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		<rdfs:label rdf:datatype="&xsd;string">enrollment status</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string"> patients are consented and screened, with eligibility verified </skos:definition>
 		<fibo-fnd-utl-av:adaptedFrom>https://research-compliance.umich.edu/sites/default/files/resource-download/enrollmentdefinition_additionalhelp.pdf</fibo-fnd-utl-av:adaptedFrom>
@@ -1603,7 +1600,6 @@
 	<!-- &provcare;StatisticalMeasure -->
 
 	<owl:Class rdf:about="&provcare;StatisticalMeasure">
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
@@ -1644,7 +1640,6 @@
 	<!-- Can use http://www.ontobee.org/ontology/NCIT?iri=http://purl.obolibrary.org/obo/NCIT_C61256 -->
 
 	<owl:Class rdf:about="&ncit;C61256">
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		 <rdfs:label>Monitoring</rdfs:label>
 		<obo:NCIT_P208>CL415337</obo:NCIT_P208>
 		<obo:NCIT_P325>In medicine, to regularly watch and check a person or condition to see if there is any change. Also refers to a device that records and/or displays patient data, such as for an electrocardiogram (EKG).</obo:NCIT_P325>
@@ -1705,7 +1700,6 @@
 				<prov:wasAttributedTo rdf:resource="&person;JamesMcCusker"/>
 			</skos:definition>
 		</sio:hasAttribute>
-	  <!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 	  <rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
@@ -1770,7 +1764,6 @@
 	</owl:Class>
 
 	<owl:Class rdf:about="&sio;StudySubject">
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasProperty"/>
@@ -1870,8 +1863,13 @@
 	<!-- &sco;SubjectCharacteristic -->
 
 	<owl:Class rdf:about="&sco;SubjectCharacteristic">
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		<rdfs:label>subject characteristic</rdfs:label>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sio;UnitOfMeasurement"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
 		<skos:definition>Property that summarizes important attributes of the participants enrolled in a study</skos:definition>
 		<dct:source>R. J. Little et al., "The prevention and treatment of missing data in clinical trials," New England J. Medicine, vol. 367, no. 14, pp. 1355{1360, 2012</dct:source>
 	</owl:Class> 
@@ -1958,7 +1956,6 @@
 	<owl:Class rdf:about="&hasco;ResearchStudy">
 		<rdfs:subClassOf rdf:resource="&sio;Study"/>
 		<rdfs:label>research study</rdfs:label>
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
@@ -1993,7 +1990,6 @@
 	<!-- &provcare;Intervention -->
 
 	<owl:Class rdf:about="&provcare;Intervention">
-		<!--<rdfs:subClassOf rdf:resource="&sco;CohortDescription"/>-->
 		<rdfs:comment>Capturing the interventions variables in research studies</rdfs:comment>
 		<rdfs:label>study intervention</rdfs:label>
 	</owl:Class>
