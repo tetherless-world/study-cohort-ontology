@@ -64,7 +64,80 @@ both in patients at high risk for vascular events" clinical trial</p>
     </pre>
 
    <h3> Modeling of Subject Characteristics </h3>
+   
+   <strong> Listing 1: Representation of a continuous characteristic on  the Ramipril Study Arm </strong>
+   <pre>
+   sco-i:RamiprilArm
+        a    owl:Class, sio:InterventionGroup; 
+        rdfs:subClassOf        sio:StudySubject;
+        sio:isParticipantIn    sco-i:TelmisartanRamiprilStudy;   
+       sio:hasAttribute    
+       [ a sco:PopulationSize; 
+       sio:hasValue 8576],
+        [ a sio:Age; sio:hasUnit sio:Year;
+          sio:hasAttribute 
+          [ a sio:Mean;
+          sio:hasValue 66.4],
+           [a sio:StandardDeviation; sio:hasValue 7.2 ]  
+        ] . 
+  </pre>
+  
+    <strong> Listing 2: Representation of a categorical characteristic on  the Ramipril Study Arm</strong>
+   <pre>
+  sco-i:PeripheralArteryDiseaseSubPopulation a owl:Class;
+        rdfs:subClassOf sco-i:RamiprilArm;
+        rdfs:subClassOf [ a owl:Restriction; 
+        owl:onProperty sio:hasAttribute;
+         owl:someValuesFrom doid:PeripheralArteryDisease];
+     sio:hasAttribute [ 
+        a sco:PopulationSize; 
+        sio:hasValue 1136; 
+        sio:hasAttribute [
+            a sio:Percentage; 
+            sio:hasValue 13.2 
+        ] 
+    ] .
+    </pre>
+   
+   
    <h3> Modeling of Aggregations on Subject Characteristics</h3>
+    <strong> Listing 1: Representation of a descriptive statistics measures of mean +/- standard deviation on Age</strong>
+     <pre>
+  sco-i:RamiprilArm
+        a    owl:Class, sio:InterventionGroup; 
+        rdfs:subClassOf        sio:StudySubject;
+        sio:isParticipantIn    sco-i:TelmisartanRamiprilStudy;   
+       sio:hasAttribute    [ a sco:PopulationSize; sio:hasValue 8576],
+        [ a sio:Age; sio:hasUnit sio:Year;
+          sio:hasAttribute [ a sio:Mean; sio:hasValue 66.4],
+           [a sio:StandardDeviation; sio:hasValue 7.2 ]  
+        ] . 
+        
+        </pre>
+  
+    <strong> Listing 2: Representation of a descriptive statistics measure of median +/- interquartile range</strong>
+   <pre>
+  sco-i:XStudyArm
+    a owl:Class, sio:InterventionGroup;
+    rdfs:subClassOf sio:StudySubject; 
+    sio:hasAttribute
+        [
+          a sio:Age; sio:hasUnit sio:Year;
+          sio:hasAttribute [
+            a sio:Median;
+            sio:hasValue 56
+          ], 
+          [
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 75],
+            [ a sio:MaximalValue; sio:hasValue 45] 
+          ] 
+        ] .
+    </pre>
+   
+   
+   
  </ul>
  </content>
  
