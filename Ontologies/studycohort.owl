@@ -1709,9 +1709,9 @@
 	</owl:Class>
 
 	<!-- &sco;StudyArm -->
-
 	<owl:Class rdf:about="&sco;StudyArm">
-		<rdfs:subClassOf rdf:resource="&stato;0000203"/>            
+		<rdfs:subClassOf rdf:resource="&stato;0000203"/>   
+		<rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/StudySubject"/>         
 		<rdfs:label>study arm</rdfs:label>
 		<sio:hasAttribute>
       		<skos:definition>
@@ -1725,6 +1725,47 @@
 		        <dct:source>https://clinicaltrials.gov/ct2/about-studies/glossary</dct:source>
 	     	</skos:definition>
     	</sio:hasAttribute>
+    	<rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sio;hasAttribute"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="&doid;4"/>
+                                    <rdf:Description rdf:about="&provcare;Intervention"/>
+                                    <rdf:Description rdf:about="&sco;SubjectCharacteristic"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sio;hasAttribute"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sio;hasAttribute"/>
+                                <owl:someValuesFrom rdf:resource="&provcare;StatisticalMeasure"/>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="&sio;hasAttribute"/>
+                        <owl:someValuesFrom>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&sio;hasAttribute"/>
+                                <owl:someValuesFrom>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="&sio;hasValue"/>
+                                        <owl:someValuesFrom rdf:resource="&xsd;decimal"/>
+                                    </owl:Restriction>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
 	</owl:Class>
 
 	<!-- &sco;InterventionArm -->
