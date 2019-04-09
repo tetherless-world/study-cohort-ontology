@@ -90,7 +90,7 @@
   </ul>
   </li>
   
- </ul>
+ </ol>
  
  
 <h3> Accompanying Suite of Ontologies </h3>
@@ -103,7 +103,7 @@
 <li> Units</li>
      </ul>
   
- </ol>
+ </ul>
  </content>
  
  
