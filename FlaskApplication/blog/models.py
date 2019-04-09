@@ -109,7 +109,8 @@ class User:
         return graph.run(query, username=self.username)
 
 def provenance_Information():
-    foaf.parse("blog/static/rdf/guidelineInstance.owl")
+    foaf.parse("blog/static/rdf/studycohort.owl",format="owl")
+    foaf.parse("blog/static/rdf/Table1KG.ttl",format='turtle')
     
 #    foaf.bind('bibo', URIRef('http://bibliontology.com/index.html#'))
 #    foaf.bind('dct', URIRef('http://purl.org/dc/terms/'))
@@ -122,32 +123,31 @@ def provenance_Information():
 #    foaf.bind('xsd', URIRef('http://www.w3.org/2001/XMLSchema#'))    
 #    
     query = '''
-    PREFIX bibo: <http://bibliontology.com/index.html#>
-    PREFIX dct: <http://purl.org/dc/terms/>
-    PREFIX gprov: <https://idea.tw.rpi.edu/projects/heals/gprov/>
-    PREFIX prov: <https://www.w3.org/ns/prov#>
-    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX xml: <http://www.w3.org/XML/1998/namespace>
-    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-    
-    SELECT DISTINCT ?recommendationText ?evidenceText ?citation ?articleTitle
-    WHERE{
-          ?rule rdf:type gprov:FormalRule .
-          ?rule prov:wasDerivedFrom ?recommendation .
-          ?recommendation rdf:type gprov:Recommendation .
-          ?recommendation gprov:hasValue ?recommendationText . 
-          ?recommendation prov:wasGeneratedBy ?evidenceSentence .
-          ?evidenceSentence rdf:type gprov:EvidenceSentence .
-          ?evidenceSentence gprov:hasValue ?evidenceText .
-          ?evidenceSentence prov:hadPrimarySource ?citation .
-          ?citation dct:title ?articleTitle .
-         FILTER (regex(str(?recommendationText), "Metformin") ) .
+    PREFIX sio: <http://semanticscience.org/resource/>
+
+    SELECT DISTINCT ?propType ?attrType ?propVal WHERE {
+      ?studyArm sio:hasAttribute ?prop .
+      ?studyArm rdfs:subClassOf sco:StudyArm .
+      ?prop a ?propType .
+      ?prop sio:hasAttribute ?attr .
+      {
+      ?attr a ?attrType .
+      ?attr sio:hasValue ?propVal .   
+      }
+     UNION
+      {
+        ?attr sio:hasAttribute ?intermediate .
+        ?intermediate a ?attrType .
+        ?intermediate sio:hasValue ?propVal .
         }
+      
+    }
     '''
 
     res = foaf.query(query)
-
+    print("Query results", list(res))
     return list(res)[0]
 
 def get_me():
