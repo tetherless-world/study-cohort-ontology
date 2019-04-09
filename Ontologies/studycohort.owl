@@ -1360,7 +1360,7 @@
 
     <owl:Class rdf:about="http://www.case.edu/ProvCaRe/provcare#Intervention">
         <rdfs:subClassOf rdf:resource="http://www.case.edu/ProvCaRe/provcare#StudyMethod"/>
-        <synonym>Study intervention</synonym>
+        <rdfs:synonym>Study intervention</rdfs:synonym>
         <rdfs:comment>The intervention type used in a research study (corresponding to I in the PICO(T) model )</rdfs:comment>
         <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/386053000</rdfs:seeAlso>
     </owl:Class> 
