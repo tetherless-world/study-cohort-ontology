@@ -2,7 +2,7 @@
 <article class="mb-5" id="ontologyfile">
 <content>
 <h2>List of Research Studies Utilized</h2>
- <h3> <strong> Pharmacologic Approaches to Glycemic Treatment (CHAPTER 8) </strong> <\h3>
+ <h3> <strong> Pharmacologic Approaches to Glycemic Treatment (CHAPTER 8) </strong> </h3>
 <ol>
 <li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1056/NEJMoa0806470&link_type=DOI">10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes</a></li>
  
@@ -20,7 +20,7 @@
  </ol>
 
 
-<h3> <strong> Cardiovascular Disease and Risk Management (CHAPTER 9) </strong> <\h3>
+<h3> <strong> Cardiovascular Disease and Risk Management (CHAPTER 9) </strong> </h3>
  <ol>
  <li><a href="https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1056/NEJMoa1001286&link_type=DOI">Effects of intensive blood-pressure control in type 2 diabetes mellitus</a></li>
  
