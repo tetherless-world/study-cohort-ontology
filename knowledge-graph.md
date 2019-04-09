@@ -17,6 +17,7 @@ both in patients at high risk for vascular events" [50] cited in the Cardiovascu
 <h2>Table 1 KG </h2>
 <ul>
   <img src="images/rdfviewer.png">
+  <p style="text-align:right">Image generated using the RDF Viewer tool hosted at <a href="http://jimmccusker.github.io/rdfviewer/"><small>http://jimmccusker.github.io/rdfviewer/</small></a></p>
   <p style="text-align:center">Visualizing the RDF representation for an age characteristic with the descriptive statistics for the Ramipril study arm, of the "Telmisartan, ramipril, or
 both in patients at high risk for vascular events" clinical trial</p>
  </ul>
