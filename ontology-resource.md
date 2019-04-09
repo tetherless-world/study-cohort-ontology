@@ -29,9 +29,9 @@
  <article class="mb-5" id="ontologyreused">
 <content>
 <h2> Ontologies Reused</h2>
- <p>Below we present a small Python script that can be used to fetch the child and parent hierarchy for a class, given its IRI. This script pulls in all the axioms defined on the classes as well. We leverage the powerful constructs of the <a href="https://www.w3.org/TR/rdf-sparql-query/#describe">SPARQL DESCRIBE</a> functionality to achieve this. This script outputs the RDF/XML version of the subset class tree.</p>
 <ul>
  <h3><a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/MIREOT.py">MIREOT Script</a></h3>
+  <p>Below we present a small Python script that can be used to fetch the child and parent hierarchy for a class, given its IRI. This script pulls in all the axioms defined on the classes as well. We leverage the powerful constructs of the <a href="https://www.w3.org/TR/rdf-sparql-query/#describe">SPARQL DESCRIBE</a> functionality to achieve this. This script outputs the RDF/XML version of the subset class tree.</p>
  <pre>
  from SPARQLWrapper import *
 from owlready2 import *
