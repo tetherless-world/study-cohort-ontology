@@ -14,7 +14,7 @@
 <ul>
 <h3> Study Cohort Ontology (SCO) </h3>
  <h4> Definitions </h4>
- <ul type = "disc">
+ <ol>
  <li>Research Study 
   <ul type = "circle">
   <li> Definition: A scientific investigation that involves testing a hypothesis </li>
@@ -103,7 +103,7 @@
 <li> Units</li>
      </ul>
   
- </ul>
+ </ol>
  </content>
  
  
