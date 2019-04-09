@@ -1,0 +1,901 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xml "http://www.w3.org/XML/1998/namespace/" >
+	<!ENTITY bibo "http://purl.org/ontology/bibo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY event "http://purl.org/NET/c4dm/event.owl#" >
+    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+	<!ENTITY sm "http://www.omg.org/techprocess/ab/SpecificationMetadata/">
+	<!ENTITY ns "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
+	
+	<!ENTITY prov "https://www.w3.org/ns/prov#">
+	<!ENTITY gprov "https://idea.tw.rpi.edu/projects/heals/gprov/" >	
+]>
+
+<rdf:RDF xmlns="https://idea.tw.rpi.edu/projects/heals/gprov/"
+     xml:base="https://idea.tw.rpi.edu/projects/heals/gprov/"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:gprov="https://idea.tw.rpi.edu/projects/heals/gprov/"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:sm="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
+     xmlns:bibo="http://purl.org/ontology/bibo/"
+     xmlns:event="http://purl.org/NET/c4dm/event.owl#"
+     xmlns:prov="https://www.w3.org/ns/prov#">
+    <owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/gprov/">
+        <owl:versionIRI rdf:resource="https://idea.tw.rpi.edu/projects/heals/gprov/1.0.0"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <dct:publisher>RPI HEALS</dct:publisher>
+        <dct:contributor>Nkechinyere Agu</dct:contributor>
+        <dct:contributor>Sabbir Rashid</dct:contributor>
+        <skos:changeNote>1. Created the initial version of the ontology
+		2. Added labels, definitions and annotations to all entities in the ontology
+		3. Added classes and relationships from bibliographic ontology</skos:changeNote>
+        <dct:contributor>Shruthi Chari</dct:contributor>
+        <dct:contributor>Shirly Stephen</dct:contributor>
+        <skos:scopeNote rdf:datatype="&xsd;string">We are currently focused on representing provenance for clinical practice guideline recommendations</skos:scopeNote>
+        <dct:modified rdf:datatype="&xsd;dateTime">2018-12-20T10:50:00</dct:modified>
+        <dct:contributor>Amar Das</dct:contributor>
+        <dct:contributor>Oshani Seneviratne</dct:contributor>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- &dct;identifier -->
+
+    <owl:AnnotationProperty rdf:about="&dct;identifier"/>
+    
+
+
+    <!-- &dct;source -->
+
+    <owl:AnnotationProperty rdf:about="&dct;source"/>
+    
+
+
+    <!-- &owl;maxCardinality -->
+
+    <owl:AnnotationProperty rdf:about="&owl;maxCardinality"/>
+    
+
+
+    <!-- &owl;minCardinality -->
+
+    <owl:AnnotationProperty rdf:about="&owl;minCardinality"/>
+    
+
+
+    <!-- &ns;term_status -->
+
+    <owl:AnnotationProperty rdf:about="&ns;term_status"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- &dct;hasPart -->
+
+    <owl:ObjectProperty rdf:about="&dct;hasPart"/>
+    
+
+
+    <!-- &dct;isPartOf -->
+
+    <owl:ObjectProperty rdf:about="&dct;isPartOf">
+        <rdfs:domain rdf:resource="&gprov;Recommendation"/>
+        <rdfs:range rdf:resource="&gprov;Guideline"/>
+        <rdfs:label xml:lang="en">part of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- &prov;hadMember -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadMember">
+        <rdfs:domain rdf:resource="&gprov;Guideline"/>
+        <rdfs:range rdf:resource="&gprov;Recommendation"/>
+        <dct:identifier>http://www.w3.org/ns/prov#hadMember</dct:identifier>
+        <dct:source>https://www.w3.org/ns/prov#</dct:source>
+        <rdfs:label xml:lang="en">had member</rdfs:label>
+        <skos:definition>a collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections</skos:definition>
+        <skos:prefLabel rdf:datatype="&xsd;string">had member</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- &prov;hadPrimarySource -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadPrimarySource">
+        <rdfs:domain rdf:resource="&gprov;Guideline"/>
+        <rdfs:range rdf:resource="&bibo;Document"/>
+        <dct:identifier>http://www.w3.org/ns/prov#hadPrimarySource</dct:identifier>
+        <dct:source>https://www.w3.org/ns/prov#</dct:source>
+        <rdfs:label xml:lang="en">had primary source</rdfs:label>
+        <skos:definition>a primary source for a topic refers to something produced by some agent with direct experience and knowledge about the topic, at the time of the topic&apos;s study, without benefit from hindsight</skos:definition>
+        <skos:prefLabel rdf:datatype="&xsd;string">had primary source</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- &prov;used -->
+
+    <owl:ObjectProperty rdf:about="&prov;used">
+        <rdfs:domain rdf:resource="&gprov;DiseaseManagement"/>
+        <rdfs:range rdf:resource="&gprov;Guideline"/>
+        <dct:identifier>http://www.w3.org/ns/prov#used</dct:identifier>
+        <dct:source>https://www.w3.org/ns/prov#</dct:source>
+        <rdfs:label xml:lang="en">used</rdfs:label>
+        <skos:definition>an entity that was used by this activity</skos:definition>
+        <skos:prefLabel rdf:datatype="&xsd;string">used</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- &prov;wasDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasDerivedFrom">
+        <rdfs:domain rdf:resource="&gprov;FormalRule"/>
+        <rdfs:range rdf:resource="&gprov;Guideline"/>
+        <dct:identifier>http://www.w3.org/ns/prov#wasDerivedFrom</dct:identifier>
+        <dct:source>https://www.w3.org/ns/prov#</dct:source>
+        <rdfs:label xml:lang="en">was derieved from</rdfs:label>
+        <skos:definition>a derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity</skos:definition>
+        <skos:prefLabel rdf:datatype="&xsd;string">was derieved from</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- &prov;wasGeneratedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasGeneratedBy">
+        <dct:identifier>http://www.w3.org/ns/prov#wasGeneratedBy</dct:identifier>
+        <dct:source>https://www.w3.org/ns/prov#</dct:source>
+        <rdfs:label xml:lang="en">was generated by</rdfs:label>
+        <skos:definition>generation is the completion of production of a new entity by an activity. This entity did not exist before generation and becomes available for usage after this generation</skos:definition>
+        <skos:prefLabel rdf:datatype="&xsd;string">was generated by</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- &prov;wasInfluencedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasInfluencedBy">
+        <rdfs:domain rdf:resource="&gprov;Recommendation"/>
+        <rdfs:range rdf:resource="&gprov;Grade"/>
+        <dct:identifier>http://www.w3.org/ns/prov#wasInfluencedBy</dct:identifier>
+        <dct:source>https://www.w3.org/ns/prov#</dct:source>
+        <rdfs:label xml:lang="en">was influenced by</rdfs:label>
+        <skos:definition>influence is the capacity of an entity, activity, or agent to have an effect on the character, development, or behavior of another by means of usage, start, end, generation, invalidation, communication, derivation, attribution, association, or delegation</skos:definition>
+        <skos:prefLabel rdf:datatype="&xsd;string">was influenced by</skos:prefLabel>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- &dct;creator -->
+
+    <owl:DatatypeProperty rdf:about="&dct;creator">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:label xml:lang="en">creator</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &dct;title -->
+
+    <owl:DatatypeProperty rdf:about="&dct;title">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:label xml:lang="en">title</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &bibo;issue -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;issue">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:comment xml:lang="en">An issue number</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">issue</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &bibo;pageEnd -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;pageEnd">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:label xml:lang="en">page end</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &bibo;pageStart -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;pageStart">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:label xml:lang="en">page start</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &bibo;presentedAt -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;presentedAt">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:label xml:lang="en">presented at</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &bibo;uri -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;uri">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+        <rdfs:label xml:lang="en">uri</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- &bibo;volume -->
+
+    <owl:DatatypeProperty rdf:about="&bibo;volume">
+        <rdfs:domain rdf:resource="&bibo;Document"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+        <rdfs:label xml:lang="en">volume</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- &event;Event -->
+
+    <owl:Class rdf:about="&event;Event"/>
+    
+
+
+    <!-- &bibo;AcademicArticle -->
+
+    <owl:Class rdf:about="&bibo;AcademicArticle">
+        <rdfs:subClassOf rdf:resource="&bibo;Article"/>
+        <rdfs:comment xml:lang="en">A scholarly academic article, typically published in a journal.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Academic Article</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Article -->
+
+    <owl:Class rdf:about="&bibo;Article">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">A written composition in prose, usually nonfiction, on a specific topic, forming an independent part of a book or other publication, as a newspaper or magazine.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Article</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;AudioDocument -->
+
+    <owl:Class rdf:about="&bibo;AudioDocument">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">An audio document; aka record.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">audio document</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;AudioVisualDocument -->
+
+    <owl:Class rdf:about="&bibo;AudioVisualDocument">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">An audio-visual document; film, video, and so forth.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">audio-visual document</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Book -->
+
+    <owl:Class rdf:about="&bibo;Book">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">A written or printed work of fiction or nonfiction, usually on sheets of paper fastened or bound together within covers.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Book</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;BookSection -->
+
+    <owl:Class rdf:about="&bibo;BookSection">
+        <rdfs:subClassOf rdf:resource="&bibo;DocumentPart"/>
+        <rdfs:comment xml:lang="en">A section of a book.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Book Section</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Chapter -->
+
+    <owl:Class rdf:about="&bibo;Chapter">
+        <rdfs:subClassOf rdf:resource="&bibo;BookSection"/>
+        <rdfs:comment xml:lang="en">A chapter of a book.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Chapter</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;CollectedDocument -->
+
+    <owl:Class rdf:about="&bibo;CollectedDocument">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">A document that simultaneously contains other documents.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Collected Document</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Collection -->
+
+    <owl:Class rdf:about="&bibo;Collection">
+        <rdfs:comment xml:lang="en">A collection of Documents or Collections</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Collection</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Conference -->
+
+    <owl:Class rdf:about="&bibo;Conference">
+        <rdfs:subClassOf rdf:resource="&event;Event"/>
+        <rdfs:comment xml:lang="en">A meeting for consultation or discussion.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Conference</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Document -->
+
+    <owl:Class rdf:about="&bibo;Document">
+        <rdfs:comment xml:lang="en">A document (noun) is a bounded physical representation of body of information designed with the capacity (and usually intent) to communicate. A document may manifest symbolic, diagrammatic or sensory-representational information.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Document</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;DocumentPart -->
+
+    <owl:Class rdf:about="&bibo;DocumentPart">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">a distinct part of a larger document or collected document.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">document part</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;DocumentStatus -->
+
+    <owl:Class rdf:about="&bibo;DocumentStatus">
+        <rdfs:comment xml:lang="en">The status of the publication of a document.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Document Status</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;EditedBook -->
+
+    <owl:Class rdf:about="&bibo;EditedBook">
+        <rdfs:subClassOf rdf:resource="&bibo;CollectedDocument"/>
+        <rdfs:comment xml:lang="en">An edited book.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Edited Book</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Issue -->
+
+    <owl:Class rdf:about="&bibo;Issue">
+        <rdfs:subClassOf rdf:resource="&bibo;CollectedDocument"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dct;hasPart"/>
+                <owl:allValuesFrom rdf:resource="&bibo;Article"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">something that is printed or published and distributed, esp. a given number of a periodical</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Journal -->
+
+    <owl:Class rdf:about="&bibo;Journal">
+        <rdfs:subClassOf rdf:resource="&bibo;Periodical"/>
+        <rdfs:comment xml:lang="en">A periodical of scholarly journal Articles.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Journal</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dct;hasPart"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dct;hasPart"/>
+                <owl:allValuesFrom rdf:resource="&bibo;Issue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Magazine -->
+
+    <owl:Class rdf:about="&bibo;Magazine">
+        <rdfs:subClassOf rdf:resource="&bibo;Periodical"/>
+        <rdfs:label>magazine</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&bibo;Periodical"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dct;hasPart"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dct;hasPart"/>
+                <owl:allValuesFrom rdf:resource="&bibo;Issue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:comment xml:lang="en">A periodical of magazine Articles. A magazine is a publication that is issued periodically, usually bound in a paper cover, and typically contains essays, stories, poems, etc., by many writers, and often photographs and drawings, frequently specializing in a particular subject or area, as hobbies, news, or sports.</rdfs:comment>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Manual -->
+
+    <owl:Class rdf:about="&bibo;Manual">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">A small reference book, especially one giving instructions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Manual</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Manuscript -->
+
+    <owl:Class rdf:about="&bibo;Manuscript">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">An unpublished Document, which may also be submitted to a publisher for publication.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Manuscript</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Newspaper -->
+
+    <owl:Class rdf:about="&bibo;Newspaper">
+        <rdfs:subClassOf rdf:resource="&bibo;Periodical"/>
+        <rdfs:label xml:lang="en">newspaper</rdfs:label>
+		<rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dct;hasPart"/>
+                <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&dct;hasPart"/>
+                <owl:allValuesFrom rdf:resource="&bibo;Issue"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <ns:term_status>stable</ns:term_status>
+        <rdfs:comment xml:lang="en">A periodical of documents, usually issued daily or weekly, containing current news, editorials, feature articles, and usually advertising.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Periodical -->
+
+    <owl:Class rdf:about="&bibo;Periodical">
+        <rdfs:subClassOf rdf:resource="&bibo;Collection"/>
+        <rdfs:comment xml:lang="en">A group of related documents issued at regular intervals.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Periodical</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Proceedings -->
+
+    <owl:Class rdf:about="&bibo;Proceedings">
+        <rdfs:subClassOf rdf:resource="&bibo;Book"/>
+        <rdfs:comment xml:lang="en">A compilation of documents published from an event, such as a conference.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Proceedings</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Report -->
+
+    <owl:Class rdf:about="&bibo;Report">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:comment xml:lang="en">A document describing an account or statement describing in detail an event, situation, or the like, usually as the result of observation, inquiry, etc..</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Report</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Website -->
+
+    <owl:Class rdf:about="&bibo;Website">
+        <rdfs:subClassOf rdf:resource="&bibo;Collection"/>
+        <rdfs:comment xml:lang="en">A group of Webpages accessible on the Web.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Website</rdfs:label>
+        <ns:term_status>unstable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &bibo;Workshop -->
+
+    <owl:Class rdf:about="&bibo;Workshop">
+        <rdfs:subClassOf rdf:resource="&event;Event"/>
+        <rdfs:comment xml:lang="en">A seminar, discussion group, or the like, that emphasizes zxchange of ideas and the demonstration and application of techniques, skills, etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:datatype="&xsd;anyURI">http://purl.org/ontology/bibo/</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Workshop</rdfs:label>
+        <ns:term_status>stable</ns:term_status>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Agent -->
+
+    <owl:Class rdf:about="&gprov;Agent">
+        <rdfs:label>agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;CardiovascularDiseaseManagement -->
+
+    <owl:Class rdf:about="&gprov;CardiovascularDiseaseManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;DiseaseManagement"/>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Citation -->
+
+    <owl:Class rdf:about="&gprov;Citation">
+        <rdfs:subClassOf rdf:resource="&gprov;EvidenceSentence"/>
+        <rdfs:label>citation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;DiabetesManagement -->
+
+    <owl:Class rdf:about="&gprov;DiabetesManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;DiseaseManagement"/>
+        <rdfs:label>diabetes management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Disease -->
+
+    <owl:Class rdf:about="&gprov;Disease"/>
+    
+
+
+    <!-- &gprov;DiseaseManagement -->
+
+    <owl:Class rdf:about="&gprov;DiseaseManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;HealthServiceAdministration"/>
+        <rdfs:label>disease management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;EvidenceSentence -->
+
+    <owl:Class rdf:about="&gprov;EvidenceSentence">
+        <rdfs:subClassOf rdf:resource="&gprov;Recommendation"/>
+        <rdfs:label>evidence sentence</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;FormalRule -->
+
+    <owl:Class rdf:about="&gprov;FormalRule">
+        <rdfs:label>formal rule</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Grade -->
+
+    <owl:Class rdf:about="&gprov;Grade">
+        <rdfs:subClassOf rdf:resource="&gprov;Recommendation"/>
+        <rdfs:label>grade</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Guideline -->
+
+    <owl:Class rdf:about="&gprov;Guideline">
+        <rdfs:subClassOf rdf:resource="&bibo;Document"/>
+        <rdfs:label>guideline</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;HealthServiceAdministration -->
+
+    <owl:Class rdf:about="&gprov;HealthServiceAdministration">
+        <rdfs:label>health service administration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;HypertensionManagement -->
+
+    <owl:Class rdf:about="&gprov;HypertensionManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;CardiovascularDiseaseManagement"/>
+        <rdfs:label>hypertension management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;LipidManagement -->
+
+    <owl:Class rdf:about="&gprov;LipidManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;CardiovascularDiseaseManagement"/>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;MedicationTherapyManagement -->
+
+    <owl:Class rdf:about="&gprov;MedicationTherapyManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;HealthServiceAdministration"/>
+        <rdfs:label>medication therapy management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;ObesityManagement -->
+
+    <owl:Class rdf:about="&gprov;ObesityManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;DiseaseManagement"/>
+        <rdfs:label>obesity management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Organization -->
+
+    <owl:Class rdf:about="&gprov;Organization">
+        <rdfs:subClassOf rdf:resource="&gprov;Agent"/>
+        <rdfs:label>organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Person -->
+
+    <owl:Class rdf:about="&gprov;Person">
+        <rdfs:subClassOf rdf:resource="&gprov;Agent"/>
+        <rdfs:label>person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Recommendation -->
+
+    <owl:Class rdf:about="&gprov;Recommendation">
+        <rdfs:subClassOf rdf:resource="&gprov;Guideline"/>
+        <rdfs:label>recommendation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;Reference -->
+
+    <owl:Class rdf:about="&gprov;Reference">
+        <rdfs:subClassOf rdf:resource="&gprov;EvidenceSentence"/>
+        <rdfs:label>reference</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;SoftwareAgent -->
+
+    <owl:Class rdf:about="&gprov;SoftwareAgent">
+        <rdfs:subClassOf rdf:resource="&gprov;Agent"/>
+        <rdfs:label>software agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;TypeOneDiabetesManagement -->
+
+    <owl:Class rdf:about="&gprov;TypeOneDiabetesManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;DiabetesManagement"/>
+        <rdfs:label>type 1 diabetes management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- &gprov;TypeTwoDiabetesManagement -->
+
+    <owl:Class rdf:about="&gprov;TypeTwoDiabetesManagement">
+        <rdfs:subClassOf rdf:resource="&gprov;DiabetesManagement"/>
+        <rdfs:label>type 2 diabetes management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- &gprov;Disease -->
+
+    <owl:NamedIndividual rdf:about="&gprov;Disease">
+        <dct:title>Illness, disease, and sickness absence: an empirical test of differences between concepts of ill health</dct:title>
+    </owl:NamedIndividual>
+    <rdf:Description>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+    </rdf:Description>
+    <rdf:Description>
+        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minCardinality>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="&gprov;Disease">
+        <dct:identifier>http://www.ontobee.org/ontology/DOID?iri=http://purl.obolibrary.org/obo/DOID_4</dct:identifier>
+        <rdfs:label rdf:datatype="&xsd;string">disease</rdfs:label>
+        <skos:definition rdf:datatype="&xsd;string">a condition that is diagnosed by a physician or other medical expert, usually has to conform to systematic diagnosis codes</skos:definition>
+        <dct:source>https://jech.bmj.com/content/59/6/450</dct:source>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

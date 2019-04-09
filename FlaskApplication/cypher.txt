@@ -1,0 +1,17 @@
+//What are the top tags of posts that I’ve liked?
+
+MATCH (me:User)-[:LIKED]->(post:Post)<-[:TAGGED]-(tag:Tag)
+WHERE me.username = 'nicole'
+RETURN tag.name, COUNT(*) AS count
+ORDER BY count DESC
+
+//Which user is most similar to me based on tags we’ve both posted about?
+
+MATCH (me:User)-[:PUBLISHED]->(:Post)<-[:TAGGED]-(tag:Tag), 
+(other:User)-[:PUBLISHED]->(:Post)<-[:TAGGED]-(tag)
+WHERE me.username = 'nicole' AND me <> other
+WITH other,
+COLLECT(DISTINCT tag.name) AS tags,
+COUNT(DISTINCT tag) AS len
+ORDER BY len DESC LIMIT 3
+RETURN other.username AS similar_user, tags

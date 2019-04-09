@@ -1,0 +1,659 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY xml "http://www.w3.org/XML/1998/namespace/" >
+	<!ENTITY bibo "http://purl.org/ontology/bibo/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY event "http://purl.org/NET/c4dm/event.owl#" >
+    <!ENTITY dct "http://purl.org/dc/terms/" >
+    <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
+	<!ENTITY sm "http://www.omg.org/techprocess/ab/SpecificationMetadata/">
+	<!ENTITY ns "http://www.w3.org/2003/06/sw-vocab-status/ns#" >
+	
+	<!ENTITY prov "https://www.w3.org/ns/prov#">
+	<!ENTITY gprov "https://idea.tw.rpi.edu/projects/heals/gprov/" >
+	<!ENTITY gprov-i "https://idea.tw.rpi.edu/projects/heals/gprovinstances/" >
+]>
+<rdf:RDF xmlns="https://idea.tw.rpi.edu/projects/heals/gprovinstances/"
+     xml:base="https://idea.tw.rpi.edu/projects/heals/gprovinstances/"
+     xmlns:turtle="http://www.semanticweb.org/owl/owlapi/turtle#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:gprov="https://idea.tw.rpi.edu/projects/heals/gprov/"
+	 xmlns:gprov-i="https://idea.tw.rpi.edu/projects/heals/gprovinstances/"
+     xmlns:dct="http://purl.org/dc/terms/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:sio="http://semanticscience.org/resource/"
+     xmlns:bibo="http://bibliontology.com/index.html#"
+     xmlns:prov="https://www.w3.org/ns/prov#">
+    <owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/gprovinstances/">
+        <owl:imports rdf:resource="https://idea.tw.rpi.edu/projects/heals/gprov/"/>
+		<dct:publisher>RPI HEALS</dct:publisher>
+        <dct:contributor>Nkechinyere Agu</dct:contributor>
+        <dct:contributor>Sabbir Rashid</dct:contributor>
+        <skos:changeNote>1. Created the initial version of the ontology
+		2. Added labels, definitions and annotations to all entities in the ontology
+		3. Added classes and relationships from bibliographic ontology</skos:changeNote>
+        <dct:contributor>Shruthi Chari</dct:contributor>
+        <dct:contributor>Shirly Stephen</dct:contributor>
+        <skos:scopeNote rdf:datatype="&xsd;string">We are currently focused on representing provenance for clinical practice guideline recommendations</skos:scopeNote>
+        <dct:modified rdf:datatype="&xsd;dateTime">2018-12-20T10:50:00</dct:modified>
+        <dct:contributor>Amar Das</dct:contributor>
+        <dct:contributor>Oshani Seneviratne</dct:contributor>
+	</owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://semanticscience.org/resource/authorList -->
+
+    <owl:DatatypeProperty rdf:about="http://semanticscience.org/resource/authorList"/>
+    
+
+
+    <!-- http://www.semanticweb.org/owl/owlapi/turtle#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="&gprov;hasValue"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- &bibo;Article -->
+
+    <owl:Class rdf:about="&bibo;Article"/>
+    
+
+
+    <!-- &prov;Person -->
+
+    <owl:Class rdf:about="&prov;Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://idea.tw.rpi.edu/projects/heals/gprov/ -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;a_list">
+        <rdf:type rdf:resource="&prov;Person"/>
+        <gprov:hasValue> Hayward RA</gprov:hasValue>
+        <gprov:hasValue> Nicolucci A</gprov:hasValue>
+        <gprov:hasValue> Sussman JB</gprov:hasValue>
+        <gprov:hasValue> Yudkin JS</gprov:hasValue>
+        <gprov:hasValue> et al</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_10_DMTO_21 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_10_DMTO_21">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_10_DMTO_4 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_10_DMTO_4">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_11_DMTO_22 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_11_DMTO_22">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_11_DMTO_23 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_11_DMTO_23">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_11_DMTO_24 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_11_DMTO_24">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_11"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_1_DMTO_1 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_1_DMTO_1">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_1_DMTO_10 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_1_DMTO_10">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_1_DMTO_5 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_1_DMTO_5">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_1_DMTO_6 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_1_DMTO_6">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_1_DMTO_7 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_1_DMTO_7">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_1_DMTO_8 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_1_DMTO_8">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_1_DMTO_9 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_1_DMTO_9">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_11 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_11">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_12 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_12">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_13 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_13">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_14 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_14">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_15 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_15">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_16 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_16">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_17 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_17">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_18 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_18">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_19 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_19">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_2 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_2">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_20 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_20">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_5_DMTO_3 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_5_DMTO_3">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_5"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_7_DMTO_2 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_7_DMTO_2">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_7_DMTO_26 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_7_DMTO_26">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_7_DMTO_27 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_7_DMTO_27">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_7_DMTO_3 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_7_DMTO_3">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_7"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_8_DMTO_2 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_8_DMTO_2">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_8_DMTO_25 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_8_DMTO_25">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_8_DMTO_3 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_8_DMTO_3">
+        <rdf:type rdf:resource="&gprov;FormalRule"/>
+        <prov:wasDerivedFrom rdf:resource="&gprov-i;ADA_Recommendation_8"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Guidelines -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Guidelines">
+        <rdf:type rdf:resource="&gprov;Guideline"/>
+        <bibo:volume>42</bibo:volume>
+        <dct:date>2018</dct:date>
+        <dct:title>American Diabetes Association standards of Medical Care in Diabetes</dct:title>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_1 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_1">
+        <rdf:type rdf:resource="&gprov;Recommendation"/>
+        <gprov:hasValue>Metformin, if not contraindicated and if tolerated, is the preferred initial pharmacologic agent for the treatment of type 2 diabetes.</gprov:hasValue>
+        <dct:isPartOf rdf:resource="&gprov-i;ADA_Guidelines"/>
+        <prov:wasGeneratedBy rdf:resource="&gprov-i;ADA_Recommendation_1_Evidence"/>
+        <prov:hadPrimarySource rdf:resource="&gprov-i;ADA_Guidelines"/>
+        <prov:wasInfluencedBy rdf:resource="&gprov-i;ADA_Recommendation_1_Grade"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_10 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_10">
+        <rdf:type rdf:resource="&gprov;Recommendation"/>
+        <gprov:hasValue>For patients with type 2 diabetes who are not achieving glycemic goals, drug intensification, including consideration of insulin therapy, should not be delayed</gprov:hasValue>
+        <dct:isPartOf rdf:resource="&gprov-i;ADA_Guidelines"/>
+		<prov:hadPrimarySource rdf:resource="&gprov-i;ADA_Guidelines"/>
+        <prov:wasGeneratedBy rdf:resource="&gprov-i;ADA_Recommendation_10_Evidence"/>
+        <prov:wasInfluencedBy rdf:resource="&gprov-i;ADA_Recommendation_10"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_10_Evidence -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_10_Evidence">
+        <rdf:type rdf:resource="&gprov;EvidenceSentence"/>
+        <gprov:hasValue>If A1C target is still not achieved after; 3 months of dual therapy, proceed to a three-drug combination (Fig. 8.1). Again, if A1C target is not achieved after ;3 months of triple therapy, proceed to combination injectable therapy (Fig. 8.2). Drug choice is based on patient preferences (37), as well as various patient, disease, and drug characteristics, with the goal of reducing blood glucose levels while minimizing side effects, especially hypoglycemia.</gprov:hasValue>
+        <prov:hadPrimarySource rdf:resource="&gprov-i;citation_37"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_10_Grade -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_10_Grade">
+        <rdf:type rdf:resource="&gprov;Grade"/>
+        <gprov:hasValue>B</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_11 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_11">
+        <rdf:type rdf:resource="&gprov;Recommendation"/>
+        <gprov:hasValue>Metformin should be continued when used in combination with other agents, including insulin, if not contraindicated and if tolerated. </gprov:hasValue>
+        <dct:isPartOf rdf:resource="&gprov-i;ADA_Guidelines"/>
+        <prov:wasInfluencedBy rdf:resource="&gprov-i;ADA_Recommendation_11_Grade"/>
+        <prov:wasGeneratedBy rdf:resource="&gprov-i;ADA_Recommendation_11_Evidence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_11_Evidence -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_11_Evidence">
+        <rdf:type rdf:resource="&gprov;EvidenceSentence"/>
+        <gprov:hasValue>nan</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_11_Grade -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_11_Grade">
+        <rdf:type rdf:resource="&gprov;Grade"/>
+        <gprov:hasValue>A</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_1_Evidence -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_1_Evidence">
+        <rdf:type rdf:resource="&gprov;EvidenceSentence"/>
+        <gprov:hasValue>The use of metformin as first-line therapy was supported by findings from a large meta-analysis, with selection of second-line therapies based on patient-specific considerations</gprov:hasValue>
+        <prov:hadPrimarySource rdf:resource="&gprov-i;citation_30"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_1_Grade -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_1_Grade">
+        <rdf:type rdf:resource="&gprov;Grade"/>
+        <gprov:hasValue>A</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_5 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_5">
+        <rdf:type rdf:resource="&gprov;Recommendation"/>
+        <gprov:hasValue>In patients without atherosclerotic cardiovascular disease, if monotherapy or dual therapy does not achieve or maintain the A1C goal over 3 months, add an additional antihyperglycemic agent based on drug-specific and patient factors. (Table 8.1)</gprov:hasValue>
+        <dct:isPartOf rdf:resource="&gprov-i;ADA_Guidelines"/>
+        <prov:wasInfluencedBy rdf:resource="&gprov-i;ADA_Recommendation_5_Grade"/>
+        <prov:wasGeneratedBy rdf:resource="&gprov-i;ADA_Recommendation_5_Evidence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_5_Evidence -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_5_Evidence">
+        <rdf:type rdf:resource="&gprov;EvidenceSentence"/>
+        <gprov:hasValue>If the A1C target is not achieved after approximately 3 months and patient does not have atherosclerotic cardiovascular disease (ASCVD), consider a combination of metformin and any one of the preferred six treatment options: sulfonylurea, thiazolidinedione, DPP-4 inhibitor, SGLT2 inhibitor, GLP-1 receptor agonist, or basal insulin (Fig. 8.1); the choice of which agent to add is based on drugspecific effects and patient factors (Table 8.1)</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_5_Grade -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_5_Grade">
+        <rdf:type rdf:resource="&gprov;Grade"/>
+        <gprov:hasValue>A</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_7 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_7">
+        <rdf:type rdf:resource="&gprov;Recommendation"/>
+        <gprov:hasValue>In patients with type 2 diabetes and established atherosclerotic cardiovascular disease, antihyperglycemic therapy should begin with lifestyle management and metformin and subsequently incorporate an agent proven to reduce major adverse ardiovascular events and cardiovascular mortality (currently empagliflozin and liraglutide), after considering drug-specific and patient factors (Table 8.1)</gprov:hasValue>
+        <dct:isPartOf rdf:resource="&gprov-i;ADA_Guidelines"/>
+        <prov:wasInfluencedBy rdf:resource="&gprov-i;ADA_Recommendation_7_Grade"/>
+        <prov:wasGeneratedBy rdf:resource="&gprov-i;ADA_Recommendation_7_Evidence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_7_Evidence -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_7_Evidence">
+        <rdf:type rdf:resource="&gprov;EvidenceSentence"/>
+        <gprov:hasValue>For patients with ASCVD, add a second agent with evidence of cardiovascular risk reduction after consideration of drug-specific and patient factors</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_7_Grade -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_7_Grade">
+        <rdf:type rdf:resource="&gprov;Grade"/>
+        <gprov:hasValue>A*</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_8 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_8">
+        <rdf:type rdf:resource="&gprov;Recommendation"/>
+        <gprov:hasValue>In patients with type 2 diabetes and established atherosclerotic cardiovascular disease, after lifestyle management and metformin, the antihyperglycemic agent canagliflozin may be considered to reduce major adverse cardiovascular events, based on drug-specific and patient factors (Table 8.1).</gprov:hasValue>
+        <dct:isPartOf rdf:resource="&gprov-i;ADA_Guidelines"/>
+        <prov:wasInfluencedBy rdf:resource="&gprov-i;ADA_Recommendation_8_Grade"/>
+        <prov:wasGeneratedBy rdf:resource="&gprov-i;ADA_Recommendation_8_Evidence"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_8_Evidence -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_8_Evidence">
+        <rdf:type rdf:resource="&gprov;EvidenceSentence"/>
+        <gprov:hasValue>For patients with ASCVD, add a second agent with evidence of cardiovascular risk reduction after consideration of drug-specific and patient factors</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;ADA_Recommendation_8_Grade -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;ADA_Recommendation_8_Grade">
+        <rdf:type rdf:resource="&gprov;Grade"/>
+        <gprov:hasValue>C*</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;Mavridis -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;Mavridis">
+        <rdf:type rdf:resource="&prov;Person"/>
+        <gprov:hasValue>Mavridis D</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;Palmer -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;Palmer">
+        <rdf:type rdf:resource="&prov;Person"/>
+        <gprov:hasValue>Palmer SC</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;Vijan -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;Vijan">
+        <rdf:type rdf:resource="&prov;Person"/>
+        <gprov:hasValue>Vijan S</gprov:hasValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;citation_30 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;citation_30">
+        <rdf:type rdf:resource="&bibo;Article"/>
+        <bibo:pageEnd>149</bibo:pageEnd>
+        <bibo:pageStart>140</bibo:pageStart>
+        <bibo:volume>316</bibo:volume>
+        <dct:date>2016</dct:date>
+        <dct:publisher>JAMA</dct:publisher>
+        <dct:title>Comparison of clinical outcomes and adverse events associated with glucose-lowering drugs in patients with type 2 diabetes: a meta-analysis</dct:title>
+        <gprov:authorList rdf:resource="&gprov-i;Bob"/>
+        <gprov:authorList rdf:resource="&gprov-i;Mavridis"/>
+        <gprov:authorList rdf:resource="&gprov-i;Palmer"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- &gprov-i;citation_37 -->
+
+    <owl:NamedIndividual rdf:about="&gprov-i;citation_37">
+        <rdf:type rdf:resource="&bibo;Article"/>
+        <bibo:pageEnd>613</bibo:pageEnd>
+        <bibo:pageStart>602</bibo:pageStart>
+        <bibo:volume>154</bibo:volume>
+        <dct:date>2014</dct:date>
+        <dct:publisher>JAMA Intern Med</dct:publisher>
+        <dct:title>Effect of patients’ risks and preferences on health gains with plasma glucose level lowering in type 2 diabetes mellitus</dct:title>
+        <gprov:authorList rdf:resource="&gprov-i;Bob"/>
+        <gprov:authorList rdf:resource="&gprov-i;Vijan"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

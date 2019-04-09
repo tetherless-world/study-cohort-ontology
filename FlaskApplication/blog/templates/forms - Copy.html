@@ -1,0 +1,175 @@
+{% extends "layout.html" %}
+{% block body %}
+ 
+
+		  <div class="col-md-10">
+
+	  			<div class="row">
+	  				<div class="col-md-6">
+	  					<div class="content-box-large">
+			  				<div class="panel-heading">
+					            <div class="panel-title">Guideline Information</div>
+					          
+					            <div class="panel-options">
+					              <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+					              <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+					            </div>
+					        </div>
+			  				<div class="panel-body">
+			  					<form class="form-horizontal" role="form">
+								  <div class="form-group">
+								    <label for="FormalRule" class="col-sm-2 control-label">Rule Identifier</label>
+								    <div class="col-sm-10">
+								      <input class="form-control" id="FormalRule" placeholder="Decision rule ID" type="text">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="GuidelineTitle" class="col-sm-2 control-label">Guideline Title</label>
+								    <div class="col-sm-10">
+								      <input class="form-control" id="GuidelineTitle" placeholder="Guideline title" type="text">
+								    </div>
+								  </div>
+								   <div class="form-group">
+								    <label for="GuidelineDate" class="col-sm-2 control-label">Guideline Date</label>
+								    <div class="col-sm-10">
+								      <input class="form-control" id="GuidelineDate" placeholder="Guideline date" type="text">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="DiseaseName" class="col-sm-2 control-label">Disease Name</label>
+								    <div class="col-sm-10">
+								      <input class="form-control" id="DiseaseName" placeholder="Disease name" type="text">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="Volume" class="col-sm-2 control-label">Volume</label>
+								    <div class="col-sm-10">
+								      <input class="form-control" id="Volume" placeholder="Volume number" type="text">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="Publisher" class="col-sm-2 control-label">Publisher</label>
+								    <div class="col-sm-10">
+								      <input class="form-control" id="Publisher" placeholder="Publisher" type="text">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <div class="col-sm-offset-2 col-sm-10">
+								      <button type="submit" class="btn btn-primary">Submit</button>
+								    </div>
+								  </div>
+								</form>
+			  				</div>
+			  			</div>
+	  				</div>
+	  				<div class="col-md-6">
+	  					<div class="content-box-large">
+			  				<div class="panel-heading">
+					            <div class="panel-title">Recommendation Information</div>
+					          
+					            <div class="panel-options">
+					              <a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+					              <a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+					            </div>
+					        </div>
+			  				<div class="panel-body">
+			  					<form class="form-horizontal" role="form">
+									<fieldset>
+										<div class="form-group">
+											<label for="RecommendationID" class="col-sm-2 control-label">Identifier</label>
+											<div class="col-sm-10">
+												<input class="form-control" id="RecommendationID" placeholder="Recommendation Number" type="text">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="RecommendationText" class="col-sm-2 control-label">Recommendation Text</label>
+											<div class="col-sm-10">
+											  <textarea class="form-control" id="RecommendationText" placeholder="Recommendation Text" rows="3"></textarea>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="RecommendationPN" class="col-sm-2 control-label">Page Number</label>
+											<div class="col-sm-10">
+												<input class="form-control" id="RecommendationPN" placeholder="Recommendation Page Number" type="text">
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="RecommendationES" class="col-sm-2 control-label">Evidence Sentence</label>
+											<div class="col-sm-10">
+											  <textarea class="form-control" id="RecommendationES" placeholder="Recommendation Text" rows="3"></textarea>
+											</div>
+										</div>
+										<div class="form-group">
+											<label for="RecommendationGrade" class="col-sm-2 control-label">Grade</label>
+											<div class="col-sm-10">
+												<input class="form-control" id="RecommendationGrade" placeholder="Recommendation grade" type="text">
+											</div>
+										</div>
+									</fieldset>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											<button type="submit" class="btn btn-primary">Submit</button>
+										</div>
+								  </div>
+								</form>
+			  				</div>
+			  			</div>
+	  				</div>
+	  			</div>
+
+	  			<div class="row">
+	  				<div class="col-md-12 panel-info">
+			  			<div class="content-box-header panel-heading">
+		  					<div class="panel-title ">Citation information</div>
+							
+							<div class="panel-options">
+								<a href="#" data-rel="collapse"><i class="glyphicon glyphicon-refresh"></i></a>
+								<a href="#" data-rel="reload"><i class="glyphicon glyphicon-cog"></i></a>
+							</div>
+			  			</div>
+			  			<div class="content-box-large box-with-header">
+				  			<div>
+
+								<div class="row">
+									<div class="col-sm-12">
+										<input type="text" class="form-control" placeholder="Article title">
+									</div>
+								</div>
+
+								<hr>
+
+								<div class="row">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" placeholder="Article Authors separated by comma ,">
+									</div>
+									<div class="col-sm-6">
+										<input type="text" class="form-control" placeholder="Venue of publication">
+									</div>
+								</div>
+
+								<hr>
+
+								<div class="row">
+									<div class="col-sm-6">
+										<input type="text" class="form-control" placeholder="Year">
+									</div>
+									<div class="col-sm-3">
+										<input type="text" class="form-control" placeholder="Page number">
+									</div>
+									<div class="col-sm-3">
+										<input type="text" class="form-control" placeholder="Citation ID">
+									</div>
+								</div>
+
+								<hr>
+
+								
+
+							</div>
+						</div>
+			  		</div>
+	  			</div>
+	  		<!--  Page content -->
+		  </div>
+
+{% endblock %}

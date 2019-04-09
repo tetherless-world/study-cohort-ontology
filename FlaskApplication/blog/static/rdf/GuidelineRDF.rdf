@@ -1,0 +1,219 @@
+@prefix bibo: <http://bibliontology.com/index.html#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix gprov: <https://idea.tw.rpi.edu/projects/heals/gprov/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gprov:ADA_10_DMTO_21 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_10 .
+
+gprov:ADA_10_DMTO_4 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_10 .
+
+gprov:ADA_11_DMTO_22 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_11 .
+
+gprov:ADA_11_DMTO_23 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_11 .
+
+gprov:ADA_11_DMTO_24 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_11 .
+
+gprov:ADA_1_DMTO_1 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_1 .
+
+gprov:ADA_1_DMTO_10 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_1 .
+
+gprov:ADA_1_DMTO_5 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_1 .
+
+gprov:ADA_1_DMTO_6 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_1 .
+
+gprov:ADA_1_DMTO_7 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_1 .
+
+gprov:ADA_1_DMTO_8 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_1 .
+
+gprov:ADA_1_DMTO_9 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_1 .
+
+gprov:ADA_5_DMTO_11 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_12 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_13 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_14 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_15 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_16 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_17 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_18 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_19 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_2 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_20 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_5_DMTO_3 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_5 .
+
+gprov:ADA_7_DMTO_2 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_7 .
+
+gprov:ADA_7_DMTO_26 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_7 .
+
+gprov:ADA_7_DMTO_27 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_7 .
+
+gprov:ADA_7_DMTO_3 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_7 .
+
+gprov:ADA_8_DMTO_2 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_8 .
+
+gprov:ADA_8_DMTO_25 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_8 .
+
+gprov:ADA_8_DMTO_3 a gprov:FormalRule ;
+    prov:wasDerivedFrom gprov:ADA_Recommendation_8 .
+
+gprov:ADA_Recommendation_10_Evidence a gprov:EvidenceSentence ;
+    sio:hasValue "If A1C target is still not achieved after; 3 months of dual therapy, proceed to a three-drug combination (Fig. 8.1). Again, if A1C target is not achieved after ;3 months of triple therapy, proceed to combination injectable therapy (Fig. 8.2). Drug choice is based on patient preferences (37), as well as various patient, disease, and drug characteristics, with the goal of reducing blood glucose levels while minimizing side effects, especially hypoglycemia." ;
+    prov:hasPrimarySource gprov:citation_37 .
+
+gprov:ADA_Recommendation_10_Grade a gprov:Grade ;
+    sio:hasValue "B" .
+
+gprov:ADA_Recommendation_11_Evidence a gprov:EvidenceSentence ;
+    sio:hasValue "nan" .
+
+gprov:ADA_Recommendation_11_Grade a gprov:Grade ;
+    sio:hasValue "A" .
+
+gprov:ADA_Recommendation_1_Evidence a gprov:EvidenceSentence ;
+    sio:hasValue "The use of metformin as first-line therapy was supported by findings from a large meta-analysis, with selection of second-line therapies based on patient-specific considerations" ;
+    prov:hasPrimarySource gprov:citation_30 .
+
+gprov:ADA_Recommendation_1_Grade a gprov:Grade ;
+    sio:hasValue "A" .
+
+gprov:ADA_Recommendation_5_Evidence a gprov:EvidenceSentence ;
+    sio:hasValue "If the A1C target is not achieved after approximately 3 months and patient does not have atherosclerotic cardiovascular disease (ASCVD), consider a combination of metformin and any one of the preferred six treatment options: sulfonylurea, thiazolidinedione, DPP-4 inhibitor, SGLT2 inhibitor, GLP-1 receptor agonist, or basal insulin (Fig. 8.1); the choice of which agent to add is based on drugspecific effects and patient factors (Table 8.1)" .
+
+gprov:ADA_Recommendation_5_Grade a gprov:Grade ;
+    sio:hasValue "A" .
+
+gprov:ADA_Recommendation_7_Evidence a gprov:EvidenceSentence ;
+    sio:hasValue "For patients with ASCVD, add a second agent with evidence of cardiovascular risk reduction after consideration of drug-specific and patient factors" .
+
+gprov:ADA_Recommendation_7_Grade a gprov:Grade ;
+    sio:hasValue "A*" .
+
+gprov:ADA_Recommendation_8_Evidence a gprov:EvidenceSentence ;
+    sio:hasValue "For patients with ASCVD, add a second agent with evidence of cardiovascular risk reduction after consideration of drug-specific and patient factors" .
+
+gprov:ADA_Recommendation_8_Grade a gprov:Grade ;
+    sio:hasValue "C*" .
+
+gprov:Mavridis a prov:Person ;
+    sio:hasValue "Mavridis D" .
+
+gprov:Palmer a prov:Person ;
+    sio:hasValue "Palmer SC" .
+
+gprov:Vijan a prov:Person ;
+    sio:hasValue "Vijan S" .
+
+gprov:citation_30 a bibo:Article ;
+    bibo:pageEnd "149" ;
+    bibo:pageStart "140" ;
+    bibo:volume "316" ;
+    dct:date "2016" ;
+    dct:publisher "JAMA" ;
+    dct:title "Comparison of clinical outcomes and adverse events associated with glucose-lowering drugs in patients with type 2 diabetes: a meta-analysis" ;
+    <http://semanticscience.org/resource/001315> gprov:,
+        gprov:Mavridis,
+        gprov:Palmer .
+
+gprov:citation_37 a bibo:Article ;
+    bibo:pageEnd "613" ;
+    bibo:pageStart "602" ;
+    bibo:volume "154" ;
+    dct:date "2014" ;
+    dct:publisher "JAMA Intern Med" ;
+    dct:title "Effect of patients’ risks and preferences on health gains with plasma glucose level lowering in type 2 diabetes mellitus" ;
+    <http://semanticscience.org/resource/001315> gprov:,
+        gprov:Vijan .
+
+gprov: a prov:Person ;
+    sio:hasValue " Hayward RA",
+        " Nicolucci A",
+        " Sussman JB",
+        " Yudkin JS",
+        " et al" .
+
+gprov:ADA_Recommendation_10 a gprov:Recommendation ;
+    dct:partOf gprov:ADA_Guidelines ;
+    sio:hasValue "For patients with type 2 diabetes who are not achieving glycemic goals, drug intensification, including consideration of insulin therapy, should not be delayed" ;
+    prov:influencer gprov:ADA_Recommendation_10_Grade ;
+    prov:wasGeneratedBy gprov:ADA_Recommendation_10_Evidence .
+
+gprov:ADA_Recommendation_11 a gprov:Recommendation ;
+    dct:partOf gprov:ADA_Guidelines ;
+    sio:hasValue "Metformin should be continued when used in combination with other agents, including insulin, if not contraindicated and if tolerated. " ;
+    prov:influencer gprov:ADA_Recommendation_11_Grade ;
+    prov:wasGeneratedBy gprov:ADA_Recommendation_11_Evidence .
+
+gprov:ADA_Recommendation_8 a gprov:Recommendation ;
+    dct:partOf gprov:ADA_Guidelines ;
+    sio:hasValue "In patients with type 2 diabetes and established atherosclerotic cardiovascular disease, after lifestyle management and metformin, the antihyperglycemic agent canagliflozin may be considered to reduce major adverse cardiovascular events, based on drug-specific and patient factors (Table 8.1)." ;
+    prov:influencer gprov:ADA_Recommendation_8_Grade ;
+    prov:wasGeneratedBy gprov:ADA_Recommendation_8_Evidence .
+
+gprov:ADA_Recommendation_7 a gprov:Recommendation ;
+    dct:partOf gprov:ADA_Guidelines ;
+    sio:hasValue "In patients with type 2 diabetes and established atherosclerotic cardiovascular disease, antihyperglycemic therapy should begin with lifestyle management and metformin and subsequently incorporate an agent proven to reduce major adverse ardiovascular events and cardiovascular mortality (currently empagliflozin and liraglutide), after considering drug-specific and patient factors (Table 8.1)" ;
+    prov:influencer gprov:ADA_Recommendation_7_Grade ;
+    prov:wasGeneratedBy gprov:ADA_Recommendation_7_Evidence .
+
+gprov:ADA_Guidelines a gprov:Guideline ;
+    bibo:volume "42" ;
+    dct:date "2018" ;
+    dct:title "American Diabetes Association standards of Medical Care in Diabetes" .
+
+gprov:ADA_Recommendation_1 a gprov:Recommendation ;
+    dct:partOf gprov:ADA_Guidelines ;
+    sio:hasValue "Metformin, if not contraindicated and if tolerated, is the preferred initial pharmacologic agent for the treatment of type 2 diabetes." ;
+    prov:influencer gprov:ADA_Recommendation_1_Grade ;
+    prov:wasGeneratedBy gprov:ADA_Recommendation_1_Evidence .
+
+gprov:ADA_Recommendation_5 a gprov:Recommendation ;
+    dct:partOf gprov:ADA_Guidelines ;
+    sio:hasValue "In patients without atherosclerotic cardiovascular disease, if monotherapy or dual therapy does not achieve or maintain the A1C goal over 3 months, add an additional antihyperglycemic agent based on drug-specific and patient factors. (Table 8.1)" ;
+    prov:influencer gprov:ADA_Recommendation_5_Grade ;
+    prov:wasGeneratedBy gprov:ADA_Recommendation_5_Evidence .
+
