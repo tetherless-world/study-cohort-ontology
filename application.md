@@ -15,6 +15,62 @@
 <content>
 <h2> Value Retrieval Query for Visualization </h2>
 <ul>
-   <h3>  Star Plot Code (Link) </h3>
+   <h3>  Star Plot Code </h3>
+    <p>We present a query below that is used to retrieve the central value,  and upper and lower bounds for continuous characteristics of a study arm. The characteristics are those that overlap with the patient features that we gather for diabetic patients in NHANES, i.e. age, body mass index, systolic blood pressure, diastolic blood pressure, Hemoglobin A1C. This query is triggered in the faceted browser to generate the visualization.<br>
+    This query can flexibly retrieve values for both mean +/- standard deviation, median and interquartile range representations with being agnostic of the expression of the characteristic. Also, if we were to constrain the query for values of other parameters, we would just included them in the filter clause. Hence, this query is a generalized faceted browser query.</p> 
+    <p>The star plot code can be browsed at: <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/starplot.py"><small>https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/starplot.py</small></a></p>
+    <pre>
+    PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
+PREFIX resource: <http://semanticscience.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX chear: <http://hadatac.org/ont/chear#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX stato: <http://purl.obolibrary.org/obo/STATO_>
+PREFIX ncit: <http://purl.obolibrary.org/obo/NCIT_>
+
+SELECT DISTINCT ?studyTitle ?propType ?lowerBound ?propVal
+?upperBound WHERE {
+
+  ?study a sco:ClinicalTrial .
+  ?study dct:title ?studyTitle .
+  ?study sio:hasParticipant ?studyArm .
+  ?studyArm sio:hasAttribute | sio:hasProperty ?prop .
+     { 
+       ?prop a ?propType .
+       ?prop sio:hasAttribute ?attr .
+       ?attr a sio:Mean .
+       ?attr sio:hasValue ?propVal .  
+       ?prop sio:hasAttribute ?attr2 .
+       ?attr2 a sio:StandardDeviation .
+       ?attr2 sio:hasValue ?propVal2 .   
+       BIND((?propVal2  + ?propVal) AS ?upperBound) .
+       BIND((?propVal  - ?propVal2) AS ?lowerBound) . 
+     } 
+      UNION 
+    { 
+       ?prop a ?propType .
+  	   ?prop sio:hasAttribute ?attr .
+       ?attr a sio:Median .
+       ?attr sio:hasValue ?propVal .  
+       ?prop sio:hasAttribute ?attr2 .
+      ?attr2 a stato:0000164 .
+      ?prop sio:hasAttribute sio:MaximalValue .
+      ?attr2 sio:hasValue ?upperBound .
+      ?prop sio:hasAttribute sio:MinimalValue .
+      ?attr2 sio:hasValue ?lowerBound .   
+    }
+   FILTER  (
+    ?propType IN (
+       sio:Age,
+       chear:BodyMassIndex, 
+       ncit:C64796,
+       sco:SystolicBloodPressure, 
+       sco:DiastolicBloodPressure
+   ) ).
+   
+}
+    </pre>
  </ul>
  </content>
