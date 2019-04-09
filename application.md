@@ -5,7 +5,7 @@
 <h2>Scenario Queries</h2>
 <ul>
     <h3> Study Match: Is there a study that matches this patient on a feature (s)? </h3>
-    <strong> Query 1: PARQL Query to fetch study titles that match a patient's race and gender </strong>
+    <strong> Query 1: SPARQL Query to fetch study titles that match a patient's race and gender </strong>
    <pre>
     PREFIX resource: <http://semanticscience.org/resource/>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -35,14 +35,98 @@
   		?subPatient1 rdfs:subClassOf ?restriction1 .
   		?restriction1 a owl:Restriction .
   		?restriction1 owl:someValuesFrom sio:Male .
-  
 	}
- 
     }
   </pre>
     
    <h3> Study Limitations: Are there absence or underrepresentation of population groups in this study? </h3>
-   <h3> Study Quality Evaluation: Are there adequate population sizes and is there a heterogeneity of treatment effect among arms? </h3> 
+   <strong> Query 1: SPARQL Query to fetch study titles and range of values reported for Age </strong>
+   <pre>
+   PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
+PREFIX resource: <http://semanticscience.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX chear: <http://hadatac.org/ont/chear#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT DISTINCT ?studyTitle ?propType ?lowerBound ?propVal 
+?upperBound
+WHERE {
+
+  ?study a sco:ClinicalTrial .
+  ?study dct:title ?studyTitle .
+  ?study sio:hasParticipant ?studyArm .
+  ?studyArm sio:hasAttribute | sio:hasProperty ?prop .
+  
+     { 
+       ?prop a ?propType .
+       ?prop sio:hasAttribute ?attr .
+       ?attr a sio:Mean .
+       ?attr sio:hasValue ?propVal .  
+       ?prop sio:hasAttribute ?attr2 .
+       ?attr2 a sio:StandardDeviation .
+       ?attr2 sio:hasValue ?propVal2 .   
+       BIND((?propVal2  + 2*?propVal) AS ?upperBound) .
+       BIND((?propVal  - 2*?propVal2) AS ?lowerBound) . 
+     } 
+      UNION 
+    { 
+      ?prop a ?propType .
+  	  ?prop sio:hasAttribute ?attr .
+      ?attr a sio:Median .
+      ?attr sio:hasValue ?propVal .  
+      ?prop sio:hasAttribute ?attr2 .
+      ?attr2 a stato:0000164 .
+      ?prop sio:hasAttribute sio:MaximalValue .
+      ?attr2 sio:hasValue ?upperBound .
+      ?prop sio:hasAttribute sio:MinimalValue .
+      ?attr2 sio:hasValue ?lowerBound .
+    }
+   FILTER (?upperBound <= 70) .  
+   FILTER  (?propType IN (sio:Age)).
+
+}
+   
+   </pre>
+   
+   <h3> Study Quality Evaluation: Are there adequate population sizes and is there a heterogeneity of treatment effect among arms? </h3>
+   <strong> Query 1: SPARQL query to find large scale studies with intervention arms size being at least 1/3rd the overall cohort size </strong>
+   <pre>
+   PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
+PREFIX resource: <http://semanticscience.org/resource/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX chear: <http://hadatac.org/ont/chear#>
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+
+SELECT DISTINCT ?studyTitle ?intervention ?popSize ?totalCohortSize
+WHERE {
+  ?study a sco:ClinicalTrial .
+  ?study dct:title ?studyTitle .
+  ?study sio:hasParticipant ?studyArm .
+  ?studyArm sio:hasProperty ?intervention .
+  ?studyArm sio:hasAttribute ?prop .
+  ?prop a sco:PopulationSize .
+  ?prop sio:hasValue ?popSize . 
+  {
+    SELECT DISTINCT ?study (SUM(?popSize) AS ?totalCohortSize) WHERE {  
+        ?study sio:hasParticipant ?studyArm .    
+	    ?studyArm sio:hasAttribute ?prop .
+        ?prop a sco:PopulationSize .
+        ?prop sio:hasValue ?popSize .  
+   }  
+   GROUP BY ?study 
+   HAVING (?totalCohortSize > 1000)
+   }
+  FILTER (?popSize >= (?totalCohortSize/3)) .
+  FILTER ((?intervention rdfs:subClassOf* 
+  sio:Intervention ) && (?intervention rdfs:subClassOf* 
+  chebi:24436 )).
+}
+   
+   </pre>
  </ul>
  </content>
  
