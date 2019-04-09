@@ -16,7 +16,7 @@
  <h4> Definitions </h4>
  <ul>
  <li>Research Study 
-  <ul>
+  <ul type = "circle">
   <li> Definition: A scientific investigation that involves testing a hypothesis </li>
   <li> Immediate Superclass: None </li>
   <li> Example: "10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes"</li>
@@ -26,7 +26,7 @@
 
   
   <li>Clinical Trial
-  <ul>
+  <ul type = "circle">
   <li> Definition: A prospective study designed to evaluate whether one or more interventions are associated with an outcome</li>
   <li> Immediate Superclass: Research Study</li>
   <li> Example: "10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes"</li>
@@ -36,7 +36,7 @@
   
     
   <li>Cohort
-  <ul>
+  <ul type = "circle">
   <li> Definition: A cohort is the group of subjects enrolled in a study</li>
   <li> Immediate Superclass: None</li>
   <li> Example: Randomized Cohort in "10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes"</li>
@@ -46,7 +46,7 @@
   
   
   <li>Study Arm
-  <ul>
+  <ul type = "circle">
   <li> Definition: A group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial's protocol</li>
   <li> Immediate Superclass: Cohort</li>
   <li> Example: Metformin Conventional Therapy Arm</li>
@@ -55,7 +55,7 @@
   </li>
   
   <li>Study Subject
-  <ul>
+  <ul type = "circle">
   <li> Definition: A person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary</li>
   <li> Immediate Superclass: None</li>
   <li> Example: African American Male Subject in "10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes"</li>
@@ -64,7 +64,7 @@
   </li>
   
   <li>Study Intervention
-  <ul>
+  <ul type = "circle">
   <li> Definition: A process or action that is the focus of a clinical study. Interventions include drugs, medical devices, procedures, vaccines, and other products that are either investigational or already available</li>
   <li> Immediate Superclass: None</li>
   <li> Example: Metformin</li>
@@ -73,7 +73,7 @@
   </li>
   
   <li>Subject Characteristic
-  <ul>
+  <ul type = "circle">
   <li> Definition: Property that summarizes important attributes of the participants enrolled in a study</li>
   <li> Immediate Superclass: None</li>
   <li> Example: Age</li>
@@ -82,7 +82,7 @@
   </li>
   
   <li>Statistical Measure
-  <ul>
+  <ul type = "circle">
   <li> Definition: a standard unit used to express the size, amount, or degree of something</li>
   <li> Immediate Superclass: None</li>
   <li> Example: Mean</li>
