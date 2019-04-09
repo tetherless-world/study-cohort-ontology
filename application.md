@@ -42,7 +42,7 @@
    <h3> Study Limitations: Are there absence or underrepresentation of population groups in this study? </h3>
    <strong> Query 1: SPARQL Query to fetch study titles and range of values reported for Age </strong>
    <pre>
-   PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
+PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
 PREFIX resource: <http://semanticscience.org/resource/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sio: <http://semanticscience.org/resource/>
@@ -93,7 +93,7 @@ WHERE {
    <h3> Study Quality Evaluation: Are there adequate population sizes and is there a heterogeneity of treatment effect among arms? </h3>
    <strong> Query 1: SPARQL query to find large scale studies with intervention arms size being at least 1/3rd the overall cohort size </strong>
    <pre>
-   PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
+PREFIX sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/>
 PREFIX resource: <http://semanticscience.org/resource/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sio: <http://semanticscience.org/resource/>
