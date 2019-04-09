@@ -82,7 +82,7 @@ both in patients at high risk for vascular events" clinical trial</p>
         ] . 
   </pre>
   
-    <strong> Listing 2: Representation of a categorical characteristic on  the Ramipril Study Arm</strong>
+  <strong> Listing 2: Representation of a categorical characteristic on  the Ramipril Study Arm</strong>
    <pre>
   sco-i:PeripheralArteryDiseaseSubPopulation a owl:Class;
         rdfs:subClassOf sco-i:RamiprilArm;
@@ -113,9 +113,9 @@ both in patients at high risk for vascular events" clinical trial</p>
            [a sio:StandardDeviation; sio:hasValue 7.2 ]  
         ] . 
         
-        </pre>
+   </pre>
   
-    <strong> Listing 2: Representation of a descriptive statistics measure of median +/- interquartile range</strong>
+  <strong> Listing 2: Representation of a descriptive statistics measure of median +/- interquartile range</strong>
    <pre>
   sco-i:XStudyArm
     a owl:Class, sio:InterventionGroup;
