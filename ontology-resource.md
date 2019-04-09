@@ -29,8 +29,34 @@
  <article class="mb-5" id="ontologyreused">
 <content>
 <h2> Ontologies Reused</h2>
+ <p>Below we present a small Python script that can be used to fetch the child and parent hierarchy for a class, given its IRI. This script pulls in all the axioms defined on the classes as well. We leverage the powerful constructs of the <a href="https://www.w3.org/TR/rdf-sparql-query/#describe">SPARQL DESCRIBE</a> functionality to achieve this. This script outputs the RDF/XML version of the subset class tree.</p>
 <ul>
-   <h3> MIREOT Script </h3>
+ <h3><a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/MIREOT.py">MIREOT Script</a></h3>
+ <pre>
+ from SPARQLWrapper import *
+from owlready2 import *
+import os
+
+sparql_endpoint = "http://localhost:9999/bigdata/sparql"
+
+query = '''
+describe ?child ?superParent 
+where {
+   hint:Query hint:describeMode "CBD".
+  ?child rdfs:subClassOf* ?super .
+  ?super rdfs:subClassOf* ?superParent .
+}
+values ?super {<http://hadatac.org/ont/chear#ATIDU>}
+'''
+
+sparql_wrapper = SPARQLWrapper(sparql_endpoint)
+sparql_wrapper.setQuery(query)
+sparql_wrapper.setReturnFormat(RDF)
+results = sparql_wrapper.query().convert()
+results.serialize('output.owl', format="pretty-xml")
+print("Writing results to a rdf-xml file")
+
+ </pre>
  </ul>
  </content>
  
