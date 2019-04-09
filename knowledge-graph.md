@@ -74,11 +74,7 @@ both in patients at high risk for vascular events" clinical trial</p>
        sio:hasAttribute    
        [ a sco:PopulationSize; 
        sio:hasValue 8576],
-        [ a sio:Age; sio:hasUnit sio:Year;
-          sio:hasAttribute 
-          [ a sio:Mean;
-          sio:hasValue 66.4],
-           [a sio:StandardDeviation; sio:hasValue 7.2 ]  
+        [ a sio:Age; sio:hasUnit sio:Year
         ] . 
   </pre>
   
