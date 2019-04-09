@@ -1476,7 +1476,7 @@
 
 	<owl:Class rdf:about="&sco;CohortDescription">
 		<rdfs:label>Cohort Description</rdfs:label>
-		<rdfs:subClassOf>&sco;MedicalData</rdfs:subClassOf>
+		<rdfs:subClassOf rdf:resource="&sio;MedicalData"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasDataItem"/>
