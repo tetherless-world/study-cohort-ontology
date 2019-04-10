@@ -1,4 +1,4 @@
-[Concept Map](#conceptmap) [Ontology File](#ontologyfile) [Ontologies Reused](#ontologyreused) 
+[Concept Map](#conceptmap) | [Ontology File](#ontologyfile) | [Ontologies Reused](#ontologyreused) 
 
  <article class="mb-5" id="conceptmap">
 <content>
