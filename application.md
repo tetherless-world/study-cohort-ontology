@@ -41,7 +41,7 @@
   
   <strong> Result 1: Study titles retrieved from the study match query to find all studies in which African American Males are represented </strong>
   
-  <ul>
+ <div style="overflow-x:auto;">
  <table style="width:100%">
     <tr>
     <th>Study Title</th>
@@ -55,7 +55,60 @@
   <tr>
     <td>Efficacy and Safety of Degludec versus Glargine in Type 2 Diabetes</td>
   </tr>
+  
+  <tr>
+    <td>Patientdirected titration for achieving glycaemic goals using a once daily basal insulin analogue: an assessment of two different fasting plasma glucose targets the TITRATETM study</td>
+  </tr>
+	 
+<tr>
+<td>Glycaemic control and hypoglycaemia with new insulin glargine 300 U/ml versus insulin glargine 100 U/ml in people with type 2 diabetes using basal insulin and oral antihyperglycaemic drugs: the EDITION 2 randomized 12-month trial including 6-month extension.
+</td>
+</tr>
+
+<tr>
+<td>Glycaemic control and hypoglycaemia with new insulin glargine 300 U/ml versus insulin glargine 100 U/ml in people with type 2 diabetes using basal insulin and oral antihyperglycaemic drugs: the EDITION 2 randomized 12-month trial including 6-month extension</td>
+</tr>
+
+<tr>
+<td>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet. DASH-Sodium Collaborative Research Group
+</td>
+</tr>
+
+<tr>
+<td>Telmisartan, ramipril, or both in patients at high risk for vascular events</td>
+</tr>
+
+<tr>
+<td>Combined angiotensin inhibition for the treatment of diabetic nephropathy</td>
+</tr>
+
+<tr>
+<td>Effect of Finerenone on Albuminuria in Patients With Diabetic Nephropathy: A Randomized Clinical Trial</td>
+</tr>
+
+<tr>
+<td>A randomized trial of therapies for type 2 diabetes and coronary artery disease</td>
+</tr>
+
+<tr>
+<td>Effects of combination lipid therapy in type 2 diabetes mellitus</td>
+</tr>
+
+<tr>
+<td>Randomized controlled trial comparing impact on platelet reactivity of twice-daily with once-daily aspirin in people with Type 2 diabetes</td>
+</tr>
+
+<tr>
+<td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
+</tr>
+
+<tr>
+<td>Effects of intensive blood-pressure control in type 2 diabetes mellitus</td>
+</tr>
+
 </table>
+</div>
+
   
   
     
@@ -112,7 +165,7 @@ WHERE {
    
   <strong> Result 2: Study Titles and Age Ranges retrieved from the study limitation query to find studies where old adults above 70 are not represented </strong>
   
-  <ul>
+<div style="overflow-x:auto;">
  <table style="width:100%">
     <tr>
     <th>Study Title </th>
@@ -133,6 +186,8 @@ WHERE {
     <td> 59</td> 
   </tr>
 </table>
+</div>
+
 	
    
    <h3> Study Quality Evaluation: Are there adequate population sizes and is there a heterogeneity of treatment effect among arms? </h3>
@@ -175,7 +230,7 @@ WHERE {
    <strong> Result 3:   Cohort sizes and individual study arm sizes of clinical trials retrieved from a query to find the studies having a cohort population &ge; 1000 and individual study arm population sizes are at least &frac13<sup>rd</sup> the cohort size
 </strong>
   
-  <ul>
+ <div style="overflow-x:auto;">
  <table style="width:100%">
     <tr>
     <th>Study Title</th>
@@ -220,6 +275,8 @@ WHERE {
     <td> 3819 </td> 
   </tr>
 </table>
+</div>
+
    
    
  </ul>
