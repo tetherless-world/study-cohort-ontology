@@ -127,6 +127,80 @@
   </tr>
 </table>
 
+
+ <table style="width:100%">
+    <tr>
+    <th>Prefix</th>
+    <th>Links</th> 
+  </tr>
+  <tr>
+    <td>rdf</td>
+    <td><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns">Resource Description Framework</a></td> 
+  </tr>
+  <tr>
+    <td>rdfs</td>
+    <td><a href=" http://www.w3.org/2000/01/rdf-schema"> RDF Schema</a> </td> 
+  </tr>
+  <tr>
+    <td>owl</td>
+    <td><a href="http://www.w3.org/2002/07/owl#">Web Ontology Language </a> </td> 
+  </tr>
+    <tr>
+    <td> xsd</td>
+    <td> <a href=" http://www.w3.org/2001/XMLSchema#"></a> XML Schema Definition</td> 
+  </tr>
+    <tr>
+    <td>dct</td>
+    <td> <a href=" http://purl.org/dc/terms/">Dublin Core Term</a> </td> 
+  </tr>
+   <tr>
+    <td>skos</td>
+    <td> <a href="http://www.w3.org/2004/02/skos/core#"></a>  Simple Knowledge Organization System</td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+     <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> <a href=""></a> </td> 
+  </tr>
+</table>
+
+
+
  </content>
  </article>
 
