@@ -508,8 +508,10 @@ table.scroll tbody {
 tbody { border-top: 2px solid black; }
 
 tbody td, thead th {
+     width: 100%;
      padding: 10px;
      background: #e6fcf5;
+	white-space: nowrap;
 }
 
 tbody td:last-child, thead th:last-child {
