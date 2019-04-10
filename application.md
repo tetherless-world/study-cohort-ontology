@@ -41,11 +41,14 @@
   
   <strong> Result 1: Study titles retrieved from the study match query to find all studies in which African American Males are represented </strong>
   
- <div style="overflow-x:auto;">
- <table style="width:100%">
+
+ <table class="scroll">
+	<thead>
     <tr>
     <th>Study Title</th>
   </tr>
+		</thead>
+<tbody>
   <tr>
     <td>10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes</td>
   </tr>
@@ -107,7 +110,7 @@
 </tr>
 
 </table>
-</div>
+</tbody>
 
   
   
