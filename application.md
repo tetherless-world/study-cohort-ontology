@@ -184,40 +184,40 @@ WHERE {
     <th>Arm Size</th> 
   </tr>
   <tr>
-    <td></td>
-    <td> </td> 
-    <td> </td> 
-    <td> </td> 
+    <td>Long-term Metformin Use and Vitamin B12 Deficiency in the Diabetes Prevention Program Outcomes Study</td>
+    <td> 1800 </td> 
+    <td> Metformin</td> 
+    <td> 753</td> 
   </tr>
   <tr>
-    <td></td>
-    <td> </td> 
-    <td> </td> 
-    <td> </td> 
+    <td>Long-term Metformin Use and Vitamin B12 Deficiency in the Diabetes Prevention Program Outcomes Study</td>
+    <td> 1800 </td> 
+    <td>Metformin </td> 
+    <td> 859</td> 
   </tr>
   <tr>
-    <td></td>
-    <td> </td> 
-     <td> </td> 
-     <td> </td> 
+    <td>Effects of combination lipid therapy in type 2 diabetes mellitus </td>
+    <td> 5518 </td> 
+     <td> Metformin</td> 
+     <td> 2765</td> 
   </tr>
     <tr>
-    <td> </td>
-    <td>  </td> 
-    <td> </td>
-    <td>  </td> 
+    <td> Effects of combination lipid therapy in type 2 diabetes mellitus</td>
+    <td> 5518  </td> 
+    <td> Metformin</td>
+    <td> 2753 </td> 
   </tr>
     <tr>
-    <td></td>
-    <td> </td> 
-    <td> </td>
-    <td>  </td> 
+    <td> Efficacy and Safety of Degludec versus Glargine in Type 2 Diabetes </td>
+    <td> 7637 </td> 
+    <td> Metformin</td>
+    <td>  3818</td> 
   </tr>
    <tr>
-    <td> </td>
-    <td> </td> 
-    <td> </td>
-    <td>  </td> 
+    <td> Efficacy and Safety of Degludec versus Glargine in Type 2 Diabetes </td>
+    <td>7637  </td> 
+    <td> Metformin</td>
+    <td> 3819 </td> 
   </tr>
 </table>
    
