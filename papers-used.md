@@ -47,6 +47,80 @@
  <li><a href="https://ibm.box.com/s/yp0q7anj3relogeecrjh5bl054mz11v4">Primary prevention of cardiovascular disease with atorvastatin in type 2 diabetes in the Collaborative Atorvastatin Diabetes Study (CARDS): multicentrer andomised placebo-controlled trial</a></li>
  
  </ol>
+ 
+ <h3> <strong> NHANES Patient Records</strong> </h3>
+ 
+ <table style="width:100%">
+    <tr>
+    <th>Gender</th>
+    <th> Age</th> 
+    <th> Ethnicity</th>
+    <th>Race </th> 
+     <th>Body Mass Index (BMI) </th> 
+     <th>Systolic Blood Pressure (SBP) </th> 
+     <th>Diastolic Blood Pressure (DBP) </th> 
+     <th>HemoglobinA1C (HbA1C) </th> 
+  </tr>
+  <tr>
+      <th>Male</th>
+    <th> 55</th> 
+    <th> NonHispanic</th>
+    <th> African American</th> 
+     <th>26.53 </th> 
+     <th>106</th> 
+     <th>72.67 </th> 
+     <th>5.2 </th> 
+  </tr>
+  <tr>
+          <th>Female</th>
+    <th>44 </th> 
+    <th> NonHispanic</th>
+    <th> African American</th> 
+     <th> 30.9</th> 
+     <th>139.33 </th> 
+     <th>73.34 </th> 
+     <th> 6</th> 
+  </tr>
+  <tr>
+         <th>Male</th>
+    <th>70 </th> 
+    <th> NonHispanic</th>
+    <th> White</th> 
+     <th>24.74 </th> 
+     <th>130.67 </th> 
+     <th>57.34 </th> 
+     <th> 7.1</th> 
+  </tr>
+          <th>Female</th>
+    <th> 16</th> 
+    <th> NonHispanic</th>
+    <th> African American</th> 
+     <th> 16.79</th> 
+     <th>118.67</th> 
+     <th>50.67</th> 
+     <th> 4.7</th> 
+  </tr>
+    <tr>
+          <th>Male</th>
+    <th> 73</th> 
+    <th>NonHispanic </th>
+    <th> White</th> 
+     <th> 30.63</th> 
+     <th>120</th> 
+     <th>67.34 </th> 
+     <th> 5.9</th> 
+  </tr>
+   <tr>
+      <th>Female</th>
+    <th> 14</th> 
+    <th> NonHispanic</th>
+    <th> African American</th> 
+     <th> 34.5 </th> 
+     <th>114</th> 
+     <th>77.34</th> 
+     <th> 8</th> 
+  </tr>
+</table>
  </content>
  </article>
 
