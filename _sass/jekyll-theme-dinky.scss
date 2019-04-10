@@ -493,7 +493,7 @@ border-collapse: collapse;
 }
 
 table.scroll tbody,
-table.scroll thead { display: block; }
+table.scroll thead { display:table-header-group; }
 
 thead tr th { 
      font-family: 'Arvo', Helvetica, Arial, sans-serif;
