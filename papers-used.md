@@ -51,7 +51,7 @@
  <h3> <strong> NHANES Patient Records</strong> </h3>
  
  <table style="width:100%">
-    <tr>
+  <tr>
     <th>Gender</th>
     <th> Age</th> 
     <th> Ethnicity</th>
@@ -61,6 +61,7 @@
      <th>Diastolic Blood Pressure (DBP) </th> 
      <th>HemoglobinA1C (HbA1C) </th> 
   </tr>
+ 
   <tr>
       <td>Male</td>
     <td> 55</td> 
@@ -71,6 +72,7 @@
      <td>72.67 </td> 
      <td>5.2 </td> 
   </tr>
+  
   <tr>
           <td>Female</td>
     <td>44 </td> 
@@ -81,6 +83,7 @@
      <td>73.34 </td> 
      <td> 6</td> 
   </tr>
+  
   <tr>
          <td>Male</td>
     <td>70 </td> 
@@ -91,6 +94,8 @@
      <td>57.34 </td> 
      <td> 7.1</td> 
   </tr>
+  
+  <tr>
      <td>Female</td>
     <td> 16</td> 
     <td> NonHispanic</td>
