@@ -168,14 +168,16 @@ WHERE {
    
   <strong> Result 2: Study Titles and Age Ranges retrieved from the study limitation query to find studies where old adults above 70 are not represented </strong>
   
-<div style="overflow-x:auto;">
- <table style="width:100%">
+ <table class="scroll">
+	<thead>
     <tr>
     <th>Study Title </th>
     <th>Lower Bound</th> 
     <th>Median/Mean Age</th> 
     <th>Upper Bound</th> 
   </tr>
+</thead>
+<tbody>
   <tr>
     <td>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet., DASH-Sodium Collaborative Research Group</td>
     <td> 37</td> 
@@ -188,10 +190,78 @@ WHERE {
     <td>49</td>
     <td> 59</td> 
   </tr>
-</table>
-</div>
-
+ <tr>
+<td>Patientdirected titration for achieving glycaemic goals using a oncedaily basal insulin analogue: an assessment of two different fasting plasma glucose targets the TITRATETM study</td>
+    <td> </td> 
+    <td>56.6</td>
+    <td> </td> 
+  </tr>
 	
+<tr>
+<td>Patientdirected titration for achieving glycaemic goals using a oncedaily basal insulin analogue: an assessment of two different fasting plasma glucose targets the TITRATETM study</td>
+    <td> </td> 
+    <td>57.2</td>
+    <td> </td> 
+  </tr>
+</tbody>
+</table>
+
+<tr>
+<td>Patientdirected titration for achieving glycaemic goals using a oncedaily basal insulin analogue: an assessment of two different fasting plasma glucose targets the TITRATETM study</td>
+    <td> </td> 
+    <td>56.9</td>
+    <td> </td> 
+  </tr>
+  
+  <tr>
+<td>Randomized controlled trial comparing impact on platelet reactivity of twice-daily with once-daily aspirin in people with Type 2 diabetes</td>
+    <td>44 </td> 
+    <td>51</td>
+    <td> 58</td> 
+  </tr>
+  
+  <tr>
+<td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
+    <td> </td> 
+    <td>66</td>
+    <td> </td> 
+  </tr>
+  
+  <tr>
+<td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
+    <td> </td> 
+    <td>67</td>
+    <td> </td> 
+  </tr>
+  
+  <tr>
+<td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
+    <td> </td> 
+    <td>66</td>
+    <td> </td> 
+  </tr>
+  
+  <tr>
+<td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
+    <td> </td> 
+    <td>67</td>
+    <td> </td> 
+  </tr>
+  
+    <tr>
+<td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
+    <td> </td> 
+    <td>67</td>
+    <td> </td> 
+  </tr>
+  
+  
+    <tr>
+<td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
+    <td> </td> 
+    <td>67</td>
+    <td> </td> 
+  </tr>
    
    <h3> Study Quality Evaluation: Are there adequate population sizes and is there a heterogeneity of treatment effect among arms? </h3>
    <strong> Query 3: SPARQL query to find large scale studies with intervention arms size being at least 1/3rd the overall cohort size </strong>
