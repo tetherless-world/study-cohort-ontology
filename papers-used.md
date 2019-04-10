@@ -62,65 +62,66 @@
      <th>HemoglobinA1C (HbA1C) </th> 
   </tr>
   <tr>
-      <th>Male</th>
-    <th> 55</th> 
-    <th> NonHispanic</th>
-    <th> African American</th> 
-     <th>26.53 </th> 
-     <th>106</th> 
-     <th>72.67 </th> 
-     <th>5.2 </th> 
+      <td>Male</td>
+    <td> 55</td> 
+    <td> NonHispanic</td>
+    <td> African American</td> 
+     <td>26.53 </td> 
+     <td>106</td> 
+     <td>72.67 </td> 
+     <td>5.2 </td> 
   </tr>
   <tr>
-          <th>Female</th>
-    <th>44 </th> 
-    <th> NonHispanic</th>
-    <th> African American</th> 
-     <th> 30.9</th> 
-     <th>139.33 </th> 
-     <th>73.34 </th> 
-     <th> 6</th> 
+          <td>Female</td>
+    <td>44 </td> 
+    <td> NonHispanic</td>
+    <td> African American</td> 
+     <td> 30.9</td> 
+     <td>139.33 </td> 
+     <td>73.34 </td> 
+     <td> 6</td> 
   </tr>
   <tr>
-         <th>Male</th>
-    <th>70 </th> 
-    <th> NonHispanic</th>
-    <th> White</th> 
-     <th>24.74 </th> 
-     <th>130.67 </th> 
-     <th>57.34 </th> 
-     <th> 7.1</th> 
+         <td>Male</td>
+    <td>70 </td> 
+    <td> NonHispanic</td>
+    <td> White</td> 
+     <td>24.74 </td> 
+     <td>130.67 </td> 
+     <td>57.34 </td> 
+     <td> 7.1</td> 
   </tr>
-          <th>Female</th>
-    <th> 16</th> 
-    <th> NonHispanic</th>
-    <th> African American</th> 
-     <th> 16.79</th> 
-     <th>118.67</th> 
-     <th>50.67</th> 
-     <th> 4.7</th> 
+     <td>Female</td>
+    <td> 16</td> 
+    <td> NonHispanic</td>
+    <td> African American</td> 
+     <td> 16.79</td> 
+     <td>118.67</td> 
+     <td>50.67</td> 
+     <td> 4.7</td> 
   </tr>
     <tr>
-          <th>Male</th>
-    <th> 73</th> 
-    <th>NonHispanic </th>
-    <th> White</th> 
-     <th> 30.63</th> 
-     <th>120</th> 
-     <th>67.34 </th> 
-     <th> 5.9</th> 
+          <td>Male</td>
+    <td> 73</td> 
+    <td>NonHispanic </td>
+    <td> White</td> 
+     <td> 30.63</td> 
+     <td>120</td> 
+     <td>67.34 </td> 
+     <td> 5.9</td> 
   </tr>
    <tr>
-      <th>Female</th>
-    <th> 14</th> 
-    <th> NonHispanic</th>
-    <th> African American</th> 
-     <th> 34.5 </th> 
-     <th>114</th> 
-     <th>77.34</th> 
-     <th> 8</th> 
+      <td>Female</td>
+    <td> 14</td> 
+    <td> NonHispanic</td>
+    <td> African American</td> 
+     <td> 34.5 </td> 
+     <td>114</td> 
+     <td>77.34</td> 
+     <td> 8</td> 
   </tr>
 </table>
+
  </content>
  </article>
 
