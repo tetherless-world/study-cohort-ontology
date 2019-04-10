@@ -177,19 +177,22 @@ WHERE {
     <th>Upper Bound</th> 
   </tr>
 </thead>
+
 <tbody>
-  <tr>
+ <tr>
     <td>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet., DASH-Sodium Collaborative Research Group</td>
     <td> 37</td> 
     <td>47</td>
     <td>57 </td> 
   </tr>
+	
   <tr>
     <td>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet., DASH-Sodium Collaborative Research Group</td>
     <td> 39</td> 
     <td>49</td>
     <td> 59</td> 
   </tr>
+ 
  <tr>
 <td>Patientdirected titration for achieving glycaemic goals using a oncedaily basal insulin analogue: an assessment of two different fasting plasma glucose targets the TITRATETM study</td>
     <td> </td> 
@@ -203,9 +206,7 @@ WHERE {
     <td>57.2</td>
     <td> </td> 
   </tr>
-</tbody>
-</table>
-
+  
 <tr>
 <td>Patientdirected titration for achieving glycaemic goals using a oncedaily basal insulin analogue: an assessment of two different fasting plasma glucose targets the TITRATETM study</td>
     <td> </td> 
@@ -262,6 +263,10 @@ WHERE {
     <td>67</td>
     <td> </td> 
   </tr>
+  
+  </tbody>
+</table>
+
    
    <h3> Study Quality Evaluation: Are there adequate population sizes and is there a heterogeneity of treatment effect among arms? </h3>
    <strong> Query 3: SPARQL query to find large scale studies with intervention arms size being at least 1/3rd the overall cohort size </strong>
