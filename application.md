@@ -38,6 +38,26 @@
 	}
     }
   </pre>
+  
+  <strong> Result 1: Study titles retrieved from the study match query to find all studies in which African American Males are represented </strong>
+  
+  <ul>
+ <table style="width:100%">
+    <tr>
+    <th>Study Title</th>
+  </tr>
+  <tr>
+    <td>10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes</td>
+  </tr>
+  <tr>
+    <td>New insulin glargine 300 U/ml compared with glargine 100 U/ml in insulin-nave people with type 2 diabetes on oral glucose-lowering drugs: a randomized controlled trial (EDITION 3)</td>
+  </tr>
+  <tr>
+    <td>Efficacy and Safety of Degludec versus Glargine in Type 2 Diabetes</td>
+  </tr>
+</table>
+  
+  
     
    <h3> Study Limitations: Are there absence or underrepresentation of population groups in this study? </h3>
    <strong> Query 2: SPARQL Query to fetch study titles and range of values reported for Age </strong>
@@ -90,6 +110,31 @@ WHERE {
    
    </pre>
    
+  <strong> Result 2: Study Titles and Age Ranges retrieved from the study limitation query to find studies where old adults above 70 are not represented </strong>
+  
+  <ul>
+ <table style="width:100%">
+    <tr>
+    <th>Study Title </th>
+    <th>Lower Bound</th> 
+    <th>Median/Mean Age</th> 
+    <th>Upper Bound</th> 
+  </tr>
+  <tr>
+    <td>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet., DASH-Sodium Collaborative Research Group</td>
+    <td> 37</td> 
+    <td>47</td>
+    <td>57 </td> 
+  </tr>
+  <tr>
+    <td>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet., DASH-Sodium Collaborative Research Group</td>
+    <td> 39</td> 
+    <td>49</td>
+    <td> 59</td> 
+  </tr>
+</table>
+	
+   
    <h3> Study Quality Evaluation: Are there adequate population sizes and is there a heterogeneity of treatment effect among arms? </h3>
    <strong> Query 3: SPARQL query to find large scale studies with intervention arms size being at least 1/3rd the overall cohort size </strong>
    <pre>
@@ -127,6 +172,56 @@ WHERE {
 }
    
    </pre>
+   <strong> Result 3:   Cohort sizes and individual study arm sizes of clinical trials retrieved from a query to find the studies having a cohort population &ge; 1000 and individual study arm population sizes are at least &frac13<sup>rd</sup> the cohort size
+</strong>
+  
+  <ul>
+ <table style="width:100%">
+    <tr>
+    <th>Study Title</th>
+    <th>Cohort Size</th> 
+    <th>Study Arm</th>
+    <th>Arm Size</th> 
+  </tr>
+  <tr>
+    <td></td>
+    <td> </td> 
+    <td> </td> 
+    <td> </td> 
+  </tr>
+  <tr>
+    <td></td>
+    <td> </td> 
+    <td> </td> 
+    <td> </td> 
+  </tr>
+  <tr>
+    <td></td>
+    <td> </td> 
+     <td> </td> 
+     <td> </td> 
+  </tr>
+    <tr>
+    <td> </td>
+    <td>  </td> 
+    <td> </td>
+    <td>  </td> 
+  </tr>
+    <tr>
+    <td></td>
+    <td> </td> 
+    <td> </td>
+    <td>  </td> 
+  </tr>
+   <tr>
+    <td> </td>
+    <td> </td> 
+    <td> </td>
+    <td>  </td> 
+  </tr>
+</table>
+   
+   
  </ul>
  </content>
  
