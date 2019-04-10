@@ -28,7 +28,7 @@
 	           <div class="col-md-5">
 	              <!-- Logo -->
 	              <div class="logo">
-	                 <h1><a href="index.html">G-Prov Applications</a></h1>
+	                 <h1><a href="index.html">Cohort Analyses Browser</a></h1>
 	              </div>
 	           </div>         
 	        </div>
@@ -36,16 +36,25 @@
 	</div>
 	<div class="page-content">
     	<div class="row">
-		  <div class="col-md-2">
-		  	<div class="sidebar content-box" style="display: block;">
-                <ul class="nav">
-                    <!-- Main menu -->
-                    <li class="current"><a href="{{ url_for('index') }}"><i class="glyphicon glyphicon-home"></i> Physician</a></li>
-					<li><a href="{{ url_for('forms') }}"><i class="glyphicon glyphicon-stats"></i> Population Manager</a></li>
-                    <li><a href="{{ url_for('forms') }}"><i class="glyphicon glyphicon-stats"></i> Content developer</a></li>
-                </ul>
-             </div>
-		  </div>
+		  	<div class="col-md-4 navbar navbar-inverse navbar-fixed-left" id="facets">
+      <a class="navbar-brand" href="#">Brand</a>
+      <ul class="nav navbar-nav">
+       <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+         <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Sub Menu1</a></li>
+          <li><a href="#">Sub Menu2</a></li>
+          <li><a href="#">Sub Menu3</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Sub Menu4</a></li>
+          <li><a href="#">Sub Menu5</a></li>
+         </ul>
+       </li>
+       <li><a href="#">Link2</a></li>
+       <li><a href="#">Link3</a></li>
+       <li><a href="#">Link4</a></li>
+       <li><a href="#">Link5</a></li>
+      </ul>
+    </div>
 
 		  {% block body %}{% endblock %}	
 		  
@@ -57,7 +66,7 @@
          <div class="container">
          
             <div class="copy text-center">
-               Copyright 2019 <a href='#'>G-Prov</a>
+               Copyright 2019 <a href='#'>SCO</a>
             </div>
             
          </div>
