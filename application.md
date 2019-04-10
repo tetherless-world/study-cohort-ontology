@@ -307,8 +307,7 @@ WHERE {
    </pre>
    <strong> Result 3:   Cohort sizes and individual study arm sizes of clinical trials retrieved from a query to find the studies having a cohort population <span>&#8805;</span> 1000 and individual study arm population sizes are at least <sup>1<sup>rd</sup> </sup>&frasl;<sub>2</sub> the cohort size
 </strong>
-  
- <div style="overflow-x:auto;">
+ 
  <table style="width:100%">
     <tr>
     <th>Study Title</th>
@@ -353,7 +352,6 @@ WHERE {
     <td> 3819 </td> 
   </tr>
 </table>
-</div>
 
    
    
