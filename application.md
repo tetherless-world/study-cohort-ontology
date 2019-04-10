@@ -249,7 +249,7 @@ WHERE {
     <td> </td> 
   </tr>
   
-    <tr>
+<tr>
 <td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
     <td> </td> 
     <td>67</td>
@@ -257,7 +257,7 @@ WHERE {
   </tr>
   
   
-    <tr>
+ <tr>
 <td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
     <td> </td> 
     <td>67</td>
