@@ -1,4 +1,4 @@
-[Annotated Table 1 Example](#annotatedtable) | [Link to Table 1 KG ](#linktotable) |[Modeling Examples](#modelingexample) 
+[Annotated Table 1 Example](#annotatedtable) |[Link to Table 1 KG ](#linktotable) |[Modeling Examples](#modelingexample) 
 
 <article class="mb-5" id="annotatedtable">
 <content>
