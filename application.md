@@ -1,4 +1,4 @@
-[Scenario Queries](#scenarioquery) [Value Retrieval Query for Visualization](#visualization) 
+[Scenario Queries](#scenarioquery) | [Value Retrieval Query for Visualization](#visualization) 
 
 <article class="mb-5" id="scenarioquery">
 <content>
@@ -73,7 +73,7 @@ WHERE {
       UNION 
     { 
       ?prop a ?propType .
-  	  ?prop sio:hasAttribute ?attr .
+      ?prop sio:hasAttribute ?attr .
       ?attr a sio:Median .
       ?attr sio:hasValue ?propVal .  
       ?prop sio:hasAttribute ?attr2 .
@@ -113,7 +113,7 @@ WHERE {
   {
     SELECT DISTINCT ?study (SUM(?popSize) AS ?totalCohortSize) WHERE {  
         ?study sio:hasParticipant ?studyArm .    
-	    ?studyArm sio:hasAttribute ?prop .
+	?studyArm sio:hasAttribute ?prop .
         ?prop a sco:PopulationSize .
         ?prop sio:hasValue ?popSize .  
    }  
@@ -171,7 +171,7 @@ SELECT DISTINCT ?studyTitle ?propType ?lowerBound ?propVal
       UNION 
     { 
        ?prop a ?propType .
-  	   ?prop sio:hasAttribute ?attr .
+       ?prop sio:hasAttribute ?attr .
        ?attr a sio:Median .
        ?attr sio:hasValue ?propVal .  
        ?prop sio:hasAttribute ?attr2 .
