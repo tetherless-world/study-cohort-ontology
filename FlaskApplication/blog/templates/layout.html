@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>G-Prov Applications</title>
+    <title>Cohort Analyses Browsers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -37,44 +37,76 @@
 	<div class="page-content">
     	<div class="row">
 		  	<div class="col-md-12 navbar navbar-inverse navbar-fixed-left" id="facets">
+      <p style="background-color:white; text-align:center;font-size:15px">Facets</p>
       <div class="bs-example">
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#collapseOne"><span class="glyphicon glyphicon-plus"></span> What is HTML?</a>
+                    <a data-toggle="collapse" href="#collapseOne"><span class="glyphicon glyphicon-plus"></span>Study Arms</a>
                 </h4>
             </div>
             <div id="collapseOne" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <p>HTML stands for HyperText Markup Language. HTML is the standard markup language for describing the structure of web pages. <a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox"><span style="font-size:15px;">Metformin + Conventional Therapy</span>
+                    </label>
+                    </div> 
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox" style> <span style="font-size:15px;">Metformin + Intensive Therapy</span>
+                    </label>
+                    </div> 
+                    <div class="checkbox">
+                      <label>
+                          <input type="checkbox"> <span style="font-size:15px;">Sulfonylurea-Insulin + Conventional Therapy</span>
+                      </label>
+                    </div> 
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> <span style="font-size:15px;">Sulfonylurea-Insulin + Intensive Therapy</span>
+                    </label>
+                    </div>                
                 </div>
             </div>
         </div>
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-                    <a data-toggle="collapse" href="#collapseTwo"><span class="glyphicon glyphicon-plus"></span> What is Bootstrap?</a>
+                    <a data-toggle="collapse" href="#collapseTwo"><span class="glyphicon glyphicon-plus" style ="font-size:20px;"></span>Facets Supported in Study</a>
                 </h4>
             </div>
             <div id="collapseTwo" class="panel-collapse collapse in">
                 <div class="panel-body">
-                    <p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox"><span style="font-size:15px;">Age</span>
+                    </label>
+                    </div> 
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox" style> <span style="font-size:15px;">Body Mass Index (BMI)</span>
+                    </label>
+                    </div> 
+                    <div class="checkbox">
+                      <label>
+                          <input type="checkbox"> <span style="font-size:15px;">Systolic Blood Pressure</span>
+                      </label>
+                    </div> 
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> <span style="font-size:15px;">Diastolic Blood Pressure</span>
+                    </label>
+                    </div>
+                    <div class="checkbox">
+                    <label>
+                        <input type="checkbox"> <span style="font-size:15px;">Hemoglobin A1C</span>
+                    </label>
+                    </div>  
                 </div>
             </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a data-toggle="collapse"  href="#collapseThree"><span class="glyphicon glyphicon-plus"></span> What is CSS?</a>
-                </h4>
-            </div>
-            <div id="collapseThree" class="panel-collapse collapse">
-                <div class="panel-body">
-                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
-                </div>
-            </div>
-        </div>
+        </div>        
     </div>
   <p><strong>Note:</strong> Click on the linked heading text to expand or collapse accordion panels.</p>
 </div>
