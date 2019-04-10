@@ -192,7 +192,7 @@ print("Writing results to a rdf-xml file")
   </tr>
      <tr>
     <td>obo</td>
-    <td> <a href=" http://purl.obolibrary.org/obo/">OBO Foundry</a> </td> 
+    <td> <a href="http://purl.obolibrary.org/obo/">OBO Foundry</a> </td> 
   </tr>
     <tr>
     <td>stato</td>
