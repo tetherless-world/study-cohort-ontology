@@ -108,9 +108,9 @@
 <tr>
 <td>Effects of intensive blood-pressure control in type 2 diabetes mellitus</td>
 </tr>
-
-</table>
 </tbody>
+</table>
+
 
   
   
