@@ -42,13 +42,11 @@
   <strong> Result 1: Study titles retrieved from the study match query to find all studies in which African American Males are represented </strong>
   
 
- <table class="scroll">
-	<thead>
+ <table style="width:100%">
     <tr>
     <th>Study Title</th>
   </tr>
-		</thead>
-<tbody>
+		
   <tr>
     <td>10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes</td>
   </tr>
@@ -108,7 +106,6 @@
 <tr>
 <td>Effects of intensive blood-pressure control in type 2 diabetes mellitus</td>
 </tr>
-</tbody>
 </table>
 
 
@@ -168,17 +165,14 @@ WHERE {
    
   <strong> Result 2: Study Titles and Age Ranges retrieved from the study limitation query to find studies where old adults above 70 are not represented </strong>
   
- <table class="scroll">
-	<thead>
+ <table style="width:100%">
     <tr>
     <th>Study Title </th>
     <th>Lower Bound</th> 
     <th>Median/Mean Age</th> 
     <th>Upper Bound</th> 
   </tr>
-</thead>
 
-<tbody>
  <tr>
     <td>Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet., DASH-Sodium Collaborative Research Group</td>
     <td> 37</td> 
@@ -249,7 +243,7 @@ WHERE {
     <td> </td> 
   </tr>
   
-    <tr>
+<tr>
 <td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
     <td> </td> 
     <td>67</td>
@@ -257,14 +251,12 @@ WHERE {
   </tr>
   
   
-    <tr>
+ <tr>
 <td>Cardiovascular outcomes using doxazosin vs. chlorthalidone for the treatment of hypertension in older adults with and without glucose disorders: a report from the ALLHAT study</td>
     <td> </td> 
     <td>67</td>
     <td> </td> 
   </tr>
-  
-  </tbody>
 </table>
 
    
@@ -305,7 +297,7 @@ WHERE {
 }
    
    </pre>
-   <strong> Result 3:   Cohort sizes and individual study arm sizes of clinical trials retrieved from a query to find the studies having a cohort population <span>&#8805;</span> 1000 and individual study arm population sizes are at least <sup>1<sup>rd</sup> </sup>&frasl;<sub>2</sub> the cohort size
+   <strong> Result 3:   Cohort sizes and individual study arm sizes of clinical trials retrieved from a query to find the studies having a cohort population <span>&#8805;</span> 1000 and individual study arm population sizes are at least <sup>1<sup>rd</sup> </sup>&frasl;<sub>3</sub> the cohort size
 </strong>
  
  <table style="width:100%">
