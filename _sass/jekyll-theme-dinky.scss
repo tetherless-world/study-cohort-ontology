@@ -482,19 +482,21 @@ td {
  }
 
 table.scroll {
-    /* width: 100%; */ /* Optional */
-    /* border-collapse: collapse; */
-    border-spacing: 0;
-    border: 2px solid black;
+  border: 1px solid #ccc;
+  margin-bottom: 32px;
+  text-align: left;
 }
 
 table.scroll tbody,
 table.scroll thead { display: block; }
 
 thead tr th { 
-    height: 30px;
-    line-height: 30px;
-    /* text-align: left; */
+     font-family: 'Arvo', Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+  padding: 10px;
+  background: #38d9a9;
+  color: #FDFEFB;
 }
 
 table.scroll tbody {
@@ -506,9 +508,8 @@ table.scroll tbody {
 tbody { border-top: 2px solid black; }
 
 tbody td, thead th {
-    /* width: 20%; */ /* Optional */
-    border-right: 1px solid black;
-    /* white-space: nowrap; */
+     padding: 10px;
+     background: #e6fcf5;
 }
 
 tbody td:last-child, thead th:last-child {
