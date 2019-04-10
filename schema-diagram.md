@@ -1,4 +1,4 @@
-[Concept Map for Ontology](#cmfo) [Concept Map for Instantiated Example](#cmfie) 
+[Concept Map for Ontology](#cmfo) | [Concept Map for Instantiated Example](#cmfie) 
 
 <article class="mb-5" id="cmfo">
 <content>
