@@ -65,6 +65,7 @@
      >
     <owl:Ontology rdf:about="https://purl.org/heals/diseases/">
         <owl:versionIRI rdf:resource="&diseases;1.0.0"/>
+        <owl:imports rdf:resource="https://purl.org/heals/sco/"/> 
     </owl:Ontology>
 
 
