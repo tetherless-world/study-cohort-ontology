@@ -41,7 +41,7 @@
      xmlns:fibo-fnd-utl-av="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:prov="http://www.w3.org/ns/prov#"
-     xmlns:measures="https://idea.tw.rpi.edu/projects/heals/measures/"
+     xmlns:measures="https://purl.org/heals/measures/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:uberon="http://purl.obolibrary.org/obo/uberon#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
@@ -58,13 +58,30 @@
      xmlns:sio-f="http://semanticscience.org/ontology/sio.owl#"
      xmlns:entity_quality="http://purl.obolibrary.org/obo/oba/patterns/entity_quality/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:patientcohorts="http://www.semanticweb.org/shruthichari/ontologies/2018/7/patientcohorts#"
+     xmlns:sco="https://purl.org/heals/sco/"
      xmlns:process_attribute="http://purl.obolibrary.org/obo/envo-p/patterns/process_attribute/"
      xmlns:dct="http://purl.org/dc/elements/1.1/"
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      >
     <owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/measures/">
         <owl:versionIRI rdf:resource="&measures;1.0.0"/>
+        <dct:license>
+        Copyright 2019 IBM Research and Rensselaer Polytechnic Institute
+
+            Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+        </dct:license>
+        <rdfs:label>Measures Ontology</rdfs:label>
+
     </owl:Ontology>
 
 

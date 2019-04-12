@@ -1520,18 +1520,7 @@
 	
 
 
-	<!-- &sco;ControlNature
-
-	<owl:Class rdf:about="&sco;ControlNature">
-		<rdfs:label>control nature</rdfs:label>
-	</owl:Class>
 	
-
-
-
-	<owl:Class rdf:about="&sco;Controlled">
-		<rdfs:subClassOf rdf:resource="&sco;ControlNature"/>
-	</owl:Class>    
 	
 
 
@@ -2048,16 +2037,6 @@
 	<owl:Class rdf:about="&provcare;ClinicalIntervention">
 		<rdfs:subClassOf rdf:resource="&provcare;Intervention"/>
 	</owl:Class>
-	
-
-
-	<!-- &sco;ThresholdSuspend -->
-
-	<owl:Class rdf:about="&sco;ThresholdSuspend">
-		<rdfs:subClassOf rdf:resource="&sco;ControlNature"/>
-	</owl:Class>
-  
-	
 
 
 	<!-- &sco;YearOfFollowUp -->

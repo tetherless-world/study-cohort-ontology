@@ -7,7 +7,7 @@
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
     <!ENTITY dct "http://purl.org/dc/terms/" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
-    <!ENTITY therapies "https://idea.tw.rpi.edu/projects/heals/therapies/" >
+    <!ENTITY therapies "https://purl.org/heals/therapies/" >
     <!ENTITY chear "http://hadatac.org/ont/chear#" >
     <!ENTITY hasco "http://hadatac.org/ont/hasco#" >
     <!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
@@ -17,7 +17,7 @@
     
 ]>
 
-<rdf:RDF xml:base="https://idea.tw.rpi.edu/projects/heals/studycohort/"
+<rdf:RDF xml:base="https://purl.org/heals/therapies/"
      xmlns:schema="http://schema.org/"
      xmlns:chebi="http://purl.obolibrary.org/obo/chebi#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
@@ -41,7 +41,7 @@
      xmlns:fibo-fnd-utl-av="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:prov="http://www.w3.org/ns/prov#"
-     xmlns:therapies="https://idea.tw.rpi.edu/projects/heals/therapies/"
+     xmlns:therapies="https://purl.org/heals/therapies/"
      xmlns:foaf="http://xmlns.com/foaf/0.1/"
      xmlns:uberon="http://purl.obolibrary.org/obo/uberon#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
@@ -63,7 +63,7 @@
      xmlns:dct="http://purl.org/dc/elements/1.1/"
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      >
-    <owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/therapies/">
+    <owl:Ontology rdf:about="https://purl.org/heals/therapies/">
         <owl:versionIRI rdf:resource="&therapies;1.0.0"/>
     </owl:Ontology>
 
