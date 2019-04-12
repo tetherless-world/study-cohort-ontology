@@ -8,7 +8,7 @@
 	<!ENTITY dct "http://purl.org/dc/terms/" >
 	<!ENTITY dc  "http://purl.org/dc/elements/1.1/">
 	<!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
-	<!ENTITY sco "https://idea.tw.rpi.edu/projects/heals/studycohort/" >
+	<!ENTITY sco "https://purl.org/heals/sco/" >
 	<!ENTITY chear "http://hadatac.org/ont/chear#" >
 	<!ENTITY hasco "http://hadatac.org/ont/hasco#" >
 	<!ENTITY prov "http://www.w3.org/ns/prov-o#" >
@@ -27,7 +27,7 @@
 	<!ENTITY doid "http://purl.obolibrary.org/obo/DOID_">	
 ]>
 
-<rdf:RDF xml:base="https://idea.tw.rpi.edu/projects/heals/studycohort/"
+<rdf:RDF xml:base="https://purl.org/heals/sco/"
 	 xmlns:owl="http://www.w3.org/2002/07/owl#"
 	 xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
 	 xmlns:skos="http://www.w3.org/2004/02/skos/core#"
@@ -37,7 +37,7 @@
 	 xmlns:sio="http://semanticscience.org/resource/"
 	 xmlns:fibo-fnd-utl-av="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"
 	 xmlns:prov="http://www.w3.org/ns/prov#"
-	 xmlns:sco="https://idea.tw.rpi.edu/projects/heals/studycohort/"
+	 xmlns:sco="https://purl.org/heals/sco/"
 	 xmlns:hasco="http://hadatac.org/ont/hasco#"
 	 xmlns:chear="http://hadatac.org/ont/chear#"
 	 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -52,7 +52,7 @@
 	 xmlns:provcare="http://www.case.edu/ProvCaRe/provcare#"
 	 xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
 	 >
-	<owl:Ontology rdf:about="https://idea.tw.rpi.edu/projects/heals/studycohort/">
+	<owl:Ontology rdf:about="https://purl.org/heals/sco/">
 		<owl:versionIRI rdf:resource="&sco;1.0.0"/>
 		<dct:license>
 		Copyright 2019 IBM Research and Rensselaer Polytechnic Institute
@@ -83,7 +83,7 @@
 		The Study Cohort Ontology (SCO) is developed to model overall structure and patterns of cohort variables and control/intervention groups defined within the structured population descriptions (commonly referred to as Table1's or Cohort Summary Tables)of observational case studies and clinical trials. We maintain only domain agnostic and commonly occuring subject variables and interventions in SCO, and we have a suite of ontologies (Diseases, Medications, LabResults etc) to encode Diabetes related terminology. We have adopted a bottom-up approach to modeling and we have revised the structure of SCO upon investigation of a few research studies (11 to be precise) from the Pharmacological Interventions (Chapter 8) and Cardiovascular Complications (Chapter 9) of the American Diabetes Association (ADA)’s Standards of Medical Care 2018 CPG. We enable deep drive visualizations driven off queries to knowledge graphs modeled on SCO, to help assist physician visualize the similarity of a patient to a study group, at a quick glance. We welcome contributions and suggestions to extend SCO to represent cohort descriptions of publications targeted to other diseases, and we plan to release set of tools to make this process seamless.</dct:abstract>
 		<!--<owl:imports rdf:resource="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/external/chear_small.owl"/>--> 
     	<!--<owl:imports rdf:resource="external/chear_small.owl"/>-->
-		<owl:imports rdf:resource="https://idea.tw.rpi.edu/projects/heals/studycohort/external/chear_external.ttl"/>
+		<owl:imports rdf:resource="https://purl.org/heals/sco/external/chear_external.ttl"/>
 		<owl:imports rdf:resource="http://hadatac.org/ont/hasco/"/>
 		<owl:imports rdf:resource="http://semanticscience.org/ontology/sio-subset-labels.owl"/>
 	</owl:Ontology>
