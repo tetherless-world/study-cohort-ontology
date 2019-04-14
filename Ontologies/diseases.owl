@@ -8,10 +8,10 @@
     <!ENTITY dct "http://purl.org/dc/terms/" >
     <!ENTITY skos "http://www.w3.org/2004/02/skos/core#" >
     <!ENTITY diseases "https://purl.org/heals/diseases/" >
+    <!ENTITY doid "http://purl.obolibrary.org/obo/DOID_">
     <!ENTITY chear "http://hadatac.org/ont/chear#" >
     <!ENTITY hasco "http://hadatac.org/ont/hasco#" >
     <!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
-    <!ENTITY sio-f "http://semanticscience.org/ontology/sio.owl#">
     <!ENTITY sio "http://semanticscience.org/resource/">
     <!ENTITY obo "http://purl.obolibrary.org/obo/"> 
     
@@ -19,14 +19,13 @@
 
 <rdf:RDF xml:base="https://purl.org/heals/diseases/"
      xmlns:schema="http://schema.org/"
-     xmlns:chebi="http://purl.obolibrary.org/obo/chebi#"
+     xmlns:chebi="http://purl.obolibrary.org/obo/CHEBI_"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:entity_attribute1="http://purl.obolibrary.org/obo/envo-p/patterns/entity_attribute/"
+     xmlns:doid="http://purl.obolibrary.org/obo/DOID_"
      xmlns:foo="http://geneontology.org/foo/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:hp="http://purl.obolibrary.org/obo/hp#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-     xmlns:doid="http://purl.obolibrary.org/obo/doid#"
      xmlns:Wikipedia="http://purl.obolibrary.org/obo/Wikipedia#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:envo="http://purl.obolibrary.org/obo/envo#"
@@ -47,18 +46,15 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:hasco="http://hadatac.org/ont/hasco#"
-     xmlns:hp3="http://purl.obolibrary.org/obo/hp.owl#"
+     xmlns:hp="http://purl.obolibrary.org/obo/hp.owl#"
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:entity_attribute="http://purl.obolibrary.org/obo/oba/patterns/entity_attribute/"
      xmlns:core="http://purl.obolibrary.org/obo/uberon/core#"
      xmlns:chear="http://hadatac.org/ont/chear#"
-     xmlns:chebi1="http://purl.obolibrary.org/obo/chebi/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:hsapdv="http://purl.obolibrary.org/obo/hsapdv#"
-     xmlns:sio-f="http://semanticscience.org/ontology/sio.owl#"
      xmlns:entity_quality="http://purl.obolibrary.org/obo/oba/patterns/entity_quality/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:patientcohorts="http://www.semanticweb.org/shruthichari/ontologies/2018/7/patientcohorts#"
      xmlns:process_attribute="http://purl.obolibrary.org/obo/envo-p/patterns/process_attribute/"
      xmlns:dct="http://purl.org/dc/elements/1.1/"
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
@@ -72,18 +68,20 @@
     <!-- &diseases;Anemia -->
 
     <owl:Class rdf:about="&diseases;Anemia">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
     </owl:Class>
 
     <!-- &diseases;Defficiency -->
 
     <owl:Class rdf:about="&diseases;Defficiency">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
     </owl:Class>
 
 
     <!-- &diseases;VitaminB12Defficency -->
 
     <owl:Class rdf:about="&diseases;VitaminB12Defficency">
-        <rdfs:subClassOf rdf:resource="&diseases;Defficiency"/>
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
     </owl:Class>
     
 
@@ -91,6 +89,7 @@
     <!-- &diseases;DiabetesMellitus -->
 
     <owl:Class rdf:about="&diseases;DiabetesMellitus">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
     </owl:Class>
 
     
@@ -98,6 +97,7 @@
     <!-- &diseases;Nephropathy -->
 
     <owl:Class rdf:about="&diseases;Nephropathy">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
     </owl:Class>
     
 
@@ -105,19 +105,21 @@
     <!-- &diseases;Neuropathy -->
 
     <owl:Class rdf:about="&diseases;Neuropathy">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
     </owl:Class>
     
 
     <!-- &diseases;Retinopathy -->
 
     <owl:Class rdf:about="&diseases;Retinopathy">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
     </owl:Class>
     
 
     <!-- http://purl.obolibrary.org/obo/DOID_2355 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_2355">
-        <owl:equivalentClass rdf:resource="&diseases;Anemia"/>
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
     </owl:Class>
     
 
@@ -125,6 +127,7 @@
     <!-- http://purl.obolibrary.org/obo/DOID_557 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_557">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
         <owl:equivalentClass rdf:resource="&diseases;Nephropathy"/>
     </owl:Class>
     
@@ -133,6 +136,7 @@
     <!-- http://purl.obolibrary.org/obo/DOID_870 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_870">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
         <owl:equivalentClass rdf:resource="&diseases;Neuropathy"/>
     </owl:Class>
     
@@ -141,6 +145,7 @@
     <!-- http://purl.obolibrary.org/obo/DOID_8947 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_8947">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
         <owl:equivalentClass rdf:resource="&diseases;Retinopathy"/>
     </owl:Class>
 
@@ -148,6 +153,7 @@
     <!-- http://purl.obolibrary.org/obo/DOID_9351 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/DOID_9351">
+        <rdfs:subClassOf rdf:resource="&doid;4"/>
         <owl:equivalentClass rdf:resource="&diseases;DiabetesMellitus"/>
     </owl:Class>
     

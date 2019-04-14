@@ -86,10 +86,6 @@
 	
 
 
-	
-	
-
-
 	<!-- 
 	///////////////////////////////////////////////////////////////////////////////////////
 	//
@@ -1369,6 +1365,13 @@
 		<skos:definition rdf:datatype="&xsd;string">the science dealing with populations, including matters of health, disease, births, and mortality</skos:definition>
 		<dct:source>Miller-Keane Encyclopedia and Dictionary of Medicine, Nursing, and Allied Health, Seventh Edition</dct:source>
 	</owl:Class>
+
+	<!-- &chear;Anthropometry -->
+
+	<owl:Class rdf:about="&chear;Anthropometry">
+		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
+	</owl:Class>
+	
 	
 
 
