@@ -1370,9 +1370,7 @@
 
 	<owl:Class rdf:about="&chear;Anthropometry">
 		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
-	</owl:Class>
-	
-	
+	</owl:Class>	
 
 
 	<!-- &chear;MedicalTherapy -->
@@ -1897,6 +1895,12 @@
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
 				<owl:someValuesFrom rdf:resource="&sio;UnitOfMeasurement"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+		<rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sio;DimensionalQuantity"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
 		<skos:definition>Property that summarizes important attributes of the participants enrolled in a study</skos:definition>
