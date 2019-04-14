@@ -82,8 +82,7 @@
         <rdfs:label>albumin creatinine ratio</rdfs:label>
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
 
-    </owl:Class>
-    
+    </owl:Class>   
 
 
     <!-- &cmo;0002696 -->
@@ -92,8 +91,6 @@
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
         <rdfs:label>cholestrol</rdfs:label>
     </owl:Class>
-
-
 
     <!-- &labresults;FastingBloodGlucose -->
 
@@ -162,7 +159,7 @@
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/&chebi;5931">
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
-        <rdfs:label>Insulin</rdfs:label>
+        <rdfs:label>insulin</rdfs:label>
     </owl:Class>
 
      <!-- &labresults;HighDensityLipoprotein -->
@@ -192,7 +189,7 @@
     <!-- &labresults;Lipoprotein -->
 
     <owl:Class rdf:about="&labresults;Lipoprotein">
-        <rdfs:subClassOf rdf:resource="&labresults;Cholestrol"/>       
+        <rdfs:subClassOf rdf:resource="&cmo;0002696"/>       
     
     </owl:Class>
     
