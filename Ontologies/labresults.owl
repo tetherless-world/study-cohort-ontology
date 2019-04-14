@@ -11,15 +11,17 @@
     <!ENTITY chear "http://hadatac.org/ont/chear#" >
     <!ENTITY hasco "http://hadatac.org/ont/hasco#" >
     <!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
-    <!ENTITY sio-f "http://semanticscience.org/ontology/sio.owl#">
     <!ENTITY sio "http://semanticscience.org/resource/">
     <!ENTITY obo "http://purl.obolibrary.org/obo/"> 
-    
+    <!ENTITY cmo "http://purl.obolibrary.org/obo/CMO_">
+    <!ENTITY chebi "http://purl.obolibrary.org/obo/CHEBI_">
+    <!ENTITY sco "https://purl.org/heals/sco/">  
 ]>
 
 <rdf:RDF xml:base="https://purl.org/heals/labresults/"
      xmlns:schema="http://schema.org/"
-     xmlns:chebi="http://purl.obolibrary.org/obo/chebi#"
+    xmlns:sco="https://purl.org/heals/sco/"
+
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:entity_attribute1="http://purl.obolibrary.org/obo/envo-p/patterns/entity_attribute/"
      xmlns:foo="http://geneontology.org/foo/"
@@ -38,6 +40,7 @@
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:sio="http://semanticscience.org/resource/"
      xmlns:uo="http://purl.obolibrary.org/obo/uo#"
+     xmlns:cmo="http://purl.obolibrary.org/obo/CMO_"
      xmlns:fibo-fnd-utl-av="http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/"
      xmlns:vann="http://purl.org/vocab/vann/"
      xmlns:prov="http://www.w3.org/ns/prov#"
@@ -47,50 +50,48 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
      xmlns:hasco="http://hadatac.org/ont/hasco#"
-     xmlns:hp3="http://purl.obolibrary.org/obo/hp.owl#"
      xmlns:ubprop="http://purl.obolibrary.org/obo/ubprop#"
      xmlns:entity_attribute="http://purl.obolibrary.org/obo/oba/patterns/entity_attribute/"
      xmlns:core="http://purl.obolibrary.org/obo/uberon/core#"
      xmlns:chear="http://hadatac.org/ont/chear#"
-     xmlns:chebi1="http://purl.obolibrary.org/obo/chebi/"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:hsapdv="http://purl.obolibrary.org/obo/hsapdv#"
-     xmlns:sio-f="http://semanticscience.org/ontology/sio.owl#"
      xmlns:entity_quality="http://purl.obolibrary.org/obo/oba/patterns/entity_quality/"
      xmlns:obo="http://purl.obolibrary.org/obo/"
-     xmlns:patientcohorts="http://www.semanticweb.org/shruthichari/ontologies/2018/7/patientcohorts#"
+    xmlns:chebi="http://purl.obolibrary.org/obo/CHEBI_"
      xmlns:process_attribute="http://purl.obolibrary.org/obo/envo-p/patterns/process_attribute/"
      xmlns:dct="http://purl.org/dc/elements/1.1/"
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      >
     <owl:Ontology rdf:about="https://purl.org/heals/labresults/">
         <owl:versionIRI rdf:resource="&labresults;1.0.0"/>
+        <owl:imports rdf:resource="https://purl.org/heals/sco/"/>
     </owl:Ontology>
 
 
-    <!-- http://purl.obolibrary.org/obo/CHEBI_17855 -->
+    <!-- http://purl.obolibrary.org/obo/&chebi;17855 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_17855">
-        <owl:equivalentClass rdf:resource="&labresults;Triglyceride"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/&chebi;17855">
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
         <rdfs:label>triglyceride</rdfs:label>
     </owl:Class>
 
-    <!-- &labresults;AlbuminCreatinineRatio -->
+    <!-- &cmo;0000384 -->
 
-    <owl:Class rdf:about="&labresults;AlbuminCreatinineRatio">
+    <owl:Class rdf:about="&cmo;0000384">
         <rdfs:label>albumin creatinine ratio</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+
     </owl:Class>
-
-
-    <!-- &labresults;BloodPressure -->
-
-    <owl:Class rdf:about="&labresults;BloodPressure"/>
     
 
 
-    <!-- &labresults;Cholestrol -->
+    <!-- &cmo;0002696 -->
 
-    <owl:Class rdf:about="&labresults;Cholestrol"/>
+    <owl:Class rdf:about="&cmo;0002696">
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+        <rdfs:label>cholestrol</rdfs:label>
+    </owl:Class>
 
 
 
@@ -98,6 +99,7 @@
 
     <owl:Class rdf:about="&labresults;FastingBloodGlucose">
         <rdfs:label>fasting blood glucose</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
     </owl:Class>
     
 
@@ -112,40 +114,55 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label>fasting plasma glucose</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+
     </owl:Class>
     
 
 
-    <!-- &labresults;GlycatedHemoglobin -->
+    <!-- &cmo;0002786 -->
 
-    <owl:Class rdf:about="&labresults;GlycatedHemoglobin">
-        <owl:equivalentClass rdf:resource="&labresults;HemoglobinA1CTestResult"/>
+    <owl:Class rdf:about="&cmo;0002786">
         <rdfs:label>glycated haemoglobin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+
     </owl:Class>
     
 
 
-    <!-- &labresults;HemoglobinA1CTestResult -->
+    <!-- &cmo;0002786 -->
 
-    <owl:Class rdf:about="&labresults;HemoglobinA1CTestResult"/>
+    <owl:Class rdf:about="&cmo;0002786">
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+
+    </owl:Class>
     
 
 
     <!-- &labresults;Hematocrit -->
 
-    <owl:Class rdf:about="&labresults;Hematocrit"/>
+    <owl:Class rdf:about="&labresults;Hematocrit">
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+
+    </owl:Class>
+    
     
 
 
-    <!-- &labresults;Hemoglobin -->
+    <!-- &cmo;0000508 -->
 
-    <owl:Class rdf:about="&labresults;Hemoglobin"/>    
+    <owl:Class rdf:about="&cmo;0000508">
+        <rdfs:label>Hemoglobin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+    </owl:Class>
+        
 
 
-    <!-- http://purl.obolibrary.org/obo/CHEBI_5931 -->
+    <!-- http://purl.obolibrary.org/obo/&chebi;5931 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_5931">
-        <owl:equivalentClass rdf:resource="&labresults;Insulin"/>
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/&chebi;5931">
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+        <rdfs:label>Insulin</rdfs:label>
     </owl:Class>
 
      <!-- &labresults;HighDensityLipoprotein -->
@@ -159,18 +176,24 @@
 
     <!-- &labresults;Homocysteine -->
 
-    <owl:Class rdf:about="&labresults;Homocysteine"/>
+    <owl:Class rdf:about="&labresults;Homocysteine">
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+        <rdfs:label>homocysteine</rdfs:label>
+    </owl:Class>
 
     <owl:Class rdf:about="&labresults;VitaminB12Level">
         <rdfs:label>Vitamin B12 Level Test Result</rdfs:label>
         <skos:definition>output of a laboratory test measuring a vitamin important for the normal formation of red blood cells and the health of the nerve tissues</skos:definition>
         <fibo-fnd-utl-av:adaptedFrom>https://www.cancer.gov/publications/dictionaries/cancer-terms/def/vitamin-b12</fibo-fnd-utl-av:adaptedFrom>
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
     </owl:Class>
+    
 
     <!-- &labresults;Lipoprotein -->
 
     <owl:Class rdf:about="&labresults;Lipoprotein">
-        <rdfs:subClassOf rdf:resource="&labresults;Cholestrol"/>
+        <rdfs:subClassOf rdf:resource="&labresults;Cholestrol"/>       
+    
     </owl:Class>
     
 
@@ -182,108 +205,58 @@
         <rdfs:label>low density lipoprotein</rdfs:label>
     </owl:Class>
 
-     <!-- &labresults;PlasmaCreatinine -->
+     <!-- &cmo;0000537 -->
 
-    <owl:Class rdf:about="&labresults;PlasmaCreatinine">
+    <owl:Class rdf:about="&cmo;0000537">
         <rdfs:label>plasma creatinine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
+
     </owl:Class>
 
-    <!-- http://purl.obolibrary.org/obo/CMO_0000003 -->
+    <!-- &cmo;0000003 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0000003">
-        <owl:equivalentClass rdf:resource="&labresults;BloodPressure"/>
-    </owl:Class>
-    
+    <owl:Class rdf:about="&cmo;0000003">
+        <rdfs:label>Blood Pressure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
 
-
-    <!-- http://purl.obolibrary.org/obo/CMO_0000004 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0000004">
-        <owl:equivalentClass rdf:resource="&labresults;SystolicBloodPressure"/>
     </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/CMO_0000005 -->
+    <!-- &cmo;0000004 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0000005">
-        <owl:equivalentClass rdf:resource="&labresults;DiastolicBloodPressure"/>
+    <owl:Class rdf:about="&cmo;0000004">
+        <rdfs:label>Systolic Blood Pressure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cmo;0000003"/>
     </owl:Class>
     
 
 
+    <!-- &cmo;0000005 -->
 
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CMO_0000052 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0000052">
-        <owl:equivalentClass rdf:resource="&labresults;HighDensityLipoprotein"/>
+    <owl:Class rdf:about="&cmo;0000005">
+        <rdfs:label>Diastolic Blood Pressure</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&cmo;0000003"/>
     </owl:Class>
-    
 
-
-    <!-- http://purl.obolibrary.org/obo/CMO_0000053 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0000053">
-        <owl:equivalentClass rdf:resource="&labresults;LowDensityLipoprotein"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CMO_0000384 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0000384">
-        <owl:equivalentClass rdf:resource="&labresults;AlbuminCreatinineRatio"/>
-    </owl:Class>
 
 
     
 
 
-    <!-- http://purl.obolibrary.org/obo/CMO_0000508 -->
+    <!-- &cmo;0000052 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0000508">
-        <owl:equivalentClass rdf:resource="&labresults;Hemoglobin"/>
+    <owl:Class rdf:about="&cmo;0000052">
+     <rdfs:label>High Density Lipoprotein</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;Lipoprotein"/>  
     </owl:Class>
     
 
 
-    <!-- http://purl.obolibrary.org/obo/CMO_0000537 -->
+    <!-- &cmo;0000053 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0000537">
-        <owl:equivalentClass rdf:resource="&labresults;PlasmaCreatinine"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CMO_0002696 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0002696">
-        <owl:equivalentClass rdf:resource="&labresults;Cholestrol"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CMO_0002786 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CMO_0002786">
-        <owl:equivalentClass rdf:resource="&labresults;HemoglobinA1CTestResult"/>
-    </owl:Class>
-
-    <!-- &labresults;DiastolicBloodPressure -->
-
-    <owl:Class rdf:about="&labresults;DiastolicBloodPressure">
-        <rdfs:subClassOf rdf:resource="&labresults;BloodPressure"/>
-    </owl:Class>
-
-
-    <!-- &labresults;SystolicBloodPressure -->
-
-    <owl:Class rdf:about="&labresults;SystolicBloodPressure">
-        <rdfs:subClassOf rdf:resource="&labresults;BloodPressure"/>
-    </owl:Class>
-    
-
+    <owl:Class rdf:about="&cmo;0000053">
+        <rdfs:label>Low Density Lipoprotein</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&sco;Lipoprotein"/>  
+    </owl:Class>    
 </rdf:RDF>
