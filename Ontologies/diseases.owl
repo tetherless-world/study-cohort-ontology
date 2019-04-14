@@ -13,8 +13,8 @@
     <!ENTITY hasco "http://hadatac.org/ont/hasco#" >
     <!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
     <!ENTITY sio "http://semanticscience.org/resource/">
-    <!ENTITY obo "http://purl.obolibrary.org/obo/"> 
-    
+    <!ENTITY obo "http://purl.obolibrary.org/obo/">
+    <!ENTITY sco "https://purl.org/heals/sco/">    
 ]>
 
 <rdf:RDF xml:base="https://purl.org/heals/diseases/"
@@ -23,7 +23,7 @@
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:entity_attribute1="http://purl.obolibrary.org/obo/envo-p/patterns/entity_attribute/"
      xmlns:doid="http://purl.obolibrary.org/obo/DOID_"
-     xmlns:foo="http://geneontology.org/foo/"
+     xmlns:sco="https://purl.org/heals/sco/"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:skos="http://www.w3.org/2004/02/skos/core#"
      xmlns:Wikipedia="http://purl.obolibrary.org/obo/Wikipedia#"
