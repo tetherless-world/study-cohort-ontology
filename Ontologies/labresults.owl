@@ -160,15 +160,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/&chebi;5931">
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
         <rdfs:label>insulin</rdfs:label>
-    </owl:Class>
-
-     <!-- &labresults;HighDensityLipoprotein -->
-
-    <owl:Class rdf:about="&labresults;HighDensityLipoprotein">
-        <rdfs:subClassOf rdf:resource="&labresults;Lipoprotein"/>
-        <rdfs:label>high density lipoprotein</rdfs:label>
-    </owl:Class>
-    
+    </owl:Class>   
 
 
     <!-- &labresults;Homocysteine -->
@@ -190,18 +182,9 @@
 
     <owl:Class rdf:about="&labresults;Lipoprotein">
         <rdfs:subClassOf rdf:resource="&cmo;0002696"/>       
-    
+        <rdfs:label>lipoprotein</rdfs:label>
     </owl:Class>
     
-
-
-    <!-- &labresults;LowDensityLipoprotein -->
-
-    <owl:Class rdf:about="&labresults;LowDensityLipoprotein">
-        <rdfs:subClassOf rdf:resource="&labresults;Lipoprotein"/>
-        <rdfs:label>low density lipoprotein</rdfs:label>
-    </owl:Class>
-
      <!-- &cmo;0000537 -->
 
     <owl:Class rdf:about="&cmo;0000537">
@@ -244,8 +227,8 @@
     <!-- &cmo;0000052 -->
 
     <owl:Class rdf:about="&cmo;0000052">
-     <rdfs:label>High Density Lipoprotein</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&sco;Lipoprotein"/>  
+     <rdfs:label>high Density lipoprotein</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&labresults;Lipoprotein"/>  
     </owl:Class>
     
 
@@ -253,7 +236,7 @@
     <!-- &cmo;0000053 -->
 
     <owl:Class rdf:about="&cmo;0000053">
-        <rdfs:label>Low Density Lipoprotein</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&sco;Lipoprotein"/>  
+        <rdfs:label>low Density lipoprotein</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&labresults;Lipoprotein"/>  
     </owl:Class>    
 </rdf:RDF>
