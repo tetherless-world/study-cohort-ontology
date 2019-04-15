@@ -13,7 +13,8 @@
 <h2>Ontologies</h2>
 <ul>
 <h3> Study Cohort Ontology (SCO) </h3>
- <h4> Definitions </h4>
+ <h4>Link: <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/studycohort.owl">https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/studycohort.owl</a></h4>
+ <h4> Primary Classes and Definitions </h4>
  <ol>
  <li>Research Study 
   <ul type = "circle">
@@ -96,11 +97,12 @@
 <h3> Accompanying Suite of Ontologies </h3>
 
 <ul>
-<li> Medications</li>
-<li> Diseases</li>
-<li> Lab results</li>
-<li> Measures</li>
-<li> Units</li>
+ <li><a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/diseases.owl"> Diseases</a></li>
+ <li> <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/labresults.owl">Lab results</a></li>
+ <li><a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/medications.owl"> Medications</a></li>
+ <li><a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/therapies.owl">Therapies</a></li>
+ <li><a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/measures.owl"> Measures</a></li>
+ <li> <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/units.owl">Units</a></li>
      </ul>
   
  </ul>
