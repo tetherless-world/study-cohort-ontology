@@ -1471,8 +1471,8 @@
 	<!-- &sco;CohortDescription -->
 
 	<owl:Class rdf:about="&sco;CohortDescription">
-		<rdfs:label>Cohort Description</rdfs:label>
-		<rdfs:subClassOf rdf:resource="&sio;MedicalData"/>
+		<rdfs:label>cohort description</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&sio;Dataset"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasDataItem"/>
@@ -1871,7 +1871,7 @@
 		
 		<dct:source rdf:resource="https://www.healthit.gov/faq/what-electronic-health-record-ehr"/>
 		<rdfs:label rdf:datatype="&xsd;string">electronic health record</rdfs:label>
-		<rdfs:subClassOf rdf:resource="&sio;MedicalData"/>
+		<rdfs:subClassOf rdf:resource="&sio;Dataset"/>
 		<skos:definition rdf:datatype="&xsd;string">a digital version of a patient’s paper chart</skos:definition>
 	</owl:Class>
 	
