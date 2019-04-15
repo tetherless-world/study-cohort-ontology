@@ -1389,6 +1389,7 @@
 		<skos:definition>A disease is a disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism</skos:definition>
 		<dct:source>http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf</dct:source>
 		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/doid.owl"/>
+		<rdfs:subClassOf rdf:resource="&sio;BiologicalQuality"/>
 	</owl:Class>
 
 	
@@ -1610,17 +1611,6 @@
 	<owl:Class rdf:about="&sio;Median">
 		<rdfs:subClassOf rdf:resource="&provcare;CentralTendencyMeasure"/>
 	</owl:Class>
-	
-
-
-	
-
-	<!-- &sco;Medication -->
-
-	<owl:Class rdf:about="&sco;Medication">
-		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
-	</owl:Class>     
-
 
 	<!-- &ncit;C61256 -->
 	<!-- Can use http://www.ontobee.org/ontology/NCIT?iri=http://purl.obolibrary.org/obo/NCIT_C61256 -->
@@ -1881,6 +1871,7 @@
 		
 		<dct:source rdf:resource="https://www.healthit.gov/faq/what-electronic-health-record-ehr"/>
 		<rdfs:label rdf:datatype="&xsd;string">electronic health record</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&sio;MedicalData"/>
 		<skos:definition rdf:datatype="&xsd;string">a digital version of a patient’s paper chart</skos:definition>
 	</owl:Class>
 	
@@ -1890,6 +1881,7 @@
 
 	<owl:Class rdf:about="&sco;SubjectCharacteristic">
 		<rdfs:label>subject characteristic</rdfs:label>
+		<rdfs:subClassOf rdf:resource="&sio;MaterialEntity"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
