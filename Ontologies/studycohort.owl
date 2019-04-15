@@ -1789,8 +1789,6 @@
 	<!-- &sco;ElectronicHealthRecord -->
 
 	<owl:Class rdf:about="&sco;ElectronicHealthRecord">
-		<rdfs:subClassOf rdf:resource="&owl;Thing"/>
-
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasProperty"/>
@@ -1828,7 +1826,6 @@
 
 	<owl:Class rdf:about="&sco;SubjectCharacteristic">
 		<rdfs:label>subject characteristic</rdfs:label>
-		<rdfs:subClassOf rdf:resource="&sio;MaterialEntity"/>
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
