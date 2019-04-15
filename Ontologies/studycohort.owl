@@ -278,7 +278,7 @@
 	 <!-- http://purl.obolibrary.org/obo/NCIT_C142488 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142488">
-        <rdfs:label>Data Monitoring</rdfs:label>
+        <rdfs:label>data monitoring</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C61256"/>
         <oboInOwl:hasExactSynonym>data monitoring</oboInOwl:hasExactSynonym>
         <obo:NCIT_P108>Data Monitoring</obo:NCIT_P108>
@@ -298,7 +298,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C142526 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142526">
-        <rdfs:label>Electronic Clinical Trial</rdfs:label>
+        <rdfs:label>electronic clinical trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <oboInOwl:hasExactSynonym>eclinical trial</oboInOwl:hasExactSynonym>
         <obo:NCIT_P106>Research Activity</obo:NCIT_P106>
@@ -319,7 +319,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C142539 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142539">
-        <rdfs:label>Equivalence Trial</rdfs:label>
+        <rdfs:label>equivalence trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <obo:NCIT_P106>Research Activity</obo:NCIT_P106>
         <oboInOwl:hasExactSynonym>Equivalence Trial</oboInOwl:hasExactSynonym>
@@ -339,7 +339,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C142547 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142547">
-        <rdfs:label>Exploratory Investigational New Drug Study</rdfs:label>
+        <rdfs:label>exploratory investigational new drug study</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <obo:NCIT_P325>A clinical study that is conducted early in Phase 1; involves very limited human exposure and has no therapeutic or diagnostic intent (e.g., screening studies, microdose studies) [FDA Guidance for industry, investigators, and Reviewers: exploratory IND studies, January 2006] See also Phase 0.</obo:NCIT_P325>
         <obo:NCIT_P322>CDISC-GLOSS</obo:NCIT_P322>
@@ -360,7 +360,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C142601 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142601">
-        <rdfs:label>Low-interventional Clinical Trial</rdfs:label>
+        <rdfs:label>low-interventional clinical trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <oboInOwl:hasExactSynonym>low-interventional clinical trial</oboInOwl:hasExactSynonym>
         <obo:NCIT_P108>Low-interventional Clinical Trial</obo:NCIT_P108>
@@ -380,7 +380,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C142603 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142603">
-        <rdfs:label>Marketing Support Trials</rdfs:label>
+        <rdfs:label>marketing support trials</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <obo:IAO_0000115>A type of clinical trial in which the therapeutic benefits of a marketed product are either clarified or preferentially compared to another marketed product.</obo:IAO_0000115>
         <obo:NCIT_P325>Clinical studies that are designed to clarify therapeutic benefits of a marketed product or to show potential decision-makers the rationale for preferring one therapy over another.</obo:NCIT_P325>
@@ -400,7 +400,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C142609 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142609">
-        <rdfs:label>Mega-Trial</rdfs:label>
+        <rdfs:label>mega-trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <oboInOwl:hasExactSynonym>large sample trial</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>A type of clinical trial in which 10,000 or more subjects are enrolled.</obo:IAO_0000115>
@@ -421,7 +421,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C142641 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142641">
-        <rdfs:label>Pragmatic Trial</rdfs:label>
+        <rdfs:label>pragmatic trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <obo:IAO_0000115>A study designed to test the effectiveness of an intervention in a broad routine clinical practice.</obo:IAO_0000115>
         <obo:NCIT_P322>CDISC-GLOSS</obo:NCIT_P322>
@@ -441,7 +441,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C142722 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C142722">
-        <rdfs:label>Superiority Trial</rdfs:label>
+        <rdfs:label>superiority trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <obo:IAO_0000115>A trial with the primary objective of showing that the response to the investigational product is superior to a comparative agent (active or placebo control). (ICH)</obo:IAO_0000115>
         <obo:NCIT_P106>Research Activity</obo:NCIT_P106>
@@ -461,7 +461,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C15206 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15206">
-        <rdfs:label>Clinical Study</rdfs:label>
+        <rdfs:label>clinical study</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C63536"/>
         <obo:NCIT_P325>A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. [ClinicalTrials.gov] See also clinical trial.</obo:NCIT_P325>
         <oboInOwl:hasExactSynonym>CLINICAL STUDY</oboInOwl:hasExactSynonym>
@@ -494,7 +494,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C15362 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15362">
-        <rdfs:label>Case Study</rdfs:label>
+        <rdfs:label>case study</rdfs:label>
         <oboInOwl:hasExactSynonym>CASE ONLY</oboInOwl:hasExactSynonym>
         <obo:NCIT_NHC0>C15362</obo:NCIT_NHC0>
         <oboInOwl:hasExactSynonym>case report</oboInOwl:hasExactSynonym>
@@ -520,7 +520,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C15429 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15429">
-        <rdfs:label>Research Activity</rdfs:label>
+        <rdfs:label>research activity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C16203"/>
         <obo:NCIT_NHC0>C15429</obo:NCIT_NHC0>
         <oboInOwl:hasExactSynonym>research study</oboInOwl:hasExactSynonym>
@@ -540,7 +540,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C15602 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15602">
-        <rdfs:label>Phase III Trial</rdfs:label>
+        <rdfs:label>phase III trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C70820"/>
         <obo:NCIT_P325>Phase 3. Studies are expanded controlled and uncontrolled trials. They are performed after preliminary evidence suggesting effectiveness of the drug has been obtained, and are intended to gather the additional information about effectiveness and safety that is needed to confirm efficacy and evaluate the overall benefit-risk relationship of the drug and to provide an adequate basis for physician labeling. NOTE: Phase 3 studies usually include from several hundred to several thousand subjects. [After FDA CDER Handbook, ICH E8] (CDISC glossary)</obo:NCIT_P325>
         <obo:NCIT_P322>CDISC</obo:NCIT_P322>
@@ -578,7 +578,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C15693 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15693">
-        <rdfs:label>Phase I/II Trial</rdfs:label>
+        <rdfs:label>phase I/II trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C70820"/>
         <obo:NCIT_P108>Phase I/II Trial</obo:NCIT_P108>
         <oboInOwl:hasExactSynonym>Phase I/II trial</oboInOwl:hasExactSynonym>
@@ -607,7 +607,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C15835 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15835">
-        <rdfs:label>Phase I and II Vaccine Trials</rdfs:label>
+        <rdfs:label>phase I and II Vaccine trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15693"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15864"/>
         <obo:NCIT_P207>C1519044</obo:NCIT_P207>
@@ -625,7 +625,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C15864 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15864">
-        <rdfs:label>Vaccine Clinical Trial</rdfs:label>
+        <rdfs:label>vaccine clinical trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <obo:NCIT_P207>C1519888</obo:NCIT_P207>
         <obo:NCIT_P366>Vaccine_Clinical_Trial</obo:NCIT_P366>
@@ -641,7 +641,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C15873 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C15873">
-        <rdfs:label>Phase III Large Scale Vaccine Trial</rdfs:label>
+        <rdfs:label>phase III large scale vaccine trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15602"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15864"/>
         <oboInOwl:hasExactSynonym>Vaccine Trial-Phase III Large Scale</oboInOwl:hasExactSynonym>
@@ -660,7 +660,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C16104 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16104">
-        <rdfs:label>Multi-Institutional Clinical Trial</rdfs:label>
+        <rdfs:label>multi-institutional clinical trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C70824"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <oboInOwl:hasExactSynonym>Multi-Institutional Clinical Trial</oboInOwl:hasExactSynonym>
@@ -684,7 +684,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C16123 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16123">
-        <rdfs:label>Clinical Trial, Other</rdfs:label>
+        <rdfs:label>clinical trial, other</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <oboInOwl:hasExactSynonym>Other Clinical Trial</oboInOwl:hasExactSynonym>
         <obo:NCIT_P207>C1516648</obo:NCIT_P207>
@@ -703,7 +703,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C16203 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C16203">
-        <rdfs:label>Clinical or Research Activity</rdfs:label>
+        <rdfs:label>clinical or research activity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C43431"/>
         <oboInOwl:hasExactSynonym>Clinical or Research Activity</oboInOwl:hasExactSynonym>
         <obo:NCIT_P108>Clinical or Research Activity</obo:NCIT_P108>
@@ -720,7 +720,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C18707 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C18707">
-        <rdfs:label>Adjunct Clinical Trial</rdfs:label>
+        <rdfs:label>adjunct clinical trial</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C71104"/>
         <obo:NCIT_P108>Adjunct Clinical Trial</obo:NCIT_P108>
         <obo:IAO_0000115>A clinical trial that uses materials from some other clinical trial.</obo:IAO_0000115>
@@ -739,7 +739,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C43431 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C43431">
-        <rdfs:label>Activity</rdfs:label>
+        <rdfs:label>activity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <oboInOwl:hasExactSynonym>General activity</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Activity</oboInOwl:hasExactSynonym>
@@ -760,7 +760,7 @@
    <!-- http://purl.obolibrary.org/obo/NCIT_C61256 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C61256">
-        <rdfs:label>Monitoring</rdfs:label>
+        <rdfs:label>monitoring</rdfs:label>
         <obo:NCIT_P208>CL415337</obo:NCIT_P208>
         <obo:NCIT_P325>In medicine, to regularly watch and check a person or condition to see if there is any change. Also refers to a device that records and/or displays patient data, such as for an electrocardiogram (EKG).</obo:NCIT_P325>
         <obo:NCIT_P108>Monitoring</obo:NCIT_P108>
@@ -778,7 +778,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C63536 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C63536">
-        <rdfs:label>Study</rdfs:label>
+        <rdfs:label>study</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15429"/>
         <obo:NCIT_P207>C0947630</obo:NCIT_P207>
         <obo:NCIT_P366>Study</obo:NCIT_P366>
@@ -795,7 +795,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C70820 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C70820">
-        <rdfs:label>Clinical Study by Phase</rdfs:label>
+        <rdfs:label>clinical study by phase</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15206"/>
         <obo:NCIT_P106>Research Activity</obo:NCIT_P106>
         <oboInOwl:hasExactSynonym>Clinical Study by Phase</oboInOwl:hasExactSynonym>
@@ -811,7 +811,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C70824 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C70824">
-        <rdfs:label>Clinical Study by Organizational Parameters</rdfs:label>
+        <rdfs:label>clinical study by organizational parameters</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCIT_C15206"/>
         <obo:NCIT_P106>Research Activity</obo:NCIT_P106>
         <obo:NCIT_P366>Clinical_Study_by_Organizational_Parameters</obo:NCIT_P366>
@@ -827,7 +827,7 @@
     <!-- http://purl.obolibrary.org/obo/NCIT_C71104 -->
 
     <owl:Class rdf:about="&ncit;C71104">
-        <rdfs:label>Clinical Trial</rdfs:label>
+        <rdfs:label>clinical trial</rdfs:label>
         <obo:NCIT_P325>1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)</obo:NCIT_P325>
         <obo:NCIT_P108>Clinical Trial</obo:NCIT_P108>
         <rdfs:subClassOf rdf:resource="&ncit;C15206"/>
@@ -860,7 +860,7 @@
     </owl:Class>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C25613">
-        <rdfs:label>Percentage</rdfs:label>
+        <rdfs:label>percentage</rdfs:label>
         <obo:IAO_0000115>
         A fraction or ratio with 100 understood as the denominator.
         </obo:IAO_0000115>
@@ -889,7 +889,7 @@
     </owl:Class>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCIT_C44256">
-        <rdfs:label>Ratio</rdfs:label>
+        <rdfs:label>ratio</rdfs:label>
         <oboInOwl:hasExactSynonym>RATIO</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>{Ratio}</oboInOwl:hasExactSynonym>
         <obo:IAO_0000115>
@@ -1411,14 +1411,7 @@
 
 	<owl:Class rdf:about="&sio;UnitOfMeasurement">
 		<rdfs:label>unit of measurement</rdfs:label>
-	</owl:Class>
-	
-
-
-	<!-- &sio;Year -->
-
-	<owl:Class rdf:about="&sio;Year"/>
-	
+	</owl:Class>	
 
 
 	<!-- &sco;Active -->
@@ -1428,17 +1421,8 @@
 		<skos:definition rdf:datatype="&xsd;string">participants following clinical trial protocol</skos:definition>
 		<fibo-fnd-utl-av:adaptedFrom>https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf</fibo-fnd-utl-av:adaptedFrom>
 		<dct:title>Clinical Trials Protocol Template - NIH Office of Science Policy</dct:title>
-		<rdfs:label>Active Subject</rdfs:label>
+		<rdfs:label>active</rdfs:label>
 	</owl:Class>
-
-
-	
-	
-
-
-	
-
-
 	  
 
 
@@ -1446,7 +1430,7 @@
 
 	<owl:Class rdf:about="&ncit;C15362">
 		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
-		<rdfs:label>Case Study</rdfs:label>
+		<rdfs:label>case study</rdfs:label>
 		<oboInOwl:hasExactSynonym>CASE ONLY</oboInOwl:hasExactSynonym>
 		<obo:NCIT_NHC0>C15362</obo:NCIT_NHC0>
 		<oboInOwl:hasExactSynonym>case report</oboInOwl:hasExactSynonym>
@@ -1500,27 +1484,6 @@
 		<rdfs:synonym>Table 1</rdfs:synonym>
 		<rdfs:comment>All typical components that constitute the description of study populations, captured in the first table of a research study, and hence called Table 1s</rdfs:comment>
 	</owl:Class>
-	
-
-
-	<!-- &sco;ComparativeStudy -->
-
-	<!--<owl:Class rdf:about="&sco;ComparativeStudy">
-		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasValue"/>
-				<owl:hasValue rdf:datatype="&xsd;string">Comparative Study</owl:hasValue>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:label>comparative study</rdfs:label>
-	</owl:Class>-->
-	
-
-
-	
-	
-
 
 
 	<owl:Class rdf:about="&sco;Discontinued">
@@ -1538,7 +1501,7 @@
 	
 	<owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001309">
 		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
-		<rdfs:label>Duration</rdfs:label>
+		<rdfs:label>duration</rdfs:label>
 		<obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
 		A process quality inhering in a bearer by virtue of the bearer's magnitude of the temporal extent between the starting and ending point.
 		</obo:IAO_0000115>
@@ -1616,7 +1579,7 @@
 	<!-- Can use http://www.ontobee.org/ontology/NCIT?iri=http://purl.obolibrary.org/obo/NCIT_C61256 -->
 
 	<owl:Class rdf:about="&ncit;C61256">
-		 <rdfs:label>Monitoring</rdfs:label>
+		 <rdfs:label>monitoring</rdfs:label>
 		<obo:NCIT_P208>CL415337</obo:NCIT_P208>
 		<obo:NCIT_P325>In medicine, to regularly watch and check a person or condition to see if there is any change. Also refers to a device that records and/or displays patient data, such as for an electrocardiogram (EKG).</obo:NCIT_P325>
 		<obo:NCIT_P108>Monitoring</obo:NCIT_P108>
@@ -1628,22 +1591,6 @@
 		<oboInOwl:hasExactSynonym>Monitoring</oboInOwl:hasExactSynonym>
 		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
 	</owl:Class>   
-
-
-	<!-- &sco;MulticenterStudy -->
-
-	<!--<owl:Class rdf:about="&sco;MulticenterStudy">
-		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
-		<rdfs:subClassOf>
-			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasValue"/>
-				<owl:hasValue rdf:datatype="&xsd;string">Multicenter Study</owl:hasValue>
-			</owl:Restriction>
-		</rdfs:subClassOf>
-		<rdfs:label>multicenter study</rdfs:label>
-	</owl:Class>--> 
-
-	<!-- &sio;Mean -->
 
 	<owl:Class rdf:about="&sio;Mean">
 		<rdfs:subClassOf rdf:resource="&provcare;CentralTendencyMeasure"/>
@@ -1934,7 +1881,7 @@
 
 	<owl:Class rdf:about="&ncit;C71104">
 		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
-		 <rdfs:label>Clinical Trial</rdfs:label>
+		 <rdfs:label>clinical trial</rdfs:label>
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
@@ -2101,7 +2048,7 @@
 
 	<owl:Class rdf:about="&ncit;C25613">
 		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
-		<rdfs:label>Percentage</rdfs:label>
+		<rdfs:label>percentage</rdfs:label>
 		<obo:IAO_0000115>
 		A fraction or ratio with 100 understood as the denominator.
 		</obo:IAO_0000115>
@@ -2135,7 +2082,7 @@
 
 	<owl:Class rdf:about="&ncit;C44256">
 		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
-		<rdfs:label>Ratio</rdfs:label>
+		<rdfs:label>ratio</rdfs:label>
 		<oboInOwl:hasExactSynonym>RATIO</oboInOwl:hasExactSynonym>
 		<oboInOwl:hasExactSynonym>{Ratio}</oboInOwl:hasExactSynonym>
 		<obo:IAO_0000115>
