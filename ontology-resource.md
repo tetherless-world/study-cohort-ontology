@@ -14,6 +14,7 @@
 <ul>
 <h3> Study Cohort Ontology (SCO) </h3>
  <h4>Link: <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/studycohort.owl">https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Ontologies/studycohort.owl</a></h4>
+ <h4>View the ontology documentation at: <a href="https://tetherless-world.github.io/study-cohort-ontology/WidocoDocumentation/doc/index-en.html">https://tetherless-world.github.io/study-cohort-ontology/WidocoDocumentation/doc/index-en.html</a></h4>
  <h4> Primary Classes and Definitions </h4>
  <ol>
  <li>Research Study 
