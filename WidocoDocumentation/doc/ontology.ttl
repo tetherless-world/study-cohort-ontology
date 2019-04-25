@@ -1,0 +1,1709 @@
+@prefix : <https://purl.org/heals/sco/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://purl.org/heals/sco/> .
+
+<https://purl.org/heals/sco/> rdf:type owl:Ontology ;
+                               owl:versionIRI <https://purl.org/heals/sco/1.0.0> ;
+                               owl:imports <https://purl.org/heals/chearexternal.ttl> ;
+                               <http://purl.org/dc/terms/abstract> """
+		The Study Cohort Ontology (SCO) is developed to model overall structure and patterns of cohort variables and control/intervention groups defined within the structured population descriptions (commonly referred to as Table1's or Cohort Summary Tables)of observational case studies and clinical trials. We maintain only domain agnostic and commonly occuring subject variables and interventions in SCO, and we have a suite of ontologies (Diseases, Medications, LabResults etc) to encode Diabetes related terminology. We have adopted a bottom-up approach to modeling and we have revised the structure of SCO upon investigation of a few research studies (11 to be precise) from the Pharmacological Interventions (Chapter 8) and Cardiovascular Complications (Chapter 9) of the American Diabetes Association (ADA)’s Standards of Medical Care 2018 CPG. We enable deep drive visualizations driven off queries to knowledge graphs modeled on SCO, to help assist physician visualize the similarity of a patient to a study group, at a quick glance. We welcome contributions and suggestions to extend SCO to represent cohort descriptions of publications targeted to other diseases, and we plan to release set of tools to make this process seamless.""" ;
+                               <http://purl.org/dc/terms/contributor> "Amar Das" ,
+                                                                      "Deborah L. McGuinness" ,
+                                                                      "James P. McCusker" ,
+                                                                      "Oshani Seneviratne" ;
+                               <http://purl.org/dc/terms/creator> "Shruthi Chari" ;
+                               <http://purl.org/dc/terms/description> """
+		The Study Cohort Ontology encodes the vocabulary to represent population desriptions in research studies, and provides the ability to model the aggregative descriptive statistical measures defined on the variables of subjects who are participants in the study population. We make it possible to represent a study component considered for determining the patient alignment to a research study, and we assist physicians in evaluating the fit of their patient population to the study population. In SCO, we are building a world-view inspired by the upper level Ontology SemanticScience Integrated Ontology (SIO) to model the descriptive statistics of characteristics on a set of patients (patient group) administered a medical intervention, and studied for an outcome in a research study.  Since we capture the various definitions of patient groups (ie. by interventional measures or by control mechanisms), we provide the basic framework for filtering searches and to define cohort similarity at different granularities. ( cohort level and the study group levels ). For researchers who wish to contribute to the expansion of our ontology, we advise that they refer to our ontology documentation to familiarize themselves with the structure and term annotations ( such as definitions and labels).
+		""" ;
+                               <http://purl.org/dc/terms/license> """
+		Copyright 2019 IBM Research and Rensselaer Polytechnic Institute
+
+			Licensed under the Apache License, Version 2.0 (the \"License\");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an \"AS IS\" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+		""" ;
+                               <http://purl.org/dc/terms/title> "Semantic Modeling of Cohort Descriptions in Research Studies" ;
+                               rdfs:label "Study Cohort Ontology" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000112
+<http://purl.obolibrary.org/obo/IAO_0000112> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000114
+<http://purl.obolibrary.org/obo/IAO_0000114> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000116
+<http://purl.obolibrary.org/obo/IAO_0000116> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000117
+<http://purl.obolibrary.org/obo/IAO_0000117> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000119
+<http://purl.obolibrary.org/obo/IAO_0000119> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000412
+<http://purl.obolibrary.org/obo/IAO_0000412> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/IAO_0000589
+<http://purl.obolibrary.org/obo/IAO_0000589> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_NHC0
+<http://purl.obolibrary.org/obo/NCIT_NHC0> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_P106
+<http://purl.obolibrary.org/obo/NCIT_P106> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_P108
+<http://purl.obolibrary.org/obo/NCIT_P108> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_P207
+<http://purl.obolibrary.org/obo/NCIT_P207> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_P208
+<http://purl.obolibrary.org/obo/NCIT_P208> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_P322
+<http://purl.obolibrary.org/obo/NCIT_P322> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_P325
+<http://purl.obolibrary.org/obo/NCIT_P325> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_P366
+<http://purl.obolibrary.org/obo/NCIT_P366> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.obolibrary.org/obo/STATO_0000032
+<http://purl.obolibrary.org/obo/STATO_0000032> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#created_by
+<http://www.geneontology.org/formats/oboInOwl#created_by> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#creation_date
+<http://www.geneontology.org/formats/oboInOwl#creation_date> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasAlternativeId
+<http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasDbXref
+<http://www.geneontology.org/formats/oboInOwl#hasDbXref> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasOBONamespace
+<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#id
+<http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#inSubset
+<http://www.geneontology.org/formats/oboInOwl#inSubset> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom
+<http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#resoure
+rdf:resoure rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#synonym
+rdfs:synonym rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://semanticscience.org/resource/hasParticipant
+<http://semanticscience.org/resource/hasParticipant> rdf:type owl:ObjectProperty .
+
+
+###  http://semanticscience.org/resource/hasProperty
+<http://semanticscience.org/resource/hasProperty> rdf:type owl:ObjectProperty .
+
+
+###  http://semanticscience.org/resource/hasUnit
+<http://semanticscience.org/resource/hasUnit> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#subClassOf
+rdfs:subClassOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://hadatac.org/ont/chear#Anthropometry
+<http://hadatac.org/ont/chear#Anthropometry> rdf:type owl:Class ;
+                                             rdfs:subClassOf :SubjectCharacteristic .
+
+
+###  http://hadatac.org/ont/chear#Demographic
+<http://hadatac.org/ont/chear#Demographic> rdf:type owl:Class ;
+                                           rdfs:subClassOf :SubjectCharacteristic ;
+                                           <http://purl.org/dc/terms/source> "Miller-Keane Encyclopedia and Dictionary of Medicine, Nursing, and Allied Health, Seventh Edition" ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "the science dealing with populations, including matters of health, disease, births, and mortality" .
+
+
+###  http://hadatac.org/ont/chear#MedicalTherapy
+<http://hadatac.org/ont/chear#MedicalTherapy> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#Intervention> ;
+                                              <http://purl.org/dc/terms/source> "https://en.wikipedia.org/wiki/Therapy" ;
+                                              rdfs:label "medical therapy" ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "the attempted remediation of a health problem, usually following a diagnosis" .
+
+
+###  http://hadatac.org/ont/hasco#ResearchStudy
+<http://hadatac.org/ont/hasco#ResearchStudy> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://semanticscience.org/resource/Study> ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                               owl:someValuesFrom :CohortDescription
+                                                             ] ,
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty <http://semanticscience.org/resource/hasParticipant> ;
+                                                               owl:someValuesFrom <http://semanticscience.org/resource/StudySubject>
+                                                             ] .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0000000
+<http://purl.obolibrary.org/obo/CARO_0000000> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0030000> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "anatomical entity" .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0000003
+<http://purl.obolibrary.org/obo/CARO_0000003> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0000006> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/caro.owl> ,
+                                                                                           <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "anatomical structure"@en ,
+                                                         "connected anatomical structure" .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0000006
+<http://purl.obolibrary.org/obo/CARO_0000006> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0000000> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/caro.owl> ,
+                                                                                           <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "material anatomical entity"@en ,
+                                                         "material anatomical entity" .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0010000
+<http://purl.obolibrary.org/obo/CARO_0010000> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0000003> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/caro.owl> ,
+                                                                                           <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "multicellular anatomical structure" .
+
+
+###  http://purl.obolibrary.org/obo/CARO_0030000
+<http://purl.obolibrary.org/obo/CARO_0030000> rdf:type owl:Class ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "biological entity" .
+
+
+###  http://purl.obolibrary.org/obo/CL_0000000
+<http://purl.obolibrary.org/obo/CL_0000000> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0000003> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/cl.owl> ,
+                                                                                         <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            rdfs:label "cell"@en ,
+                                                       "cell" .
+
+
+###  http://purl.obolibrary.org/obo/DOID_4
+<http://purl.obolibrary.org/obo/DOID_4> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://semanticscience.org/resource/BiologicalQuality> ;
+                                        <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/doid.owl> ;
+                                        <http://purl.org/dc/terms/source> "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" ;
+                                        rdfs:label "disease or condition" ;
+                                        <http://www.w3.org/2004/02/skos/core#definition> "A disease is a disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism" .
+
+
+###  http://purl.obolibrary.org/obo/HP_0001513
+<http://purl.obolibrary.org/obo/HP_0001513> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Accumulation of substantial excess body fat." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D009765" ,
+                                                                                                     "SNOMEDCT_US:414915002" ,
+                                                                                                     "SNOMEDCT_US:414916001" ,
+                                                                                                     "UMLS:C0028754" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Having too much body fat" ,
+                                                                                                           "Obesity" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "HP:0001513" ;
+                                            rdfs:label "Obesity" .
+
+
+###  http://purl.obolibrary.org/obo/HP_0001956
+<http://purl.obolibrary.org/obo/HP_0001956> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/HP_0001513> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Obesity located preferentially in the trunk of the body as opposed to the extremities." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "HP:0008885" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D056128" ,
+                                                                                                     "SNOMEDCT_US:248311001" ,
+                                                                                                     "UMLS:C0311277" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Centripetal obesity" ,
+                                                                                                           "Truncal obesity" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "HP:0001956" ;
+                                            rdfs:label "Truncal obesity" .
+
+
+###  http://purl.obolibrary.org/obo/HP_0004324
+<http://purl.obolibrary.org/obo/HP_0004324> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Abnormally increased body weight." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "peter" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2008-02-27T03:21:00Z" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "HP:0045083" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D015430" ,
+                                                                                                     "SNOMEDCT_US:161831008" ,
+                                                                                                     "SNOMEDCT_US:262286000" ,
+                                                                                                     "SNOMEDCT_US:8943002" ,
+                                                                                                     "UMLS:C0043094" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Increased body weight" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "Weight gain" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "HP:0004324" ;
+                                            rdfs:label "Increased body weight" .
+
+
+###  http://purl.obolibrary.org/obo/HP_0008915
+<http://purl.obolibrary.org/obo/HP_0008915> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/HP_0001956> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Truncal obesity with onset during childhood, defined as between 2 and 10 years of age." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "HP:0008874" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UMLS:C1859846" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Truncal obesity apparent in childhood" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "HP:0008915" ;
+                                            rdfs:label "Childhood-onset truncal obesity" .
+
+
+###  http://purl.obolibrary.org/obo/HP_0012743
+<http://purl.obolibrary.org/obo/HP_0012743> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/HP_0001513> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Excessive fat around the stomach and abdomen." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "peter" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#creation_date> "2014-03-23T05:00:05Z" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D056128" ,
+                                                                                                     "SNOMEDCT_US:248311001" ,
+                                                                                                     "UMLS:C0311277" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Abdominal obesity" ,
+                                                                                                           "Central obesity" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "HP:0012743" ;
+                                            rdfs:label "Abdominal obesity" .
+
+
+###  http://purl.obolibrary.org/obo/HP_0025499
+<http://purl.obolibrary.org/obo/HP_0025499> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/HP_0001513> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Obesity with a body mass index of 30 to 34.9 kg per square meter." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://purl.org/dc/elements/1.1/creator> "HPO:probinson" ;
+                                            <http://purl.org/dc/elements/1.1/date> "2017-05-14T20:06:40Z"^^xsd:dateTime ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Obesity grade 1" ;
+                                            rdfs:label "Class I obesity"@en .
+
+
+###  http://purl.obolibrary.org/obo/HP_0025500
+<http://purl.obolibrary.org/obo/HP_0025500> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/HP_0001513> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Obesity with a body mass index of 35 to 39.9 kg per square meter." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://purl.org/dc/elements/1.1/creator> "HPO:probinson" ;
+                                            <http://purl.org/dc/elements/1.1/date> "2017-05-14T20:08:43Z"^^xsd:dateTime ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Obesity grade 2" ;
+                                            rdfs:label "Class II obesity"@en .
+
+
+###  http://purl.obolibrary.org/obo/HP_0025501
+<http://purl.obolibrary.org/obo/HP_0025501> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/HP_0001513> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Obesity with a body mass index of 40 kg per square meter or higher." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://purl.org/dc/elements/1.1/creator> "HPO:probinson" ;
+                                            <http://purl.org/dc/elements/1.1/date> "2017-05-14T20:09:17Z"^^xsd:dateTime ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Obesity grade 3" ;
+                                            rdfs:label "Class III obesity"@en .
+
+
+###  http://purl.obolibrary.org/obo/HP_0025502
+<http://purl.obolibrary.org/obo/HP_0025502> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Increased body weight with a body mass index of 25-29.9 kg per square meter." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://purl.org/dc/elements/1.1/creator> "HPO:probinson" ;
+                                            <http://purl.org/dc/elements/1.1/date> "2017-05-14T20:12:36Z"^^xsd:dateTime ;
+                                            rdfs:label "Overweight"@en .
+
+
+###  http://purl.obolibrary.org/obo/HP_0045082
+<http://purl.obolibrary.org/obo/HP_0045082> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Abnormally decreased weight-to-height squared ratio, calculated by dividing the individual's weight in kilograms by the square of the individual's height in meters and used as an indicator of underweight compared to averages." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Decreased BMI" ;
+                                            rdfs:label "Decreased body mass index" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142488
+<http://purl.obolibrary.org/obo/NCIT_C142488> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C61256> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "Review of clinical information to determine veracity, thoroughness, and dependability." ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142488" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Data Monitoring" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "Process by which clinical data are examined for completeness, consistency, and accuracy." ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Data Monitoring" ,
+                                                                                                             "data monitoring" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "data monitoring" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142526
+<http://purl.obolibrary.org/obo/NCIT_C142526> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial in which computerized systems are used to plan, collect, access, exchange, and archive data." ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142526" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Electronic Clinical Trial" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "Clinical trial in which primarily electronic processes are used to plan, collect (acquire), access, exchange, and archive data required for conduct, management, analysis, and reporting of the trial. NOTE: FDA has recently drawn a distinction between studies and trials. Both words refer to systematic efforts to obtain evidence relevant to regulatory authorities, but, depending on regulatory context and particularly in the case of postmarketing commitments, a study might not be the appropriate word for a clinical trial (prospective, controlled, randomized), but should be reserved instead for surveillance, structured gathering of information, epidemiological studies, or even animal studies [DRAFT Guidance for industry Postmarketing studies and Clinical Trials-implementation of section 505(o) of the Federal Food, Drug, and Cosmetic act]. Synonyms: eClinical study, eClinical investigation." ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Electronic Clinical Trial" ,
+                                                                                                             "eClinical Trial" ,
+                                                                                                             "eclinical trial" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "electronic clinical trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142539
+<http://purl.obolibrary.org/obo/NCIT_C142539> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial with the objective of demonstrating clinical insignificance between the responses to two or more treatments." ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142539" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Equivalence Trial" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "A trial with the primary objective of showing that the response to two or more treatments differs by an amount that is clinically unimportant. NOTE: This is usually demonstrated by showing that the true treatment difference is likely to lie between a lower and an upper equivalence margin of clinically acceptable differences." ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Equivalence Trial" ,
+                                                                                                             "equivalence trial" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "equivalence trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142547
+<http://purl.obolibrary.org/obo/NCIT_C142547> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A type of clinical trial that involves low dosage and short duration of drug exposure for a limited number of study participants with the intent of gathering preliminary data on the mechanism of action, pharmacodynamics, pharmacokinetics, or bioavailability of promising therapeutic candidate agents in human subjects." ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142547" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Exploratory Investigational New Drug Study" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical study that is conducted early in Phase 1; involves very limited human exposure and has no therapeutic or diagnostic intent (e.g., screening studies, microdose studies) [FDA Guidance for industry, investigators, and Reviewers: exploratory IND studies, January 2006] See also Phase 0." ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Exploratory IND Study" ,
+                                                                                                             "Exploratory Investigational New Drug Study" ,
+                                                                                                             "exploratory IND study" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "exploratory investigational new drug study" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142601
+<http://purl.obolibrary.org/obo/NCIT_C142601> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial that is non-interventional by design but includes diagnostic or monitoring procedures that carry minimal risk or impact on patients." ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142601" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Low-interventional Clinical Trial" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical trial which fulfills all of the following conditions: (a) the investigational medicinal products, excluding placebos, are authorized; (b) according to the protocol of the clinical trial, (i) the investigational medicinal products are used in accordance with the terms of the marketing authorization; or (ii) the use of the investigational medicinal products is evidence-based and supported by published scientific evidence on the safety and efficacy of those investigational medicinal products in any of the Member States concerned; and (c) the additional diagnostic or monitoring procedures do not pose more than minimal additional risk or burden to the safety of the subjects compared to normal clinical practice in any Member State concerned. [REGULATION (EU) No 536/2014 Article 2.2.(3)]" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Low-interventional Clinical Trial" ,
+                                                                                                             "low-interventional clinical trial" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "low-interventional clinical trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142603
+<http://purl.obolibrary.org/obo/NCIT_C142603> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A type of clinical trial in which the therapeutic benefits of a marketed product are either clarified or preferentially compared to another marketed product." ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142603" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Marketing Support Trials" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "Clinical studies that are designed to clarify therapeutic benefits of a marketed product or to show potential decision-makers the rationale for preferring one therapy over another." ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Marketing Support Trials" ,
+                                                                                                             "marketing support trials" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "marketing support trials" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142609
+<http://purl.obolibrary.org/obo/NCIT_C142609> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A type of clinical trial in which 10,000 or more subjects are enrolled." ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142609" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Mega-Trial" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "Massive trials that test the advantages of therapeutic interventions by enrolling 10,000 or more subjects." ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Mega-Trial" ,
+                                                                                                             "large sample trial" ,
+                                                                                                             "mega-trials" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "mega-trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142641
+<http://purl.obolibrary.org/obo/NCIT_C142641> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A study designed to test the effectiveness of an intervention in a broad routine clinical practice." ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142641" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Pragmatic Trial" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "Term used to describe a clinical study designed to examine the benefits of a product under real world conditions." ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Pragmatic Trial" ,
+                                                                                                             "pragmatic trial" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "pragmatic trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C142722
+<http://purl.obolibrary.org/obo/NCIT_C142722> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> "A trial with the primary objective of showing that the response to the investigational product is superior to a comparative agent (active or placebo control). (ICH)" ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                              <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142722" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P108> "Superiority Trial" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                              <http://purl.obolibrary.org/obo/NCIT_P325> "A trial with the primary objective of showing that the response to the investigational product is superior to a comparative agent (active or placebo control). [ICH E9]" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Superiority Trial" ,
+                                                                                                             "superiority trial" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                              rdfs:label "superiority trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C15206
+<http://purl.obolibrary.org/obo/NCIT_C15206> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C63536> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Research conducted with human subjects or on material of human origin in which an investigator directly interacts with human subjects; includes development of new technologies, study of mechanisms of human diseases, therapy, clinical trials, epidemiologic, behavior, and health services research." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15206" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Study" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0008972" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ,
+                                                                                        "CDISC-GLOSS" ,
+                                                                                        "FDA" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. [ClinicalTrials.gov] See also clinical trial." ,
+                                                                                        "A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. [ClinicalTrials.gov] See also clinical trial. (CDISC Glossary)" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Study" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "CLINICAL STUDY" ,
+                                                                                                            "Clinical Research" ,
+                                                                                                            "Clinical Studies" ,
+                                                                                                            "Clinical Study" ,
+                                                                                                            "Study" ,
+                                                                                                            "clinical study" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132310> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C54447> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C54587> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                             rdfs:label "clinical study" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C15362
+<http://purl.obolibrary.org/obo/NCIT_C15362> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://hadatac.org/ont/hasco#ResearchStudy> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An uncontrolled observational study containing a detailed report of the diagnosis, treatment, and follow-up of an individual patient. Case reports also contain some demographic information about the patient (for example, age, gender, ethnic origin)." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15362" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Case Study" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0085973" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "A detailed report of the diagnosis, treatment, and follow-up of an individual patient. Case reports also contain some demographic information about the patient (for example, age, gender, ethnic origin)." ,
+                                                                                        "A study in which the subject with the condition under study (the case) is compared against a theoretical/historical model of distribution that serves as a control." ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Case_Study" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "CASE ONLY" ,
+                                                                                                            "Case Report" ,
+                                                                                                            "Case Study" ,
+                                                                                                            "case report" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C127259> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> ;
+                                             rdfs:label "case study" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C15429
+<http://purl.obolibrary.org/obo/NCIT_C15429> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C16203> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Systematic investigation into a subject in order to discover facts, establish or revise a theory, or develop a plan of action based on the facts discovered." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15429" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0242481" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "A scientific study of nature that sometimes includes processes involved in health and disease. For example, clinical trials are research studies that involve people.  These studies may be related to new ways to screen, prevent, diagnose, and treat disease.  They may also study certain outcomes and certain groups of people by looking at data collected in the past or future." ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Research_Activity" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Research" ,
+                                                                                                            "Research Activity" ,
+                                                                                                            "research study" ;
+                                             rdfs:label "research activity" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C15602
+<http://purl.obolibrary.org/obo/NCIT_C15602> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C70820> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical research protocol designed to investigate the efficacy of the biomedical or behavioral intervention in large groups of human subjects (from several hundred to several thousand), to confirm efficacy, to monitor adverse reactions to the new medication or treatment regimen with respect to long-term use and by comparing the intervention to other standard or experimental interventions as well as to a placebo." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15602" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Phase III Trial" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0282461" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ,
+                                                                                        "CDISC-GLOSS" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "A study to compare the results of people taking a new treatment with the results of people taking the standard treatment (for example, which group has better survival rates or fewer side effects). In most cases, studies move into phase III only after a treatment seems to work in phases I and II. Phase III trials may include hundreds of people." ,
+                                                                                        "Phase 3. Studies are expanded controlled and uncontrolled trials. They are performed after preliminary evidence suggesting effectiveness of the drug has been obtained, and are intended to gather the additional information about effectiveness and safety that is needed to confirm efficacy and evaluate the overall benefit-risk relationship of the drug and to provide an adequate basis for physician labeling. NOTE: Phase 3 studies usually include from several hundred to several thousand subjects. [After FDA CDER Handbook, ICH E8] (CDISC glossary)" ,
+                                                                                        "Studies are expanded controlled and uncontrolled trials. They are performed after preliminary evidence suggesting effectiveness of the drug has been obtained and are intended to gather the additional information about effectiveness and safety that is needed to confirm efficacy and evaluate the overall benefit-risk relationship of the drug and to provide an adequate basis for physician labeling. NOTE: Phase 3 studies usually include from several hundred to several thousand subjects. [after FDA CDER handbook, ICH E8]" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Phase_III_Trial" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "3" ,
+                                                                                                            "Clinical Trials, Phase III" ,
+                                                                                                            "PHASE III TRIAL" ,
+                                                                                                            "Phase 3 Study" ,
+                                                                                                            "Phase III Clinical Trial" ,
+                                                                                                            "Phase III Protocol" ,
+                                                                                                            "Phase III Study" ,
+                                                                                                            "Phase III Trial" ,
+                                                                                                            "Phase III Trials" ,
+                                                                                                            "Trial Phase 3" ,
+                                                                                                            "phase 3" ,
+                                                                                                            "phase III trial" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66737> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                             rdfs:label "phase III trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C15693
+<http://purl.obolibrary.org/obo/NCIT_C15693> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C70820> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical research protocol designed to study the safety, dosage levels and response to new treatment. Phase I/II trials combine a Phase I and a Phase II trial of the same treatment into a single protocol." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15693" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Phase I/II Trial" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C1519043" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "A class of clinical study that combines elements characteristic of traditional Phase I and Phase II trials. See also Phase I, Phase II." ,
+                                                                                        "A trial to study the safety, dosage levels, and response to a new treatment." ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Phase_I_II_Trial" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "1-2" ,
+                                                                                                            "PHASE I/II TRIAL" ,
+                                                                                                            "Phase I/II Trial" ,
+                                                                                                            "Phase I/II trial" ,
+                                                                                                            "Trial Phase 1-2" ,
+                                                                                                            "Trial Phase 1/2" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66737> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> ;
+                                             rdfs:label "phase I/II trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C15835
+<http://purl.obolibrary.org/obo/NCIT_C15835> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C15693> ,
+                                                             <http://purl.obolibrary.org/obo/NCIT_C15864> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Select candidate vaccines or concepts suitable for Phase I and Phase II trials and conduct these trials." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15835" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Phase I and II Vaccine Trials" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C1519044" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Phase_I_and_II_Vaccine_Trials" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase I and II Vaccine Trials" ;
+                                             rdfs:label "phase I and II Vaccine trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C15864
+<http://purl.obolibrary.org/obo/NCIT_C15864> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15864" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Vaccine Clinical Trial" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C1519888" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Vaccine_Clinical_Trial" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Vaccine Clinical Trial" ;
+                                             rdfs:label "vaccine clinical trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C15873
+<http://purl.obolibrary.org/obo/NCIT_C15873> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C15602> ,
+                                                             <http://purl.obolibrary.org/obo/NCIT_C15864> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Select suitable vaccine candidates and support efficacy trials when appropriate criteria are met." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15873" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Phase III Large Scale Vaccine Trial" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C1519902" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Vaccine_Trial-Phase_III_Large_Scale" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase III Large Scale Vaccine Trial" ,
+                                                                                                            "Vaccine Trial-Phase III Large Scale" ;
+                                             rdfs:label "phase III large scale vaccine trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C16104
+<http://purl.obolibrary.org/obo/NCIT_C16104> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C70824> ,
+                                                             <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C16104" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Multi-Institutional Clinical Trial" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0206012" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical trial that is carried out at more than one medical institution." ,
+                                                                                        "Clinical trial conducted according to a single protocol but at more than one site and, therefore, carried out by more than one investigator. [ICH E9 Glossary] See investigator/ institution." ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Multi-Institutional_Clinical_Trial" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Multi-Institutional Clinical Trial" ,
+                                                                                                            "multicenter study" ,
+                                                                                                            "multicenter trial" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                             rdfs:label "multi-institutional clinical trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C16123
+<http://purl.obolibrary.org/obo/NCIT_C16123> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial that is not therapeutic, preventive or diagnostic." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C16123" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Trial, Other" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C1516648" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Trials_Other" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trial, Other" ,
+                                                                                                            "Clinical Trials, Other" ,
+                                                                                                            "Other Clinical Trial" ;
+                                             rdfs:label "clinical trial, other" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C16203
+<http://purl.obolibrary.org/obo/NCIT_C16203> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C43431> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "Any specific activity undertaken during the course of a clinical study or research protocol." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C16203" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical or Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C1516654" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_or_Research_Activity" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical or Research Activity" ;
+                                             rdfs:label "clinical or research activity" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C18707
+<http://purl.obolibrary.org/obo/NCIT_C18707> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C71104> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial that uses materials from some other clinical trial." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C18707" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Governmental or Regulatory Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Adjunct Clinical Trial" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C1516638" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Trials_Adjunct" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Adjunct Clinical Trial" ,
+                                                                                                            "Clinical Trial, Adjunct" ,
+                                                                                                            "Clinical Trials, Adjunct" ;
+                                             rdfs:label "adjunct clinical trial" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C25613
+<http://purl.obolibrary.org/obo/NCIT_C25613> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> """
+		A fraction or ratio with 100 understood as the denominator.
+		""" ,
+                                                                                          """
+        A fraction or ratio with 100 understood as the denominator.
+        """ ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C25613" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Percentage" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0439165" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ,
+                                                                                        "NCPDP" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> """
+		One hundred times the quotient of one quantity divided by another, with the same units of measurement.
+		""" ,
+                                                                                        """
+        One hundred times the quotient of one quantity divided by another, with the same units of measurement.
+        """ ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Percentage" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "%" ,
+                                                                                                            "Percentage" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66770> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C71620> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C77526> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C85494> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C89415> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C89509> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C91101> ;
+                                             rdfs:label "percentage" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C43431
+<http://purl.obolibrary.org/obo/NCIT_C43431> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "An active process; excludes processes and mechanisms which fulfill biological functions." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C43431" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0441655" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "BRIDG" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "Any action that can, in the context of a study or a post-marketing investigation, be defined, planned, scheduled or performed. EXAMPLE(S): surgical procedure, laboratory test, administration of a drug." ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Activity" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Activity" ,
+                                                                                                            "General activity" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C105551> ;
+                                             rdfs:label "activity" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C44256
+<http://purl.obolibrary.org/obo/NCIT_C44256> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> """
+		Quotient of quantities of the same kind for different components within the same system.
+		""" ,
+                                                                                          """
+        Quotient of quantities of the same kind for different components within the same system.
+        """ ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C44256" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Quantitative Concept" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Ratio" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0456603" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ,
+                                                                                        "UCUM" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> """
+		The quotient of one quantity divided by another, with the same units of measurement.
+		""" ,
+                                                                                        """
+        The quotient of one quantity divided by another, with the same units of measurement.
+        """ ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Ratio" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "RATIO" ,
+                                                                                                            "Ratio" ,
+                                                                                                            "ratio" ,
+                                                                                                            "{RATIO}" ,
+                                                                                                            "{Ratio}" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C19752> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66770> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67567> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C71620> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C77526> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C85494> ;
+                                             rdfs:label "ratio" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C61256
+<http://purl.obolibrary.org/obo/NCIT_C61256> rdf:type owl:Class ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "The act of observing something (and sometimes keeping a record of it)." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C61256" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Monitoring" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P208> "CL415337" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "In medicine, to regularly watch and check a person or condition to see if there is any change. Also refers to a device that records and/or displays patient data, such as for an electrocardiogram (EKG)." ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Monitoring" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Monitoring" ,
+                                                                                                            "monitor" ;
+                                             rdfs:label "monitoring" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C63536
+<http://purl.obolibrary.org/obo/NCIT_C63536> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C15429> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000115> "A detailed examination, analysis, or critical inspection of a subject designed to discover facts about it." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C63536" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Study" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0947630" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Study" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Study" ;
+                                             rdfs:label "study" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C70820
+<http://purl.obolibrary.org/obo/NCIT_C70820> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C15206> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C70820" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Study by Phase" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C2347801" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Study_by_Phase" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Study by Phase" ;
+                                             rdfs:label "clinical study by phase" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C70824
+<http://purl.obolibrary.org/obo/NCIT_C70824> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://purl.obolibrary.org/obo/NCIT_C15206> ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C70824" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Study by Organizational Parameters" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C2347800" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Study_by_Organizational_Parameters" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Study by Organizational Parameters" ;
+                                             rdfs:label "clinical study by organizational parameters" .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C71104
+<http://purl.obolibrary.org/obo/NCIT_C71104> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://hadatac.org/ont/hasco#ResearchStudy> ,
+                                                             <http://purl.obolibrary.org/obo/NCIT_C15206> .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000001
+<http://purl.obolibrary.org/obo/PATO_0000001> rdf:type owl:Class ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000589> "quality (PATO)" ;
+                                              rdfs:label "quality" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000068
+<http://purl.obolibrary.org/obo/PATO_0000068> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000001> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "qualitative" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000069
+<http://purl.obolibrary.org/obo/PATO_0000069> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000068> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "deviation(from_normal)" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000125
+<http://purl.obolibrary.org/obo/PATO_0000125> rdf:type owl:Class ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000128
+<http://purl.obolibrary.org/obo/PATO_0000128> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001035> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ,
+                                                                                           <http://purl.obolibrary.org/obo/uo.owl> ;
+                                              rdfs:label "weight" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000460
+<http://purl.obolibrary.org/obo/PATO_0000460> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000069> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "abnormal" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0000582
+<http://purl.obolibrary.org/obo/PATO_0000582> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000128> ,
+                                                              <http://purl.obolibrary.org/obo/PATO_0002245> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "increased weight" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001018
+<http://purl.obolibrary.org/obo/PATO_0001018> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "physical quality" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001035
+<http://purl.obolibrary.org/obo/PATO_0001035> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001018> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "force" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001241
+<http://purl.obolibrary.org/obo/PATO_0001241> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000001> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "physical object quality" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001309
+<http://purl.obolibrary.org/obo/PATO_0001309> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000115> """
+		A process quality inhering in a bearer by virtue of the bearer's magnitude of the temporal extent between the starting and ending point.
+		""" ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0000081" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "period" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "time" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001309" ;
+                                              <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/pato#attribute_slim> ,
+                                                                                                      <http://purl.oboInOwllibrary.org/oboInOwl/pato#hpo_slim> ;
+                                              rdfs:label "duration" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001708
+<http://purl.obolibrary.org/obo/PATO_0001708> rdf:type owl:Class ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0001869
+<http://purl.obolibrary.org/obo/PATO_0001869> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000460> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "pathological" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0002245
+<http://purl.obolibrary.org/obo/PATO_0002245> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001035> ,
+                                                              <http://purl.obolibrary.org/obo/PATO_0002305> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "increased force" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0002300
+<http://purl.obolibrary.org/obo/PATO_0002300> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0000069> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "increased quality" .
+
+
+###  http://purl.obolibrary.org/obo/PATO_0002305
+<http://purl.obolibrary.org/obo/PATO_0002305> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://purl.obolibrary.org/obo/PATO_0001241> ,
+                                                              <http://purl.obolibrary.org/obo/PATO_0002300> ;
+                                              <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                              rdfs:label "increased object quality" .
+
+
+###  http://purl.obolibrary.org/obo/STATO_0000193
+<http://purl.obolibrary.org/obo/STATO_0000193> rdf:type owl:Class ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000115> "is a population whose individual members realize (may be expressed as) a combination of  inclusion rule values specifications or resulting from a sampling process (e.g. recruitment followed by randomization to group) on which a number of measurements will be carried out, which may be used as input to statistical tests and statistical inference." ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000117> "Alejandra Gonzalez-Beltran"@en ,
+                                                                                            "Orlaith Burke" ,
+                                                                                            "Philippe Rocca-Serra" ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000119> "STATO"@en ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/stato.owl> ;
+                                               <http://purl.obolibrary.org/obo/STATO_0000032> "statistical sample"@en ;
+                                               rdfs:label "study group population" .
+
+
+###  http://purl.obolibrary.org/obo/STATO_0000203
+<http://purl.obolibrary.org/obo/STATO_0000203> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000193> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                                 owl:someValuesFrom :PopulationSize
+                                                               ] .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0000061
+<http://purl.obolibrary.org/obo/UBERON_0000061> rdf:type owl:Class ;
+                                                rdfs:subClassOf <http://purl.obolibrary.org/obo/CARO_0000003> ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                                rdfs:label "anatomical structure" .
+
+
+###  http://purl.obolibrary.org/obo/UBERON_0001062
+<http://purl.obolibrary.org/obo/UBERON_0001062> rdf:type owl:Class ;
+                                                <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> ;
+                                                rdfs:label "anatomical entity" .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000001
+<http://purl.obolibrary.org/obo/UO_0000001> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A unit which is a standard measure of the distance between two points." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000001" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> ;
+                                            rdfs:label "length unit" .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000002
+<http://purl.obolibrary.org/obo/UO_0000002> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A unit which is a standard measure of the amount of matter/energy of a physical object." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000002" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> ;
+                                            rdfs:label "mass unit" .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000009
+<http://purl.obolibrary.org/obo/UO_0000009> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000002> ,
+                                                            <http://purl.obolibrary.org/obo/UO_0000045> ,
+                                                            <http://semanticscience.org/resource/UnitOfMeasurement> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "kg" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000009" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim> ;
+                                            rdfs:label "kilogram" .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000015
+<http://purl.obolibrary.org/obo/UO_0000015> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/UO_0000001> ,
+                                                            <http://semanticscience.org/resource/UnitOfMeasurement> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A length unit which is equal to one hundredth of a meter or 10^[-2] m." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "centimetre" ,
+                                                                                                           "cm" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000015" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim> ;
+                                            rdfs:label "centimeter" .
+
+
+###  http://purl.obolibrary.org/obo/UO_0000045
+<http://purl.obolibrary.org/obo/UO_0000045> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A unit which is one of a particular measure to which all measures of that type can be related." ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> ;
+                                            <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000045" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> ;
+                                            rdfs:label "base unit" .
+
+
+###  http://semanticscience.org/resource/Mean
+<http://semanticscience.org/resource/Mean> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> ;
+                                           <http://purl.org/dc/terms/source> <https://en.wikipedia.org/wiki/Mean> ;
+                                           rdfs:label "mean" ;
+                                           <http://www.w3.org/2004/02/skos/core#definition> "the central value of a discrete set of numbers: specifically, the sum of the values divided by the number of values" .
+
+
+###  http://semanticscience.org/resource/Median
+<http://semanticscience.org/resource/Median> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> .
+
+
+###  http://semanticscience.org/resource/MedicalIntervention
+<http://semanticscience.org/resource/MedicalIntervention> rdf:type owl:Class .
+
+
+###  http://semanticscience.org/resource/Patient
+<http://semanticscience.org/resource/Patient> rdf:type owl:Class ;
+                                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                                owl:someValuesFrom :ElectronicHealthRecord
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+                                                                owl:someValuesFrom <http://purl.obolibrary.org/obo/DOID_4>
+                                                              ] ;
+                                              <http://purl.org/dc/terms/source> "https://www.tititudorancea.com/z/patient_en.htm" ;
+                                              rdfs:label "patient" ;
+                                              <http://www.w3.org/2004/02/skos/core#definition> "a person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary" .
+
+
+###  http://semanticscience.org/resource/StandardDeviation
+<http://semanticscience.org/resource/StandardDeviation> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#DispersionMeasure> ;
+                                                        <http://purl.org/dc/terms/source> <https://en.wikipedia.org/wiki/Standard_deviation> ;
+                                                        rdfs:label "standard deviation" ;
+                                                        <http://www.w3.org/2004/02/skos/core#definition> "a measure that is used to quantify the amount of variation or dispersion of a set of data values" .
+
+
+###  http://semanticscience.org/resource/Study
+<http://semanticscience.org/resource/Study> rdf:type owl:Class .
+
+
+###  http://semanticscience.org/resource/StudySubject
+<http://semanticscience.org/resource/StudySubject> rdf:type owl:Class ;
+                                                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                                     owl:someValuesFrom :SubjectCharacteristic
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+                                                                     owl:someValuesFrom <http://purl.obolibrary.org/obo/DOID_4>
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+                                                                     owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#Intervention>
+                                                                   ] ,
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+                                                                     owl:someValuesFrom :EnrollmentStatus
+                                                                   ] ;
+                                                   <http://purl.org/dc/terms/source> "https://en.wikipedia.org/wiki/Research_participant" ;
+                                                   rdfs:label "study subject" ;
+                                                   <http://www.w3.org/2004/02/skos/core#definition> "A research participant, also called a human subject or an experiment, trial, or study participant or subject, is a person who participates in human subject research by being the target of observation by researchers" .
+
+
+###  http://semanticscience.org/resource/UnitOfMeasurement
+<http://semanticscience.org/resource/UnitOfMeasurement> rdf:type owl:Class ;
+                                                        rdfs:label "unit of measurement" .
+
+
+###  http://semanticscience.org/resource/Year
+<http://semanticscience.org/resource/Year> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://semanticscience.org/resource/UnitOfMeasurement> .
+
+
+###  http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure
+<http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> rdf:type owl:Class ;
+                                                               rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+                                                               rdfs:comment "Statistical measure describing the distribution of single variable" .
+
+
+###  http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention
+<http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention> rdf:type owl:Class ;
+                                                             rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#Intervention> ;
+                                                             rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/386053000" .
+
+
+###  http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument
+<http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument> rdf:type owl:Class .
+
+
+###  http://www.case.edu/ProvCaRe/provcare#DispersionMeasure
+<http://www.case.edu/ProvCaRe/provcare#DispersionMeasure> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ;
+                                                          rdfs:comment "Statistical measure characterizing the distribution of single variable" .
+
+
+###  http://www.case.edu/ProvCaRe/provcare#Intervention
+<http://www.case.edu/ProvCaRe/provcare#Intervention> rdf:type owl:Class ;
+                                                     rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StudyMethod> ;
+                                                     rdfs:comment "Capturing the interventions variables in research studies" ,
+                                                                  "The intervention type used in a research study (corresponding to I in the PICO(T) model )" ;
+                                                     rdfs:label "study intervention" ;
+                                                     rdfs:seeAlso "http://purl.bioontology.org/ontology/SNOMEDCT/386053000" ;
+                                                     rdfs:synonym "Study intervention" .
+
+
+###  http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> rdf:type owl:Class ;
+                                                           rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument> ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                                             owl:allValuesFrom <http://semanticscience.org/resource/UnitOfMeasurement>
+                                                                           ] ,
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty <http://semanticscience.org/resource/hasValue> ;
+                                                                             owl:someValuesFrom xsd:decimal
+                                                                           ] ;
+                                                           <http://purl.org/dc/terms/source> <https://en.wikipedia.org/wiki/Measure> ;
+                                                           rdfs:label "statistical measure" ;
+                                                           <http://www.w3.org/2004/02/skos/core#definition> "a standard unit used to express the size, amount, or degree of something" .
+
+
+###  http://www.case.edu/ProvCaRe/provcare#StudyMethod
+<http://www.case.edu/ProvCaRe/provcare#StudyMethod> rdf:type owl:Class .
+
+
+###  http://www.w3.org/2002/07/owl#DataProperty
+owl:DataProperty rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> rdf:type owl:Class .
+
+
+###  https://purl.org/heals/sco/Active
+:Active rdf:type owl:Class ;
+        rdfs:subClassOf :EnrollmentStatus ;
+        <http://purl.org/dc/terms/title> "Clinical Trials Protocol Template - NIH Office of Science Policy" ;
+        <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf" ;
+        rdfs:label "active" ;
+        <http://www.w3.org/2004/02/skos/core#definition> "participants following clinical trial protocol" .
+
+
+###  https://purl.org/heals/sco/CohortDescription
+:CohortDescription rdf:type owl:Class ;
+                   rdfs:subClassOf <http://semanticscience.org/resource/Dataset> ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://semanticscience.org/resource/hasDataItem> ;
+                                     owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#Intervention>
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://semanticscience.org/resource/hasDataItem> ;
+                                     owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure>
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://semanticscience.org/resource/hasDataItem> ;
+                                     owl:someValuesFrom :StudyArm
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://semanticscience.org/resource/hasDataItem> ;
+                                     owl:someValuesFrom :SubjectCharacteristic
+                                   ] ;
+                   rdfs:comment "All typical components that constitute the description of study populations, captured in the first table of a research study, and hence called Table 1s" ;
+                   rdfs:label "cohort description" ;
+                   rdfs:synonym "Table 1" .
+
+
+###  https://purl.org/heals/sco/ControlArm
+:ControlArm rdf:type owl:Class ;
+            rdfs:subClassOf :StudyArm .
+
+
+###  https://purl.org/heals/sco/Discontinued
+:Discontinued rdf:type owl:Class ;
+              rdfs:subClassOf :EnrollmentStatus ;
+              <http://purl.org/dc/terms/title> "Clinical Trials Protocol Template - NIH Office of Science Policy" ;
+              <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf" ;
+              rdfs:label "discontinued" ;
+              <http://www.w3.org/2004/02/skos/core#definition> "participants no longer, following clinical trial protocol" .
+
+
+###  https://purl.org/heals/sco/Duration
+:Duration rdf:type owl:Class .
+
+
+###  https://purl.org/heals/sco/ElectronicHealthRecord
+:ElectronicHealthRecord rdf:type owl:Class ;
+                        rdfs:subClassOf <http://semanticscience.org/resource/Dataset> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                          owl:someValuesFrom <http://hadatac.org/ont/chear#Anthropometry>
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                          owl:someValuesFrom <http://hadatac.org/ont/chear#Demographic>
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                          owl:someValuesFrom :OrderedLaboratoryTestResult
+                                        ] ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://semanticscience.org/resource/hasProperty> ;
+                                          owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#Intervention>
+                                        ] ;
+                        <http://purl.org/dc/terms/source> <https://www.healthit.gov/faq/what-electronic-health-record-ehr> ;
+                        rdfs:label "electronic health record" ;
+                        <http://www.w3.org/2004/02/skos/core#definition> "a digital version of a patient’s paper chart" .
+
+
+###  https://purl.org/heals/sco/EnrollmentStatus
+:EnrollmentStatus rdf:type owl:Class ;
+                  rdfs:subClassOf <http://semanticscience.org/resource/StatusDescriptor> ;
+                  <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://research-compliance.umich.edu/sites/default/files/resource-download/enrollmentdefinition_additionalhelp.pdf" ;
+                  rdfs:label "enrollment status" ;
+                  <http://www.w3.org/2004/02/skos/core#definition> " patients are consented and screened, with eligibility verified " .
+
+
+###  https://purl.org/heals/sco/IntentionToTreatPopulation
+:IntentionToTreatPopulation rdf:type owl:Class ;
+                            rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000203> ;
+                            <http://purl.org/dc/terms/source> "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3159210/" ;
+                            rdfs:label "intention to treat population" ;
+                            <http://www.w3.org/2004/02/skos/core#definition> "every subject who is randomized according to randomized treatment assignment,  ignoring noncompliance, protocol deviations, withdrawal, and anything that happens after randomization" .
+
+
+###  https://purl.org/heals/sco/InterventionArm
+:InterventionArm rdf:type owl:Class ;
+                 rdfs:subClassOf :StudyArm ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty rdfs:subClassOf ;
+                                   owl:someValuesFrom <http://semanticscience.org/resource/StudySubject>
+                                 ] .
+
+
+###  https://purl.org/heals/sco/Meta-analysis
+:Meta-analysis rdf:type owl:Class ;
+               rdfs:subClassOf <http://hadatac.org/ont/hasco#ResearchStudy> .
+
+
+###  https://purl.org/heals/sco/OrderedLaboratoryTestResult
+:OrderedLaboratoryTestResult rdf:type owl:Class ;
+                             rdfs:subClassOf :SubjectCharacteristic ;
+                             rdfs:label "laboratory test result" .
+
+
+###  https://purl.org/heals/sco/PopulationSize
+:PopulationSize rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://semanticscience.org/resource/hasValue> ;
+                                  owl:someValuesFrom xsd:integer
+                                ] ;
+                <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296634/" ;
+                rdfs:label "population size" ;
+                <http://www.w3.org/2004/02/skos/core#definition> "number of patients to which the study results could be reasonably generalized" .
+
+
+###  https://purl.org/heals/sco/RandomizedPopulation
+:RandomizedPopulation rdf:type owl:Class ;
+                      rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000203> .
+
+
+###  https://purl.org/heals/sco/SafetyPopulation
+:SafetyPopulation rdf:type owl:Class ;
+                  rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000203> .
+
+
+###  https://purl.org/heals/sco/StudyArm
+:StudyArm rdf:type owl:Class ;
+          rdfs:subClassOf <http://purl.obolibrary.org/obo/STATO_0000203> ,
+                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                   owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( <http://purl.obolibrary.org/obo/DOID_4>
+                                                                                      <http://www.case.edu/ProvCaRe/provcare#Intervention>
+                                                                                      :SubjectCharacteristic
+                                                                                    )
+                                                                      ]
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                                        owl:someValuesFrom <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure>
+                                                                      ]
+                                                 ]
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                   owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                                                        owl:someValuesFrom [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <http://semanticscience.org/resource/hasValue> ;
+                                                                                             owl:someValuesFrom xsd:decimal
+                                                                                           ]
+                                                                      ]
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] .
+
+
+###  https://purl.org/heals/sco/SubjectCharacteristic
+:SubjectCharacteristic rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                         owl:someValuesFrom <http://semanticscience.org/resource/DimensionalQuantity>
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty <http://semanticscience.org/resource/hasAttribute> ;
+                                         owl:someValuesFrom <http://semanticscience.org/resource/UnitOfMeasurement>
+                                       ] ;
+                       <http://purl.org/dc/terms/source> "R. J. Little et al., \"The prevention and treatment of missing data in clinical trials,\" New England J. Medicine, vol. 367, no. 14, pp. 1355{1360, 2012" ;
+                       rdfs:label "subject characteristic" ;
+                       <http://www.w3.org/2004/02/skos/core#definition> "Property that summarizes important attributes of the participants enrolled in a study" .
+
+
+###  https://purl.org/heals/sco/YearOfFollowUp
+:YearOfFollowUp rdf:type owl:Class ;
+                rdfs:subClassOf :Duration .
+
+
+###  https://purl.org/heals/sco/YearsOfExposure
+:YearsOfExposure rdf:type owl:Class ;
+                 rdfs:subClassOf :Duration ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty <http://semanticscience.org/resource/hasUnit> ;
+                                   owl:someValuesFrom <http://semanticscience.org/resource/Year>
+                                 ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://hadatac.org/ont/hasco#ResearchStudy
+<http://hadatac.org/ont/hasco#ResearchStudy> rdf:type owl:NamedIndividual ;
+                                             <http://semanticscience.org/resource/hasAttribute> _:genid39 ,
+                                                                                                _:genid40 .
+
+_:genid39 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://www.w3.org/ns/prov#wasAttributedTo> <https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas> ;
+           <http://semanticscience.org/resource/hasValue> "A scientific investigation that involves testing a hypothesi" .
+
+_:genid40 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://semanticscience.org/resource/hasValue> "A scientific study of nature that sometimes includes processes involved in health and disease" ;
+           <http://purl.org/dc/terms/source> <https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement> .
+
+
+###  http://purl.obolibrary.org/obo/NCIT_C71104
+<http://purl.obolibrary.org/obo/NCIT_C71104> rdf:type owl:NamedIndividual ;
+                                             <http://semanticscience.org/resource/hasAttribute> _:genid41 ,
+                                                                                                _:genid43 .
+
+_:genid41 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://www.w3.org/ns/prov#wasAttributedTo> [ rdf:resoure "https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"
+                                                       ] ;
+           <http://semanticscience.org/resource/hasValue> "A prospective study designed to evaluate whether one or more interventions are associated with an outcome" .
+
+_:genid43 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://www.w3.org/ns/prov#wasAttributedTo> [ rdf:resoure "https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"
+                                                       ] ;
+           <http://semanticscience.org/resource/hasValue> "A prospective study designed to evaluate whether one or more interventions are associated with an outcome" .
+
+
+###  http://purl.obolibrary.org/obo/STATO_0000203
+<http://purl.obolibrary.org/obo/STATO_0000203> rdf:type owl:NamedIndividual ;
+                                               <http://semanticscience.org/resource/hasAttribute> _:genid45 ,
+                                                                                                  _:genid46 .
+
+_:genid45 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://www.w3.org/ns/prov#wasAttributedTo> <https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas> ;
+           <http://semanticscience.org/resource/hasValue> "A cohort is the group of subjects enrolled in a study\"" .
+
+_:genid46 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://www.w3.org/ns/prov#wasAttributedTo> <https://tw.rpi.edu/web/People/JamesMcCusker> ;
+           <http://semanticscience.org/resource/hasValue> "\"Top-level group of subjects participating in a study\"" .
+
+
+###  http://semanticscience.org/resource/hasValue
+<http://semanticscience.org/resource/hasValue> rdf:type owl:NamedIndividual ,
+                                                        owl:DataProperty .
+
+
+###  https://purl.org/heals/sco/ControlArm
+:ControlArm rdf:type owl:NamedIndividual ;
+            <http://semanticscience.org/resource/hasAttribute> _:genid47 .
+
+_:genid47 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://semanticscience.org/resource/hasValue> "An arm type that can receive an intervention that is considered effective (the standard), a placebo, or no intervention" ;
+           <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://aidsinfo.nih.gov/understanding-hiv-aids/glossary/3392/control-arm" .
+
+
+###  https://purl.org/heals/sco/InterventionArm
+:InterventionArm rdf:type owl:NamedIndividual ;
+                 <http://semanticscience.org/resource/hasAttribute> _:genid48 .
+
+_:genid48 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://semanticscience.org/resource/hasValue> "An arm type in which a group of participants receives the intervention/treatment that is the focus of the clinical trial" ;
+           <http://purl.org/dc/terms/source> "https://clinicaltrials.gov/ct2/about-studies/glossary" .
+
+
+###  https://purl.org/heals/sco/Meta-analysis
+:Meta-analysis rdf:type owl:NamedIndividual ;
+               <http://semanticscience.org/resource/hasAttribute> _:genid49 .
+
+_:genid49 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://semanticscience.org/resource/hasValue> "A quantitative, formal, epidemiological study design used to systematically assess previous research studies to derive conclusions about that body of research" ;
+           <http://purl.org/dc/terms/source> "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049418/" .
+
+
+###  https://purl.org/heals/sco/RandomizedPopulation
+:RandomizedPopulation rdf:type owl:NamedIndividual ;
+                      <http://semanticscience.org/resource/hasAttribute> _:genid50 .
+
+_:genid50 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://semanticscience.org/resource/hasValue> "set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)" ;
+           <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/" .
+
+
+###  https://purl.org/heals/sco/SafetyPopulation
+:SafetyPopulation rdf:type owl:NamedIndividual ;
+                  <http://semanticscience.org/resource/hasAttribute> _:genid51 .
+
+_:genid51 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://semanticscience.org/resource/hasValue> "set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group" ;
+           <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/" ,
+                                                                                              "https://www.ncbi.nlm.nih.gov/books/NBK209903/" .
+
+
+###  https://purl.org/heals/sco/StudyArm
+:StudyArm rdf:type owl:NamedIndividual ;
+          <http://semanticscience.org/resource/hasAttribute> _:genid52 ,
+                                                             _:genid53 .
+
+_:genid52 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://www.w3.org/ns/prov#wasAttributedTo> <https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas> ;
+           <http://semanticscience.org/resource/hasValue> "An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)" .
+
+_:genid53 rdf:type <http://www.w3.org/2004/02/skos/core#definition> ;
+           <http://semanticscience.org/resource/hasValue> "A group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial's protocol. " ;
+           <http://purl.org/dc/terms/source> "https://clinicaltrials.gov/ct2/about-studies/glossary" .
+
+
+###  https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas
+<https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas> rdf:type owl:NamedIndividual .
+
+
+###  https://tw.rpi.edu/web/People/JamesMcCusker
+<https://tw.rpi.edu/web/People/JamesMcCusker> rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://hadatac.org/ont/hasco#ResearchStudy> rdfs:label "research study" ,
+                                                        "study" .
+
+
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/IAO_0000115> "A research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes." ;
+                                             <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> ;
+                                             <http://purl.obolibrary.org/obo/NCIT_NHC0> "C71104" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Trial" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P207> "C0008976" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" ,
+                                                                                        "CDISC-GLOSS" ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P325> "1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)" ,
+                                                                                        "A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). NOTE: NIH Office of Science Policy further specifies that a clinical trial is a type of research study that prospectively assigns subjects to interventions, and the EU clinical trial regulations set forth 3 specific conditions, any one of which qualifies a study as a clinical trial. These conditions include applying diagnostic or monitoring procedures not used in normal clinical practice to subjects. [after ICH E6 [R2], EU CTR 2014] See also clinical study, clinical investigation." ,
+                                                                                        "A type of research study that tests how well new medical approaches work in people. These studies test new methods of screening, prevention, diagnosis, or treatment of a disease." ;
+                                             <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Trial_Generic" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trial" ,
+                                                                                                            "Clinical Trials" ,
+                                                                                                            "Clinical Trials, Unspecified" ,
+                                                                                                            "Trial" ,
+                                                                                                            "clinical trial" ;
+                                             <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132310> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> ,
+                                                                                                     <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> ;
+                                             rdfs:label "clinical trial" .
+
+
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000112> ""@en ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000115> "a cohort is a study group population where the members are human beings which meet inclusion criteria and undergo a longitudinal design"@en ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000116> "possibly submit to 'Population and Community Ontology'"@en ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000117> "Alejandra Gonzalez-Beltran"@en ,
+                                                                                            "Philippe Rocca-Serra"@en ,
+                                                                                            "Orlaith Burke" ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000119> "STATO"@en ;
+                                               <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/stato.owl> ;
+                                               <http://purl.obolibrary.org/obo/STATO_0000032> ""@en ;
+                                               rdfs:label "cohort" .
+
+
+:ControlArm rdfs:label "control arm" ;
+            rdfs:seeAlso "http://semanticscience.org/resource/SIO_001068.rdf" .
+
+
+:InterventionArm rdfs:label "intervention arm" ;
+                 rdfs:seeAlso "http://semanticscience.org/resource/SIO_001069.rdf" .
+
+
+:Meta-analysis rdfs:label "meta-analysis" .
+
+
+:RandomizedPopulation rdfs:label "randomized population" .
+
+
+:SafetyPopulation rdfs:label "safety population" .
+
+
+:StudyArm rdfs:label "study arm" .
+
+
+###  Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/

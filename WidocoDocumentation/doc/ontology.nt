@@ -1,0 +1,1521 @@
+<https://purl.org/heals/sco/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://purl.org/heals/sco/> <http://www.w3.org/2002/07/owl#versionIRI> <https://purl.org/heals/sco/1.0.0> .
+<https://purl.org/heals/sco/> <http://www.w3.org/2002/07/owl#imports> <https://purl.org/heals/chearexternal.ttl> .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/abstract> "\n\t\tThe Study Cohort Ontology (SCO) is developed to model overall structure and patterns of cohort variables and control/intervention groups defined within the structured population descriptions (commonly referred to as Table1's or Cohort Summary Tables)of observational case studies and clinical trials. We maintain only domain agnostic and commonly occuring subject variables and interventions in SCO, and we have a suite of ontologies (Diseases, Medications, LabResults etc) to encode Diabetes related terminology. We have adopted a bottom-up approach to modeling and we have revised the structure of SCO upon investigation of a few research studies (11 to be precise) from the Pharmacological Interventions (Chapter 8) and Cardiovascular Complications (Chapter 9) of the American Diabetes Association (ADA)’s Standards of Medical Care 2018 CPG. We enable deep drive visualizations driven off queries to knowledge graphs modeled on SCO, to help assist physician visualize the similarity of a patient to a study group, at a quick glance. We welcome contributions and suggestions to extend SCO to represent cohort descriptions of publications targeted to other diseases, and we plan to release set of tools to make this process seamless." .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/contributor> "Amar Das" .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/contributor> "Deborah L. McGuinness" .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/contributor> "James P. McCusker" .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/contributor> "Oshani Seneviratne" .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/creator> "Shruthi Chari" .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/description> "\n\t\tThe Study Cohort Ontology encodes the vocabulary to represent population desriptions in research studies, and provides the ability to model the aggregative descriptive statistical measures defined on the variables of subjects who are participants in the study population. We make it possible to represent a study component considered for determining the patient alignment to a research study, and we assist physicians in evaluating the fit of their patient population to the study population. In SCO, we are building a world-view inspired by the upper level Ontology SemanticScience Integrated Ontology (SIO) to model the descriptive statistics of characteristics on a set of patients (patient group) administered a medical intervention, and studied for an outcome in a research study.  Since we capture the various definitions of patient groups (ie. by interventional measures or by control mechanisms), we provide the basic framework for filtering searches and to define cohort similarity at different granularities. ( cohort level and the study group levels ). For researchers who wish to contribute to the expansion of our ontology, we advise that they refer to our ontology documentation to familiarize themselves with the structure and term annotations ( such as definitions and labels).\n\t\t" .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/license> "\n\t\tCopyright 2019 IBM Research and Rensselaer Polytechnic Institute\n\n\t\t\tLicensed under the Apache License, Version 2.0 (the \"License\");\n\tyou may not use this file except in compliance with the License.\n\tYou may obtain a copy of the License at\n\n\t\thttp://www.apache.org/licenses/LICENSE-2.0\n\n\tUnless required by applicable law or agreed to in writing, software\n\tdistributed under the License is distributed on an \"AS IS\" BASIS,\n\tWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n\tSee the License for the specific language governing permissions and\n\tlimitations under the License.\n\t\t" .
+<https://purl.org/heals/sco/> <http://purl.org/dc/terms/title> "Semantic Modeling of Cohort Descriptions in Research Studies" .
+<https://purl.org/heals/sco/> <http://www.w3.org/2000/01/rdf-schema#label> "Study Cohort Ontology" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.obolibrary.org/obo/IAO_0000112
+<http://purl.obolibrary.org/obo/IAO_0000112> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000114
+<http://purl.obolibrary.org/obo/IAO_0000114> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000116
+<http://purl.obolibrary.org/obo/IAO_0000116> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000117
+<http://purl.obolibrary.org/obo/IAO_0000117> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000119
+<http://purl.obolibrary.org/obo/IAO_0000119> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000412
+<http://purl.obolibrary.org/obo/IAO_0000412> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/IAO_0000589
+<http://purl.obolibrary.org/obo/IAO_0000589> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_NHC0
+<http://purl.obolibrary.org/obo/NCIT_NHC0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_P106
+<http://purl.obolibrary.org/obo/NCIT_P106> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_P108
+<http://purl.obolibrary.org/obo/NCIT_P108> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_P207
+<http://purl.obolibrary.org/obo/NCIT_P207> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_P208
+<http://purl.obolibrary.org/obo/NCIT_P208> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_P322
+<http://purl.obolibrary.org/obo/NCIT_P322> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_P325
+<http://purl.obolibrary.org/obo/NCIT_P325> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_P366
+<http://purl.obolibrary.org/obo/NCIT_P366> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.obolibrary.org/obo/STATO_0000032
+<http://purl.obolibrary.org/obo/STATO_0000032> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#created_by
+<http://www.geneontology.org/formats/oboInOwl#created_by> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#creation_date
+<http://www.geneontology.org/formats/oboInOwl#creation_date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#hasAlternativeId
+<http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#hasDbXref
+<http://www.geneontology.org/formats/oboInOwl#hasDbXref> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#hasOBONamespace
+<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym
+<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#id
+<http://www.geneontology.org/formats/oboInOwl#id> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.geneontology.org/formats/oboInOwl#inSubset
+<http://www.geneontology.org/formats/oboInOwl#inSubset> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom
+<http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/1999/02/22-rdf-syntax-ns#resoure
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#resoure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#synonym
+<http://www.w3.org/2000/01/rdf-schema#synonym> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://semanticscience.org/resource/hasParticipant
+<http://semanticscience.org/resource/hasParticipant> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://semanticscience.org/resource/hasProperty
+<http://semanticscience.org/resource/hasProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://semanticscience.org/resource/hasUnit
+<http://semanticscience.org/resource/hasUnit> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# http://www.w3.org/2000/01/rdf-schema#subClassOf
+<http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://hadatac.org/ont/chear#Anthropometry
+<http://hadatac.org/ont/chear#Anthropometry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://hadatac.org/ont/chear#Anthropometry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/SubjectCharacteristic> .
+# 
+# http://hadatac.org/ont/chear#Demographic
+<http://hadatac.org/ont/chear#Demographic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://hadatac.org/ont/chear#Demographic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/SubjectCharacteristic> .
+<http://hadatac.org/ont/chear#Demographic> <http://purl.org/dc/terms/source> "Miller-Keane Encyclopedia and Dictionary of Medicine, Nursing, and Allied Health, Seventh Edition" .
+<http://hadatac.org/ont/chear#Demographic> <http://www.w3.org/2004/02/skos/core#definition> "the science dealing with populations, including matters of health, disease, births, and mortality" .
+# 
+# http://hadatac.org/ont/chear#MedicalTherapy
+<http://hadatac.org/ont/chear#MedicalTherapy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://hadatac.org/ont/chear#MedicalTherapy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+<http://hadatac.org/ont/chear#MedicalTherapy> <http://purl.org/dc/terms/source> "https://en.wikipedia.org/wiki/Therapy" .
+<http://hadatac.org/ont/chear#MedicalTherapy> <http://www.w3.org/2000/01/rdf-schema#label> "medical therapy" .
+<http://hadatac.org/ont/chear#MedicalTherapy> <http://www.w3.org/2004/02/skos/core#definition> "the attempted remediation of a health problem, usually following a diagnosis" .
+# 
+# http://hadatac.org/ont/hasco#ResearchStudy
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Study> .
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/heals/sco/CohortDescription> .
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasParticipant> .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://semanticscience.org/resource/StudySubject> .
+# 
+# http://purl.obolibrary.org/obo/CARO_0000000
+<http://purl.obolibrary.org/obo/CARO_0000000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/CARO_0000000> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/CARO_0030000> .
+<http://purl.obolibrary.org/obo/CARO_0000000> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/CARO_0000000> <http://www.w3.org/2000/01/rdf-schema#label> "anatomical entity" .
+# 
+# http://purl.obolibrary.org/obo/CARO_0000003
+<http://purl.obolibrary.org/obo/CARO_0000003> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/CARO_0000003> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/CARO_0000006> .
+<http://purl.obolibrary.org/obo/CARO_0000003> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/caro.owl> .
+<http://purl.obolibrary.org/obo/CARO_0000003> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/CARO_0000003> <http://www.w3.org/2000/01/rdf-schema#label> "anatomical structure"@en .
+<http://purl.obolibrary.org/obo/CARO_0000003> <http://www.w3.org/2000/01/rdf-schema#label> "connected anatomical structure" .
+# 
+# http://purl.obolibrary.org/obo/CARO_0000006
+<http://purl.obolibrary.org/obo/CARO_0000006> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/CARO_0000006> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/CARO_0000000> .
+<http://purl.obolibrary.org/obo/CARO_0000006> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/caro.owl> .
+<http://purl.obolibrary.org/obo/CARO_0000006> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/CARO_0000006> <http://www.w3.org/2000/01/rdf-schema#label> "material anatomical entity"@en .
+<http://purl.obolibrary.org/obo/CARO_0000006> <http://www.w3.org/2000/01/rdf-schema#label> "material anatomical entity" .
+# 
+# http://purl.obolibrary.org/obo/CARO_0010000
+<http://purl.obolibrary.org/obo/CARO_0010000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/CARO_0010000> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/CARO_0000003> .
+<http://purl.obolibrary.org/obo/CARO_0010000> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/caro.owl> .
+<http://purl.obolibrary.org/obo/CARO_0010000> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/CARO_0010000> <http://www.w3.org/2000/01/rdf-schema#label> "multicellular anatomical structure" .
+# 
+# http://purl.obolibrary.org/obo/CARO_0030000
+<http://purl.obolibrary.org/obo/CARO_0030000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/CARO_0030000> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/CARO_0030000> <http://www.w3.org/2000/01/rdf-schema#label> "biological entity" .
+# 
+# http://purl.obolibrary.org/obo/CL_0000000
+<http://purl.obolibrary.org/obo/CL_0000000> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/CL_0000000> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/CARO_0000003> .
+<http://purl.obolibrary.org/obo/CL_0000000> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/cl.owl> .
+<http://purl.obolibrary.org/obo/CL_0000000> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/CL_0000000> <http://www.w3.org/2000/01/rdf-schema#label> "cell"@en .
+<http://purl.obolibrary.org/obo/CL_0000000> <http://www.w3.org/2000/01/rdf-schema#label> "cell" .
+# 
+# http://purl.obolibrary.org/obo/DOID_4
+<http://purl.obolibrary.org/obo/DOID_4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/DOID_4> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/BiologicalQuality> .
+<http://purl.obolibrary.org/obo/DOID_4> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/doid.owl> .
+<http://purl.obolibrary.org/obo/DOID_4> <http://purl.org/dc/terms/source> "http://ontology.buffalo.edu/medo/Disease_and_Diagnosis.pdf" .
+<http://purl.obolibrary.org/obo/DOID_4> <http://www.w3.org/2000/01/rdf-schema#label> "disease or condition" .
+<http://purl.obolibrary.org/obo/DOID_4> <http://www.w3.org/2004/02/skos/core#definition> "A disease is a disposition (i) to undergo pathological processes that (ii) exists in an organism because of one or more disorders in that organism" .
+# 
+# http://purl.obolibrary.org/obo/HP_0001513
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://purl.obolibrary.org/obo/IAO_0000115> "Accumulation of substantial excess body fat." .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D009765" .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT_US:414915002" .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT_US:414916001" .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UMLS:C0028754" .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Having too much body fat" .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Obesity" .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.geneontology.org/formats/oboInOwl#id> "HP:0001513" .
+<http://purl.obolibrary.org/obo/HP_0001513> <http://www.w3.org/2000/01/rdf-schema#label> "Obesity" .
+# 
+# http://purl.obolibrary.org/obo/HP_0001956
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/HP_0001513> .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://purl.obolibrary.org/obo/IAO_0000115> "Obesity located preferentially in the trunk of the body as opposed to the extremities." .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "HP:0008885" .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D056128" .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT_US:248311001" .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UMLS:C0311277" .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Centripetal obesity" .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Truncal obesity" .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.geneontology.org/formats/oboInOwl#id> "HP:0001956" .
+<http://purl.obolibrary.org/obo/HP_0001956> <http://www.w3.org/2000/01/rdf-schema#label> "Truncal obesity" .
+# 
+# http://purl.obolibrary.org/obo/HP_0004324
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://purl.obolibrary.org/obo/IAO_0000115> "Abnormally increased body weight." .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#created_by> "peter" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#creation_date> "2008-02-27T03:21:00Z" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "HP:0045083" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D015430" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT_US:161831008" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT_US:262286000" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT_US:8943002" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UMLS:C0043094" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Increased body weight" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "Weight gain" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.geneontology.org/formats/oboInOwl#id> "HP:0004324" .
+<http://purl.obolibrary.org/obo/HP_0004324> <http://www.w3.org/2000/01/rdf-schema#label> "Increased body weight" .
+# 
+# http://purl.obolibrary.org/obo/HP_0008915
+<http://purl.obolibrary.org/obo/HP_0008915> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/HP_0001956> .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://purl.obolibrary.org/obo/IAO_0000115> "Truncal obesity with onset during childhood, defined as between 2 and 10 years of age." .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "HP:0008874" .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UMLS:C1859846" .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Truncal obesity apparent in childhood" .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://www.geneontology.org/formats/oboInOwl#id> "HP:0008915" .
+<http://purl.obolibrary.org/obo/HP_0008915> <http://www.w3.org/2000/01/rdf-schema#label> "Childhood-onset truncal obesity" .
+# 
+# http://purl.obolibrary.org/obo/HP_0012743
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/HP_0001513> .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://purl.obolibrary.org/obo/IAO_0000115> "Excessive fat around the stomach and abdomen." .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#created_by> "peter" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#creation_date> "2014-03-23T05:00:05Z" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "MSH:D056128" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "SNOMEDCT_US:248311001" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#hasDbXref> "UMLS:C0311277" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Abdominal obesity" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Central obesity" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "human_phenotype" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.geneontology.org/formats/oboInOwl#id> "HP:0012743" .
+<http://purl.obolibrary.org/obo/HP_0012743> <http://www.w3.org/2000/01/rdf-schema#label> "Abdominal obesity" .
+# 
+# http://purl.obolibrary.org/obo/HP_0025499
+<http://purl.obolibrary.org/obo/HP_0025499> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0025499> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/HP_0001513> .
+<http://purl.obolibrary.org/obo/HP_0025499> <http://purl.obolibrary.org/obo/IAO_0000115> "Obesity with a body mass index of 30 to 34.9 kg per square meter." .
+<http://purl.obolibrary.org/obo/HP_0025499> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0025499> <http://purl.org/dc/elements/1.1/creator> "HPO:probinson" .
+<http://purl.obolibrary.org/obo/HP_0025499> <http://purl.org/dc/elements/1.1/date> "2017-05-14T20:06:40Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.obolibrary.org/obo/HP_0025499> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Obesity grade 1" .
+<http://purl.obolibrary.org/obo/HP_0025499> <http://www.w3.org/2000/01/rdf-schema#label> "Class I obesity"@en .
+# 
+# http://purl.obolibrary.org/obo/HP_0025500
+<http://purl.obolibrary.org/obo/HP_0025500> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0025500> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/HP_0001513> .
+<http://purl.obolibrary.org/obo/HP_0025500> <http://purl.obolibrary.org/obo/IAO_0000115> "Obesity with a body mass index of 35 to 39.9 kg per square meter." .
+<http://purl.obolibrary.org/obo/HP_0025500> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0025500> <http://purl.org/dc/elements/1.1/creator> "HPO:probinson" .
+<http://purl.obolibrary.org/obo/HP_0025500> <http://purl.org/dc/elements/1.1/date> "2017-05-14T20:08:43Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.obolibrary.org/obo/HP_0025500> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Obesity grade 2" .
+<http://purl.obolibrary.org/obo/HP_0025500> <http://www.w3.org/2000/01/rdf-schema#label> "Class II obesity"@en .
+# 
+# http://purl.obolibrary.org/obo/HP_0025501
+<http://purl.obolibrary.org/obo/HP_0025501> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0025501> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/HP_0001513> .
+<http://purl.obolibrary.org/obo/HP_0025501> <http://purl.obolibrary.org/obo/IAO_0000115> "Obesity with a body mass index of 40 kg per square meter or higher." .
+<http://purl.obolibrary.org/obo/HP_0025501> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0025501> <http://purl.org/dc/elements/1.1/creator> "HPO:probinson" .
+<http://purl.obolibrary.org/obo/HP_0025501> <http://purl.org/dc/elements/1.1/date> "2017-05-14T20:09:17Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.obolibrary.org/obo/HP_0025501> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Obesity grade 3" .
+<http://purl.obolibrary.org/obo/HP_0025501> <http://www.w3.org/2000/01/rdf-schema#label> "Class III obesity"@en .
+# 
+# http://purl.obolibrary.org/obo/HP_0025502
+<http://purl.obolibrary.org/obo/HP_0025502> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0025502> <http://purl.obolibrary.org/obo/IAO_0000115> "Increased body weight with a body mass index of 25-29.9 kg per square meter." .
+<http://purl.obolibrary.org/obo/HP_0025502> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0025502> <http://purl.org/dc/elements/1.1/creator> "HPO:probinson" .
+<http://purl.obolibrary.org/obo/HP_0025502> <http://purl.org/dc/elements/1.1/date> "2017-05-14T20:12:36Z"^^<http://www.w3.org/2001/XMLSchema#dateTime> .
+<http://purl.obolibrary.org/obo/HP_0025502> <http://www.w3.org/2000/01/rdf-schema#label> "Overweight"@en .
+# 
+# http://purl.obolibrary.org/obo/HP_0045082
+<http://purl.obolibrary.org/obo/HP_0045082> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/HP_0045082> <http://purl.obolibrary.org/obo/IAO_0000115> "Abnormally decreased weight-to-height squared ratio, calculated by dividing the individual's weight in kilograms by the square of the individual's height in meters and used as an indicator of underweight compared to averages." .
+<http://purl.obolibrary.org/obo/HP_0045082> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/HP_0045082> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Decreased BMI" .
+<http://purl.obolibrary.org/obo/HP_0045082> <http://www.w3.org/2000/01/rdf-schema#label> "Decreased body mass index" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142488
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C61256> .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://purl.obolibrary.org/obo/IAO_0000115> "Review of clinical information to determine veracity, thoroughness, and dependability." .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142488" .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://purl.obolibrary.org/obo/NCIT_P106> "Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://purl.obolibrary.org/obo/NCIT_P108> "Data Monitoring" .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://purl.obolibrary.org/obo/NCIT_P325> "Process by which clinical data are examined for completeness, consistency, and accuracy." .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Data Monitoring" .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "data monitoring" .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142488> <http://www.w3.org/2000/01/rdf-schema#label> "data monitoring" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142526
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial in which computerized systems are used to plan, collect, access, exchange, and archive data." .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142526" .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://purl.obolibrary.org/obo/NCIT_P108> "Electronic Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://purl.obolibrary.org/obo/NCIT_P325> "Clinical trial in which primarily electronic processes are used to plan, collect (acquire), access, exchange, and archive data required for conduct, management, analysis, and reporting of the trial. NOTE: FDA has recently drawn a distinction between studies and trials. Both words refer to systematic efforts to obtain evidence relevant to regulatory authorities, but, depending on regulatory context and particularly in the case of postmarketing commitments, a study might not be the appropriate word for a clinical trial (prospective, controlled, randomized), but should be reserved instead for surveillance, structured gathering of information, epidemiological studies, or even animal studies [DRAFT Guidance for industry Postmarketing studies and Clinical Trials-implementation of section 505(o) of the Federal Food, Drug, and Cosmetic act]. Synonyms: eClinical study, eClinical investigation." .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Electronic Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "eClinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "eclinical trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142526> <http://www.w3.org/2000/01/rdf-schema#label> "electronic clinical trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142539
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial with the objective of demonstrating clinical insignificance between the responses to two or more treatments." .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142539" .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://purl.obolibrary.org/obo/NCIT_P108> "Equivalence Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://purl.obolibrary.org/obo/NCIT_P325> "A trial with the primary objective of showing that the response to two or more treatments differs by an amount that is clinically unimportant. NOTE: This is usually demonstrated by showing that the true treatment difference is likely to lie between a lower and an upper equivalence margin of clinically acceptable differences." .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Equivalence Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "equivalence trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142539> <http://www.w3.org/2000/01/rdf-schema#label> "equivalence trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142547
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://purl.obolibrary.org/obo/IAO_0000115> "A type of clinical trial that involves low dosage and short duration of drug exposure for a limited number of study participants with the intent of gathering preliminary data on the mechanism of action, pharmacodynamics, pharmacokinetics, or bioavailability of promising therapeutic candidate agents in human subjects." .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142547" .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://purl.obolibrary.org/obo/NCIT_P108> "Exploratory Investigational New Drug Study" .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical study that is conducted early in Phase 1; involves very limited human exposure and has no therapeutic or diagnostic intent (e.g., screening studies, microdose studies) [FDA Guidance for industry, investigators, and Reviewers: exploratory IND studies, January 2006] See also Phase 0." .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Exploratory IND Study" .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Exploratory Investigational New Drug Study" .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "exploratory IND study" .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142547> <http://www.w3.org/2000/01/rdf-schema#label> "exploratory investigational new drug study" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142601
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial that is non-interventional by design but includes diagnostic or monitoring procedures that carry minimal risk or impact on patients." .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142601" .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://purl.obolibrary.org/obo/NCIT_P108> "Low-interventional Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical trial which fulfills all of the following conditions: (a) the investigational medicinal products, excluding placebos, are authorized; (b) according to the protocol of the clinical trial, (i) the investigational medicinal products are used in accordance with the terms of the marketing authorization; or (ii) the use of the investigational medicinal products is evidence-based and supported by published scientific evidence on the safety and efficacy of those investigational medicinal products in any of the Member States concerned; and (c) the additional diagnostic or monitoring procedures do not pose more than minimal additional risk or burden to the safety of the subjects compared to normal clinical practice in any Member State concerned. [REGULATION (EU) No 536/2014 Article 2.2.(3)]" .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Low-interventional Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "low-interventional clinical trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142601> <http://www.w3.org/2000/01/rdf-schema#label> "low-interventional clinical trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142603
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://purl.obolibrary.org/obo/IAO_0000115> "A type of clinical trial in which the therapeutic benefits of a marketed product are either clarified or preferentially compared to another marketed product." .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142603" .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://purl.obolibrary.org/obo/NCIT_P108> "Marketing Support Trials" .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://purl.obolibrary.org/obo/NCIT_P325> "Clinical studies that are designed to clarify therapeutic benefits of a marketed product or to show potential decision-makers the rationale for preferring one therapy over another." .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Marketing Support Trials" .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "marketing support trials" .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142603> <http://www.w3.org/2000/01/rdf-schema#label> "marketing support trials" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142609
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://purl.obolibrary.org/obo/IAO_0000115> "A type of clinical trial in which 10,000 or more subjects are enrolled." .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142609" .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://purl.obolibrary.org/obo/NCIT_P108> "Mega-Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://purl.obolibrary.org/obo/NCIT_P325> "Massive trials that test the advantages of therapeutic interventions by enrolling 10,000 or more subjects." .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Mega-Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "large sample trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "mega-trials" .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142609> <http://www.w3.org/2000/01/rdf-schema#label> "mega-trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142641
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://purl.obolibrary.org/obo/IAO_0000115> "A study designed to test the effectiveness of an intervention in a broad routine clinical practice." .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142641" .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://purl.obolibrary.org/obo/NCIT_P108> "Pragmatic Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://purl.obolibrary.org/obo/NCIT_P325> "Term used to describe a clinical study designed to examine the benefits of a product under real world conditions." .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Pragmatic Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "pragmatic trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142641> <http://www.w3.org/2000/01/rdf-schema#label> "pragmatic trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C142722
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://purl.obolibrary.org/obo/IAO_0000115> "A trial with the primary objective of showing that the response to the investigational product is superior to a comparative agent (active or placebo control). (ICH)" .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C142722" .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://purl.obolibrary.org/obo/NCIT_P108> "Superiority Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://purl.obolibrary.org/obo/NCIT_P325> "A trial with the primary objective of showing that the response to the investigational product is superior to a comparative agent (active or placebo control). [ICH E9]" .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Superiority Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "superiority trial" .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C142722> <http://www.w3.org/2000/01/rdf-schema#label> "superiority trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C15206
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C63536> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/IAO_0000115> "Research conducted with human subjects or on material of human origin in which an investigator directly interacts with human subjects; includes development of new technologies, study of mechanisms of human diseases, therapy, clinical trials, epidemiologic, behavior, and health services research." .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15206" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P207> "C0008972" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P322> "FDA" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. [ClinicalTrials.gov] See also clinical trial." .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical study involves research using human volunteers (also called participants) that is intended to add to medical knowledge. There are two main types of clinical studies: clinical trials (also called interventional studies) and observational studies. [ClinicalTrials.gov] See also clinical trial. (CDISC Glossary)" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "CLINICAL STUDY" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Research" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Studies" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "clinical study" .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132310> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C54447> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C54587> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C15206> <http://www.w3.org/2000/01/rdf-schema#label> "clinical study" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C15362
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hadatac.org/ont/hasco#ResearchStudy> .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/IAO_0000115> "An uncontrolled observational study containing a detailed report of the diagnosis, treatment, and follow-up of an individual patient. Case reports also contain some demographic information about the patient (for example, age, gender, ethnic origin)." .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15362" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/NCIT_P108> "Case Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/NCIT_P207> "C0085973" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/NCIT_P325> "A detailed report of the diagnosis, treatment, and follow-up of an individual patient. Case reports also contain some demographic information about the patient (for example, age, gender, ethnic origin)." .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/NCIT_P325> "A study in which the subject with the condition under study (the case) is compared against a theoretical/historical model of distribution that serves as a control." .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://purl.obolibrary.org/obo/NCIT_P366> "Case_Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "CASE ONLY" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Case Report" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Case Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "case report" .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C127259> .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> .
+<http://purl.obolibrary.org/obo/NCIT_C15362> <http://www.w3.org/2000/01/rdf-schema#label> "case study" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C15429
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C16203> .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://purl.obolibrary.org/obo/IAO_0000115> "Systematic investigation into a subject in order to discover facts, establish or revise a theory, or develop a plan of action based on the facts discovered." .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15429" .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://purl.obolibrary.org/obo/NCIT_P108> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://purl.obolibrary.org/obo/NCIT_P207> "C0242481" .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://purl.obolibrary.org/obo/NCIT_P325> "A scientific study of nature that sometimes includes processes involved in health and disease. For example, clinical trials are research studies that involve people.  These studies may be related to new ways to screen, prevent, diagnose, and treat disease.  They may also study certain outcomes and certain groups of people by looking at data collected in the past or future." .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://purl.obolibrary.org/obo/NCIT_P366> "Research_Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Research" .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "research study" .
+<http://purl.obolibrary.org/obo/NCIT_C15429> <http://www.w3.org/2000/01/rdf-schema#label> "research activity" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C15602
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C70820> .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical research protocol designed to investigate the efficacy of the biomedical or behavioral intervention in large groups of human subjects (from several hundred to several thousand), to confirm efficacy, to monitor adverse reactions to the new medication or treatment regimen with respect to long-term use and by comparing the intervention to other standard or experimental interventions as well as to a placebo." .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15602" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P108> "Phase III Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P207> "C0282461" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P325> "A study to compare the results of people taking a new treatment with the results of people taking the standard treatment (for example, which group has better survival rates or fewer side effects). In most cases, studies move into phase III only after a treatment seems to work in phases I and II. Phase III trials may include hundreds of people." .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P325> "Phase 3. Studies are expanded controlled and uncontrolled trials. They are performed after preliminary evidence suggesting effectiveness of the drug has been obtained, and are intended to gather the additional information about effectiveness and safety that is needed to confirm efficacy and evaluate the overall benefit-risk relationship of the drug and to provide an adequate basis for physician labeling. NOTE: Phase 3 studies usually include from several hundred to several thousand subjects. [After FDA CDER Handbook, ICH E8] (CDISC glossary)" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P325> "Studies are expanded controlled and uncontrolled trials. They are performed after preliminary evidence suggesting effectiveness of the drug has been obtained and are intended to gather the additional information about effectiveness and safety that is needed to confirm efficacy and evaluate the overall benefit-risk relationship of the drug and to provide an adequate basis for physician labeling. NOTE: Phase 3 studies usually include from several hundred to several thousand subjects. [after FDA CDER handbook, ICH E8]" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://purl.obolibrary.org/obo/NCIT_P366> "Phase_III_Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "3" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trials, Phase III" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "PHASE III TRIAL" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase 3 Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase III Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase III Protocol" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase III Study" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase III Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase III Trials" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Trial Phase 3" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "phase 3" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "phase III trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66737> .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C15602> <http://www.w3.org/2000/01/rdf-schema#label> "phase III trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C15693
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C70820> .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical research protocol designed to study the safety, dosage levels and response to new treatment. Phase I/II trials combine a Phase I and a Phase II trial of the same treatment into a single protocol." .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15693" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/NCIT_P108> "Phase I/II Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/NCIT_P207> "C1519043" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/NCIT_P325> "A class of clinical study that combines elements characteristic of traditional Phase I and Phase II trials. See also Phase I, Phase II." .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/NCIT_P325> "A trial to study the safety, dosage levels, and response to a new treatment." .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://purl.obolibrary.org/obo/NCIT_P366> "Phase_I_II_Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "1-2" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "PHASE I/II TRIAL" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase I/II Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase I/II trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Trial Phase 1-2" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Trial Phase 1/2" .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66737> .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> .
+<http://purl.obolibrary.org/obo/NCIT_C15693> <http://www.w3.org/2000/01/rdf-schema#label> "phase I/II trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C15835
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C15693> .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C15864> .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://purl.obolibrary.org/obo/IAO_0000115> "Select candidate vaccines or concepts suitable for Phase I and Phase II trials and conduct these trials." .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15835" .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://purl.obolibrary.org/obo/NCIT_P108> "Phase I and II Vaccine Trials" .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://purl.obolibrary.org/obo/NCIT_P207> "C1519044" .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://purl.obolibrary.org/obo/NCIT_P366> "Phase_I_and_II_Vaccine_Trials" .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase I and II Vaccine Trials" .
+<http://purl.obolibrary.org/obo/NCIT_C15835> <http://www.w3.org/2000/01/rdf-schema#label> "phase I and II Vaccine trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C15864
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15864" .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://purl.obolibrary.org/obo/NCIT_P108> "Vaccine Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://purl.obolibrary.org/obo/NCIT_P207> "C1519888" .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://purl.obolibrary.org/obo/NCIT_P366> "Vaccine_Clinical_Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Vaccine Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15864> <http://www.w3.org/2000/01/rdf-schema#label> "vaccine clinical trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C15873
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C15602> .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C15864> .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://purl.obolibrary.org/obo/IAO_0000115> "Select suitable vaccine candidates and support efficacy trials when appropriate criteria are met." .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C15873" .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://purl.obolibrary.org/obo/NCIT_P108> "Phase III Large Scale Vaccine Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://purl.obolibrary.org/obo/NCIT_P207> "C1519902" .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://purl.obolibrary.org/obo/NCIT_P366> "Vaccine_Trial-Phase_III_Large_Scale" .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Phase III Large Scale Vaccine Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Vaccine Trial-Phase III Large Scale" .
+<http://purl.obolibrary.org/obo/NCIT_C15873> <http://www.w3.org/2000/01/rdf-schema#label> "phase III large scale vaccine trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C16104
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C70824> .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C16104" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/NCIT_P108> "Multi-Institutional Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/NCIT_P207> "C0206012" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/NCIT_P325> "A clinical trial that is carried out at more than one medical institution." .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/NCIT_P325> "Clinical trial conducted according to a single protocol but at more than one site and, therefore, carried out by more than one investigator. [ICH E9 Glossary] See investigator/ institution." .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://purl.obolibrary.org/obo/NCIT_P366> "Multi-Institutional_Clinical_Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Multi-Institutional Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "multicenter study" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "multicenter trial" .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C16104> <http://www.w3.org/2000/01/rdf-schema#label> "multi-institutional clinical trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C16123
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial that is not therapeutic, preventive or diagnostic." .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C16123" .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Trial, Other" .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://purl.obolibrary.org/obo/NCIT_P207> "C1516648" .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Trials_Other" .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trial, Other" .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trials, Other" .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Other Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C16123> <http://www.w3.org/2000/01/rdf-schema#label> "clinical trial, other" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C16203
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C43431> .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://purl.obolibrary.org/obo/IAO_0000115> "Any specific activity undertaken during the course of a clinical study or research protocol." .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C16203" .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://purl.obolibrary.org/obo/NCIT_P106> "Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical or Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://purl.obolibrary.org/obo/NCIT_P207> "C1516654" .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_or_Research_Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical or Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C16203> <http://www.w3.org/2000/01/rdf-schema#label> "clinical or research activity" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C18707
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C71104> .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://purl.obolibrary.org/obo/IAO_0000115> "A clinical trial that uses materials from some other clinical trial." .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C18707" .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://purl.obolibrary.org/obo/NCIT_P106> "Governmental or Regulatory Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://purl.obolibrary.org/obo/NCIT_P108> "Adjunct Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://purl.obolibrary.org/obo/NCIT_P207> "C1516638" .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Trials_Adjunct" .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Adjunct Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trial, Adjunct" .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trials, Adjunct" .
+<http://purl.obolibrary.org/obo/NCIT_C18707> <http://www.w3.org/2000/01/rdf-schema#label> "adjunct clinical trial" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C25613
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/IAO_0000115> "\n\t\tA fraction or ratio with 100 understood as the denominator.\n\t\t" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/IAO_0000115> "\n        A fraction or ratio with 100 understood as the denominator.\n        " .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C25613" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_P106> "Conceptual Entity" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_P108> "Percentage" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_P207> "C0439165" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_P322> "NCPDP" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_P325> "\n\t\tOne hundred times the quotient of one quantity divided by another, with the same units of measurement.\n\t\t" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_P325> "\n        One hundred times the quotient of one quantity divided by another, with the same units of measurement.\n        " .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://purl.obolibrary.org/obo/NCIT_P366> "Percentage" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "%" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Percentage" .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66770> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C71620> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C77526> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C85494> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C89415> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C89509> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C91101> .
+<http://purl.obolibrary.org/obo/NCIT_C25613> <http://www.w3.org/2000/01/rdf-schema#label> "percentage" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C43431
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2002/07/owl#Thing> .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/IAO_0000115> "An active process; excludes processes and mechanisms which fulfill biological functions." .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C43431" .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/NCIT_P106> "Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/NCIT_P108> "Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/NCIT_P207> "C0441655" .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/NCIT_P322> "BRIDG" .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/NCIT_P325> "Any action that can, in the context of a study or a post-marketing investigation, be defined, planned, scheduled or performed. EXAMPLE(S): surgical procedure, laboratory test, administration of a drug." .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://purl.obolibrary.org/obo/NCIT_P366> "Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "General activity" .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C105551> .
+<http://purl.obolibrary.org/obo/NCIT_C43431> <http://www.w3.org/2000/01/rdf-schema#label> "activity" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C44256
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/IAO_0000115> "\n\t\tQuotient of quantities of the same kind for different components within the same system.\n\t\t" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/IAO_0000115> "\n        Quotient of quantities of the same kind for different components within the same system.\n        " .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C44256" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_P106> "Quantitative Concept" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_P108> "Ratio" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_P207> "C0456603" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_P322> "UCUM" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_P325> "\n\t\tThe quotient of one quantity divided by another, with the same units of measurement.\n\t\t" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_P325> "\n        The quotient of one quantity divided by another, with the same units of measurement.\n        " .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://purl.obolibrary.org/obo/NCIT_P366> "Ratio" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "RATIO" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Ratio" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "ratio" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "{RATIO}" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "{Ratio}" .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C19752> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66770> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67567> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C71620> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C77526> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C85494> .
+<http://purl.obolibrary.org/obo/NCIT_C44256> <http://www.w3.org/2000/01/rdf-schema#label> "ratio" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C61256
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://purl.obolibrary.org/obo/IAO_0000115> "The act of observing something (and sometimes keeping a record of it)." .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C61256" .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://purl.obolibrary.org/obo/NCIT_P106> "Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://purl.obolibrary.org/obo/NCIT_P108> "Monitoring" .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://purl.obolibrary.org/obo/NCIT_P208> "CL415337" .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://purl.obolibrary.org/obo/NCIT_P325> "In medicine, to regularly watch and check a person or condition to see if there is any change. Also refers to a device that records and/or displays patient data, such as for an electrocardiogram (EKG)." .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://purl.obolibrary.org/obo/NCIT_P366> "Monitoring" .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Monitoring" .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "monitor" .
+<http://purl.obolibrary.org/obo/NCIT_C61256> <http://www.w3.org/2000/01/rdf-schema#label> "monitoring" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C63536
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C15429> .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://purl.obolibrary.org/obo/IAO_0000115> "A detailed examination, analysis, or critical inspection of a subject designed to discover facts about it." .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C63536" .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://purl.obolibrary.org/obo/NCIT_P108> "Study" .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://purl.obolibrary.org/obo/NCIT_P207> "C0947630" .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://purl.obolibrary.org/obo/NCIT_P366> "Study" .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Study" .
+<http://purl.obolibrary.org/obo/NCIT_C63536> <http://www.w3.org/2000/01/rdf-schema#label> "study" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C70820
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C15206> .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C70820" .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Study by Phase" .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://purl.obolibrary.org/obo/NCIT_P207> "C2347801" .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Study_by_Phase" .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Study by Phase" .
+<http://purl.obolibrary.org/obo/NCIT_C70820> <http://www.w3.org/2000/01/rdf-schema#label> "clinical study by phase" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C70824
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C15206> .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C70824" .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Study by Organizational Parameters" .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://purl.obolibrary.org/obo/NCIT_P207> "C2347800" .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Study_by_Organizational_Parameters" .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Study by Organizational Parameters" .
+<http://purl.obolibrary.org/obo/NCIT_C70824> <http://www.w3.org/2000/01/rdf-schema#label> "clinical study by organizational parameters" .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C71104
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hadatac.org/ont/hasco#ResearchStudy> .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/NCIT_C15206> .
+# 
+# http://purl.obolibrary.org/obo/PATO_0000001
+<http://purl.obolibrary.org/obo/PATO_0000001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0000001> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0000001> <http://purl.obolibrary.org/obo/IAO_0000589> "quality (PATO)" .
+<http://purl.obolibrary.org/obo/PATO_0000001> <http://www.w3.org/2000/01/rdf-schema#label> "quality" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0000068
+<http://purl.obolibrary.org/obo/PATO_0000068> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0000068> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0000001> .
+<http://purl.obolibrary.org/obo/PATO_0000068> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0000068> <http://www.w3.org/2000/01/rdf-schema#label> "qualitative" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0000069
+<http://purl.obolibrary.org/obo/PATO_0000069> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0000069> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0000068> .
+<http://purl.obolibrary.org/obo/PATO_0000069> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0000069> <http://www.w3.org/2000/01/rdf-schema#label> "deviation(from_normal)" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0000125
+<http://purl.obolibrary.org/obo/PATO_0000125> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0000125> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+# 
+# http://purl.obolibrary.org/obo/PATO_0000128
+<http://purl.obolibrary.org/obo/PATO_0000128> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0000128> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0001035> .
+<http://purl.obolibrary.org/obo/PATO_0000128> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0000128> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+<http://purl.obolibrary.org/obo/PATO_0000128> <http://www.w3.org/2000/01/rdf-schema#label> "weight" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0000460
+<http://purl.obolibrary.org/obo/PATO_0000460> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0000460> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0000069> .
+<http://purl.obolibrary.org/obo/PATO_0000460> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0000460> <http://www.w3.org/2000/01/rdf-schema#label> "abnormal" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0000582
+<http://purl.obolibrary.org/obo/PATO_0000582> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0000582> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0000128> .
+<http://purl.obolibrary.org/obo/PATO_0000582> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0002245> .
+<http://purl.obolibrary.org/obo/PATO_0000582> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0000582> <http://www.w3.org/2000/01/rdf-schema#label> "increased weight" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0001018
+<http://purl.obolibrary.org/obo/PATO_0001018> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0001018> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0001241> .
+<http://purl.obolibrary.org/obo/PATO_0001018> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0001018> <http://www.w3.org/2000/01/rdf-schema#label> "physical quality" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0001035
+<http://purl.obolibrary.org/obo/PATO_0001035> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0001035> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0001018> .
+<http://purl.obolibrary.org/obo/PATO_0001035> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0001035> <http://www.w3.org/2000/01/rdf-schema#label> "force" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0001241
+<http://purl.obolibrary.org/obo/PATO_0001241> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0001241> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0000001> .
+<http://purl.obolibrary.org/obo/PATO_0001241> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0001241> <http://www.w3.org/2000/01/rdf-schema#label> "physical object quality" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0001309
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://purl.obolibrary.org/obo/IAO_0000115> "\n\t\tA process quality inhering in a bearer by virtue of the bearer's magnitude of the temporal extent between the starting and ending point.\n\t\t" .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/pato.owl> .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId> "PATO:0000081" .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "period" .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "quality" .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> "time" .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.geneontology.org/formats/oboInOwl#id> "PATO:0001309" .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/pato#attribute_slim> .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/pato#hpo_slim> .
+<http://purl.obolibrary.org/obo/PATO_0001309> <http://www.w3.org/2000/01/rdf-schema#label> "duration" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0001708
+<http://purl.obolibrary.org/obo/PATO_0001708> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0001708> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+# 
+# http://purl.obolibrary.org/obo/PATO_0001869
+<http://purl.obolibrary.org/obo/PATO_0001869> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0001869> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0000460> .
+<http://purl.obolibrary.org/obo/PATO_0001869> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0001869> <http://www.w3.org/2000/01/rdf-schema#label> "pathological" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0002245
+<http://purl.obolibrary.org/obo/PATO_0002245> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0002245> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0001035> .
+<http://purl.obolibrary.org/obo/PATO_0002245> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0002305> .
+<http://purl.obolibrary.org/obo/PATO_0002245> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0002245> <http://www.w3.org/2000/01/rdf-schema#label> "increased force" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0002300
+<http://purl.obolibrary.org/obo/PATO_0002300> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0002300> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0000069> .
+<http://purl.obolibrary.org/obo/PATO_0002300> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0002300> <http://www.w3.org/2000/01/rdf-schema#label> "increased quality" .
+# 
+# http://purl.obolibrary.org/obo/PATO_0002305
+<http://purl.obolibrary.org/obo/PATO_0002305> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/PATO_0002305> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0001241> .
+<http://purl.obolibrary.org/obo/PATO_0002305> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/PATO_0002300> .
+<http://purl.obolibrary.org/obo/PATO_0002305> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/PATO_0002305> <http://www.w3.org/2000/01/rdf-schema#label> "increased object quality" .
+# 
+# http://purl.obolibrary.org/obo/STATO_0000193
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://purl.obolibrary.org/obo/IAO_0000115> "is a population whose individual members realize (may be expressed as) a combination of  inclusion rule values specifications or resulting from a sampling process (e.g. recruitment followed by randomization to group) on which a number of measurements will be carried out, which may be used as input to statistical tests and statistical inference." .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://purl.obolibrary.org/obo/IAO_0000117> "Alejandra Gonzalez-Beltran"@en .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://purl.obolibrary.org/obo/IAO_0000117> "Orlaith Burke" .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://purl.obolibrary.org/obo/IAO_0000117> "Philippe Rocca-Serra" .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://purl.obolibrary.org/obo/IAO_0000119> "STATO"@en .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/stato.owl> .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://purl.obolibrary.org/obo/STATO_0000032> "statistical sample"@en .
+<http://purl.obolibrary.org/obo/STATO_0000193> <http://www.w3.org/2000/01/rdf-schema#label> "study group population" .
+# 
+# http://purl.obolibrary.org/obo/STATO_0000203
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/STATO_0000193> .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/heals/sco/PopulationSize> .
+# 
+# http://purl.obolibrary.org/obo/UBERON_0000061
+<http://purl.obolibrary.org/obo/UBERON_0000061> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/UBERON_0000061> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/CARO_0000003> .
+<http://purl.obolibrary.org/obo/UBERON_0000061> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/UBERON_0000061> <http://www.w3.org/2000/01/rdf-schema#label> "anatomical structure" .
+# 
+# http://purl.obolibrary.org/obo/UBERON_0001062
+<http://purl.obolibrary.org/obo/UBERON_0001062> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/UBERON_0001062> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/hp.owl> .
+<http://purl.obolibrary.org/obo/UBERON_0001062> <http://www.w3.org/2000/01/rdf-schema#label> "anatomical entity" .
+# 
+# http://purl.obolibrary.org/obo/UO_0000001
+<http://purl.obolibrary.org/obo/UO_0000001> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/UO_0000001> <http://purl.obolibrary.org/obo/IAO_0000115> "A unit which is a standard measure of the distance between two points." .
+<http://purl.obolibrary.org/obo/UO_0000001> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+<http://purl.obolibrary.org/obo/UO_0000001> <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" .
+<http://purl.obolibrary.org/obo/UO_0000001> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" .
+<http://purl.obolibrary.org/obo/UO_0000001> <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000001" .
+<http://purl.obolibrary.org/obo/UO_0000001> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> .
+<http://purl.obolibrary.org/obo/UO_0000001> <http://www.w3.org/2000/01/rdf-schema#label> "length unit" .
+# 
+# http://purl.obolibrary.org/obo/UO_0000002
+<http://purl.obolibrary.org/obo/UO_0000002> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/UO_0000002> <http://purl.obolibrary.org/obo/IAO_0000115> "A unit which is a standard measure of the amount of matter/energy of a physical object." .
+<http://purl.obolibrary.org/obo/UO_0000002> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+<http://purl.obolibrary.org/obo/UO_0000002> <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" .
+<http://purl.obolibrary.org/obo/UO_0000002> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" .
+<http://purl.obolibrary.org/obo/UO_0000002> <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000002" .
+<http://purl.obolibrary.org/obo/UO_0000002> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> .
+<http://purl.obolibrary.org/obo/UO_0000002> <http://www.w3.org/2000/01/rdf-schema#label> "mass unit" .
+# 
+# http://purl.obolibrary.org/obo/UO_0000009
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/UO_0000002> .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/UO_0000045> .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/UnitOfMeasurement> .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://purl.obolibrary.org/obo/IAO_0000115> "A mass unit which is equal to the mass of the International Prototype Kilogram kept by the BIPM at Svres, France." .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "kg" .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000009" .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim> .
+<http://purl.obolibrary.org/obo/UO_0000009> <http://www.w3.org/2000/01/rdf-schema#label> "kilogram" .
+# 
+# http://purl.obolibrary.org/obo/UO_0000015
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/UO_0000001> .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/UnitOfMeasurement> .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://purl.obolibrary.org/obo/IAO_0000115> "A length unit which is equal to one hundredth of a meter or 10^[-2] m." .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "centimetre" .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "cm" .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000015" .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim> .
+<http://purl.obolibrary.org/obo/UO_0000015> <http://www.w3.org/2000/01/rdf-schema#label> "centimeter" .
+# 
+# http://purl.obolibrary.org/obo/UO_0000045
+<http://purl.obolibrary.org/obo/UO_0000045> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://purl.obolibrary.org/obo/UO_0000045> <http://purl.obolibrary.org/obo/IAO_0000115> "A unit which is one of a particular measure to which all measures of that type can be related." .
+<http://purl.obolibrary.org/obo/UO_0000045> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/uo.owl> .
+<http://purl.obolibrary.org/obo/UO_0000045> <http://www.geneontology.org/formats/oboInOwl#created_by> "george gkoutos" .
+<http://purl.obolibrary.org/obo/UO_0000045> <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "unit.ontology" .
+<http://purl.obolibrary.org/obo/UO_0000045> <http://www.geneontology.org/formats/oboInOwl#id> "UO:0000045" .
+<http://purl.obolibrary.org/obo/UO_0000045> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim> .
+<http://purl.obolibrary.org/obo/UO_0000045> <http://www.w3.org/2000/01/rdf-schema#label> "base unit" .
+# 
+# http://semanticscience.org/resource/Mean
+<http://semanticscience.org/resource/Mean> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semanticscience.org/resource/Mean> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> .
+<http://semanticscience.org/resource/Mean> <http://purl.org/dc/terms/source> <https://en.wikipedia.org/wiki/Mean> .
+<http://semanticscience.org/resource/Mean> <http://www.w3.org/2000/01/rdf-schema#label> "mean" .
+<http://semanticscience.org/resource/Mean> <http://www.w3.org/2004/02/skos/core#definition> "the central value of a discrete set of numbers: specifically, the sum of the values divided by the number of values" .
+# 
+# http://semanticscience.org/resource/Median
+<http://semanticscience.org/resource/Median> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semanticscience.org/resource/Median> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> .
+# 
+# http://semanticscience.org/resource/MedicalIntervention
+<http://semanticscience.org/resource/MedicalIntervention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://semanticscience.org/resource/Patient
+<http://semanticscience.org/resource/Patient> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semanticscience.org/resource/Patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid4 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/heals/sco/ElectronicHealthRecord> .
+<http://semanticscience.org/resource/Patient> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasProperty> .
+_:genid5 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/DOID_4> .
+<http://semanticscience.org/resource/Patient> <http://purl.org/dc/terms/source> "https://www.tititudorancea.com/z/patient_en.htm" .
+<http://semanticscience.org/resource/Patient> <http://www.w3.org/2000/01/rdf-schema#label> "patient" .
+<http://semanticscience.org/resource/Patient> <http://www.w3.org/2004/02/skos/core#definition> "a person who receives medical attention, care, or treatment, or who is registered with medical professional or institution with the purpose to receive medical care when necessary" .
+# 
+# http://semanticscience.org/resource/StandardDeviation
+<http://semanticscience.org/resource/StandardDeviation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semanticscience.org/resource/StandardDeviation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#DispersionMeasure> .
+<http://semanticscience.org/resource/StandardDeviation> <http://purl.org/dc/terms/source> <https://en.wikipedia.org/wiki/Standard_deviation> .
+<http://semanticscience.org/resource/StandardDeviation> <http://www.w3.org/2000/01/rdf-schema#label> "standard deviation" .
+<http://semanticscience.org/resource/StandardDeviation> <http://www.w3.org/2004/02/skos/core#definition> "a measure that is used to quantify the amount of variation or dispersion of a set of data values" .
+# 
+# http://semanticscience.org/resource/Study
+<http://semanticscience.org/resource/Study> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://semanticscience.org/resource/StudySubject
+<http://semanticscience.org/resource/StudySubject> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semanticscience.org/resource/StudySubject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid6 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/heals/sco/SubjectCharacteristic> .
+<http://semanticscience.org/resource/StudySubject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasProperty> .
+_:genid7 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://purl.obolibrary.org/obo/DOID_4> .
+<http://semanticscience.org/resource/StudySubject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasProperty> .
+_:genid8 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+<http://semanticscience.org/resource/StudySubject> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasProperty> .
+_:genid9 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/heals/sco/EnrollmentStatus> .
+<http://semanticscience.org/resource/StudySubject> <http://purl.org/dc/terms/source> "https://en.wikipedia.org/wiki/Research_participant" .
+<http://semanticscience.org/resource/StudySubject> <http://www.w3.org/2000/01/rdf-schema#label> "study subject" .
+<http://semanticscience.org/resource/StudySubject> <http://www.w3.org/2004/02/skos/core#definition> "A research participant, also called a human subject or an experiment, trial, or study participant or subject, is a person who participates in human subject research by being the target of observation by researchers" .
+# 
+# http://semanticscience.org/resource/UnitOfMeasurement
+<http://semanticscience.org/resource/UnitOfMeasurement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semanticscience.org/resource/UnitOfMeasurement> <http://www.w3.org/2000/01/rdf-schema#label> "unit of measurement" .
+# 
+# http://semanticscience.org/resource/Year
+<http://semanticscience.org/resource/Year> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://semanticscience.org/resource/Year> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/UnitOfMeasurement> .
+# 
+# http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure
+<http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+<http://www.case.edu/ProvCaRe/provcare#CentralTendencyMeasure> <http://www.w3.org/2000/01/rdf-schema#comment> "Statistical measure describing the distribution of single variable" .
+# 
+# http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention
+<http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+<http://www.case.edu/ProvCaRe/provcare#ClinicalIntervention> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "http://purl.bioontology.org/ontology/SNOMEDCT/386053000" .
+# 
+# http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument
+<http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.case.edu/ProvCaRe/provcare#DispersionMeasure
+<http://www.case.edu/ProvCaRe/provcare#DispersionMeasure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.case.edu/ProvCaRe/provcare#DispersionMeasure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+<http://www.case.edu/ProvCaRe/provcare#DispersionMeasure> <http://www.w3.org/2000/01/rdf-schema#comment> "Statistical measure characterizing the distribution of single variable" .
+# 
+# http://www.case.edu/ProvCaRe/provcare#Intervention
+<http://www.case.edu/ProvCaRe/provcare#Intervention> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.case.edu/ProvCaRe/provcare#Intervention> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#StudyMethod> .
+<http://www.case.edu/ProvCaRe/provcare#StudyMethod> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.case.edu/ProvCaRe/provcare#Intervention> <http://www.w3.org/2000/01/rdf-schema#comment> "Capturing the interventions variables in research studies" .
+<http://www.case.edu/ProvCaRe/provcare#Intervention> <http://www.w3.org/2000/01/rdf-schema#comment> "The intervention type used in a research study (corresponding to I in the PICO(T) model )" .
+<http://www.case.edu/ProvCaRe/provcare#Intervention> <http://www.w3.org/2000/01/rdf-schema#label> "study intervention" .
+<http://www.case.edu/ProvCaRe/provcare#Intervention> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "http://purl.bioontology.org/ontology/SNOMEDCT/386053000" .
+<http://www.case.edu/ProvCaRe/provcare#Intervention> <http://www.w3.org/2000/01/rdf-schema#synonym> "Study intervention" .
+# 
+# http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#DataAnalysisInstrument> .
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid10 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://semanticscience.org/resource/UnitOfMeasurement> .
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasValue> .
+_:genid11 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#decimal> .
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> <http://purl.org/dc/terms/source> <https://en.wikipedia.org/wiki/Measure> .
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> <http://www.w3.org/2000/01/rdf-schema#label> "statistical measure" .
+<http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> <http://www.w3.org/2004/02/skos/core#definition> "a standard unit used to express the size, amount, or degree of something" .
+# 
+# http://www.case.edu/ProvCaRe/provcare#StudyMethod
+# 
+# http://www.w3.org/2002/07/owl#DataProperty
+<http://www.w3.org/2002/07/owl#DataProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2004/02/skos/core#definition
+<http://www.w3.org/2004/02/skos/core#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://purl.org/heals/sco/Active
+<https://purl.org/heals/sco/Active> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/Active> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/EnrollmentStatus> .
+<https://purl.org/heals/sco/Active> <http://purl.org/dc/terms/title> "Clinical Trials Protocol Template - NIH Office of Science Policy" .
+<https://purl.org/heals/sco/Active> <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf" .
+<https://purl.org/heals/sco/Active> <http://www.w3.org/2000/01/rdf-schema#label> "active" .
+<https://purl.org/heals/sco/Active> <http://www.w3.org/2004/02/skos/core#definition> "participants following clinical trial protocol" .
+# 
+# https://purl.org/heals/sco/CohortDescription
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Dataset> .
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasDataItem> .
+_:genid12 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasDataItem> .
+_:genid13 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasDataItem> .
+_:genid14 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/heals/sco/StudyArm> .
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasDataItem> .
+_:genid15 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/heals/sco/SubjectCharacteristic> .
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/2000/01/rdf-schema#comment> "All typical components that constitute the description of study populations, captured in the first table of a research study, and hence called Table 1s" .
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/2000/01/rdf-schema#label> "cohort description" .
+<https://purl.org/heals/sco/CohortDescription> <http://www.w3.org/2000/01/rdf-schema#synonym> "Table 1" .
+# 
+# https://purl.org/heals/sco/ControlArm
+<https://purl.org/heals/sco/ControlArm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/ControlArm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/StudyArm> .
+# 
+# https://purl.org/heals/sco/Discontinued
+<https://purl.org/heals/sco/Discontinued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/Discontinued> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/EnrollmentStatus> .
+<https://purl.org/heals/sco/Discontinued> <http://purl.org/dc/terms/title> "Clinical Trials Protocol Template - NIH Office of Science Policy" .
+<https://purl.org/heals/sco/Discontinued> <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf" .
+<https://purl.org/heals/sco/Discontinued> <http://www.w3.org/2000/01/rdf-schema#label> "discontinued" .
+<https://purl.org/heals/sco/Discontinued> <http://www.w3.org/2004/02/skos/core#definition> "participants no longer, following clinical trial protocol" .
+# 
+# https://purl.org/heals/sco/Duration
+<https://purl.org/heals/sco/Duration> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://purl.org/heals/sco/ElectronicHealthRecord
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/Dataset> .
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid16 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://hadatac.org/ont/chear#Anthropometry> .
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid17 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://hadatac.org/ont/chear#Demographic> .
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid18 <http://www.w3.org/2002/07/owl#someValuesFrom> <https://purl.org/heals/sco/OrderedLaboratoryTestResult> .
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasProperty> .
+_:genid19 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://purl.org/dc/terms/source> <https://www.healthit.gov/faq/what-electronic-health-record-ehr> .
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://www.w3.org/2000/01/rdf-schema#label> "electronic health record" .
+<https://purl.org/heals/sco/ElectronicHealthRecord> <http://www.w3.org/2004/02/skos/core#definition> "a digital version of a patient’s paper chart" .
+# 
+# https://purl.org/heals/sco/EnrollmentStatus
+<https://purl.org/heals/sco/EnrollmentStatus> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/EnrollmentStatus> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://semanticscience.org/resource/StatusDescriptor> .
+<https://purl.org/heals/sco/EnrollmentStatus> <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://research-compliance.umich.edu/sites/default/files/resource-download/enrollmentdefinition_additionalhelp.pdf" .
+<https://purl.org/heals/sco/EnrollmentStatus> <http://www.w3.org/2000/01/rdf-schema#label> "enrollment status" .
+<https://purl.org/heals/sco/EnrollmentStatus> <http://www.w3.org/2004/02/skos/core#definition> " patients are consented and screened, with eligibility verified " .
+# 
+# https://purl.org/heals/sco/IntentionToTreatPopulation
+<https://purl.org/heals/sco/IntentionToTreatPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/IntentionToTreatPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/STATO_0000203> .
+<https://purl.org/heals/sco/IntentionToTreatPopulation> <http://purl.org/dc/terms/source> "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3159210/" .
+<https://purl.org/heals/sco/IntentionToTreatPopulation> <http://www.w3.org/2000/01/rdf-schema#label> "intention to treat population" .
+<https://purl.org/heals/sco/IntentionToTreatPopulation> <http://www.w3.org/2004/02/skos/core#definition> "every subject who is randomized according to randomized treatment assignment,  ignoring noncompliance, protocol deviations, withdrawal, and anything that happens after randomization" .
+# 
+# https://purl.org/heals/sco/InterventionArm
+<https://purl.org/heals/sco/InterventionArm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/InterventionArm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/StudyArm> .
+<https://purl.org/heals/sco/InterventionArm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2000/01/rdf-schema#subClassOf> .
+_:genid20 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://semanticscience.org/resource/StudySubject> .
+# 
+# https://purl.org/heals/sco/Meta-analysis
+<https://purl.org/heals/sco/Meta-analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/Meta-analysis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://hadatac.org/ont/hasco#ResearchStudy> .
+# 
+# https://purl.org/heals/sco/OrderedLaboratoryTestResult
+<https://purl.org/heals/sco/OrderedLaboratoryTestResult> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/OrderedLaboratoryTestResult> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/SubjectCharacteristic> .
+<https://purl.org/heals/sco/OrderedLaboratoryTestResult> <http://www.w3.org/2000/01/rdf-schema#label> "laboratory test result" .
+# 
+# https://purl.org/heals/sco/PopulationSize
+<https://purl.org/heals/sco/PopulationSize> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/PopulationSize> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+<https://purl.org/heals/sco/PopulationSize> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasValue> .
+_:genid21 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#integer> .
+<https://purl.org/heals/sco/PopulationSize> <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296634/" .
+<https://purl.org/heals/sco/PopulationSize> <http://www.w3.org/2000/01/rdf-schema#label> "population size" .
+<https://purl.org/heals/sco/PopulationSize> <http://www.w3.org/2004/02/skos/core#definition> "number of patients to which the study results could be reasonably generalized" .
+# 
+# https://purl.org/heals/sco/RandomizedPopulation
+<https://purl.org/heals/sco/RandomizedPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/RandomizedPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/STATO_0000203> .
+# 
+# https://purl.org/heals/sco/SafetyPopulation
+<https://purl.org/heals/sco/SafetyPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/SafetyPopulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/STATO_0000203> .
+# 
+# https://purl.org/heals/sco/StudyArm
+<https://purl.org/heals/sco/StudyArm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/StudyArm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.obolibrary.org/obo/STATO_0000203> .
+<https://purl.org/heals/sco/StudyArm> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#intersectionOf> _:genid30 .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid31 .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid31 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid32 .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid32 <http://www.w3.org/2002/07/owl#unionOf> _:genid35 .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://purl.obolibrary.org/obo/DOID_4> .
+_:genid35 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid34 .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <http://www.case.edu/ProvCaRe/provcare#Intervention> .
+_:genid34 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid33 .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> <https://purl.org/heals/sco/SubjectCharacteristic> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid27 .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid28 .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid28 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid29 .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid29 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.case.edu/ProvCaRe/provcare#StatisticalMeasure> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> _:genid23 .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#List> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#first> _:genid24 .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid24 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid25 .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid25 <http://www.w3.org/2002/07/owl#someValuesFrom> _:genid26 .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasValue> .
+_:genid26 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2001/XMLSchema#decimal> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#rest> <http://www.w3.org/1999/02/22-rdf-syntax-ns#nil> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://purl.org/heals/sco/SubjectCharacteristic
+<https://purl.org/heals/sco/SubjectCharacteristic> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/SubjectCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid36 .
+_:genid36 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid36 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid36 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://semanticscience.org/resource/DimensionalQuantity> .
+<https://purl.org/heals/sco/SubjectCharacteristic> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid37 .
+_:genid37 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid37 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasAttribute> .
+_:genid37 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://semanticscience.org/resource/UnitOfMeasurement> .
+<https://purl.org/heals/sco/SubjectCharacteristic> <http://purl.org/dc/terms/source> "R. J. Little et al., \"The prevention and treatment of missing data in clinical trials,\" New England J. Medicine, vol. 367, no. 14, pp. 1355{1360, 2012" .
+<https://purl.org/heals/sco/SubjectCharacteristic> <http://www.w3.org/2000/01/rdf-schema#label> "subject characteristic" .
+<https://purl.org/heals/sco/SubjectCharacteristic> <http://www.w3.org/2004/02/skos/core#definition> "Property that summarizes important attributes of the participants enrolled in a study" .
+# 
+# https://purl.org/heals/sco/YearOfFollowUp
+<https://purl.org/heals/sco/YearOfFollowUp> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/YearOfFollowUp> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/Duration> .
+# 
+# https://purl.org/heals/sco/YearsOfExposure
+<https://purl.org/heals/sco/YearsOfExposure> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://purl.org/heals/sco/YearsOfExposure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://purl.org/heals/sco/Duration> .
+<https://purl.org/heals/sco/YearsOfExposure> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid38 .
+_:genid38 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:genid38 <http://www.w3.org/2002/07/owl#onProperty> <http://semanticscience.org/resource/hasUnit> .
+_:genid38 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://semanticscience.org/resource/Year> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# http://hadatac.org/ont/hasco#ResearchStudy
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://semanticscience.org/resource/hasAttribute> _:genid39 .
+_:genid39 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid39 <http://www.w3.org/ns/prov#wasAttributedTo> <https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas> .
+<https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid39 <http://semanticscience.org/resource/hasValue> "A scientific investigation that involves testing a hypothesi" .
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://semanticscience.org/resource/hasAttribute> _:genid40 .
+_:genid40 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid40 <http://semanticscience.org/resource/hasValue> "A scientific study of nature that sometimes includes processes involved in health and disease" .
+_:genid40 <http://purl.org/dc/terms/source> <https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement> .
+# 
+# http://purl.obolibrary.org/obo/NCIT_C71104
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://semanticscience.org/resource/hasAttribute> _:genid41 .
+_:genid41 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid41 <http://www.w3.org/ns/prov#wasAttributedTo> _:genid42 .
+_:genid42 <http://www.w3.org/1999/02/22-rdf-syntax-ns#resoure> "https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas" .
+_:genid41 <http://semanticscience.org/resource/hasValue> "A prospective study designed to evaluate whether one or more interventions are associated with an outcome" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://semanticscience.org/resource/hasAttribute> _:genid43 .
+_:genid43 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid43 <http://www.w3.org/ns/prov#wasAttributedTo> _:genid44 .
+_:genid44 <http://www.w3.org/1999/02/22-rdf-syntax-ns#resoure> "https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas" .
+_:genid43 <http://semanticscience.org/resource/hasValue> "A prospective study designed to evaluate whether one or more interventions are associated with an outcome" .
+# 
+# http://purl.obolibrary.org/obo/STATO_0000203
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://semanticscience.org/resource/hasAttribute> _:genid45 .
+_:genid45 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid45 <http://www.w3.org/ns/prov#wasAttributedTo> <https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas> .
+_:genid45 <http://semanticscience.org/resource/hasValue> "A cohort is the group of subjects enrolled in a study\"" .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://semanticscience.org/resource/hasAttribute> _:genid46 .
+_:genid46 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid46 <http://www.w3.org/ns/prov#wasAttributedTo> <https://tw.rpi.edu/web/People/JamesMcCusker> .
+<https://tw.rpi.edu/web/People/JamesMcCusker> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+_:genid46 <http://semanticscience.org/resource/hasValue> "\"Top-level group of subjects participating in a study\"" .
+# 
+# http://semanticscience.org/resource/hasValue
+<http://semanticscience.org/resource/hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<http://semanticscience.org/resource/hasValue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DataProperty> .
+# 
+# https://purl.org/heals/sco/ControlArm
+<https://purl.org/heals/sco/ControlArm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://purl.org/heals/sco/ControlArm> <http://semanticscience.org/resource/hasAttribute> _:genid47 .
+_:genid47 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid47 <http://semanticscience.org/resource/hasValue> "An arm type that can receive an intervention that is considered effective (the standard), a placebo, or no intervention" .
+_:genid47 <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://aidsinfo.nih.gov/understanding-hiv-aids/glossary/3392/control-arm" .
+# 
+# https://purl.org/heals/sco/InterventionArm
+<https://purl.org/heals/sco/InterventionArm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://purl.org/heals/sco/InterventionArm> <http://semanticscience.org/resource/hasAttribute> _:genid48 .
+_:genid48 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid48 <http://semanticscience.org/resource/hasValue> "An arm type in which a group of participants receives the intervention/treatment that is the focus of the clinical trial" .
+_:genid48 <http://purl.org/dc/terms/source> "https://clinicaltrials.gov/ct2/about-studies/glossary" .
+# 
+# https://purl.org/heals/sco/Meta-analysis
+<https://purl.org/heals/sco/Meta-analysis> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://purl.org/heals/sco/Meta-analysis> <http://semanticscience.org/resource/hasAttribute> _:genid49 .
+_:genid49 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid49 <http://semanticscience.org/resource/hasValue> "A quantitative, formal, epidemiological study design used to systematically assess previous research studies to derive conclusions about that body of research" .
+_:genid49 <http://purl.org/dc/terms/source> "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049418/" .
+# 
+# https://purl.org/heals/sco/RandomizedPopulation
+<https://purl.org/heals/sco/RandomizedPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://purl.org/heals/sco/RandomizedPopulation> <http://semanticscience.org/resource/hasAttribute> _:genid50 .
+_:genid50 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid50 <http://semanticscience.org/resource/hasValue> "set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)" .
+_:genid50 <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/" .
+# 
+# https://purl.org/heals/sco/SafetyPopulation
+<https://purl.org/heals/sco/SafetyPopulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://purl.org/heals/sco/SafetyPopulation> <http://semanticscience.org/resource/hasAttribute> _:genid51 .
+_:genid51 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid51 <http://semanticscience.org/resource/hasValue> "set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group" .
+_:genid51 <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/" .
+_:genid51 <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/adaptedFrom> "https://www.ncbi.nlm.nih.gov/books/NBK209903/" .
+# 
+# https://purl.org/heals/sco/StudyArm
+<https://purl.org/heals/sco/StudyArm> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://purl.org/heals/sco/StudyArm> <http://semanticscience.org/resource/hasAttribute> _:genid52 .
+_:genid52 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid52 <http://www.w3.org/ns/prov#wasAttributedTo> <https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas> .
+_:genid52 <http://semanticscience.org/resource/hasValue> "An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)" .
+<https://purl.org/heals/sco/StudyArm> <http://semanticscience.org/resource/hasAttribute> _:genid53 .
+_:genid53 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2004/02/skos/core#definition> .
+_:genid53 <http://semanticscience.org/resource/hasValue> "A group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial's protocol. " .
+_:genid53 <http://purl.org/dc/terms/source> "https://clinicaltrials.gov/ct2/about-studies/glossary" .
+# 
+# https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas
+# 
+# https://tw.rpi.edu/web/People/JamesMcCusker
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://www.w3.org/2000/01/rdf-schema#label> "research study" .
+<http://hadatac.org/ont/hasco#ResearchStudy> <http://www.w3.org/2000/01/rdf-schema#label> "study" .
+# 
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/IAO_0000115> "A research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes." .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/ncit.owl> .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_NHC0> "C71104" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P106> "Research Activity" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P108> "Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P207> "C0008976" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P322> "CDISC-GLOSS" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P325> "1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P325> "A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). NOTE: NIH Office of Science Policy further specifies that a clinical trial is a type of research study that prospectively assigns subjects to interventions, and the EU clinical trial regulations set forth 3 specific conditions, any one of which qualifies a study as a clinical trial. These conditions include applying diagnostic or monitoring procedures not used in normal clinical practice to subjects. [after ICH E6 [R2], EU CTR 2014] See also clinical study, clinical investigation." .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P325> "A type of research study that tests how well new medical approaches work in people. These studies test new methods of screening, prevention, diagnosis, or treatment of a disease." .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://purl.obolibrary.org/obo/NCIT_P366> "Clinical_Trial_Generic" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trials" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Clinical Trials, Unspecified" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "Trial" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> "clinical trial" .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298> .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132310> .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410> .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.geneontology.org/formats/oboInOwl#inSubset> <http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497> .
+<http://purl.obolibrary.org/obo/NCIT_C71104> <http://www.w3.org/2000/01/rdf-schema#label> "clinical trial" .
+# 
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000112> ""@en .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000114> <http://purl.obolibrary.org/obo/IAO_0000122> .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000115> "a cohort is a study group population where the members are human beings which meet inclusion criteria and undergo a longitudinal design"@en .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000116> "possibly submit to 'Population and Community Ontology'"@en .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000117> "Alejandra Gonzalez-Beltran"@en .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000117> "Philippe Rocca-Serra"@en .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000117> "Orlaith Burke" .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000119> "STATO"@en .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/IAO_0000412> <http://purl.obolibrary.org/obo/stato.owl> .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://purl.obolibrary.org/obo/STATO_0000032> ""@en .
+<http://purl.obolibrary.org/obo/STATO_0000203> <http://www.w3.org/2000/01/rdf-schema#label> "cohort" .
+# 
+<https://purl.org/heals/sco/ControlArm> <http://www.w3.org/2000/01/rdf-schema#label> "control arm" .
+<https://purl.org/heals/sco/ControlArm> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "http://semanticscience.org/resource/SIO_001068.rdf" .
+# 
+<https://purl.org/heals/sco/InterventionArm> <http://www.w3.org/2000/01/rdf-schema#label> "intervention arm" .
+<https://purl.org/heals/sco/InterventionArm> <http://www.w3.org/2000/01/rdf-schema#seeAlso> "http://semanticscience.org/resource/SIO_001069.rdf" .
+# 
+<https://purl.org/heals/sco/Meta-analysis> <http://www.w3.org/2000/01/rdf-schema#label> "meta-analysis" .
+# 
+<https://purl.org/heals/sco/RandomizedPopulation> <http://www.w3.org/2000/01/rdf-schema#label> "randomized population" .
+# 
+<https://purl.org/heals/sco/SafetyPopulation> <http://www.w3.org/2000/01/rdf-schema#label> "safety population" .
+# 
+<https://purl.org/heals/sco/StudyArm> <http://www.w3.org/2000/01/rdf-schema#label> "study arm" .
+# 
+# Generated by the OWL API (version 5.1.7) https://github.com/owlcs/owlapi/
