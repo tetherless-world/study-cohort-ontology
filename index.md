@@ -29,7 +29,7 @@
 <h2>Workflow Diagram</h2>
     <img src="images/CohortAnalyticsWorkflowDiagramISWCPaper.pdf" width="100%" height="100%">
 <ul>
-  
+ <p>Our knowledge representation approach backed by our study cohort ontology and the knowledge graphs instantiating Table 1 data, are built to support analytical applications to determine applicability of a study population to a patient. Our <a href="./papers-used.html">data sources</a> include cited research studies from the pharmacologic and cardiovascular complications chapters of the ADA Standards of Medical Care guidelines, and patient records selected from the NHANES 2015-2016 questionnaire. Our population analysis scenarios are designed to determine if studies match, if there are limitations and to evaluate their quality. Additionally, we visualize similarity of a group of study subjects (arm) to a patient.</p>  
  </ul>
  </content>
  
