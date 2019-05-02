@@ -27,7 +27,7 @@
 <article class="mb-5" id="workflow">
 <content>
 <h2>Workflow Diagram</h2>
-    <iframe src="images/CohortAnalyticsWorkflowDiagramISWCPaper.pdf" width="100%" height="100%"></iframe>
+    <iframe src="images/CohortAnalyticsWorkflowDiagramISWCPaper.pdf" style="width:100%; height: 500px"></iframe>
 <ul>
  <p>Our knowledge representation approach backed by our study cohort ontology and the knowledge graphs instantiating Table 1 data, are built to support analytical applications to determine applicability of a study population to a patient. Our <a href="./papers-used.html">data sources</a> include cited research studies from the pharmacologic and cardiovascular complications chapters of the ADA Standards of Medical Care guidelines, and patient records selected from the NHANES 2015-2016 questionnaire. Our population analysis scenarios are designed to determine if studies match, if there are limitations and to evaluate their quality. Additionally, we visualize similarity of a group of study subjects (arm) to a patient.</p>  
  </ul>
@@ -49,23 +49,23 @@
   </tr>
   <tr>
     <td>2. Knowledge Graphs:</td>
-    <td>(a) <a href="./ontology-resource.html#ontologyfile">Table 1 Knowledge Graphs</a> </td> 
+    <td>(a) <a href="./knowledge-graph.html">Table 1 Knowledge Graphs</a> </td> 
   </tr>
   <tr>
     <td>3. Source Code:</td>
-    <td>(a) <a href="./ontology-resource.html#ontologyfile">MIREOT Script </a> </td> 
+    <td>(a) <a href="./ontology-resource.html#ontologyreused">MIREOT Script </a> </td> 
   </tr>
-    <tr>
+    <!--<tr>
     <td> </td>
-    <td> (b) <a href="./ontology-resource.html#ontologyfile">Faceted Browser</a> </td> 
-  </tr>
+    <td> (b) <a href="./application.html">Faceted Browser</a> </td> 
+  </tr>-->
     <tr>
     <td></td>
-    <td>(c) <a href="./ontology-resource.html#ontologyfile">Cohort Similarity Visualization</a> </td> 
+    <td>(b) <a href="./application.html#visualization">Cohort Similarity Visualization</a> </td> 
   </tr>
    <tr>
     <td>4 .Data: </td>
-    <td> (a) <a href="./ontology-resource.html#ontologyfile">NHANES Patient Records</a> </td> 
+    <td> (a) <a href="./papers-used.html">NHANES Patient Records</a> </td> 
   </tr>
 </table>
   
