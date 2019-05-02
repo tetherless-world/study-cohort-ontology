@@ -27,8 +27,7 @@
 <article class="mb-5" id="workflow">
 <content>
 <h2>Workflow Diagram</h2>
- <iframe src="images/CohortAnalyticsWorkflowDiagramISWCPaper.pdf" style="width: 100%;height: 700px;border: none;"></iframe>
-
+    <img src="images/CohortAnalyticsWorkflowDiagramISWCPaper.pdf" width="100%" height="100%">
 <ul>
   
  </ul>
