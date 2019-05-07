@@ -112,9 +112,30 @@
  
  <article class="mb-5" id="ontologyreused">
 <content>
-<h2> Ontologies Reused</h2>
+<h1> Ontologies Reused</h1>
+ We group the ontologies we reuse by the purpose they serve and the use-cases they serve as vocabularies for.
+ 
+ <h3>Study Design Ontologies</h3>
+ <ul>
+  <li><a href="https://provcare.case.edu/">Provenance for Healthcare + Clinical Research (ProvCaRe)</a></li>
+  <li><a href="http://hadatac.org/ont/hasco/">Human-Aware Science Ontology</a></li>
 <ul>
- <h3><a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/MIREOT.py">MIREOT Script</a></h3>
+ <h3>Medical Ontologies</h3>
+ <ul>
+  <li><a href="https://provcare.case.edu/">National Cancer Institute Thesarus (NCIT)</a></li>
+  <li><a href="https://bioportal.bioontology.org/ontologies/NCIT">Children's Health Exposure Analysis Resource Ontology (CHEAR)</a></li>
+  <li><a href=https://www.ebi.ac.uk/ols/ontologies/doid">Human-Disease Ontology (DOID)</a></li>
+<ul>
+   <h3>Mid-Level Ontologies</h3>
+ <ul>
+  <li><a href="https://raw.githubusercontent.com/micheldumontier/semanticscience/master/ontology/sio/release/sio-subset-labels.owl">SemanticScience Integrated Ontology (SIO)</a></li>
+<ul>
+   <h3>Statistical Ontologies</h3>
+ <ul>
+  <li><a href="https://www.google.com/search?q=UO+ontology&rlz=1C5CHFA_enIN727IN729&oq=UO+ontology&aqs=chrome..69i57j69i60.3199j0j4&sourceid=chrome&ie=UTF-8">Units Ontology (UO)</a></li>
+   <li><a href="https://www.ebi.ac.uk/ols/ontologies/stato">Statistical Methods Ontology (STATO)</a></li>
+<ul>
+ <h2><a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/MIREOT.py">MIREOT Script</a></h2>
   <p>Below we present a small Python script that can be used to fetch the child and parent hierarchy for a class, given its IRI. This script pulls in all the axioms defined on the classes as well. We leverage the powerful constructs of the <a href="https://www.w3.org/TR/rdf-sparql-query/#describe">SPARQL DESCRIBE</a> functionality to achieve this. This script outputs the RDF/XML version of the subset class tree.</p>
  <pre>
  from SPARQLWrapper import *
