@@ -1,0 +1,5 @@
+rdflib>=4.0
+SPARQLWrapper==1.8.4
+owlready2==0.16
+pandas==0.24.2
+numpy==1.16.3
