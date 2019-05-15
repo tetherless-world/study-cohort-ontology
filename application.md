@@ -360,10 +360,11 @@ WHERE {
     This query can flexibly retrieve values for both mean +/- standard deviation, median and interquartile range representations with being agnostic of the expression of the characteristic. Also, if we were to constrain the query for values of other parameters, we would just included them in the filter clause. Hence, this query is a generalized faceted browser query.</p> 
 	<pre>
 	To run the code, please follow the steps as below:
-	1. cd study-cohort-ontology |python3 -m venv env 
-	2. source env/bin/activate
-	3. pip install -r ../requirements.txt
-	4. python3 starplot.py
+	1. cd study-cohort-ontology 
+	2. python3 -m venv env 
+	3. source env/bin/activate
+	4. pip install -r ../requirements.txt
+	5. python3 starplot.py
 	</pre>
     <p>The star plot code can be browsed at: <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/starplot.py"><small>https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/starplot.py</small></a></p>
 	
