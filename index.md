@@ -1,5 +1,10 @@
 [Authors](#authors) | [Abstract](#abstract) | [Workflow](#workflow) | [Resource List](#resources) | [License](#license) | [Acknowledgements](#acknowledgements)
 
+<article class="mb-5" id="note">
+<content>
+ <h2>Note</h2>
+ <p>This website is organized as follows. The side navigation serves a static menu to navigate across pages on this website. However, the top navigation menu is updated on a per page basis, and serves as an in-page section navigation toool. </p>
+ </content>
 <article class="mb-5" id="authors">
 <content>
 <h2>Authors</h2>
