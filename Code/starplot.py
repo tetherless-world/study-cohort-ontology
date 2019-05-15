@@ -5,9 +5,8 @@ import pandas as pd
 from ast import literal_eval as make_tuple
 from matplotlib import colors as mcolors
 import matplotlib.patches as mpatches
-
-
 from matplotlib import rcParams
+import os
 rcParams.update({'figure.autolayout': True})
 
 plotall_inone = False
@@ -32,7 +31,7 @@ def _scale_data(data, ranges):
         if y1 > y2:
             d = _invert(d, (y1, y2))
             y1, y2 = y2, y1
-        sdata.append((d-y1) / (y2-y1) 
+        sdata.append((d-y1) / (y2-y1)
                      * (x2 - x1) + x1)
     return sdata
 
@@ -42,20 +41,20 @@ class ComplexRadar():
         angles = np.arange(0, 360, 360./len(variables))
 
         axes = [fig.add_axes([0.1,0.1,0.9,0.9],polar=True,
-                label = "axes{}".format(i)) 
+                label = "axes{}".format(i))
                 for i in range(len(variables))]
-        l, text = axes[0].set_thetagrids(angles, 
+        l, text = axes[0].set_thetagrids(angles,
                                          labels=variables)
-        [txt.set_rotation(angle-90) for txt, angle 
+        [txt.set_rotation(angle-90) for txt, angle
              in zip(text, angles)]
         for ax in axes[1:]:
             ax.patch.set_visible(False)
             ax.grid("off")
             ax.xaxis.set_visible(False)
         for i, ax in enumerate(axes):
-            grid = np.linspace(*ranges[i], 
+            grid = np.linspace(*ranges[i],
                                num=n_ordinate_levels)
-            gridlabel = ["{}".format(round(x,2)) 
+            gridlabel = ["{}".format(round(x,2))
                          for x in grid]
             if ranges[i][0] > ranges[i][1]:
                 grid = grid[::-1] # hack to invert grid
@@ -118,8 +117,8 @@ data_lb = list(table1partlowerbound.values())
 data_ub = list(table1partupperbound.values())
 patient_data = list(patient_rows.values())
 print((data, data_lb, data_ub))
-ranges = [(10, 80), (15, 40), 
-         (110, 164), (55, 90), (5, 10)]  
+ranges = [(10, 80), (15, 40),
+         (110, 164), (55, 90), (5, 10)]
 
 
 colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)
@@ -165,7 +164,7 @@ def plot_asindividual(patientgroupsmean, patientgroupslower, patientgroupsupper)
         radar.fill(patient_data[2], 'lightblue', alpha = 1)
         plt.title(title_fig)
         #plt.legend(handles=[mpatches.Patch(color= colors[data_count],label=title_fig)])
-        
+        os.makedirs("../data/output_files/",exist_ok=True)
         plt.savefig('../data/output_files/' + title_fig + '.png')
         plt.show()
 
@@ -213,9 +212,11 @@ def plot_all(patientgroupsmean, patientgroupslower,patientgroupsupper):
         radar.fill(patient_data[2], 'lightblue', alpha = 1)
         #This will become the legend key portion
     #plt.legend(handles=legend_patches,loc="upperright")
+    #Only create new directory if it doesn't exist
+    os.makedirs("../data/output_files/",exist_ok=True)
     plt.savefig('../data/output_files/alltogetherpatientgroups.png')
     plt.show()
-        
+
 
 if plotall_inone == True:
     plot_all(data, data_lb, data_ub)
