@@ -358,7 +358,15 @@ WHERE {
    <h3>  Star Plot Code </h3>
     <p>We present a query below that is used to retrieve the central value,  and upper and lower bounds for continuous characteristics of a study arm. The characteristics are those that overlap with the patient features that we gather for diabetic patients in NHANES, i.e. age, body mass index, systolic blood pressure, diastolic blood pressure, Hemoglobin A1C. This query is triggered in the faceted browser to generate the visualization.<br>
     This query can flexibly retrieve values for both mean +/- standard deviation, median and interquartile range representations with being agnostic of the expression of the characteristic. Also, if we were to constrain the query for values of other parameters, we would just included them in the filter clause. Hence, this query is a generalized faceted browser query.</p> 
+	<pre>
+	To run the code, please follow the steps as below:
+	1. cd study-cohort-ontology |python3 -m venv env 
+	2. source env/bin/activate
+	3. pip install -r ../requirements.txt
+	4. python3 starplot.py
+	</pre>
     <p>The star plot code can be browsed at: <a href="https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/starplot.py"><small>https://raw.githubusercontent.com/tetherless-world/study-cohort-ontology/master/Code/starplot.py</small></a></p>
+	
     <pre>
 PREFIX sco: <small><https://idea.tw.rpi.edu/projects/heals/studycohort/></small>
 PREFIX resource: <http://semanticscience.org/resource/>
