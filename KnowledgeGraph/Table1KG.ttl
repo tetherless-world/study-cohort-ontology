@@ -10,97 +10,99 @@
 @prefix sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/> .
 @prefix cmo: <http://purl.org/twc/ontologies/cmo.owl/#> .
 @prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
+@prefix pato: <http://purl.obolibrary.org/obo/PATO_> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
-@prefix sco-i: 
+@prefix sco-i:
 <https://idea.tw.rpi.edu/projects/heals/studycohort_individuals/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix sm:   
+@prefix sm:
 <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
 
 sco-i:MetforminStudyArm
-	a  owl:Class, sco:InterventionArm; 
+	a  owl:Class, sco:InterventionArm;
 	rdfs:subClassOf sio:StudySubject;
-	rdfs:label 
+        sio:hasProperty [a pato:0001309; sio:hasUnit sio:Year; sio:hasValue 5];
+	rdfs:label
 	"set of study subjects belonging to the	Metformin intervention arm" ;
 	sio:isParticipantIn    sco-i:VitaminB12DeficiencyStudy;
-	sio:hasProperty  
+	sio:hasProperty
 	[ a chebi:6801;
 	  sio:hasAttribute
 	  [ a sco:YearOfFollowUp; sio:hasValue 1; sio:hasUnit sio:Year]
-	];    
-	sio:hasAttribute 
+	];
+	sio:hasAttribute
 	[ a sco:PopulationSize; sio:hasValue 859],
 	[ a sio:Age; sio:hasUnit sio:Year;
-	  sio:hasAttribute 
+	  sio:hasAttribute
 	  [ a sio:Mean; sio:hasValue 56.7],
-	  [a sio:StandardDeviation; sio:hasValue 10.2]           
-	],        
+	  [a sio:StandardDeviation; sio:hasValue 10.2]
+	],
 	[ a cmo:0000105;
-	  sio:hasAttribute 
-	  [ a sio:Mean; sio:hasValue 33.2], 
+	  sio:hasAttribute
+	  [ a sio:Mean; sio:hasValue 33.2],
 	  [a sio:StandardDeviation; sio:hasValue 6.9]
 	],
 	[ a ncit:C64796;
-	  sio:hasAttribute 
-	  [ a sio:Mean; sio:hasValue 40.6], 
+	  sio:hasAttribute
+	  [ a sio:Mean; sio:hasValue 40.6],
 	  [a sio:StandardDeviation; sio:hasValue 3.7]
 	],
-    [ 
-      a ncit:C64333; 
+    [
+      a ncit:C64333;
       sio:hasUnit sco:PicogramPerMillimeter;
-	  sio:hasAttribute 
+	  sio:hasAttribute
 	  [ a sio:Mean; sio:hasValue 546],
 	  [a sio:StandardDeviation; sio:hasValue 337.2]
 	],
-	[ 
+	[
 	  a ncit:C64849;
-	  sio:hasAttribute 
-	  [ a sio:Mean; sio:hasValue 5.9], 
+	  sio:hasAttribute
+	  [ a sio:Mean; sio:hasValue 5.9],
 	  [a sio:StandardDeviation; sio:hasValue 0.64]
 	],
-	[ 
+	[
 	  a chebi:17230;
-	  sio:hasAttribute 
-	  [ a sio:Mean; sio:hasValue 10.8], 
+	  sio:hasAttribute
+	  [ a sio:Mean; sio:hasValue 10.8],
 	  [a sio:StandardDeviation; sio:hasValue 3.6]
 	],
-	[ 
-	  a chebi:35143; 
-	  sio:hasUnit sco:GramPerDeciliter; 
-	  sio:hasAttribute 
-	  [ a sio:Mean; sio:hasValue 13.6], 
+	[
+	  a chebi:35143;
+	  sio:hasUnit sco:GramPerDeciliter;
+	  sio:hasAttribute
+	  [ a sio:Mean; sio:hasValue 13.6],
 	  [a sio:StandardDeviation; sio:hasValue 1.3]
 	] .
 
 sco-i:MaleMetforminStudySubject a owl:Class;
 	rdfs:subClassOf sco-i:MetforminStudyArm;
 	rdfs:label       "Male Study Subject" ;
-	rdfs:subClassOf 
-	[ 
+	rdfs:subClassOf
+	[
 	    a owl:Restriction;
 	    owl:onProperty sio:hasAttribute;
 	    owl:someValuesFrom sio:Male
 	];
-	sio:hasAttribute 
-	[ a sco:PopulationSize; sio:hasValue 285 ], 
-	[ 
-	    a sio:Percentage; 
-	    sio:hasValue 33.2; 
+	sio:hasAttribute
+	[ a sco:PopulationSize; sio:hasValue 285 ],
+	[
+	    a sio:Percentage;
+	    sio:hasValue 33.2;
 	    sio:inRelationTo sco-i:MetforminStudyArm
 	] .
 
 sco-i:FemaleMetforminStudySubject a owl:Class;
 	rdfs:subClassOf sco-i:MetforminStudyArm;
 	rdfs:label       "Female Study Subjects" ;
-	rdfs:subClassOf 
-	[ 
+	rdfs:subClassOf
+	[
 	    a owl:Restriction;
-	    owl:onProperty sio:hasAttribute; 
+	    owl:onProperty sio:hasAttribute;
 	    owl:someValuesFrom sio:Female
 	];
-	sio:hasAttribute 
-	[ a sco:PopulationSize; sio:hasValue 574 ], 
-	[ 
+	sio:hasAttribute
+	[ a sco:PopulationSize; sio:hasValue 574 ],
+	[
 	    a sio:Percentage;
 	    sio:hasValue 66.8;
 	    sio:inRelationTo sco-i:MetforminStudyArm
@@ -108,14 +110,14 @@ sco-i:FemaleMetforminStudySubject a owl:Class;
 
 sco-i:WhiteMetforminStudySubject a owl:Class;
 	rdfs:subClassOf sco-i:MetforminStudyArm;
-	rdfs:subClassOf 
-	[ 
+	rdfs:subClassOf
+	[
 	    a owl:Restriction;
-	    owl:onProperty sio:hasAttribute; 
+	    owl:onProperty sio:hasAttribute;
 	    owl:someValuesFrom chear:White
 	];
-	sio:hasAttribute  
-	[ 
+	sio:hasAttribute
+	[
 	    a sio:Percentage;
 	    sio:hasValue 56.2;
 	    sio:inRelationTo sco-i:MetforminStudyArm
@@ -123,31 +125,31 @@ sco-i:WhiteMetforminStudySubject a owl:Class;
 
 sco-i:AnemiaStudySubject a owl:Class;
 	rdfs:subClassOf sco-i:MetforminStudyArm;
-	rdfs:subClassOf 
+	rdfs:subClassOf
 	[
     	a owl:Restriction;
     	owl:onProperty sio:hasAttribute;
     	owl:someValuesFrom ncit:C2869
 	];
-	sio:hasAttribute  
-	[ 
+	sio:hasAttribute
+	[
 	    a sio:Percentage;
-	    sio:hasValue 14.2; 
+	    sio:hasValue 14.2;
 	    sio:inRelationTo sco-i:MetforminStudyArm
 	 ] .
 
 sco-i:DiabetesStudySubject a owl:Class;
 	rdfs:subClassOf sco-i:MetforminStudyArm;
-	rdfs:subClassOf 
-	[ 
-    	a owl:Restriction; 
-    	owl:onProperty sio:hasAttribute; 
+	rdfs:subClassOf
+	[
+    	a owl:Restriction;
+    	owl:onProperty sio:hasAttribute;
     	owl:someValuesFrom sco:Diabetes
     ];
-	sio:hasAttribute  
-	[ 
+	sio:hasAttribute
+	[
 	    a sio:Percentage;
-	    sio:hasValue 33.2; 
+	    sio:hasValue 33.2;
 	    sio:inRelationTo sco-i:MetforminStudyArm
 	] .
 
@@ -155,30 +157,465 @@ sco-i:DiabetesStudySubject a owl:Class;
 sco-i:NonWhiteMetforminStudySubject a owl:Class;
 	rdfs:subClassOf sco-i:MetforminStudyArm;
 	rdfs:label       "Non White Metformin Study Subject" ;
-	rdfs:subClassOf 
+	rdfs:subClassOf
 	[
 	    a owl:Restriction;
 	    owl:onProperty sio:hasAttribute;
 	    owl:someValuesFrom chear:UnknownRace
 	];
-	sio:hasAttribute  
-	[ 
-	    a sio:Percentage; 
-	    sio:hasValue 43.2; 
+	sio:hasAttribute
+	[
+	    a sio:Percentage;
+	    sio:hasValue 43.2;
 	    sio:inRelationTo sco-i:MetforminStudyArm
 	 ] .
+
+   sco-i:PlaceboStudyArm
+   	a  owl:Class, sco:ControlArm;
+   	rdfs:subClassOf sio:StudySubject;
+   	rdfs:label
+   	"set of study subjects belonging to the	Placebo study arm" ;
+   	sio:isParticipantIn    sco-i:VitaminB12DeficiencyStudy;
+   	sio:hasProperty
+   	[ a chebi:6801;
+   	  sio:hasAttribute
+   	  [ a sco:YearOfFollowUp; sio:hasValue 5; sio:hasUnit sio:Year]
+   	];
+   	sio:hasAttribute
+   	[ a sco:PopulationSize; sio:hasValue 856],
+   	[ a sio:Age; sio:hasUnit sio:Year;
+   	  sio:hasAttribute
+   	  [ a sio:Mean; sio:hasValue 56.0],
+   	  [a sio:StandardDeviation; sio:hasValue 9.9]
+   	],
+   	[ a cmo:0000105;
+   	  sio:hasAttribute
+   	  [ a sio:Mean; sio:hasValue 33.0],
+   	  [a sio:StandardDeviation; sio:hasValue 6.9]
+   	],
+   	[ a ncit:C64796;
+   	  sio:hasAttribute
+   	  [ a sio:Mean; sio:hasValue 41.1],
+   	  [a sio:StandardDeviation; sio:hasValue 3.6]
+   	],
+       [
+         a ncit:C64333;
+         sio:hasUnit sco:PicogramPerMillimeter;
+   	  sio:hasAttribute
+   	  [ a sio:Mean; sio:hasValue 606.6],
+   	  [a sio:StandardDeviation; sio:hasValue 352.27]
+   	],
+   	[
+   	  a ncit:C64849;
+   	  sio:hasAttribute
+   	  [ a sio:Mean; sio:hasValue 6.02],
+   	  [a sio:StandardDeviation; sio:hasValue 0.74]
+   	],
+   	[
+   	  a chebi:17230;
+   	  sio:hasAttribute
+   	  [ a sio:Mean; sio:hasValue 10.3],
+   	  [a sio:StandardDeviation; sio:hasValue 2.9]
+   	],
+   	[
+   	  a chebi:35143;
+   	  sio:hasUnit sco:GramPerDeciliter;
+   	  sio:hasAttribute
+   	  [ a sio:Mean; sio:hasValue 13.8],
+   	  [a sio:StandardDeviation; sio:hasValue 1.3]
+   	] .
+
+   sco-i:MalePlaceboStudySubject a owl:Class;
+   	rdfs:subClassOf sco-i:PlaceboStudyArm;
+   	rdfs:label       "Male Study Subject in Placebo Arm" ;
+   	rdfs:subClassOf
+   	[
+   	    a owl:Restriction;
+   	    owl:onProperty sio:hasAttribute;
+   	    owl:someValuesFrom sio:Male
+   	];
+   	sio:hasAttribute
+   	[ a sco:PopulationSize; sio:hasValue 270 ],
+   	[
+   	    a sio:Percentage;
+   	    sio:hasValue 31.5;
+   	    sio:inRelationTo sco-i:PlaceboStudyArm
+   	] .
+
+   sco-i:FemalePlaceboStudySubject a owl:Class;
+   	rdfs:subClassOf sco-i:PlaceboStudyArm;
+   	rdfs:label       "Female Study Subjects in Placebo Arm" ;
+   	rdfs:subClassOf
+   	[
+   	    a owl:Restriction;
+   	    owl:onProperty sio:hasAttribute;
+   	    owl:someValuesFrom sio:Female
+   	];
+   	sio:hasAttribute
+   	[ a sco:PopulationSize; sio:hasValue 586 ],
+   	[
+   	    a sio:Percentage;
+   	    sio:hasValue 68.5;
+   	    sio:inRelationTo sco-i:PlaceboStudyArm
+   	] .
+
+   sco-i:WhiteMetforminStudySubject a owl:Class;
+   	rdfs:subClassOf sco-i:PlaceboStudyArm;
+   	rdfs:subClassOf
+   	[
+   	    a owl:Restriction;
+   	    owl:onProperty sio:hasAttribute;
+   	    owl:someValuesFrom chear:White
+   	];
+   	sio:hasAttribute
+   	[
+   	    a sio:Percentage;
+   	    sio:hasValue 54;
+   	    sio:inRelationTo sco-i:PlaceboStudyArm
+   	 ] .
+
+   sco-i:AnemiaPlaceboArmStudySubject a owl:Class;
+   	rdfs:subClassOf sco-i:PlaceboStudyArm;
+   	rdfs:subClassOf
+   	[
+       	a owl:Restriction;
+       	owl:onProperty sio:hasAttribute;
+       	owl:someValuesFrom ncit:C2869
+   	];
+   	sio:hasAttribute
+   	[
+   	    a sio:Percentage;
+   	    sio:hasValue 10.5;
+   	    sio:inRelationTo sco-i:PlaceboStudyArm
+   	 ] .
+
+   sco-i:DiabetesPlaceboArmStudySubject a owl:Class;
+   	rdfs:subClassOf sco-i:PlaceboStudyArm;
+   	rdfs:subClassOf
+   	[
+       	a owl:Restriction;
+       	owl:onProperty sio:hasAttribute;
+       	owl:someValuesFrom sco:Diabetes
+       ];
+   	sio:hasAttribute
+   	[
+   	    a sio:Percentage;
+   	    sio:hasValue 39.0;
+   	    sio:inRelationTo sco-i:PlaceboStudyArm
+   	] .
+
+
+   sco-i:NonWhiteMetforminPlaceboArmStudySubject a owl:Class;
+   	rdfs:subClassOf sco-i:PlaceboStudyArm;
+   	rdfs:label       "Non White Metformin Study Subject" ;
+   	rdfs:subClassOf
+   	[
+   	    a owl:Restriction;
+   	    owl:onProperty sio:hasAttribute;
+   	    owl:someValuesFrom chear:UnknownRace
+   	];
+   	sio:hasAttribute
+   	[
+   	    a sio:Percentage;
+   	    sio:hasValue 46;
+   	    sio:inRelationTo sco-i:PlaceboStudyArm
+   	 ] .
+
+
+     sco-i:MetforminStudyArmYear9
+     	a  owl:Class, sco:InterventionArm;
+     	rdfs:subClassOf sio:StudySubject;
+      sio:hasProperty [a pato:0001309; sio:hasUnit sio:Year; sio:hasValue 9];
+     	rdfs:label
+     	"set of study subjects belonging to the	Metformin intervention arm" ;
+     	sio:isParticipantIn    sco-i:VitaminB12DeficiencyStudy;
+     	sio:hasProperty
+     	[ a chebi:6801;
+     	  sio:hasAttribute
+     	  [ a sco:YearOfFollowUp; sio:hasValue 9; sio:hasUnit sio:Year]
+     	];
+     	sio:hasAttribute
+     	[ a sco:PopulationSize; sio:hasValue 753],
+     	[ a sio:Age; sio:hasUnit sio:Year;
+     	  sio:hasAttribute
+     	  [ a sio:Mean; sio:hasValue 65.5],
+     	  [a sio:StandardDeviation; sio:hasValue 9.6]
+     	],
+     	[ a cmo:0000105;
+     	  sio:hasAttribute
+     	  [ a sio:Mean; sio:hasValue 32.8],
+     	  [a sio:StandardDeviation; sio:hasValue 6.7]
+     	],
+     	[ a ncit:C64796;
+     	  sio:hasAttribute
+     	  [ a sio:Mean; sio:hasValue 40.1],
+     	  [a sio:StandardDeviation; sio:hasValue 3.5]
+     	],
+         [
+           a ncit:C64333;
+           sio:hasUnit sco:PicogramPerMillimeter;
+     	  sio:hasAttribute
+     	  [ a sio:Mean; sio:hasValue 615.9],
+     	  [a sio:StandardDeviation; sio:hasValue 503.8]
+     	],
+     	[
+     	  a ncit:C64849;
+     	  sio:hasAttribute
+     	  [ a sio:Mean; sio:hasValue 5.99],
+     	  [a sio:StandardDeviation; sio:hasValue 0.99]
+     	],
+     	[
+     	  a chebi:17230;
+     	  sio:hasAttribute
+     	  [ a sio:Mean; sio:hasValue 11.7],
+     	  [a sio:StandardDeviation; sio:hasValue 4.1]
+     	],
+     	[
+     	  a chebi:35143;
+     	  sio:hasUnit sco:GramPerDeciliter;
+     	  sio:hasAttribute
+     	  [ a sio:Mean; sio:hasValue 13.4],
+     	  [a sio:StandardDeviation; sio:hasValue 1.2]
+     	] .
+
+     sco-i:MaleMetforminStudySubjectYear9 a owl:Class;
+     	rdfs:subClassOf sco-i:MetforminStudyArm;
+     	rdfs:label       "Male Study Subject" ;
+     	rdfs:subClassOf
+     	[
+     	    a owl:Restriction;
+     	    owl:onProperty sio:hasAttribute;
+     	    owl:someValuesFrom sio:Male
+     	];
+     	sio:hasAttribute
+     	[ a sco:PopulationSize; sio:hasValue 257 ],
+     	[
+     	    a sio:Percentage;
+     	    sio:hasValue 34.1;
+     	    sio:inRelationTo sco-i:MetforminStudyArmYear9
+     	] .
+
+     sco-i:FemaleMetforminStudySubjectYear9 a owl:Class;
+     	rdfs:subClassOf sco-i:MetforminStudyArmYear9;
+     	rdfs:label       "Female Study Subjects" ;
+     	rdfs:subClassOf
+     	[
+     	    a owl:Restriction;
+     	    owl:onProperty sio:hasAttribute;
+     	    owl:someValuesFrom sio:Female
+     	];
+     	sio:hasAttribute
+     	[ a sco:PopulationSize; sio:hasValue 496 ],
+     	[
+     	    a sio:Percentage;
+     	    sio:hasValue 65.9;
+     	    sio:inRelationTo sco-i:MetforminStudyArmYear9
+     	] .
+
+     sco-i:WhiteMetforminStudySubjectYear9 a owl:Class;
+     	rdfs:subClassOf sco-i:MetforminStudyArm;
+     	rdfs:subClassOf
+     	[
+     	    a owl:Restriction;
+     	    owl:onProperty sio:hasAttribute;
+     	    owl:someValuesFrom chear:White
+     	];
+     	sio:hasAttribute
+     	[
+     	    a sio:Percentage;
+     	    sio:hasValue 65.9;
+     	    sio:inRelationTo sco-i:MetforminStudyArmYear9
+     	 ] .
+
+     sco-i:AnemiaStudySubjectMetforminArmYear9 a owl:Class;
+     	rdfs:subClassOf sco-i:MetforminStudyArmYear9;
+     	rdfs:subClassOf
+     	[
+         	a owl:Restriction;
+         	owl:onProperty sio:hasAttribute;
+         	owl:someValuesFrom ncit:C2869
+     	];
+     	sio:hasAttribute
+     	[
+     	    a sio:Percentage;
+     	    sio:hasValue 21.0;
+     	    sio:inRelationTo sco-i:MetforminStudyArmYear9
+     	 ] .
+
+     sco-i:DiabetesStudySubjectYear9 a owl:Class;
+     	rdfs:subClassOf sco-i:MetforminStudyArmYear9;
+     	rdfs:subClassOf
+     	[
+         	a owl:Restriction;
+         	owl:onProperty sio:hasAttribute;
+         	owl:someValuesFrom sco:Diabetes
+         ];
+     	sio:hasAttribute
+     	[
+     	    a sio:Percentage;
+     	    sio:hasValue 52.3;
+     	    sio:inRelationTo sco-i:MetforminStudyArmYear9
+     	] .
+
+
+     sco-i:NonWhiteMetforminStudySubjectYear9 a owl:Class;
+     	rdfs:subClassOf sco-i:MetforminStudyArmYear9;
+     	rdfs:label       "Non White Metformin Study Subject" ;
+     	rdfs:subClassOf
+     	[
+     	    a owl:Restriction;
+     	    owl:onProperty sio:hasAttribute;
+     	    owl:someValuesFrom chear:UnknownRace
+     	];
+     	sio:hasAttribute
+     	[
+     	    a sio:Percentage;
+     	    sio:hasValue 34.1;
+     	    sio:inRelationTo sco-i:MetforminStudyArmYear9
+     	 ] .
+
+        sco-i:PlaceboStudyArmYear9
+        	a  owl:Class, sco:ControlArm;
+        	rdfs:subClassOf sio:StudySubject;
+        	rdfs:label
+        	"set of study subjects belonging to the	Placebo study arm" ;
+        	sio:isParticipantIn    sco-i:VitaminB12DeficiencyStudy;
+        	sio:hasProperty
+        	[ a chebi:6801;
+        	  sio:hasAttribute
+        	  [ a sco:YearOfFollowUp; sio:hasValue 9; sio:hasUnit sio:Year]
+        	];
+        	sio:hasAttribute
+        	[ a sco:PopulationSize; sio:hasValue 736],
+        	[ a sio:Age; sio:hasUnit sio:Year;
+        	  sio:hasAttribute
+        	  [ a sio:Mean; sio:hasValue 63.9],
+        	  [a sio:StandardDeviation; sio:hasValue 9.7]
+        	],
+        	[ a cmo:0000105;
+        	  sio:hasAttribute
+        	  [ a sio:Mean; sio:hasValue 33.5],
+        	  [a sio:StandardDeviation; sio:hasValue 6.8]
+        	],
+            [
+              a ncit:C64333;
+              sio:hasUnit sco:PicogramPerMillimeter;
+        	  sio:hasAttribute
+        	  [ a sio:Mean; sio:hasValue 650.0],
+        	  [a sio:StandardDeviation; sio:hasValue 498]
+        	],
+        	[
+        	  a ncit:C64849;
+        	  sio:hasAttribute
+        	  [ a sio:Mean; sio:hasValue 6.15],
+        	  [a sio:StandardDeviation; sio:hasValue 1.10]
+        	],
+        	[
+        	  a chebi:17230;
+        	  sio:hasAttribute
+        	  [ a sio:Mean; sio:hasValue 11.7],
+        	  [a sio:StandardDeviation; sio:hasValue 4.1]
+        	],
+        	[
+        	  a chebi:35143;
+        	  sio:hasUnit sco:GramPerDeciliter;
+        	  sio:hasAttribute
+        	  [ a sio:Mean; sio:hasValue 13.4],
+        	  [a sio:StandardDeviation; sio:hasValue 1.2]
+        	] .
+
+        sco-i:MalePlaceboStudySubjectYear9 a owl:Class;
+        	rdfs:subClassOf sco-i:PlaceboStudyArmYear9;
+        	rdfs:label       "Male Study Subject in Placebo Arm" ;
+        	rdfs:subClassOf
+        	[
+        	    a owl:Restriction;
+        	    owl:onProperty sio:hasAttribute;
+        	    owl:someValuesFrom sio:Male
+        	];
+        	sio:hasAttribute
+        	[ a sco:PopulationSize; sio:hasValue 237 ],
+        	[
+        	    a sio:Percentage;
+        	    sio:hasValue 32.2;
+        	    sio:inRelationTo sco-i:PlaceboStudyArmYear9
+        	] .
+
+        sco-i:FemalePlaceboStudySubjectYear9 a owl:Class;
+        	rdfs:subClassOf sco-i:PlaceboStudyArmYear9;
+        	rdfs:label       "Female Study Subjects in Placebo Arm" ;
+        	rdfs:subClassOf
+        	[
+        	    a owl:Restriction;
+        	    owl:onProperty sio:hasAttribute;
+        	    owl:someValuesFrom sio:Female
+        	];
+        	sio:hasAttribute
+        	[ a sco:PopulationSize; sio:hasValue 499 ],
+        	[
+        	    a sio:Percentage;
+        	    sio:hasValue 67.8;
+        	    sio:inRelationTo sco-i:PlaceboStudyArmYear9
+        	] .
+
+        sco-i:WhiteMetforminStudySubjectYear9 a owl:Class;
+        	rdfs:subClassOf sco-i:PlaceboStudyArmYear9;
+        	rdfs:subClassOf
+        	[
+        	    a owl:Restriction;
+        	    owl:onProperty sio:hasAttribute;
+        	    owl:someValuesFrom chear:White
+        	];
+        	sio:hasAttribute
+        	[
+        	    a sio:Percentage;
+        	    sio:hasValue 53.9;
+        	    sio:inRelationTo sco-i:PlaceboStudyArmYear9
+        	 ] .
+
+        sco-i:DiabetesPlaceboArmStudySubjectYear9 a owl:Class;
+        	rdfs:subClassOf sco-i:PlaceboStudyArmYear9;
+        	rdfs:subClassOf
+        	[
+            	a owl:Restriction;
+            	owl:onProperty sio:hasAttribute;
+            	owl:someValuesFrom sco:Diabetes
+            ];
+        	sio:hasAttribute
+        	[
+        	    a sio:Percentage;
+        	    sio:hasValue 59.7;
+        	    sio:inRelationTo sco-i:PlaceboStudyArmYear9
+        	] .
+
+
+        sco-i:NonWhiteMetforminPlaceboArmStudySubjectYear9 a owl:Class;
+        	rdfs:subClassOf sco-i:PlaceboStudyArmYear9;
+        	rdfs:label       "Non White Metformin Study Subject" ;
+        	rdfs:subClassOf
+        	[
+        	    a owl:Restriction;
+        	    owl:onProperty sio:hasAttribute;
+        	    owl:someValuesFrom chear:UnknownRace
+        	];
+        	sio:hasAttribute
+        	[
+        	    a sio:Percentage;
+        	    sio:hasValue 47.1;
+        	    sio:inRelationTo sco-i:PlaceboStudyArmYear9
+        	 ] .
 
 sco-i:VitaminB12DeficiencyStudy
 	a  owl:NamedIndividual , sco:ClinicalTrial ;
 	rdfs:label "study of vitamin B12 deficiency in metformin" ;
-	rdfs:seeAlso   
+	rdfs:seeAlso
 	"https://clinicaltrials.gov/ct2/show/NCT00038727" ;
 	dct:abstract    "Vitamin B12 deficiency may occur with metformin treatment, but few studies have assessed risk with long-term use" ;
-	dct:creator     "Edelstein, S.L.","Temprosa, M.G." , 
-	"White, N.H." , "Bray, G.A." , "Aroda, V.R." , 
+	dct:creator     "Edelstein, S.L.","Temprosa, M.G." ,
+	"White, N.H." , "Bray, G.A." , "Aroda, V.R." ,
 	"Crandall, J.P." , "Orchard, T.J." , "Knowler, W.C." ,
 	"David, S.S." , "Marcovina, S.M." , "Goldberg, R.B." ;
 	dct:title       "Long-term Metformin Use and Vitamin B12 Deficiency in the Diabetes Prevention Program Outcomes Study" ;
-	sm:documentURL  
+	sm:documentURL
 	"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4880159/" ;
 	sio:hasParticipant   sco-i:MetforminStudyArm .
