@@ -12,6 +12,7 @@
 @prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
 @prefix pato: <http://purl.obolibrary.org/obo/PATO_> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix stato: <http://purl.obolibrary.org/obo/STATO_> .
 @prefix sco-i:
 <https://idea.tw.rpi.edu/projects/heals/studycohort_individuals/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
@@ -604,6 +605,119 @@ sco-i:NonWhiteMetforminStudySubject a owl:Class;
         	    sio:hasValue 47.1;
         	    sio:inRelationTo sco-i:PlaceboStudyArmYear9
         	 ] .
+
+           sco-i:TotalVitaminB12Cohort
+             a  owl:Class, stato:0000203;
+             rdfs:subClassOf sio:StudySubject;
+             rdfs:label
+             "set of study subjects enrolled to the	long term study" ;
+             sio:isParticipantIn    sco-i:VitaminB12DeficiencyStudy;
+             sio:hasAttribute
+             [ a sco:PopulationSize; sio:hasValue 1800],
+             [ a sio:Age; sio:hasUnit sio:Year;
+               sio:hasAttribute
+               [ a sio:Mean; sio:hasValue 51.2],
+               [a sio:StandardDeviation; sio:hasValue 10.0]
+             ],
+             [ a cmo:0000105;
+               sio:hasAttribute
+               [ a sio:Mean; sio:hasValue 33.6],
+               [a sio:StandardDeviation; sio:hasValue 7.04]
+             ],
+             [
+               a ncit:C64849;
+               sio:hasAttribute
+               [ a sio:Mean; sio:hasValue 6.06],
+               [a sio:StandardDeviation; sio:hasValue 1.02]
+             ],
+             [
+               a chebi:35143;
+               sio:hasUnit sco:GramPerDeciliter;
+               sio:hasAttribute
+               [ a sio:Mean; sio:hasValue 13.8],
+               [a sio:StandardDeviation; sio:hasValue 1.3]
+             ] .
+
+           sco-i:MaleStudySubjectEntireCohort a owl:Class;
+             rdfs:subClassOf sco-i:TotalVitaminB12Cohort;
+             rdfs:label       "Male Study Subject in the entire cohort" ;
+             rdfs:subClassOf
+             [
+                 a owl:Restriction;
+                 owl:onProperty sio:hasAttribute;
+                 owl:someValuesFrom sio:Male
+             ];
+             sio:hasAttribute
+             [ a sco:PopulationSize; sio:hasValue 587],
+             [
+                 a sio:Percentage;
+                 sio:hasValue 32.4;
+                 sio:inRelationTo sco-i:TotalVitaminB12Cohort
+             ] .
+
+           sco-i:FemaleStudySubjectEntireCohort a owl:Class;
+             rdfs:subClassOf sco-i:TotalVitaminB12Cohort;
+             rdfs:label       "Female Study Subjects in entire cohort" ;
+             rdfs:subClassOf
+             [
+                 a owl:Restriction;
+                 owl:onProperty sio:hasAttribute;
+                 owl:someValuesFrom sio:Female
+             ];
+             sio:hasAttribute
+             [ a sco:PopulationSize; sio:hasValue 1217 ],
+             [
+                 a sio:Percentage;
+                 sio:hasValue 67.6;
+                 sio:inRelationTo sco-i:TotalVitaminB12Cohort
+             ] .
+
+           sco-i:WhiteStudySubjectEntireCohort a owl:Class;
+             rdfs:subClassOf sco-i:TotalVitaminB12Cohort;
+             rdfs:subClassOf
+             [
+                 a owl:Restriction;
+                 owl:onProperty sio:hasAttribute;
+                 owl:someValuesFrom chear:White
+             ];
+             sio:hasAttribute
+             [
+                 a sio:Percentage;
+                 sio:hasValue 55.8;
+                 sio:inRelationTo sco-i:TotalVitaminB12Cohort
+              ] .
+
+           sco-i:DiabetesEntireCohort a owl:Class;
+             rdfs:subClassOf sco-i:TotalVitaminB12Cohort;
+             rdfs:subClassOf
+             [
+                 a owl:Restriction;
+                 owl:onProperty sio:hasAttribute;
+                 owl:someValuesFrom sco:Diabetes
+               ];
+             sio:hasAttribute
+             [
+                 a sio:Percentage;
+                 sio:hasValue 0;
+                 sio:inRelationTo sco-i:TotalVitaminB12Cohort
+             ] .
+
+
+           sco-i:NonWhiteStudySubjectEntireCohort a owl:Class;
+             rdfs:subClassOf sco-i:TotalVitaminB12Cohort;
+             rdfs:label       "Non White Metformin Study Subject" ;
+             rdfs:subClassOf
+             [
+                 a owl:Restriction;
+                 owl:onProperty sio:hasAttribute;
+                 owl:someValuesFrom chear:UnknownRace
+             ];
+             sio:hasAttribute
+             [
+                 a sio:Percentage;
+                 sio:hasValue 45.2;
+                 sio:inRelationTo sco-i:TotalVitaminB12Cohort
+              ] .
 
 sco-i:VitaminB12DeficiencyStudy
 	a  owl:NamedIndividual , sco:ClinicalTrial ;
