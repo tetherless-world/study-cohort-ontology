@@ -12,10 +12,10 @@
     <!ENTITY hasco "http://hadatac.org/ont/hasco#" >
     <!ENTITY fibo-fnd-utl-av "http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/">
     <!ENTITY sio "http://semanticscience.org/resource/">
-    <!ENTITY obo "http://purl.obolibrary.org/obo/"> 
+    <!ENTITY obo "http://purl.obolibrary.org/obo/">
     <!ENTITY cmo "http://purl.obolibrary.org/obo/CMO_">
     <!ENTITY chebi "http://purl.obolibrary.org/obo/CHEBI_">
-    <!ENTITY sco "https://purl.org/heals/sco/">  
+    <!ENTITY sco "https://purl.org/heals/sco/">
 ]>
 
 <rdf:RDF xml:base="https://purl.org/heals/labresults/"
@@ -82,7 +82,7 @@
         <rdfs:label>albumin creatinine ratio</rdfs:label>
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
 
-    </owl:Class>   
+    </owl:Class>
 
 
     <!-- &cmo;0002696 -->
@@ -98,7 +98,7 @@
         <rdfs:label>fasting blood glucose</rdfs:label>
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
     </owl:Class>
-    
+
 
 
     <!-- &labresults;FastingPlasmaGlucose -->
@@ -114,7 +114,7 @@
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
 
     </owl:Class>
-    
+
 
 
     <!-- &cmo;0002786 -->
@@ -124,16 +124,6 @@
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
 
     </owl:Class>
-    
-
-
-    <!-- &cmo;0002786 -->
-
-    <owl:Class rdf:about="&cmo;0002786">
-        <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
-
-    </owl:Class>
-    
 
 
     <!-- &labresults;Hematocrit -->
@@ -142,8 +132,8 @@
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
 
     </owl:Class>
-    
-    
+
+
 
 
     <!-- &cmo;0000508 -->
@@ -152,15 +142,15 @@
         <rdfs:label>Hemoglobin</rdfs:label>
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
     </owl:Class>
-        
+
 
 
     <!-- http://purl.obolibrary.org/obo/&chebi;5931 -->
 
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/&chebi;5931">
+    <owl:Class rdf:about="&chebi;5931">
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
         <rdfs:label>insulin</rdfs:label>
-    </owl:Class>   
+    </owl:Class>
 
 
     <!-- &labresults;Homocysteine -->
@@ -176,15 +166,15 @@
         <fibo-fnd-utl-av:adaptedFrom>https://www.cancer.gov/publications/dictionaries/cancer-terms/def/vitamin-b12</fibo-fnd-utl-av:adaptedFrom>
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
     </owl:Class>
-    
+
 
     <!-- &labresults;Lipoprotein -->
 
     <owl:Class rdf:about="&labresults;Lipoprotein">
-        <rdfs:subClassOf rdf:resource="&cmo;0002696"/>       
+        <rdfs:subClassOf rdf:resource="&cmo;0002696"/>
         <rdfs:label>lipoprotein</rdfs:label>
     </owl:Class>
-    
+
      <!-- &cmo;0000537 -->
 
     <owl:Class rdf:about="&cmo;0000537">
@@ -200,7 +190,7 @@
         <rdfs:subClassOf rdf:resource="&sco;OrderedLaboratoryTestResult"/>
 
     </owl:Class>
-    
+
 
 
     <!-- &cmo;0000004 -->
@@ -209,7 +199,7 @@
         <rdfs:label>Systolic Blood Pressure</rdfs:label>
         <rdfs:subClassOf rdf:resource="&cmo;0000003"/>
     </owl:Class>
-    
+
 
 
     <!-- &cmo;0000005 -->
@@ -221,22 +211,22 @@
 
 
 
-    
+
 
 
     <!-- &cmo;0000052 -->
 
     <owl:Class rdf:about="&cmo;0000052">
      <rdfs:label>high Density lipoprotein</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&labresults;Lipoprotein"/>  
+        <rdfs:subClassOf rdf:resource="&labresults;Lipoprotein"/>
     </owl:Class>
-    
+
 
 
     <!-- &cmo;0000053 -->
 
     <owl:Class rdf:about="&cmo;0000053">
         <rdfs:label>low Density lipoprotein</rdfs:label>
-        <rdfs:subClassOf rdf:resource="&labresults;Lipoprotein"/>  
-    </owl:Class>    
+        <rdfs:subClassOf rdf:resource="&labresults;Lipoprotein"/>
+    </owl:Class>
 </rdf:RDF>
