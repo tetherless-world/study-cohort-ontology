@@ -1,4 +1,4 @@
-[Authors](#authors) | [Abstract](#abstract) | [Workflow](#workflow) | [Resource List](#resources) | [License](#license) | [Acknowledgements](#acknowledgements)
+[Abstract](#abstract) | [Workflow](#workflow) | [Resource List](#resources) | [License](#license) | [Acknowledgements](#acknowledgements)
 
 <article class="mb-5" id="note">
 <content>
@@ -6,7 +6,7 @@
  <p>This website is organized as follows. The side navigation serves a static menu to navigate across pages on this website. However, the top navigation menu is updated on a per page basis, and serves as an in-page section navigation toool. </p>
  </content>
 <article class="mb-5" id="authors">
-<content>
+<!-- <content>
 <h2>Authors</h2>
  <ul>
  Shruthi Chari<sup>1</sup>, Miao Qi<sup>2</sup>, Nkcheniyere N. Agu<sup>1</sup>, Oshani Seneviratne<sup>2</sup>, James P. McCusker<sup>1</sup>, Kristin P. Bennett<sup>2</sup>, Amar K. Das<sup>3</sup> and Deborah L. McGuinness<sup>1</sup>
@@ -17,7 +17,7 @@
  <br>
  <strong><sup>3</sup><a href="http://www.research.ibm.com/">IBM Research</a></strong>, Cambridge
  </ul>
- </content>
+ </content> -->
  
 <article class="mb-5" id="abstract">
 <content>
