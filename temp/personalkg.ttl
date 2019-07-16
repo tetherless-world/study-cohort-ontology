@@ -18,4 +18,4 @@
 
 
 :X a prov:Person;
-     prov:hadActivity [a ncit:C62122;  time:hasDuration 6; sio:hasUnit :mins/week] . 
+     prov:hadActivity [a ncit:C62122;  time:hasDuration 6; sio:hasUnit :minsperweek] . 
