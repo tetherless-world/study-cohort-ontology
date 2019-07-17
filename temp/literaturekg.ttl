@@ -18,6 +18,7 @@
 :StepPopulation a sco:TreatmentArm;
                 rdfs:label "STEP treatment arm in pedometer study";
 	        rdfs:subClassOf sco:studySubject;
+                sio:hasAttribute [a sio:Total; sio:hasValue 121];
 	        prov:hadActivity [a ncit:C62122;  sio:hasAttribute 
                 [a sio:Mean; sio:hasUnit pao:minsperday; sio:hasValue 554],
 	       [a sio:StandardDeviation; sio:hasUnit pao:minsperday; sio:hasValue 152 ] ] .
