@@ -24,7 +24,7 @@
 	<!ENTITY provcare "http://www.case.edu/ProvCaRe/provcare#">
 	<!ENTITY oboInOwl "http://www.geneontology.org/formats/oboInOwl#">
 	<!ENTITY protege "http://protege.stanford.edu/plugins/owl/protege#">
-	<!ENTITY doid "http://purl.obolibrary.org/obo/DOID_">	
+	<!ENTITY doid "http://purl.obolibrary.org/obo/DOID_">
 ]>
 
 <rdf:RDF xml:base="https://purl.org/heals/sco/"
@@ -75,45 +75,45 @@
 		<dct:contributor>Oshani Seneviratne</dct:contributor>
 		<dct:contributor>James P. McCusker</dct:contributor>
 		<dct:contributor>Deborah L. McGuinness</dct:contributor>
-		<dct:contributor>Amar Das</dct:contributor> 
+		<dct:contributor>Amar Das</dct:contributor>
 		<dct:description>
 		The Study Cohort Ontology encodes the vocabulary to represent population desriptions in research studies, and provides the ability to model the aggregative descriptive statistical measures defined on the variables of subjects who are participants in the study population. We make it possible to represent a study component considered for determining the patient alignment to a research study, and we assist physicians in evaluating the fit of their patient population to the study population. In SCO, we are building a world-view inspired by the upper level Ontology SemanticScience Integrated Ontology (SIO) to model the descriptive statistics of characteristics on a set of patients (patient group) administered a medical intervention, and studied for an outcome in a research study.  Since we capture the various definitions of patient groups (ie. by interventional measures or by control mechanisms), we provide the basic framework for filtering searches and to define cohort similarity at different granularities. ( cohort level and the study group levels ). For researchers who wish to contribute to the expansion of our ontology, we advise that they refer to our ontology documentation to familiarize themselves with the structure and term annotations ( such as definitions and labels).
-		</dct:description>          
+		</dct:description>
 		<dct:abstract rdf:datatype="&xsd;string">
 		The Study Cohort Ontology (SCO) is developed to model overall structure and patterns of cohort variables and control/intervention groups defined within the structured population descriptions (commonly referred to as Table1's or Cohort Summary Tables)of observational case studies and clinical trials. We maintain only domain agnostic and commonly occuring subject variables and interventions in SCO, and we have a suite of ontologies (Diseases, Medications, LabResults etc) to encode Diabetes related terminology. We have adopted a bottom-up approach to modeling and we have revised the structure of SCO upon investigation of a few research studies (11 to be precise) from the Pharmacological Interventions (Chapter 8) and Cardiovascular Complications (Chapter 9) of the American Diabetes Association (ADA)’s Standards of Medical Care 2018 CPG. We enable deep drive visualizations driven off queries to knowledge graphs modeled on SCO, to help assist physician visualize the similarity of a patient to a study group, at a quick glance. We welcome contributions and suggestions to extend SCO to represent cohort descriptions of publications targeted to other diseases, and we plan to release set of tools to make this process seamless.</dct:abstract>
 		<owl:imports rdf:resource="https://purl.org/heals/chearexternal.ttl"/>
 	</owl:Ontology>
-	
 
 
-	<!-- 
+
+	<!--
 	///////////////////////////////////////////////////////////////////////////////////////
 	//
 	// Object Properties
 	//
 	///////////////////////////////////////////////////////////////////////////////////////
-	 -->	
+	 -->
 
 
 	<!-- &sio;hasParticipant -->
 
 	<owl:ObjectProperty rdf:about="&sio;hasParticipant"/>
-	
+
 
 
 	<!-- &sio;hasProperty -->
 
 	<owl:ObjectProperty rdf:about="&sio;hasProperty"/>
-	
+
 
 
 	<!-- &sio;hasUnit -->
 
-	<owl:ObjectProperty rdf:about="&sio;hasUnit"/>   
-	
+	<owl:ObjectProperty rdf:about="&sio;hasUnit"/>
 
 
-	<!-- 
+
+	<!--
 	///////////////////////////////////////////////////////////////////////////////////////
 	//
 	// Data properties
@@ -123,11 +123,11 @@
 
 	<!-- &sio;hasValue -->
 
-	<owl:DataProperty rdf:about="&sio;hasValue"/>	
-    
+	<owl:DataProperty rdf:about="&sio;hasValue"/>
 
 
-	<!-- 
+
+	<!--
 	///////////////////////////////////////////////////////////////////////////////////////
 	//
 	// Classes
@@ -142,7 +142,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000125">
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0000128 -->
@@ -150,7 +150,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0000128">
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0001708 -->
@@ -158,7 +158,7 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001708">
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/UO_0000001 -->
@@ -172,7 +172,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/UO_0000002 -->
@@ -186,7 +186,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/UO_0000009 -->
@@ -203,7 +203,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/UO_0000015 -->
@@ -220,7 +220,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/UO_0000045 -->
@@ -234,9 +234,9 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_group_slim"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
     </owl:Class>
-	
-	 <!--copying in classes from STATO-->    
-    
+
+	 <!--copying in classes from STATO-->
+
 
 
     <!-- http://purl.obolibrary.org/obo/STATO_0000193 -->
@@ -252,7 +252,7 @@
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/stato.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/STATO_0000203 -->
@@ -271,7 +271,7 @@
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/stato.owl"/>
     </owl:Class>
-    
+
 
 	 <!--Copying in classes from NCIT-->
 
@@ -292,7 +292,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C142526 -->
@@ -313,7 +313,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C142539 -->
@@ -333,7 +333,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C142547 -->
@@ -354,7 +354,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C142601 -->
@@ -374,7 +374,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C142603 -->
@@ -394,7 +394,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C142609 -->
@@ -415,7 +415,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C142641 -->
@@ -435,7 +435,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C142722 -->
@@ -455,7 +455,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C15206 -->
@@ -488,7 +488,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C15362 -->
@@ -514,7 +514,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C15429 -->
@@ -534,7 +534,7 @@
         <obo:NCIT_P207>C0242481</obo:NCIT_P207>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C15602 -->
@@ -572,7 +572,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C15693 -->
@@ -601,7 +601,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C15835 -->
@@ -619,7 +619,7 @@
         <obo:NCIT_P108>Phase I and II Vaccine Trials</obo:NCIT_P108>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C15864 -->
@@ -635,7 +635,7 @@
         <obo:NCIT_P108>Vaccine Clinical Trial</obo:NCIT_P108>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C15873 -->
@@ -654,7 +654,7 @@
         <obo:NCIT_P106>Research Activity</obo:NCIT_P106>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C16104 -->
@@ -678,7 +678,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C16123 -->
@@ -697,7 +697,7 @@
         <obo:NCIT_P106>Research Activity</obo:NCIT_P106>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C16203 -->
@@ -714,7 +714,7 @@
         <obo:NCIT_P207>C1516654</obo:NCIT_P207>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C18707 -->
@@ -733,7 +733,7 @@
         <obo:NCIT_NHC0>C18707</obo:NCIT_NHC0>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C43431 -->
@@ -754,7 +754,7 @@
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C105551"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
    <!-- http://purl.obolibrary.org/obo/NCIT_C61256 -->
@@ -772,7 +772,7 @@
         <oboInOwl:hasExactSynonym>Monitoring</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C63536 -->
@@ -789,7 +789,7 @@
         <obo:NCIT_P108>Study</obo:NCIT_P108>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C70820 -->
@@ -805,7 +805,7 @@
         <obo:NCIT_NHC0>C70820</obo:NCIT_NHC0>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C70824 -->
@@ -821,7 +821,7 @@
         <obo:NCIT_P108>Clinical Study by Organizational Parameters</obo:NCIT_P108>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C71104 -->
@@ -831,7 +831,7 @@
         <obo:NCIT_P325>1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)</obo:NCIT_P325>
         <obo:NCIT_P108>Clinical Trial</obo:NCIT_P108>
         <rdfs:subClassOf rdf:resource="&ncit;C15206"/>
-        <rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
+        <rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
@@ -927,8 +927,8 @@
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0030000"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
-    </owl:Class> 
-    
+    </owl:Class>
+
 
 
     <!-- http://purl.obolibrary.org/obo/CARO_0000006 -->
@@ -940,7 +940,7 @@
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/CARO_0010000 -->
@@ -951,7 +951,7 @@
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/caro.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/CARO_0030000 -->
@@ -960,7 +960,7 @@
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biological entity</rdfs:label>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/CL_0000000 -->
@@ -971,17 +971,17 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
-    </owl:Class>   
+    </owl:Class>
 
 
-    
-    
+
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0001513 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001513">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity</rdfs:label>       
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity</rdfs:label>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001513</oboInOwl:id>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MSH:D009765</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Obesity</oboInOwl:hasExactSynonym>
@@ -998,7 +998,7 @@
     <!-- http://purl.obolibrary.org/obo/HP_0001956 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0001956">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Truncal obesity</rdfs:label>        
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Truncal obesity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001513"/>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Centripetal obesity</oboInOwl:hasExactSynonym>
         <oboInOwl:id rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HP:0001956</oboInOwl:id>
@@ -1011,7 +1011,7 @@
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0004324 -->
@@ -1033,7 +1033,7 @@
         <obo:IAO_0000115>Abnormally increased body weight.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0008915 -->
@@ -1049,13 +1049,13 @@
         <oboInOwl:hasOBONamespace rdf:datatype="http://www.w3.org/2001/XMLSchema#string">human_phenotype</oboInOwl:hasOBONamespace>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0012743 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/HP_0012743">
-        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abdominal obesity</rdfs:label>       
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abdominal obesity</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/HP_0001513"/>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2014-03-23T05:00:05Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Abdominal obesity</oboInOwl:hasExactSynonym>
@@ -1069,7 +1069,7 @@
         <oboInOwl:hasExactSynonym>Central obesity</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0025499 -->
@@ -1083,7 +1083,7 @@
         <oboInOwl:hasExactSynonym>Obesity grade 1</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0025500 -->
@@ -1097,7 +1097,7 @@
         <obo:IAO_0000115>Obesity with a body mass index of 35 to 39.9 kg per square meter.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0025501 -->
@@ -1111,7 +1111,7 @@
         <obo:IAO_0000115>Obesity with a body mass index of 40 kg per square meter or higher.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0025502 -->
@@ -1123,7 +1123,7 @@
         <obo:IAO_0000115>Increased body weight with a body mass index of 25-29.9 kg per square meter.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/HP_0045082 -->
@@ -1134,7 +1134,7 @@
         <obo:IAO_0000115>Abnormally decreased weight-to-height squared ratio, calculated by dividing the individual&#39;s weight in kilograms by the square of the individual&#39;s height in meters and used as an indicator of underweight compared to averages.</obo:IAO_0000115>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0000001 -->
@@ -1144,7 +1144,7 @@
         <obo:IAO_0000589>quality (PATO)</obo:IAO_0000589>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0000068 -->
@@ -1154,7 +1154,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0000069 -->
@@ -1164,7 +1164,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000068"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0000128 -->
@@ -1174,7 +1174,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001035"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0000460 -->
@@ -1185,7 +1185,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000069"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0000582 -->
@@ -1196,7 +1196,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002245"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0001018 -->
@@ -1206,7 +1206,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001241"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0001035 -->
@@ -1216,7 +1216,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001018"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0001241 -->
@@ -1226,7 +1226,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000001"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0001869 -->
@@ -1236,7 +1236,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000460"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0002245 -->
@@ -1247,7 +1247,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002305"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0002300 -->
@@ -1257,7 +1257,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000069"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/PATO_0002305 -->
@@ -1268,7 +1268,7 @@
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0002300"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
+
 
 
     <!-- http://purl.obolibrary.org/obo/UBERON_0000061 -->
@@ -1313,10 +1313,10 @@
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">anatomical entity</rdfs:label>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/hp.owl"/>
     </owl:Class>
-    
 
 
-    
+
+
 
 
 	<!--Copying in provcare classes of need-->
@@ -1355,7 +1355,7 @@
         <rdfs:synonym>Study intervention</rdfs:synonym>
         <rdfs:comment>The intervention type used in a research study (corresponding to I in the PICO(T) model )</rdfs:comment>
         <rdfs:seeAlso>http://purl.bioontology.org/ontology/SNOMEDCT/386053000</rdfs:seeAlso>
-    </owl:Class> 
+    </owl:Class>
 
 
 	<!-- &chear;Demographic -->
@@ -1370,7 +1370,7 @@
 
 	<owl:Class rdf:about="&chear;Anthropometry">
 		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
-	</owl:Class>	
+	</owl:Class>
 
 
 	<!-- &chear;MedicalTherapy -->
@@ -1379,10 +1379,10 @@
 		 <rdfs:label>medical therapy</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">the attempted remediation of a health problem, usually following a diagnosis</skos:definition>
 		<dct:source>https://en.wikipedia.org/wiki/Therapy</dct:source>
-	</rdf:Description>   
+	</rdf:Description>
 
 
-	
+
 
 	<owl:Class rdf:about="&doid;4">
 		<rdfs:label>disease or condition</rdfs:label>
@@ -1392,14 +1392,14 @@
 		<rdfs:subClassOf rdf:resource="&sio;BiologicalQuality"/>
 	</owl:Class>
 
-	
+
 
 
 	<!-- &sio;MedicalIntervention -->
 
 	<owl:Class rdf:about="&sio;MedicalIntervention"/>
-	
-	
+
+
 
 
 	<!-- &sio;Study -->
@@ -1411,7 +1411,7 @@
 
 	<owl:Class rdf:about="&sio;UnitOfMeasurement">
 		<rdfs:label>unit of measurement</rdfs:label>
-	</owl:Class>	
+	</owl:Class>
 
 
 	<!-- &sco;Active -->
@@ -1423,7 +1423,7 @@
 		<dct:title>Clinical Trials Protocol Template - NIH Office of Science Policy</dct:title>
 		<rdfs:label>active</rdfs:label>
 	</owl:Class>
-	  
+
 
 
 	<!-- &ncit;C15362 -->
@@ -1449,7 +1449,7 @@
 		<oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410"/>
 		<oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C66830"/>
 		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
-	</owl:Class>   
+	</owl:Class>
 
 
 	<!-- &sco;CohortDescription -->
@@ -1493,12 +1493,12 @@
 		<fibo-fnd-utl-av:adaptedFrom>https://osp.od.nih.gov/wp-content/uploads/2014/01/Protocol_Template_05Feb2016_508.pdf</fibo-fnd-utl-av:adaptedFrom>
 		<dct:title>Clinical Trials Protocol Template - NIH Office of Science Policy</dct:title>
 	</owl:Class> -->
-	
-	
+
+
 
 	<!-- &pato;0001309 -->
 
-	
+
 	<owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001309">
 		<rdfs:subClassOf rdf:resource="&provcare;StatisticalMeasure"/>
 		<rdfs:label>duration</rdfs:label>
@@ -1523,7 +1523,7 @@
 		<rdfs:label rdf:datatype="&xsd;string">enrollment status</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string"> patients are consented and screened, with eligibility verified </skos:definition>
 		<fibo-fnd-utl-av:adaptedFrom>https://research-compliance.umich.edu/sites/default/files/resource-download/enrollmentdefinition_additionalhelp.pdf</fibo-fnd-utl-av:adaptedFrom>
-	</owl:Class>   
+	</owl:Class>
 
 
 
@@ -1536,7 +1536,7 @@
 		<rdfs:label rdf:datatype="&xsd;string">intention to treat population</rdfs:label>
 		<skos:definition>every subject who is randomized according to randomized treatment assignment,  ignoring noncompliance, protocol deviations, withdrawal, and anything that happens after randomization</skos:definition>
 	</owl:Class>
-	
+
 
 
 	<!-- &sco;OrderedLaboratoryTestResult -->
@@ -1545,7 +1545,7 @@
 		<rdfs:subClassOf rdf:resource="&sco;SubjectCharacteristic"/>
 		<rdfs:label>laboratory test result</rdfs:label>
 	</owl:Class>
-	
+
 
 	<!-- &provcare;StatisticalMeasure -->
 
@@ -1566,7 +1566,7 @@
 		<rdfs:label>statistical measure</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">a standard unit used to express the size, amount, or degree of something</skos:definition>
 	</owl:Class>
-	
+
 
 
 	<!-- &sio;Median -->
@@ -1590,7 +1590,7 @@
 		<obo:IAO_0000115>The act of observing something (and sometimes keeping a record of it).</obo:IAO_0000115>
 		<oboInOwl:hasExactSynonym>Monitoring</oboInOwl:hasExactSynonym>
 		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
-	</owl:Class>   
+	</owl:Class>
 
 	<owl:Class rdf:about="&sio;Mean">
 		<rdfs:subClassOf rdf:resource="&provcare;CentralTendencyMeasure"/>
@@ -1607,7 +1607,7 @@
 		<rdfs:label rdf:datatype="&xsd;string">standard deviation</rdfs:label>
 		<skos:definition rdf:datatype="&xsd;string">a measure that is used to quantify the amount of variation or dispersion of a set of data values</skos:definition>
 	</owl:Class>
-	
+
 	<owl:Class rdf:about="&stato;0000203">
 		<rdfs:label>cohort</rdfs:label>
 		<rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/STATO_0000193"/>
@@ -1633,7 +1633,7 @@
 
 	<!-- &sco;StudyArm -->
 	<owl:Class rdf:about="&sco;StudyArm">
-		<rdfs:subClassOf rdf:resource="&stato;0000203"/>      
+		<rdfs:subClassOf rdf:resource="&stato;0000203"/>
 		<rdfs:label>study arm</rdfs:label>
 		<sio:hasAttribute>
       		<skos:definition>
@@ -1693,9 +1693,9 @@
 	<!-- &sco;InterventionArm -->
 
 	<owl:Class rdf:about="&sco;InterventionArm">
-		<rdfs:subClassOf rdf:resource="&sco;StudyArm"/>            
+		<rdfs:subClassOf rdf:resource="&sco;StudyArm"/>
 		<rdfs:label>intervention arm</rdfs:label>
-		
+
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm type in which a group of participants receives the intervention/treatment that is the focus of the clinical trial</sio:hasValue>
@@ -1708,23 +1708,32 @@
 	            <owl:someValuesFrom rdf:resource="&sio;StudySubject"/>
 	        </owl:Restriction>
     	</rdfs:subClassOf>
-    	
+
     	<rdfs:seeAlso>http://semanticscience.org/resource/SIO_001069.rdf</rdfs:seeAlso>
 	</owl:Class>
 
 	<!-- &sco;ControlArm -->
 
 	<owl:Class rdf:about="&sco;ControlArm">
-		<rdfs:subClassOf rdf:resource="&sco;StudyArm"/>            
-		<rdfs:label>control arm</rdfs:label>		
+		<rdfs:subClassOf rdf:resource="&sco;StudyArm"/>
+		<rdfs:label>control arm</rdfs:label>
 		<sio:hasAttribute>
       		<skos:definition>
 		        <sio:hasValue>An arm type that can receive an intervention that is considered effective (the standard), a placebo, or no intervention</sio:hasValue>
 		        <fibo-fnd-utl-av:adaptedFrom>https://aidsinfo.nih.gov/understanding-hiv-aids/glossary/3392/control-arm</fibo-fnd-utl-av:adaptedFrom>
 	     	</skos:definition>
-    	</sio:hasAttribute>    	
+    	</sio:hasAttribute>
     	<rdfs:seeAlso>http://semanticscience.org/resource/SIO_001068.rdf</rdfs:seeAlso>
 	</owl:Class>
+
+  <owl:Class rdf:about="&sio;Person">
+    <rdfs:subClassOf>
+			<owl:Restriction>
+				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
+				<owl:someValuesFrom rdf:resource="&sco;SubjectCharacteristic"/>
+			</owl:Restriction>
+		</rdfs:subClassOf>
+  </owl:Class>
 
 	<owl:Class rdf:about="&sio;StudySubject">
 		<rdfs:subClassOf>
@@ -1733,12 +1742,13 @@
 				<owl:someValuesFrom rdf:resource="&sco;EnrollmentStatus"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		<rdfs:subClassOf>
+    <rdfs:subClassOf>
 			<owl:Restriction>
-				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
-				<owl:someValuesFrom rdf:resource="&sco;SubjectCharacteristic"/>
+				<owl:onProperty rdf:resource="&sio;isParticipantIn"/>
+				<owl:someValuesFrom rdf:resource="&hasco;ResearchStudy"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
+
 		<rdfs:subClassOf>
 			<owl:Restriction>
 				<owl:onProperty rdf:resource="&sio;hasProperty"/>
@@ -1812,14 +1822,14 @@
 				<owl:onProperty rdf:resource="&sio;hasAttribute"/>
 				<owl:someValuesFrom rdf:resource="&chear;Demographic"/>
 			</owl:Restriction>
-		</rdfs:subClassOf>   
-		
+		</rdfs:subClassOf>
+
 		<dct:source rdf:resource="https://www.healthit.gov/faq/what-electronic-health-record-ehr"/>
 		<rdfs:label rdf:datatype="&xsd;string">electronic health record</rdfs:label>
 		<rdfs:subClassOf rdf:resource="&sio;Dataset"/>
 		<skos:definition rdf:datatype="&xsd;string">a digital version of a patient’s paper chart</skos:definition>
 	</owl:Class>
-	
+
 
 
 	<!-- &sco;SubjectCharacteristic -->
@@ -1840,8 +1850,8 @@
 		</rdfs:subClassOf>
 		<skos:definition>Property that summarizes important attributes of the participants enrolled in a study</skos:definition>
 		<dct:source>R. J. Little et al., "The prevention and treatment of missing data in clinical trials," New England J. Medicine, vol. 367, no. 14, pp. 1355{1360, 2012</dct:source>
-	</owl:Class> 
-	
+	</owl:Class>
+
 
 
 	<!-- &sco;PopulationSize -->
@@ -1855,14 +1865,14 @@
 			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
-	
+
 
 
 	<!-- &sco;RandomizedPopulation -->
 
 	<owl:Class rdf:about="&sco;RandomizedPopulation">
 		<rdfs:subClassOf rdf:resource="&stato;0000203"/>
-		
+
 		<rdfs:label>randomized population</rdfs:label>
 		<sio:hasAttribute>
 			<skos:definition>
@@ -1871,13 +1881,13 @@
 		</skos:definition>
 		</sio:hasAttribute>
 	</owl:Class>
-	
+
 
 
 	<!-- &ncit;C71104 -->
 
 	<owl:Class rdf:about="&ncit;C71104">
-		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
+		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
 		 <rdfs:label>clinical trial</rdfs:label>
 		<sio:hasAttribute>
 			<skos:definition>
@@ -1891,7 +1901,7 @@
 	<!-- &sco;Metaanalysis -->
 
 	<owl:Class rdf:about="&sco;Meta-analysis">
-		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>        
+		<rdfs:subClassOf rdf:resource="&hasco;ResearchStudy"/>
 		<rdfs:label>meta-analysis</rdfs:label>
 		<sio:hasAttribute>
 			<skos:definition>
@@ -1912,11 +1922,11 @@
 				<sio:hasValue>set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group</sio:hasValue>
 				<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/books/NBK209903/</fibo-fnd-utl-av:adaptedFrom>
 				<fibo-fnd-utl-av:adaptedFrom>https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/</fibo-fnd-utl-av:adaptedFrom>
-				
+
 			</skos:definition>
-		</sio:hasAttribute>		
+		</sio:hasAttribute>
 	</owl:Class>
-	
+
 
 
 	<!-- &hasco;ResearchStudy -->
@@ -1929,13 +1939,13 @@
 				<sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
 				<prov:wasAttributedTo rdf:resource="&ibm;us-amardas"/>
 			</skos:definition>
-		</sio:hasAttribute>	
+		</sio:hasAttribute>
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A scientific study of nature that sometimes includes processes involved in health and disease</sio:hasValue>
 				<dct:source rdf:resource="https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement"/>
 			</skos:definition>
-		</sio:hasAttribute>	
+		</sio:hasAttribute>
 
 		<rdfs:subClassOf>
 			<owl:Restriction>
@@ -1949,10 +1959,10 @@
 				<owl:someValuesFrom rdf:resource="&sio;StudySubject"/>
 			</owl:Restriction>
 		</rdfs:subClassOf>
-		
+
 		<rdfs:label>study</rdfs:label>
 	</owl:Class>
-	
+
 
 
 	<!-- &provcare;Intervention -->
@@ -1961,7 +1971,7 @@
 		<rdfs:comment>Capturing the interventions variables in research studies</rdfs:comment>
 		<rdfs:label>study intervention</rdfs:label>
 	</owl:Class>
-	
+
 
 
 	<!-- &chear;MedicalTherapy -->
@@ -1982,7 +1992,7 @@
 	<owl:Class rdf:about="&sco;YearOfFollowUp">
 		<rdfs:subClassOf rdf:resource="&sco;Duration"/>
 	</owl:Class>
-	
+
 
 
 	<!-- &sco;YearsOfExposure -->
@@ -1996,7 +2006,7 @@
 			</owl:Restriction>
 		</rdfs:subClassOf>
 	</owl:Class>
-	
+
 
 
 	<!-- &uo;0000015 -->
@@ -2014,7 +2024,7 @@
 		<oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uo#unit_slim"/>
 		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uo.owl"/>
 	</owl:Class>
-	
+
 
 
 	<!-- &uo;0000009 -->
@@ -2038,7 +2048,7 @@
 	<owl:Class rdf:about="&sio;Year">
 		<rdfs:subClassOf rdf:resource="&sio;UnitOfMeasurement"/>
 	</owl:Class>
-	
+
 
 
 	<!-- &ncit;C25613 -->
@@ -2072,7 +2082,7 @@
 		<oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C91101"/>
 		<obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
 	</owl:Class>
-	
+
 
 
 	<!-- &ncit;C44256 -->
@@ -2110,7 +2120,7 @@
 	</owl:Class>
 
 
-	
+
 	<!-- &sco;PopulationSize -->
 
 	<owl:Class rdf:about="&sco;PopulationSize">
@@ -2118,11 +2128,10 @@
 		<rdfs:label rdf:datatype="&xsd;string">population size</rdfs:label>
 		<fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4296634/</fibo-fnd-utl-av:adaptedFrom>
 		<skos:definition rdf:datatype="&xsd;string">number of patients to which the study results could be reasonably generalized</skos:definition>
-	</owl:Class> 
+	</owl:Class>
 
 </rdf:RDF>
 
 
 
 <!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
-
