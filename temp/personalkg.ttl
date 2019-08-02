@@ -18,4 +18,4 @@
 
 
 :X a sio:Person;
-     sio:isAgentIn [a ncit:C118254;  sio:hasAttribute [a sio:Mean; sio:hasValue 426; sio:hasUnit sio:minute; sio:hasFrequency ncit:C25473; sio:hasStartTime [a sio:startDate; sio:hasValue "02-19-2019T00:00:00"^^xsd:dateTime]; sio:hasStartTime [a sio:endDate; sio:hasValue "04-25-2019T23:59:59"^^xsd:dateTime]]]. 
+     sio:isAgentIn [a ncit:C118254;  sio:hasAttribute [a sio:Mean; sio:hasValue 426; sio:hasUnit sio:minute; sio:hasFrequency ncit:C25473; sio:hasStartTime [a sio:startDate; sio:hasValue "02-19-2019T00:00:00"^^xsd:dateTime]; sio:hasEndTime [a sio:endDate; sio:hasValue "04-25-2019T23:59:59"^^xsd:dateTime]]]. 
