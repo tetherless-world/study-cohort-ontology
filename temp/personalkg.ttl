@@ -16,5 +16,6 @@
 @prefix pao: <https://purl.org/heals/physicalactivity/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
-:X a prov:Person;
-   sio:isAgentIn [a ncit:C62122; sio:existAt [a sio:TimeInterval; sio:hasValue 426; sio:hasUnit :minsperday ]] .
+
+:X a sio:Person;
+     sio:isAgentIn ncit:C118254 [a ncit:C62122;  sio:hasAttribute [a sio:Mean; sio:hasValue 426; sio:hasUnit sio:minute; sio:hasFrequency ncit:C25473] ]. 
