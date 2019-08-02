@@ -19,7 +19,7 @@
                 rdfs:label "STEP treatment arm in pedometer study";
 	        rdfs:subClassOf sco:studySubject;
                 sio:hasAttribute [a sio:Total; sio:hasValue 121];
-	        prov:hadActivity [a ncit:C62122;  sio:hasAttribute 
+	        sio:isAgentIn [a ncit:C62122;  sio:hasAttribute 
                 [a sio:Mean; sio:hasUnit sio:Minute; sio:hasFrequency ncit:C25473; sio:measuredAt hkito:WorkingDay; sio:hasValue 554],
 	       [a sio:StandardDeviation; sio:hasUnit sio:Minute; sio:hasFrequency ncit:C25473; sio:measuredAt hkito:WorkingDay; sio:hasValue 152 ] ] .
 
