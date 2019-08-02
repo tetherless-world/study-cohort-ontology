@@ -18,4 +18,4 @@
 
 
 :X a sio:Person;
-     sio:isAgentIn ncit:C118254 [a ncit:C62122;  sio:hasAttribute [a sio:Mean; sio:hasValue 426; sio:hasUnit sio:minute; sio:hasFrequency ncit:C25473] ]. 
+     sio:isAgentIn [a ncit:C118254;  sio:hasAttribute [a sio:Mean; sio:hasValue 426; sio:hasUnit sio:minute; sio:hasFrequency ncit:C25473] ]. 
