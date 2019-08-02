@@ -10,10 +10,11 @@
 @prefix sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
+@prefix pato: <http://purl.obolibrary.org/obo/PATO_> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix : <https://purl.org/heals/physicalactivity_literaturegraph/> .
-@prefix pao: <https://purl.org/heals/physicalactivity/> .
+@prefix hkito: <https://purl.org/heals/healthkit/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 
 
