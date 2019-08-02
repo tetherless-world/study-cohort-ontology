@@ -26,3 +26,9 @@
 :PedometerDevice a hkito:WearableDevice;
 	rdfs:label "A device used to measure step count";
 	prov:wasUsedBy :StepPopulation .
+
+
+:PedometerStudy a ncit:C142526;
+      sio:hasParticipant :StepPopulation;
+      dct:title "Promoting walking amongst office employees - evaluation of a randomized controlled intervention involving pedometers and e-mail messages"^^xsd:string;
+      rdfs:seeAlso "https://www.ncbi.nlm.nih.gov/pubmed/22672576".
