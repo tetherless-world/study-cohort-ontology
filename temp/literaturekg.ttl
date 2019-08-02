@@ -13,12 +13,16 @@
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix : <https://purl.org/heals/physicalactivity_literaturegraph/> .
-@prefix pao: <https://purl.org/heals/physicalactivity/> .
+@prefix hkito: <https://purl.org/heals/hkito/> .
 
 :StepPopulation a sco:TreatmentArm;
                 rdfs:label "STEP treatment arm in pedometer study";
 	        rdfs:subClassOf sco:studySubject;
                 sio:hasAttribute [a sio:Total; sio:hasValue 121];
 	        prov:hadActivity [a ncit:C62122;  sio:hasAttribute 
-                [a sio:Mean; sio:hasUnit pao:minsperday; sio:hasValue 554],
-	       [a sio:StandardDeviation; sio:hasUnit pao:minsperday; sio:hasValue 152 ] ] .
+                [a sio:Mean; sio:hasUnit sio:Minute; sio:hasFrequency ncit:C25473; sio:measuredAt hkito:WorkingDay; sio:hasValue 554],
+	       [a sio:StandardDeviation; sio:hasUnit sio:Minute; sio:hasFrequency ncit:C25473; sio:measuredAt hkito:WorkingDay; sio:hasValue 152 ] ] .
+
+:PedometerDevice a hkito:WearableDevice;
+	rdfs:label "A device used to measure step count";
+	prov:wasUsedBy :StepPopulation .
