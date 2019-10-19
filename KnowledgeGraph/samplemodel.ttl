@@ -4,6 +4,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix fibo-fnd-dt-fd: <http://www.omg.org/spec/EDMC-FIBO/FND/DatesAndTimes/FinancialDates/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix fibo-fnd-arr-arr: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/Arrangements/> .
 @prefix chear: <http://hadatac.org/ont/chear#> .
@@ -21,11 +22,26 @@
 @prefix sco-i: <https://idea.tw.rpi.edu/projects/heals/studycohort_individuals/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
 
 sco-i:MetforminArm
        a    owl:Class, sco:InterventionArm; 
        rdfs:subClassOf        sio:StudySubject;
-       sio:isParticipantIn    sco-i:10YearFollowUpStudy;   
+       owl:EquivalentClassOf [ owl:IntersectionOf (sio:StudySubject [
+           a owl:Restriction ;
+           owl:onProperty sio:isParticipantIn ;
+           owl:hasValue sco-i:10YearFollowUpStudy 
+  	]
+	[
+           a owl:Restriction ;
+           owl:onProperty sio:isParticipantIn ;
+           owl:someValuesFrom sco:ConventionalTherapy 
+  	]
+	[
+           a owl:Restriction ;
+           owl:onProperty prov:used ;
+           owl:someValuesFrom chebi:6801 
+  	])];
        sio:hasAttribute    
        [ a sco:PopulationSize; sio:hasValue 309],
        [ a sio:Age; sio:hasUnit sio:Year;
