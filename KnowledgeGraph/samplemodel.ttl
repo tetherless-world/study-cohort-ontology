@@ -4,6 +4,7 @@
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix fibo-fnd-dt-fd: <http://www.omg.org/spec/EDMC-FIBO/FND/DatesAndTimes/FinancialDates/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix fibo-fnd-arr-arr: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/Arrangements/> .
 @prefix chear: <http://hadatac.org/ont/chear#> .
@@ -21,26 +22,39 @@
 @prefix sco-i: <https://idea.tw.rpi.edu/projects/heals/studycohort_individuals/> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
 
-sco-i:RamiprilArm
+sco-i:MetforminArm
        a    owl:Class, sco:InterventionArm; 
        rdfs:subClassOf        sio:StudySubject;
-       sio:isParticipantIn    sco-i:TelmisartanRamiprilStudy;   
+       owl:EquivalentClassOf [ owl:IntersectionOf (sio:StudySubject [
+           a owl:Restriction ;
+           owl:onProperty sio:isParticipantIn ;
+           owl:hasValue sco-i:10YearFollowUpStudy 
+  	]
+	[
+           a owl:Restriction ;
+           owl:onProperty sio:isParticipantIn ;
+           owl:someValuesFrom sco:ConventionalTherapy 
+  	]
+	[
+           a owl:Restriction ;
+           owl:onProperty prov:used ;
+           owl:someValuesFrom chebi:6801 
+  	])];
        sio:hasAttribute    
-       [ a sco:PopulationSize; sio:hasValue 8576],
+       [ a sco:PopulationSize; sio:hasValue 309],
        [ a sio:Age; sio:hasUnit sio:Year;
           sio:hasAttribute
-          [ a sio:Mean; sio:hasValue 66.4],
-          [a sio:StandardDeviation; sio:hasValue 7.2 ]  
+          [ a sio:Mean; sio:hasValue 63],
+          [a sio:StandardDeviation; sio:hasValue 9 ]  
         ] . 
 
-sco-i:TelmisartanRamiprilStudy
+sco-i:10YearFollowUpStudy
 	a  owl:NamedIndividual , ncit:C71104 ;
-	rdfs:seeAlso  "https://ClinicalTrials.gov/NCT00153101" ;
-	dct:abstract "In patients who have vascular disease or high-risk diabetes without heart failure, angiotensin-converting-enzyme (ACE) inhibitors reduce mortality and morbidity from cardiovascular causes, but the role of angiotensin-receptor blockers (ARBs) in such patients is unknown. We compared the ACE inhibitor ramipril, the ARB telmisartan, and the combination of the two drugs in patients with vascular disease or high-risk diabetes.";
-	dct:creator     "ONTARGET Investigators", "Yusuf S.", "Teo KK.", "Pogue J.", "Dyal L.", "Copland I.", "Schumacher H.", 
-"Dagenais G.", "Sleight P.", "Anderson C." ;
-	dct:title       "Telmisartan, Ramipril, or Both in Patients at High Risk for Vascular Events" ;
+	rdfs:seeAlso  "https://www.ncbi.nlm.nih.gov/pubmed/18784090" ;
+	dct:creator     "Holman RR.", "Paul S.K.", "Bethel M.A.", "Matthews D.R.", "Neil H.A." ;
+	dct:title       "10-year follow-up of intensive glucose control in type 2 diabetes" ;
 	sm:documentURL  
-	"https://care.diabetesjournals.org/lookup/external-ref?access_num=10.1056/NEJMoa0801317&link_type=DOI" ;
-	sio:hasParticipant   sco-i:RamiprilArm .
+	"https://www.nejm.org/doi/full/10.1056/NEJMoa0806470?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed" ;
+	sio:hasParticipant   sco-i:MetforminArm .
