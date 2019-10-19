@@ -149,7 +149,8 @@ def plot_asindividual(patientgroupsmean, patientgroupslower, patientgroupsupper)
     for data_count in range(len(data)):
         fig = plt.figure()
         title_fig = ''.join(x for x in patient_groupnames[data_count]).title()
-
+        ranges = [(10, 80), (15, 40),
+         (110, 164), (55, 90), (5, 10)]
         radar = ComplexRadar(fig, variables, ranges)
         radar.fill(patientgroupsupper[data_count],ligther_colors[data_count], alpha=1)
         radar.fill(patientgroupslower[data_count], 'white', alpha=1)
@@ -161,7 +162,7 @@ def plot_asindividual(patientgroupsmean, patientgroupslower, patientgroupsupper)
         #For now plotting 3rd patient
         print(patient_data[2])
         radar.plot(patient_data[2], 'dodgerblue',"-",label="Patient Datapoint")
-        radar.fill(patient_data[2], 'lightblue', alpha = 1)
+        #radar.fill(patient_data[2], 'lightblue', alpha = 1)
         plt.title(title_fig)
         #plt.legend(handles=[mpatches.Patch(color= colors[data_count],label=title_fig)])
         os.makedirs("../data/output_files/",exist_ok=True)
@@ -209,7 +210,7 @@ def plot_all(patientgroupsmean, patientgroupslower,patientgroupsupper):
         print(patient_data[2])
         radar.plot(patient_data[2], 'dodgerblue',"-",label="Patient Datapoint")
         #Testing how this looks
-        radar.fill(patient_data[2], 'lightblue', alpha = 1)
+        #radar.fill(patient_data[2], 'lightblue', alpha = 1)
         #This will become the legend key portion
     #plt.legend(handles=legend_patches,loc="upperright")
     #Only create new directory if it doesn't exist
