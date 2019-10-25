@@ -43,8 +43,8 @@ sco-i:MetforminArm
            owl:onProperty sio:isParticipantIn ;
            owl:someValuesFrom [provcare:Intervention [
            a owl:Restriction ;
-           owl:onProperty sio:isParticipantIn ;
-           owl:hasValue sco-i:10YearFollowUpStudy 
+           owl:onProperty prov:used;
+           owl:someValuesFrom chebi:6801 
   	]
 			       ]
   	])];
