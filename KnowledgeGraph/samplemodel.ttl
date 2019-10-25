@@ -41,11 +41,11 @@ sco-i:MetforminArm
 	[
            a owl:Restriction ;
            owl:onProperty sio:isParticipantIn ;
-           owl:someValuesFrom [provcare:Intervention [
+           owl:someValuesFrom [owl:IntersectionOf (provcare:Intervention [
            a owl:Restriction ;
            owl:onProperty prov:used;
            owl:someValuesFrom chebi:6801 
-  	]
+  	])
 			       ]
   	])];
        sio:hasAttribute    
