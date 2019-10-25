@@ -23,6 +23,7 @@
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
 @prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
+@prefix provcare: <http://www.case.edu/ProvCaRe/provcare#> .
 
 sco-i:MetforminArm
        a    owl:Class, sco:InterventionArm; 
@@ -39,15 +40,20 @@ sco-i:MetforminArm
   	]
 	[
            a owl:Restriction ;
-           owl:onProperty prov:used ;
-           owl:someValuesFrom chebi:6801 
+           owl:onProperty sio:isParticipantIn ;
+           owl:someValuesFrom [provcare:Intervention [
+           a owl:Restriction ;
+           owl:onProperty sio:isParticipantIn ;
+           owl:hasValue sco-i:10YearFollowUpStudy 
+  	]
+			       ]
   	])];
        sio:hasAttribute    
        [ a sco:PopulationSize; sio:hasValue 309],
-       [ a sio:Age; sio:hasUnit sio:Year;
+       [ a ncit:C25298; rdfs:label "Systolic Blood Pressure";
           sio:hasAttribute
-          [ a sio:Mean; sio:hasValue 63],
-          [a sio:StandardDeviation; sio:hasValue 9 ]  
+          [ a sio:Mean; sio:hasValue 139],
+          [a sio:StandardDeviation; sio:hasValue 22]  
         ] . 
 
 sco-i:10YearFollowUpStudy
