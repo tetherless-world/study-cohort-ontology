@@ -1,66 +1,66 @@
 @prefix fibo-fnd-rel-rel: <http://www.omg.org/spec/EDMC-FIBO/FND/Relations/Relations/> .
+@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
-@prefix owl2: <http://www.w3.org/2006/12/owl2#> .
 @prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
 @prefix fibo-fnd-dt-fd: <http://www.omg.org/spec/EDMC-FIBO/FND/DatesAndTimes/FinancialDates/> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
-@prefix prov:  <http://www.w3.org/ns/prov#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix fibo-fnd-arr-arr: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/Arrangements/> .
-@prefix chear: <http://hadatac.org/ont/chear#> .
-@prefix fibo-fnd-aap-agt: <http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/> .
+@prefix ncit:  <http://purl.obolibrary.org/obo/NCIT_> .
 @prefix dct:   <http://purl.org/dc/terms/> .
-@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix fibo-fnd-arr-id: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/IdentifiersAndIndices/> .
-@prefix sio-f: <http://semanticscience.org/ontology/sio.owl#> .
 @prefix sio:   <http://semanticscience.org/resource/> .
 @prefix fibo-fnd-utl-av: <http://www.omg.org/spec/EDMC-FIBO/FND/Utilities/AnnotationVocabulary/> .
+@prefix owl2:  <http://www.w3.org/2006/12/owl2#> .
 @prefix sm:    <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
-@prefix fibo-fnd-arr-cls: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/ClassificationSchemes/> .
-@prefix sco-i: <https://tw.rpi.edu/Courses/Ontologies/2018/DiabetesTreatmentSupport/DiabetesTreatmentSupport_Individuals/> .
-@prefix sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/> .
-@prefix sco-i: <https://idea.tw.rpi.edu/projects/heals/studycohort_individuals/> .
-@prefix obo: <http://purl.obolibrary.org/obo/> .
-@prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
-@prefix chebi: <http://purl.obolibrary.org/obo/CHEBI_> .
 @prefix provcare: <http://www.case.edu/ProvCaRe/provcare#> .
+@prefix prov:  <http://www.w3.org/ns/prov#> .
+@prefix sco:   <https://idea.tw.rpi.edu/projects/heals/studycohort/> .
+@prefix fibo-fnd-arr-arr: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/Arrangements/> .
+@prefix fibo-fnd-aap-agt: <http://www.omg.org/spec/EDMC-FIBO/FND/AgentsAndPeople/Agents/> .
+@prefix chear: <http://hadatac.org/ont/chear#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sio-f: <http://semanticscience.org/ontology/sio.owl#> .
+@prefix sco-i: <https://idea.tw.rpi.edu/projects/heals/studycohort_individuals/> .
+@prefix fibo-fnd-arr-cls: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/ClassificationSchemes/> .
+@prefix obo:   <http://purl.obolibrary.org/obo/> .
 
-sco-i:MetforminArm
-       a    owl:Class, sco:InterventionArm; 
-       rdfs:subClassOf        sio:StudySubject;
-       owl:EquivalentClassOf [ owl:IntersectionOf (sio:StudySubject [
-           a owl:Restriction ;
-           owl:onProperty sio:isParticipantIn ;
-           owl:hasValue sco-i:10YearFollowUpStudy 
-  	]
-	[
-           a owl:Restriction ;
-           owl:onProperty sio:isParticipantIn ;
-           owl:someValuesFrom sco:ConventionalTherapy 
-  	]
-	[
-           a owl:Restriction ;
-           owl:onProperty sio:isParticipantIn ;
-           owl:someValuesFrom [owl:IntersectionOf (provcare:Intervention [
-           a owl:Restriction ;
-           owl:onProperty prov:used;
-           owl:someValuesFrom chebi:6801 
-  	])
-			       ]
-  	])];
-       sio:hasAttribute    
-       [ a sco:PopulationSize; sio:hasValue 309],
-       [ a ncit:C25298; rdfs:label "Systolic Blood Pressure";
-          sio:hasAttribute
-          [ a sio:Mean; sio:hasValue 139],
-          [a sio:StandardDeviation; sio:hasValue 22]  
-        ] . 
+_:b0    a                   owl:Restriction ;
+        owl:onProperty      sio:isParticipantIn ;
+        owl:someValuesFrom  [ owl:IntersectionOf  ( provcare:Intervention _:b1 ) ] .
 
 sco-i:10YearFollowUpStudy
-	a  owl:NamedIndividual , ncit:C71104 ;
-	rdfs:seeAlso  "https://www.ncbi.nlm.nih.gov/pubmed/18784090" ;
-	dct:creator     "Holman RR.", "Paul S.K.", "Bethel M.A.", "Matthews D.R.", "Neil H.A." ;
-	dct:title       "10-year follow-up of intensive glucose control in type 2 diabetes" ;
-	sm:documentURL  
-	"https://www.nejm.org/doi/full/10.1056/NEJMoa0806470?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed" ;
-	sio:hasParticipant   sco-i:MetforminArm .
+        a                   obo:NCIT_C71104 , owl:NamedIndividual ;
+        rdfs:seeAlso        "https://www.ncbi.nlm.nih.gov/pubmed/18784090" ;
+        dct:creator         "Bethel M.A." , "Neil H.A." , "Paul S.K." , "Matthews D.R." , "Holman RR." ;
+        dct:title           "10-year follow-up of intensive glucose control in type 2 diabetes" ;
+        sio:hasParticipant  sco-i:MetforminArm ;
+        sm:documentURL      "https://www.nejm.org/doi/full/10.1056/NEJMoa0806470?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed" .
+
+_:b2    a               owl:Restriction ;
+        owl:hasValue    sco-i:10YearFollowUpStudy ;
+        owl:onProperty  sio:isParticipantIn .
+
+_:b3    a                   owl:Restriction ;
+        owl:onProperty      sio:isParticipantIn ;
+        owl:someValuesFrom  sco:ConventionalTherapy .
+
+_:b1    a                   owl:Restriction ;
+        owl:onProperty      prov:used ;
+        owl:someValuesFrom  obo:CHEBI_6801 .
+
+sco-i:MetforminArm  a          sco:InterventionArm , owl:Class ;
+        rdfs:subClassOf        sio:StudySubject ;
+        sio:hasAttribute       [ a                 obo:NCIT_C25298 ;
+                                 rdfs:label        "Systolic Blood Pressure" ;
+                                 sio:hasAttribute  [ a             sio:StandardDeviation ;
+                                                     sio:hasValue  22
+                                                   ] ;
+                                 sio:hasAttribute  [ a             sio:Mean ;
+                                                     sio:hasValue  139
+                                                   ]
+                               ] ;
+        sio:hasAttribute       [ a             sco:PopulationSize ;
+                                 sio:hasValue  309
+                               ] ;
+        owl:EquivalentClassOf  [ owl:IntersectionOf
+                          ( sio:StudySubject _:b2 _:b3 _:b0 ) ] .
