@@ -19,7 +19,7 @@
   		?study a sco:ClinicalTrial .
   		?study dct:title ?studyTitle .
   		?study sio:hasParticipant ?studyArm .
-  		?studyArm sio:hasProperty ?studyIntervention .
+  		?studyArm sio:hasProperty [a ?studyIntervention] .
   
   		{
 
@@ -276,7 +276,7 @@ WHERE {
   ?study a sco:ClinicalTrial .
   ?study dct:title ?studyTitle .
   ?study sio:hasParticipant ?studyArm .
-  ?studyArm sio:hasProperty ?intervention .
+  ?studyArm sio:hasProperty [a ?intervention].
   ?studyArm sio:hasAttribute ?prop .
   ?prop a sco:PopulationSize .
   ?prop sio:hasValue ?popSize . 
