@@ -16,7 +16,7 @@
 
 	SELECT DISTINCT ?studyTitle ?study WHERE 
 	{
-  		?study a sco:ClinicalTrial .
+  		?study a ncit:C71104 .
   		?study dct:title ?studyTitle .
   		?study sio:hasParticipant ?studyArm .
   		?studyArm sio:hasProperty [a ?studyIntervention] .
@@ -127,7 +127,7 @@ SELECT DISTINCT ?studyTitle ?propType ?lowerBound ?propVal
 ?upperBound
 WHERE {
 
-  ?study a sco:ClinicalTrial .
+  ?study a ncit:C71104 .
   ?study dct:title ?studyTitle .
   ?study sio:hasParticipant ?studyArm .
   ?studyArm sio:hasAttribute | sio:hasProperty ?prop .
@@ -273,7 +273,7 @@ PREFIX obo: <http://purl.obolibrary.org/obo/>
 
 SELECT DISTINCT ?studyTitle ?intervention ?popSize ?totalCohortSize
 WHERE {
-  ?study a sco:ClinicalTrial .
+  ?study a ncit:C71104 .
   ?study dct:title ?studyTitle .
   ?study sio:hasParticipant ?studyArm .
   ?studyArm sio:hasProperty [a ?intervention].
@@ -382,7 +382,7 @@ PREFIX ncit: <http://purl.obolibrary.org/obo/NCIT_>
 SELECT DISTINCT ?studyTitle ?propType ?lowerBound ?propVal
 ?upperBound WHERE {
 
-  ?study a sco:ClinicalTrial .
+  ?study a ncit:C71104 .
   ?study dct:title ?studyTitle .
   ?study sio:hasParticipant ?studyArm .
   ?studyArm sio:hasAttribute | sio:hasProperty ?prop .
