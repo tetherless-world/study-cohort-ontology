@@ -13,6 +13,7 @@
     PREFIX dct: <http://purl.org/dc/terms/>
     PREFIX chear: <http://hadatac.org/ont/chear#>
     PREFIX ncit: <http://purl.obolibrary.org/obo/NCIT_>
+    PREFIX provcare: <http://www.case.edu/ProvCaRe/provcare#>
 
 	SELECT DISTINCT ?studyTitle ?study WHERE 
 	{
@@ -270,6 +271,7 @@ PREFIX sio: <http://semanticscience.org/resource/>
 PREFIX dct: <http://purl.org/dc/terms/>
 PREFIX chear: <http://hadatac.org/ont/chear#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX provcare: <http://www.case.edu/ProvCaRe/provcare#>
 
 SELECT DISTINCT ?studyTitle ?intervention ?popSize ?totalCohortSize
 WHERE {
@@ -292,7 +294,7 @@ WHERE {
    }
   FILTER (?popSize >= (?totalCohortSize/3)) .
   FILTER ((?intervention rdfs:subClassOf* 
-  sio:Intervention ) && (?intervention rdfs:subClassOf* 
+  provcare:Intervention ) && (?intervention rdfs:subClassOf* 
   chebi:24436 )).
 }
    
