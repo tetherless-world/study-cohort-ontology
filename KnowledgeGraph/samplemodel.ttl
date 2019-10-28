@@ -62,5 +62,6 @@ _:b2    a                   owl:Restriction ;
         owl:someValuesFrom  [ provcare:Intervention
                           [ a                   owl:Restriction ;
                             owl:onProperty      prov:used ;
-                            owl:someValuesFrom  obo:CHEBI_6801
+                            owl:someValuesFrom  obo:CHEBI_6801;
+                            rdfs:label "Metformin"
                           ] ] .
