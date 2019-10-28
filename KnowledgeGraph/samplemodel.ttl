@@ -24,9 +24,30 @@
 @prefix fibo-fnd-arr-cls: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/ClassificationSchemes/> .
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
 
-_:b0    a                   owl:Restriction ;
+_:b0    a               owl:Restriction ;
+        owl:hasValue    sco-i:10YearFollowUpStudy ;
+        owl:onProperty  sio:isParticipantIn .
+
+_:b1    a                   owl:Restriction ;
         owl:onProperty      sio:isParticipantIn ;
-        owl:someValuesFrom  [ owl:IntersectionOf  ( provcare:Intervention _:b1 ) ] .
+        owl:someValuesFrom  sco:ConventionalTherapy .
+
+sco-i:MetforminArm  a          owl:Class , sco:InterventionArm ;
+        rdfs:subClassOf        sio:StudySubject ;
+        sio:hasAttribute       [ a             sco:PopulationSize ;
+                                 sio:hasValue  309
+                               ] ;
+        sio:hasAttribute       [ a                 obo:NCIT_C25298 ;
+                                 rdfs:label        "Systolic Blood Pressure" ;
+                                 sio:hasAttribute  [ a             sio:Mean ;
+                                                     sio:hasValue  139
+                                                   ] ;
+                                 sio:hasAttribute  [ a             sio:StandardDeviation ;
+                                                     sio:hasValue  22
+                                                   ]
+                               ] ;
+        owl:EquivalentClassOf  [ owl:IntersectionOf
+                          ( sio:StudySubject _:b0 _:b1 _:b2 ) ] .
 
 sco-i:10YearFollowUpStudy
         a                   obo:NCIT_C71104 , owl:NamedIndividual ;
@@ -36,31 +57,10 @@ sco-i:10YearFollowUpStudy
         sio:hasParticipant  sco-i:MetforminArm ;
         sm:documentURL      "https://www.nejm.org/doi/full/10.1056/NEJMoa0806470?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed" .
 
-_:b2    a               owl:Restriction ;
-        owl:hasValue    sco-i:10YearFollowUpStudy ;
-        owl:onProperty  sio:isParticipantIn .
-
-_:b3    a                   owl:Restriction ;
+_:b2    a                   owl:Restriction ;
         owl:onProperty      sio:isParticipantIn ;
-        owl:someValuesFrom  sco:ConventionalTherapy .
-
-_:b1    a                   owl:Restriction ;
-        owl:onProperty      prov:used ;
-        owl:someValuesFrom  obo:CHEBI_6801 .
-
-sco-i:MetforminArm  a          sco:InterventionArm , owl:Class ;
-        rdfs:subClassOf        sio:StudySubject ;
-        sio:hasAttribute       [ a                 obo:NCIT_C25298 ;
-                                 rdfs:label        "Systolic Blood Pressure" ;
-                                 sio:hasAttribute  [ a             sio:StandardDeviation ;
-                                                     sio:hasValue  22
-                                                   ] ;
-                                 sio:hasAttribute  [ a             sio:Mean ;
-                                                     sio:hasValue  139
-                                                   ]
-                               ] ;
-        sio:hasAttribute       [ a             sco:PopulationSize ;
-                                 sio:hasValue  309
-                               ] ;
-        owl:EquivalentClassOf  [ owl:IntersectionOf
-                          ( sio:StudySubject _:b2 _:b3 _:b0 ) ] .
+        owl:someValuesFrom  [ provcare:Intervention
+                          [ a                   owl:Restriction ;
+                            owl:onProperty      prov:used ;
+                            owl:someValuesFrom  obo:CHEBI_6801
+                          ] ] .
