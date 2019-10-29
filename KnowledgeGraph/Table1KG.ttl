@@ -744,7 +744,7 @@ sco-i:10YearFollowUPStudy
   "https://www.nejm.org/doi/full/10.1056/NEJMoa0806470" ;
   sio:hasParticipant   sco-i:MetforminStudyArm .
 
-sco-i:MetforminStudyArm a owl:Class, sco:ControlArm;
+sco-i:MetforminStudyArm10Year a owl:Class, sco:ControlArm;
       rdfs:subClassOf sio:StudySubject;
       rdfs:label
       "set of study subjects belonging to the Metformin intervention arm" ;
@@ -863,6 +863,115 @@ sco-i:MetforminStudyArm a owl:Class, sco:ControlArm;
           ] 
         ]   .
 
+
+sco-i:Male10YearFollowUpMetforminArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:MetforminStudyArm10Year;
+    rdfs:label       "Male 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom sio:Male
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 46;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 142;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ] .
+
+sco-i:White10YearFollowUpMetforminArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:MetforminStudyArm10Year;
+    rdfs:label       "White 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom ncit:C41261;
+        rdfs:label "White"
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 84.8;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 262;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ] .
+
+sco-i:AfricanAmerican10YearFollowUpMetforminArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:MetforminStudyArm10Year;
+    rdfs:label       "African-American 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom ncit:C16352;
+        rdfs:label "African-American"
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 7.4;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 23;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ] .
+
+sco-i:AsianIndian10YearFollowUpMetforminArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:MetforminStudyArm10Year;
+    rdfs:label       "Asian-Indian 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom ncit:C41260;
+        rdfs:label "Asian Indian"
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 6.8;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 21;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ] .
+
+sco-i:OtherRaceMetforminArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:MetforminStudyArm10Year;
+    rdfs:label       "Other Race 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom chear:UnknownRace;
+        rdfs:label "Asian Indian"
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 1;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 6;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ] .
 
 
 
