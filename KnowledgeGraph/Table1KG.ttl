@@ -736,13 +736,244 @@ sco-i:VitaminB12DeficiencyStudy
 	sio:hasParticipant   sco-i:MetforminStudyArm .
 
 
-sco-i:10YearFollowUPStudy
+sco-i:10YearFollowUpStudy
   a  owl:NamedIndividual , ncit:C71104 ;
   dct:title "10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes" ;
   dct:creator     "Rury R. Holman",  "Sanjoy K. Paul, Ph.D.", "M. Angelyn Bethel, M.D.", "David R. Matthews, F.R.C.P.", "H. Andrew W. Neil, F.R.C.P." ;
   sm:documentURL
   "https://www.nejm.org/doi/full/10.1056/NEJMoa0806470" ;
   sio:hasParticipant   sco-i:MetforminStudyArm .
+
+sco-i:SulfonylUreaInsulinStudyArm10Year a owl:Class, sco:ControlArm;
+      rdfs:subClassOf sio:StudySubject;
+      rdfs:label
+      "set of study subjects belonging to the Sulfonyl-Urea intervention arm and conventional therapy" ;
+      sio:isParticipantIn    sco-i:10YearFollowUpStudy, [a sco:ConventionalTherapy];
+      sio:hasAttribute 
+          [a sco:PopulationSize; sio:hasValue 880],
+          [
+            a sio:Age; sio:hasUnit sio:Year;  sio:hasAttribute
+            [ a sio:Mean; sio:hasValue 63],
+            [a sio:StandardDeviation; sio:hasValue 9]
+        ],
+        [
+          a sio:Weight; sio:hasUnit sio:Kilogram;
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 79],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 61],
+            [ a sio:MaximalValue; sio:hasValue 90] 
+          ] 
+        ],
+        [
+          a cmo:0000105; rdfs:label "Body mass index";
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 28.7],
+          [ a sio:StandardDeviation; sio:hasValue 5.6 ] 
+        ],
+        [
+
+          a cmo:0000004; rdfs:label "Systolic Blood Pressure"; 
+          sio:hasUnit [a ncit:C49670; rdfs:label "Millimeter of Hg"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 138],
+          [ a sio:StandardDeviation; sio:hasValue 21] 
+        ],
+        [
+
+          a cmo:0000005; rdfs:label "Diastolic Blood Pressure";
+          sio:hasUnit [a ncit:C49670; rdfs:label "Millimeter of Hg"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 77],
+          [ a sio:StandardDeviation; sio:hasValue 10] 
+        ],
+        [
+
+          a  cmo:0000053; rdfs:label "Low-density lipoprotein";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 126],
+          [ a sio:StandardDeviation; sio:hasValue 32] 
+        ],
+        [
+
+          a  cmo:0000052; rdfs:label "High-density lipoprotein";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 42],
+          [ a sio:StandardDeviation; sio:hasValue 12] 
+        ],
+        [
+
+          a chebi:17855; rdfs:label "Triglyceride";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 128],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 88],
+            [ a sio:MaximalValue; sio:hasValue 190] 
+          ]  
+        ],
+        [
+
+          a cmo:0000537; rdfs:label "Plasma Creatinine";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 1.02],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 0.89],
+            [ a sio:MaximalValue; sio:hasValue 1.17] 
+          ]  
+        ],
+        [
+
+          a labresults:FastingPlasmaGlucose; rdfs:label "Fasting Plasma Glucose";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 178],
+          [ a sio:StandardDeviation; sio:hasValue 58] 
+        ],
+        [
+
+          a cmo:0002786; rdfs:label "Glycated Hemoglobin (HbA1C)";
+          sio:hasUnit [a sio:Percentage];
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 8.5],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 7.3],
+            [ a sio:MaximalValue; sio:hasValue 9.7] 
+          ] 
+        ],
+        [
+
+          a cmo:0000384; rdfs:label "Albumin Creatinine Ratio";
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 14.5],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 6.5],
+            [ a sio:MaximalValue; sio:hasValue 49.7] 
+          ] 
+        ]   .
+
+
+sco-i:Male10YearFollowUpSulfonylUreaArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:SSulfonylUreaInsulinStudyArm10Year;
+    rdfs:label       "Male 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom sio:Male
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 60.5;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 532;
+        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+     ] .
+
+sco-i:White10YearFollowUpSulfonylUreaArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:SulfonylUreaInsulinStudyArm10Year;
+    rdfs:label       "White 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom ncit:C41261;
+        rdfs:label "White"
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 80.7;
+        sio:inRelationTo sco-i:White10YearFollowUpSulfonylUreaArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 710;
+        sio:inRelationTo sco-i:White10YearFollowUpSulfonylUreaArmStudySubject
+     ] .
+
+sco-i:AfricanAmerican1SulfonylUreaArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:SulfonylUreaInsulinStudyArm10Year;
+    rdfs:label       "African-American 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom ncit:C16352;
+        rdfs:label "African-American"
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 6.6;
+        sio:inRelationTo sco-i:AfricanAmerican1SulfonylUreaArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 58;
+        sio:inRelationTo sco-i:AfricanAmerican1SulfonylUreaArmStudySubject
+     ] .
+
+sco-i:AsianIndianSulfonylUreaArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:SulfonylUreaInsulinStudyArm10Year;
+    rdfs:label       "Asian-Indian 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom ncit:C41260;
+        rdfs:label "Asian Indian"
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 11.9;
+        sio:inRelationTo sco-i:AsianIndianSulfonylUreaArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 105;
+        sio:inRelationTo sco-i:AsianIndianSulfonylUreaArmStudySubject
+     ] .
+
+sco-i:OtherRaceSulfonylUreaArmStudySubject a owl:Class;
+    rdfs:subClassOf sco-i:SulfonylUreaInsulinStudyArm10Year;
+    rdfs:label       "Other Race 10-Year Follow-Up Study Subject" ;
+    rdfs:subClassOf
+    [
+        a owl:Restriction;
+        owl:onProperty sio:hasAttribute;
+        owl:someValuesFrom chear:UnknownRace;
+        rdfs:label "Asian Indian"
+    ];
+    sio:hasAttribute
+    [
+        a sio:Percentage;
+        sio:hasValue 0.8;
+        sio:inRelationTo sco-i:OtherRaceSulfonylUreaArmStudySubject
+     ],
+     [
+        a sco:PopulationSize;
+        sio:hasValue 7;
+        sio:inRelationTo sco-i:OtherRaceSulfonylUreaArmStudySubject
+     ] .
 
 sco-i:MetforminStudyArm10Year a owl:Class, sco:ControlArm;
       rdfs:subClassOf sio:StudySubject;
@@ -899,12 +1130,12 @@ sco-i:White10YearFollowUpMetforminArmStudySubject a owl:Class;
     [
         a sio:Percentage;
         sio:hasValue 84.8;
-        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+        sio:inRelationTo sco-i:White10YearFollowUpMetforminArmStudySubject
      ],
      [
         a sco:PopulationSize;
         sio:hasValue 262;
-        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+        sio:inRelationTo sco-i:White10YearFollowUpMetforminArmStudySubject
      ] .
 
 sco-i:AfricanAmerican10YearFollowUpMetforminArmStudySubject a owl:Class;
@@ -921,12 +1152,12 @@ sco-i:AfricanAmerican10YearFollowUpMetforminArmStudySubject a owl:Class;
     [
         a sio:Percentage;
         sio:hasValue 7.4;
-        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+        sio:inRelationTo sco-i:AfricanAmerican10YearFollowUpMetforminArmStudySubject
      ],
      [
         a sco:PopulationSize;
         sio:hasValue 23;
-        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+        sio:inRelationTo sco-i:AfricanAmerican10YearFollowUpMetforminArmStudySubject
      ] .
 
 sco-i:AsianIndian10YearFollowUpMetforminArmStudySubject a owl:Class;
@@ -943,12 +1174,12 @@ sco-i:AsianIndian10YearFollowUpMetforminArmStudySubject a owl:Class;
     [
         a sio:Percentage;
         sio:hasValue 6.8;
-        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+        sio:inRelationTo sco-i:AsianIndian10YearFollowUpMetforminArmStudySubject
      ],
      [
         a sco:PopulationSize;
         sio:hasValue 21;
-        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+        sio:inRelationTo sco-i:AsianIndian10YearFollowUpMetforminArmStudySubject
      ] .
 
 sco-i:OtherRaceMetforminArmStudySubject a owl:Class;
@@ -965,12 +1196,12 @@ sco-i:OtherRaceMetforminArmStudySubject a owl:Class;
     [
         a sio:Percentage;
         sio:hasValue 1;
-        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+        sio:inRelationTo sco-i:OtherRaceMetforminArmStudySubject
      ],
      [
         a sco:PopulationSize;
         sio:hasValue 6;
-        sio:inRelationTo sco-i:Male10YearFollowUpMetforminArmStudySubject
+        sio:inRelationTo sco-i:OtherRaceMetforminArmStudySubject
      ] .
 
 
