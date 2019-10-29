@@ -8,6 +8,7 @@
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix sio:   <http://semanticscience.org/resource/> .
 @prefix sco: <https://idea.tw.rpi.edu/projects/heals/studycohort/> .
+@prefix labresults: <https://idea.tw.rpi.edu/projects/heals/labresults/> .
 @prefix cmo: <http://purl.org/twc/ontologies/cmo.owl/#> .
 @prefix ncit: <http://purl.obolibrary.org/obo/NCIT_> .
 @prefix pato: <http://purl.obolibrary.org/obo/PATO_> .
@@ -733,3 +734,135 @@ sco-i:VitaminB12DeficiencyStudy
 	sm:documentURL
 	"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4880159/" ;
 	sio:hasParticipant   sco-i:MetforminStudyArm .
+
+
+sco-i:10YearFollowUPStudy
+  a  owl:NamedIndividual , ncit:C71104 ;
+  dct:title "10-Year Follow-up of Intensive Glucose Control in Type 2 Diabetes" ;
+  dct:creator     "Rury R. Holman",  "Sanjoy K. Paul, Ph.D.", "M. Angelyn Bethel, M.D.", "David R. Matthews, F.R.C.P.", "H. Andrew W. Neil, F.R.C.P." ;
+  sm:documentURL
+  "https://www.nejm.org/doi/full/10.1056/NEJMoa0806470" ;
+  sio:hasParticipant   sco-i:MetforminStudyArm .
+
+sco-i:MetforminStudyArm a owl:Class, sco:ControlArm;
+      rdfs:subClassOf sio:StudySubject;
+      rdfs:label
+      "set of study subjects belonging to the Metformin intervention arm" ;
+      sio:isParticipantIn    sco-i:10YearFollowUpStudy, [a sco:ConventionalTherapy];
+      sio:hasAttribute 
+          [a sco:PopulationSize; sio:hasValue 309],
+          [
+            a sio:Age; sio:hasUnit sio:Year;  sio:hasAttribute
+            [ a sio:Mean; sio:hasValue 63],
+            [a sio:StandardDeviation; sio:hasValue 9]
+        ],
+        [
+          a sio:Weight; sio:hasAttribute
+          [ a sio:Median; sio:hasValue 87],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 76],
+            [ a sio:MaximalValue; sio:hasValue 97] 
+          ] 
+        ],
+        [
+          a cmo:0000105; sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 32.2],
+          [ a sio:StandardDeviation; sio:hasValue 5.7 ] 
+        ],
+        [
+
+          a cmo:0000004; rdfs:label "Systolic Blood Pressure"; 
+          sio:hasUnit [a ncit:C49670; rdfs:label "Millimeter of Hg"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 139],
+          [ a sio:StandardDeviation; sio:hasValue 22] 
+        ],
+        [
+
+          a cmo:0000005; rdfs:label "Diastolic Blood Pressure";
+          sio:hasUnit [a ncit:C49670; rdfs:label "Millimeter of Hg"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 77],
+          [ a sio:StandardDeviation; sio:hasValue 10] 
+        ],
+        [
+
+          a  cmo:0000053; rdfs:label "Low-density lipoprotein";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 129],
+          [ a sio:StandardDeviation; sio:hasValue 32] 
+        ],
+        [
+
+          a  cmo:0000052; rdfs:label "High-density lipoprotein";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 40],
+          [ a sio:StandardDeviation; sio:hasValue 12] 
+        ],
+        [
+
+          a chebi:17855; rdfs:label "Triglyceride";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 143],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 103],
+            [ a sio:MaximalValue; sio:hasValue 203] 
+          ]  
+        ],
+        [
+
+          a cmo:0000537; rdfs:label "Plasma Creatinine";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 0.96],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 0.83],
+            [ a sio:MaximalValue; sio:hasValue 1.11] 
+          ]  
+        ],
+        [
+
+          a labresults:FastingPlasmaGlucose; rdfs:label "Fasting Plasma Glucose";
+          sio:hasUnit [a ncit:C67015; rdfs:label "Millimeter per deciliter"];
+          sio:hasAttribute
+          [ a sio:Mean; sio:hasValue 182],
+          [ a sio:StandardDeviation; sio:hasValue 55] 
+        ],
+        [
+
+          a cmo:0002786; rdfs:label "Glycated Hemoglobin (HbA1C)";
+          sio:hasUnit [a sio:Percentage];
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 8.9],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 7.5],
+            [ a sio:MaximalValue; sio:hasValue 10] 
+          ] 
+        ],
+        [
+
+          a cmo:0000384; rdfs:label "Albumin Creatinine Ratio";
+          sio:hasAttribute
+          [ a sio:Median; sio:hasValue 19.9],
+          [ 
+            a obo:STATO_0000164; 
+            sio:hasAttribute 
+            [ a sio:MinimalValue; sio:hasValue 8.1],
+            [ a sio:MaximalValue; sio:hasValue 82.8] 
+          ] 
+        ]   .
+
+
+
+
