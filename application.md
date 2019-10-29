@@ -273,12 +273,15 @@ PREFIX chear: <http://hadatac.org/ont/chear#>
 PREFIX obo: <http://purl.obolibrary.org/obo/>
 PREFIX provcare: <http://www.case.edu/ProvCaRe/provcare#>
 
-SELECT DISTINCT ?studyTitle ?intervention ?popSize ?totalCohortSize
+SELECT DISTINCT ?studyTitle ?medicationLabel ?popSize ?totalCohortSize
 WHERE {
   ?study a ncit:C71104 .
   ?study dct:title ?studyTitle .
   ?study sio:hasParticipant ?studyArm .
-  ?studyArm sio:hasProperty [a ?intervention].
+  ?studyArm sio:hasProperty ?intervention .
+  ?intervention a ?interventionType .
+  ?intervention prov:used ?medication .
+  ?medication rdfs:label ?medicationLabel .
   ?studyArm sio:hasAttribute ?prop .
   ?prop a sco:PopulationSize .
   ?prop sio:hasValue ?popSize . 
@@ -293,8 +296,8 @@ WHERE {
    HAVING (?totalCohortSize > 1000)
    }
   FILTER (?popSize >= (?totalCohortSize/3)) .
-  FILTER ((?intervention rdfs:subClassOf* 
-  provcare:Intervention ) && (?intervention rdfs:subClassOf* 
+  FILTER ((?interventionType rdfs:subClassOf* 
+  provcare:Intervention ) && (?medication rdfs:subClassOf* 
   chebi:24436 )).
 }
    
