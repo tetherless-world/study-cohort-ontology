@@ -24,16 +24,11 @@
 @prefix fibo-fnd-arr-cls: <http://www.omg.org/spec/EDMC-FIBO/FND/Arrangements/ClassificationSchemes/> .
 @prefix obo:   <http://purl.obolibrary.org/obo/> .
 
-_:b0    a               owl:Restriction ;
-        owl:hasValue    sco-i:10YearFollowUpStudy ;
-        owl:onProperty  sio:isParticipantIn .
-
-_:b1    a                   owl:Restriction ;
-        owl:onProperty      sio:isParticipantIn ;
-        owl:someValuesFrom  sco:ConventionalTherapy .
-
 sco-i:MetforminArm  a          owl:Class , sco:InterventionArm ;
         rdfs:subClassOf        sio:StudySubject ;
+        sio:isParticipantIn     sco-i:10YearFollowUpStudy;
+        sio:hasProperty        [a sco:ConventionalTherapy],
+                               [a provcare:Intervention; prov:used chebi:6801; rdfs:label "Metformin"];
         sio:hasAttribute       [ a             sco:PopulationSize ;
                                  sio:hasValue  309
                                ] ;
@@ -45,9 +40,7 @@ sco-i:MetforminArm  a          owl:Class , sco:InterventionArm ;
                                  sio:hasAttribute  [ a             sio:StandardDeviation ;
                                                      sio:hasValue  22
                                                    ]
-                               ] ;
-        owl:EquivalentClassOf  [ owl:IntersectionOf
-                          ( sio:StudySubject _:b0 _:b1 _:b2 ) ] .
+                               ] .
 
 sco-i:10YearFollowUpStudy
         a                   obo:NCIT_C71104 , owl:NamedIndividual ;
@@ -56,12 +49,3 @@ sco-i:10YearFollowUpStudy
         dct:title           "10-year follow-up of intensive glucose control in type 2 diabetes" ;
         sio:hasParticipant  sco-i:MetforminArm ;
         sm:documentURL      "https://www.nejm.org/doi/full/10.1056/NEJMoa0806470?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed" .
-
-_:b2    a                   owl:Restriction ;
-        owl:onProperty      sio:isParticipantIn ;
-        owl:someValuesFrom  [ provcare:Intervention
-                          [ a                   owl:Restriction ;
-                            owl:onProperty      prov:used ;
-                            owl:someValuesFrom  obo:CHEBI_6801;
-                            rdfs:label "Metformin"
-                          ] ] .
