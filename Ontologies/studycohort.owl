@@ -835,7 +835,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
-				<prov:wasAttributedTo rdf:resoure="&ibm;us-amardas"/>
+				<prov:wasAttributedTo rdf:resource="&ibm;us-amardas"/>
 			</skos:definition>
 		</sio:hasAttribute>
         <oboInOwl:hasExactSynonym>Clinical Trials</oboInOwl:hasExactSynonym>
@@ -1892,7 +1892,7 @@
 		<sio:hasAttribute>
 			<skos:definition>
 				<sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
-				<prov:wasAttributedTo rdf:resoure="&ibm;us-amardas"/>
+				<prov:wasAttributedTo rdf:resource="&ibm;us-amardas"/>
 			</skos:definition>
 		</sio:hasAttribute>
 	</owl:Class>
