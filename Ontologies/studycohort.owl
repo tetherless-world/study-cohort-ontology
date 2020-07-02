@@ -2109,19 +2109,64 @@
 
     <!-- http://hadatac.org/ont/hasco#ResearchStudy -->
 
-    <owl:NamedIndividual rdf:about="http://hadatac.org/ont/hasco#ResearchStudy"/>
+    <owl:NamedIndividual rdf:about="http://hadatac.org/ont/hasco#ResearchStudy">
+        <sio:hasAttribute>
+            <rdf:Description rdf:nodeID="genid40">
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
+                <sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
+            </rdf:Description>
+        </sio:hasAttribute>
+        <sio:hasAttribute>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <sio:hasValue>A scientific study of nature that sometimes includes processes involved in health and disease</sio:hasValue>
+                <dct:source rdf:resource="https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement"/>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.obolibrary.org/obo/NCIT_C71104 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C71104"/>
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/NCIT_C71104">
+        <sio:hasAttribute>
+            <rdf:Description rdf:nodeID="genid42">
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
+                <sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
+            </rdf:Description>
+        </sio:hasAttribute>
+        <sio:hasAttribute>
+            <rdf:Description rdf:nodeID="genid43">
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
+                <sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.obolibrary.org/obo/STATO_0000203 -->
 
-    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/STATO_0000203"/>
+    <owl:NamedIndividual rdf:about="http://purl.obolibrary.org/obo/STATO_0000203">
+        <sio:hasAttribute>
+            <rdf:Description rdf:nodeID="genid44">
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
+                <sio:hasValue>A cohort is the group of subjects enrolled in a study&quot;</sio:hasValue>
+            </rdf:Description>
+        </sio:hasAttribute>
+        <sio:hasAttribute>
+            <rdf:Description rdf:nodeID="genid45">
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <prov:wasAttributedTo rdf:resource="https://tw.rpi.edu/web/People/JamesMcCusker"/>
+                <sio:hasValue>&quot;Top-level group of subjects participating in a study&quot;</sio:hasValue>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
@@ -2135,37 +2180,93 @@
 
     <!-- https://purl.org/heals/sco/ControlArm -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/ControlArm"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/ControlArm">
+        <sio:hasAttribute>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <sio:hasValue>An arm type that can receive an intervention that is considered effective (the standard), a placebo, or no intervention</sio:hasValue>
+                <fibo-fnd-utl-av:adaptedFrom>https://aidsinfo.nih.gov/understanding-hiv-aids/glossary/3392/control-arm</fibo-fnd-utl-av:adaptedFrom>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
     <!-- https://purl.org/heals/sco/InterventionArm -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/InterventionArm"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/InterventionArm">
+        <sio:hasAttribute>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <sio:hasValue>An arm type in which a group of participants receives the intervention/treatment that is the focus of the clinical trial</sio:hasValue>
+                <dct:source>https://clinicaltrials.gov/ct2/about-studies/glossary</dct:source>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
     <!-- https://purl.org/heals/sco/Meta-analysis -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/Meta-analysis"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/Meta-analysis">
+        <sio:hasAttribute>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <sio:hasValue>A quantitative, formal, epidemiological study design used to systematically assess previous research studies to derive conclusions about that body of research</sio:hasValue>
+                <dct:source>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049418/</dct:source>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
     <!-- https://purl.org/heals/sco/RandomizedPopulation -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/RandomizedPopulation"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/RandomizedPopulation">
+        <sio:hasAttribute>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <sio:hasValue>set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)</sio:hasValue>
+                <fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/</fibo-fnd-utl-av:adaptedFrom>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
     <!-- https://purl.org/heals/sco/SafetyPopulation -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/SafetyPopulation"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/SafetyPopulation">
+        <sio:hasAttribute>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <sio:hasValue>set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group</sio:hasValue>
+                <fibo-fnd-utl-av:adaptedFrom>https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/</fibo-fnd-utl-av:adaptedFrom>
+                <fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/books/NBK209903/</fibo-fnd-utl-av:adaptedFrom>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
     <!-- https://purl.org/heals/sco/StudyArm -->
 
-    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/StudyArm"/>
+    <owl:NamedIndividual rdf:about="https://purl.org/heals/sco/StudyArm">
+        <sio:hasAttribute>
+            <rdf:Description rdf:nodeID="genid51">
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
+                <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
+            </rdf:Description>
+        </sio:hasAttribute>
+        <sio:hasAttribute>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
+                <sio:hasValue>A group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial&apos;s protocol.</sio:hasValue>
+                <dct:source>https://clinicaltrials.gov/ct2/about-studies/glossary</dct:source>
+            </rdf:Description>
+        </sio:hasAttribute>
+    </owl:NamedIndividual>
     
 
 
@@ -2198,20 +2299,6 @@
     <rdf:Description rdf:about="http://hadatac.org/ont/hasco#ResearchStudy">
         <rdfs:label>research study</rdfs:label>
         <rdfs:label>study</rdfs:label>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>A scientific investigation that involves testing a hypothesi</sio:hasValue>
-                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
-            </rdf:Description>
-        </sio:hasAttribute>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>A scientific study of nature that sometimes includes processes involved in health and disease</sio:hasValue>
-                <dct:source rdf:resource="https://www.healthcareers.nhs.uk/explore-roles/healthcare-science/roles-healthcare-science/physical-sciences-and-biomedical-engineering/clinical-measurement"/>
-            </rdf:Description>
-        </sio:hasAttribute>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C16352">
         <oboInOwl:hasExactSynonym>Black</oboInOwl:hasExactSynonym>
@@ -2225,71 +2312,45 @@
         <oboInOwl:hasExactSynonym>Spanish Origins</oboInOwl:hasExactSynonym>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C41219">
+        <oboInOwl:hasExactSynonym>Hawaiiaan</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>Pacific Islander</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Hawaiian or Pacific Islander</oboInOwl:hasExactSynonym>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/NCIT_C71104">
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
-                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
-            </rdf:Description>
-        </sio:hasAttribute>
-        <obo:NCIT_P325>1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)</obo:NCIT_P325>
         <obo:NCIT_P322>CDISC-GLOSS</obo:NCIT_P322>
         <obo:NCIT_P106>Research Activity</obo:NCIT_P106>
-        <obo:NCIT_P325>A type of research study that tests how well new medical approaches work in people. These studies test new methods of screening, prevention, diagnosis, or treatment of a disease.</obo:NCIT_P325>
-        <oboInOwl:hasExactSynonym>clinical trial</oboInOwl:hasExactSynonym>
+        <obo:NCIT_P325>1) A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). 2) A research study in which one or more human subjects are prospectively assigned to one or more interventions (which may include placebo or other control) to evaluate the effects of those interventions on health-related biomedical or behavioral outcomes.(1. modified from ICH E6 Glossary, Directive 2001/20/EC. 2. NIH revised definition 2015) (CDISC Glossary)</obo:NCIT_P325>
         <oboInOwl:hasExactSynonym>Clinical Trial</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>clinical trial</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132310"/>
+        <obo:NCIT_P325>A type of research study that tests how well new medical approaches work in people. These studies test new methods of screening, prevention, diagnosis, or treatment of a disease.</obo:NCIT_P325>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C132298"/>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C67497"/>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncit.owl"/>
         <oboInOwl:hasExactSynonym>Clinical Trials</oboInOwl:hasExactSynonym>
         <obo:NCIT_NHC0>C71104</obo:NCIT_NHC0>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>A prospective study designed to evaluate whether one or more interventions are associated with an outcome</sio:hasValue>
-                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
-            </rdf:Description>
-        </sio:hasAttribute>
         <rdfs:label>clinical trial</rdfs:label>
         <obo:NCIT_P322>CDISC</obo:NCIT_P322>
         <obo:IAO_0000115>A research study that prospectively assigns human participants or groups of humans to one or more health-related interventions to evaluate the effects on health outcomes.</obo:IAO_0000115>
         <obo:NCIT_P207>C0008976</obo:NCIT_P207>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410"/>
         <obo:NCIT_P325>A research investigation involving human subjects that is designed to answer specific questions about the safety and efficacy of a biomedical intervention (drug, treatment, device) or new ways of using a known drug, treatment, or device). NOTE: NIH Office of Science Policy further specifies that a clinical trial is a type of research study that prospectively assigns subjects to interventions, and the EU clinical trial regulations set forth 3 specific conditions, any one of which qualifies a study as a clinical trial. These conditions include applying diagnostic or monitoring procedures not used in normal clinical practice to subjects. [after ICH E6 [R2], EU CTR 2014] See also clinical study, clinical investigation.</obo:NCIT_P325>
+        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/NCIT_C61410"/>
         <oboInOwl:hasExactSynonym>Clinical Trials, Unspecified</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Trial</oboInOwl:hasExactSynonym>
         <obo:NCIT_P366>Clinical_Trial_Generic</obo:NCIT_P366>
         <obo:NCIT_P108>Clinical Trial</obo:NCIT_P108>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/STATO_0000203">
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>A cohort is the group of subjects enrolled in a study&quot;</sio:hasValue>
-                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
-            </rdf:Description>
-        </sio:hasAttribute>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>&quot;Top-level group of subjects participating in a study&quot;</sio:hasValue>
-                <prov:wasAttributedTo rdf:resource="https://tw.rpi.edu/web/People/JamesMcCusker"/>
-            </rdf:Description>
-        </sio:hasAttribute>
+        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
         <obo:IAO_0000119 xml:lang="en">STATO</obo:IAO_0000119>
         <obo:STATO_0000032 xml:lang="en"></obo:STATO_0000032>
         <obo:IAO_0000115 xml:lang="en">a cohort is a study group population where the members are human beings which meet inclusion criteria and undergo a longitudinal design</obo:IAO_0000115>
         <obo:IAO_0000117>Orlaith Burke</obo:IAO_0000117>
         <obo:IAO_0000117 xml:lang="en">Philippe Rocca-Serra</obo:IAO_0000117>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/stato.owl"/>
+        <rdfs:label>cohort</rdfs:label>
         <obo:IAO_0000116 xml:lang="en">possibly submit to &apos;Population and Community Ontology&apos;</obo:IAO_0000116>
         <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000122"/>
-        <obo:IAO_0000112 xml:lang="en"></obo:IAO_0000112>
-        <rdfs:label>cohort</rdfs:label>
         <obo:IAO_0000117 xml:lang="en">Alejandra Gonzalez-Beltran</obo:IAO_0000117>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/twc/ontologies/cmo.owl#0000105">
@@ -2298,72 +2359,22 @@
     <rdf:Description rdf:about="https://purl.org/heals/sco/ControlArm">
         <rdfs:seeAlso>http://semanticscience.org/resource/SIO_001068.rdf</rdfs:seeAlso>
         <rdfs:label>control arm</rdfs:label>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>An arm type that can receive an intervention that is considered effective (the standard), a placebo, or no intervention</sio:hasValue>
-                <fibo-fnd-utl-av:adaptedFrom>https://aidsinfo.nih.gov/understanding-hiv-aids/glossary/3392/control-arm</fibo-fnd-utl-av:adaptedFrom>
-            </rdf:Description>
-        </sio:hasAttribute>
     </rdf:Description>
     <rdf:Description rdf:about="https://purl.org/heals/sco/InterventionArm">
         <rdfs:label>intervention arm</rdfs:label>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>An arm type in which a group of participants receives the intervention/treatment that is the focus of the clinical trial</sio:hasValue>
-                <dct:source>https://clinicaltrials.gov/ct2/about-studies/glossary</dct:source>
-            </rdf:Description>
-        </sio:hasAttribute>
         <rdfs:seeAlso>http://semanticscience.org/resource/SIO_001069.rdf</rdfs:seeAlso>
     </rdf:Description>
     <rdf:Description rdf:about="https://purl.org/heals/sco/Meta-analysis">
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>A quantitative, formal, epidemiological study design used to systematically assess previous research studies to derive conclusions about that body of research</sio:hasValue>
-                <dct:source>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049418/</dct:source>
-            </rdf:Description>
-        </sio:hasAttribute>
         <rdfs:label>meta-analysis</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://purl.org/heals/sco/RandomizedPopulation">
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>set of patients recruited for research studies, who are randomly assigned to different study groups, intending to ensure that all potential confounding factors are divided equally among the groups that will later be compared (structural equivalence)</sio:hasValue>
-                <fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3196997/</fibo-fnd-utl-av:adaptedFrom>
-            </rdf:Description>
-        </sio:hasAttribute>
         <rdfs:label>randomized population</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="https://purl.org/heals/sco/SafetyPopulation">
         <rdfs:label>safety population</rdfs:label>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>set of patients recruited for research studies, who  are a part of the experimental treatment population, additionally patients receiving the experimental intervention is analyzed with the experimental group</sio:hasValue>
-                <fibo-fnd-utl-av:adaptedFrom>https://www.dummies.com/education/science/biology/how-to-define-analytical-populations-for-a-clinical-study/</fibo-fnd-utl-av:adaptedFrom>
-                <fibo-fnd-utl-av:adaptedFrom>https://www.ncbi.nlm.nih.gov/books/NBK209903/</fibo-fnd-utl-av:adaptedFrom>
-            </rdf:Description>
-        </sio:hasAttribute>
     </rdf:Description>
     <rdf:Description rdf:about="https://purl.org/heals/sco/StudyArm">
         <rdfs:label>study arm</rdfs:label>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>An arm in a clinical trial is a group of subjects receiving the same therapeutic intervention (or none)</sio:hasValue>
-                <prov:wasAttributedTo rdf:resource="https://researcher.watson.ibm.com/researcher/view.php?person=us-amardas"/>
-            </rdf:Description>
-        </sio:hasAttribute>
-        <sio:hasAttribute>
-            <rdf:Description>
-                <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#definition"/>
-                <sio:hasValue>A group or subgroup of participants in a clinical trial that receives a specific intervention/treatment, or no intervention, according to the trial&apos;s protocol.</sio:hasValue>
-                <dct:source>https://clinicaltrials.gov/ct2/about-studies/glossary</dct:source>
-            </rdf:Description>
-        </sio:hasAttribute>
     </rdf:Description>
 </rdf:RDF>
 
