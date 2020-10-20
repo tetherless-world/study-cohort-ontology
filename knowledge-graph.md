@@ -51,16 +51,9 @@ both in patients at high risk for vascular events" clinical trial</p>
             owl:onProperty sio:hasAttribute;
             owl:someValuesFrom chear:Asian
         ];
-     sio:hasAttribute
-     [ 
-        a sco:PopulationSize; 
-        sio:hasValue 1182; 
-        sio:hasAttribute 
-        [ 
-            a sio:Percentage; 
-            sio:hasValue 13.8 
-        ] 
-    ] .
+        sio:hasAttribute
+        [ a sco:PopulationSize; sio:hasValue 1182],
+        [ a sio:Percentage; sio:hasValue 13.8 ] .
     </pre>
 
    <h3> Modeling of Subject Characteristics </h3>
@@ -85,14 +78,9 @@ both in patients at high risk for vascular events" clinical trial</p>
         rdfs:subClassOf [ a owl:Restriction; 
         owl:onProperty sio:hasAttribute;
          owl:someValuesFrom doid:PeripheralArteryDisease];
-     sio:hasAttribute [ 
-        a sco:PopulationSize; 
-        sio:hasValue 1136; 
-        sio:hasAttribute [
-            a sio:Percentage; 
-            sio:hasValue 13.2 
-        ] 
-    ] .
+     sio:hasAttribute 
+     [ a sco:PopulationSize; sio:hasValue 1136 ], 
+     [ a sio:Percentage; sio:hasValue 13.2 ] .
     </pre>
    
    
